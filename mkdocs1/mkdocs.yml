@@ -2,5 +2,6 @@ site_name: nanocosmos Docs
 pages: 
 - Home: index.md
 - About: about.md
+- web api: nanostream-4.x-web-api.md
 theme: readthedocs
 
