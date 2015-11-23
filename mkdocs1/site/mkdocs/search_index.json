@@ -2,7 +2,7 @@
     "docs": [
         {
             "location": "/", 
-            "text": "Welcome to MkDocs\n\n\nnanocosmos documentation - visit \nnanocosmos.de\n.\n\n\nDocs\n\n\n\n\nweb api\n - Create a new project.\n\n\n\n\nCommands\n\n\n\n\nmkdocs new [dir-name]\n - Create a new project.\n\n\nmkdocs serve\n - Start the live-reloading docs server.\n\n\nmkdocs build\n - Build the documentation site.\n\n\nmkdocs help\n - Print this help message.\n\n\n\n\nProject layout\n\n\nmkdocs.yml    # The configuration file.\ndocs/\n    index.md  # The documentation homepage.\n    ...       # Other markdown pages, images and other files.\n\n\n\nFor full documentation visit \nmkdocs.org\n.", 
+            "text": "Welcome to MkDocs\n\n\nnanocosmos documentation - visit \nnanocosmos.de\n.\n\n\nDocs\n\n\n\n\nsee index in the left", 
             "title": "Home"
         }, 
         {
@@ -12,18 +12,8 @@
         }, 
         {
             "location": "/#docs", 
-            "text": "web api  - Create a new project.", 
+            "text": "see index in the left", 
             "title": "Docs"
-        }, 
-        {
-            "location": "/#commands", 
-            "text": "mkdocs new [dir-name]  - Create a new project.  mkdocs serve  - Start the live-reloading docs server.  mkdocs build  - Build the documentation site.  mkdocs help  - Print this help message.", 
-            "title": "Commands"
-        }, 
-        {
-            "location": "/#project-layout", 
-            "text": "mkdocs.yml    # The configuration file.\ndocs/\n    index.md  # The documentation homepage.\n    ...       # Other markdown pages, images and other files.  For full documentation visit  mkdocs.org .", 
-            "title": "Project layout"
         }, 
         {
             "location": "/about/", 
@@ -459,6 +449,31 @@
             "location": "/nanostream-macos-sdk/#overlay-effects", 
             "text": "Overlay off = 0  Left Top = 1  Right Top = 2  Left Bottom = 3  Right bottom = 4  Free Postion = 5", 
             "title": "Overlay Effects"
+        }, 
+        {
+            "location": "/mkdocs/", 
+            "text": "Welcome to MkDocs\n\n\nnanocosmos documentation - visit \nnanocosmos.de\n.\n\n\nDocs\n\n\n\n\nweb api\n - Create a new project.\n\n\n\n\nCommands\n\n\n\n\nmkdocs new [dir-name]\n - Create a new project.\n\n\nmkdocs serve\n - Start the live-reloading docs server.\n\n\nmkdocs build\n - Build the documentation site.\n\n\nmkdocs help\n - Print this help message.\n\n\n\n\nProject layout\n\n\nmkdocs.yml    # The configuration file.\ndocs/\n    index.md  # The documentation homepage.\n    ...       # Other markdown pages, images and other files.\n\n\n\nFor full documentation visit \nmkdocs.org\n.", 
+            "title": "mkdocs help"
+        }, 
+        {
+            "location": "/mkdocs/#welcome-to-mkdocs", 
+            "text": "nanocosmos documentation - visit  nanocosmos.de .", 
+            "title": "Welcome to MkDocs"
+        }, 
+        {
+            "location": "/mkdocs/#docs", 
+            "text": "web api  - Create a new project.", 
+            "title": "Docs"
+        }, 
+        {
+            "location": "/mkdocs/#commands", 
+            "text": "mkdocs new [dir-name]  - Create a new project.  mkdocs serve  - Start the live-reloading docs server.  mkdocs build  - Build the documentation site.  mkdocs help  - Print this help message.", 
+            "title": "Commands"
+        }, 
+        {
+            "location": "/mkdocs/#project-layout", 
+            "text": "mkdocs.yml    # The configuration file.\ndocs/\n    index.md  # The documentation homepage.\n    ...       # Other markdown pages, images and other files.  For full documentation visit  mkdocs.org .", 
+            "title": "Project layout"
         }
     ]
 }
