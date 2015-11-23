@@ -1,4 +1,3 @@
-~~CLOSETOC~~
 # nanoStream MacOS API
 
 ## Intro 
