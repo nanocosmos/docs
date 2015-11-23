@@ -5,6 +5,7 @@ pages:
 - web api: nanostream-4.x-web-api.md
 - ios api: nanostream-ios-sdk.md
 - macos api: nanostream-macos-sdk.md
+- mkdocs help: mkdocs.md
 
 theme: readthedocs
 
