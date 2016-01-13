@@ -451,6 +451,46 @@
             "title": "Overlay Effects"
         }, 
         {
+            "location": "/nanostream-android-mp4-recording/", 
+            "text": "MP4 Recording\n\n\nDiscription\n\n\nThe nanoStream Android SDK supports, MP4 recording to do this there needs to be set a valid Path to the nanoStreamSettings object. And the MP4 Recording needs to be enabled. This feature allows you to record the current stream to the Device internal/external sd card.\n\n\nEnable MP4 recording\n\n\nTo enable the MP4 recording there are tow functions in the nanoStreamSettings Class.\n\n\n\n\nsetRecordMp4(boolean)\n\n\nsetMp4Path(String)\n\n\n\n\nsetRecordMp4(boolean)\n\n\nThe setRecordMp4 function takes a boolean as parameter, this is to enable/disable the recording function.\n\n\nsetMp4Path(String)\n\n\nThe setMp4Path function takes a String as parameter, this string needs to be a valid file path (e.g. /sdcard/test.mp4). Much better is to use the\ngetExternalStoragePublicDirectory from the \nEnvironment\n Android API, and add a file name to this directory Path.\n\n\nAndroid Permission\n\n\nTo write to an external File Path your Android App needs the following permission (Add this to your AndroidMainfest.xml).\n\n\nuses-permission android:name=\nandroid.permission.WRITE_EXTERNAL_STORAGE\n /\n\n\nuses-permission android:name=\nandroid.permission.STORAGE\n /\n\n\n\n\n\nAndroid 6.0\n\n\nDue to the new Permission handling it is possible that you can't write in external Directorys if the user isn't granted this permission, you can always write in your own data directory (/Android/data/com.companyname.appname/)\n\n\nImplementation Example\n\n\nFile externalFilePath = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM);\nFile filePath = new File(externalFilePath, \nmyMp4File.mp4\n);\nString mp4FilePath = filePath.getAbsolutePath();\n\nnanoStreamSettings nss = new nanoStreamSettings();\nnss.setRecordMp4(true);\nnss.setMp4Path(mp4FilePath);", 
+            "title": "Android MP4 recording"
+        }, 
+        {
+            "location": "/nanostream-android-mp4-recording/#mp4-recording", 
+            "text": "", 
+            "title": "MP4 Recording"
+        }, 
+        {
+            "location": "/nanostream-android-mp4-recording/#discription", 
+            "text": "The nanoStream Android SDK supports, MP4 recording to do this there needs to be set a valid Path to the nanoStreamSettings object. And the MP4 Recording needs to be enabled. This feature allows you to record the current stream to the Device internal/external sd card.", 
+            "title": "Discription"
+        }, 
+        {
+            "location": "/nanostream-android-mp4-recording/#enable-mp4-recording", 
+            "text": "To enable the MP4 recording there are tow functions in the nanoStreamSettings Class.   setRecordMp4(boolean)  setMp4Path(String)", 
+            "title": "Enable MP4 recording"
+        }, 
+        {
+            "location": "/nanostream-android-mp4-recording/#setrecordmp4boolean", 
+            "text": "The setRecordMp4 function takes a boolean as parameter, this is to enable/disable the recording function.", 
+            "title": "setRecordMp4(boolean)"
+        }, 
+        {
+            "location": "/nanostream-android-mp4-recording/#setmp4pathstring", 
+            "text": "The setMp4Path function takes a String as parameter, this string needs to be a valid file path (e.g. /sdcard/test.mp4). Much better is to use the\ngetExternalStoragePublicDirectory from the  Environment  Android API, and add a file name to this directory Path.", 
+            "title": "setMp4Path(String)"
+        }, 
+        {
+            "location": "/nanostream-android-mp4-recording/#android-permission", 
+            "text": "To write to an external File Path your Android App needs the following permission (Add this to your AndroidMainfest.xml).  uses-permission android:name= android.permission.WRITE_EXTERNAL_STORAGE  /  uses-permission android:name= android.permission.STORAGE  /   Android 6.0  Due to the new Permission handling it is possible that you can't write in external Directorys if the user isn't granted this permission, you can always write in your own data directory (/Android/data/com.companyname.appname/)", 
+            "title": "Android Permission"
+        }, 
+        {
+            "location": "/nanostream-android-mp4-recording/#implementation-example", 
+            "text": "File externalFilePath = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM);\nFile filePath = new File(externalFilePath,  myMp4File.mp4 );\nString mp4FilePath = filePath.getAbsolutePath();\n\nnanoStreamSettings nss = new nanoStreamSettings();\nnss.setRecordMp4(true);\nnss.setMp4Path(mp4FilePath);", 
+            "title": "Implementation Example"
+        }, 
+        {
             "location": "/mkdocs/", 
             "text": "Welcome to MkDocs\n\n\nnanocosmos documentation - visit \nnanocosmos.de\n.\n\n\nDocs\n\n\n\n\nweb api\n - Create a new project.\n\n\n\n\nCommands\n\n\n\n\nmkdocs new [dir-name]\n - Create a new project.\n\n\nmkdocs serve\n - Start the live-reloading docs server.\n\n\nmkdocs build\n - Build the documentation site.\n\n\nmkdocs help\n - Print this help message.\n\n\n\n\nProject layout\n\n\nmkdocs.yml    # The configuration file.\ndocs/\n    index.md  # The documentation homepage.\n    ...       # Other markdown pages, images and other files.\n\n\n\nFor full documentation visit \nmkdocs.org\n.", 
             "title": "mkdocs help"
