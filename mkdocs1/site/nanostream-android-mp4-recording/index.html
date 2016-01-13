@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Android MP4 recording - nanocosmos Docs</title>
+  
+
+  <link rel="shortcut icon" href="../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Android MP4 recording";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script>
+  <script src="../js/theme.js"></script> 
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> nanocosmos Docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="..">Home</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../about/">About</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../nanostream-4.x-web-api/">web api</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../nanostream-ios-sdk/">ios api</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../nanostream-macos-sdk/">macos api</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Android MP4 recording</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#mp4-recording">MP4 Recording</a></li>
+                
+                    <li><a class="toctree-l4" href="#discription">Discription</a></li>
+                
+                    <li><a class="toctree-l4" href="#enable-mp4-recording">Enable MP4 recording</a></li>
+                
+                    <li><a class="toctree-l4" href="#setrecordmp4boolean">setRecordMp4(boolean)</a></li>
+                
+                    <li><a class="toctree-l4" href="#setmp4pathstring">setMp4Path(String)</a></li>
+                
+                    <li><a class="toctree-l4" href="#android-permission">Android Permission</a></li>
+                
+                    <li><a class="toctree-l4" href="#implementation-example">Implementation Example</a></li>
+                
+            
+            </ul>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../mkdocs/">mkdocs help</a>
+        
+    </li>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">nanocosmos Docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Android MP4 recording</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="mp4-recording">MP4 Recording</h1>
+<h2 id="discription">Discription</h2>
+<p>The nanoStream Android SDK supports, MP4 recording to do this there needs to be set a valid Path to the nanoStreamSettings object. And the MP4 Recording needs to be enabled. This feature allows you to record the current stream to the Device internal/external sd card.</p>
+<h2 id="enable-mp4-recording">Enable MP4 recording</h2>
+<p>To enable the MP4 recording there are tow functions in the nanoStreamSettings Class.</p>
+<ol>
+<li>setRecordMp4(boolean)</li>
+<li>setMp4Path(String)</li>
+</ol>
+<h2 id="setrecordmp4boolean">setRecordMp4(boolean)</h2>
+<p>The setRecordMp4 function takes a boolean as parameter, this is to enable/disable the recording function.</p>
+<h2 id="setmp4pathstring">setMp4Path(String)</h2>
+<p>The setMp4Path function takes a String as parameter, this string needs to be a valid file path (e.g. /sdcard/test.mp4). Much better is to use the
+getExternalStoragePublicDirectory from the <a href="http://developer.android.com/reference/android/os/Environment.html">Environment</a> Android API, and add a file name to this directory Path.</p>
+<h2 id="android-permission">Android Permission</h2>
+<p>To write to an external File Path your Android App needs the following permission (Add this to your AndroidMainfest.xml).</p>
+<pre><code class="xml">&lt;uses-permission android:name=&quot;android.permission.WRITE_EXTERNAL_STORAGE&quot; /&gt;
+&lt;uses-permission android:name=&quot;android.permission.STORAGE&quot; /&gt;
+</code></pre>
+
+<h3 id="android-60">Android 6.0</h3>
+<p>Due to the new Permission handling it is possible that you can't write in external Directorys if the user isn't granted this permission, you can always write in your own data directory (/Android/data/com.companyname.appname/)</p>
+<h2 id="implementation-example">Implementation Example</h2>
+<pre><code class="java">File externalFilePath = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM);
+File filePath = new File(externalFilePath, &quot;myMp4File.mp4&quot;);
+String mp4FilePath = filePath.getAbsolutePath();
+
+nanoStreamSettings nss = new nanoStreamSettings();
+nss.setRecordMp4(true);
+nss.setMp4Path(mp4FilePath);
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../mkdocs/" class="btn btn-neutral float-right" title="mkdocs help"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../nanostream-macos-sdk/" class="btn btn-neutral" title="macos api"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../nanostream-macos-sdk/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../mkdocs/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>
