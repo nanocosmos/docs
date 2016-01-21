@@ -7,7 +7,6 @@ This document describes how to enable and configure nanoStream for local recordi
 
 ## Steps to configure MP4 recording
 
-To enable the MP4 recording there are two functions in the nanoStreamSettings Class.
 MP4 recording can be configured with two function calls on a nanoStreamSettings object. 
 
 1. Enabling MP4 recording: setRecordMp4(boolean)
