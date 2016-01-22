@@ -1,12 +1,11 @@
 site_name: nanocosmos Docs
-pages: 
+pages:
 - Home: index.md
 - About: about.md
 - web api: nanostream-4.x-web-api.md
 - ios api: nanostream-ios-sdk.md
 - macos api: nanostream-macos-sdk.md
-- Android MP4 recording: nanostream-android-mp4-recording.md
+- Android nanoStream SDK: nanostream-android-sdk.md
 - mkdocs help: mkdocs.md
 
 theme: readthedocs
-
