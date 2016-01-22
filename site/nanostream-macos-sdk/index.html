@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>macos api - nanocosmos Docs</title>
+  
+
+  <link rel="shortcut icon" href="../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "macos api";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script>
+  <script src="../js/theme.js"></script> 
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> nanocosmos Docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="..">Home</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../about/">About</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../nanostream-4.x-web-api/">web api</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../nanostream-ios-sdk/">ios api</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">macos api</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#nanostream-macos-api">nanoStream MacOS API</a></li>
+                
+                    <li><a class="toctree-l4" href="#intro">Intro</a></li>
+                
+                    <li><a class="toctree-l4" href="#setup">Setup:</a></li>
+                
+                    <li><a class="toctree-l4" href="#system-requirements">System Requirements:</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#method-description">Method Description:</a></li>
+                
+                    <li><a class="toctree-l4" href="#setconfig">SetConfig</a></li>
+                
+                    <li><a class="toctree-l4" href="#preview">Preview</a></li>
+                
+                    <li><a class="toctree-l4" href="#updatepreviewdimensions">UpdatePreviewDimensions</a></li>
+                
+                    <li><a class="toctree-l4" href="#getpreviewdimensions">GetPreviewDimensions</a></li>
+                
+                    <li><a class="toctree-l4" href="#getpreviewimage">GetPreviewImage</a></li>
+                
+                    <li><a class="toctree-l4" href="#getpreviewframe">GetPreviewFrame</a></li>
+                
+                    <li><a class="toctree-l4" href="#startpreview">StartPreview</a></li>
+                
+                    <li><a class="toctree-l4" href="#stoppreview">StopPreview</a></li>
+                
+                    <li><a class="toctree-l4" href="#broadcast">Broadcast</a></li>
+                
+                    <li><a class="toctree-l4" href="#startbroadcast">StartBroadcast</a></li>
+                
+                    <li><a class="toctree-l4" href="#stopbroadcast">StopBroadcast</a></li>
+                
+                    <li><a class="toctree-l4" href="#video-source-audio-source-handling">Video Source &amp; Audio Source handling</a></li>
+                
+                    <li><a class="toctree-l4" href="#getnumberofvideosources">GetNumberOfVideoSources</a></li>
+                
+                    <li><a class="toctree-l4" href="#getnumberofaudiosources">GetNumberOfAudioSources</a></li>
+                
+                    <li><a class="toctree-l4" href="#getvideosource">GetVideoSource</a></li>
+                
+                    <li><a class="toctree-l4" href="#getaudiosource">GetAudioSource</a></li>
+                
+                    <li><a class="toctree-l4" href="#setvideosource">SetVideoSource</a></li>
+                
+                    <li><a class="toctree-l4" href="#setvideosourcefromurl">SetVideoSourceFromURL</a></li>
+                
+                    <li><a class="toctree-l4" href="#setaudiosource">SetAudioSource</a></li>
+                
+                    <li><a class="toctree-l4" href="#video-properties">Video Properties</a></li>
+                
+                    <li><a class="toctree-l4" href="#setvideowidth">SetVideoWidth</a></li>
+                
+                    <li><a class="toctree-l4" href="#setvideoheight">SetVideoHeight</a></li>
+                
+                    <li><a class="toctree-l4" href="#setvideoresizewidth">SetVideoResizeWidth</a></li>
+                
+                    <li><a class="toctree-l4" href="#setvideoresizeheight">SetVideoResizeHeight</a></li>
+                
+                    <li><a class="toctree-l4" href="#setvideoframerate">SetVideoFramerate</a></li>
+                
+                    <li><a class="toctree-l4" href="#setvideobitrate">SetVideoBitrate</a></li>
+                
+                    <li><a class="toctree-l4" href="#getvideobitrate">GetVideoBitrate</a></li>
+                
+                    <li><a class="toctree-l4" href="#audio-properties">Audio Properties</a></li>
+                
+                    <li><a class="toctree-l4" href="#setaudiobitrate">SetAudioBitrate</a></li>
+                
+                    <li><a class="toctree-l4" href="#getaudiobitrate">GetAudioBitrate</a></li>
+                
+                    <li><a class="toctree-l4" href="#setaudiosamplerate">SetAudioSamplerate</a></li>
+                
+                    <li><a class="toctree-l4" href="#getaudiolevel">GetAudioLevel</a></li>
+                
+                    <li><a class="toctree-l4" href="#setaudiovolume">SetAudioVolume</a></li>
+                
+                    <li><a class="toctree-l4" href="#setaudiopreviewvolume">SetAudioPreviewVolume</a></li>
+                
+                    <li><a class="toctree-l4" href="#color-management">Color Management</a></li>
+                
+                    <li><a class="toctree-l4" href="#setcolorspace">SetColorSpace</a></li>
+                
+                    <li><a class="toctree-l4" href="#getnumberofcolorspaces">GetNumberOfColorspaces</a></li>
+                
+                    <li><a class="toctree-l4" href="#getcolorspace">GetColorspace</a></li>
+                
+                    <li><a class="toctree-l4" href="#resolution-frame-rate">Resolution &amp; Frame rate</a></li>
+                
+                    <li><a class="toctree-l4" href="#getnumberofresolutions">GetNumberOfResolutions</a></li>
+                
+                    <li><a class="toctree-l4" href="#getresolution">GetResolution</a></li>
+                
+                    <li><a class="toctree-l4" href="#getnumberofframerates">GetNumberOfFramerates</a></li>
+                
+                    <li><a class="toctree-l4" href="#getframerate">GetFramerate</a></li>
+                
+                    <li><a class="toctree-l4" href="#setdeinterlacing">SetDeinterlacing</a></li>
+                
+                    <li><a class="toctree-l4" href="#outputs">Outputs</a></li>
+                
+                    <li><a class="toctree-l4" href="#getnumberofoutputs">GetNumberOfOutputs</a></li>
+                
+                    <li><a class="toctree-l4" href="#addoutput">AddOutput</a></li>
+                
+                    <li><a class="toctree-l4" href="#setoutputurl">SetOutputUrl</a></li>
+                
+                    <li><a class="toctree-l4" href="#getoutputurl">GetOutputUrl</a></li>
+                
+                    <li><a class="toctree-l4" href="#getnumberofoutputurls">GetNumberOfOutputUrls</a></li>
+                
+                    <li><a class="toctree-l4" href="#acceptdatainsamplebuffer">AcceptDataInSampleBuffer</a></li>
+                
+                    <li><a class="toctree-l4" href="#setfilesourcefilename">SetFilesourceFilename</a></li>
+                
+                    <li><a class="toctree-l4" href="#clearoutputs">ClearOutputs</a></li>
+                
+                    <li><a class="toctree-l4" href="#video-special">Video Special</a></li>
+                
+                    <li><a class="toctree-l4" href="#setvideoeffect">SetVideoEffect</a></li>
+                
+                    <li><a class="toctree-l4" href="#setoverlay">SetOverlay</a></li>
+                
+                    <li><a class="toctree-l4" href="#showpropertypage">ShowPropertyPage</a></li>
+                
+                    <li><a class="toctree-l4" href="#logging">Logging</a></li>
+                
+                    <li><a class="toctree-l4" href="#setlog">SetLog</a></li>
+                
+                    <li><a class="toctree-l4" href="#setxmlprofile">SetXmlProfile</a></li>
+                
+                    <li><a class="toctree-l4" href="#dispose">dispose</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#setconfig-properties">SetConfig Properties</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#mixmode">Mixmode</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#overlay-effects">Overlay Effects</a></li>
+                
+            
+            </ul>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../nanostream-android-sdk/">Android nanoStream SDK</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../mkdocs/">mkdocs help</a>
+        
+    </li>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">nanocosmos Docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>macos api</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="nanostream-macos-api">nanoStream MacOS API</h1>
+<h2 id="intro">Intro</h2>
+<p>The nanoStream MacOS dylib API is a video capture and encoding software for streaming live video and audio to internet based media servers and other network clients.</p>
+<p>The nanoStream MacOS dylib API supports internet broadcast streaming and local recording at the same time. A lots of video devices are supported, also Blackmagic devices. The resolution, frame rate, samplerate and more can be manipulated. For a full feature list and platform specific features look at the method list below.</p>
+<p>It works perfectly together with internet streaming servers like Wowza Media Server and Flash Media Server, streaming to Mobile devices like iPhone, Silverlight and other playback clients is possible.</p>
+<ul>
+<li>Note: this is preliminary documentation, please contact us for further information or help.</li>
+</ul>
+<h2 id="setup">Setup:</h2>
+<p>The best way to start is using the C++ sample code included in the SDK.</p>
+<h2 id="system-requirements">System Requirements:</h2>
+<p>Mac OSX 10.9 or newer, Windows 7 or newer</p>
+<p><strong>Hardware Requirements:</strong></p>
+<p>Intel Core2 Duo or later</p>
+<p>Recommended for HD capture: Intel Core i7 or Xeon</p>
+<p>| <strong>Method Name</strong>             | <strong>Description</strong>                                     | libnanoStream.dylib Support | Mac Plugin Support | Mac Framework Support | ANE Support|
+| InitPlugin              | Initialization of the Plugin.                               |  nanoStream  |  initEncoder  |  init  |  ✔  |
+| SetXml                  | deprecated - no functionality                          |  ✘  |  ✘  |  ✘  |  ✔  |
+| GetVersion              | Get version number of the SDK                                                                     |   ✔  |    |    |  |
+| SetLicense              | Set license for nano SDK                               |  ✔  |  ✔  |  ✔   |  ✔  |
+| GetLicense              | Get the current license of the SDK                                                                     |  ✔  |    |    |  |
+| SetConfig               | Set property over Identifier.                            |  ✔  |  ✔  |  ✔  |  ✔  |
+| UpdatePreviewDimensions | Update preview dimensions of the bmp           |  ✘  |  ✘   |  ✘   |  ✔  |
+| GetPreviewDimensions              | Get the current preview dimensions                                                                      |  ✔   |    |    |  |
+| GetPreviewImage              | Get the preview image                                                                     |  ✔  |    |    |  |
+| GetPreviewFrame         | Get current preview Frame                       |  ✘  |  ✘  |  ✘  |  ✔  |
+| StartPreview            | Start the preview.                              |  ✔  |  ✔  |  ✘  |  ✔  |
+| StopPreview             | Stop the preview.                              |  ✔  |  ✔  |  ✘  |  ✔  |
+| StartBroadcast          | Start broadcasting.                             |  ✔  |  ✔  |  startStream  |  ✔  |
+| StopBroadcast           | Stop broadcasting.                              |  ✔  |  ✔  |  stopStream  |  ✔  |
+| GetNumberOfVideoSources | Count video sources with current settings       |  ✔  |  ✔  |  ✔  |  ✔  |
+| GetNumberOfAudioSources | Count audio sources with current settings      |  ✔   |  ✔  |  ✔  |  ✔  |
+| GetVideoSource          | Get name of the video source as string.         |  ✔  |  ✔  |  ✘  |  ✔  |
+| GetAudioSource          | Get name of the audio source as string.         |  ✔  |  ✔  |  ✘  |  ✔  |
+| SetVideoSource          | Set video source for preview or broadcasting    |  ✔  |  VideoSource  |  ✘   |  ✔  |
+| SetVideoSourceFromURL   | URL to an mp4 file source or ramp source        |  ✘  |  ✘  |  ✘  |  ✔  |
+| SetAudioSource          | Set audio source for preview or broadcasting    |  ✔  |  AudioSource  |  ✘  |  ✔  |
+| SetVideoWidth           | Set width of video in pixels                   |  ✔  |  VideoWidth  |  ✔  |  ✔  |
+| GetVideoWidth           | Get width of video in pixels                   |  ✔  |  VideoWidth  |    |    |
+| SetVideoHeight          | Set height of video in pixels                   |  ✔  |  VideoHeight  |  ✔  |  ✔  |
+| GetVideoHeight          | Get height of video in pixels                   |  ✔  |  VideoHeight  |   |   |
+| SetVideoResizeWidth     | Resize width of video in pixels                |  ✘   |  ✔  |  ✘  |  ✔  |
+| SetVideoResizeHeight    | Resize height of video in pixels               |  ✘  |  ✔  |  ✘  |  ✔  |
+| SetVideoFramerate       | Set frame rate of video in frames per second    |  SetFramerate   |  VideoFrameRate  |  setFrameRate  |  ✔  |
+| SetNumberOfChannels              | set channel number                                                                      |  ✔   |    |    |  |
+| SetVideoBitrate         | Set bitrate of video in kbits per second        |  ✔  |  ✔  |  ✔   |  ✔  |
+| GetVideoBitrate              | Get the current video bitrate                                                                     |  ✔  |    |    |  |
+| SetAudioBitrate         | Set bitrate of audio in kbits per second       |  ✔  |  ✔  |  ✔  |  ✔  |
+| GetAudioBitrate              | Get the current audio bitrate                                                                     |  ✔   |    |    |  |
+| SetAudioSamplerate      | Set the samplerate of the audio in Hertz        |  ✔  |  ✘  |  setSampleRate   |  ✔  |
+| GetAudioLevel           | Get the audio level of a channel                |  ✔  |  ✔  |  ✔   |  ✔  |
+| SetAudioVolume          | Set audio volume                               |  ✔  |  AudioVolume  |  ✘  |  ✔  |
+| SetAudioPreviewVolume   | Set audio volume of preview                    |  ✔  |  AudioPreviewVolume  |  ✘  |  ✔  |
+| SetColorSpace           | Set the color space of an input source         |  ✔  |  ✔  |  ✘  |  ✔  |
+| GetNumberOfColorspaces  | Get the count of color spaces                  |  ✔  |  ✔  |  ✘  |  ✔  |
+| GetColorspace           | Get color space name as string                  |  ✔  |  ✔  |  ✔  |  ✔  |
+| GetNumberOfResolutions  | Get count of available resolutions             |  ✔   |  ✔  |  ✘  |  ✔  |
+| GetResolution           | Get count of resolutions                       |  ✔   |  ✔  |  ✘  |  ✔  |
+| GetNumberOfFramerates   | Count of available frame rates as integer value |  GetNumberOfFrameRates  |  ✔  |  ✘  |  ✔  |
+| GetFramerate            | Get the frame rate of a video source           |  ✔   |  ✔  |  getFrameRate  |  ✔  |
+| SetDeinterlacing        | Set deinterlacing mode and method              |  ✘   |  ✘  |  ✘  |  ✔  |
+| GetNumberOfOutputs      | Get count of output sources                    |  ✘  |  ✔  |  ✘  |  ✔  |
+| AddOutput               | Add new output source with url                 |  ✘   |  ✔  |  ✘  |  ✔  |
+| SetOutputUrl            | Set output source with url. Local or rtmp       |  ✔   |  ✔  |  setOutputUrl   |  ✔  |
+| GetOutputUrl              |                                                                      |  ✔  |    |    |  |
+| GetNumberOfOutputUrls              |                                                                      |  ✔  |    |    |  |
+| AcceptDataInSampleBuffer              |                                                                      |  ✔   |    |    |  |
+| AddSampleBuffer              |                                                                      |  ✔  |    |    |  |
+| SetFilesourceFilename   | Set the filename of a local source            |  ✘   |  ✘  |  ✘  |  ✔  |
+| ClearOutputs            | Reset all output sources                      |   ✘   |  ✔  |  ✘  |  ✔  |
+| SetVideoEffect          | Add a video effect.                            |  ✘   |  ✔  |  ✘  |  ✔  |
+| SetOverlay              | Add a overlay to the video                     |   ✘   |  ✘  |  ✘  |  ✔  |
+| ShowPropertyPage        | Show property page                            |   ✘    |  ✔  |  ✘   |  ✔  |
+| SetLog                  | Set log file path and log level.               |  ✔  |  ✔  |  ✔  |  ✔  |
+| SetXmlProfile              |                                                                      |  ✔   |    |    |  |
+| dispose():void          | Reset buffer                                  |  ✘   |  ✘  |  ✘  |  ✔  |</p>
+<h1 id="method-description">Method Description:</h1>
+<p>===== Setup the Plugin =====</p>
+<p>==== InitPlugin ====</p>
+<p>=== Declaration ===</p>
+<p>InitPlugin(xmlPath:String):int</p>
+<p>=== Parameters ===</p>
+<table>
+<thead>
+<tr>
+<th>xmlPath:String</th>
+<th>Path to the xml file with configuration information, can be local or a url.</th>
+</tr>
+</thead>
+<tbody></tbody>
+</table>
+<p>=== Return Value ===</p>
+<p><strong>-1</strong> if the initialization failed</p>
+<p>=== Description ===</p>
+<p>Initialization of the plugin.</p>
+<p>=== Availability ===</p>
+<p>On Windows and Mac OSX</p>
+<p>==== GetVersion ====</p>
+<p>=== Declaration ===</p>
+<p>GetVersion()</p>
+<p>=== Return Value ===</p>
+<p>Version number as int value</p>
+<p>=== Description ===</p>
+<p>Return the version number of the SDK as int value</p>
+<p>=== Availability ===</p>
+<p>On Mac OSX
+==== SetLicense ====</p>
+<p>=== Declaration ===</p>
+<p>SetLicense(licenseStr:String):int</p>
+<p>=== Parameters ===</p>
+<p>| licenseStr:String | License String getting from nano. |</p>
+<p>=== Return Value ===</p>
+<p>-<strong>1</strong> if call failed</p>
+<p>=== Description ===</p>
+<p>Set license for nano SDK</p>
+<p>=== Availability ===</p>
+<p>On Windows and Mac OSX</p>
+<p>==== GetLicense ====</p>
+<p>=== Declaration ===</p>
+<p>GetLicense()</p>
+<p>=== Return Value ===</p>
+<p>String represantation of the license</p>
+<p>=== Description ===</p>
+<p>Get license for nano SDK</p>
+<p>=== Availability ===</p>
+<p>On Mac OSX</p>
+<h2 id="setconfig">SetConfig</h2>
+<h3 id="declaration">Declaration</h3>
+<p>SetConfig(property:String, value:String):int</p>
+<h3 id="parameters">Parameters</h3>
+<p>| property:String | Property identifier as string. See property list for configuration on page 32. |
+| value:String    | Value for property as string representation.                                   |</p>
+<h3 id="return-value">Return Value</h3>
+<p><strong>1</strong> if call was successful, <strong>0</strong> otherwise</p>
+<h3 id="description">Description</h3>
+<p>Set property over Identifier.</p>
+<h3 id="availability">Availability</h3>
+<p>On Windows and Mac OSX</p>
+<h2 id="preview">Preview</h2>
+<h2 id="updatepreviewdimensions">UpdatePreviewDimensions</h2>
+<h3 id="declaration_1">Declaration</h3>
+<p>UpdatePreviewDimensions():void</p>
+<h3 id="description_1">Description</h3>
+<p>Updates the preview with the current width and height.</p>
+<h3 id="availability_1">Availability</h3>
+<p>On Windows and Mac OSX</p>
+<h2 id="getpreviewdimensions">GetPreviewDimensions</h2>
+<p>=== Declaration ===</p>
+<p>GetPreviewDimensions(long <em>width, long </em>height, long *size)</p>
+<p>=== Parameters ===</p>
+<p>| width:long | Pointer to return the video width |
+| height:long | Pointer to return the video height |
+| size:long | Pointer to return the video size |</p>
+<p>=== Return Value ===</p>
+<p><strong>1</strong> if call failed, <strong>0</strong> otherwise</p>
+<p>=== Description ===</p>
+<p>Get the current preview dimensions.</p>
+<h2 id="getpreviewimage">GetPreviewImage</h2>
+<p>=== Declaration ===</p>
+<p>GetPreviewImage(char *pixelBuffer, int size)</p>
+<p>=== Parameters ===</p>
+<p>| pixelBuffer:char | pixel buffer|
+| size:int | size |</p>
+<p>=== Return Value ===</p>
+<p><strong>1</strong> if call failed, <strong>0</strong> otherwise</p>
+<p>=== Description ===</p>
+<p>Get the preview image.</p>
+<h2 id="getpreviewframe">GetPreviewFrame</h2>
+<p>=== Declaration ===</p>
+<p>GetPreviewFrame(options:int = GET_FRAME_BITMAP):Boolean</p>
+<p>=== Parameters ===</p>
+<p>| options:int | option as integer. Default is GET_FRAME_BITMAP = 2. A\  Also possible: \  GET_FRAME_RAW_BYTES:int = 4,\  GET_POWER_OF_2_FRAME_BGRA_BYTES:int = 8 |</p>
+<p>=== Return Value ===</p>
+<p>True if new frame was received otherwise false</p>
+<p>=== Description ===</p>
+<p>Get current preview Frame.</p>
+<h2 id="startpreview">StartPreview</h2>
+<h3 id="declaration_2">Declaration</h3>
+<p>StartPreview():int</p>
+<h3 id="return-value_1">Return Value</h3>
+<p>-<strong>1</strong> if call failed</p>
+<h3 id="description_2">Description</h3>
+<p>Start the preview.</p>
+<h3 id="availability_2">Availability</h3>
+<p>On Windows and Mac OSX</p>
+<h2 id="stoppreview">StopPreview</h2>
+<h3 id="declaration_3">Declaration</h3>
+<p>StopPreview():int</p>
+<h3 id="return-value_2">Return Value</h3>
+<p>-<strong>1</strong> if call failed</p>
+<h3 id="description_3">Description</h3>
+<p>Stop the preview.</p>
+<h3 id="availability_3">Availability</h3>
+<p>On Windows and Mac OSX</p>
+<h2 id="broadcast">Broadcast</h2>
+<h2 id="startbroadcast">StartBroadcast</h2>
+<h3 id="declaration_4">Declaration</h3>
+<p>StartBroadcast():int</p>
+<h3 id="return-value_3">Return Value</h3>
+<p>ERROR_SETUP_ENCODER_FAILED = -2</p>
+<p>ERROR_RTMP_OUTPUT_SOURCE1_FAILED = 2</p>
+<p>ERROR_RTMP_OUTPUT_SOURCE2_FAILED = 3</p>
+<h3 id="description_4">Description</h3>
+<p>Start broadcasting.</p>
+<h3 id="availability_4">Availability</h3>
+<p>On Windows and Mac OSX</p>
+<h2 id="stopbroadcast">StopBroadcast</h2>
+<h3 id="declaration_5">Declaration</h3>
+<p>StopBroadcast():int</p>
+<h3 id="return-value_4">Return Value</h3>
+<p>-<strong>1</strong> if call failed</p>
+<h3 id="description_5">Description</h3>
+<p>Stop broadcasting.</p>
+<h3 id="availability_5">Availability</h3>
+<p>On Windows and Mac OSX</p>
+<h2 id="video-source-audio-source-handling">Video Source &amp; Audio Source handling</h2>
+<h2 id="getnumberofvideosources">GetNumberOfVideoSources</h2>
+<h3 id="declaration_6">Declaration</h3>
+<p>GetNumberOfVideoSources():int</p>
+<h3 id="return-value_5">Return Value</h3>
+<p>Count of all available video sources.</p>
+<h3 id="description_6">Description</h3>
+<p>Count of all available video sources with current settings</p>
+<h3 id="availability_6">Availability</h3>
+<p>On Windows and Mac OSX</p>
+<h2 id="getnumberofaudiosources">GetNumberOfAudioSources</h2>
+<h3 id="declaration_7">Declaration</h3>
+<p>GetNumberOfAudioSources():int</p>
+<h3 id="return-value_6">Return Value</h3>
+<p>Count of all available audio sources.</p>
+<h3 id="description_7">Description</h3>
+<p>Count of all available audio sources with current settings</p>
+<h3 id="availability_7">Availability</h3>
+<p>On Windows and Mac OSX</p>
+<h2 id="getvideosource">GetVideoSource</h2>
+<h3 id="declaration_8">Declaration</h3>
+<p>GetVideoSource(index:int):String</p>
+<h3 id="parameters_1">Parameters</h3>
+<p>| index:int | Index of the video source. The index of the video source, from <strong>0 - GetNumberOfVideoSources -1</strong> |</p>
+<h3 id="return-value_7">Return Value</h3>
+<p>Video source name as string.</p>
+<h3 id="description_8">Description</h3>
+<p>Get name of the video source as string. Call <strong>GetNumberOfVideoSources</strong> first.</p>
+<h3 id="availability_8">Availability</h3>
+<p>On Windows and Mac OSX</p>
+<h2 id="getaudiosource">GetAudioSource</h2>
+<h3 id="declaration_9">Declaration</h3>
+<p>GetAudioSource(index:int):String</p>
+<h3 id="parameters_2">Parameters</h3>
+<p>| index:int | Index of the audio source. The index of the audio source, from <strong>0 - GetNumberOfAudioSources -1</strong> |</p>
+<h3 id="return-value_8">Return Value</h3>
+<p>Audio source name as string.</p>
+<h3 id="description_9">Description</h3>
+<p>Get name of the audio source as string. Call <strong>GetNumberOfAudioSources</strong> first.</p>
+<h3 id="availability_9">Availability</h3>
+<p>On Windows and Mac OSX</p>
+<h2 id="setvideosource">SetVideoSource</h2>
+<h3 id="declaration_10">Declaration</h3>
+<p>SetVideoSource(index:int, mixSource:int, mixMode:int):int</p>
+<h3 id="parameters_3">Parameters</h3>
+<p>| index:int     | Index of the video source. The index of the video source goes from <strong>0 - GetNumberOfVideoSources -1</strong> |
+| mixSource:int | set <strong>0</strong> to to set only the first video source. <strong>1</strong> to set a second video source |                                   <br />
+|               | <strong>—second video source only available on Microsoft Windows</strong> |
+| mixMode:int   | when mixSource <strong>1</strong> is set, the mix mode to combine two video sources can be chosen here. See available mix modes on page 33. |
+|               | <strong>—only available on Microsoft Windows</strong> |</p>
+<h3 id="return-value_9">Return Value</h3>
+<p>-<strong>1</strong> if call failed</p>
+<h3 id="description_10">Description</h3>
+<p>Set video source for preview or broadcasting over index. Call <strong>GetNumberOfVideoSources</strong> first. The mix source defines the video source you want set. The mixSource and mixMode is optional and only available on Microsoft Windows. There with you can combine two videos over the mixMode.</p>
+<h3 id="availability_10">Availability</h3>
+<p>On Mac OSX only one video source can use. On Microsoft Windows up to two video sources can be used and be combined in different ways.</p>
+<h2 id="setvideosourcefromurl">SetVideoSourceFromURL</h2>
+<h3 id="declaration_11">Declaration</h3>
+<p>SetVideoSourceFromURL(url:String):int</p>
+<h3 id="parameters_4">Parameters</h3>
+<p>| url:String | URL to use an mp4 file as video source. |</p>
+<h3 id="return-value_10">Return Value</h3>
+<p>-<strong>1</strong> if call failed</p>
+<h3 id="description_11">Description</h3>
+<p>URL to an mp4 file source to stream this file.</p>
+<h3 id="availability_11">Availability</h3>
+<p>Only Supported under Microsoft Windows</p>
+<h2 id="setaudiosource">SetAudioSource</h2>
+<h3 id="declaration_12">Declaration</h3>
+<p>SetAudioSource(index:int):int</p>
+<h3 id="parameters_5">Parameters</h3>
+<p>| index:int | Index of the audio source. The index of the audio source, from <strong>0 - GetNumberOfAudioSources -1</strong> |</p>
+<h3 id="return-value_11">Return Value</h3>
+<p>-<strong>1</strong> if call failed</p>
+<h3 id="description_12">Description</h3>
+<p>Set audio source for preview or broadcasting over index. Call <strong>GetNumberOfAudioSources</strong> first.</p>
+<h3 id="availability_12">Availability</h3>
+<p>Under Windows and Mac OSX</p>
+<h2 id="video-properties">Video Properties</h2>
+<h2 id="setvideowidth">SetVideoWidth</h2>
+<h3 id="declaration_13">Declaration</h3>
+<p>SetVideoWidth(width:int, mixSource:int):int</p>
+<h3 id="parameters_6">Parameters</h3>
+<p>| width:int | Width of the video in pixels as integer value |
+| mixSource:int | set <strong>0</strong> to to set only the first video source. <strong>1</strong> to set a second video source |
+|               | <strong>—second video source only available on Microsoft Windows</strong> |</p>
+<h3 id="return-value_12">Return Value</h3>
+<p>-<strong>1</strong> if call failed</p>
+<h3 id="description_13">Description</h3>
+<p>Set width of video in pixels. With mixSource the height for two video sources can be set.</p>
+<h3 id="availability_13">Availability</h3>
+<p>Set Width is supported under Mac OS X and Microsoft Windows. The second mix source is only available under Microsoft Windows.</p>
+<h2 id="setvideoheight">SetVideoHeight</h2>
+<h3 id="declaration_14">Declaration</h3>
+<p>SetVideoHeight(height:int, mixSource:int):int</p>
+<h3 id="parameters_7">Parameters</h3>
+<p>| height:int    | Height of the video in pixels as integer value                                      |
+| mixSource:int | set <strong>0</strong> to to set only the first video source. <strong>1</strong> to set a second video source |
+|           | <strong>—second video source only available on Microsoft Windows</strong> |</p>
+<h3 id="return-value_13">Return Value</h3>
+<p>-<strong>1</strong> if call failed</p>
+<h3 id="description_14">Description</h3>
+<p>Set height of video in pixels. With mixSource the height for two video sources can be set.</p>
+<h3 id="availability_14">Availability</h3>
+<p>Set Height is supported under Mac OS X and Microsoft Windows. The second mix source is only available under Microsoft Windows.</p>
+<h2 id="setvideoresizewidth">SetVideoResizeWidth</h2>
+<h3 id="declaration_15">Declaration</h3>
+<p>SetVideoResizeWidth(width:int, index:int):int</p>
+<h3 id="parameters_8">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>width:int</th>
+<th>resize width of the video in pixels as integer value</th>
+</tr>
+</thead>
+<tbody></tbody>
+</table>
+<h3 id="return-value_14">Return Value</h3>
+<p>-<strong>1</strong> if call failed</p>
+<h3 id="description_15">Description</h3>
+<p>Resize width of video in pixels.</p>
+<h3 id="availability_15">Availability</h3>
+<p>Only Supported under Microsoft Windows</p>
+<h2 id="setvideoresizeheight">SetVideoResizeHeight</h2>
+<h3 id="declaration_16">Declaration</h3>
+<p>SetVideoResizeHeight(height:int, index:int):int</p>
+<h3 id="parameters_9">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>height:int</th>
+<th>resize height of the video in pixels as integer value</th>
+</tr>
+</thead>
+<tbody></tbody>
+</table>
+<h3 id="return-value_15">Return Value</h3>
+<p>-<strong>1</strong> if call failed</p>
+<h3 id="description_16">Description</h3>
+<p>Resize height of video in pixels.</p>
+<h3 id="availability_16">Availability</h3>
+<p>Only supported under Microsoft Windows</p>
+<h2 id="setvideoframerate">SetVideoFramerate</h2>
+<h3 id="declaration_17">Declaration</h3>
+<p>SetVideoFramerate(framerate:Number, mixSource:int):int</p>
+<h3 id="parameters_10">Parameters</h3>
+<p>| framerate:Number | Frame rate in frames per Second(FPS) as number value.                               |
+| mixSource:int    | set <strong>0</strong> to to set only the first video source. <strong>1</strong> to set a second video source |
+|    | <strong>—second video source only available on Microsoft Windows</strong> |</p>
+<h3 id="return-value_16">Return Value</h3>
+<p>-<strong>1</strong> if call failed</p>
+<h3 id="description_17">Description</h3>
+<p>Set frame rate of video in frames per second (FPS). With mixSource the frame rate for two video sources can be set under Microsoft Windows.</p>
+<h3 id="availability_17">Availability</h3>
+<p>Set video frame rate is supported under Mac OS X and Microsoft Windows. Mix Source is only available under Microsoft Windows.</p>
+<p>===== SetNumberOfChannels =====</p>
+<p>=== Declaration ===</p>
+<p>SetNumberOfChannels(int numOfChannels)</p>
+<p>=== Parameters ===</p>
+<p>| numOfChannels:int | Number of channels as int value |</p>
+<p>=== Description ===</p>
+<p>Set channel number</p>
+<p>=== Availability ===</p>
+<p>On Mac OSX</p>
+<h2 id="setvideobitrate">SetVideoBitrate</h2>
+<p>=== Declaration ===</p>
+<p>SetVideoBitrate(bitrate:int, index:int):int</p>
+<p>=== Parameters ===</p>
+<p>| bitrate:int | Video bitrate as integer value. |
+| index:int   | index of output to set the bitrate for multiple encoders. |                                                      <br />
+|              | <strong>—set different outputs is only available on Microsoft Windows. On Mac OS X the same bitrate is set to all outputs.</strong>  |</p>
+<p>=== Return Value ===</p>
+<p>-<strong>1</strong> if call failed</p>
+<p>=== Description ===</p>
+<p>Set bitrate of video in kbits per second (kbits/s).</p>
+<p>=== Availability ===</p>
+<p>Under Mac OS X the same bitrate is set to all outputs. Under Microsoft Windows every output can be set to another bitrate.</p>
+<h2 id="getvideobitrate">GetVideoBitrate</h2>
+<p>=== Declaration ===</p>
+<p>GetVideoBitrate(int source)</p>
+<p>=== Parameters ===</p>
+<p>| index:int   | index of output to get the bitrate for multiple encoders. |                                                       <br />
+|               | <strong>—get different outputs is only available on Microsoft Windows. On Mac OS X there is only one source available.</strong>  |</p>
+<p>=== Return Value ===</p>
+<p>Video bitrate as integer value.</p>
+<p>=== Description ===</p>
+<p>Get the current video bitrate.</p>
+<p>=== Availability ===</p>
+<p>Under Mac OS X there is only one output available. Under Microsoft Windows several outputs are available over the index parameter.</p>
+<h2 id="audio-properties">Audio Properties</h2>
+<h2 id="setaudiobitrate">SetAudioBitrate</h2>
+<p>=== Declaration ===</p>
+<p>SetAudioBitrate(bitrate:int, index:int):int</p>
+<p>=== Parameters ===</p>
+<p>| bitrate:int | Audio bitrate as integer value.  |
+| index:int   | index of output to set the bitrate for multiple encoders. |                                                       <br />
+|               | <strong>—set different outputs is only available on Microsoft Windows. On Mac OS X the same bitrate is set to all outputs.</strong>  |</p>
+<p>=== Return Value ===</p>
+<p>-<strong>1</strong> if call failed</p>
+<p>=== Description ===</p>
+<p>Set bitrate of audio in kbits per second (kbits/s).</p>
+<p>=== Availability ===</p>
+<p>Under Mac OS X the same bitrate is set to all outputs. Under Microsoft Windows every output can be set to another bitrate.</p>
+<h2 id="getaudiobitrate">GetAudioBitrate</h2>
+<p>=== Declaration ===</p>
+<p>GetAudioBitrate(int source)</p>
+<p>=== Parameters ===</p>
+<p>| index:int   | index of output to get the bitrate for multiple encoders. |                                                       <br />
+|               | <strong>—Get different outputs is only available on Microsoft Windows. On Mac OS X there is only one source available.</strong>  |</p>
+<p>=== Return Value ===</p>
+<p>Audio bitrate as integer value.</p>
+<p>=== Description ===</p>
+<p>Get the current audio bitrate.</p>
+<h2 id="setaudiosamplerate">SetAudioSamplerate</h2>
+<h3 id="declaration_18">Declaration</h3>
+<p>SetAudioSamplerate(samplerate:int):int</p>
+<h3 id="parameters_11">Parameters</h3>
+<p>| samplerate:int | Samplerate of audio as integer value |</p>
+<h3 id="return-value_17">Return Value</h3>
+<p>-<strong>1</strong> if call failed</p>
+<h3 id="description_18">Description</h3>
+<p>Set the samplerate of the audio in Hertz (Hz).</p>
+<h3 id="availability_18">Availability</h3>
+<p>Under Windows and Mac OSX.</p>
+<h2 id="getaudiolevel">GetAudioLevel</h2>
+<h3 id="declaration_19">Declaration</h3>
+<p>GetAudioLevel(channel:int):int</p>
+<h3 id="parameters_12">Parameters</h3>
+<p>| channel:int | channel id as integer. |</p>
+<h3 id="return-value_18">Return Value</h3>
+<p>Audiolevel as integer value.</p>
+<h3 id="description_19">Description</h3>
+<p>Get the audio level of a channel.</p>
+<h3 id="availability_19">Availability</h3>
+<p>Under Windows and Mac OSX.</p>
+<h2 id="setaudiovolume">SetAudioVolume</h2>
+<h3 id="declaration_20">Declaration</h3>
+<p>SetAudioVolume(volume:int):int</p>
+<h3 id="parameters_13">Parameters</h3>
+<p>| volume:int | volume as integer value |</p>
+<h3 id="return-value_19">Return Value</h3>
+<p><strong>-1</strong> if call failed</p>
+<h3 id="description_20">Description</h3>
+<p>Set audio volume.</p>
+<h3 id="availability_20">Availability</h3>
+<p>Under Windows and Mac OSX.</p>
+<h2 id="setaudiopreviewvolume">SetAudioPreviewVolume</h2>
+<h3 id="declaration_21">Declaration</h3>
+<p>SetAudioPreviewVolume(volume:int):int</p>
+<h3 id="parameters_14">Parameters</h3>
+<p>| volume:int | volume as integer value |</p>
+<h3 id="return-value_20">Return Value</h3>
+<p><strong>-1</strong> if call failed</p>
+<h3 id="description_21">Description</h3>
+<p>Set audio volume of preview.</p>
+<h3 id="availability_21">Availability</h3>
+<p>Under Windows and Mac OSX.</p>
+<h2 id="color-management">Color Management</h2>
+<h2 id="setcolorspace">SetColorSpace</h2>
+<h3 id="declaration_22">Declaration</h3>
+<p>SetColorSpace(index:int, mixSource:int):int</p>
+<h3 id="parameters_15">Parameters</h3>
+<p>| index:int     | index of the input source. |
+| mixSource:int | set <strong>0</strong> to to set only the first mixed source. <strong>1</strong> to set a second mixed source |
+|       | <strong>—second mixed source is only available on Microsoft Windows</strong> |</p>
+<h3 id="return-value_21">Return Value</h3>
+<p>-<strong>1</strong> if call failed</p>
+<h3 id="description_22">Description</h3>
+<p>Set the color space of an input source. Only the firtst source is supported under Mac OS X</p>
+<h3 id="availability_22">Availability</h3>
+<p>Under Windows and Mac OSX.</p>
+<h2 id="getnumberofcolorspaces">GetNumberOfColorspaces</h2>
+<h3 id="declaration_23">Declaration</h3>
+<p>GetNumberOfColorspaces(width:int, height:int, mixSource:int):int</p>
+<h3 id="parameters_16">Parameters</h3>
+<p>| width:int     | width of the video source  |
+| height:int    | height of the video source  |
+| mixSource:int | set <strong>0</strong> to to get the first mixed source. <strong>1</strong> to get the second mixed source |
+|  | <strong>—second mixed source is only available on Microsoft Windows</strong> |</p>
+<h3 id="return-value_22">Return Value</h3>
+<p>Count of color spaces as integer value.</p>
+<h3 id="description_23">Description</h3>
+<p>Get the count of color spaces. Get the color space for the specified with and height.</p>
+<h3 id="availability_23">Availability</h3>
+<p>Under Windows and Mac OSX. Under Mac OSX mix source is not supported.</p>
+<h2 id="getcolorspace">GetColorspace</h2>
+<h3 id="declaration_24">Declaration</h3>
+<p>GetColorspace(index:int, mixSource:int):String</p>
+<h3 id="parameters_17">Parameters</h3>
+<p>| index:int     | Index of the color spaces. The index of the color spaces, from <strong>0 - GetNumberOfColorspaces -1</strong> |
+| mixSource:int | set <strong>0</strong> to to get the first mixed source. <strong>1</strong> to get the second mixed source |           <br />
+|   | <strong>—second mixed source is only available on Microsoft Windows</strong> |</p>
+<h3 id="return-value_23">Return Value</h3>
+<p>color space name as String</p>
+<h3 id="description_24">Description</h3>
+<p>Get color space name as string. First call <strong>GetNumberOfColorspaces.</strong></p>
+<h3 id="availability_24">Availability</h3>
+<p>Under Windows and Mac OSX. Under Mac OSX only the first mix source is supported.</p>
+<h2 id="resolution-frame-rate">Resolution &amp; Frame rate</h2>
+<h2 id="getnumberofresolutions">GetNumberOfResolutions</h2>
+<h3 id="declaration_25">Declaration</h3>
+<p>GetNumberOfResolutions(mixSource:int):int</p>
+<h3 id="parameters_18">Parameters</h3>
+<p>| mixSource:int | set <strong>0</strong> to to get the first mixed source. <strong>1</strong> to get the second mixed source |
+|                 | <strong>—second mixed source is only available on Microsoft Windows</strong> |</p>
+<h3 id="return-value_24">Return Value</h3>
+<p>Count of resolutions as integer value.</p>
+<h3 id="description_25">Description</h3>
+<p>Get count of resolutions.</p>
+<h3 id="availability_25">Availability</h3>
+<p>Under Windows and Mac OSX. Under Mac OSX only the first mix source is supported.</p>
+<h2 id="getresolution">GetResolution</h2>
+<h3 id="declaration_26">Declaration</h3>
+<p>GetResolution(index:int, mixSource:int):Object</p>
+<h3 id="parameters_19">Parameters</h3>
+<p>| index:int     | Index of the resolutions. The index of the resolutions, from <strong>0 - GetNumberOfResolutions -1</strong> |
+| mixSource:int | set <strong>0</strong> to to get the first mixed source. <strong>1</strong> to get the second mixed source  |           <br />
+|                    | <strong>—second mixed source is only available on Microsoft Windows</strong> |</p>
+<h3 id="return-value_25">Return Value</h3>
+<p>Get resolution of video source. First call <strong>GetNumberOfResolutions.</strong></p>
+<h3 id="description_26">Description</h3>
+<p>Get count of resolutions.</p>
+<h3 id="availability_26">Availability</h3>
+<p>Under Windows and Mac OSX. Under Mac OSX only the first mix source is supported.</p>
+<h2 id="getnumberofframerates">GetNumberOfFramerates</h2>
+<h3 id="declaration_27">Declaration</h3>
+<p>GetNumberOfFramerates(width:int, height:int, colorspace:String, mixSource:int):int</p>
+<h3 id="parameters_20">Parameters</h3>
+<p>| width:int         | width of the video source  |
+| height:int        | height of the video source.                                                      |
+| colorspace:String | name of the color space get from GetColorspace                                   |
+| mixSource:int     | set <strong>0</strong> to to get the first mixed source. <strong>1</strong> to get the second mixed source |
+|        | <strong>—second mixed source is only available on Microsoft Windows</strong> |</p>
+<h3 id="return-value_26">Return Value</h3>
+<p>Count of available frame rates as integer value.</p>
+<h3 id="description_27">Description</h3>
+<p>Get count of available frame rates.</p>
+<h3 id="availability_27">Availability</h3>
+<p>Under Windows and Mac OSX. Under Mac OSX only the first mix source is supported.</p>
+<h2 id="getframerate">GetFramerate</h2>
+<h3 id="declaration_28">Declaration</h3>
+<p>GetFramerate(index:int, mixSource:int):Number</p>
+<h3 id="parameters_21">Parameters</h3>
+<p>| index:int     | Index of the frame rate. The index of the frame rate, from <strong>0 - GetNumberOfFramerates -1</strong> |
+| mixSource:int | set <strong>0</strong> to to get the first mixed source. <strong>1</strong> to get the second mixed source  |        <br />
+|     | <strong>—second mixed source is only available on Microsoft Windows</strong> |</p>
+<h3 id="return-value_27">Return Value</h3>
+<p>Frame rate (FPS) as number value.</p>
+<h3 id="description_28">Description</h3>
+<p>Get the frame rate of a video source. Call <strong>GetNumberOfFramerates</strong> first.</p>
+<h3 id="availability_28">Availability</h3>
+<p>Under Windows and Mac OSX. Under Mac OSX only the first mix source is supported.</p>
+<h2 id="setdeinterlacing">SetDeinterlacing</h2>
+<h3 id="declaration_29">Declaration</h3>
+<p>SetDeinterlacing(mode:int, method:int):int</p>
+<h3 id="parameters_22">Parameters</h3>
+<p>| mode:int   | possible values: <strong>0</strong>=off, <strong>1</strong>=auto, <strong>2</strong>=on   \  no auto mode for mac |
+| method:int | possible values: <strong>0</strong>=duplicate field/bob, <strong>1</strong>=blend, <strong>2</strong>=vertical filter, <strong>3</strong>=edge, 4=median, <strong>5</strong>=median2 |</p>
+<h3 id="return-value_28">Return Value</h3>
+<p><strong>-1</strong> if call failed</p>
+<h3 id="description_29">Description</h3>
+<p>Set deinterlacing mode and method.</p>
+<h3 id="availability_29">Availability</h3>
+<p>Under Windows and Mac OSX.</p>
+<h2 id="outputs">Outputs</h2>
+<h2 id="getnumberofoutputs">GetNumberOfOutputs</h2>
+<h3 id="declaration_30">Declaration</h3>
+<p>GetNumberOfOutputs():int</p>
+<h3 id="return-value_29">Return Value</h3>
+<p>Count of outputs as integer value.</p>
+<h3 id="description_30">Description</h3>
+<p>Get count of outputs.</p>
+<h3 id="availability_30">Availability</h3>
+<p>Only Supported under Microsoft Windows.</p>
+<h2 id="addoutput">AddOutput</h2>
+<h3 id="declaration_31">Declaration</h3>
+<p>AddOutput(url:String):int</p>
+<h3 id="parameters_23">Parameters</h3>
+<p>| url:String | Url of outputs can be a local mp4 recording or a rtmp source. |</p>
+<h3 id="return-value_30">Return Value</h3>
+<p><strong>-1</strong> if call failed</p>
+<h3 id="description_31">Description</h3>
+<p>Add new output source with url.</p>
+<h3 id="availability_31">Availability</h3>
+<p>Only Supported under Microsoft Windows.</p>
+<h2 id="setoutputurl">SetOutputUrl</h2>
+<h3 id="declaration_32">Declaration</h3>
+<p>SetOutputUrl(url:String, index:int):int</p>
+<h3 id="parameters_24">Parameters</h3>
+<p>| url:String | Url of outputs can be a local mp4 recording or a rtmp server. |
+| index:int  | Index of the output.                                          |</p>
+<h3 id="return-value_31">Return Value</h3>
+<p><strong>-1</strong> if call failed</p>
+<h3 id="description_32">Description</h3>
+<p>Set output with url. A local mp4 recording or a rtmp server.</p>
+<h3 id="availability_32">Availability</h3>
+<p>Under Windows and Mac OSX.</p>
+<h2 id="getoutputurl">GetOutputUrl</h2>
+<h2 id="getnumberofoutputurls">GetNumberOfOutputUrls</h2>
+<h2 id="acceptdatainsamplebuffer">AcceptDataInSampleBuffer</h2>
+<h2 id="setfilesourcefilename">SetFilesourceFilename</h2>
+<h3 id="declaration_33">Declaration</h3>
+<p>SetFilesourceFilename(url:String):int</p>
+<h3 id="parameters_25">Parameters</h3>
+<p>| url:String | Url to the local file |</p>
+<h3 id="return-value_32">Return Value</h3>
+<p><strong>-1</strong> if call failed</p>
+<h3 id="description_33">Description</h3>
+<p>Set the filename of a local source.</p>
+<h3 id="availability_33">Availability</h3>
+<p>Only Supported under Microsoft Windows.</p>
+<h2 id="clearoutputs">ClearOutputs</h2>
+<h3 id="declaration_34">Declaration</h3>
+<p>ClearOutputs():int</p>
+<h3 id="return-value_33">Return Value</h3>
+<p><strong>-1</strong> if call failed</p>
+<h3 id="description_34">Description</h3>
+<p>Reset all outputs except the first one.</p>
+<h3 id="availability_34">Availability</h3>
+<p>Only Supported under Microsoft Windows.</p>
+<h2 id="video-special">Video Special</h2>
+<h2 id="setvideoeffect">SetVideoEffect</h2>
+<h3 id="declaration_35">Declaration</h3>
+<p>SetVideoEffect(mode:int):int</p>
+<h3 id="parameters_26">Parameters</h3>
+<p>| mode:int | Mode of video effect. See possible overlay effects on page 33 |</p>
+<h3 id="return-value_34">Return Value</h3>
+<p><strong>-1</strong> if call failed</p>
+<h3 id="description_35">Description</h3>
+<p>Add a video effect. For overlay.</p>
+<h3 id="availability_35">Availability</h3>
+<p>Only Supported under Microsoft Windows.</p>
+<h2 id="setoverlay">SetOverlay</h2>
+<h3 id="declaration_36">Declaration</h3>
+<p>SetOverlay(url:String):int</p>
+<h3 id="parameters_27">Parameters</h3>
+<p>| url:String | Url of the overlay source. Can be a locale path or server url to a png or txt file. Also can be a txt string. |</p>
+<h3 id="return-value_35">Return Value</h3>
+<p><strong>-1</strong> if call failed</p>
+<h3 id="description_36">Description</h3>
+<p>Add a overlay to the video.</p>
+<h3 id="availability_36">Availability</h3>
+<p>Only Supported under Microsoft Windows.</p>
+<h2 id="showpropertypage">ShowPropertyPage</h2>
+<h3 id="declaration_37">Declaration</h3>
+<p>ShowPropertyPage(value:int):int</p>
+<h3 id="parameters_28">Parameters</h3>
+<p>| value:int | <strong>1</strong> or <strong>0</strong> are possible values |</p>
+<h3 id="return-value_36">Return Value</h3>
+<p><strong>-1</strong> if call failed</p>
+<h3 id="description_37">Description</h3>
+<p>Show property page. Only used for Blackmagic devices.</p>
+<h3 id="availability_37">Availability</h3>
+<p>Only supported under Microsoft Windows.</p>
+<h2 id="logging">Logging</h2>
+<h2 id="setlog">SetLog</h2>
+<h3 id="declaration_38">Declaration</h3>
+<p>SetLog(logFile:String, logLevel:int):int</p>
+<h3 id="parameters_29">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>logFile:String</th>
+<th>local path for logfile as string.</th>
+</tr>
+</thead>
+<tbody></tbody>
+</table>
+<h3 id="return-value_37">Return Value</h3>
+<p><strong>-1</strong> if call failed</p>
+<h3 id="description_38">Description</h3>
+<p>Set log file path and log level.</p>
+<h3 id="availability_38">Availability</h3>
+<p>Under Windows and Mac OSX.</p>
+<h3 id="availability_39">Availability</h3>
+<p>Under Windows and Mac OSX.</p>
+<h2 id="setxmlprofile">SetXmlProfile</h2>
+<h2 id="dispose">dispose</h2>
+<h3 id="declaration_39">Declaration</h3>
+<p>dispose():void</p>
+<h3 id="description_39">Description</h3>
+<p>Destructor.</p>
+<h3 id="availability_40">Availability</h3>
+<p>Under Windows and Mac OSX.</p>
+<h1 id="setconfig-properties">SetConfig Properties</h1>
+<p>| <strong>Property name</strong>               | <strong>Description</strong>                                                                                                              | <strong>Values</strong>                                                                                                                                               |  Mac Platform Support  | 
+| license                                 | License string                                                                                                              |                                                                                                                                                                |                  ✔                          |
+| XMLPath                              | Path to the XML file with configuration information                                                      |                                                                                                                                                                |                  ✔                          |
+| RemoteControlPort              | Port number                                                                                                                 |                                                                                                                                                                |                  ✔                          |
+| LiveSource                           |                                                                                                                                     |                                                                                                                                                               |                  ✔                          |
+| RemoteIP                             |                                                                                                                                     |                                                                                                                                                               |                  ✔                          |
+| AVOffsetMs              |                                                           |                                                                                                                                                                                                                                                     |                  ✔                          |
+| ReconnectPeriod/ReconnectInterval              |                                                           |                                                                                                                                                                                                               |                  ✔                          |
+| ReconnectAttempts              | Auto Reconnect No. of Attempts  | 5                                                                                                                                                                                                                                           |                  ✔                          | 
+| UseInternalReconnect              | Use RTMP Internal Reconnect of the RTMP Filter (do not stop encoder on network errors)  | 0 / 1                                                                                                                                          |                  ✔                          |
+| UseUnlimitedReconnect              | Don't stop reconnecting after a specific number of failed attempts (encoder is not stopped)  | 0 / 1                                                                                                                                   |                  ✔                          |
+| Auth              |  Authentication for RTMP and RTSP Push streaming                                                         | “user:password”                                                                                                                                                      |                  ✔                          | 
+| RtmpUrlDelimiter              | Set delimiter for RTMP-url and streamname.                                                          | Example: ”+“ will split <a href="rtmp://localhost/live+myStream"></a> so that “myStream” is the stream name.                   |                  ✔                          | 
+| DeinterlacingMode              | Deinterlacing Mode                                                          | 0=off, 1=auto (default), 2=on Note: for some capture devices you need to set this to „on“ (2). (Resolutions 480i, 576i, 1080i)             |                  ✔                          |
+| DeinterlacingMethod              | Deinterlacing Method                                                           | 0=duplicate field/bob, 1=blend, 2=vertical filter, 3=edge, 4=median, 5=median2                                                                          |                  ✔                          |
+| RemoteSendAudioLevelInterval              |                                                           |                                                                                                                                                                                                                        |                  ✔                          |
+| CaptureRegion              | Capture Region of the input source, example for a input resolution of 640×480: SetConfig(“CaptureRegion”, “10,630,10,470”) - discards 10 pixels on each side | left,right,top,bottom                    |                  ✔                          |
+| RTMPPublishMode              | RTMP Publish/Live/Record on Server (VOD)                                                          | 1=record, 2=append, 0=live (default)                                                                                                             |                  ✔                          | 
+| VideoAudioInput              |                                                           |                                                                                                                                                                                                                                             |                  ✔                          | 
+| PreviewNoInvert              |                                                           |                                                                                                                                                                                                                                             |                  ✔                          |
+| ScreenCapMode              | Screen Capture Desktop Mode                                                          | 0=Screen, 1=FollowMouse, 2=Region relative, 3=Region absolute, 4=Window, 5=Window overlapping                               |                  ✔                          | 
+| ScreenCapWindowIndex              |                                                           |                                                                                                                                                                                                                                   |                  ✔                          | 
+| ApplyDynamicSettings              |                                                           |                                                                                                                                                                                                                                       |                  ✔                          | 
+| Mp4RecordOnTheFlyChangeName |                                                                                                     |                                                                                                                                                                                        |        ✔          | 
+| Mp4RecordOnTheFlyControl    | If Mp4RecordOnTheFly is enabled, controls start/stop recording        | 0=stop, 1=start                                                                                                                                                               |        ✔          | 
+| AudioPreview                | Enables audio preview during preview or broadcast                                       | 0=no preview, 1=visual preview (default, requires filter AudioVolume), 2=visual and audible preview, 3=audible preview  |       ✔          | 
+| Mp4RecordOnTheFly           | Enables start/stop recording to local file while the broadcast is running  | 0=off (default), 1=on                                                                                                                                                        |      ✔           | 
+| H264Quality                 | H.264 Encoder Quality/Speed Ratio                                                                 | 0=worst/fastest 1=default 6=highest/slowest                                                                                                                 |      ✔           | 
+| H264IFrameDistance              | H.264 I Frame / GOP Length in Frames (100 Frames = 4 seconds for 25 fps)   | 100=default, 1 = I-Frame-Only                                                                                                                              |                  ✔                          |
+| H264PFrameDistance             | H.264 P/B Frame Distance                                                                   | 3 1 = IP-Only (no B-Frames)                                                                                                                                             |                  ✔                          | 
+| H264Profile              | H.264 Encoding Profile                                                          | Baseline, Main, Extended, High Most compatible but lowest quality is Baseline, (no B-Frames, no CABAC VLC)                                           |                  ✔                          | 
+| H264Level              | H.264 Level                                                           | 10=1.0, 11=1.1, 12=1.2, 13=1.3, 20=2.0, 21=2.1, 22=2.2, 30=3.0, 31=3.1, 32=3.2, 40=4.0, 41=4.1, 42=4.2, 50=5.0, 51=5.1                                         |                  ✔                          |
+| H264VlcMode              | H.264 VLC Mode (CAVLC/CABAC)                                                          | =CAVLC, 2=CABAC (not allowed in H.264 Baseline Profile)                                                                                                     |                  ✔                          |
+| OutputFrameRate             | Video Output (Encoded) Frame Rate                                                           | 5,10,15,20,25,30, OR 23980 OR 29970                                                                                                                          |       ✔          | 
+| RTMPWriteTimecode           | Send timecodes in RTMP streams, If enabled RTMP timecodes are sent in addition to the always sent RTMP packet timestamps | 0=off (default), 1=on                                                                 |      ✔           |
+| UseSystemTimeAsTimecode              | Send RTMP/MP4 timecodes as UTC system date time or stream time                                                          | 0=stream time (default), 1=UTC system date time                                       |                  ✔                          | 
+| TimecodeInterval            | RTMP/MP4 timecode interval in milliseconds                                                | Should be higher or equal to 1000 (1s)                                                                                                                          |        ✔         |
+| TcpConnectTimeout              |                                                           |                                                                                                                                                                                                                                             |                  ✔                          | 
+| RTSPSinkMode              | Determines if the RTSPSink is running as a server (passive/pull) or as a streamer to a RTSP push capable server (active/push) | 1=server/pull (default), 2=streamer/push                                            |                  ✔                          |<br />
+| RTSPSDPFileFolder              |                                                           |                                                                                                                                                                                                                                             |                  ✔                          | 
+| RTSPStreamDescription              |                                                           |                                                                                                                                                                                                                                             |                  ✔                          |
+| AudioVolumePerSoftware              | Control volume with the Audio Volume Filter                                                          | 0=off (default), 1=on                                                                                                                                                                                                                                             |                  ✔                          | 
+| AVFShowBlackmagicDevices    | use AVFoundation for BlackMagic devices                                                                                                                                 | 0=off (default), 1=on                                                                 |       ✔          |
+| OverlayRect                 | Sets the dimensions for a given overlay-image.  | “index,left,top,right,bottom”. index: the overlay-index, beginning with 0. left, top, right and bottom define a rectangle in screen-coordinates.           |        ✔         |
+| OverlayAlpha                | Sets the alpha-value for overlays.   | Range: 0-1. 0.0 (not visable), 1 (fully visable).                                                                                                                                                                                 |       ✔          |
+| OverlayTextColor            | Text Overlay Color | Must be a hexadecimal color-value in BGR-format, e.g.: “0000FF” (255 (0x0000FF) - red)                                                                                                                                     |       ✔          | 
+| OverlayBackgroundColor      |                         | Must be a hexadecimal color-value in BGR-format, e.g.: “000000” (0 (0x000000) - black).                                                                                                                                   |       ✔          | 
+| OverlaySkipColor            | Setting skipcolor to a specific value will result in this color to be rendered transparent in the overlays.              | Example: If OverlayBackgroundColor was set to blue (“FF0000”) setting OverlaySkipColor to blue as well will result in a transparent background. Parameter must be a hexadecimal color-value in BGR-format, e.g.: “FF0000” (blue). Disable: Setting OverlaySkipColor to “FF000000” (ABGR) will disable the usage of skipcolor.                                                                                                                                                 |       ✔          | 
+| AudioDelay                  | Streaming Audio Delay / Offset (ms) |                                                                                                                                                                                                                                                      |        ✔         |
+| ShowPropertyPageForDevice   | Calls the propertypage for a given device.                                                                               | 0 for device with index: 0                                                                                                         |         ✔        |
+| UseQuicktimeH264Encoder              |                                                           |                                                                                                                                                                                                                               |                  ✔                          | 
+| RotateDegrees              | set the degrees by which video should be rotated, only works if UseRotation is set to on, set before StartPreview or StartBroadcast | 0/90/180/270                                                                           |                  ✔                          |</p>
+<h1 id="mixmode">Mixmode</h1>
+<p>NO_MIXING = 0 (if video mixing is not used)</p>
+<p>LEFT_RIGHT_FULL = 1</p>
+<p>LEFT_RIGHT_HALF = 2</p>
+<p>TOP_BOTTOM = 3</p>
+<p>INTERLACED_LINES = 4</p>
+<p>INTERLACED_COLUMN = 5</p>
+<p>ANAGLYPH = 6</p>
+<p>PIC_IN_PIC_LEFT_TOP = 7</p>
+<p>PIC_IN_PIC_RIGHT_TOP = 8</p>
+<p>PIC_IN_PIC_LEFT_BOTTOM = 9</p>
+<p>PIC_IN_PIC_RIGHT_BOTTOM = 10</p>
+<p>VIDEO1_ONLY = 11</p>
+<p>VIDEO2_ONLY = 12</p>
+<p>REGION = 13</p>
+<p>MAX = 14</p>
+<h1 id="overlay-effects">Overlay Effects</h1>
+<p>Overlay off = 0</p>
+<p>Left Top = 1</p>
+<p>Right Top = 2</p>
+<p>Left Bottom = 3</p>
+<p>Right bottom = 4</p>
+<p>Free Postion = 5</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../nanostream-android-sdk/" class="btn btn-neutral float-right" title="Android nanoStream SDK"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../nanostream-ios-sdk/" class="btn btn-neutral" title="ios api"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../nanostream-ios-sdk/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../nanostream-android-sdk/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>
