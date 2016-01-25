@@ -1,5 +1,92 @@
 # Android nanoStream SDK
 
+## Resolution, aspect ratio and orientation
+
+### Resolution
+With the resolution we mean the native resolution of the camera (Input) in the most situations this will be the same for the output.
+To set the resolution there is a function in the `VideoSettings` object called `setResolution(Resolution res)`. If you set a resolution that the
+Device don't support we automatically switch to the nearest resolution of the device. To get the supported resolutions from the device you can use the `getCapabilities().listAvailableVideoResolutions()`
+on the `nanoStream` object, this returns you a `Resolution[]` from the current video source.
+
+### Aspect ratio
+With the  aspect ratio we mean the aspect ratio of the outgoing stream, over the aspect ratio we decide if we need to crop the stream.
+To set the aspect ratio there is a function in the `VideoSettings` object called `setAspectRatio(AspectRatio aspectRatio)`.
+
+#### Possible aspect ratio
+| aspect ratio | AspectRatio value            |
+|--------------|------------------------------|
+| keep input   | AspectRatio.RATIO_KEEP_INPUT |
+| 1:1          | AspectRatio.RATIO_1_1        |
+| 4:3          | AspectRatio.RATIO_4_3        |
+| 16:9         | AspectRatio.RATIO_16_9       |
+| 3:4          | AspectRatio.RATIO_3_4        |
+| 9:16         | AspectRatio.RATIO_9_16       |
+
+
+
+### orientation
+The normal stream orientation is landscape, if you switch to portrait the resolution switch from 640x480 to 480x640.
+You can set the stream orientation on the `nanoStream` object with the `setStreamRotation` function. The stream orientation needs to be set
+before starting the stream, it is not possible to switch the orientation during the stream.
+
+#### Possible orientations
+
+| orientation           | Rotation value        |
+|-----------------------|-----------------------|
+| landscape             | Rotation.ROTATION_0   |
+| portrait              | Rotation.ROTATION_90  |
+| landscape upside down | Rotation.ROTATION_180 |
+| portrait upside down  | Rotation.ROTATION_270 |
+
+
+### Aspect ration and orientation relationship
+The resolution is set here to 640x480.
+
+| orientation                    | aspect ratio | stream area                                 |
+|--------------------------------|--------------|---------------------------------------------|
+| portrait<sup>[1](#fnAS1)</sup> | keep input   | ![Screenshot](img/portrait_keep_input.png)  |
+| portrait<sup>[1](#fnAS1)</sup> | 4:3          | ![Screenshot](img/portrait_4_3.png)         |
+| portrait<sup>[1](#fnAS1)</sup> | 3:4          | ![Screenshot](img/portrait_3_4.png)         |
+| portrait<sup>[1](#fnAS1)</sup> | 16:9         | ![Screenshot](img/portrait_16_9.png)        |
+| portrait<sup>[1](#fnAS1)</sup> | 9:16         | ![Screenshot](img/portrait_9_16.png)        |
+| landscape                      | keep input   | ![Screenshot](img/landscape_keep_input.png) |
+| landscape                      | 4:3          | ![Screenshot](img/landscape_4_3.png)        |
+| landscape                      | 3:4          | ![Screenshot](img/landscape_3_4.png)        |
+| landscape                      | 16:9         | ![Screenshot](img/landscape_16_9.png)       |
+| landscape                      | 9:16         | ![Screenshot](img/landscape_9_16.png)       |
+
+<a name="fnAS1">1</a>: In this sample APP we crop the preview so it don't look ugly, so the stream is actually larger then the preview.
+
+### Example
+If You want to stream with a resolution of 640x360 but your device don't supports this resolution. We need to crop the resolution from 640x480 (this resolution is supported by the most devices) to 640x360,
+this will be done over the aspect ratio, so you need to set the aspect ratio to 16:9 to stream with a resolution of 640x360.
+
+### Implementation Example
+
+
+```java
+public class MainActifity {
+    ...
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+      super.onCreate(savedInstanceState);
+      nanoStreamSettings nss = new nanoStreamSettings();
+      VideoSettings vs = new VideoSettings();
+      ...
+      vs.setResolution(new Resolution(640, 480)); // default value
+      vs.setAspectRatio(AspectRatio.RATIO_16_9); // default value is AspectRatio.KEEP_INPUT
+      ...
+      streamLib = new nanoStream(nss);
+      streaLib.init();
+
+      streamLib.setStreamRotation(Rotation.ROTATION_0); // default value
+      ...
+    }
+    ...
+}
+```
+
+
 ## Camera Focus
 
 ### Description
