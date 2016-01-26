@@ -1,21 +1,21 @@
 # Android nanoStream SDK
 
-## Resolution, aspect ratio and orientation
+## Resolution, Aspect Ratio and Orientation
 
 ### Resolution
-With the resolution we mean the native resolution of the camera (Input) in the most situations this will be the same for the output.
+Resolution means the native resolution of the camera (input). In the most situations this will be the same for the output.
 To set the resolution there is a function in the `VideoSettings` object called `setResolution(Resolution res)`. If you set a resolution that the
-Device don't support we automatically switch to the nearest resolution of the device. To get the supported resolutions from the device you can use the `getCapabilities().listAvailableVideoResolutions()`
-on the `nanoStream` object, this returns you a `Resolution[]` from the current video source.
+device doesn't support, nanoStream will automatically switch to the nearest resolution available on the device. A list of supported resolutions for the current video source can be obtained from `getCapabilities().listAvailableVideoResolutions()`
+on the `nanoStream` object. 
 
-### Aspect ratio
-With the  aspect ratio we mean the aspect ratio of the outgoing stream, over the aspect ratio we decide if we need to crop the stream.
-To set the aspect ratio there is a function in the `VideoSettings` object called `setAspectRatio(AspectRatio aspectRatio)`.
+### Aspect Ratio
+Aspect ratio means the aspect ratio of the outgoing stream. The aspect ratio determines if the input video needs to be cropped. 
+The aspect ratio can be set through the `setAspectRatio(AspectRatio aspectRatio)` function on the `VideoSettings` object. 
 
-#### Possible aspect ratio
-| aspect ratio | AspectRatio value            |
+#### Supported Aspect Ratios
+| Aspect Ratio | AspectRatio value            |
 |--------------|------------------------------|
-| keep input   | AspectRatio.RATIO_KEEP_INPUT |
+| Keep Input   | AspectRatio.RATIO_KEEP_INPUT |
 | 1:1          | AspectRatio.RATIO_1_1        |
 | 4:3          | AspectRatio.RATIO_4_3        |
 | 16:9         | AspectRatio.RATIO_16_9       |
@@ -24,42 +24,43 @@ To set the aspect ratio there is a function in the `VideoSettings` object called
 
 
 
-### orientation
-The normal stream orientation is landscape, if you switch to portrait the resolution switch from 640x480 to 480x640.
+### Orientation
+The default stream orientation is landscape. If you switch to portrait the resolution will swap width and height, e.g. from 640x480 to 480x640.
 You can set the stream orientation on the `nanoStream` object with the `setStreamRotation` function. The stream orientation needs to be set
 before starting the stream, it is not possible to switch the orientation during the stream.
 
-#### Possible orientations
+#### Supported Orientations
 
-| orientation           | Rotation value        |
+| Orientation           | Rotation Value        |
 |-----------------------|-----------------------|
-| landscape             | Rotation.ROTATION_0   |
-| portrait              | Rotation.ROTATION_90  |
-| landscape upside down | Rotation.ROTATION_180 |
-| portrait upside down  | Rotation.ROTATION_270 |
+| Landscape             | Rotation.ROTATION_0   |
+| Portrait              | Rotation.ROTATION_90  |
+| Landscape Upside Down | Rotation.ROTATION_180 |
+| Portrait Upside Down  | Rotation.ROTATION_270 |
 
 
-### Aspect ration and orientation relationship
-The resolution is set here to 640x480.
+### Example Combinations of Aspect Ratios and Orientations  
+The input resolution is set to 640x480 here. 
+The red rectangle marks up the active area that is included in the output stream. 
 
-| orientation                    | aspect ratio | stream area                                 |
+| Orientation                    | Aspect Ratio | Stream Area                                 |
 |--------------------------------|--------------|---------------------------------------------|
-| portrait<sup>[1](#fnAS1)</sup> | keep input   | ![Screenshot](img/portrait_keep_input.png)  |
-| portrait<sup>[1](#fnAS1)</sup> | 4:3          | ![Screenshot](img/portrait_4_3.png)         |
-| portrait<sup>[1](#fnAS1)</sup> | 3:4          | ![Screenshot](img/portrait_3_4.png)         |
-| portrait<sup>[1](#fnAS1)</sup> | 16:9         | ![Screenshot](img/portrait_16_9.png)        |
-| portrait<sup>[1](#fnAS1)</sup> | 9:16         | ![Screenshot](img/portrait_9_16.png)        |
-| landscape                      | keep input   | ![Screenshot](img/landscape_keep_input.png) |
-| landscape                      | 4:3          | ![Screenshot](img/landscape_4_3.png)        |
-| landscape                      | 3:4          | ![Screenshot](img/landscape_3_4.png)        |
-| landscape                      | 16:9         | ![Screenshot](img/landscape_16_9.png)       |
-| landscape                      | 9:16         | ![Screenshot](img/landscape_9_16.png)       |
+| Portrait<sup>[1](#fnAS1)</sup> | Keep Input   | ![Screenshot](img/portrait_keep_input.png)  |
+| Portrait<sup>[1](#fnAS1)</sup> | 4:3          | ![Screenshot](img/portrait_4_3.png)         |
+| Portrait<sup>[1](#fnAS1)</sup> | 3:4          | ![Screenshot](img/portrait_3_4.png)         |
+| Portrait<sup>[1](#fnAS1)</sup> | 16:9         | ![Screenshot](img/portrait_16_9.png)        |
+| Portrait<sup>[1](#fnAS1)</sup> | 9:16         | ![Screenshot](img/portrait_9_16.png)        |
+| Landscape                      | Keep Input   | ![Screenshot](img/landscape_keep_input.png) |
+| Landscape                      | 4:3          | ![Screenshot](img/landscape_4_3.png)        |
+| Landscape                      | 3:4          | ![Screenshot](img/landscape_3_4.png)        |
+| Landscape                      | 16:9         | ![Screenshot](img/landscape_16_9.png)       |
+| Landscape                      | 9:16         | ![Screenshot](img/landscape_9_16.png)       |
 
-<a name="fnAS1">1</a>: In this sample APP we crop the preview so it don't look ugly, so the stream is actually larger then the preview.
+<a name="fnAS1">1</a>: In this sample APP we crop the preview so it doesn't look ugly, so the stream is actually larger then the preview.
 
 ### Example
-If You want to stream with a resolution of 640x360 but your device don't supports this resolution. We need to crop the resolution from 640x480 (this resolution is supported by the most devices) to 640x360,
-this will be done over the aspect ratio, so you need to set the aspect ratio to 16:9 to stream with a resolution of 640x360.
+If you want to stream with a resolution of 640x360 but your device doesn't supports this resolution, you need to crop the resolution from 640x480 (this resolution is supported by the most devices) to 640x360. 
+This can be done through the aspect ratio, so you need to set the aspect ratio to 16:9 to stream with a resolution of 640x360.
 
 ### Implementation Example
 
@@ -91,22 +92,23 @@ public class MainActifity {
 
 ### Description
 
-The nanoStream Android SDK supports Camera focus and focus lock, if the the internal cameras supports them.
-There are two nonblocking functions
+The nanoStream Android SDK supports camera focus and focus lock, if the internal cameras supports them.
+There are two non-blocking functions
 ```java
 setFocusArea(int focusWidth, int focusHeight, float areaMultiple, int x, int y, int previewWidth, int previewHeight, int weigh)
 setFocusLockArea(int focusWidth, int focusHeight, float areaMultiple, int x, int y, int previewWidth, int previewHeight, int weigh)
 ```
-over the
+through the
 ```java
 addFocusCalback(FocusCallback callback)
 removeFocusCalback(FocusCallback callback)
 ```
-you can attach or remove a FocusCallback listener. To check if your device Supports Focus call
+you can attach or remove a FocusCallback listener. 
+To check if your device supports focus call the function 
 ```java
 isFocusSupported()
 ```
-this will return true or false.
+which will return true or false.
 
 ### Parameter List
 
