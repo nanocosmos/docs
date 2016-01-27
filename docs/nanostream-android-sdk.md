@@ -93,13 +93,14 @@ public class MainActifity {
 The nanoStream Android SDK supports camera zoom, if the internal camera supports it.
 Therefor there are a few functions, the most important are:
 
-| Function         | Params       | Return Type    | returns                                                        |
-|------------------|--------------|----------------|----------------------------------------------------------------|
-| hasZoom          | void         | booelan        | returns true if zoom is supported by the video source / device |
-| getZoomRatio     | void         | List<Interger> | list all zoom ratios of all zoom values                        |
-| getMaxZoomFactor | void         | int            | the maximum zoom value                                         |
-| getZoom          | void         | int            | current zoom                                                   |
-| setZoom          | int new zoom | int            | new zoom                                                       |
+| Function          | Return Type      | returns                                                |
+|-------------------|------------------|--------------------------------------------------------|
+| `hasZoom()`       | `booelan`        | true if zoom is supported by the video source / device |
+| `getZoomRatios()` | `List<Interger>` | list with all zoom ratios of all zoom values           |
+| `getZoom()`       | `int`            | current zoom                                           |
+| `setZoom(int)`    | `int`            | new zoom                                               |
+
+The int parameter from `setZoom(int zoom)` is one of the values that returns `getZoomRatios()`.
 
 It is recommended to use `pinch to zoom`, therefor you need to implement a `ScaleGestureDetector.SimpleOnScaleGestureListener`,
 and a `pinch2zoom` function, that takes the `scalefactor` from the `SimpleOnScaleGestureListener` as a int parameter.
@@ -108,9 +109,6 @@ and a `pinch2zoom` function, that takes the `scalefactor` from the `SimpleOnScal
 
 ```java
 public class MainActifity extends Actifity {
-
-  private SurfaceView surface = null;
-
   private ScaleGestureDetector scaleGestureDetector;
   private List<Integer> mZoomRatios = null;
 
@@ -119,10 +117,9 @@ public class MainActifity extends Actifity {
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    surface = (SurfaceView) findViewById(R.id.surface);
-    ...
+
     nanoStreamSettings nss = new nanoStreamSettings();
-    ...
+    // configure nanoStreamSettings
 
     streamLib = new nanoStream(nss);
 
@@ -133,7 +130,6 @@ public class MainActifity extends Actifity {
     if(null == scaleGestureDetector) {
       scaleGestureDetector = new ScaleGestureDetector(this, new ScaleGestureListener());
     }
-
   }
 
   @Override
