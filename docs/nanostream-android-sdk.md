@@ -85,6 +85,7 @@ public class MainActifity {
     ...
 }
 ```
+
 ## Camera Zoom
 
 ### <a name="zoom_description">Description</a>
@@ -109,7 +110,7 @@ and a `pinch2zoom` function, that takes the `scalefactor` from the `SimpleOnScal
 The int parameter from `setZoom(int zoom)` is the index of zoom ratios that returns `getZoomRatios()`.
 
 ### Zoom Behavior on Camera Switch
-During a camera switch (e.g. from back to front) the zoom set to his default value.
+During a camera switch (e.g. from back to front) the zoom remains unaffected.
 
 ### <a name="zoom_implementation_example">Implementation Example</a>
 
