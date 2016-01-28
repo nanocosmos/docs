@@ -6,11 +6,11 @@
 Resolution means the native resolution of the camera (input). In the most situations this will be the same for the output.
 To set the resolution there is a function in the `VideoSettings` object called `setResolution(Resolution res)`. If you set a resolution that the
 device doesn't support, nanoStream will automatically switch to the nearest resolution available on the device. A list of supported resolutions for the current video source can be obtained from `getCapabilities().listAvailableVideoResolutions()`
-on the `nanoStream` object. 
+on the `nanoStream` object.
 
 ### Aspect Ratio
-Aspect ratio means the aspect ratio of the outgoing stream. The aspect ratio determines if the input video needs to be cropped. 
-The aspect ratio can be set through the `setAspectRatio(AspectRatio aspectRatio)` function on the `VideoSettings` object. 
+Aspect ratio means the aspect ratio of the outgoing stream. The aspect ratio determines if the input video needs to be cropped.
+The aspect ratio can be set through the `setAspectRatio(AspectRatio aspectRatio)` function on the `VideoSettings` object.
 
 #### Supported Aspect Ratios
 | Aspect Ratio | AspectRatio value            |
@@ -40,8 +40,8 @@ before starting the stream, it is not possible to switch the orientation during 
 
 
 ### Example Combinations of Aspect Ratios and Orientations  
-The input resolution is set to 640x480 here. 
-The red rectangle marks up the active area that is included in the output stream. 
+The input resolution is set to 640x480 here.
+The red rectangle marks up the active area that is included in the output stream.
 
 | Orientation                    | Aspect Ratio | Stream Area                                 |
 |--------------------------------|--------------|---------------------------------------------|
@@ -59,14 +59,14 @@ The red rectangle marks up the active area that is included in the output stream
 <a name="fnAS1">1</a>: In this sample APP we crop the preview so it doesn't look ugly, so the stream is actually larger then the preview.
 
 ### Example
-If you want to stream with a resolution of 640x360 but your device doesn't supports this resolution, you need to crop the resolution from 640x480 (this resolution is supported by the most devices) to 640x360. 
+If you want to stream with a resolution of 640x360 but your device doesn't supports this resolution, you need to crop the resolution from 640x480 (this resolution is supported by the most devices) to 640x360.
 This can be done through the aspect ratio, so you need to set the aspect ratio to 16:9 to stream with a resolution of 640x360.
 
 ### Implementation Example
 
 
 ```java
-public class MainActifity {
+public class MainActivity {
     ...
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -103,8 +103,8 @@ through the
 addFocusCalback(FocusCallback callback)
 removeFocusCalback(FocusCallback callback)
 ```
-you can attach or remove a FocusCallback listener. 
-To check if your device supports focus call the function 
+you can attach or remove a FocusCallback listener.
+To check if your device supports focus call the function
 ```java
 isFocusSupported()
 ```
