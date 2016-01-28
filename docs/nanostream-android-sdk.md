@@ -87,7 +87,6 @@ public class MainActivity {
 }
 ```
 
-
 ## Camera Focus
 
 ### Description
@@ -585,7 +584,7 @@ The setRecordMp4 function takes a boolean as parameter to enable/disable the rec
 ### setMp4Path(String)
 
 The setMp4Path function takes a String as parameter. This string needs to be a valid file path (e.g. /sdcard/test.mp4).
-It is recommended to use the getExternalStorageDirectory or getExternalStoragePublicDirectory functions from the Android  [Environment](http://developer.android.com/reference/android/os/Environment.html) API, and add a file name to the returned path.
+It is recommended to use the getExternalStorageDirectory or getExternalStoragePublicDirectory functions from the Android [Enviroment][53119650] API, and add a file name to the returned path.
 Please find the code snippet below as an example.
 
 ### Android Permission
@@ -615,6 +614,7 @@ nss.setRecordMp4(true);
 nss.setMp4Path(mp4FilePath);
 ```
 
-##
-Further questions? Would you like a feature not available yet?
+## Further questions? Would you like a feature not available yet?
 We can make it work for you based on our consulting and development / implementation services. [Contact us](http://www.nanocosmos.de/v4/en/contact-form.html)
+
+[53119650]: https://developer.android.com/reference/android/os/Environment.html "Android Enviroment"
