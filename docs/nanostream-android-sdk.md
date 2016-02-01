@@ -615,6 +615,9 @@ nss.setMp4Path(mp4FilePath);
 ```
 
 ## Further questions? Would you like a feature not available yet?
-We can make it work for you based on our consulting and development / implementation services. [Contact us](http://www.nanocosmos.de/v4/en/contact-form.html)
+We can make it work for you based on our consulting and development / implementation services. [Contact us][dddca5bd]
 
+
+[//]: # (Link list)
 [53119650]: https://developer.android.com/reference/android/os/Environment.html "Android Enviroment"
+[dddca5bd]: http://www.nanocosmos.de/v4/en/contact-form.html "Contect us"
