@@ -614,6 +614,28 @@ nss.setRecordMp4(true);
 nss.setMp4Path(mp4FilePath);
 ```
 
+## Android 6.0 Permissions
+### <a name="android_6_description">Description</a>
+Google introduced a new [permission management][b0ac27b1] in Android 6.0. In this section we will list all nanoStream SDK functions that needs some permissions to run correctly.
+
+| function                                                                                                                                        | permission                | return value without permission |
+|-------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------|---------------------------------|
+| nanoStream.listAvailableVideoResolutions()                                                                                                      | android.permission.CAMERA | null                            |
+| nanoStream.listAvailableVideoFramerates()                                                                                                       | android.permission.CAMERA | null                            |
+| nanoStream.hasZoom()                                                                                                                            | android.permission.CAMERA | false                           |
+| nanoStream.getZoom()                                                                                                                            | android.permission.CAMERA | 0                               |
+| nanoStream.getMaxZoomFactor                                                                                                                     | android.permission.CAMERA | 0                               |
+| nanoStream.getZoomRatios()                                                                                                                      | android.permission.CAMERA | null                            |
+| nanoStream.setZoom(int zoom)                                                                                                                    | android.permission.CAMERA | -2                              |
+| nanoStream.isFocusSupported()                                                                                                                   | android.permission.CAMERA | false                           |
+| nanoStream.setFocusArea(int focusWidth, int focusHeight, float areaMultiple, int x, int y, int previewWidth, int previewHeight, int weight)     | android.permission.CAMERA | -                               |
+| nanoStream.setFocusLockArea(int focusWidth, int focusHeight, float areaMultiple, int x, int y, int previewWidth, int previewHeight, int weight) | android.permission.CAMERA | -                               |
+| nanoStream.toggleTorch(boolean isEnabled)                                                                                                       | android.permission.CAMERA | -                               |
+| nanoStream.isTorchEnabled()                                                                                                                     | android.permission.CAMERA | false                           |
+| nanoStream.addFocusCalback(FocusCallback callback)                                                                                              | android.permission.CAMERA | -                               |
+| nanoStream.removeFocusCalback(FocusCallback callback)                                                                                           | android.permission.CAMERA | -                               |
+| NanostreamMediaController.getCameraResolutions()                                                                                                | android.permission.CAMERA | null                            |
+
 ## Further questions? Would you like a feature not available yet?
 We can make it work for you based on our consulting and development / implementation services. [Contact us](http://www.nanocosmos.de/v4/en/contact-form.html)
 
