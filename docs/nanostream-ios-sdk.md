@@ -228,6 +228,16 @@ NSString *locStr = [homeDirectory stringByAppendingPathComponent: [[dateFormatte
 [nAVCSettings setLocalRecordingPath:locStr];
 ```
 
+There are three modes available:
+
+- AVCRecordingModeStartBitrate: uses the video bitrate set with nanostreamAVCSettings
+- AVCRecordingModeDoubleAtLeastOneMbit: uses double the video bitrate, but at least 1Mbps
+- AVCRecordingMode720p2Mbit: independent of the set video bitrate, always uses 2Mbps and a resolution of 1280x720
+
+The bitrate for the recording remains constant during a stream. The adaptive bitrate mechanism only influences the bitrate for the stream, but not the bitrate for the recording.
+
+The bitrate for the recording also depends on the video material. If there is a lot of movement in the video the bitrate will be higher than for recordings with little to no movement.
+
 ### Adaptive Bitrate
 
 By using the Adaptive Bitrate Control (ABC) the stream will automatically adjust to changes of the bandwidth.
