@@ -93,10 +93,10 @@ public class MainActifity {
 The nanoStream Android SDK supports camera zoom, if the internal camera supports it.
 Therefor there are a few functions, the most important are:
 
-| Function          | Return Type     | returns                                                |
-|-------------------|-----------------|--------------------------------------------------------|
-| `hasZoom()`       | `booelan`       | true if zoom is supported by the video source / device |
-| `getZoomRatios()` | `List<Integer>` | list with of ale zoom ratios                          |
+| Function          | Return Type     | returns                                                                   |
+|-------------------|-----------------|---------------------------------------------------------------------------|
+| `hasZoom()`       | `booelan`       | true if zoom is supported by the video source / device                    |
+| `getZoomRatios()` | `List<Integer>` | list with of ale zoom ratios                                              |
 | `getZoom()`       | `int`           | the index of the `List<Integer>` that returned from `getZommRatios()`     |
 | `setZoom(int)`    | `int`           | the new index of the `List<Integer>` that returned from `getZommRatios()` |
 
@@ -115,7 +115,7 @@ During a camera switch (e.g. from back to front) the zoom remains unaffected.
 ### <a name="zoom_implementation_example">Implementation Example</a>
 
 ```java
-public class MainActifity extends Actifity {
+public class MainActivity extends Activity {
   private ScaleGestureDetector scaleGestureDetector;
   private List<Integer> mZoomRatios = null;
 
