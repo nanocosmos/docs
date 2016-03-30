@@ -62,8 +62,7 @@ The red rectangle marks up the active area that is included in the output stream
 If you want to stream with a resolution of 640x360 but your device doesn't supports this resolution, you need to crop the resolution from 640x480 (this resolution is supported by the most devices) to 640x360.
 This can be done through the aspect ratio, so you need to set the aspect ratio to 16:9 to stream with a resolution of 640x360.
 
-### Implementation Example
-
+### <a name="aspect_ratio_implementation_example">Implementation Example</a>
 
 ```java
 public class MainActivity {
@@ -87,9 +86,112 @@ public class MainActivity {
 }
 ```
 
+## Camera Zoom
+
+### <a name="zoom_description">Description</a>
+
+The nanoStream Android SDK supports camera zoom, if the internal camera supports it.
+Therefor there are a few functions, the most important are:
+
+| Function          | Return Type     | returns                                                                   |
+|-------------------|-----------------|---------------------------------------------------------------------------|
+| `hasZoom()`       | `booelan`       | true if zoom is supported by the video source / device                    |
+| `getZoomRatios()` | `List<Integer>` | list with of ale zoom ratios                                              |
+| `getZoom()`       | `int`           | the index of the `List<Integer>` that returned from `getZommRatios()`     |
+| `setZoom(int)`    | `int`           | the new index of the `List<Integer>` that returned from `getZommRatios()` |
+
+It is recommended to use `pinch to zoom`, therefor you need to implement a `ScaleGestureDetector.SimpleOnScaleGestureListener`,
+and a `pinch2zoom` function, that takes the `scalefactor` from the `SimpleOnScaleGestureListener` as a int parameter, take a look at the [Implementation Example](#zoom_implementation_example).
+
+#### getZoomRatios()
+`getZoomRatios()` returns a List of Integer values, this values are the zoom ratios in 1/100 increments (e.g. a zoom of 3.2x is returned as 320).
+
+#### setZoom(int)
+The int parameter from `setZoom(int zoom)` is the index of zoom ratios that returns `getZoomRatios()`.
+
+### Zoom Behavior on Camera Switch
+During a camera switch (e.g. from back to front) the zoom remains unaffected.
+
+### <a name="zoom_implementation_example">Implementation Example</a>
+
+```java
+public class MainActivity extends Activity {
+  private ScaleGestureDetector scaleGestureDetector;
+  private List<Integer> mZoomRatios = null;
+
+  private nanoStream streamLib = null;
+
+  @Override
+  protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+
+    nanoStreamSettings nss = new nanoStreamSettings();
+    // configure nanoStreamSettings
+
+    streamLib = new nanoStream(nss);
+
+    if(streamLib.hasZoom()) {
+      mZoomRatios = streamLib.getZoomRatio();
+    }
+
+    if(null == scaleGestureDetector) {
+      scaleGestureDetector = new ScaleGestureDetector(this, new ScaleGestureListener());
+    }
+  }
+
+  @Override
+  public boolean onTouchEvent(MotionEvent event)
+  {
+    if (scaleGestureDetector != null)
+    {
+      scaleGestureDetector.onTouchEvent(event);
+    }
+    return true;
+  }
+
+  private class ScaleGestureListener extends ScaleGestureDetector.SimpleOnScaleGestureListener {
+    @Override
+    public boolean onScale(ScaleGestureDetector detector) {
+      if(null != streamLib) {
+        if (streamLib.hasZoom()) {
+          pinch2Zoom(detector.getScaleFactor());
+        }
+      }
+      return true;
+    }
+  }
+
+  public void pinch2Zoom(float scaleFactor) {
+    if (streamLib.hasZoom() && null != mZoomRatios) {
+      int zoomFactor = streamLib.getZoom();
+      float zoomRatio = mZoomRatios.get(zoomFactor) / 100f;
+      zoomRatio *= scaleFactor;
+      if (zoomRatio > 1.0f) {
+        if (scaleFactor > 1.0f) {
+          for (int i = zoomFactor; i < mZoomRatios.size(); i++) {
+            Double zoom = mZoomRatios.get(i) / 100.0;
+            if (zoom >= zoomRatio) {
+              streamLib.setZoom(i);
+              break;
+            }
+          }
+        } else {
+          for (int i = zoomFactor; i > 0; i--) {
+            Double zoom = mZoomRatios.get(i) / 100.0;
+            if (zoom <= zoomRatio) {
+              streamLib.setZoom(i);
+              break;
+            }
+          }
+        }
+      }
+    }
+  }   
+}
+```
 ## Camera Focus
 
-### Description
+### <a name="focus_description">Description</a>
 
 The nanoStream Android SDK supports camera focus and focus lock, if the internal cameras supports them.
 There are two non-blocking functions
@@ -109,7 +211,7 @@ isFocusSupported()
 ```
 which will return true or false.
 
-### Parameter List
+### <<a name="focus_parameter_list">Parameter List</a>
 
 | Parameter name | meaning                                             |
 |----------------|-----------------------------------------------------|
@@ -130,7 +232,7 @@ onSuccess(Rect rect, Boolean focusLock)
 onFailure()
 ```
 
-### Implementation Example
+### <a name="focus_implementation_example">Implementation Example</a>
 
 ```java
 public class MainActifity extens Actifity implements FocusCallback {
@@ -195,14 +297,14 @@ public class MainActifity extens Actifity implements FocusCallback {
 Before Android 4.3 there was no obligation for Android hardware manufacturers to pass the video related parts of the CTS (Compatibility Test Suite).
 Therefore some Android 4.1 and 4.2 Devices show non standard behaviour in regard to color format definitions and representation of video frames in memory. This could lead to issues in the video stream like switched red and blue colors, dislocated color components or a green bar at the bottom of the video frame. nanoStream Android now provides the functionality to detect and compensate common issues related to this.
 
-### Description
+### <a name="device_properies_description">Description</a>
 `nanoStream.getDeviceProperties()` is a static function that is running a test on the device hardware to detect non standard behaviour and returning a DeviceProperties object containing the result.
 `DeviceProperties.getFlags()` returns the test result as an integer value that can be stored in the application preferences, to avoid running the device test on every app start.
 DeviceProperties can be applied to a new nanoStream instance by calling `nanoStream.setDeviceProperties(DeviceProperties)`.
 We recommend to call `getDeviceProperties()` in a background thread during the first app start on a pre 4.3 device, because the call is blocking and might last up to 5 seconds on older/weaker devices.
 We also recommend to store the OS version in the preferences, to be able to detect OS updates and to eventually rerun the device test or stop setting the DeviceProperties if the new OS is 4.3 or higher.
 
-### Implementation Example
+### <a name="device_properties_implementation_example">Implementation Example</a>
 ```java
 public class App extends Application
 {
@@ -319,7 +421,7 @@ public class MainActivity extends Activity implements NanostreamEventListener
 ```
 
 ## RTMP Playback
-### Description and Features
+### <a name="rtmp_playback_description">Description</a>
 RTMP Playback Component enables application developers to add playback of RTMP live and on demand streams to their apps.
 
 Supported codecs are H.264 Video, AAC and MP3 Audio.
@@ -345,7 +447,7 @@ Required application permissions:
 ### License
 The playback component requires a special feature flag to be enabled in your nanoStream license key. It not necessarily included in nanoStream Android SDK licenses.
 
-### Interface
+### <a name="rtmp_playback_interface">Interface</a>
 #### Package name
 `net.nanocosmos.nanoStream.streamer`
 #### Declaration
@@ -479,7 +581,7 @@ int aspectRatioWidth = videoFormat.getInteger(NanostreamPlayer.KEY_ASPECT_RATIO_
 int aspectRatioHeight = videoFormat.getInteger(NanostreamPlayer.KEY_ASPECT_RATIO_HEIGHT);
 ```
 
-### Implementation Example
+### <a name="rtmp_playback_implementation_example">Implementation Example</a>
 
 ```java
 public class PlayerActivity extends Activity implements PlayerEventListener, SurfaceHolder.Callback {
@@ -565,7 +667,7 @@ public class PlayerActivity extends Activity implements PlayerEventListener, Sur
 
 ## MP4 Local Recording
 
-### Description
+### <a name="mp4_description">Description</a>
 
 The nanoStream Android SDK supports local file recording on the device in MP4 format.
 This document describes how to enable and configure nanoStream for local recording.
@@ -597,12 +699,12 @@ app manifest (AndroidMainfest.xml).
 <uses-permission android:name="android.permission.STORAGE" />
 ```
 
-#### Android 6.0
+#### <a name="mp4_android_6">Android 6.0</a>
 
 Due to the new permission handling in Android 6 (M) writing to external directories (DCIM) requires a permission by user.
 Writing to the applications own data directory (/Android/data/com.companyname.appname/) is not restricted.
 
-### Implementation Example
+### <a name="mp4_implementation_example">Implementation Example</a>
 
 ```java
 File externalFilePath = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM);
