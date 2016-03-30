@@ -12,11 +12,11 @@ This material is subject to the terms and conditions defined in separate license
 
 ## Project setup
 ### Android Studio
-To use the bintu.live SDK in your Android Studio project you need to include the bintu android archive as module. In order to do this copy the android archive (bintu-sdk.aar) on you drive and open the "Create Module" menu in Android Studio (via File -> New -> Create Module). On the "Create New Module" menu select "Import .JAR/.AAR Package", as shown below, and click on "Next".
+To use the bintu.live SDK in your Android Studio project you need to include the bintu android archive as a module. In order to do this copy the android archive (bintu-sdk.aar) to your drive and open the "Create Module" menu in Android Studio (via File -> New -> Create Module). On the "Create New Module" menu select "Import .JAR/.AAR Package", as shown below, and click on "Next".
 ![Create Module Menu][Create_Module]
 
-Afterwards select the location of the bintu-live sdk archive file and enter a name for this module (e.g. "BintuSDK").
-After finishing the bintu.live sdk is included to your project and ready to use.
+Afterwards select the location of the bintu.live sdk archive file and enter a name for this module (e.g. "BintuSDK").
+After finishing the bintu.live sdk is included in your project and ready to use.
 
 ### Eclipse ADT
 
@@ -33,7 +33,7 @@ Once you have an instance, you can create new streams with it, receive informati
 
 Lets step through these in detail:
 
-With the createStream call you create a new stream. You would use this in your broadcaster app. As argument you pass an Instace of an implementation of the StreamInfoResponseHandler interface to the createStream call. This interface represents callback classes to handle the result of the create stream call. It contains two method declarations. One to handle the result, called "handle", and one to handle errors, called "onError". Either the implementation of the "handle"- or the "onError"-Method will be executed as result of the createStream call. When the "handle"-Method is executed it gets the result data of the createStream call as a StreamInfo object passed as a method argument.
+With the createStream call you create a new stream. You would use this in your broadcaster app. As argument you pass an instace of an implementation of the StreamInfoResponseHandler interface to the createStream call. This interface represents callback classes to handle the result of the create stream call. It contains two method declarations. One to handle the success result, called "handle", and one to handle errors, called "onError". One of these will be executed as result of the createStream call. When the "handle"-method is executed it is passed the result data of the createStream call as a StreamInfo object.
 
 ```java
 bintu.createStream(new StreamInfoResponseHandler() {
@@ -50,7 +50,7 @@ bintu.createStream(new StreamInfoResponseHandler() {
             });
 ```
 
-With getStream call you can receive information about a previously created stream, by passing its id to the call. In most cases, you would take the stream ID you get while creating a stream and store it on your own server somewhere. If anyone wants to view a stream, you send that ID to the player app. Then you can receive that stream's playout information. For example, if you want to play the stream via RTMP:
+With the getStream call you can receive information about a previously created stream, by passing its id to the call. In most cases, you would take the stream ID you get while creating a stream and store it on your own server somewhere. If anyone wants to view a stream, you send that ID to the player app. Then you can receive that stream's playout information. For example, if you want to play the stream via RTMP:
 
 ```java
 bintuSDK.getStream(streamID, new StreamInfoResponseHandler() {
@@ -111,8 +111,8 @@ bintuSDK.getStreams(State.LIVE, new StreamInfoListResponseHandler() {
 
 That was a basic overview of our bintu.live component.
 
-## Links
+
   [e98cabe4]: http://www.nanocosmos.de "http://www.nanocosmos.de"
 
-## Illustration Directory
+
   [Create_Module]: img/android_studio_create_module.png "Create New Module Menu"
