@@ -111,8 +111,8 @@ bintuSDK.getStreams(State.LIVE, new StreamInfoListResponseHandler() {
 
 That was a basic overview of our bintu.live component.
 
-
+<!--- --------list of references -------- --->
   [e98cabe4]: http://www.nanocosmos.de "http://www.nanocosmos.de"
 
-
+<!--- ------- Table of figures -------- --->
   [Create_Module]: img/android_studio_create_module.png "Create New Module Menu"
