@@ -13,5 +13,9 @@ pages:
 #theme: readthedocs
 theme: yeti
 
-markdown_extensions: 
-        - markdown_include.include 
+markdown_extensions:
+  - markdown_include.include
+  - smarty
+  - toc:
+      permalink: True
+      separator: "_"
