@@ -7,5 +7,12 @@ pages:
 - macos api: nanostream-macos-sdk.md
 - Android nanoStream SDK: nanostream-android-sdk.md
 - mkdocs help: mkdocs.md
+- bintu.live : 
+  - Android SDK: bintu/android/index.md
 
 theme: readthedocs
+
+markdown_extensions:
+    - markdown_include.include
+
+extra_css: [extra.css]

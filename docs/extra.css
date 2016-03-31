@@ -1,0 +1,14 @@
+.wy-side-nav-search {
+  background-color: #FF9D30;
+}
+
+.wy-menu-vertical span {
+  color: white;
+
+}
+.wy-menu-vertical li.current {
+  border-top: solid #ff9d30;
+}
+.wy-menu-vertical li ul li.toctree-l3 {
+  background-color: #c8c8c8;
+}
