@@ -5,7 +5,13 @@ pages:
 - web api: nanostream-4.x-web-api.md
 - ios api: nanostream-ios-sdk.md
 - macos api: nanostream-macos-sdk.md
-- Android nanoStream SDK: nanostream-android-sdk.md
-- mkdocs help: mkdocs.md
+- Android nanoStream SDK:
+  - 'Getting Started': 'android/getting-started.md'
+  - 'Advanced Settings/Usage': 'android/android-advanced-settings.md'
+  - 'RTMP Playback': 'android/rtmp-playback.md'
 
-theme: readthedocs
+#theme: readthedocs
+theme: yeti
+
+markdown_extensions: 
+        - markdown_include.include 
