@@ -59,7 +59,7 @@ The input resolution is set to 640x480 here. The red rectangle marks up the acti
 
 If you want to stream with a resolution of 640x360 but your device doesn't supports this resolution, you need to crop the resolution from 640x480 (this resolution is supported by the most devices) to 640x360. This can be done through the aspect ratio, so you need to set the aspect ratio to 16:9 to stream with a resolution of 640x360.
 
-### <a name="aspect_ratio_implementation_example"></a>Implementation Example
+### Implementation Example
 
 ```java
 public class MainActifity {
@@ -86,7 +86,7 @@ public class MainActifity {
 RotationHelper
 --------------
 
-### <a name="rotation_helper_description"></a>Description
+### Description
 
 With the nanoStream SDK 4.3.1 release we added a 'RotationHelper' Class, this Class improves the Rotation handling. The RotationHelper class has two static Methods, 'getDeviceDefaultOrientation(Context context)' and 'getRotation(int orientation, boolean isDefaultOrientationLandscape)'.
 
@@ -94,8 +94,8 @@ With the nanoStream SDK 4.3.1 release we added a 'RotationHelper' Class, this Cl
 
 The return values are one of the following:
 
--	[Configuration.ORIENTATION_LANDSCAPE](https://developer.android.com/reference/android/content/res/Configuration.html#ORIENTATION_LANDSCAPE)  
--	[Configuration.ORIENTATION_PORTRAIT](https://developer.android.com/reference/android/content/res/Configuration.html#ORIENTATION_PORTRAIT)
+-	[Configuration.ORIENTATION_LANDSCAPE][4c50db80]
+-	[Configuration.ORIENTATION_PORTRAIT][4ec624ac]
 
 ### getRotation
 
@@ -103,10 +103,10 @@ The return values are one of the following:
 
 The 'orientation' parameter of the 'getRoation' Method is one of the following:
 
--	[ActivityInfo.SCREEN_ORIENTATION_PORTRAIT](https://developer.android.com/reference/android/content/pm/ActivityInfo.html#SCREEN_ORIENTATION_PORTRAIT)
--	[ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE](https://developer.android.com/reference/android/content/pm/ActivityInfo.html#SCREEN_ORIENTATION_LANDSCAPE)
--	[ActivityInfo.SCREEN_ORIENTATION_REVERSE_PORTRAIT](https://developer.android.com/reference/android/content/pm/ActivityInfo.html#SCREEN_ORIENTATION_REVERSE_PORTRAIT)
--	[ActivityInfo.SCREEN_ORIENTATION_REVERSE_LANDSCAPE](https://developer.android.com/reference/android/content/pm/ActivityInfo.html#SCREEN_ORIENTATION_REVERSE_LANDSCAPE)
+-	[ActivityInfo.SCREEN_ORIENTATION_PORTRAIT][baf72420]
+-	[ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE][c47724c3]
+-	[ActivityInfo.SCREEN_ORIENTATION_REVERSE_PORTRAIT][a59fc893]
+-	[ActivityInfo.SCREEN_ORIENTATION_REVERSE_LANDSCAPE][b1a7076f]
 
 The 'isDefaultOrientationLandscape' parameter is true or false.
 
@@ -114,7 +114,7 @@ The 'isDefaultOrientationLandscape' parameter is true or false.
 
 The return values given from 'RotationHelper.getRoation' can be used as a Parameter for 'setStreamRotation' and 'setPreviewRotation'. is the 'orientation' parameter non of the above described the 'getRotation' Method returns 'null'.
 
-### <a name="rotation_helper_implementation_example"></a>Implementation Example
+### Implementation Example
 
 ```java
 import net.nanocosmos.nanoStream.streamer.Rotation;
@@ -192,9 +192,15 @@ public class MainActivity extends Activity {
 Stream Type
 -----------
 
-The SDK supports differnet streaming modes: - Video and Audio - Video only - Audio only You can en/disable Video/Audio in the `nanoStreamSettings` object.
+The SDK supports differnet streaming modes:
 
-### <a name="stream_type_implementation_example"></a>Implementation Example
+-	Video and Audio
+-	Video only
+-	Audio only
+
+You can en/disable Video/Audio in the `nanoStreamSettings`.
+
+### Implementation Example
 
 ```java
 nanoStreamSettings nss = new nanoStreamSettings();
@@ -205,7 +211,7 @@ nss.setHaveAudio(true); // false
 Local Recording
 ---------------
 
-### <a name="mp4_description"></a>Description
+### Description
 
 The nanoStream Android SDK supports local file recording on the device in MP4 format. This document describes how to enable and configure nanoStream for local recording.
 
@@ -222,7 +228,9 @@ The setRecordMp4 function takes a boolean as parameter to enable/disable the rec
 
 ### setMp4Path(String)
 
-The setMp4Path function takes a String as parameter. This string needs to be a valid file path (e.g. /sdcard/test.mp4). It is recommended to use the getExternalStorageDirectory or getExternalStoragePublicDirectory functions from the [Android Enviroment](https://developer.android.com/reference/android/os/Environment.html) API, and add a file name to the returned path. Please find the code snippet below as an example.
+The setMp4Path function takes a String as parameter. This string needs to be a valid file path (e.g. /sdcard/test.mp4).
+It is recommended to use the getExternalStorageDirectory or getExternalStoragePublicDirectory functions from the
+[Android Enviroment][8928e181] API, and add a file name to the returned path. Please find the code snippet below as an example.
 
 ### Android Permission
 
@@ -233,11 +241,11 @@ To be able to write to an external file path your Android app needs the followin
 <uses-permission android:name="android.permission.STORAGE" />
 ```
 
-#### <a name="mp4_android_6"></a>Android 6.0
+#### Android 6.0
 
 Due to the new permission handling in Android 6 (M) writing to external directories (DCIM) requires a permission by user. Writing to the applications own data directory (/Android/data/com.companyname.appname/) is not restricted.
 
-### <a name="mp4_implementation_example"></a>Implementation Example
+### Implementation Example
 
 ```java
 File externalFilePath = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM);
@@ -261,7 +269,7 @@ By using the Adaptive Bitrate Control (ABC) the stream will automatically adjust
 
 Make sure to set the ABC settings before a stream is started.
 
-### <a name="adaptive_bitrate_implementation_example"></a>Implementation Example
+### Implementation Example
 
 ```java
 private AdaptiveBitrateControlSettings.AdaptiveBitrateControlMode abcMode = AdaptiveBitrateControlSettings.AdaptiveBitrateControlMode.QUALITY_DEGRADE_AND_FRAME_DROP;
@@ -279,7 +287,8 @@ private void initStreamLib() {
 Measuring the available bandwidth
 ---------------------------------
 
-For measuring the available bandwidth you can use the method `runBandwidthCheck`. After the check finished, the result can be used to set the bitrate for the nanoStream object. The check measures the bandwidth by running a test stream to the server.
+For measuring the available bandwidth you can use the method `runBandwidthCheck`. After the check finished, the result can be used to set the bitrate for the nanoStream object.
+The check measures the bandwidth by running a test stream to the server.
 
 The BandwidthCheck Class has three public functions:
 
@@ -297,13 +306,21 @@ There is a BandwidthCheckSettings Class, the constructor creates a standard obje
 | rtmpUrl        | empty                      | the rtmp url for the bandwidth check               |
 | streamId       | empty                      | the stream id for the bandwidth check              |
 
-With this settings you can call the runBandwidthCheck methode, the second parameter is the callback for the results. This callback class has a finished method that will be called after bandwidth check is done. The finished method has one parameter from type BandwidthCheckResult, this object has 6 getter methods: - getAverageBitrate() // the average measured bandwidth - getMedianBitrate() // the median measured bandwidth - getMaxBitrate() // the maximum measured bandwidth - getMinBitrate() // the minimum measured bandwidth - getRunTimeMS() // the run time in ms - getErrorCode() // the error code if all is ok this is nanoResults.N_OK (all error codes can be found in the nanoStream API Reference documentation for nanoResults)
+With this settings you can call the runBandwidthCheck methode, the second parameter is the callback for the results. This callback class has a finished method that will be called after bandwidth check is done.
+The finished method has one parameter from type BandwidthCheckResult, this object has 6 getter methods:
+
+ - getAverageBitrate() // the average measured bandwidth
+ - getMedianBitrate() // the median measured bandwidth
+ - getMaxBitrate() // the maximum measured bandwidth
+ - getMinBitrate() // the minimum measured bandwidth
+ - getRunTimeMS() // the run time in ms
+ - getErrorCode() // the error code if all is ok this is nanoResults.N_OK (all error codes can be found in the nanoStream API Reference documentation for nanoResults)
 
 The forceStop call stops the bandwidth check and will return the results that where measured until then. The abort call stops the bandwidth check but don't return any results.
 
 The bandwidth check, sends a special type of metadata that will not be recorded on the Streaming Server.
 
-### <a name="bandwidth_check_implementation_example"></a>Implementation Example
+### Implementation Example
 
 ```java
 private BandwidthCheck bwCheck = null;
@@ -334,11 +351,11 @@ private void initBandwidthCheck() {
 RTMP Quality Statistics
 -----------------------
 
-### <a name="rtmp_quality_description"></a>Description
+### Description
 
 The RTMP Module provides the current RTMP Quality over the 'NanostreamEventListener'. These includes the 'output bit rate', 'buffer fullness', 'bit rate' and 'frame rate'.
 
-### <a name="rtmp_quality_implementation"></a>Implementation Example
+### Implementation Example
 
 ```java
 public class MainActivity extends Activity implements NanostreamEventListener {
@@ -414,7 +431,7 @@ public class MainActivity extends Activity implements NanostreamEventListener {
 Camera Zoom
 -----------
 
-### <a name="zoom_description"></a>Description
+### Description
 
 The nanoStream Android SDK supports camera zoom, if the internal camera supports it. Therefor there are a few functions, the most important are:
 
@@ -425,7 +442,7 @@ The nanoStream Android SDK supports camera zoom, if the internal camera supports
 | `getZoom()`       | `int`           | the index of the `List<Integer>` that returned from `getZommRatios()`     |
 | `setZoom(int)`    | `int`           | the new index of the `List<Integer>` that returned from `getZommRatios()` |
 
-It is recommended to use `pinch to zoom`, therefor you need to implement a `ScaleGestureDetector.SimpleOnScaleGestureListener`, and a `pinch2zoom` function, that takes the `scalefactor` from the `SimpleOnScaleGestureListener` as a int parameter, take a look at the [Implementation Example](#zoom_implementation_example).
+It is recommended to use `pinch to zoom`, therefor you need to implement a `ScaleGestureDetector.SimpleOnScaleGestureListener`, and a `pinch2zoom` function, that takes the `scalefactor` from the `SimpleOnScaleGestureListener` as a int parameter, take a look at the [Implementation Example](#implementation_example_7).
 
 ### getZoomRatios()
 
@@ -439,7 +456,7 @@ The int parameter from `setZoom(int zoom)` is the index of zoom ratios that retu
 
 During a camera switch (e.g. from back to front) the zoom remains unaffected.
 
-### <a name="zoom_implementation_example"></a>Implementation Example
+### Implementation Example
 
 ```java
 public class MainActivity extends Activity {
@@ -546,7 +563,7 @@ isFocusSupported()
 
 which will return true or false.
 
-### <a name="focus_parameter_list"></a>Parameter List
+### Parameter List
 
 | Parameter name | meaning                                             |
 |----------------|-----------------------------------------------------|
@@ -569,7 +586,7 @@ onSuccess(Rect rect, Boolean focusLock)
 onFailure()
 ```
 
-### <a name="focus_implementation_example"></a>Implementation Example
+### Implementation Example
 
 ```java
 public class MainActifity extens Actifity implements FocusCallback {
@@ -634,7 +651,7 @@ Snapshot from the current stream
 
 To get a snapshot (image) of the current preview/stream, the method `takeSnapshot` can be used. This is a non blocking function, for the result you need to implement the SnapshotCallback interface. The snapshot returns as a base64 encoded JPEG
 
-### <a name="snapshot_implementation_example"></a>Implementation Example
+### Implementation Example
 
 ```java
 private class CustomSnapshotCallback implements SnapshotCallback {
@@ -658,7 +675,7 @@ Server Authentication
 
 In case authentication is required, the credentials can be set on the `nanoStreamSettings` object.
 
-### <a name="server_auth_implementation_example"></a>Implementation Example
+### Implementation Example
 
 ```java
 nanoStreamSettings nss = new nanoStreamSettings();
@@ -671,11 +688,11 @@ DeviceProperties
 
 Before Android 4.3 there was no obligation for Android hardware manufacturers to pass the video related parts of the CTS (Compatibility Test Suite). Therefore some Android 4.1 and 4.2 Devices show non standard behaviour in regard to color format definitions and representation of video frames in memory. This could lead to issues in the video stream like switched red and blue colors, dislocated color components or a green bar at the bottom of the video frame. nanoStream Android now provides the functionality to detect and compensate common issues related to this.
 
-### <a name="device_properies_implementation_example"></a>Description
+### Description
 
 `nanoStream.getDeviceProperties()` is a static function that is running a test on the device hardware to detect non standard behaviour and returning a DeviceProperties object containing the result.`DeviceProperties.getFlags()` returns the test result as an integer value that can be stored in the application preferences, to avoid running the device test on every app start. DeviceProperties can be applied to a new nanoStream instance by calling `nanoStream.setDeviceProperties(DeviceProperties)`. We recommend to call `getDeviceProperties()` in a background thread during the first app start on a pre 4.3 device, because the call is blocking and might last up to 5 seconds on older/weaker devices. We also recommend to store the OS version in the preferences, to be able to detect OS updates and to eventually rerun the device test or stop setting the DeviceProperties if the new OS is 4.3 or higher.
 
-### <a name="device_properties_implementation_example"></a>Implementation Example
+### Implementation Example
 
 ```java
 public class App extends Application {
@@ -763,3 +780,12 @@ public class MainActivity extends Activity implements NanostreamEventListener {
 }
 
 ```
+
+[//]: # (Link list)
+[8928e181]: https://developer.android.com/reference/android/os/Environment.html "Android Enviroment"
+[4c50db80]: https://developer.android.com/reference/android/content/res/Configuration.html#ORIENTATION_LANDSCAPE "Configuration.ORIENTATION_LANDSCAPE"
+[4ec624ac]: https://developer.android.com/reference/android/content/res/Configuration.html#ORIENTATION_PORTRAIT "Configuration.ORIENTATION_PORTRAIT"
+[baf72420]: https://developer.android.com/reference/android/content/pm/ActivityInfo.html#SCREEN_ORIENTATION_PORTRAIT "ActivityInfo.SCREEN_ORIENTATION_PORTRAIT"
+[c47724c3]: https://developer.android.com/reference/android/content/pm/ActivityInfo.html#SCREEN_ORIENTATION_LANDSCAPE "ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE"
+[a59fc893]: https://developer.android.com/reference/android/content/pm/ActivityInfo.html#SCREEN_ORIENTATION_REVERSE_PORTRAIT "ActivityInfo.SCREEN_ORIENTATION_REVERSE_PORTRAIT"
+[b1a7076f]: https://developer.android.com/reference/android/content/pm/ActivityInfo.html#SCREEN_ORIENTATION_REVERSE_LANDSCAPE "ActivityInfo.SCREEN_ORIENTATION_REVERSE_LANDSCAPE"
