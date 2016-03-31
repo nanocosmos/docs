@@ -172,7 +172,14 @@ Event Type : `TYPENANORESULTS` Event Codes : Values of type nanoResults
 Audio / Video Format
 --------------------
 
-After the `NanostreamEvent.CODE_STREAM_AUDIO/VIDEO_FORMAT_AVAILABLE` event, you can get the MediaFormat Object with the `getAudio/VideoFormat()`[^(2)] function call. We added two custom Fields for the Video MediaFormat:&nbsp; &nbsp; `NanostreamPlayer.KEY_ASPECT_RATIO_WIDTH`&nbsp; &nbsp; `NanostreamPlayer.KEY_ASPECT_RATIO_HEIGHT` With these custom fields you can get the aspect ratio width and height.
+After the `NanostreamEvent.CODE_STREAM_AUDIO/VIDEO_FORMAT_AVAILABLE` event, you can get the MediaFormat Object with the `getAudio/VideoFormat()`<sup>[1](#fnAV1)</sup> function call.
+
+We added two custom Fields for the Video MediaFormat:
+
+-	`NanostreamPlayer.KEY_ASPECT_RATIO_WIDTH`
+-	`NanostreamPlayer.KEY_ASPECT_RATIO_HEIGHT`
+
+With these custom fields you can get the aspect ratio width and height.
 
 ```java
 MediaFormat videoFormat = mPlayer.getVideoFormat();
@@ -265,3 +272,5 @@ public class PlayerActivity extends Activity implements PlayerEventListener, Sur
     }
 }
 ```
+
+<a name="fnAV1">1</a>: since nanoStream Android SDK 3.2
