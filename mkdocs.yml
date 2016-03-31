@@ -2,15 +2,17 @@ site_name: nanocosmos Docs
 pages:
 - Home: index.md
 - About: about.md
-- web api: nanostream-4.x-web-api.md
-- ios api: nanostream-ios-sdk.md
-- macos api: nanostream-macos-sdk.md
-- Android nanoStream SDK: nanostream-android-sdk.md
-- mkdocs help: mkdocs.md
-- bintu.live : 
-  - Android SDK: bintu/android/index.md
+- nanostream :
+  - Web api: nanostream/web/nanostream-4.x-web-api.md
+  - iOS api: nanostream/ios/nanostream-ios-sdk.md
+  - MacOS api: nanostream/macos/nanostream-macos-sdk.md
+  - Android api: nanostream/android/nanostream-android-sdk.md
+- bintu.live :
+  - Android SDK:  bintu/android/test.rst
+  - GEtting: bintu/index.md
 
 theme: readthedocs
+
 
 markdown_extensions:
     - markdown_include.include

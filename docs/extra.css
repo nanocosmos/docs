@@ -1,14 +1,31 @@
 .wy-side-nav-search {
   background-color: #FF9D30;
 }
+.wy-nav-content {
 
-.wy-menu-vertical span {
+}
+  .wy-menu-vertical span {
   color: white;
+  
 
 }
 .wy-menu-vertical li.current {
   border-top: solid #ff9d30;
+  border-bottom: solid #ff9d30;
 }
+
+.wy-menu-vertical li ul li.toctree-l3:after {
+  content:
+}
+
 .wy-menu-vertical li ul li.toctree-l3 {
+  border-bottom: solid 1px black;
   background-color: #c8c8c8;
+
+}
+
+
+.wy-menu-vertical li ul li a.toctree-l4 {
+  padding-left:  4em;
+  margin-left: 1px;
 }
