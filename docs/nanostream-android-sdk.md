@@ -958,6 +958,7 @@ public class PlayerActivity extends Activity implements PlayerEventListener, Sur
 
 ## Crash Logs
 If you encounter a crash, please send us the crash log as explained in the following steps:
+
 - Plug in the device and open Android Studio
 - In Android Studios Android Monitor
   - Clear the logcat output
