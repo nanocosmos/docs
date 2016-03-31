@@ -2,7 +2,7 @@
 
 © 2016 nanocosmos gmbh [http://www.nanocosmos.de][e98cabe4]
 
-Version 0.X.X
+Version 0.1.1
 
 The bintu.live client SDK is used to generate and access live stream URLs from the bintu.live service to be used in combination with the nanoStream SDKs for live video encoding and broadcast.
 
