@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+
+	<title>Getting Started - nanocosmos Docs</title>
+
+        <link href="../../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../../css/highlight.css">
+        <link href="../../../css/base.css" rel="stylesheet">
+        <link href="../../../extra.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="../../..">nanocosmos Docs</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <!-- Main navigation -->
+            <ul class="nav navbar-nav">
+            
+            
+                <li >
+                    <a href="../../..">Home</a>
+                </li>
+            
+            
+            
+                <li >
+                    <a href="../../../about/">About</a>
+                </li>
+            
+            
+            
+                <li class="dropdown active">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">nanostream <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+<li >
+    <a href="../../web/nanostream-4.x-web-api/">Web api</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../../ios/nanostream-ios-sdk/">iOS api</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../../macos/nanostream-macos-sdk/">MacOS api</a>
+</li>
+
+                    
+                        
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Android nanoStream SDK</a>
+    <ul class="dropdown-menu">
+        
+            
+<li class="active">
+    <a href="./">Getting Started</a>
+</li>
+
+        
+            
+<li >
+    <a href="../android-advanced-settings/">Advanced Settings/Usage</a>
+</li>
+
+        
+            
+<li >
+    <a href="../rtmp-playback/">RTMP Playback</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">bintu.live <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+<li >
+    <a href="../../../bintu/android/bintu-android-sdk/">Android SDK</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../../../bintu/">Getting</a>
+</li>
+
+                    
+                    </ul>
+                </li>
+            
+            
+            </ul>
+
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                <li >
+                    <a rel="next" href="../../macos/nanostream-macos-sdk/">
+                        <i class="fa fa-arrow-left"></i> Previous
+                    </a>
+                </li>
+                <li >
+                    <a rel="prev" href="../android-advanced-settings/">
+                        Next <i class="fa fa-arrow-right"></i>
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#nanostream_sdk_for_android_-_developer_manual">nanoStream SDK for Android - Developer Manual</a></li>
+        
+            <li><a href="#purpose">Purpose</a></li>
+        
+            <li><a href="#requirements">Requirements</a></li>
+        
+            <li><a href="#getting_started">Getting Started</a></li>
+        
+            <li><a href="#further_questions_would_you_like_a_feature_not_available_yet">Further questions? Would you like a feature not available yet?</a></li>
+        
+            <li><a href="#crash_logs">Crash Logs</a></li>
+        
+    
+    </ul>
+</div></div>
+            <div class="col-md-9" role="main">
+
+<h1 id="nanostream_sdk_for_android_-_developer_manual">nanoStream SDK for Android - Developer Manual<a class="headerlink" href="#nanostream_sdk_for_android_-_developer_manual" title="Permanent link">&para;</a></h1>
+<h2 id="purpose">Purpose<a class="headerlink" href="#purpose" title="Permanent link">&para;</a></h2>
+<p>This documentation is about the nanoStream Live Video Streaming SDK for Android and can be used by software developers to integrate nanoStream Live Video Encoding into custom apps.</p>
+<h2 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Android 4.1+ (API Level 16)</li>
+</ul>
+<h3 id="required_application_permissions">Required application permissions:<a class="headerlink" href="#required_application_permissions" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>android.permission.INTERNET</code></li>
+<li><code>android.permission.RECORD_AUDIO</code></li>
+<li><code>android.permission.RECORD_VIDEO</code></li>
+</ul>
+<h3 id="required_application_permission_for_local_recording">Required application permission for local recording:<a class="headerlink" href="#required_application_permission_for_local_recording" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>android.permission.WRITE_EXTERNAL_STORAGE</code></li>
+</ul>
+<h2 id="getting_started">Getting Started<a class="headerlink" href="#getting_started" title="Permanent link">&para;</a></h2>
+<h3 id="copy_the_sdk_libraries_into_your_android_studio_project">Copy the SDK libraries into your Android Studio project<a class="headerlink" href="#copy_the_sdk_libraries_into_your_android_studio_project" title="Permanent link">&para;</a></h3>
+<p>Add the <code>net.nanocosmos.nanoStream.jar</code> java component to your Android Studio project by copying <code>[SDK]/libs/net.nanocosmos.nanoStream.jar</code> to the folder <code>[projectpath]/app/libs/net.nanocosmos.nanoStream.jar</code> Add the <code>nanoStream.so</code> native components to the Android Studio project by copying the 5 folders <code>[SDK]/libs/[platform]/libRTMPStream.so</code> to [projectpath]/app/src/main/jniLibs/[platform]/libRTMPStream.so`</p>
+<p>Platforms are armeabi, armeabi-v7a, arm64-v8a, x86, mips</p>
+<h3 id="add_the_nanostream_to_the_gradle_file">Add the nanoStream to the gradle file<a class="headerlink" href="#add_the_nanostream_to_the_gradle_file" title="Permanent link">&para;</a></h3>
+<p>Open the build.gradle file (Module:app) and add</p>
+<pre><code>compile files('libs/net.nanocosmos.nanoStream.jar')
+</code></pre>
+
+<p>to the dependencies section.</p>
+<h3 id="check_library_version">Check library version<a class="headerlink" href="#check_library_version" title="Permanent link">&para;</a></h3>
+<pre><code class="java">String nanoStreamVersion = nanoStream.getVersion().fullVersion;
+</code></pre>
+
+<h3 id="initialize_the_library">Initialize the library<a class="headerlink" href="#initialize_the_library" title="Permanent link">&para;</a></h3>
+<p>Implement the interface &ldquo;nanoStreamEventListener&rdquo; in your class:</p>
+<pre><code class="java">public class StreamActivity extends Activity implements NanostreamEventListener {
+  // implement your class
+
+  private class NotificationRunable implements Runnable {
+     private NanostreamEvent m_event;
+
+     public NotificationRunable(NanostreamEvent event) {
+      m_event = event;
+     }
+
+     @Override
+     public void run() {
+       Toast.makeText(getApplicationContext(), m_event.GetDescription(), Toast.LENGTH_SHORT).show();
+     }
+   }
+
+  @Override
+  public void onNanostreamEvent(NanostreamEvent event) {
+    if (event.GetType() != NanostreamEvent.TYPE_RTMP_QUALITY) {
+      this.runOnUiThread(new NotificationRunable(event));
+    }
+  }
+}
+</code></pre>
+
+<p>Configure the nanoStreamSettings object for the library:</p>
+<pre><code class="java">  private String license = &quot;--- add your nanoStream license here ---&quot;;
+  private String serverUrl = &quot;rtmp://example.org/live&quot;;
+  private String streamName = &quot;myStream&quot;;
+  private nanoStream streamLib = null;
+
+  void initStreamLib() {
+    if(null == streamLib) {
+      nanoStreamSettings nss = new nanoStreamSettings();
+      nss.setLicense(license);
+      nss.setLogSettings(logSettings);
+      nss.setStreamUrl(serverUrl);
+      nss.setStreamName(streamName);
+      nss.setEventListener(this);
+
+      try {
+        streamLib = new nanoStream(nss);
+      } catch (NanostreamException en) {
+        Toast.makeText(getApplicationContext(), en.toString(), Toast.LENGTH_LONG).show();
+      }
+
+      if(null != streamLib) {
+        try {
+          streamLib.init();
+        } catch (NanostreamException e) {
+          Toast.makeText(getApplicationContext(), e.toString(), Toast.LENGTH_LONG).show();
+        } catch (IllegalArgumentException e) {
+          e.printStackTrace();
+        }
+      }
+    }
+  }
+</code></pre>
+
+<p>Start/Stop the Stream:</p>
+<pre><code class="java">public void toggleStreaming(View clicked) {
+  if (null == streamLib) {
+    Toast.makeText(getApplicationContext(), &quot;nanoStream failed to initialize&quot;, Toast.LENGTH_LONG).show();
+    return;
+  }
+
+  if (!streamLib.hasState(nanoStream.EncoderState.RUNNING)) {
+    Toast.makeText(getApplicationContext(), &quot;Starting...&quot;, Toast.LENGTH_SHORT).show();
+
+    if (streamLib.hasState(nanoStream.EncoderState.STOPPED) || streamLib.hasState(nanoStream.EncoderState.CREATED)) {
+      try {
+        Logging.log(Logging.LogLevel.DEBUG, TAG, &quot;toggleStreaming init nanoStream&quot;);
+        streamLib.init();
+      } catch (NanostreamException en) {
+        Toast.makeText(getApplicationContext(), en.toString(), Toast.LENGTH_LONG).show();
+        return;
+      }
+    }
+
+    try {
+      streamLib.start();
+    } catch (NanostreamException en) {
+      Toast.makeText(getApplicationContext(), en.toString(), Toast.LENGTH_LONG).show();
+      return;
+    }
+  } else {
+    Toast.makeText(getApplicationContext(), &quot;Stopping...&quot;, Toast.LENGTH_SHORT).show();
+    streamLib.stop();
+  }
+}
+</code></pre>
+
+<h2 id="further_questions_would_you_like_a_feature_not_available_yet">Further questions? Would you like a feature not available yet?<a class="headerlink" href="#further_questions_would_you_like_a_feature_not_available_yet" title="Permanent link">&para;</a></h2>
+<p>We can make it work for you based on our consulting and development / implementation services. <a href="https://www.nanocosmos.de/v6/#section_call" title="Contect us">Contact us</a></p>
+<h2 id="crash_logs">Crash Logs<a class="headerlink" href="#crash_logs" title="Permanent link">&para;</a></h2>
+<p>If you encounter a crash, please send us the crash log as explained in the following steps:</p>
+<ul>
+<li>Plug in the device and open Android Studio</li>
+<li>In Android Studios Android Monitor<ul>
+<li>Clear the logcat output</li>
+<li>Set the Log Level to <code>Verbose</code></li>
+<li>Set the filter to <code>No Filters</code></li>
+</ul>
+</li>
+<li>Run the critical section</li>
+<li>Mark the entire logcat output</li>
+<li>Right click in the logcat View and <code>Copy as Plain Text</code></li>
+<li>Open an editor of your choice</li>
+<li>Paste the logcat output into the editor and Save the logcat output as .txt file</li>
+</ul></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            
+            <center>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</center>
+        </footer>
+
+        <script src="../../../js/jquery-1.10.2.min.js"></script>
+        <script src="../../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../../js/highlight.pack.js"></script>
+        <script>var base_url = '../../..';</script>
+        <script data-main="../../../mkdocs/js/search.js" src="../../../mkdocs/js/require.js"></script>
+        <script src="../../../js/base.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>
+                            From here you can search these documents. Enter
+                            your search terms below.
+                        </p>
+                        <form role="form">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                            </div>
+                        </form>
+                        <div id="mkdocs-search-results"></div>
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

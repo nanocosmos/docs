@@ -4,7 +4,7 @@
     
     <url>
      <loc>None/</loc>
-     <lastmod>2016-02-01</lastmod>
+     <lastmod>2016-04-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -12,49 +12,53 @@
     
     <url>
      <loc>None/about/</loc>
-     <lastmod>2016-02-01</lastmod>
+     <lastmod>2016-04-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
 
     
+        
     <url>
-     <loc>None/nanostream-4.x-web-api/</loc>
-     <lastmod>2016-02-01</lastmod>
+     <loc>None/nanostream/web/nanostream-4.x-web-api/</loc>
+     <lastmod>2016-04-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
+        
+    <url>
+     <loc>None/nanostream/ios/nanostream-ios-sdk/</loc>
+     <lastmod>2016-04-12</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/nanostream/macos/nanostream-macos-sdk/</loc>
+     <lastmod>2016-04-12</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None</loc>
+     <lastmod></lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
     
 
     
+        
     <url>
-     <loc>None/nanostream-ios-sdk/</loc>
-     <lastmod>2016-02-01</lastmod>
+     <loc>None/bintu/android/bintu-android-sdk/</loc>
+     <lastmod>2016-04-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
-    
-
-    
+        
     <url>
-     <loc>None/nanostream-macos-sdk/</loc>
-     <lastmod>2016-02-01</lastmod>
+     <loc>None/bintu/</loc>
+     <lastmod>2016-04-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
-    
-
-    
-    <url>
-     <loc>None/nanostream-android-sdk/</loc>
-     <lastmod>2016-02-01</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    
-
-    
-    <url>
-     <loc>None/mkdocs/</loc>
-     <lastmod>2016-02-01</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
+        
     
 
 </urlset>
