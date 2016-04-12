@@ -2,13 +2,17 @@ site_name: nanocosmos Docs
 pages:
 - Home: index.md
 - About: about.md
-- web api: nanostream-4.x-web-api.md
-- ios api: nanostream-ios-sdk.md
-- macos api: nanostream-macos-sdk.md
-- Android nanoStream SDK:
-  - 'Getting Started': 'android/getting-started.md'
-  - 'Advanced Settings/Usage': 'android/android-advanced-settings.md'
-  - 'RTMP Playback': 'android/rtmp-playback.md'
+- nanostream :
+  - Web api: nanostream/web/nanostream-4.x-web-api.md
+  - iOS api: nanostream/ios/nanostream-ios-sdk.md
+  - MacOS api: nanostream/macos/nanostream-macos-sdk.md
+  - Android nanoStream SDK:
+   - 'Getting Started': 'android/getting-started.md'
+   - 'Advanced Settings/Usage': 'android/android-advanced-settings.md'
+   - 'RTMP Playback': 'android/rtmp-playback.md'
+- bintu.live :
+  - Android SDK:  bintu/android/test.rst
+  - GEtting: bintu/index.md
 
 #theme: readthedocs
 theme: yeti
@@ -19,3 +23,4 @@ markdown_extensions:
   - toc:
       permalink: True
       separator: "_"
+extra_css: [extra.css]
