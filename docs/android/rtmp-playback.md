@@ -1,5 +1,5 @@
-RTMP Playback
-=============
+nanoStream SDK for Android RTMP Playback
+========================================
 
 <a name="rtmp_playback_description"></a>Description
 ---------------------------------------------------
@@ -21,7 +21,12 @@ Related nanoStream SDK Version: 4.1
 
 Minimum supported Android OS/API: 4.1/API 16
 
-Required application permissions: - `android.permission.INTERNET` - `android.permission.RECORD_AUDIO` - `android.permission.RECORD_VIDEO` - `android.permission.MODIFY_AUDIO_SETTINGS`
+Required application permissions:
+
+- `android.permission.INTERNET`
+- `android.permission.RECORD_AUDIO`
+- `android.permission.RECORD_VIDEO`
+- `android.permission.MODIFY_AUDIO_SETTINGS`
 
 License
 -------

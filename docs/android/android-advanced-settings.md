@@ -1,5 +1,5 @@
-Advanced Settings/Usage
-=======================
+nanoStream SDK for Android Advanced Settings/Usage
+==================================================
 
 Resolution, Aspect Ratio and Orientation
 ----------------------------------------
