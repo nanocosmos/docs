@@ -369,17 +369,17 @@ To correspond with our broadcaster streaming in portrait orientation, the player
 
 To create our playing view, go into the ```Main.storyboard``` file.
 
-The UI will be a lot like our broadcaster app, so we just repeat all the steps. But instead of creating a "Start" button for our stream, we create a button with the title "Play" which will play back our stream. The other steps are identical. If you have trouble, please see the section [Broadcast View](#broadcast-view) in the broadcaster part.  The result should look something like this:
+The UI will be a lot like our broadcaster app, so we just repeat all the steps. But instead of creating a "Start" button for our stream, we create a button with the title "Play" which will play back our stream. The other steps are identical. If you have trouble, please see the section [Broadcast View](#broadcast_view) in the broadcaster part.  The result should look something like this:
 
 ## Connection to ViewController
 
-Just like in the broadcaster example, we create outlets for our view and our button to the ViewController. If you have trouble with these steps, please see the [section from the broadcaster part](#connection-to-viewcontroller).
+Just like in the broadcaster example, we create outlets for our view and our button to the ViewController. If you have trouble with these steps, please see the [section from the broadcaster part](#connection_to_viewcontroller).
 
 We also create an action and name it ```togglePlayback```. The result looks like this:
 
 ## Importing the SDKs
 
-Just like in our player app, we need to import the nanoStream SDK. If you have trouble with any of the following steps, please see the more [detailed guide in the broadcaster section](#importing-the-sdks).
+Just like in our player app, we need to import the nanoStream SDK. If you have trouble with any of the following steps, please see the more [detailed guide in the broadcaster section](#importing_the_sdks).
 
 For the player app, you need a little bit more than for the broadcaster, but not much. You need the files ```Bintu.framework```, ```libnanostreamAVC.a```, ```nanostreamAVC.h```, ```nanostreamAVCExtendedCaptureSession.h``` and ```nanostreamAVCRtmpSourceCaptureSession.h```. Drag all of them into your project in the Navigator on the left side. Here as well, check "Copy items if needed" for all of them.
 
@@ -391,7 +391,7 @@ You can now build and run the project on your device. You should see the preview
 
 ## Setting up nanoStream SDK
 
-Again, you need to add the dependencies for nanoStream SDK. Please refer to this [guide](#setting-up-nanostream-sdk) for instructions.
+Again, you need to add the dependencies for nanoStream SDK. Please refer to this [guide](#setting_up_nanostream_sdk) for instructions.
 
 Once you have your dependencies in place, your "Linked Frameworks" section should look like this:
 
