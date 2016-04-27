@@ -1,6 +1,7 @@
 This is Markdown.
 vergleiche
-http://www.nanocosmos.de/v4/documentation/nanostream_sdk_for_ios_-_developer_documentation
+[http://www.nanocosmos.de/v4/documentation/nanostream_sdk_for_ios_-_developer_documentation][8032d3c6]
+
 
 # nanoStream SDK for iOS - Developer Manual
 
@@ -171,7 +172,8 @@ The orientation of the stream can be set to portrait or landscape with the prope
 
 As of version 4.4.0.6 the orientation can also be changed after the initialization with the property ```orientation``` of the nanostreamAVC object itself.
 
-**Important:** The orientation change will only affect the stream, but not the preview. The orientation for the preview has to be managed on the application level. This can be achieved by using e.g. ```CGAffineTransformMakeRotation``` (https://developer.apple.com/library/mac/documentation/GraphicsImaging/Reference/CGAffineTransform/).
+**Important:** The orientation change will only affect the stream, but not the preview. The orientation for the preview has to be managed on the application level. This can be achieved by using e.g. ```CGAffineTransformMakeRotation``` ([https://developer.apple.com/library/mac/documentation/GraphicsImaging/Reference/CGAffineTransform/][c9ad3c65]).
+
 
 ### Stream Type
 
@@ -262,14 +264,14 @@ abr.maxPercentBitrateChange = 50;  // if the bitrate drops to less than 50% of t
 Possible properties:
 
 | property                | default values | range of values    | optional |
-| --------                | -------------- | ---------------    | -------- |
+|:------------------------|:---------------|:-------------------|:---------|
 | minimumBitrate          | 5000 (50 kb)   | 50000 - 10 000 000 | YES      |
 | minimumFramerate        | 15 (fps)       | 5 - 60             | YES      |
 | maxPercentBitrateChange | 50 (%)         | 0 - 100            | YES      |
 
 _
 
-For more information look here http://www.nanocosmos.de/v4/documentation/live_video_encoder_-_adaptive_bitrate#abc_modes
+For more information look here [http://www.nanocosmos.de/v4/documentation/live_video_encoder_-_adaptive_bitrate#abc_modes][39932e03]
 ### Measuring the available bandwidth
 
 For measuring the available bandwidth you can use the method ```runBandwidthCheck```. After the check finished, the result can be used to set the bitrate for the nanostreamAVC object.
@@ -524,7 +526,9 @@ Generally, if the Parrot & DJI extensions are not used, the symbols should be st
 However this is not the case when the linker flag "-ObjC" is used in the app project. This causes the linker to load all symbols included in all linked object files (including the Parrot & DJI symbols). This prevents the automatic stripping.
 
 To use our library without Parrot & DJI, either remove the "-ObjC" linker flag from the project or replace the "-ObjC" linker flag with the "-force_load" flag for each library that you want to use. Do not use "-force_load" with libnanostreamAVC.a.
-For examples see http://stackoverflow.com/questions/11254269/using-the-force-load-linker-flag-with-restkit-ios
+For examples see [http://stackoverflow.com/questions/11254269/using-the-force-load-linker-flag-with-restkit-ios][726cefc0]
+
+
 
 ### Breakpoints
 
@@ -534,7 +538,7 @@ You can prevent the breakpoint from pausing the workflow of your application, if
 The default setting is most likely that every exception causes a break.
 To change that, use the settings from the following screenshot:
 
-![Screenshot](screenshot_exception_breakpoint.png)
+![Screenshot](docs/nanostream/ios/img/screenshot_exception_breakpoint.png)
 
 This way only Objective-C exceptions will be catched and C++ exceptions will be ignored.
 
@@ -569,9 +573,11 @@ Please use the following steps to create the log files:
   ```
 
 - try to reproduce the problem
-- download the app container (for your app) from the iOS device with Xcode, as explained here: https://developer.apple.com/library/ios/recipes/xcode_help-devices_organizer/articles/manage_containers.html
+- download the app container (for your app) from the iOS device with Xcode, as explained here: [https://developer.apple.com/library/ios/recipes/xcode_help-devices_organizer/articles/manage_containers.html][6308e43e]
 - in Finder right click on the downloaded container and select "Show Package Contents"
 - send us the logfiles located (in the container) in the folder "/AppData/Library/Caches/Logs/"
+
+
 
 ## Crash Logs
 
@@ -586,4 +592,17 @@ If you encounter a crash, please send us the crash log as explained in the follo
 - Find your app in the Process column and select the Crash log to see the contents.
 - To save a crash log, right click the entry on the left column and choose "Export Log"
 
-(Taken from https://developer.apple.com/library/ios/qa/qa1747/_index.html)
+(Taken from https://developer.apple.com/library/ios/qa/qa1747/_index.[https://developer.apple.com/library/ios/qa/qa1747/_index.html][5eb14785])
+
+
+
+<!--- List of references  ------ --->
+[8032d3c6]: http://www.nanocosmos.de/v4/documentation/nanostream_sdk_for_ios_-_developer_documentation "nanoStream SDK for iOS developer documentation origin"
+[6308e43e]: https://developer.apple.com/library/ios/recipes/xcode_help-devices_organizer/articles/manage_containers.html "Receipe : Manage Containers"
+[5eb14785]: https://developer.apple.com/library/ios/qa/qa1747/_index.html "Debugging Deployed iOS Apps"
+[726cefc0]: http://stackoverflow.com/questions/11254269/using-the-force-load-linker-flag-with-restkit-ios "Using the force_load linker flag with RestKit (iOS)"
+[39932e03]: http://www.nanocosmos.de/v4/documentation/live_video_encoder_-_adaptive_bitrate#abc_modes "Adaptive Bitrate Control Modes"
+[c9ad3c65]: https://developer.apple.com/library/mac/documentation/GraphicsImaging/Reference/CGAffineTransform/ "CGAffineTransform Graphics Imaging Documentation"
+
+<!--- ------- Table of figures -------- --->
+[exception_breakpoints]: img/screenshot_exception_breakpoint.png "Exception Breakpoints"

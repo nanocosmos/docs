@@ -4,9 +4,11 @@ pages:
 - About: about.md
 - nanostream:
   - Web api: nanostream/web/nanostream-4.x-web-api.md
-  - iOS api: nanostream/ios/nanostream-ios-sdk.md
+  - iOS api:
+    - 'Quick Start': nanostream/ios/ios-quick-start.md
+    - 'Developer Manual': nanostream/ios/ios-sdk-developer-manual.md
   - MacOS api: nanostream/macos/nanostream-macos-sdk.md
-  - Android nanoStream SDK:
+  - Android api:
     - 'Getting Started': 'nanostream/android/getting-started.md'
     - 'Advanced Settings/Usage': 'nanostream/android/android-advanced-settings.md'
     - 'RTMP Playback': 'nanostream/android/rtmp-playback.md'
