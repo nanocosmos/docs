@@ -14,44 +14,37 @@ Aspect ratio means the aspect ratio of the outgoing stream. The aspect ratio det
 
 #### Supported Aspect Ratios
 
-| Aspect Ratio | AspectRatio value            |
-|--------------|------------------------------|
-| Keep Input   | AspectRatio.RATIO_KEEP_INPUT |
-| 1:1          | AspectRatio.RATIO_1_1        |
-| 4:3          | AspectRatio.RATIO_4_3        |
-| 16:9         | AspectRatio.RATIO_16_9       |
-| 3:4          | AspectRatio.RATIO_3_4        |
-| 9:16         | AspectRatio.RATIO_9_16       |
+| Aspect Ratio                                        | AspectRatio value                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+|:----------------------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Keep Input                                          | AspectRatio.RATIO_KEEP_INPUT                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| 1:1                                                 | AspectRatio.RATIO_1_1                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| 4:3                                                 | AspectRatio.RATIO_4_3                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| 16:9                                                | AspectRatio.RATIO_16_9                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| 3:4                                                 | AspectRatio.RATIO_3_4                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| 9:16                                                | AspectRatio.RATIO_9_16    | ### Orienta                                       | The default stream orientation is landscape. If you switch to portrait the resolution will swap width and height, e.g. from 640x480 to 480x640. You can set the stream orientation on the `nanoStream` object with the `setStreamRotation` function. The stream orientation needs to be set before starting the stream, it is not possible to switch the orientation during the str | #### Supported Orientat | Orientation           | Rotation Value |
+| :-------------------------------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------                                                                               |
+| Landscape                                           | Rotation.ROTATION_0                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| Portrait                                            | Rotation.ROTATION_90                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| Landscape Upside Down                               | Rotation.ROTATION_180                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| Portrait Upside Down                                | Rotation.ROTATION_270                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| _270                                                |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| _270                                                | | ### Example Combinations of Aspect Ratios and O | The input resolution is set to 640x480 here. The red rectangle marks up the active area that is included in the outp | Orientation | Aspect Ratio | Stream Area                                                                                                                                                                                                                                                                                                                    |
+| :------------------------------------------------   | :---------------------------------------------------------------------------------------------------------------------|:--------------------------------------------                                                                                                                                                                                                                                                                                                                                                                   |
+| Portrait<sup>[1](#fnAS1)</sup>                      | Keep Input                                                                                                           | ![Screenshot](img/portrait_keep_input.png)                                                                                                                                                                                                                                                                                                                                                                      |
+| Portrait<sup>[1](#fnAS1)</sup>                      | 4:3                                                                                                                  | ![Screenshot](img/portrait_4_3.png)                                                                                                                                                                                                                                                                                                                                                                             |
+| Portrait<sup>[1](#fnAS1)</sup>                      | 3:4                                                                                                                  | ![Screenshot](img/portrait_3_4.png)                                                                                                                                                                                                                                                                                                                                                                             |
+| Portrait<sup>[1](#fnAS1)</sup>                      | 16:9                                                                                                                 | ![Screenshot](img/portrait_16_9.png)                                                                                                                                                                                                                                                                                                                                                                            |
+| Portrait<sup>[1](#fnAS1)</sup>                      | 9:16                                                                                                                 | ![Screenshot](img/portrait_9_16.png)                                                                                                                                                                                                                                                                                                                                                                            |
+| Landscape                                           | Keep Input                                                                                                           | ![Screenshot](img/landscape_keep_input.png)                                                                                                                                                                                                                                                                                                                                                                     |
+| Landscape                                           | 4:3                                                                                                                  | ![Screenshot](img/landscape_4_3.png)                                                                                                                                                                                                                                                                                                                                                                            |
+| Landscape                                           | 3:4                                                                                                                  | ![Screenshot](img/landscape_3_4.png)                                                                                                                                                                                                                                                                                                                                                                            |
+| Landscape                                           | 16:9                                                                                                                 | ![Screenshot](img/landscape_16_9.png)                                                                                                                                                                                                                                                                                                                                                                           |
+| Landscape                                           | 9:16                                                                                                                 | ![Screenshot](img/landscape_9_16.png)                                                                                                                                                                                                                                                                                                                                                                           |
+| png)                                                | |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+|                                                     |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+|                                                     |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 
-### Orientation
-
-The default stream orientation is landscape. If you switch to portrait the resolution will swap width and height, e.g. from 640x480 to 480x640. You can set the stream orientation on the `nanoStream` object with the `setStreamRotation` function. The stream orientation needs to be set before starting the stream, it is not possible to switch the orientation during the stream.
-
-#### Supported Orientations
-
-| Orientation           | Rotation Value        |
-|-----------------------|-----------------------|
-| Landscape             | Rotation.ROTATION_0   |
-| Portrait              | Rotation.ROTATION_90  |
-| Landscape Upside Down | Rotation.ROTATION_180 |
-| Portrait Upside Down  | Rotation.ROTATION_270 |
-
-### Example Combinations of Aspect Ratios and Orientations
-
-The input resolution is set to 640x480 here. The red rectangle marks up the active area that is included in the output stream.
-
-| Orientation                    | Aspect Ratio | Stream Area                                 |
-|--------------------------------|--------------|---------------------------------------------|
-| Portrait<sup>[1](#fnAS1)</sup> | Keep Input   | ![Screenshot](img/portrait_keep_input.png)  |
-| Portrait<sup>[1](#fnAS1)</sup> | 4:3          | ![Screenshot](img/portrait_4_3.png)         |
-| Portrait<sup>[1](#fnAS1)</sup> | 3:4          | ![Screenshot](img/portrait_3_4.png)         |
-| Portrait<sup>[1](#fnAS1)</sup> | 16:9         | ![Screenshot](img/portrait_16_9.png)        |
-| Portrait<sup>[1](#fnAS1)</sup> | 9:16         | ![Screenshot](img/portrait_9_16.png)        |
-| Landscape                      | Keep Input   | ![Screenshot](img/landscape_keep_input.png) |
-| Landscape                      | 4:3          | ![Screenshot](img/landscape_4_3.png)        |
-| Landscape                      | 3:4          | ![Screenshot](img/landscape_3_4.png)        |
-| Landscape                      | 16:9         | ![Screenshot](img/landscape_16_9.png)       |
-| Landscape                      | 9:16         | ![Screenshot](img/landscape_9_16.png)       |
+png)       |
 
 <a name="fnAS1">1</a>: In this sample APP we crop the preview so it doesn't look ugly, so the stream is actually larger then the preview.
 
@@ -188,25 +181,7 @@ public class MainActivity extends Activity {
   }
 }
 ```
-
-Stream Type
------------
-
-The SDK supports differnet streaming modes:
-
--	Video and Audio
--	Video only
--	Audio only
-
-You can en/disable Video/Audio in the `nanoStreamSettings`.
-
-### Implementation Example
-
-```java
-nanoStreamSettings nss = new nanoStreamSettings();
-nss.setHaveVideo(true); // false
-nss.setHaveAudio(true); // false
-```
+{!doc/nanostream/android/android_stream_type.md!}
 
 Local Recording
 ---------------
@@ -257,96 +232,7 @@ nss.setRecordMp4(true);
 nss.setMp4Path(mp4FilePath);
 ```
 
-Adaptive Bitrate Streaming
---------------------------
-
-By using the Adaptive Bitrate Control (ABC) the stream will automatically adjust to changes of the bandwidth. There are four modes available:
-
--	DISABLED: The Adaptive Bitrate Control is disabled.
--	QUALITY_DEGRADE: The video quality will be changed if the bandwidth changes. For instance, if not enough bandwidth is available, the video bitrate will be decreased, which in turn degrades the video quality.
--	FRAME_DROP: Low bandwidth is compensated by decreasing the framerate (FPS), but maintaining the video qualtiy.
--	QUALITY_DEGRADE_AND_FRAME_DROP: The video quality and the framerate (FPS) decreased if the not enough bandwidth is available.
-
-Make sure to set the ABC settings before a stream is started.
-
-### Implementation Example
-
-```java
-private AdaptiveBitrateControlSettings.AdaptiveBitrateControlMode abcMode = AdaptiveBitrateControlSettings.AdaptiveBitrateControlMode.QUALITY_DEGRADE_AND_FRAME_DROP;
-private int videoBitrate = 500000;
-
-private void initStreamLib() {
-  AdaptiveBitrateControlSettings abcSettings = new AdaptiveBitrateControlSettings(abcMode);
-  abcSettings.SetMaximumBitrate((int)(videoBitrate * 1.5));
-
-  nanoStreamSettings nss = new nanoStreamSettings();
-  nss.setAbcSettings(abcSettings);
-}
-```
-
-Measuring the available bandwidth
----------------------------------
-
-For measuring the available bandwidth you can use the method `runBandwidthCheck`. After the check finished, the result can be used to set the bitrate for the nanoStream object.
-The check measures the bandwidth by running a test stream to the server.
-
-The BandwidthCheck Class has three public functions:
-
--	runBandwidthCheck(BandwidthCheckSettings settings, BandwidthCheckResultCallback callback()
--	forceStop()
--	abort()
-
-There is a BandwidthCheckSettings Class, the constructor creates a standard object of BandwidthCheckSettings, with the following settings:
-
-| property       | default values             | meaning                                            |
-|----------------|----------------------------|----------------------------------------------------|
-| prerollSeconds | 1 (in sec.)                | this is the pre roll time to connect to the server |
-| runTime        | 5 (in sec.)                | the run time of the bandwidth check                |
-| maxBitrate     | 3000000 (bit/s = 3 MBit/s) | the maximum bit rate for the bandwidth check       |
-| rtmpUrl        | empty                      | the rtmp url for the bandwidth check               |
-| streamId       | empty                      | the stream id for the bandwidth check              |
-
-With this settings you can call the runBandwidthCheck methode, the second parameter is the callback for the results. This callback class has a finished method that will be called after bandwidth check is done.
-The finished method has one parameter from type BandwidthCheckResult, this object has 6 getter methods:
-
- - getAverageBitrate() // the average measured bandwidth
- - getMedianBitrate() // the median measured bandwidth
- - getMaxBitrate() // the maximum measured bandwidth
- - getMinBitrate() // the minimum measured bandwidth
- - getRunTimeMS() // the run time in ms
- - getErrorCode() // the error code if all is ok this is nanoResults.N_OK (all error codes can be found in the nanoStream API Reference documentation for nanoResults)
-
-The forceStop call stops the bandwidth check and will return the results that where measured until then. The abort call stops the bandwidth check but don't return any results.
-
-The bandwidth check, sends a special type of metadata that will not be recorded on the Streaming Server.
-
-### Implementation Example
-
-```java
-private BandwidthCheck bwCheck = null;
-
-private class CustomBandwidthCheckResultCallback implements BandwidthCheckResultCallback {
-  @Override
-  public void finished(final BandwidthCheckResult bandwidthCheckResult) {
-    Log.d(TAG, "BandwidthCheck results: " +
-      "\n\tAverage Bitrate (kBit/s): " + bandwidthCheckResult.getAverageBitrate() / 1000 +
-      "\n\tMedian Bitrate  (kBit/s): " + bandwidthCheckResult.getMedianBitrate() / 1000 +
-      "\n\tMax Bitrate     (kBit/s): " + bandwidthCheckResult.getMaxBitrate() / 1000 +
-      "\n\tMin Bitrate     (kBit/s): " + bandwidthCheckResult.getMinBitrate() / 1000 +
-      "\n\tRun Time        (ms)    : " + bandwidthCheckResult.getRunTimeMS());
-  }
-}
-
-private void initBandwidthCheck() {
-  if(null == bwCheck) {
-    BandwidthCheckSettings settings = new BandwidthCheckSettings();
-    settings.setRtmpUrl(serverUrl);
-    settings.setStreamId(streamName);
-    bwCheck = new BandwidthCheck();
-    bwCheck.runBandwidthCheck(settings, new CustomBandwidthCheckResultCallback());
-  }
-}
-```
+{!docs/nanostream/android/android_bandwidth_control.md!}
 
 RTMP Quality Statistics
 -----------------------
@@ -418,29 +304,24 @@ public class MainActivity extends Activity implements NanostreamEventListener {
 
 			outputBitrate.setText(Long.toString(m_event.GetParam1() / 1000) + "kbit/s");
 			outputBitrate.setTextColor(qualityColor);
-			bufferFullness.setText(format.format(((double) m_event.GetParam2() / 100.0)) + "%");
-			bufferFullness.setTextColor(qualityColor);
-			bitrate.setText(Long.toString(m_event.GetParam3() / 1000) + "kbit/s");
-			framerate.setText(m_event.GetParam4() + "fps");
+			bufferFullness.setText(format.format(((double) m_event.Ge| bufferFullness.               | bitrate.setText(Long.toString(m | framerate.setText(m_event.GetPa | Camera Zoom     | The nanoStream Android SDK supports camera zoom, if the internal camera supports it. Therefor there are a few funct | Function        | Return Type     | returns |
+|:------------------------------|:--------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `hasZoom()`                   | `booelan`                       | true if zoom is supported by the video source / device                                                                                                                                                                |
+| `getZoomRatios()`             | `List<Integer>`                 | list with of ale zoom ratios                                                                                                                                                                                          |
+| `getZoom()`                   | `int`                           | the index of the `List<Integer>` that returned from `getZommRatios()`                                                                                                                                                 |
+| `setZoom(int)`                | `int`                           | the new index of the `List<Integer>` that returned from `getZommRatios()`                                                                                                                                             |
+| turned from `getZommRatios()` |                                 |                                                                                                                                                                                                                       |
+|                               |                                 |                                                                                                                                                                                                                       |
+| turned from `getZommRatios()` |                                 |                                                                                                                                                                                                                       |
+|                               |                                 |                                                                                                                                                                                                                       |
+|                               |                                 |                                                                                                                                                                                                                       |
+| turned from `getZommRatios()` |                                 |                                                                                                                                                                                                                       |
+|                               |                                 |                                                                                                                                                                                                                       |
+                          |
 
-		}
-	}
-}
-```
-
-Camera Zoom
------------
-
-### Description
-
-The nanoStream Android SDK supports camera zoom, if the internal camera supports it. Therefor there are a few functions, the most important are:
-
-| Function          | Return Type     | returns                                                                   |
-|-------------------|-----------------|---------------------------------------------------------------------------|
-| `hasZoom()`       | `booelan`       | true if zoom is supported by the video source / device                    |
-| `getZoomRatios()` | `List<Integer>` | list with of ale zoom ratios                                              |
-| `getZoom()`       | `int`           | the index of the `List<Integer>` that returned from `getZommRatios()`     |
-| `setZoom(int)`    | `int`           | the new index of the `List<Integer>` that returned from `getZommRatios()` |
+|
+|
+turned from `getZommRatios()` |
 
 It is recommended to use `pinch to zoom`, therefor you need to implement a `ScaleGestureDetector.SimpleOnScaleGestureListener`, and a `pinch2zoom` function, that takes the `scalefactor` from the `SimpleOnScaleGestureListener` as a int parameter, take a look at the [Implementation Example](#implementation_example_7).
 
@@ -544,37 +425,29 @@ The nanoStream Android SDK supports camera focus and focus lock, if the internal
 ```java
 setFocusArea(int focusWidth, int focusHeight, float areaMultiple, int x,
     int y, int previewWidth, int previewHeight, int weigh)
-setFocusLockArea(int focusWidth, int focusHeight, float areaMultiple, int x,
-    int y, int previewWidth, int previewHeight, int weigh)
-```
+setFocusLockArea(int focusWidth, int| int y, int previewWidt              | through the                         | rem                                 | you can attach or remove a FocusCallback listener. To check if your device supports focus call the funct | which will return t                 | Parameter name | meaning |
+|:------------------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| focusWidth                          | the focus Area width                                                                                                                                                                                                                                  |
+| focusHeight                         | the focus Area height                                                                                                                                                                                                                                 |
+| areaMultiple                        | a Multiple for the focus area (default: 1f)                                                                                                                                                                                                           |
+| x                                   | the x position on the Screen                                                                                                                                                                                                                          |
+| y                                   | the y position on the Screen                                                                                                                                                                                                                          |
+| previewWidth                        | the width of the preview                                                                                                                                                                                                                              |
+| previewHeight                       | the height of the preview                                                                                                                                                                                                                             |
+| weight                              | the weight of the area must be range from 1 to 1000                                                                                                                                                                                                   |
+| e area must be range from 1 to 1000 |                                                                                                                                                                                                                                                       |
+|                                     |                                                                                                                                                                                                                                                       |
+| e area must be range from 1 to 1000 |                                                                                                                                                                                                                                                       |
+|                                     |                                                                                                                                                                                                                                                       |
+|                                     |                                                                                                                                                                                                                                                       |
+| e area must be range from 1 to 1000 |                                                                                                                                                                                                                                                       |
+|                                     |                                                                                                                                                                                                                                                       |
+|                                     |                                                                                                                                                                                                                                                       |
+|                                     |                                                                                                                                                                                                                                                       |
+| e area must be range from 1 to 1000 |                                                                                                                                                                                                                                                       |
+                                       |
 
-through the
-
-```java
-addFocusCalback(FocusCallback callback)
-removeFocusCalback(FocusCallback callback)
-```
-
-you can attach or remove a FocusCallback listener. To check if your device supports focus call the function
-
-```java
-isFocusSupported()
-```
-
-which will return true or false.
-
-### Parameter List
-
-| Parameter name | meaning                                             |
-|----------------|-----------------------------------------------------|
-| focusWidth     | the focus Area width                                |
-| focusHeight    | the focus Area height                               |
-| areaMultiple   | a Multiple for the focus area (default: 1f)         |
-| x              | the x position on the Screen                        |
-| y              | the y position on the Screen                        |
-| previewWidth   | the width of the preview                            |
-| previewHeight  | the height of the preview                           |
-| weight         | the weight of the area must be range from 1 to 1000 |
+e area must be range from 1 to 1000 |
 
 ### FocusCallback interface
 
@@ -670,18 +543,8 @@ private void shapshot() {
 }
 ```
 
-Server Authentication
----------------------
+{!docs/nanostream/android/android_server_authentication.md!}
 
-In case authentication is required, the credentials can be set on the `nanoStreamSettings` object.
-
-### Implementation Example
-
-```java
-nanoStreamSettings nss = new nanoStreamSettings();
-nss.setAuthUser("user");
-nss.setAuthPassword("password");
-```
 
 DeviceProperties
 ----------------
