@@ -3,6 +3,7 @@
 The nanoStream Android SDK supports, MP4 recording to do this there needs to be set a valid Path to the nanoStreamSettings object. And the MP4 Recording needs to be enabled. This feature allows you to record the current stream to the Device internal/external sd card.
 ## Enable MP4 recording
 To enable the MP4 recording there are tow functions in the nanoStreamSettings Class.
+
 1. setRecordMp4(boolean)
 2. setMp4Path(String)
 

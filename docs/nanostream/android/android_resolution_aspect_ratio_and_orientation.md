@@ -15,6 +15,7 @@ Aspect ratio means the aspect ratio of the outgoing stream. The aspect ratio det
 | 16:9         | AspectRatio.RATIO169       |
 | 3:4          | AspectRatio.RATIO34        |
 | 9:16         | AspectRatio.RATIO_9_16     |
+
 ## Orientation
 The default stream orientation is landscape. If you switch to portrait the resolution will swap width and height, e.g. from 640×480 to 480×640. You can set the stream orientation on the nanoStream object with the setStreamRotation function. The stream orientation needs to be set before starting the stream, it is not possible to switch the orientation during the
 

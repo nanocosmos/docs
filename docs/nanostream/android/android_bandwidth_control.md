@@ -30,21 +30,22 @@ private void initStreamLib() {
 
 
 For measuring the available bandwidth you can use the method `runBandwidthCheck`. After the check finished, the result can be used to set the bitrate for the nanoStream object.
+The check measures the bandwidth by running a test stream to the server.
+The BandwidthCheck Class has three public functions:
 
-| The check measures the bandwidth by running a t | The BandwidthCheck Class ha | -	runBandwidthCheck(BandwidthCheckSettings settings, BandwidthCheckResultCallback callback() | There is a BandwidthCheckSettings Class, the constructor creates a standard object of BandwidthCheckSettings, with t | property                   | default values             | meaning |
+* runBandwidthCheck(BandwidthCheckSettings settings, BandwidthCheckResultCallback callback()
+* forceStop()
+* abort()
+
+There is a BandwidthCheckSettings Class, the constructor creates a standard object of BandwidthCheckSettings, with the following settings:
+
+| property | default values	|	meaning|
 |:------------------------------------------------|:----------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | prerollSeconds                                  | 1 (in sec.)                 | this is the pre roll time to connect to the server                                                                                                                                                                                                                                     |
 | runTime                                         | 5 (in sec.)                 | the run time of the bandwidth check                                                                                                                                                                                                                                                    |
 | maxBitrate                                      | 3000000 (bit/s = 3 MBit/s)  | the maximum bit rate for the bandwidth check                                                                                                                                                                                                                                           |
 | rtmpUrl                                         | empty                       | the rtmp url for the bandwidth check                                                                                                                                                                                                                                                   |
 | streamId                                        | empty                       | the stream id for the bandwidth check                                                                                                                                                                                                                                                  |
-| dth check                                       |                             |                                                                                                                                                                                                                                                                                        |
-|                                                 |                             |                                                                                                                                                                                                                                                                                        |
-| dth check                                       |                             |                                                                                                                                                                                                                                                                                        |
-|                                                 |                             |                                                                                                                                                                                                                                                                                        |
-| dth check                                       |                             |                                                                                                                                                                                                                                                                                        |
-|                                                 |                             |                                                                                                                                                                                                                                                                                        |
-| dth check                                       |                             |                                                                                                                                                                                                                                                                                        |
 
 With this settings you can call the runBandwidthCheck methode, the second parameter is the callback for the results. This callback class has a finished method that will be called after bandwidth check is done.
 The finished method has one parameter from type BandwidthCheckResult, this object has 6 getter methods:

@@ -6,7 +6,7 @@ The nanoStream Android SDK supports Camera focus and focus lock, if the the inte
 setFocusArea(int focusWidth, int focusHeight, float areaMultiple, int x, int y, int previewWidth, int previewHeight, int weigh)
 setFocusLockArea(int focusWidth, int focusHeight, float areaMultiple, int x, int y, int previewWidth, int previewHeight, int weigh)
 ```
-over the
+through the
 ```java
 addFocusCalback(FocusCallback callback)
 removeFocusCalback(FocusCallback callback)
