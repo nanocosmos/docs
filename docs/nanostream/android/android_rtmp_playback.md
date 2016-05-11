@@ -63,8 +63,8 @@ The playback component requires a special feature flag to be enabled in your nan
 |                        |                        |                 |                    | prepare          | no                       |
 |                        |                        |                 |                    | prepareAsync     | no                       |
 |                        |                        |                 |                    | start            | yes                      |
-|                        |                        |                 |                    | pause            | yes                      |
-|                        |                        |                 |                    | seekTo           | yes                      |
+|                        |                        |                 |                    | pause            | yes  <sup>[2](#fnAV2)                     |
+|                        |                        |                 |                    | seekTo           | yes    <sup>[1](#fnAV1)                   |
 |                        |                        |                 |                    | stop             | yes                      |
 |                        |                        |                 |                    | start            | yes                      |
 |                        |                        |                 |                    | stop             | yes                      |
@@ -120,8 +120,8 @@ public enum PlayerState
 | PlayerState.INITIALIZED       | Player has been initialized with license and settings.                 | yes                      |
 | PlayerState.PREPARED          | Player has been prepared and is ready to start.                        | no                       |
 | PlayerState.STARTED           | Playback has been started.                                             | yes                      |
-| PlayerState.PAUSED            | Playback has been paused.                                              | yes                      |
-| PlayerState.SEEKING           | Player is Seeking                                                      | yes                      |
+| PlayerState.PAUSED            | Playback has been paused.                                              | yes   <sup>[2](#fnAV2)</sup>                   |
+| PlayerState.SEEKING           | Player is Seeking                                                      | yes       <sup>[1](#fnAV1)</sup>               |
 | PlayerState.BUFFERING         | Player is buffering stream data.                                       | yes                      |
 | PlayerState.RECONNECTING      | Player is performing a reconnect                                       | no                       |
 | PlayerState.PLAYBACKCOMPLETED | Playback has ended due to end of stream.                               | yes                      |
@@ -147,10 +147,10 @@ Event Type : `TYPE_RTMP_STATUS`
 | NanostreamEvent.CODE_STREAM_BUFFERING              | Player is buffering stream data                  | PlayerState.BUFFERING         |
 | NanostreamEvent.CODE_STREAM_PLAYBACKCOMPLETED      | Playback has ended due to end of stream.         | PlayerState.PLAYBACKCOMPLETED |
 | NanostreamEvent.CODE_STREAM_NOT_FOUND              | The specified stream could not be found.         | PlayerState.STOPPED           |
-| NanostreamEvent.CODE_STREAM_SEEKING                | The Stream is seeking.                           | PlayerState.SEEKING           |
-| NanostreamEvent.CODE_STREAM_PAUSED                 | The Stream is paused                             | PlayerState.PAUSED            |
-| NanostreamEvent.CODE_STREAM_VIDEO_FORMAT_AVAILABLE | The Stream has a MediaFormat for the Video Track |                               |
-| NanostreamEvent.CODE_STREAM_AUDIO_FORMAT_AVAILABLE | The Stream has a MediaFormat for the Audio Track |                               |
+| NanostreamEvent.CODE_STREAM_SEEKING    <sup>[1](#fnAV1)             | The Stream is seeking.                           | PlayerState.SEEKING           |
+| NanostreamEvent.CODE_STREAM_PAUSED   <sup>[2](#fnAV2)               | The Stream is paused                             | PlayerState.PAUSED            |
+| NanostreamEvent.CODE_STREAM_VIDEO_FORMAT_AVAILABLE  <sup>[1](#fnAV1) | The Stream has a MediaFormat for the Video Track |                               |
+| NanostreamEvent.CODE_STREAM_AUDIO_FORMAT_AVAILABLE  <sup>[1](#fnAV1) | The Stream has a MediaFormat for the Audio Track |                               |
 
 Results and Error Events
 ------------------------
@@ -170,9 +170,9 @@ Event Type : `TYPENANORESULTS` Event Codes : Values of type nanoResults
 | nanoResults.N_RTMP_AUTH_FAILED                  | RTMP authentication is required and failed.                       | PlayerState.STOPPED |
 | nanoResults.N_RTMP_APP_INVALID                  | The application part of the url is invalid and has been rejected. | PlayerState.STOPPED |
 | nanoResults.N_RTMP_STATUS_PLAY_STREAM_NOT_FOUND | The stream name could not be found.                               | PlayerState.STOPPED |
-| nanoResults.N_RTMP_STATUS_PLAY_STREAM_SEEK      | The player is seeking.                                            | PlayerState.SEEKING |
-| nanoResults.N_RTMP_SEEK_NOT_AVAILABLE           | The stream can not seek.                                          |                     |
-| nanoResults.N_RTMP_SEEK_FAILED                  | The stream can not seek.                                          |                     |
+| nanoResults.N_RTMP_STATUS_PLAY_STREAM_SEEK    <sup>[1](#fnAV1)   | The player is seeking.                                            | PlayerState.SEEKING |
+| nanoResults.N_RTMP_SEEK_NOT_AVAILABLE  <sup>[1](#fnAV1)           | The stream can not seek.                                          |                     |
+| nanoResults.N_RTMP_SEEK_FAILED   <sup>[1](#fnAV1)                | The stream can not seek.                                          |                     |
 
 Audio / Video Format
 --------------------
@@ -279,3 +279,4 @@ public class PlayerActivity extends Activity implements PlayerEventListener, Sur
 ```
 
 <a name="fnAV1">1</a>: since nanoStream Android SDK 3.2
+<a name="fnAV2">2</a>: since nanoStream Android SDK 3.3
