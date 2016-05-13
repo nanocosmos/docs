@@ -1,7 +1,9 @@
 # nanoStream SDK: Streamer Sample
 
 nanoStream Live Video Encoder and Player for Android
-(c) 2015 nanocosmos gmbh, http://www.nanocosmos.de
+(c) 2015 nanocosmos gmbh, [http://www.nanocosmos.de][0900f009]
+
+
 
 ## Description
 
@@ -27,7 +29,7 @@ The MainActivity contains the main application code. The location is:
 
 Your window should look like this:
 
-<img class="alignnone wp-image-426 size-full" src="http://www.nanocosmos.de/wiki/wp-content/uploads/2016/01/Git-Android-Streamer-1.png" alt="Git-Android-Streamer" width="1544" height="1040" />
+<img class="alignnone wp-image-426 size-full" src="img/android_sample_streamer_studio.png" alt="Git-Android-Streamer" width="1544" height="1040" />
 
 &nbsp;
 
@@ -53,3 +55,6 @@ private static final String strStreamname = "--- INSERT THE STREAM NAME OR FILE 
 **Version** : nanoStream SDK 4.3.0
 
 **Compatible with** : Android API-Level from 16 up to 23
+
+
+  [0900f009]: http://www.nanocosmos.de "nanocosmos Website"

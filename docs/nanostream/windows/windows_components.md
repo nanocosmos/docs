@@ -43,7 +43,11 @@ Reference Application to show functionality in a simple end user program
 # DirectShow Filter usage with GraphEdit / GraphStudioNext
 All Live Video Encoder components are available as DirectShow filters and may be used within DirectShow applications.
 
-We recommend using [GraphStudio](https://code.google.com/p/graph-studio-next/) as a replacement for GraphEdit, as RTMP URLs may be set easily with this software.
+We recommend using [GraphStudio][2565d961] as a replacement for GraphEdit, as RTMP URLs may be set easily with this software.
+
+
 
 ## Setting DirectShow properties from C++
 The H.264 parameters may be set by calling the `InanoCodecOpts` interface. The RTMP output path may be set by calling the `SetFileName()` method of the default DirectShow `FileSinkFilter` interface.
+
+  [2565d961]: https://code.google.com/p/graph-studio-next/ "https://code.google.com/p/graph-studio-next/"

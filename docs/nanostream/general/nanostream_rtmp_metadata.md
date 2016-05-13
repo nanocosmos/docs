@@ -44,5 +44,8 @@ Parameters:
 
 ## More information
 More information about RTMP metadata and cue points can be found here:
-[Adobe Using cue points and metadata](http://help.adobe.com/en_US/as3/dev/WSD30FA424-950E-43ba-96C8-99B926943FE7.html)
-[Adobe Use cue points](http://help.adobe.com/en_US/ActionScript/3.0_UsingComponentsAS3/WS5b3ccc516d4fbf351e63e3d118a9c65586-7feb.html)
+* [Adobe Using cue points and metadata][8f1f3741]
+* [Adobe Use cue points][a3a32446]
+
+  [8f1f3741]: http://help.adobe.com/en_US/as3/dev/WSD30FA424-950E-43ba-96C8-99B926943FE7.html "http://help.adobe.com/en_US/as3/dev/WSD30FA424-950E-43ba-96C8-99B926943FE7.html"
+  [a3a32446]: http://help.adobe.com/en_US/ActionScript/3.0_UsingComponentsAS3/WS5b3ccc516d4fbf351e63e3d118a9c65586-7feb.html "http://help.adobe.com/en_US/ActionScript/3.0_UsingComponentsAS3/WS5b3ccc516d4fbf351e63e3d118a9c65586-7feb.html"

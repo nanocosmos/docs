@@ -1,10 +1,10 @@
-nanoStream Live Video Encoder 
+nanoStream Live Video Encoder
 ============================
 Webcaster / Browser based Live Encoder
 Version 4.0
 Compatible to NPAPI, ActiveX and Chrome Extension
 (c) 2015 nanocosmos gmbh
-http://www.nanocosmos.net
+
 
 **Work in Progress**
 
@@ -98,7 +98,7 @@ _object_ NANO.NanoStream.GetAudioDeviceConfig(_integer_ index, _function_ succes
                             "index": integer, // the device index
                             "options": [ // array with options
                                 {
-                                    "samplerates": [ // array available samplerates 
+                                    "samplerates": [ // array available samplerates
                                         integer,
                                         integer,
                                         ...
@@ -434,11 +434,12 @@ _object_ NANO.NanoStream.GetConfig(_string_ key, _function_ successCallback, _fu
 #### Description
 
 * This method gets the value from a defined key of the advanced configuration.
-* NOTE: see possible advanced configuration [here](http://www.nanocosmos.de/v4/documentation/live_video_encoder_-_plugin_integration_api#advanced_configuration_using_getconfig_setconfig)
+* NOTE: see possible advanced configuration [here ][1ced5a04]
 * The error callback parameters is optional. If no callback should be used, pass `null`
     * e.g. _object_ NANO.NanoStream.GetConfig(_string_ key, _function_ successCallback, _null_)
         * only with success callback
         * the `NANO.NanoStream.onError` event will be used if defined
+
 
 #### Parameters
 * _string_ key
@@ -646,17 +647,17 @@ _object_ NANO.NanoStream.GetVideoDeviceConfig(_integer_ index, _function_ succes
                                         {
                                             "framerates": [ 5, 7.5, 10, 15, 20, 24, 30 ],
                                             "id": "MJPG",
-                                            "index": 0 
+                                            "index": 0
                                         },
                                         {
                                             "framerates": [ 5, 7.5, 10, 15, 20, 24, 30 ],
                                             "id": "RGB24",
-                                            "index": 1 
+                                            "index": 1
                                         },
                                         {
                                             "framerates": [ 5, 7.5, 10, 15, 20, 24, 30 ],
                                             "id": "I420",
-                                            "index": 2 
+                                            "index": 2
                                         }
                                     ],
                                     "resolution": {
@@ -1080,7 +1081,7 @@ _object_ NANO.NanoStream.SetConfigs(_object_ [nanoConfigObject](#nano_config), _
 
 * This method sets multiple key value pairs for advanced configuration.
 
-* NOTE: see possible advanced configurations [here](http://www.nanocosmos.de/v4/documentation/live_video_encoder_-_plugin_integration_api#advanced_configuration_using_getconfig_setconfig)
+* NOTE: see possible advanced configurations [here][dbdfa592]
 
 * NOTE: it's necesary to use the [NANO.Config](#nano_config) class to generate the needed object [nanoConfigObject](#nano_config)
 
@@ -1159,7 +1160,7 @@ _object_ NANO.NanoStream.SetConfigs(_object_ [nanoConfigObject](#nano_config), _
     var config = new NANO.Config();
     config.AddConfig("H264Profile", "Baseline"); // Baseline Profile supported by most devices and players
     config.AddConfig("H264IFrameDistance", "50"); // Moderate GOP length
-    config.AddConfig("H264PFrameDistance", "1"); // No B-frames 
+    config.AddConfig("H264PFrameDistance", "1"); // No B-frames
     //(optional)
     //config.AddConfig("H264VlcMode", "1"); // CAVLC entropy coding mode
     //config.AddConfig("RateControl", "1"); // Strict constant bitrate
@@ -2004,7 +2005,7 @@ _object_ NANO.NanoStream.Init(_string_ elementId, _string_ license, _function_ s
                 } else { // error embedding plugin
                     if (message.data.value.code === 0) { // plugin found but no version
                         alert(message.data.value.error);
-                    } else if (message.data.value.code === -1) { // general no plugins available (unsupported browser) 
+                    } else if (message.data.value.code === -1) { // general no plugins available (unsupported browser)
                         alert(message.data.value.error);
                     } else if (message.data.value.code === -2) { // plugin not found / not installed / not activated
                         alert(message.data.value.error);
@@ -2047,4 +2048,5 @@ _object_ NANO.NanoStream.Init(_string_ elementId, _string_ license, _function_ s
 # NANO Config
 
 
-
+[1ced5a04]: http://www.nanocosmos.de/v4/documentation/live_video_encoder_-_plugin_integration_api#advanced_configuration_using_getconfig_setconfig "http://www.nanocosmos.de/v4/documentation/live_video_encoder_-_plugin_integration_api#advanced_configuration_using_getconfig_setconfig"
+[dbdfa592]: http://www.nanocosmos.de/v4/documentation/live_video_encoder_-_plugin_integration_api#advanced_configuration_using_getconfig_setconfig "http://www.nanocosmos.de/v4/documentation/live_video_encoder_-_plugin_integration_api#advanced_configuration_using_getconfig_setconfig"

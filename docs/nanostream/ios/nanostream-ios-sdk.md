@@ -171,7 +171,9 @@ The orientation of the stream can be set to portrait or landscape with the prope
 
 As of version 4.4.0.6 the orientation can also be changed after the initialization with the property ```orientation``` of the nanostreamAVC object itself.
 
-**Important:** The orientation change will only affect the stream, but not the preview. The orientation for the preview has to be managed on the application level. This can be achieved by using e.g. ```CGAffineTransformMakeRotation``` (https://developer.apple.com/library/mac/documentation/GraphicsImaging/Reference/CGAffineTransform/).
+**Important:** The orientation change will only affect the stream, but not the preview. The orientation for the preview has to be managed on the application level. This can be achieved by using e.g. ```CGAffineTransformMakeRotation``` ([https://developer.apple.com/library/mac/documentation/GraphicsImaging/Reference/CGAffineTransform/][4963b69c]).
+
+
 
 ### Stream Type
 
@@ -269,8 +271,10 @@ Possible properties:
 
 _
 
-For more information look here http://www.nanocosmos.de/v4/documentation/live_video_encoder_-_adaptive_bitrate#abc_modes
+For more information look here at [nanoStream Documentation for Adaptive Bitrate][576689ff]
 ### Measuring the available bandwidth
+
+
 
 For measuring the available bandwidth you can use the method ```runBandwidthCheck```. After the check finished, the result can be used to set the bitrate for the nanostreamAVC object.
 
@@ -569,9 +573,10 @@ Please use the following steps to create the log files:
   ```
 
 - try to reproduce the problem
-- download the app container (for your app) from the iOS device with Xcode, as explained here: https://developer.apple.com/library/ios/recipes/xcode_help-devices_organizer/articles/manage_containers.html
+- download the app container (for your app) from the iOS device with Xcode, as explained here: [https://developer.apple.com/library/ios/recipes/xcode_help-devices_organizer/articles/manage_containers.html][734c6e6f]
 - in Finder right click on the downloaded container and select "Show Package Contents"
 - send us the logfiles located (in the container) in the folder "/AppData/Library/Caches/Logs/"
+
 
 ## Crash Logs
 
@@ -586,4 +591,13 @@ If you encounter a crash, please send us the crash log as explained in the follo
 - Find your app in the Process column and select the Crash log to see the contents.
 - To save a crash log, right click the entry on the left column and choose "Export Log"
 
-(Taken from https://developer.apple.com/library/ios/qa/qa1747/_index.html)
+(Taken from [https://developer.apple.com/library/ios/qa/qa1747/_index.html][71f37b02])
+
+
+
+
+
+[4963b69c]: https://developer.apple.com/library/mac/documentation/GraphicsImaging/Reference/CGAffineTransform/ "https://developer.apple.com/library/mac/documentation/GraphicsImaging/Reference/CGAffineTransform/"
+[576689ff]: http://www.nanocosmos.de/v4/documentation/live_video_encoder_-_adaptive_bitrate#abc_modes "http://www.nanocosmos.de/v4/documentation/live_video_encoder_-_adaptive_bitrate#abc_modes"
+[734c6e6f]: https://developer.apple.com/library/ios/recipes/xcode_help-devices_organizer/articles/manage_containers.html "https://developer.apple.com/library/ios/recipes/xcode_help-devices_organizer/articles/manage_containers.html"
+[71f37b02]: https://developer.apple.com/library/ios/qa/qa1747/_index.html "https://developer.apple.com/library/ios/qa/qa1747/_index.html"

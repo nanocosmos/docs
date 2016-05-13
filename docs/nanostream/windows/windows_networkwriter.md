@@ -76,8 +76,10 @@ There are two possibilities to get the status of the connection to the server:
 ## Rtmp Writer Filter crashes when using SetStatusNotifyHandler()
 
 This problem is probably caused by calling a function declared with one calling convention with a function pointer declared with a different calling convention. Here is a good explanation of the problem:
-[Visual Studio Runtime Error](http://stackoverflow.com/questions/301655/c-visual-studio-runtime-error)
-[Run Time Check Failure](http://stackoverflow.com/questions/10079625/c-run-time-check-failure-0-the-value-of-esp-was-not-properly-saved-across-a)
+[Visual Studio Runtime Error][55129935]
+[Run Time Check Failure][7436dd8a]
+
+
 
 Conclusion: Make sure you use `stdcall` in your declaration
 
@@ -94,3 +96,7 @@ Valid values: a valid output file name to enable file logging or an empty string
 - Value name: TRACE
 - Value type: REG_DWORD
 - Valid values: 0 (minimal logging) - 9 (maximal logging)
+
+
+[55129935]: http://stackoverflow.com/questions/301655/c-visual-studio-runtime-error "http://stackoverflow.com/questions/301655/c-visual-studio-runtime-error"
+[7436dd8a]: http://stackoverflow.com/questions/10079625/c-run-time-check-failure-0-the-value-of-esp-was-not-properly-saved-across-a "http://stackoverflow.com/questions/10079625/c-run-time-check-failure-0-the-value-of-esp-was-not-properly-saved-across-a"

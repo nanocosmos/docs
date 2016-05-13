@@ -1,7 +1,8 @@
 # nanoStream SDK: Player Sample
 
 nanoStream Live Video Encoder and Player for Android
-(c) 2015 nanocosmos gmbh, http://www.nanocosmos.de
+(c) 2015 nanocosmos gmbh, [http://www.nanocosmos.de][55fa8532]
+
 
 ## Description
 
@@ -27,7 +28,7 @@ The PlayerActivity contains the main application code. The location is:
 
 Your window should look like this:
 
-<img class="alignnone wp-image-414 size-full" src="http://www.nanocosmos.de/wiki/wp-content/uploads/2016/01/Git-Android-Player.png" alt="Git-Android-Player" width="1546" height="1038" />
+<img class="alignnone wp-image-414 size-full" src="img/android_sample_player_studio.png" alt="Git-Android-Player" width="1546" height="1038" />
 
 **Step 4: Enter your license in the PlayerActivity**
 
@@ -55,3 +56,7 @@ private static final String strStreamname = "--- INSERT THE STREAM NAME OR FILE 
 **Compatible with** : Android API-Level from 16 up to 23
 
 &nbsp;
+
+
+
+  [55fa8532]: http://www.nanocosmos.de "http://www.nanocosmos.de"

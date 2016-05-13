@@ -6,7 +6,7 @@ Usually it is recommended and best practice to use our nanostream-plugins setup 
 A typical distribution license does NOT include the application files (exe)
 Not all combinations of modules will work out of the box.
 **nanoStream Runtime Installer**
-For Windows and MacOS, you usually should use the [runtime installer](http://nanocosmos.de/get/nanostream) to deploy nanoStream components.
+For Windows and MacOS, you usually should use the [runtime installer][a6957aa7] to deploy nanoStream components.
 ## Applications
 | Module | Description | Dependencies |
 |--------|-------------|--------------|
@@ -75,3 +75,5 @@ For Windows and MacOS, you usually should use the [runtime installer](http://nan
 | nanoATLServer.dll | nanocosmos License Server | |
 | libiomp5md.dll | Intel OpenMP Library | |
 | vcomp90.dll | MS OpenMP Library | |
+
+  [a6957aa7]: http://nanocosmos.de/get/nanostream "http://nanocosmos.de/get/nanostream"
