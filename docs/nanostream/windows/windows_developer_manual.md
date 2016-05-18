@@ -46,7 +46,7 @@ All Live Video Encoder components are available as DirectShow filters and may be
 We recommend using [GraphStudio][387c48a0] as a replacement for GraphEdit, as RTMP URLs may be set easily with this software.
 
 
-<img class="alignnone size-medium wp-image-626" src="http://www.nanocosmos.de/wiki/wp-content/uploads/2016/01/live_encoding_graph-300x179.png" alt="live_encoding_graph" width="300" height="179" />
+<img class="alignnone size-medium wp-image-626" src="img/windows_developer_manual_graph_studio.png" alt="live_encoding_graph" width="300" height="179" />
 ## Setting DirectShow properties from C++
 The H.264 parameters may be set by calling the `InanoCodecOpts` interface. The RTMP output path may be set by calling the `SetFileName()` method of the default DirectShow `FileSinkFilter` interface.
 

@@ -538,7 +538,7 @@ You can prevent the breakpoint from pausing the workflow of your application, if
 The default setting is most likely that every exception causes a break.
 To change that, use the settings from the following screenshot:
 
-![Screenshot](screenshot_exception_breakpoint.png)
+![Screenshot](img/screenshot_exception_breakpoint.png)
 
 This way only Objective-C exceptions will be catched and C++ exceptions will be ignored.
 
