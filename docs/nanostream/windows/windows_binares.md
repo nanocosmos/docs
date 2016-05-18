@@ -70,6 +70,7 @@ For Windows and MacOS, you usually should use the [runtime installer][a6957aa7] 
 | nMediaBridge.ax | nanocosmos Media Bridge - *add support for seemless switch / live encoding / file streaming* | |
 ## Dependencies
 **Note:** Only the nanoATLServer.dll is mandatory. The Intel and MS files may be optional, dependent on your OS.
+
 | Module | Description | Dependencies |
 |--------|-------------|--------------|
 | nanoATLServer.dll | nanocosmos License Server | |
