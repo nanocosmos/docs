@@ -16,10 +16,7 @@ pages:
   - Web api: nanostream/web/nanostream-4.x-web-api.md
   - iOS api: nanostream/ios/nanostream-ios-sdk.md
   - MacOS api: nanostream/macos/nanostream-macos-sdk.md
-  - Android nanoStream SDK:
-    - 'Getting Started': 'nanostream/android/getting-started.md'
-    - 'Advanced Settings/Usage': 'nanostream/android/android-advanced-settings.md'
-    - 'RTMP Playback': 'nanostream/android/rtmp-playback.md'
+  - Android api: 'nanostream/android/android_developer_manual.md'
   - Windows api:
     - Components: 'nanostream/windows/windows_components.md'
     - Binary Modules: 'nanostream/windows/windows_binares.md'

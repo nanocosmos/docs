@@ -1,0 +1,13 @@
+{!docs/nanostream/android/getting-started.md!}
+{!docs/nanostream/android/android_resolution_aspect_ratio_and_orientation.md!}
+{!docs/nanostream/android/android_stream_type.md!}
+{!docs/nanostream/android/android_server_authentication.md!}
+{!docs/nanostream/android/android_mp4_recording.md!}
+{!docs/nanostream/android/android_snapshot.md!}
+{!docs/nanostream/android/android_bandwidth_control.md!}
+{!docs/nanostream/android/android_camera_zoom.md!}
+{!docs/nanostream/android/android_camera_focus.md!}
+{!docs/nanostream/android/android_device_properties.md!}
+
+{!docs/nanostream/android/android_rtmp_playback.md!}
+{!docs/nanostream/android/android_feedback.md!}
