@@ -25,67 +25,67 @@ Intel Core2 Duo or later
 Recommended for HD capture: Intel Core i7 or Xeon
 
 
-| **Method Name**             | **Description**                                     | libnanoStream.dylib Support | Mac Plugin Support | Mac Framework Support | ANE Support|
-| InitPlugin              | Initialization of the Plugin.                               |  nanoStream  |  initEncoder  |  init  |  ✔  |
-| SetXml                  | deprecated - no functionality                          |  ✘  |  ✘  |  ✘  |  ✔  |
-| GetVersion              | Get version number of the SDK                                                                     |   ✔  |    |    |  |
-| SetLicense              | Set license for nano SDK                               |  ✔  |  ✔  |  ✔   |  ✔  |
-| GetLicense              | Get the current license of the SDK                                                                     |  ✔  |    |    |  |
-| SetConfig               | Set property over Identifier.                            |  ✔  |  ✔  |  ✔  |  ✔  |
-| UpdatePreviewDimensions | Update preview dimensions of the bmp           |  ✘  |  ✘   |  ✘   |  ✔  |
-| GetPreviewDimensions              | Get the current preview dimensions                                                                      |  ✔   |    |    |  |
-| GetPreviewImage              | Get the preview image                                                                     |  ✔  |    |    |  |
-| GetPreviewFrame         | Get current preview Frame                       |  ✘  |  ✘  |  ✘  |  ✔  |
-| StartPreview            | Start the preview.                              |  ✔  |  ✔  |  ✘  |  ✔  |
-| StopPreview             | Stop the preview.                              |  ✔  |  ✔  |  ✘  |  ✔  |
-| StartBroadcast          | Start broadcasting.                             |  ✔  |  ✔  |  startStream  |  ✔  |
-| StopBroadcast           | Stop broadcasting.                              |  ✔  |  ✔  |  stopStream  |  ✔  |
-| GetNumberOfVideoSources | Count video sources with current settings       |  ✔  |  ✔  |  ✔  |  ✔  |
-| GetNumberOfAudioSources | Count audio sources with current settings      |  ✔   |  ✔  |  ✔  |  ✔  |
-| GetVideoSource          | Get name of the video source as string.         |  ✔  |  ✔  |  ✘  |  ✔  |
-| GetAudioSource          | Get name of the audio source as string.         |  ✔  |  ✔  |  ✘  |  ✔  |
-| SetVideoSource          | Set video source for preview or broadcasting    |  ✔  |  VideoSource  |  ✘   |  ✔  |
-| SetVideoSourceFromURL   | URL to an mp4 file source or ramp source        |  ✘  |  ✘  |  ✘  |  ✔  |
-| SetAudioSource          | Set audio source for preview or broadcasting    |  ✔  |  AudioSource  |  ✘  |  ✔  |
-| SetVideoWidth           | Set width of video in pixels                   |  ✔  |  VideoWidth  |  ✔  |  ✔  |
-| GetVideoWidth           | Get width of video in pixels                   |  ✔  |  VideoWidth  |    |    |
-| SetVideoHeight          | Set height of video in pixels                   |  ✔  |  VideoHeight  |  ✔  |  ✔  |
-| GetVideoHeight          | Get height of video in pixels                   |  ✔  |  VideoHeight  |   |   |
-| SetVideoResizeWidth     | Resize width of video in pixels                |  ✘   |  ✔  |  ✘  |  ✔  |
-| SetVideoResizeHeight    | Resize height of video in pixels               |  ✘  |  ✔  |  ✘  |  ✔  |
-| SetVideoFramerate       | Set frame rate of video in frames per second    |  SetFramerate   |  VideoFrameRate  |  setFrameRate  |  ✔  |
-| SetNumberOfChannels              | set channel number                                                                      |  ✔   |    |    |  |
-| SetVideoBitrate         | Set bitrate of video in kbits per second        |  ✔  |  ✔  |  ✔   |  ✔  |
-| GetVideoBitrate              | Get the current video bitrate                                                                     |  ✔  |    |    |  |
-| SetAudioBitrate         | Set bitrate of audio in kbits per second       |  ✔  |  ✔  |  ✔  |  ✔  |
-| GetAudioBitrate              | Get the current audio bitrate                                                                     |  ✔   |    |    |  |
-| SetAudioSamplerate      | Set the samplerate of the audio in Hertz        |  ✔  |  ✘  |  setSampleRate   |  ✔  |
-| GetAudioLevel           | Get the audio level of a channel                |  ✔  |  ✔  |  ✔   |  ✔  |
-| SetAudioVolume          | Set audio volume                               |  ✔  |  AudioVolume  |  ✘  |  ✔  |
-| SetAudioPreviewVolume   | Set audio volume of preview                    |  ✔  |  AudioPreviewVolume  |  ✘  |  ✔  |
-| SetColorSpace           | Set the color space of an input source         |  ✔  |  ✔  |  ✘  |  ✔  |
-| GetNumberOfColorspaces  | Get the count of color spaces                  |  ✔  |  ✔  |  ✘  |  ✔  |
-| GetColorspace           | Get color space name as string                  |  ✔  |  ✔  |  ✔  |  ✔  |
-| GetNumberOfResolutions  | Get count of available resolutions             |  ✔   |  ✔  |  ✘  |  ✔  |
-| GetResolution           | Get count of resolutions                       |  ✔   |  ✔  |  ✘  |  ✔  |
-| GetNumberOfFramerates   | Count of available frame rates as integer value |  GetNumberOfFrameRates  |  ✔  |  ✘  |  ✔  |
-| GetFramerate            | Get the frame rate of a video source           |  ✔   |  ✔  |  getFrameRate  |  ✔  |
-| SetDeinterlacing        | Set deinterlacing mode and method              |  ✘   |  ✘  |  ✘  |  ✔  |
-| GetNumberOfOutputs      | Get count of output sources                    |  ✘  |  ✔  |  ✘  |  ✔  |
-| AddOutput               | Add new output source with url                 |  ✘   |  ✔  |  ✘  |  ✔  |
-| SetOutputUrl            | Set output source with url. Local or rtmp       |  ✔   |  ✔  |  setOutputUrl   |  ✔  |
-| GetOutputUrl              |                                                                      |  ✔  |    |    |  |
-| GetNumberOfOutputUrls              |                                                                      |  ✔  |    |    |  |
-| AcceptDataInSampleBuffer              |                                                                      |  ✔   |    |    |  |
-| AddSampleBuffer              |                                                                      |  ✔  |    |    |  |
-| SetFilesourceFilename   | Set the filename of a local source            |  ✘   |  ✘  |  ✘  |  ✔  |
-| ClearOutputs            | Reset all output sources                      |   ✘   |  ✔  |  ✘  |  ✔  |
-| SetVideoEffect          | Add a video effect.                            |  ✘   |  ✔  |  ✘  |  ✔  |
-| SetOverlay              | Add a overlay to the video                     |   ✘   |  ✘  |  ✘  |  ✔  |
-| ShowPropertyPage        | Show property page                            |   ✘    |  ✔  |  ✘   |  ✔  |
-| SetLog                  | Set log file path and log level.               |  ✔  |  ✔  |  ✔  |  ✔  |
-| SetXmlProfile              |                                                                      |  ✔   |    |    |  |
-| dispose():void          | Reset buffer                                  |  ✘   |  ✘  |  ✘  |  ✔  |
+| **Method Name**       | **Description**                   | libnanoStream.dylib Support | Mac Plugin Support | Mac Framework Support | ANE Support|
+| InitPlugin       | Initialization of the Plugin.                | nanoStream | initEncoder | init | ✔ |
+| SetXml         | deprecated - no functionality             | ✘ | ✘ | ✘ | ✔ |
+| GetVersion       | Get version number of the SDK                                   |  ✔ |  |  | |
+| SetLicense       | Set license for nano SDK                | ✔ | ✔ | ✔  | ✔ |
+| GetLicense       | Get the current license of the SDK                                   | ✔ |  |  | |
+| SetConfig        | Set property over Identifier.              | ✔ | ✔ | ✔ | ✔ |
+| UpdatePreviewDimensions | Update preview dimensions of the bmp      | ✘ | ✘  | ✘  | ✔ |
+| GetPreviewDimensions       | Get the current preview dimensions                                   | ✔  |  |  | |
+| GetPreviewImage       | Get the preview image                                   | ✔ |  |  | |
+| GetPreviewFrame     | Get current preview Frame            | ✘ | ✘ | ✘ | ✔ |
+| StartPreview      | Start the preview.               | ✔ | ✔ | ✘ | ✔ |
+| StopPreview       | Stop the preview.               | ✔ | ✔ | ✘ | ✔ |
+| StartBroadcast     | Start broadcasting.               | ✔ | ✔ | startStream | ✔ |
+| StopBroadcast      | Stop broadcasting.               | ✔ | ✔ | stopStream | ✔ |
+| GetNumberOfVideoSources | Count video sources with current settings    | ✔ | ✔ | ✔ | ✔ |
+| GetNumberOfAudioSources | Count audio sources with current settings   | ✔  | ✔ | ✔ | ✔ |
+| GetVideoSource     | Get name of the video source as string.     | ✔ | ✔ | ✘ | ✔ |
+| GetAudioSource     | Get name of the audio source as string.     | ✔ | ✔ | ✘ | ✔ |
+| SetVideoSource     | Set video source for preview or broadcasting  | ✔ | VideoSource | ✘  | ✔ |
+| SetVideoSourceFromURL  | URL to an mp4 file source or ramp source    | ✘ | ✘ | ✘ | ✔ |
+| SetAudioSource     | Set audio source for preview or broadcasting  | ✔ | AudioSource | ✘ | ✔ |
+| SetVideoWidth      | Set width of video in pixels          | ✔ | VideoWidth | ✔ | ✔ |
+| GetVideoWidth      | Get width of video in pixels          | ✔ | VideoWidth |  |  |
+| SetVideoHeight     | Set height of video in pixels          | ✔ | VideoHeight | ✔ | ✔ |
+| GetVideoHeight     | Get height of video in pixels          | ✔ | VideoHeight |  |  |
+| SetVideoResizeWidth   | Resize width of video in pixels        | ✘  | ✔ | ✘ | ✔ |
+| SetVideoResizeHeight  | Resize height of video in pixels        | ✘ | ✔ | ✘ | ✔ |
+| SetVideoFramerate    | Set frame rate of video in frames per second  | SetFramerate  | VideoFrameRate | setFrameRate | ✔ |
+| SetNumberOfChannels       | set channel number                                   | ✔  |  |  | |
+| SetVideoBitrate     | Set bitrate of video in kbits per second    | ✔ | ✔ | ✔  | ✔ |
+| GetVideoBitrate       | Get the current video bitrate                                   | ✔ |  |  | |
+| SetAudioBitrate     | Set bitrate of audio in kbits per second    | ✔ | ✔ | ✔ | ✔ |
+| GetAudioBitrate       | Get the current audio bitrate                                   | ✔  |  |  | |
+| SetAudioSamplerate   | Set the samplerate of the audio in Hertz    | ✔ | ✘ | setSampleRate  | ✔ |
+| GetAudioLevel      | Get the audio level of a channel        | ✔ | ✔ | ✔  | ✔ |
+| SetAudioVolume     | Set audio volume                | ✔ | AudioVolume | ✘ | ✔ |
+| SetAudioPreviewVolume  | Set audio volume of preview          | ✔ | AudioPreviewVolume | ✘ | ✔ |
+| SetColorSpace      | Set the color space of an input source     | ✔ | ✔ | ✘ | ✔ |
+| GetNumberOfColorspaces | Get the count of color spaces         | ✔ | ✔ | ✘ | ✔ |
+| GetColorspace      | Get color space name as string         | ✔ | ✔ | ✔ | ✔ |
+| GetNumberOfResolutions | Get count of available resolutions       | ✔  | ✔ | ✘ | ✔ |
+| GetResolution      | Get count of resolutions            | ✔  | ✔ | ✘ | ✔ |
+| GetNumberOfFramerates  | Count of available frame rates as integer value | GetNumberOfFrameRates | ✔ | ✘ | ✔ |
+| GetFramerate      | Get the frame rate of a video source      | ✔  | ✔ | getFrameRate | ✔ |
+| SetDeinterlacing    | Set deinterlacing mode and method       | ✘  | ✘ | ✘ | ✔ |
+| GetNumberOfOutputs   | Get count of output sources          | ✘ | ✔ | ✘ | ✔ |
+| AddOutput        | Add new output source with url         | ✘  | ✔ | ✘ | ✔ |
+| SetOutputUrl      | Set output source with url. Local or rtmp    | ✔  | ✔ | setOutputUrl  | ✔ |
+| GetOutputUrl       |                                   | ✔ |  |  | |
+| GetNumberOfOutputUrls       |                                   | ✔ |  |  | |
+| AcceptDataInSampleBuffer       |                                   | ✔  |  |  | |
+| AddSampleBuffer       |                                   | ✔ |  |  | |
+| SetFilesourceFilename  | Set the filename of a local source      | ✘  | ✘ | ✘ | ✔ |
+| ClearOutputs      | Reset all output sources           |  ✘  | ✔ | ✘ | ✔ |
+| SetVideoEffect     | Add a video effect.              | ✘  | ✔ | ✘ | ✔ |
+| SetOverlay       | Add a overlay to the video           |  ✘  | ✘ | ✘ | ✔ |
+| ShowPropertyPage    | Show property page              |  ✘  | ✔ | ✘  | ✔ |
+| SetLog         | Set log file path and log level.        | ✔ | ✔ | ✔ | ✔ |
+| SetXmlProfile       |                                   | ✔  |  |  | |
+| dispose():void     | Reset buffer                 | ✘  | ✘ | ✘ | ✔ |
 
 
 
@@ -93,68 +93,68 @@ Recommended for HD capture: Intel Core i7 or Xeon
 
 
 
-| Method Name                  | Description                                                               | libnanoStream.dylib Support   | Mac Plugin Support       | Mac Framework Support   | ANE Support  |
+| Method Name         | Description                                | libnanoStream.dylib Support  | Mac Plugin Support    | Mac Framework Support  | ANE Support |
 |------------------------------|---------------------------------------------------------------------------|-------------------------------|--------------------------|-------------------------|--------------|
-| -InitPlugin-  | -Initialization of the Plugin-                          | -nanoStream- | -initEncoder--     | -init- | -✔- |
-|  SetXml                      |  deprecated - no functionality                                           |  ✘                           |  ✘                      |  ✘                     |  ✔          |
-|  GetVersion                  |  Get version number of the SDK                                           |  ✔                           |                         |                        |             |
-|  SetLicense                  |  Set license for nano SDK                                                |  ✔                           |  ✔                      |  ✔                     |  ✔          |
-|  GetLicense                  |  Get the current license of the SDK                                      |  ✔                           |                         |                        |             |
-|  SetConfig                   |  Set property over Identifier.                                           |  ✔                           |  ✔                      |  ✔                     |  ✔          |
-|  UpdatePreviewDimensions     |  Update preview dimensions of the bmp                                    |  ✘                           |  ✘                      |  ✘                     |  ✔          |
-|  GetPreviewDimensions        |  Get the current preview dimensions                                      |  ✔                           |                         |                        |             |
-|  GetPreviewImage             |  Get the preview image                                                   |  ✔                           |                         |                        |             |
-|  GetPreviewFrame             |  Get current preview Frame                                               |  ✘                           |  ✘                      |  ✘                     |  ✔          |
-|  StartPreview                |  Start the preview.                                                      |  ✔                           |  ✔                      |  ✘                     |  ✔          |
-|  StopPreview                 |  Stop the preview.                                                       |  ✔                           |  ✔                      |  ✘                     |  ✔          |
-|  StartBroadcast              |  Start broadcasting.                                                     |  ✔                           |  ✔                      |  startStream           |  ✔          |
-|  StopBroadcast               |  Stop broadcasting.                                                      |  ✔                           |  ✔                      |  stopStream            |  ✔          |
-|  GetNumberOfVideoSources     |  Count video sources with current settings                               |  ✔                           |  ✔                      |  ✔                     |  ✔          |
-| GetNumberOfAudioSources      |  Count audio sources with current settings                               |  ✔                           |  ✔                      |  ✔                     |  ✔          |
-| GetVideoSource               |  Get name of the video source as string.                                 |  ✔                           |  ✔                      |  ✘                     |  ✔          |
-| GetAudioSource               |  Get name of the audio source as string.                                 |  ✔                           |  ✔                      |  ✘                     |  ✔          |
-| SetVideoSource               |  Set video source for preview or broadcasting                            |  ✔                           |  VideoSource            |  ✘                     |  ✔          |
-| SetVideoSourceFromURL        |  URL to an mp4 file source or ramp source                                |  ✘                           |  ✘                      |  ✘                     |  ✔          |
-| SetAudioSource               |  Set audio source for preview or broadcasting                            |  ✔                           |  AudioSource            |  ✘                     |  ✔          |
-| SetVideoWidth                |  Set width of video in pixels                                            |  ✔                           |  VideoWidth             |  ✔                     |  ✔          |
-| GetVideoWidth                |  Get width of video in pixels                                            |  ✔                           |  VideoWidth             |                        |             |
-| SetVideoHeight               |  Set height of video in pixels                                           |  ✔                           |  VideoHeight            |  ✔                     |  ✔          |
-| GetVideoHeight               |  Get height of video in pixels                                           |  ✔                           |  VideoHeight            |                        |             |
-| SetVideoResizeWidth          |  Resize width of video in pixels                                         |  ✘                           |  ✔                      |  ✘                     |  ✔          |
-| SetVideoResizeHeight         |  Resize height of video in pixels                                        |  ✘                           |  ✔                      |  ✘                     |  ✔          |
-| SetVideoFramerate            |  Set frame rate of video in frames per second                            |  SetFramerate                |  VideoFrameRate         |  setFrameRate          |  ✔          |
-| SetNumberOfChannels          |  set channel number                                                      |  ✔                           |                         |                        |             |
-| SetVideoBitrate              |  Set bitrate of video in kbits per second                                |  ✔                           |  ✔                      |  ✔                     |  ✔          |
-| GetVideoBitrate              |  Get the current video bitrate                                           |  ✔                           |                         |                        |             |
-| SetAudioBitrate              |  Set bitrate of audio in kbits per second                                |  ✔                           |  ✔                      |  ✔                     |  ✔          |
-| GetAudioBitrate              |  Get the current audio bitrate                                           |  ✔                           |                         |                        |             |
-| SetAudioSamplerate           |  Set the samplerate of the audio in Hertz                                |  ✔                           |  ✘                      |  setSampleRate         |  ✔          |
-| GetAudioLevel                |  Get the audio level of a channel                                        |  ✔                           |  ✔                      |  ✔                     |  ✔          |
-| SetAudioVolume               |  Set audio volume                                                        |  ✔                           |  AudioVolume            |  ✘                     |  ✔          |
-| SetAudioPreviewVolume        |  Set audio volume of preview                                             |  ✔                           |  AudioPreviewVolume | ✘ |  ✔                                  |
-| SetColorSpace                |  Set the color space of an input source                                  |  ✔                           |  ✔                      |  ✘                     |  ✔          |
-|  GetNumberOfColorspaces      | Get the count of color spaces                                           |  ✔                           |  ✔                      |  ✘                     |  ✔          |
-|  GetColorspace              |  Get color space name as string                                          |  ✔                           |  ✔                      |  ✔                     |  ✔          |
-|  GetNumberOfResolutions     |  Get count of available resolutions                                      |  ✔                           |  ✔                      |  ✘                     |  ✔          |
-|  GetResolution              |  Get count of resolutions                                                |  ✔                           |  ✔                      |  ✘                     |  ✔          |
-|  GetNumberOfFramerates      |  Count of available frame rates as integer value | GetNumberOfFrameRates |  ✔                           |  ✘                      |  ✔                     |
-|  GetFramerate               |  Get the frame rate of a video source                                    |  ✔                           |  ✔                      |  getFrameRate          |  ✔          |
-|  SetDeinterlacing           |  Set deinterlacing mode and method                                       |  ✘                           |  ✘                      |  ✘                     |  ✔          |
-|  GetNumberOfOutputs         |  Get count of output sources                                             |  ✘                           |  ✔                      |  ✘                     |  ✔          |
-|  AddOutput                  |  Add new output source with url                                          |  ✘                           |  ✔                      |  ✘                     |  ✔          |
-|  SetOutputUrl               |  Set output source with url. Local or rtmp                               |  ✔                           |  ✔                      |  setOutputUrl          |  ✔          |
-|  GetOutputUrl               |                                                                          |  ✔                           |                         |                        |             |
-|  GetNumberOfOutputUrls      |                                                                          |  ✔                           |                         |                        |             |
-|  AcceptDataInSampleBuffer |   ✔                                                                       |                              |                         |                        |             |
-|  AddSampleBuffer            |                                                                          |  ✔                           |                         |                        |             |
-|  SetFilesourceFilename      |  Set the filename of a local source                                      |  ✘                           |  ✘                      |  ✘                     |  ✔          |
-|  ClearOutputs               |  Reset all output sources                                                |  ✘                           |  ✔                      |  ✘                     |  ✔          |
-|  SetVideoEffect             |  Add a video effect.                                                     |  ✘                           |  ✔                      |  ✘                     |  ✔          |
-|  SetOverlay                 |  Add a overlay to the video                                              |  ✘                           |  ✘                      |  ✘                     |  ✔          |
-|  ShowPropertyPage           |  Show property page                                                      |  ✘                           |  ✔                      |  ✘                     |  ✔          |
-|  SetLog                     |  Set log file path and log level.                                        |  ✔                           |  ✔                      |  ✔                     |  ✔          |
-|  SetXmlProfile              |                                                                          |  ✔                           |                         |                        |             |
-|  dispose():void             |  Reset buffer                                                            |  ✘                           |  ✘                      |  ✘                     |  ✔          |
+| -InitPlugin- | -Initialization of the Plugin-             | -nanoStream- | -initEncoder--   | -init- | -✔- |
+| SetXml           | deprecated - no functionality                      | ✘              | ✘           | ✘           | ✔     |
+| GetVersion         | Get version number of the SDK                      | ✔              |             |            |       |
+| SetLicense         | Set license for nano SDK                        | ✔              | ✔           | ✔           | ✔     |
+| GetLicense         | Get the current license of the SDK                   | ✔              |             |            |       |
+| SetConfig          | Set property over Identifier.                      | ✔              | ✔           | ✔           | ✔     |
+| UpdatePreviewDimensions   | Update preview dimensions of the bmp                  | ✘              | ✘           | ✘           | ✔     |
+| GetPreviewDimensions    | Get the current preview dimensions                   | ✔              |             |            |       |
+| GetPreviewImage       | Get the preview image                          | ✔              |             |            |       |
+| GetPreviewFrame       | Get current preview Frame                        | ✘              | ✘           | ✘           | ✔     |
+| StartPreview        | Start the preview.                           | ✔              | ✔           | ✘           | ✔     |
+| StopPreview         | Stop the preview.                            | ✔              | ✔           | ✘           | ✔     |
+| StartBroadcast       | Start broadcasting.                           | ✔              | ✔           | startStream      | ✔     |
+| StopBroadcast        | Stop broadcasting.                           | ✔              | ✔           | stopStream      | ✔     |
+| GetNumberOfVideoSources   | Count video sources with current settings                | ✔              | ✔           | ✔           | ✔     |
+| GetNumberOfAudioSources   | Count audio sources with current settings                | ✔              | ✔           | ✔           | ✔     |
+| GetVideoSource        | Get name of the video source as string.                 | ✔              | ✔           | ✘           | ✔     |
+| GetAudioSource        | Get name of the audio source as string.                 | ✔              | ✔           | ✘           | ✔     |
+| SetVideoSource        | Set video source for preview or broadcasting              | ✔              | VideoSource      | ✘           | ✔     |
+| SetVideoSourceFromURL    | URL to an mp4 file source or ramp source                | ✘              | ✘           | ✘           | ✔     |
+| SetAudioSource        | Set audio source for preview or broadcasting              | ✔              | AudioSource      | ✘           | ✔     |
+| SetVideoWidth        | Set width of video in pixels                      | ✔              | VideoWidth       | ✔           | ✔     |
+| GetVideoWidth        | Get width of video in pixels                      | ✔              | VideoWidth       |            |       |
+| SetVideoHeight        | Set height of video in pixels                      | ✔              | VideoHeight      | ✔           | ✔     |
+| GetVideoHeight        | Get height of video in pixels                      | ✔              | VideoHeight      |            |       |
+| SetVideoResizeWidth     | Resize width of video in pixels                     | ✘              | ✔           | ✘           | ✔     |
+| SetVideoResizeHeight     | Resize height of video in pixels                    | ✘              | ✔           | ✘           | ✔     |
+| SetVideoFramerate      | Set frame rate of video in frames per second              | SetFramerate        | VideoFrameRate     | setFrameRate     | ✔     |
+| SetNumberOfChannels     | set channel number                           | ✔              |             |            |       |
+| SetVideoBitrate       | Set bitrate of video in kbits per second                | ✔              | ✔           | ✔           | ✔     |
+| GetVideoBitrate       | Get the current video bitrate                      | ✔              |             |            |       |
+| SetAudioBitrate       | Set bitrate of audio in kbits per second                | ✔              | ✔           | ✔           | ✔     |
+| GetAudioBitrate       | Get the current audio bitrate                      | ✔              |             |            |       |
+| SetAudioSamplerate      | Set the samplerate of the audio in Hertz                | ✔              | ✘           | setSampleRate     | ✔     |
+| GetAudioLevel        | Get the audio level of a channel                    | ✔              | ✔           | ✔           | ✔     |
+| SetAudioVolume        | Set audio volume                            | ✔              | AudioVolume      | ✘           | ✔     |
+| SetAudioPreviewVolume    | Set audio volume of preview                       | ✔              | AudioPreviewVolume | ✘ | ✔                 |
+| SetColorSpace        | Set the color space of an input source                 | ✔              | ✔           | ✘           | ✔     |
+| GetNumberOfColorspaces   | Get the count of color spaces                      | ✔              | ✔           | ✘           | ✔     |
+| GetColorspace       | Get color space name as string                     | ✔              | ✔           | ✔           | ✔     |
+| GetNumberOfResolutions   | Get count of available resolutions                   | ✔              | ✔           | ✘           | ✔     |
+| GetResolution       | Get count of resolutions                        | ✔              | ✔           | ✘           | ✔     |
+| GetNumberOfFramerates   | Count of available frame rates as integer value | GetNumberOfFrameRates | ✔              | ✘           | ✔           |
+| GetFramerate        | Get the frame rate of a video source                  | ✔              | ✔           | getFrameRate     | ✔     |
+| SetDeinterlacing      | Set deinterlacing mode and method                    | ✘              | ✘           | ✘           | ✔     |
+| GetNumberOfOutputs     | Get count of output sources                       | ✘              | ✔           | ✘           | ✔     |
+| AddOutput         | Add new output source with url                     | ✘              | ✔           | ✘           | ✔     |
+| SetOutputUrl        | Set output source with url. Local or rtmp                | ✔              | ✔           | setOutputUrl     | ✔     |
+| GetOutputUrl        |                                     | ✔              |             |            |       |
+| GetNumberOfOutputUrls   |                                     | ✔              |             |            |       |
+| AcceptDataInSampleBuffer |  ✔                                    |               |             |            |       |
+| AddSampleBuffer      |                                     | ✔              |             |            |       |
+| SetFilesourceFilename   | Set the filename of a local source                   | ✘              | ✘           | ✘           | ✔     |
+| ClearOutputs        | Reset all output sources                        | ✘              | ✔           | ✘           | ✔     |
+| SetVideoEffect       | Add a video effect.                           | ✘              | ✔           | ✘           | ✔     |
+| SetOverlay         | Add a overlay to the video                       | ✘              | ✘           | ✘           | ✔     |
+| ShowPropertyPage      | Show property page                           | ✘              | ✔           | ✘           | ✔     |
+| SetLog           | Set log file path and log level.                    | ✔              | ✔           | ✔           | ✔     |
+| SetXmlProfile       |                                     | ✔              |             |            |       |
+| dispose():void       | Reset buffer                              | ✘              | ✘           | ✘           | ✔     |
 
 
 
@@ -266,7 +266,7 @@ SetConfig(property:String, value:String):int
 ### Parameters
 
 | property:String | Property identifier as string. See property list for configuration on page 32. |
-| value:String    | Value for property as string representation.                                   |
+| value:String  | Value for property as string representation.                  |
 
 ### Return Value
 
@@ -350,7 +350,7 @@ GetPreviewFrame(options:int = GET\_FRAME\_BITMAP):Boolean
 
 === Parameters ===
 
-| options:int | option as integer. Default is GET\_FRAME\_BITMAP = 2. A\\  Also possible: \\  GET\_FRAME\_RAW\_BYTES:int = 4,\\  GET\_POWER\_OF\_2\_FRAME\_BGRA\_BYTES:int = 8 |
+| options:int | option as integer. Default is GET\_FRAME\_BITMAP = 2. A\\ Also possible: \\ GET\_FRAME\_RAW\_BYTES:int = 4,\\ GET\_POWER\_OF\_2\_FRAME\_BGRA\_BYTES:int = 8 |
 
 === Return Value ===
 
@@ -537,11 +537,11 @@ SetVideoSource(index:int, mixSource:int, mixMode:int):int
 
 ### Parameters
 
-| index:int     | Index of the video source. The index of the video source goes from **0 - GetNumberOfVideoSources -1** |
+| index:int   | Index of the video source. The index of the video source goes from **0 - GetNumberOfVideoSources -1** |
 | mixSource:int | set **0** to to set only the first video source. **1** to set a second video source |
-|               | **—second video source only available on Microsoft Windows** |
-| mixMode:int   | when mixSource **1** is set, the mix mode to combine two video sources can be chosen here. See available mix modes on page 33. |
-|               | **—only available on Microsoft Windows** |
+|        | **—second video source only available on Microsoft Windows** |
+| mixMode:int  | when mixSource **1** is set, the mix mode to combine two video sources can be chosen here. See available mix modes on page 33. |
+|        | **—only available on Microsoft Windows** |
 
 ### Return Value
 
@@ -615,7 +615,7 @@ SetVideoWidth(width:int, mixSource:int):int
 
 | width:int | Width of the video in pixels as integer value |
 | mixSource:int | set **0** to to set only the first video source. **1** to set a second video source |
-|               | **—second video source only available on Microsoft Windows** |
+|        | **—second video source only available on Microsoft Windows** |
 
 ### Return Value
 
@@ -638,9 +638,9 @@ SetVideoHeight(height:int, mixSource:int):int
 
 ### Parameters
 
-| height:int    | Height of the video in pixels as integer value                                      |
+| height:int  | Height of the video in pixels as integer value                   |
 | mixSource:int | set **0** to to set only the first video source. **1** to set a second video source |
-|           | **—second video source only available on Microsoft Windows** |
+|      | **—second video source only available on Microsoft Windows** |
 
 ### Return Value
 
@@ -663,7 +663,7 @@ SetVideoResizeWidth(width:int, index:int):int
 
 ### Parameters
 
-| width:int | resize width of the video in pixels as integer value                             |
+| width:int | resize width of the video in pixels as integer value               |
 | index:int | Index of the output. The index of the output, from **0 - GetNumberOfOutputs -1** |
 
 ### Return Value
@@ -687,8 +687,8 @@ SetVideoResizeHeight(height:int, index:int):int
 
 ### Parameters
 
-| height:int | resize height of the video in pixels as integer value                            |
-| index:int  | Index of the output. The index of the output, from **0 - GetNumberOfOutputs -1** |
+| height:int | resize height of the video in pixels as integer value              |
+| index:int | Index of the output. The index of the output, from **0 - GetNumberOfOutputs -1** |
 
 ### Return Value
 
@@ -711,9 +711,9 @@ SetVideoFramerate(framerate:Number, mixSource:int):int
 
 ### Parameters
 
-| framerate:Number | Frame rate in frames per Second(FPS) as number value.                               |
-| mixSource:int    | set **0** to to set only the first video source. **1** to set a second video source |
-|    | **—second video source only available on Microsoft Windows** |
+| framerate:Number | Frame rate in frames per Second(FPS) as number value.                |
+| mixSource:int  | set **0** to to set only the first video source. **1** to set a second video source |
+|  | **—second video source only available on Microsoft Windows** |
 
 ### Return Value
 
@@ -756,8 +756,8 @@ SetVideoBitrate(bitrate:int, index:int):int
 
 
 | bitrate:int | Video bitrate as integer value. |
-| index:int   | index of output to set the bitrate for multiple encoders. |
-|              | **—set different outputs is only available on Microsoft Windows. On Mac OS X the same bitrate is set to all outputs.**  |
+| index:int  | index of output to set the bitrate for multiple encoders. |
+|       | **—set different outputs is only available on Microsoft Windows. On Mac OS X the same bitrate is set to all outputs.** |
 
 === Return Value ===
 
@@ -783,8 +783,8 @@ GetVideoBitrate(int source)
 
 === Parameters ===
 
-| index:int   | index of output to get the bitrate for multiple encoders. |
-|               | **—get different outputs is only available on Microsoft Windows. On Mac OS X there is only one source available.**  |
+| index:int  | index of output to get the bitrate for multiple encoders. |
+|        | **—get different outputs is only available on Microsoft Windows. On Mac OS X there is only one source available.** |
 
 === Return Value ===
 
@@ -809,9 +809,9 @@ SetAudioBitrate(bitrate:int, index:int):int
 
 === Parameters ===
 
-| bitrate:int | Audio bitrate as integer value.  |
-| index:int   | index of output to set the bitrate for multiple encoders. |
-|               | **—set different outputs is only available on Microsoft Windows. On Mac OS X the same bitrate is set to all outputs.**  |
+| bitrate:int | Audio bitrate as integer value. |
+| index:int  | index of output to set the bitrate for multiple encoders. |
+|        | **—set different outputs is only available on Microsoft Windows. On Mac OS X the same bitrate is set to all outputs.** |
 
 === Return Value ===
 
@@ -835,8 +835,8 @@ GetAudioBitrate(int source)
 
 === Parameters ===
 
-| index:int   | index of output to get the bitrate for multiple encoders. |
-|               | **—Get different outputs is only available on Microsoft Windows. On Mac OS X there is only one source available.**  |
+| index:int  | index of output to get the bitrate for multiple encoders. |
+|        | **—Get different outputs is only available on Microsoft Windows. On Mac OS X there is only one source available.** |
 
 === Return Value ===
 
@@ -949,9 +949,9 @@ SetColorSpace(index:int, mixSource:int):int
 
 ### Parameters
 
-| index:int     | index of the input source. |
+| index:int   | index of the input source. |
 | mixSource:int | set **0** to to set only the first mixed source. **1** to set a second mixed source |
-|       | **—second mixed source is only available on Microsoft Windows** |
+|    | **—second mixed source is only available on Microsoft Windows** |
 
 ### Return Value
 
@@ -974,10 +974,10 @@ GetNumberOfColorspaces(width:int, height:int, mixSource:int):int
 
 ### Parameters
 
-| width:int     | width of the video source  |
-| height:int    | height of the video source  |
+| width:int   | width of the video source |
+| height:int  | height of the video source |
 | mixSource:int | set **0** to to get the first mixed source. **1** to get the second mixed source |
-|  | **—second mixed source is only available on Microsoft Windows** |
+| | **—second mixed source is only available on Microsoft Windows** |
 
 ### Return Value
 
@@ -1000,9 +1000,9 @@ GetColorspace(index:int, mixSource:int):String
 
 ### Parameters
 
-| index:int     | Index of the color spaces. The index of the color spaces, from **0 - GetNumberOfColorspaces -1** |
+| index:int   | Index of the color spaces. The index of the color spaces, from **0 - GetNumberOfColorspaces -1** |
 | mixSource:int | set **0** to to get the first mixed source. **1** to get the second mixed source |
-|   | **—second mixed source is only available on Microsoft Windows** |
+|  | **—second mixed source is only available on Microsoft Windows** |
 
 ### Return Value
 
@@ -1028,7 +1028,7 @@ GetNumberOfResolutions(mixSource:int):int
 ### Parameters
 
 | mixSource:int | set **0** to to get the first mixed source. **1** to get the second mixed source |
-|                 | **—second mixed source is only available on Microsoft Windows** |
+|         | **—second mixed source is only available on Microsoft Windows** |
 
 ### Return Value
 
@@ -1051,9 +1051,9 @@ GetResolution(index:int, mixSource:int):Object
 
 ### Parameters
 
-| index:int     | Index of the resolutions. The index of the resolutions, from **0 - GetNumberOfResolutions -1** |
-| mixSource:int | set **0** to to get the first mixed source. **1** to get the second mixed source  |
-|                    | **—second mixed source is only available on Microsoft Windows** |
+| index:int   | Index of the resolutions. The index of the resolutions, from **0 - GetNumberOfResolutions -1** |
+| mixSource:int | set **0** to to get the first mixed source. **1** to get the second mixed source |
+|          | **—second mixed source is only available on Microsoft Windows** |
 
 ### Return Value
 
@@ -1076,11 +1076,11 @@ GetNumberOfFramerates(width:int, height:int, colorspace:String, mixSource:int):i
 
 ### Parameters
 
-| width:int         | width of the video source  |
-| height:int        | height of the video source.                                                      |
-| colorspace:String | name of the color space get from GetColorspace                                   |
-| mixSource:int     | set **0** to to get the first mixed source. **1** to get the second mixed source |
-|        | **—second mixed source is only available on Microsoft Windows** |
+| width:int     | width of the video source |
+| height:int    | height of the video source.                           |
+| colorspace:String | name of the color space get from GetColorspace                  |
+| mixSource:int   | set **0** to to get the first mixed source. **1** to get the second mixed source |
+|    | **—second mixed source is only available on Microsoft Windows** |
 
 ### Return Value
 
@@ -1103,9 +1103,9 @@ GetFramerate(index:int, mixSource:int):Number
 
 ### Parameters
 
-| index:int     | Index of the frame rate. The index of the frame rate, from **0 - GetNumberOfFramerates -1** |
-| mixSource:int | set **0** to to get the first mixed source. **1** to get the second mixed source  |
-|     | **—second mixed source is only available on Microsoft Windows** |
+| index:int   | Index of the frame rate. The index of the frame rate, from **0 - GetNumberOfFramerates -1** |
+| mixSource:int | set **0** to to get the first mixed source. **1** to get the second mixed source |
+|   | **—second mixed source is only available on Microsoft Windows** |
 
 ### Return Value
 
@@ -1128,7 +1128,7 @@ SetDeinterlacing(mode:int, method:int):int
 
 ### Parameters
 
-| mode:int   | possible values: **0**=off, **1**=auto, **2**=on   \\  no auto mode for mac |
+| mode:int  | possible values: **0**=off, **1**=auto, **2**=on  \\ no auto mode for mac |
 | method:int | possible values: **0**=duplicate field/bob, **1**=blend, **2**=vertical filter, **3**=edge, 4=median, **5**=median2 |
 
 ### Return Value
@@ -1197,7 +1197,7 @@ SetOutputUrl(url:String, index:int):int
 ### Parameters
 
 | url:String | Url of outputs can be a local mp4 recording or a rtmp server. |
-| index:int  | Index of the output.                                          |
+| index:int | Index of the output.                     |
 
 ### Return Value
 
@@ -1349,8 +1349,8 @@ SetLog(logFile:String, logLevel:int):int
 
 ### Parameters
 
-| logFile:String | local path for logfile as string.                 |
-| logLevel:int   | log level as integer. For possible loglevels 0-9. |
+| logFile:String | local path for logfile as string.         |
+| logLevel:int  | log level as integer. For possible loglevels 0-9. |
 
 ### Return Value
 
@@ -1391,117 +1391,64 @@ Under Windows and Mac OSX.
 
 # SetConfig Properties
 
-| **Property name**               | **Description**                                                                                                              | **Values**                                                                                                                                               |  Mac Platform Support  |
-| license                                 | License string                                                                                                              |                                                                                                                                                                |                  ✔                          |
-| XMLPath                              | Path to the XML file with configuration information                                                      |                                                                                                                                                                |                  ✔                          |
-| RemoteControlPort              | Port number                                                                                                                 |                                                                                                                                                                |                  ✔                          |
-| LiveSource                           |                                                                                                                                     |                                                                                                                                                               |                  ✔                          |
-| RemoteIP                             |                                                                                                                                     |                                                                                                                                                               |                  ✔                          |
-| AVOffsetMs              |                                                           |                                                                                                                                                                                                                                                     |                  ✔                          |
-| ReconnectPeriod/ReconnectInterval              |                                                           |                                                                                                                                                                                                               |                  ✔                          |
-| ReconnectAttempts              | Auto Reconnect No. of Attempts  | 5                                                                                                                                                                                                                                           |                  ✔                          |
-| UseInternalReconnect              | Use RTMP Internal Reconnect of the RTMP Filter (do not stop encoder on network errors)  | 0 / 1                                                                                                                                          |                  ✔                          |
-| UseUnlimitedReconnect              | Don't stop reconnecting after a specific number of failed attempts (encoder is not stopped)  | 0 / 1                                                                                                                                   |                  ✔                          |
-| Auth              |  Authentication for RTMP and RTSP Push streaming                                                         | “user:password”                                                                                                                                                      |                  ✔                          |
-| RtmpUrlDelimiter              | Set delimiter for RTMP-url and streamname.                                                          | Example: ”+“ will split [](rtmp://localhost/live+myStream) so that “myStream” is the stream name.                   |                  ✔                          |
-| DeinterlacingMode              | Deinterlacing Mode                                                          | 0=off, 1=auto (default), 2=on Note: for some capture devices you need to set this to „on“ (2). (Resolutions 480i, 576i, 1080i)             |                  ✔                          |
-| DeinterlacingMethod              | Deinterlacing Method                                                           | 0=duplicate field/bob, 1=blend, 2=vertical filter, 3=edge, 4=median, 5=median2                                                                          |                  ✔                          |
-| RemoteSendAudioLevelInterval              |                                                           |                                                                                                                                                                                                                        |                  ✔                          |
-| CaptureRegion              | Capture Region of the input source, example for a input resolution of 640×480: SetConfig(“CaptureRegion”, “10,630,10,470”) - discards 10 pixels on each side | left,right,top,bottom                    |                  ✔                          |
-| RTMPPublishMode              | RTMP Publish/Live/Record on Server (VOD)                                                          | 1=record, 2=append, 0=live (default)                                                                                                             |                  ✔                          |
-| VideoAudioInput              |                                                           |                                                                                                                                                                                                                                             |                  ✔                          |
-| PreviewNoInvert              |                                                           |                                                                                                                                                                                                                                             |                  ✔                          |
-| ScreenCapMode              | Screen Capture Desktop Mode                                                          | 0=Screen, 1=FollowMouse, 2=Region relative, 3=Region absolute, 4=Window, 5=Window overlapping                               |                  ✔                          |
-| ScreenCapWindowIndex              |                                                           |                                                                                                                                                                                                                                   |                  ✔                          |
-| ApplyDynamicSettings              |                                                           |                                                                                                                                                                                                                                       |                  ✔                          |
-| Mp4RecordOnTheFlyChangeName |                                                                                                     |                                                                                                                                                                                        |        ✔          |
-| Mp4RecordOnTheFlyControl    | If Mp4RecordOnTheFly is enabled, controls start/stop recording        | 0=stop, 1=start                                                                                                                                                               |        ✔          |
-| AudioPreview                | Enables audio preview during preview or broadcast                                       | 0=no preview, 1=visual preview (default, requires filter AudioVolume), 2=visual and audible preview, 3=audible preview  |       ✔          |
-| Mp4RecordOnTheFly           | Enables start/stop recording to local file while the broadcast is running  | 0=off (default), 1=on                                                                                                                                                        |      ✔           |
-| H264Quality                 | H.264 Encoder Quality/Speed Ratio                                                                 | 0=worst/fastest 1=default 6=highest/slowest                                                                                                                 |      ✔           |
-| H264IFrameDistance              | H.264 I Frame / GOP Length in Frames (100 Frames = 4 seconds for 25 fps)   | 100=default, 1 = I-Frame-Only                                                                                                                              |                  ✔                          |
-| H264PFrameDistance             | H.264 P/B Frame Distance                                                                   | 3 1 = IP-Only (no B-Frames)                                                                                                                                             |                  ✔                          |
-| H264Profile              | H.264 Encoding Profile                                                          | Baseline, Main, Extended, High Most compatible but lowest quality is Baseline, (no B-Frames, no CABAC VLC)                                           |                  ✔                          |
-| H264Level              | H.264 Level                                                           | 10=1.0, 11=1.1, 12=1.2, 13=1.3, 20=2.0, 21=2.1, 22=2.2, 30=3.0, 31=3.1, 32=3.2, 40=4.0, 41=4.1, 42=4.2, 50=5.0, 51=5.1                                         |                  ✔                          |
-| H264VlcMode              | H.264 VLC Mode (CAVLC/CABAC)                                                          | =CAVLC, 2=CABAC (not allowed in H.264 Baseline Profile)                                                                                                     |                  ✔                          |
-| OutputFrameRate             | Video Output (Encoded) Frame Rate                                                           | 5,10,15,20,25,30, OR 23980 OR 29970                                                                                                                          |       ✔          |
-| RTMPWriteTimecode           | Send timecodes in RTMP streams, If enabled RTMP timecodes are sent in addition to the always sent RTMP packet timestamps | 0=off (default), 1=on                                                                 |      ✔           |
-| UseSystemTimeAsTimecode              | Send RTMP/MP4 timecodes as UTC system date time or stream time                                                          | 0=stream time (default), 1=UTC system date time                                       |                  ✔                          |
-| TimecodeInterval            | RTMP/MP4 timecode interval in milliseconds                                                | Should be higher or equal to 1000 (1s)                                                                                                                          |        ✔         |
-| TcpConnectTimeout              |                                                           |                                                                                                                                                                                                                                             |                  ✔                          |
-| RTSPSinkMode              | Determines if the RTSPSink is running as a server (passive/pull) or as a streamer to a RTSP push capable server (active/push) | 1=server/pull (default), 2=streamer/push                                            |                  ✔                          |  
-| RTSPSDPFileFolder              |                                                           |                                                                                                                                                                                                                                             |                  ✔                          |
-| RTSPStreamDescription              |                                                           |                                                                                                                                                                                                                                             |                  ✔                          |
-| AudioVolumePerSoftware              | Control volume with the Audio Volume Filter                                                          | 0=off (default), 1=on                                                                                                                                                                                                                                             |                  ✔                          |
-| AVFShowBlackmagicDevices    | use AVFoundation for BlackMagic devices                                                                                                                                 | 0=off (default), 1=on                                                                 |       ✔          |
-| OverlayRect                 | Sets the dimensions for a given overlay-image.  | “index,left,top,right,bottom”. index: the overlay-index, beginning with 0. left, top, right and bottom define a rectangle in screen-coordinates.           |        ✔         |
-| OverlayAlpha                | Sets the alpha-value for overlays.   | Range: 0-1. 0.0 (not visable), 1 (fully visable).                                                                                                                                                                                 |       ✔          |
-| OverlayTextColor            | Text Overlay Color | Must be a hexadecimal color-value in BGR-format, e.g.: “0000FF” (255 (0x0000FF) - red)                                                                                                                                     |       ✔          |
-| OverlayBackgroundColor      |                         | Must be a hexadecimal color-value in BGR-format, e.g.: “000000” (0 (0x000000) - black).                                                                                                                                   |       ✔          |
-| OverlaySkipColor            | Setting skipcolor to a specific value will result in this color to be rendered transparent in the overlays.              | Example: If OverlayBackgroundColor was set to blue (“FF0000”) setting OverlaySkipColor to blue as well will result in a transparent background. Parameter must be a hexadecimal color-value in BGR-format, e.g.: “FF0000” (blue). Disable: Setting OverlaySkipColor to “FF000000” (ABGR) will disable the usage of skipcolor.                                                                                                                                                 |       ✔          |
-| AudioDelay                  | Streaming Audio Delay / Offset (ms) |                                                                                                                                                                                                                                                      |        ✔         |
-| ShowPropertyPageForDevice   | Calls the propertypage for a given device.                                                                               | 0 for device with index: 0                                                                                                         |         ✔        |
-| UseQuicktimeH264Encoder              |                                                           |                                                                                                                                                                                                                               |                  ✔                          |
-| RotateDegrees              | set the degrees by which video should be rotated, only works if UseRotation is set to on, set before StartPreview or StartBroadcast | 0/90/180/270                                                                           |                  ✔                          |
+| **Property name**        | **Description**                                                       | **Values**                                                                        | Mac Platform Support |
+|-------------------------|------------------------------------------------------------------------|-----------------------------------------------------------------------------------|---------------------|
+| license                 | License string                                                       |                                                                                |         ✔             |
+| XMLPath               | Path to the XML file with configuration information                           |                                                                                |         ✔             |
+| RemoteControlPort       | Port number                                                         |                                                                                |         ✔             |
+| LiveSource              |                                                                   |                                                                                |         ✔             |
+| RemoteIP               |                                                                   |                                                                                |         ✔             |
+| AVOffsetMs       |                              |                                                                                                                           |         ✔             |
+| ReconnectPeriod/ReconnectInterval       |                              |                                                                                                        |         ✔             |
+| ReconnectAttempts       | Auto Reconnect No. of Attempts | 5                                                                                                                      |         ✔             |
+| UseInternalReconnect       | Use RTMP Internal Reconnect of the RTMP Filter (do not stop encoder on network errors) | 0 / 1                                                                     |         ✔             |
+| UseUnlimitedReconnect       | Don't stop reconnecting after a specific number of failed attempts (encoder is not stopped) | 0 / 1                                                                  |         ✔             |
+| Auth       | Authentication for RTMP and RTSP Push streaming                             | “user:password”                                                                           |         ✔             |
+| RtmpUrlDelimiter       | Set delimiter for RTMP-url and streamname.                             | Example: ”+“ will split [](rtmp://localhost/live+myStream) so that “myStream” is the stream name.          |         ✔             |
+| DeinterlacingMode       | Deinterlacing Mode                             | 0=off, 1=auto (default), 2=on Note: for some capture devices you need to set this to „on“ (2). (Resolutions 480i, 576i, 1080i)       |         ✔             |
+| DeinterlacingMethod       | Deinterlacing Method                              | 0=duplicate field/bob, 1=blend, 2=vertical filter, 3=edge, 4=median, 5=median2                                     |         ✔             |
+| RemoteSendAudioLevelInterval       |                              |                                                                                                            |         ✔             |
+| CaptureRegion       | Capture Region of the input source, example for a input resolution of 640×480: SetConfig(“CaptureRegion”, “10,630,10,470”) - discards 10 pixels on each side | left,right,top,bottom          |         ✔             |
+| RTMPPublishMode       | RTMP Publish/Live/Record on Server (VOD)                             | 1=record, 2=append, 0=live (default)                                                       |         ✔             |
+| VideoAudioInput       |                              |                                                                                                                       |         ✔             |
+| PreviewNoInvert       |                              |                                                                                                                       |         ✔             |
+| ScreenCapMode       | Screen Capture Desktop Mode                             | 0=Screen, 1=FollowMouse, 2=Region relative, 3=Region absolute, 4=Window, 5=Window overlapping                |         ✔             |
+| ScreenCapWindowIndex       |                              |                                                                                                                  |         ✔             |
+| ApplyDynamicSettings       |                              |                                                                                                                    |         ✔             |
+| Mp4RecordOnTheFlyChangeName |                                                   |                                                                                            |    ✔     |
+| Mp4RecordOnTheFlyControl  | If Mp4RecordOnTheFly is enabled, controls start/stop recording    | 0=stop, 1=start                                                                                |    ✔     |
+| AudioPreview        | Enables audio preview during preview or broadcast                    | 0=no preview, 1=visual preview (default, requires filter AudioVolume), 2=visual and audible preview, 3=audible preview |    ✔     |
+| Mp4RecordOnTheFly      | Enables start/stop recording to local file while the broadcast is running | 0=off (default), 1=on                                                                            |   ✔      |
+| H264Quality         | H.264 Encoder Quality/Speed Ratio                                 | 0=worst/fastest 1=default 6=highest/slowest                                                         |   ✔      |
+| H264IFrameDistance       | H.264 I Frame / GOP Length in Frames (100 Frames = 4 seconds for 25 fps)  | 100=default, 1 = I-Frame-Only                                                               |         ✔             |
+| H264PFrameDistance       | H.264 P/B Frame Distance                                  | 3 1 = IP-Only (no B-Frames)                                                                       |         ✔             |
+| H264Profile       | H.264 Encoding Profile                             | Baseline, Main, Extended, High Most compatible but lowest quality is Baseline, (no B-Frames, no CABAC VLC)                      |         ✔             |
+| H264Level       | H.264 Level                              | 10=1.0, 11=1.1, 12=1.2, 13=1.3, 20=2.0, 21=2.1, 22=2.2, 30=3.0, 31=3.1, 32=3.2, 40=4.0, 41=4.1, 42=4.2, 50=5.0, 51=5.1                     |         ✔             |
+| H264VlcMode       | H.264 VLC Mode (CAVLC/CABAC)                             | =CAVLC, 2=CABAC (not allowed in H.264 Baseline Profile)                                                   |         ✔             |
+| OutputFrameRate       | Video Output (Encoded) Frame Rate                              | 5,10,15,20,25,30, OR 23980 OR 29970                                                             |    ✔     |
+| RTMPWriteTimecode      | Send timecodes in RTMP streams, If enabled RTMP timecodes are sent in addition to the always sent RTMP packet timestamps | 0=off (default), 1=on                                 |   ✔      |
+| UseSystemTimeAsTimecode       | Send RTMP/MP4 timecodes as UTC system date time or stream time                             | 0=stream time (default), 1=UTC system date time                    |         ✔             |
+| TimecodeInterval      | RTMP/MP4 timecode interval in milliseconds                        | Should be higher or equal to 1000 (1s)                                                             |    ✔     |
+| TcpConnectTimeout       |                              |                                                                                                                       |         ✔             |
+| RTSPSinkMode       | Determines if the RTSPSink is running as a server (passive/pull) or as a streamer to a RTSP push capable server (active/push) | 1=server/pull (default), 2=streamer/push                      |         ✔             |
+| RTSPSDPFileFolder       |                              |                                                                                                                       |         ✔             |
+| RTSPStreamDescription       |                              |                                                                                                                       |         ✔             |
+| AudioVolumePerSoftware       | Control volume with the Audio Volume Filter                             | 0=off (default), 1=on                                                                                                                       |         ✔             |
+| AVFShowBlackmagicDevices  | use AVFoundation for BlackMagic devices                                                                 | 0=off (default), 1=on                                 |    ✔     |
+| OverlayRect         | Sets the dimensions for a given overlay-image. | “index,left,top,right,bottom”. index: the overlay-index, beginning with 0. left, top, right and bottom define a rectangle in screen-coordinates.      |    ✔     |
+| OverlayAlpha        | Sets the alpha-value for overlays.  | Range: 0-1. 0.0 (not visable), 1 (fully visable).                                                                                         |    ✔     |
+| OverlayTextColor      | Text Overlay Color | Must be a hexadecimal color-value in BGR-format, e.g.: “0000FF” (255 (0x0000FF) - red)                                                                   |    ✔     |
+| OverlayBackgroundColor   |             | Must be a hexadecimal color-value in BGR-format, e.g.: “000000” (0 (0x000000) - black).                                                                  |    ✔     |
+| OverlaySkipColor      | Setting skipcolor to a specific value will result in this color to be rendered transparent in the overlays.       | Example: If OverlayBackgroundColor was set to blue (“FF0000”) setting OverlaySkipColor to blue as well will result in a transparent background. Parameter must be a hexadecimal color-value in BGR-format, e.g.: “FF0000” (blue). Disable: Setting OverlaySkipColor to “FF000000” (ABGR) will disable the usage of skipcolor.                                                                         |    ✔     |
+| AudioDelay         | Streaming Audio Delay / Offset (ms) |                                                                                                                           |    ✔     |
+| ShowPropertyPageForDevice  | Calls the propertypage for a given device.                                        | 0 for device with index: 0                                                     |     ✔    |
+| UseQuicktimeH264Encoder       |                              |                                                                                                                |         ✔             |
+| RotateDegrees       | set the degrees by which video should be rotated, only works if UseRotation is set to on, set before StartPreview or StartBroadcast | 0/90/180/270                                      |         ✔             |
 
 
 
 
 
-
-| **Property name**                 |  **Description**      | **Values**
-|-------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------|----------------------|---|---|
-|  license                           | | License string                                                                                                                                                                       | |                                                                                                                                                                                                                                                                                                                               | |                 | ✔                    | | |   |
-|  XMLPath                           | | Path to the XML file with configuration information                                                                                                                                  | |                                                                                                                                                                                                                                                                                                                               | |                 | ✔                    | | |   |
-|  RemoteControlPort                 | | Port number                                                                                                                                                                          | |                                                                                                                                                                                                                                                                                                                               | |                 | ✔                    | | |   |
-|  LiveSource                        | |                                                                                                                                                                                      | |                                                                                                                                                                                                                                                                                                                               | |                 | ✔                    | | |   |
-|  RemoteIP                          | |                                                                                                                                                                                      | |                                                                                                                                                                                                                                                                                                                               | |                 | ✔                    | | |   |
-|  AVOffsetMs                        | |                                                                                                                                                                                      | |                                                                                                                                                                                                                                                                                                                               | |                 | ✔                    | | |   |
-|  ReconnectPeriod/ReconnectInterval | |                                                                                                                                                                                      | |                                                                                                                                                                                                                                                                                                                               | |                 | ✔                    | | |   |
-|  ReconnectAttempts                 | | Auto Reconnect No. of Attempts                                                                                                                                                       | | 5                                                                                                                                                                                                                                                                                                                             | |                 | ✔                    | | |   |
-|  UseInternalReconnect              | | Use RTMP Internal Reconnect of the RTMP Filter (do not stop encoder on network errors)                                                                                               | | 0 / 1                                                                                                                                                                                                                                                                                                                         | |                 | ✔                    | | |   |
-|  UseUnlimitedReconnect             | | Don't stop reconnecting after a specific number of failed attempts (encoder is not stopped)                                                                                          | | 0 / 1                                                                                                                                                                                                                                                                                                                         | |                 | ✔                    | | |   |
-|  Auth                              | |                                                                                                                                                                                      | Authentication for RTMP and RTSP Push streaming                                                                                                                                                                                                                                                                                 | | “user:password” | |                    | ✔ | | |
-|  RtmpUrlDelimiter                  | | Set delimiter for RTMP-url and streamname.                                                                                                                                           | | Example: ”+“ will split [](rtmp://localhost/live+myStream) so that “myStream” is the stream name.                                                                                                                                                                                                                             | |                 | ✔                    | | |   |
-| | DeinterlacingMode                 | | Deinterlacing Mode                                                                                                                                                                   | | 0=off, 1=auto (default), 2=on Note: for some capture devices you need to set this to „on“ (2). (Resolutions 480i, 576i, 1080i)                                                                                                                                                                                                | |                 | ✔                    | | |   |
-| | DeinterlacingMethod               | | Deinterlacing Method                                                                                                                                                                 | | 0=duplicate field/bob, 1=blend, 2=vertical filter, 3=edge, 4=median, 5=median2                                                                                                                                                                                                                                                | |                 | ✔                    | | |   |
-| | RemoteSendAudioLevelInterval      | |                                                                                                                                                                                      | |                                                                                                                                                                                                                                                                                                                               | |                 | ✔                    | | |   |
-| | CaptureRegion                     | | Capture Region of the input source, example for a input resolution of 640×480: SetConfig(“CaptureRegion”, “10,630,10,470”) - discards 10 pixels on each side | left,right,top,bottom | |                                                                                                                                                                                                                                                                                                                               | ✔                 | |                    |   |   |
-| | RTMPPublishMode                   | | RTMP Publish/Live/Record on Server (VOD)                                                                                                                                             | | 1=record, 2=append, 0=live (default)                                                                                                                                                                                                                                                                                          | |                 | ✔                    | | |   |
-| | VideoAudioInput                   | |                                                                                                                                                                                      | |                                                                                                                                                                                                                                                                                                                               | |                 | ✔                    | | |   |
-| | PreviewNoInvert                   | |                                                                                                                                                                                      | |                                                                                                                                                                                                                                                                                                                               | |                 | ✔                    | | |   |
-| | ScreenCapMode                     | | Screen Capture Desktop Mode                                                                                                                                                          | | 0=Screen, 1=FollowMouse, 2=Region relative, 3=Region absolute, 4=Window, 5=Window overlapping                                                                                                                                                                                                                                 | |                 | ✔                    | | |   |
-| | ScreenCapWindowIndex              | |                                                                                                                                                                                      | |                                                                                                                                                                                                                                                                                                                               | |                 | ✔                    | | |   |
-| | ApplyDynamicSettings              | |                                                                                                                                                                                      | |                                                                                                                                                                                                                                                                                                                               | |                 | ✔                    | | |   |
-| | Mp4RecordOnTheFlyChangeName |     | |                                                                                                                                                                                      | |                                                                                                                                                                                                                                                                                                                               | ✔                 | |                    |   |   |
-| | Mp4RecordOnTheFlyControl          | | If Mp4RecordOnTheFly is enabled, controls start/stop recording                                                                                                                       | | 0=stop, 1=start                                                                                                                                                                                                                                                                                                               | |                 | ✔                    | | |   |
-| | AudioPreview                      | | Enables audio preview during preview or broadcast                                                                                                                                    | | 0=no preview, 1=visual preview (default, requires filter AudioVolume), 2=visual and audible preview, 3=audible preview                                                                                                                                                                                                        | |                 | ✔                    | | |   |
-| | Mp4RecordOnTheFly                 | | Enables start/stop recording to local file while the broadcast is running                                                                                                            | | 0=off (default), 1=on                                                                                                                                                                                                                                                                                                         | |                 | ✔                    | | |   |
-| | H264Quality                       | | H.264 Encoder Quality/Speed Ratio                                                                                                                                                    | | 0=worst/fastest 1=default 6=highest/slowest                                                                                                                                                                                                                                                                                   | |                 | ✔                    | | |   |
-| | H264IFrameDistance                | | H.264 I Frame / GOP Length in Frames (100 Frames = 4 seconds for 25 fps)                                                                                                             | | 100=default, 1 = I-Frame-Only                                                                                                                                                                                                                                                                                                 | |                 | ✔                    | | |   |
-| | H264PFrameDistance                | | H.264 P/B Frame Distance                                                                                                                                                             | | 3 1 = IP-Only (no B-Frames)                                                                                                                                                                                                                                                                                                   | |                 | ✔                    | | |   |
-| | H264Profile                       | | H.264 Encoding Profile                                                                                                                                                               | | Baseline, Main, Extended, High Most compatible but lowest quality is Baseline, (no B-Frames, no CABAC VLC)                                                                                                                                                                                                                    | |                 | ✔                    | | |   |
-| | H264Level                         | | H.264 Level                                                                                                                                                                          | | 10=1.0, 11=1.1, 12=1.2, 13=1.3, 20=2.0, 21=2.1, 22=2.2, 30=3.0, 31=3.1, 32=3.2, 40=4.0, 41=4.1, 42=4.2, 50=5.0, 51=5.1                                                                                                                                                                                                        | |                 | ✔                    | | |   |
-| | H264VlcMode                       | | H.264 VLC Mode (CAVLC/CABAC)                                                                                                                                                         | | =CAVLC, 2=CABAC (not allowed in H.264 Baseline Profile)                                                                                                                                                                                                                                                                       | |                 | ✔                    | | |   |
-| | OutputFrameRate                   | | Video Output (Encoded) Frame Rate                                                                                                                                                    | | 5,10,15,20,25,30, OR 23980 OR 29970                                                                                                                                                                                                                                                                                           | |                 | ✔                    | | |   |
-| | RTMPWriteTimecode                 | | Send timecodes in RTMP streams, If enabled RTMP timecodes are sent in addition to the always sent RTMP packet timestamps | 0=off (default), 1=on                                     | |                                                                                                                                                                                                                                                                                                                               | ✔                 | |                    |   |   |
-| | UseSystemTimeAsTimecode           | | Send RTMP/MP4 timecodes as UTC system date time or stream time                                                                                                                       | | 0=stream time (default), 1=UTC system date time                                                                                                                                                                                                                                                                               | |                 | ✔                    | | |   |
-| | TimecodeInterval                  | | RTMP/MP4 timecode interval in milliseconds                                                                                                                                           | | Should be higher or equal to 1000 (1s)                                                                                                                                                                                                                                                                                        | |                 | ✔                    | | |   |
-| | TcpConnectTimeout                 | |                                                                                                                                                                                      | |                                                                                                                                                                                                                                                                                                                               | |                 | ✔                    | | |   |
-| | RTSPSinkMode                      | | Determines if the RTSPSink is running as a server (passive/pull) or as a streamer to a RTSP push capable server (active/push) | 1=server/pull (default), 2=streamer/push             | |                                                                                                                                                                                                                                                                                                                               | ✔                 | |                    |   |   |
-| | RTSPSDPFileFolder                 | |                                                                                                                                                                                      | |                                                                                                                                                                                                                                                                                                                               | |                 | ✔                    | | |   |
-| | RTSPStreamDescription             | |                                                                                                                                                                                      | |                                                                                                                                                                                                                                                                                                                               | |                 | ✔                    | | |   |
-| | AudioVolumePerSoftware            | | Control volume with the Audio Volume Filter                                                                                                                                          | | 0=off (default), 1=on                                                                                                                                                                                                                                                                                                         | |                 | ✔                    | | |   |
-| | AVFShowBlackmagicDevices          | | use AVFoundation for BlackMagic devices                                                                                                                                              | | 0=off (default), 1=on                                                                                                                                                                                                                                                                                                         | |                 | ✔                    | | |   |
-| | OverlayRect                       | | Sets the dimensions for a given overlay-image.                                                                                                                                       | | “index,left,top,right,bottom”. index: the overlay-index, beginning with 0. left, top, right and bottom define a rectangle in screen-coordinates.                                                                                                                                                                              | |                 | ✔                    | | |   |
-| | OverlayAlpha                      | | Sets the alpha-value for overlays.                                                                                                                                                   | | Range: 0-1. 0.0 (not visable), 1 (fully visable).                                                                                                                                                                                                                                                                             | |                 | ✔                    | | |   |
-| | OverlayTextColor                  | | Text Overlay Color | Must be a hexadecimal color-value in BGR-format, e.g.: “0000FF” (255 (0x0000FF) - red)                                                                          | |                                                                                                                                                                                                                                                                                                                               | ✔                 | |                    |   |   |
-| | OverlayBackgroundColor            | |                                                                                                                                                                                      | | Must be a hexadecimal color-value in BGR-format, e.g.: “000000” (0 (0x000000) - black).                                                                                                                                                                                                                                       | |                 | ✔                    | | |   |
-| | OverlaySkipColor                  | | Setting skipcolor to a specific value will result in this color to be rendered transparent in the overlays.                                                                          | | Example: If OverlayBackgroundColor was set to blue (“FF0000”) setting OverlaySkipColor to blue as well will result in a transparent background. Parameter must be a hexadecimal color-value in BGR-format, e.g.: “FF0000” (blue). Disable: Setting OverlaySkipColor to “FF000000” (ABGR) will disable the usage of skipcolor. | |                 | ✔                    | | |   |
-| | AudioDelay                        | | Streaming Audio Delay / Offset (ms) |                                                                                                                                                | |                                                                                                                                                                                                                                                                                                                               | ✔                 | |                    |   |   |
-| | ShowPropertyPageForDevice         | | Calls the propertypage for a given device.                                                                                                                                           | | 0 for device with index: 0                                                                                                                                                                                                                                                                                                    | |                 | ✔                    | | |   |
-| | UseQuicktimeH264Encoder           | |                                                                                                                                                                                      | |                                                                                                                                                                                                                                                                                                                               | |                 | ✔                    | | |   |
-| | RotateDegrees                     | | set the degrees by which video should be rotated, only works if UseRotation is set to on, set before StartPreview or StartBroadcast | 0/90/180/270                                   | |                                                                                                                                                                                                                                                                                                                               | ✔                 | |                    |   |   |
 
 # Mixmode
 

@@ -3,6 +3,16 @@ pages:
 - Home: index.md
 - About: about.md
 - nanostream:
+  - General:
+    - RTMP :
+      - Authentication : 'nanostream/general/nanostream_rtmp_authentication.md'
+      - Metadata : 'nanostream/general/nanostream_rtmp_metadata.md'
+      - Reconnect : 'nanostream/general/nanostream_rtmp_reconnect.md'
+      - Statistics : 'nanostream/general/nanostream_rtmp_statistics.md'
+    - Language Integration :
+      - C++ : 'nanostream/general/nanostream_cpp_integration.md'
+      - C# : 'nanostream/general/nanostream_csharp_integration.md'
+      - Delphi : 'nanostream/general/nanostream_delphi_integration.md'
   - Web api: nanostream/web/nanostream-4.x-web-api.md
   - iOS api: nanostream/ios/nanostream-ios-sdk.md
   - MacOS api: nanostream/macos/nanostream-macos-sdk.md
@@ -10,6 +20,9 @@ pages:
     - 'Getting Started': 'nanostream/android/getting-started.md'
     - 'Advanced Settings/Usage': 'nanostream/android/android-advanced-settings.md'
     - 'RTMP Playback': 'nanostream/android/rtmp-playback.md'
+  - Windows api:
+    - Components: 'nanostream/windows/windows_components.md'
+    - Binary Modules: 'nanostream/windows/windows_binares.md'
 - bintu.live :
   - Android SDK: 'bintu/android/bintu-android-sdk.md'
   - Getting: 'bintu/index.md'
