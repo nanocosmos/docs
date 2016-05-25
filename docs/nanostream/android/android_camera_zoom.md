@@ -1,5 +1,5 @@
-# Camera Zoom
-## Description
+##Camera Zoom
+### Description
 The nanoStream Android SDK supports camera zoom, if the internal camera supports it. Therefor there are a few functions, the most important are:
 
 | Function        | Return Type   | returns                                                               |
@@ -10,13 +10,13 @@ The nanoStream Android SDK supports camera zoom, if the internal camera supports
 | setZoom(int)    | int           | the new index of the List<Integer> that returned from getZoomRatios() |
 
 It is recommended to use pinch to zoom, therefor you need to implement a ScaleGestureDetector.SimpleOnScaleGestureListener, and a pinch2zoom function, that takes the scalefactor from the SimpleOnScaleGestureListener as a int parameter, take a look at the [Implementation Example][ef1c8421].
-### getZoomRatios()
+#### getZoomRatios()
 getZoomRatios() returns a List of Integer values, this values are the zoom ratios in 1/100 increments (e.g. a zoom of 3.2x is returned as 320).
-### setZoom(int)
+#### setZoom(int)
 The int parameter from setZoom(int zoom) is the index of zoom ratios that returns getZoomRatios().
-### Zoom Behavior on Camera Switch
+#### Zoom Behavior on Camera Switch
 During a camera switch (e.g. from back to front) the zoom remains unaffected.
-## Implementation Example
+### Implementation Example
 ```java
 public class MainActivity extends Activity {
   private ScaleGestureDetector scaleGestureDetector;
@@ -89,7 +89,7 @@ public class MainActivity extends Activity {
         }
       }
     }
-  }   
+  }
 }
 ```
 

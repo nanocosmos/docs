@@ -1,36 +1,36 @@
-nanoStream SDK for Android - Developer Manual
-=============================================
+##Introduction
 
-Purpose
--------
+
+###Purpose
+
 
 This documentation is about the nanoStream Live Video Streaming SDK for Android and can be used by software developers to integrate nanoStream Live Video Encoding into custom apps.
 
-Requirements
-------------
+###Requirements
+
 
 -	Android 4.1+ (API Level 16)
 
-### Required application permissions:
+#### Required application permissions:
 
 -	`android.permission.INTERNET`
 -	`android.permission.RECORD_AUDIO`
 -	`android.permission.RECORD_VIDEO`
 
-### Required application permission for local recording:
+#### Required application permission for local recording:
 
 -	`android.permission.WRITE_EXTERNAL_STORAGE`
 
-Getting Started
----------------
+###Getting Started
 
-### Copy the SDK libraries into your Android Studio project
+
+#### Copy the SDK libraries into your Android Studio project
 
 Add the `net.nanocosmos.nanoStream.jar` java component to your Android Studio project by copying `[SDK]/libs/net.nanocosmos.nanoStream.jar` to the folder `[projectpath]/app/libs/net.nanocosmos.nanoStream.jar` Add the `nanoStream.so` native components to the Android Studio project by copying the 5 folders `[SDK]/libs/[platform]/libRTMPStream.so` to [projectpath]/app/src/main/jniLibs/[platform]/libRTMPStream.so\`
 
 Platforms are armeabi, armeabi-v7a, arm64-v8a, x86, mips
 
-### Add the nanoStream to the gradle file
+#### Add the nanoStream to the gradle file
 
 Open the build.gradle file (Module:app) and add
 
@@ -40,13 +40,13 @@ compile files('libs/net.nanocosmos.nanoStream.jar')
 
 to the dependencies section.
 
-### Check library version
+#### Check library version
 
 ```java
 String nanoStreamVersion = nanoStream.getVersion().fullVersion;
 ```
 
-### Initialize the library
+#### Initialize the library
 
 Implement the interface "nanoStreamEventListener" in your class:
 

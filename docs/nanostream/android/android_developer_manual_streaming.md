@@ -1,4 +1,7 @@
-{!docs/nanostream/android/getting-started.md!}
+# nanoStream SDK Android: Streaming Developer Manual
+
+{!docs/nanostream/android/android_getting_started.md!}
+
 {!docs/nanostream/android/android_resolution_aspect_ratio_and_orientation.md!}
 {!docs/nanostream/android/android_stream_type.md!}
 {!docs/nanostream/android/android_server_authentication.md!}
@@ -8,6 +11,4 @@
 {!docs/nanostream/android/android_camera_zoom.md!}
 {!docs/nanostream/android/android_camera_focus.md!}
 {!docs/nanostream/android/android_device_properties.md!}
-
-{!docs/nanostream/android/android_rtmp_playback.md!}
 {!docs/nanostream/android/android_feedback.md!}

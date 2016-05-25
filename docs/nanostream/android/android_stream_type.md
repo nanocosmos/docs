@@ -1,4 +1,4 @@
-#Stream Type
+##Stream Type
 
 
 The SDK supports differnet streaming modes:
@@ -9,7 +9,7 @@ The SDK supports differnet streaming modes:
 
 You can en/disable Video/Audio in the `nanoStreamSettings`.
 
-## Implementation Example
+### Implementation Example
 
 ```java
 nanoStreamSettings nss = new nanoStreamSettings();

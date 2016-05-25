@@ -1,8 +1,8 @@
-nanoStream SDK for Android RTMP Playback
-========================================
+## Introduction
 
-<a name="rtmp_playback_description"></a>Description
----------------------------------------------------
+
+###Description <a name="rtmp_playback_description"></a>
+
 
 RTMP Playback Component enables application developers to add playback of RTMP live and on demand streams to their apps.
 
@@ -14,8 +14,8 @@ Audio streams are decoded and rendered to system audio using the Android AudioSe
 
 The interface and usage are similar to the Android MediaPlayer. The Android MediaPlayerControl interface is implemented to enable control through an `android.widget.MediaController` instance.
 
-Requirements
-------------
+### Requirements
+
 
 Related nanoStream SDK Version: 4.1
 
@@ -28,13 +28,12 @@ Required application permissions:
 - `android.permission.RECORD_VIDEO`
 - `android.permission.MODIFY_AUDIO_SETTINGS`
 
-License
--------
+### License
+
 
 The playback component requires a special feature flag to be enabled in your nanoStream license key. It not necessarily included in nanoStream Android SDK licenses.
 
-<a name="rtmp_playback_interface"></a>Interface
------------------------------------------------
+##Interface <a name="rtmp_playback_interface"></a>
 
 ### Package name
 
@@ -71,13 +70,13 @@ The playback component requires a special feature flag to be enabled in your nan
 |                        | close                  |                 |                    |                  | no                       |
 |                        | release                |                 |                    |                  | yes                      |
 
-Creating an Instance
---------------------
+## Creating an Instance
+
 
 `NanostreamPlayer` instances can be created through the static factory function `createNanostreamPlayer` at the top level `nanoStream class`. NanostreamPlayer is designed to support multiple player instances. The number of parallel instances can be limited by system resources such as codec,surfaces,memory, network connections and bandwidth.
 
-Configuration and Settings
---------------------------
+## Configuration and Settings
+
 
 Initial player settings are wrapped by the `NanostreamPlayer.PlayerSettings` class. The settings can be applied by calling `NanostreamPlayer.setSettings`.
 
@@ -97,8 +96,8 @@ PlayerSettings:
 | TrackTimout         | getTrackTimeout/setTrackTimeout                                     | Timeout to waiting for Track info                                            | long              | 10000                  |
 | EndlessMode         | getEndlessMode/setEndlessMode                                       | Reopen the stream until stop call                                            | boolean           | false                  |
 
-Player State
-------------
+## Player State
+
 
 The player stat can be queried through the `getState()` function
 
@@ -128,13 +127,13 @@ public enum PlayerState
 | PlayerState.STOPPING          | Player is stopping                                                     | yes                      |
 | PlayerState.STOPPED           | Player is stopped                                                      | yes                      |
 
-Event Notification
-------------------
+## Event Notification
+
 
 Event notifications can be received through the `NanostreamPlayer.PlayerEventListener` interface. Derive your listener from this interface and add it to the player by calling `setPlayerEventListener()`.
 
-Status Events
--------------
+## Status Events
+
 
 Event Type : `TYPE_RTMP_STATUS`
 
@@ -152,8 +151,8 @@ Event Type : `TYPE_RTMP_STATUS`
 | NanostreamEvent.CODE_STREAM_VIDEO_FORMAT_AVAILABLE  <sup>[1](#fnAV1) | The Stream has a MediaFormat for the Video Track |                               |
 | NanostreamEvent.CODE_STREAM_AUDIO_FORMAT_AVAILABLE  <sup>[1](#fnAV1) | The Stream has a MediaFormat for the Audio Track |                               |
 
-Results and Error Events
-------------------------
+## Results and Error Events
+
 
 Event Type : `TYPENANORESULTS` Event Codes : Values of type nanoResults
 
@@ -174,8 +173,7 @@ Event Type : `TYPENANORESULTS` Event Codes : Values of type nanoResults
 | nanoResults.N_RTMP_SEEK_NOT_AVAILABLE  <sup>[1](#fnAV1)           | The stream can not seek.                                          |                     |
 | nanoResults.N_RTMP_SEEK_FAILED   <sup>[1](#fnAV1)                | The stream can not seek.                                          |                     |
 
-Audio / Video Format
---------------------
+## Audio / Video Format
 
 After the `NanostreamEvent.CODE_STREAM_AUDIO/VIDEO_FORMAT_AVAILABLE` event, you can get the MediaFormat Object with the `getAudio/VideoFormat()`<sup>[1](#fnAV1)</sup> function call.
 
@@ -193,8 +191,8 @@ int aspectRatioWidth = videoFormat.getInteger(NanostreamPlayer.KEY_ASPECT_RATIO_
 int aspectRatioHeight = videoFormat.getInteger(NanostreamPlayer.KEY_ASPECT_RATIO_HEIGHT);
 ```
 
-<a name="rtmp_playback_implementation_example"></a>Implementation Example
--------------------------------------------------------------------------
+## Implementation Example <a name="rtmp_playback_implementation_example"></a>
+
 
 ```java
 public class PlayerActivity extends Activity implements PlayerEventListener, SurfaceHolder.Callback {

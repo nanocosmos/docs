@@ -1,9 +1,9 @@
-# Server Authentication
+## Server Authentication
 
 
 In case authentication is required, the credentials can be set on the `nanoStreamSettings` object.
 
-## Implementation Example
+### Implementation Example
 
 ```java
 nanoStreamSettings nss = new nanoStreamSettings();

@@ -1,7 +1,7 @@
 # RTMP Quality Statistics
 ## Description
 The RTMP Module provides the current RTMP Quality over the 'NanostreamEventListener'. These includes the 'output bit rate', 'buffer fullness', 'bit rate' and 'frame rate'.
-## Implementation Example
+### Implementation Example
 ```java
 public class MainActivity extends Activity implements NanostreamEventListener {
   private LinearLayout qualityView = null;
@@ -18,7 +18,7 @@ public class MainActivity extends Activity implements NanostreamEventListener {
 		bitrate = (TextView) findViewById(R.id.bitrateText);
 		framerate = (TextView) findViewById(R.id.framerateText);
 
-    // Init nanoStream    
+    // Init nanoStream
   }
 
   @Override

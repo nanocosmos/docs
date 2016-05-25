@@ -3,29 +3,28 @@ pages:
 - Home: index.md
 - About: about.md
 - nanostream:
-  - General:
-    - RTMP :
-      - Authentication : 'nanostream/general/nanostream_rtmp_authentication.md'
-      - Metadata : 'nanostream/general/nanostream_rtmp_metadata.md'
-      - Reconnect : 'nanostream/general/nanostream_rtmp_reconnect.md'
-      - Statistics : 'nanostream/general/nanostream_rtmp_statistics.md'
-    - Language Integration :
+  - Language Integration :
       - C++ : 'nanostream/general/nanostream_cpp_integration.md'
       - C# : 'nanostream/general/nanostream_csharp_integration.md'
       - Delphi : 'nanostream/general/nanostream_delphi_integration.md'
   - Web api: nanostream/web/nanostream-4.x-web-api.md
   - iOS api: nanostream/ios/nanostream-ios-sdk.md
   - MacOS api: nanostream/macos/nanostream-macos-sdk.md
-  - Android api: 'nanostream/android/android_developer_manual.md'
+  - Android api:
+    - Streaming Developer Manual : 'nanostream/android/android_developer_manual_streaming.md'
+    - Playback Developer Manual : 'nanostream/android/android_developer_manual_playback.md'
+    - Sample Developer Manual : 'nanostream/android/android_developer_manual_sample.md'
   - Windows api:
     - Components: 'nanostream/windows/windows_components.md'
     - Binary Modules: 'nanostream/windows/windows_binares.md'
+  - Additional Knowledge:
+      - RTMP: 'nanostream/support/nanostream_rtmp_all.md'
 - bintu.live :
   - Android SDK: 'bintu/android/bintu-android-sdk.md'
   - Getting: 'bintu/index.md'
 
 #theme: readthedocs
-theme: yeti
+theme: united
 
 markdown_extensions:
   - markdown_include.include

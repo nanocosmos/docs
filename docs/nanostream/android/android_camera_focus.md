@@ -1,5 +1,5 @@
-# Android Camera Focus
-## Description
+##  Camera Focus
+### Description
 The nanoStream Android SDK supports Camera focus and focus lock, if the the internal cameras supports them. There are two nonblocking functions
 
 ```java
@@ -17,7 +17,7 @@ To check if your device Supports focus you can call
 isFocusSupported()
 ```
 this will return true or false
-## Parameter List
+### Parameter List
 | Parameter name | meaning                                             |
 |:---------------|:----------------------------------------------------|
 | focusWidth     | the focus Area width                                |
@@ -29,14 +29,14 @@ this will return true or false
 | previewHeight  | the height of the preview                           |
 | weight         | the weight of the area must be range from 1 to 1000 |
 
-## FocusCallback interface
+### FocusCallback interface
 The FocusCallback interface has three abstract functions
 ```java
 onSuccess()
 onSuccess(Rect rect, Boolean focusLock)
 onFailure()
 ```
-## Implementation Example
+### Implementation Example
 ```java
 public class MainActifity extens Actifity implements FocusCallback {
   private GestureDetector gestureDetector;

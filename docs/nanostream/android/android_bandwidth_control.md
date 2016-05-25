@@ -1,5 +1,5 @@
 
-# Adaptive Bitrate Streaming
+## Adaptive Bitrate Streaming
 
 
 By using the Adaptive Bitrate Control (ABC) the stream will automatically adjust to changes of the bandwidth. There are four modes available:
@@ -11,7 +11,7 @@ By using the Adaptive Bitrate Control (ABC) the stream will automatically adjust
 
 Make sure to set the ABC settings before a stream is started.
 
-## Implementation Example
+### Implementation Example
 
 ```java
 private AdaptiveBitrateControlSettings.AdaptiveBitrateControlMode abcMode = AdaptiveBitrateControlSettings.AdaptiveBitrateControlMode.QUALITY_DEGRADE_AND_FRAME_DROP;
@@ -26,7 +26,7 @@ private void initStreamLib() {
 }
 ```
 
-## Measuring the available bandwidth
+### Measuring the available bandwidth
 
 
 For measuring the available bandwidth you can use the method `runBandwidthCheck`. After the check finished, the result can be used to set the bitrate for the nanoStream object.
@@ -61,7 +61,7 @@ The forceStop call stops the bandwidth check and will return the results that wh
 
 The bandwidth check, sends a special type of metadata that will not be recorded on the Streaming Server.
 
-### Implementation Example
+#### Implementation Example
 
 ```java
 private BandwidthCheck bwCheck = null;

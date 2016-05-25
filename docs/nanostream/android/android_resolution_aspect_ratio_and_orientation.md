@@ -1,12 +1,12 @@
-# Resolution, Aspect Ratio and Orientation
-## Resolution
+## Resolution, Aspect Ratio and Orientation
+### Resolution
 
 Resolution means the native resolution of the camera (input). In the most situations this will be the same for the output. To set the resolution there is a function in the VideoSettings object called setResolution(Resolution res). If you set a resolution that the device doesn't support, nanoStream will automatically switch to the nearest resolution available on the device. A list of supported resolutions for the current video source can be obtained from getCapabilities().listAvailableVideoResolutions() on the nanoStream object.
 
-## Aspect ratio
+### Aspect ratio
 
 Aspect ratio means the aspect ratio of the outgoing stream. The aspect ratio determines if the input video needs to be cropped. The aspect ratio can be set through the setAspectRatio(AspectRatio aspectRatio) function on the VideoSettings object.
-### Supported Aspect ratios
+#### Supported Aspect ratios
 | Aspect Ratio | AspectRatio value          |
 |:-------------|:---------------------------|
 | Keep Input   | AspectRatio.RATIOKEEPINPUT |
@@ -16,10 +16,10 @@ Aspect ratio means the aspect ratio of the outgoing stream. The aspect ratio det
 | 3:4          | AspectRatio.RATIO34        |
 | 9:16         | AspectRatio.RATIO_9_16     |
 
-## Orientation
+### Orientation
 The default stream orientation is landscape. If you switch to portrait the resolution will swap width and height, e.g. from 640×480 to 480×640. You can set the stream orientation on the nanoStream object with the setStreamRotation function. The stream orientation needs to be set before starting the stream, it is not possible to switch the orientation during the
 
-### Supported Orientations
+#### Supported Orientations
 
 | Orientation           | Rotation Value        |
 |-----------------------|-----------------------|
@@ -28,7 +28,7 @@ The default stream orientation is landscape. If you switch to portrait the resol
 | Landscape Upside Down | Rotation.ROTATION_180 |
 | Portrait Upside Down  | Rotation.ROTATION_270 |
 
-## Example Combinations of Aspect Ratios and Orientations
+### Example Combinations of Aspect Ratios and Orientations
 
 The input resolution is set to 640x480 here. The red rectangle marks up the active area that is included in the output stream.
 
@@ -48,11 +48,11 @@ The input resolution is set to 640x480 here. The red rectangle marks up the acti
 <a name="fnAS1">1</a>: In this sample APP we crop the preview so it doesn't look ugly, so the stream is actually larger then the preview.
 
 
-### Example
+#### Example
 
 If you want to stream with a resolution of 640x360 but your device doesn't supports this resolution, you need to crop the resolution from 640x480 (this resolution is supported by the most devices) to 640x360. This can be done through the aspect ratio, so you need to set the aspect ratio to 16:9 to stream with a resolution of 640x360.
 
-### Implementation Example
+#### Implementation Example
 
 ```java
 public class MainActifity {

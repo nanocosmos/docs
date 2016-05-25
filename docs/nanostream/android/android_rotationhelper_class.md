@@ -20,7 +20,7 @@ The 'isDefaultOrientationLandscape' parameter is true or false.
 
 ## Return values
 The return values given from 'RotationHelper.getRoation' can be used as a Parameter for 'setStreamRotation' and 'setPreviewRotation'. is the 'orientation' parameter non of the above described the 'getRotation' Method returns 'null'.
-## Implementation Example
+### Implementation Example
 ```java
 import net.nanocosmos.nanoStream.streamer.Rotation;
 import net.nanocosmos.nanoStream.streamer.RotationHelper;

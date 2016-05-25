@@ -1,15 +1,15 @@
-# DevicesProperties
+## DevicesProperties
 Before Android 4.3 there was no obligation for Android hardware manufacturers to pass the video related parts of the CTS (Compatibility Test Suite).
 Therefore some Android 4.1 and 4.2 Devices show non standard behaviour in regard to color format definitions and representation of video frames in memory.
 This could lead to issues in the video stream like switched red and blue colors, dislocated color components or a green bar at the bottom of the video frame.
 nanoStream Android now provides the functionality to detect and compensate common issues related to this.
-## Description
+### Description
 nanoStream.getDeviceProperties() is a static function that is running a test on the device hardware to detect non standard behaviour and returning a DeviceProperties object containing the result.
 DeviceProperties.getFlags() is returning the test result as an integer value that can be stored in the application preferences, to avoid running the device test on every app start.
 The DeviceProperties can be applied to a new nanoStream instance by calling nanoStream.setDeviceProperties(DeviceProperties).
 We recommend to call getDeviceProperties() in a background thread during the first app start on a pre 4.3 device, because the call is blocking and might last up to 5 seconds on older/weaker devices.
 We also recommend to store the OS version in the preferences, to be able to detect OS updates and to eventually rerun the device test or stop setting the DeviceProperties if the new OS is 4.3 or higher.
-## Implementation Example
+### Implementation Example
 
 ```java
 public class App extends Application
