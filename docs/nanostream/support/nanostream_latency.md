@@ -19,4 +19,6 @@ Basically, “cupertinoChunkDurationTarget” has to be modified to achive a low
 **Notice**: Following descriptions assume that HLS is not used.
 There are two encoding modes:
 1. NSXEncodingModeAdvancedInMemory (default): available since version 4.0.0.0, requires at least iOS 8. This mode allows low latency from 0.5 to 2 seconds. The buffer setting on the player side is the main factor for the latency.
-2. NSXEncodingModeLegacy: backwards compatible for iOS 7. For this mode, the latency is around 2 to 4 seconds. By changing the settings for the parameters “framerate” and “keyFramerate” it is possible to influence the latency. Using the standard settings: framerate=30fps and keyFramerate=60 - the latency should be around 2 to 3 seconds.
+2. NSXEncodingModeLegacy: backwards compatible for iOS 7.
+
+For this mode, the latency is around 2 to 4 seconds. By changing the settings for the parameters “framerate” and “keyFramerate” it is possible to influence the latency. Using the standard settings: framerate=30fps and keyFramerate=60 - the latency should be around 2 to 3 seconds.
