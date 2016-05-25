@@ -21,6 +21,9 @@ pages:
       - RTMP: 'nanostream/support/nanostream_rtmp_all.md'
 - bintu.live :
   - Android SDK: 'bintu/android/bintu-android-sdk.md'
+  - iOS:
+    - SDK Documentation: 'bintu/ios/bintu_ios_sdk.md'
+    - Sample Documentation: 'bintu/ios/bintu_ios_sample.md' 
   - Getting: 'bintu/index.md'
 
 #theme: readthedocs
