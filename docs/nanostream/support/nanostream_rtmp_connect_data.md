@@ -9,11 +9,15 @@ Restrictions
 - May only contain key-value pairs.
 
 Example JSON showing a string, number and boolean value:
-<pre class="lang:js decode:true ">{
+```js
+{
   "key1" : "value1",
   "key2" : 7.5,
   "key3" : false
-}</pre>
+}
+```
 Line breaks are only used for clarity, JSON will more look like this:
-<pre class="lang:js decode:true ">{"key1":"value1","key2":7.5,"key3":false}</pre>
+```js
+{"key1":"value1","key2":7.5,"key3":false}
+```
 &nbsp;
