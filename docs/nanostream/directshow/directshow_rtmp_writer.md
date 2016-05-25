@@ -129,8 +129,10 @@ There are two possibilities to get the status of the connection to the server:
 ##### Rtmp Writer Filter crashes when using SetStatusNotifyHandler()
 
 This problem is probably caused by calling a function declared with one calling convention with a function pointer declared with a different calling convention. Here is pretty good explanation of the problem:
-  * http://stackoverflow.com/questions/301655/c-visual-studio-runtime-error
-  * http://stackoverflow.com/questions/10079625/c-run-time-check-failure-0-the-value-of-esp-was-not-properly-saved-across-a
+  * [http://stackoverflow.com/questions/301655/c-visual-studio-runtime-error][59d1de83]
+  * [http://stackoverflow.com/questions/10079625/c-run-time-check-failure-0-the-value-of-esp-was-not-properly-saved-across-a][31ed7150]
+
+
 
 Conclusion: Make sure you use __stdcall in your declaration.
 
@@ -156,8 +158,18 @@ Key: HKEY_CURRENT_USER\Software\DebugNano\ nRtmpRenderer.ax
 #### Contact
 //Please contact us for further information, extended services are available upon request.//
 
-[[http://www.nanocosmos.de/|http://www.nanocosmos.de]]
 
-[[mailto:info@nanocosmos.de|info@nanocosmos.de]]
+[http://www.nanocosmos.de][8da7b4b5]
+
+
+
+[info@nanocosmos.de][6b2aae43]
+
+
 
 (c) 2009-2012, nanocosmos gmbh
+
+[59d1de83]: http://stackoverflow.com/questions/301655/c-visual-studio-runtime-error "Stackoverflow C visual studio runtime error"
+[31ed7150]: http://stackoverflow.com/questions/10079625/c-run-time-check-failure-0-the-value-of-esp-was-not-properly-saved-across-a "Stackoverflow c run time check failure"
+[6b2aae43]: mailto:info@nanocosmos.de "Mail to : info@nanocosmos.de"
+[8da7b4b5]: http://www.nanocosmos.de "http://www.nanocosmos.de"
