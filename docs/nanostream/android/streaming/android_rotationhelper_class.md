@@ -1,15 +1,15 @@
-# RotationHelper Class
-## Description
+## RotationHelper Class
+### Description
 With the nanoStream SDK 4.3.1 release we added a 'RotationHelper' Class, this Class improves the Rotation handling.
-## RotationHelper
+### RotationHelper
 The RotationHelper class has two static Methods, 'getDeviceDefaultOrientation(Context context)' and 'getRotation(int orientation, boolean isDefaultOrientationLandscape)'.
-### getDeviceDefaultOrientation
+#### getDeviceDefaultOrientation
 The return values are one of the following
 * [Configuration.ORIENTATION_LANDSCAPE][fe92646b]
 * [Configuration.ORIENTATION_PORTRAIT][2b840eb1]
 
-### getRotation
-#### Parameter
+#### getRotation
+##### Parameter
 The 'orientation' parameter of the 'getRoation' Method is one of the following:
 * [ActivityInfo.SCREEN_ORIENTATION_PORTRAIT][89a7f166]
 * [ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE][418a0516]
@@ -18,9 +18,9 @@ The 'orientation' parameter of the 'getRoation' Method is one of the following:
 
 The 'isDefaultOrientationLandscape' parameter is true or false.
 
-## Return values
+### Return values
 The return values given from 'RotationHelper.getRoation' can be used as a Parameter for 'setStreamRotation' and 'setPreviewRotation'. is the 'orientation' parameter non of the above described the 'getRotation' Method returns 'null'.
-### Implementation Example
+#### Implementation Example
 ```java
 import net.nanocosmos.nanoStream.streamer.Rotation;
 import net.nanocosmos.nanoStream.streamer.RotationHelper;
