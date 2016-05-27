@@ -1,6 +1,6 @@
-&nbsp;
+# nanoStream Visual C# Integration
 
-add a New Visual C# Project / Windows Forms application
+Add a New Visual C# Project / Windows Forms application
 
 ![c_sharp_1](img/c_sharp_1-300x202.png)
 

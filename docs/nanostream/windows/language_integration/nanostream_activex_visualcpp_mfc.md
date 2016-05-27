@@ -1,3 +1,4 @@
+# nanoStream VisualC++ MFC Integration
 This tutorial shows how to create a custom Live Encoding and Streaming application with the nanoStream plugins, based on VisualStudio, C++ and MFC.
 This tutorial was created with VisualStudio 2008 but should work similar with VS 2010.
 Create a new MFC Application Project (File/New Project)
