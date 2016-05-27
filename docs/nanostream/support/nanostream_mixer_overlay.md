@@ -52,9 +52,13 @@ Registry Keys:
 
 ### Usage of Region Capture:
 To capture a region of the input video, use the `CaptureRegion` configuration values or call the `SetCaptureRegion` Javascript Function.
-<pre class="lang:js decode:true crayon-selected">nanovideo.SetConfig("CaptureRegion","left,right,top,bottom")
-nanovideo.SetConfig("CaptureRegion",100,420,50,290)</pre>
+```javascript
+nanovideo.SetConfig("CaptureRegion","left,right,top,bottom")
+nanovideo.SetConfig("CaptureRegion",100,420,50,290)
+```
 During Encoding/Streaming, the CaptureRegion may be changed to follow a region object on the screen. For simpler usage of moving the origin of the region, the SetRegion method may be used:
-<pre class="lang:js decode:true">SetRegion(left, top)</pre>
+```javascript
+SetRegion(left, top)
+```
 
 See example implementation in **nanoStream.html**

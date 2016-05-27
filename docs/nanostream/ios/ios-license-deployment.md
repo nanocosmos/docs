@@ -2,7 +2,8 @@
 For temporary license keys, you need to ensure your app will be updated early enough before expiration. To avoid in-app expiration, you may load the license key from your server over a secure https connection. You need to ensure the server connection is protected against 3rd party access
 
 ## Sample code for iOS
-<pre class="lang:objc decode:true">NSString * const kNSXLicenseKey = @"kNSXLicenseKey";
+```objc
+NSString * const kNSXLicenseKey = @"kNSXLicenseKey";
 
 @implementation NSXLicenseHelper
 
@@ -46,7 +47,8 @@ return completion(nil);
 -(NSString *)getSavedLicense
 {
 return [[NSUserDefaults standardUserDefaults] stringForKey:kNSXLicenseKey];
-}</pre>
+}
+```
 &nbsp;
 
 Further questions? Would you like a feature not available yet?

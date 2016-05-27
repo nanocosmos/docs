@@ -15,11 +15,13 @@ or
 - Follow the download and unpack instructions from the download link
 - Edit the file Application.xml at [install-dir]/conf/[application]/
 - Add this *Module*  at the end of the *Modules* list:
-<pre class="lang:xhtml decode:true ">&lt;Module&gt;
+```html
+&lt;Module&gt;
 &lt;Name&gt;ModuleRTMPAuthenticate&lt;/Name&gt;
 &lt;Description&gt;ModuleRTMPAuthenticate&lt;/Description&gt;
 &lt;Class&gt;com.wowza.wms.plugin.security.ModuleRTMPAuthenticate&lt;/Class&gt;
-&lt;/Module&gt;</pre>
+&lt;/Module&gt;
+```
 - Create a text file in the *[install-dir]/conf* folder named *connect.password*, then add a line with a username and password separate with a space for each user:
 `[install-dir]/conf/connect.password:`
 *user1 pass1*
@@ -37,9 +39,13 @@ or
 
 ## Usage
 Pass the user name and password to the nanoStream API with:
-<pre class="lang:c++ decode:true">nanostream.SetConfig("Auth","user:password");</pre>
+```cpp
+nanostream.SetConfig("Auth","user:password");
+```
 Start Streaming with
-<pre class="lang:c++ decode:true">StartBroadcast();</pre>
+```cpp
+StartBroadcast();
+```
 ## Sample Web Application:
 See the HTML web page in the folder `web/liveEncoder/nanoStream.html`
 The feature is implemented there under *Options*.

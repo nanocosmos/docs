@@ -65,18 +65,22 @@ Double-Click on the button to edit the new source code event handler:
 &nbsp;
 
 This is the complete code which shows the camera preview:
-<pre class="lang:c++ decode:true">void CnanoStreamTestDlg::OnBnClickedButton1()
+
+```cpp
+void CnanoStreamTestDlg::OnBnClickedButton1()
 {
 //nanoStream Live Video Encoder Plugin
 m_nanoStream.InitEncoder(); // Init Encoder
 m_nanoStream.put_VideoSource(0); // Select Video Capture Source
 m_nanoStream.StartPreview(); // Start Camera Preview in Window
-}</pre>
+}
+```
 &nbsp;
 
 Now add another button to start a real encoded stream.
 Add the following code to the button:
-<pre class="lang:c++ decode:true ">void CnanoStreamTestDlg::OnBnClickedButton2()
+```cpp
+void CnanoStreamTestDlg::OnBnClickedButton2()
 {
 // nanoStream Live Video Encoder Plugin
 // Live Encoding/Streaming to RTMP Server
@@ -89,5 +93,6 @@ m_nanoStream.put_VideoBitrate(500000); // 500 kBit/s encoded bitrate
 // Syntax: rtmp://&lt;server&gt;/&lt;app&gt;+&lt;stream&gt;
 m_nanoStream.put_DestinationURL(_T("rtmp://ws1.3p0.de/live+mfcStream01"));
 m_nanoStream.StartBroadcast(); // Start Camera Preview in Window
-}</pre>
+}
+```
 When pressing button2 / broadcast, the live encoding will be started.

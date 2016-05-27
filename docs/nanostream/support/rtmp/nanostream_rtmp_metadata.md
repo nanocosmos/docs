@@ -14,7 +14,8 @@ Parameters:
 - Cannot contain arrays.
 
 ## Example JSON for "onMetaData" handler
-<pre class="lang:js decode:true">{
+```javascript
+{
   "key" : "value",
   "nextkey" : "nextvalue",
   "anotherkey" : 14.0,
@@ -22,11 +23,13 @@ Parameters:
 }
 // Line breaks are only used for clarity.
 // The real JSON string will more look like this:
-{"key" : "value", "nextkey" : "nextvalue", "anotherkey" : 14.0, "lastkey" : false}</pre>
+{"key" : "value", "nextkey" : "nextvalue", "anotherkey" : 14.0, "lastkey" : false}
+```
 &nbsp;
 
 ## Example JSON for "onCuePoint" handler
-<pre class="lang:js decode:true ">{
+```javascript
+{
   "name" : "chapter1",
   "type" : "event",
   "time" : 14.0,
@@ -36,10 +39,13 @@ Parameters:
     "parameter2" : 0,
     "parameter3" : false
   }
-}</pre>
+}
+```
 // Line breaks are only used for clarity.
 // The real JSON string will more look like this:
-<pre class="lang:js decode:true ">{"name":"chapter1","type":"event","time":14.0,"parameters":{"parameter1":"value1","parameter2":0,"parameter3":false}}</pre>
+```javascript
+{"name":"chapter1","type":"event","time":14.0,"parameters":{"parameter1":"value1","parameter2":0,"parameter3":false}}
+```
 &nbsp;
 
 ## More information

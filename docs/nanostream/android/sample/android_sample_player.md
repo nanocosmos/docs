@@ -33,8 +33,10 @@ Your window should look like this:
 **Step 4: Enter your license in the PlayerActivity**
 
 Just replace the placeholder with your license key.
-<pre class="lang:java decode:true ">// TODO: REPLACE WITH YOUR LICENSE
-private String license = "--- ADD YOUR LICENSE HERE ---";</pre>
+```java
+// TODO: REPLACE WITH YOUR LICENSE
+private String license = "--- ADD YOUR LICENSE HERE ---";
+```
 &nbsp;
 
 **Step 5: Enter your stream configuration in the MainActivity**
@@ -42,9 +44,12 @@ private String license = "--- ADD YOUR LICENSE HERE ---";</pre>
 Replace the server url and the stream name with yours.
 The server url usually has this pattern : `[Protocol]://[Adresse]/[Application]`.
 With the stream name your streaming server identifies each stream.
-<pre class="lang:default decode:true ">// TODO: REPLACE THE RTMP URL AND STREAM NAME
+
+```java
+// TODO: REPLACE THE RTMP URL AND STREAM NAME
 private static final String strStreamUrl = "--- INSERT THE STREAMING SERVER URL ---";
-private static final String strStreamname = "--- INSERT THE STREAM NAME OR FILE NAME ---";</pre>
+private static final String strStreamname = "--- INSERT THE STREAM NAME OR FILE NAME ---";
+```
 &nbsp;
 
 **Step 6: Connect an Android device, build and run the application**

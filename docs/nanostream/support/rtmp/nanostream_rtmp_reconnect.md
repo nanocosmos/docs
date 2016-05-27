@@ -21,14 +21,17 @@ To use the reconnection ability of the rtmp writer `SetConfig(Option, Value)` ca
 
 ### Using Reconnection with the RTMP Writer
 Reconnection can be configured via the interface IRTMPOptions:
-<pre class="lang:c++ decode:true ">CComQIPtr&lt;IRTMPOptions, &amp;IID_IRTMPOptions&gt; optRtmp = pSink;
+```cpp
+CComQIPtr&lt;IRTMPOptions, &amp;IID_IRTMPOptions&gt; optRtmp = pSink;
 if (optRtmp)
 {
 optRtmp-&gt;SetReconnectInterval(reconnectPeriodValue);
 optRtmp-&gt;SetReconnectAttempts(reconnectAttemptsValue);
-}</pre>
+}
+```
 Further options are available via ICodecApi:
-<pre class="lang:c++ decode:true ">CComQIPtr api = pSink;
+```
+CComQIPtr api = pSink;
 if(SUCCEEDED(api-&gt;IsSupported(&amp;PROPID_nanoRTMPUnlimitedReconnect)))
 {
 VARIANT vt;
@@ -36,15 +39,18 @@ VariantInit(&amp;vt);
 vt.vt = VT_BOOL;
 vt.boolVal = VARIANT_TRUE; // or VARIANT_FALSE
 api-&gt;SetValue(&amp;PROPID_nanoRTMPUnlimitedReconnect, &amp;vt);
-}</pre>
+}
+```
 ### Using Reconnection with XML
 See Also: **LiveVideoEncoder-XML-Config**
-<pre class="lang:xhtml decode:true ">&lt;reconnectinterval&gt;
+```html
+&lt;reconnectinterval&gt;
 &lt;attempts&gt;5&lt;/attempts&gt;
 &lt;interval&gt;5000&lt;/interval&gt;
 &lt;restartgraph&gt;false&lt;/restartgraph&gt; &lt;!-- false: internal reconnect of the rtmp writer will be used--&gt;
 &lt;unlimitedattempts&gt;true&lt;/unlimitedattempts&gt; &lt;!-- overrides attempts (5 in this example) --&gt;
-&lt;/reconnectinterval&gt;</pre>
+&lt;/reconnectinterval&gt;
+```
 &nbsp;
 
 **restartgraph** and **UseInternalReconnect** have reversed meaning:

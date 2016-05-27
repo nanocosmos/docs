@@ -1,7 +1,8 @@
 # RTMP statistics
 
 The following pseudocode, shows how to query the connection status and the statistics of the RTMP Writer (`m_pMediaEventEx` is of type `IMediaEventEx`):
-<pre class="lang:c++ decode:true">while (SUCCEEDED(m_pMediaEventEx-&gt;GetEvent(&amp;nEvCode, &amp;param1, &amp;param2, 0))) {
+```cpp
+while (SUCCEEDED(m_pMediaEventEx-&gt;GetEvent(&amp;nEvCode, &amp;param1, &amp;param2, 0))) {
 switch (nEvCode) {
 case EC_NANO_RTMP_WRITER_STATUS:
 {
@@ -25,7 +26,8 @@ char* urlId = (char*)param2;
 //...
 }
 }
-}</pre>
+}
+```
 Explanation of `rtmp_writer_stats_t`:
 - `output_buffer_size` = max. available buffer in bytes
 - `output_buffer_fillness` = how much bytes of the buffer are used

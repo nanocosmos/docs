@@ -29,16 +29,21 @@ Then add a standard button to test nanoStream:
 ![Delphi_Button](img/Delphi_button.png)
 
 Double Click the button and add this code:
-<pre class="lang:delphi decode:true ">procedure TForm1.Button1Click(Sender: TObject);
+```delphi
+procedure TForm1.Button1Click(Sender: TObject);
 begin
 RTMPActiveX1.InitEncoder;
 RTMPActiveX1.StartPreview;
-end;</pre>
+end;
+```
+
 Run the project.
 Click on the button.
 You should see nanoStream running in camera preview mode then.
 Add Streaming / Broadcasting to a Media Server
-<pre class="lang:delphi decode:true ">RTMPActiveX1.DestinationURL := 'rtmp:%%//%%3p0.de/live+delphi123';
+```delphi
+RTMPActiveX1.DestinationURL := 'rtmp://example.com/live+delphi123';
 RTMPActiveX1.VideoBitrate := 200000;
-RTMPActiveX1.StartBroadcast;</pre>
+RTMPActiveX1.StartBroadcast;
+```
 &nbsp;
