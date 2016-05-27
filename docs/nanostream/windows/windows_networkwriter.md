@@ -28,7 +28,8 @@ The input is accepting connections matching the following media types:
 * FORMAT_WaveFormatEx,
 * FORMAT_NONE
 
-<img class="alignnone size-medium wp-image-833" src="img/windows_networkwriter_properties.png" alt="rtmp_writer_prop" width="160" height="300" />
+![rtmp_writer_prop](img/windows_networkwriter_properties.png)
+
 
 The filter's property page offers a subset of encoding parameters, containing the most important options.
 URL formatting:

@@ -3,10 +3,6 @@ pages:
 - Home: index.md
 - About: about.md
 - nanostream:
-  - Language Integration :
-      - C++ : 'nanostream/general/nanostream_cpp_integration.md'
-      - C# : 'nanostream/general/nanostream_csharp_integration.md'
-      - Delphi : 'nanostream/general/nanostream_delphi_integration.md'
   - Web api: nanostream/web/nanostream-4.x-web-api.md
   - iOS api: nanostream/ios/nanostream-ios-sdk.md
   - MacOS api: nanostream/macos/nanostream-macos-sdk.md
@@ -15,15 +11,23 @@ pages:
     - Playback Developer Manual : 'nanostream/android/android_developer_manual_playback.md'
     - Sample Developer Manual : 'nanostream/android/android_developer_manual_sample.md'
   - Windows api:
-    - Components: 'nanostream/windows/windows_components.md'
+    - Developer Manual: 'nanostream/windows/windows_developer_manual.md'
     - Binary Modules: 'nanostream/windows/windows_binares.md'
+    - License Help: 'nanostream/windows/windows_license_help.md'
+    - RTMP Network Render & Writer: 'nanostream/windows/windows_networkwriter.md'
+    - Language Integration :
+        - C++ : 'nanostream/windows/language_integration/nanostream_cpp_integration.md'
+        - C# : 'nanostream/windows/language_integration/nanostream_csharp_integration.md'
+        - Delphi : 'nanostream/windows/language_integration/nanostream_delphi_integration.md'
+        - VisualC : 'nanostream/windows/language_integration/nanostream_activex_visualcpp.md'
+        - MFC : 'nanostream/windows/language_integration/nanostream_activex_visualcpp_mfc.md'
   - Additional Knowledge:
       - RTMP: 'nanostream/support/nanostream_rtmp_all.md'
 - bintu.live :
   - Android SDK: 'bintu/android/bintu-android-sdk.md'
   - iOS:
     - SDK Documentation: 'bintu/ios/bintu_ios_sdk.md'
-    - Sample Documentation: 'bintu/ios/bintu_ios_sample.md' 
+    - Sample Documentation: 'bintu/ios/bintu_ios_sample.md'
   - Getting: 'bintu/index.md'
 
 #theme: readthedocs
