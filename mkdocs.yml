@@ -3,10 +3,12 @@ pages:
 - Home: index.md
 - About: about.md
 - nanostream:
-  - Web api: nanostream/web/nanostream-4.x-web-api.md
+  - Web:
+    -API Manual: nanostream/web/nanostream-4.x-web-api.md
+    -Javascript Integration: nanostream/web/nanostream_javascript_integration.md
   - iOS api: nanostream/ios/nanostream-ios-sdk.md
   - MacOS api: nanostream/macos/nanostream-macos-sdk.md
-  - Android api:
+  - Android:
     - Streaming Developer Manual : 'nanostream/android/android_developer_manual_streaming.md'
     - Playback Developer Manual : 'nanostream/android/android_developer_manual_playback.md'
     - Sample Developer Manual : 'nanostream/android/android_developer_manual_sample.md'
