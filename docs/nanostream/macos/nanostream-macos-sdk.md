@@ -101,7 +101,9 @@ Recommended for HD capture: Intel Core i7 or Xeon
 #### Declaration
 
 
+```obj
 InitPlugin(xmlPath:String):int
+```
 
 
 #### Parameters
@@ -136,7 +138,9 @@ On Windows and Mac OSX
 
 #### Declaration
 
+```obj
 GetVersion()
+```
 
 #### Return Value
 
@@ -153,7 +157,9 @@ On Mac OSX
 
 #### Declaration
 
+```obj
 SetLicense(licenseStr:String):int
+```
 
 #### Parameters
 {!docs/nanostream/general/nanocosmos_method_parameter_header.md!}
@@ -176,7 +182,9 @@ On Windows and Mac OSX
 
 #### Declaration
 
+```obj
 GetLicense()
+```
 
 #### Return Value
 
@@ -195,7 +203,9 @@ On Mac OSX
 
 #### Declaration
 
+```obj
 SetConfig(property:String, value:String):int
+```
 
 #### Parameters
 {!docs/nanostream/general/nanocosmos_method_parameter_header.md!}
@@ -236,7 +246,9 @@ On Windows and Mac OSX
 
 #### Declaration
 
+```cpp
 GetPreviewDimensions(long *width, long *height, long *size)
+```
 
 
 #### Parameters
@@ -259,7 +271,9 @@ Get the current preview dimensions.
 
 #### Declaration
 
+```cpp
 GetPreviewImage(char *pixelBuffer, int size)
+```
 
 #### Parameters
 
@@ -280,7 +294,9 @@ Get the preview image.
 
 #### Declaration
 
+```obj
 GetPreviewFrame(options:int = GET\_FRAME\_BITMAP):Boolean
+```
 
 
 #### Parameters
@@ -300,7 +316,9 @@ Get current preview Frame.
 
 #### Declaration
 
+```obj
 StartPreview():int
+```
 
 #### Return Value
 
@@ -319,7 +337,9 @@ On Windows and Mac OSX
 
 #### Declaration
 
+```obj
 StopPreview():int
+```
 
 #### Return Value
 
@@ -339,7 +359,9 @@ On Windows and Mac OSX
 
 #### Declaration
 
+```obj
 StartBroadcast():int
+```
 
 #### Return Value
 
@@ -362,7 +384,9 @@ On Windows and Mac OSX
 
 #### Declaration
 
+```obj
 StopBroadcast():int
+```
 
 #### Return Value
 
@@ -383,7 +407,9 @@ On Windows and Mac OSX
 
 #### Declaration
 
+```obj
 GetNumberOfVideoSources():int
+```
 
 #### Return Value
 
@@ -402,7 +428,9 @@ On Windows and Mac OSX
 
 #### Declaration
 
+```obj
 GetNumberOfAudioSources():int
+```
 
 #### Return Value
 
@@ -421,7 +449,9 @@ On Windows and Mac OSX
 
 #### Declaration
 
+```obj
 GetVideoSource(index:int):String
+```
 
 #### Parameters
 {!docs/nanostream/general/nanocosmos_method_parameter_header.md!}
@@ -444,7 +474,9 @@ On Windows and Mac OSX
 
 #### Declaration
 
+```obj
 GetAudioSource(index:int):String
+```
 
 #### Parameters
 {!docs/nanostream/general/nanocosmos_method_parameter_header.md!}
@@ -467,7 +499,9 @@ On Windows and Mac OSX
 
 #### Declaration
 
+```obj
 SetVideoSource(index:int, mixSource:int, mixMode:int):int
+```
 
 #### Parameters
 {!docs/nanostream/general/nanocosmos_method_parameter_header.md!}
@@ -497,7 +531,9 @@ On Mac OSX only one video source can use. On Microsoft Windows up to two video s
 
 #### Declaration
 
+```obj
 SetVideoSourceFromURL(url:String):int
+```
 
 #### Parameters
 {!docs/nanostream/general/nanocosmos_method_parameter_header.md!}
@@ -520,7 +556,9 @@ Only Supported under Microsoft Windows
 
 #### Declaration
 
+```obj
 SetAudioSource(index:int):int
+```
 
 #### Parameters
 {!docs/nanostream/general/nanocosmos_method_parameter_header.md!}
@@ -546,7 +584,9 @@ Under Windows and Mac OSX
 
 #### Declaration
 
+```obj
 SetVideoWidth(width:int, mixSource:int):int
+```
 
 #### Parameters
 
@@ -572,7 +612,9 @@ Set Width is supported under Mac OS X and Microsoft Windows. The second mix sour
 
 #### Declaration
 
+```obj
 SetVideoHeight(height:int, mixSource:int):int
+```
 
 #### Parameters
 {!docs/nanostream/general/nanocosmos_method_parameter_header.md!}
@@ -598,7 +640,9 @@ Set Height is supported under Mac OS X and Microsoft Windows. The second mix sou
 
 #### Declaration
 
+```obj
 SetVideoResizeWidth(width:int, index:int):int
+```
 
 #### Parameters
 {!docs/nanostream/general/nanocosmos_method_parameter_header.md!}
@@ -622,7 +666,9 @@ Only Supported under Microsoft Windows
 
 #### Declaration
 
+```obj
 SetVideoResizeHeight(height:int, index:int):int
+```
 
 #### Parameters
 {!docs/nanostream/general/nanocosmos_method_parameter_header.md!}
@@ -646,7 +692,9 @@ Only supported under Microsoft Windows
 
 #### Declaration
 
+```obj
 SetVideoFramerate(framerate:Number, mixSource:int):int
+```
 
 #### Parameters
 {!docs/nanostream/general/nanocosmos_method_parameter_header.md!}
@@ -671,7 +719,9 @@ Set video frame rate is supported under Mac OS X and Microsoft Windows. Mix Sour
 
 #### Declaration
 
+```cpp
 SetNumberOfChannels(int numOfChannels)
+```
 
 #### Parameters
 {!docs/nanostream/general/nanocosmos_method_parameter_header.md!}
@@ -690,7 +740,9 @@ On Mac OSX
 
 #### Declaration
 
+```obj
 SetVideoBitrate(bitrate:int, index:int):int
+```
 
 #### Parameters
 
@@ -719,7 +771,9 @@ Under Mac OS X the same bitrate is set to all outputs. Under Microsoft Windows e
 
 #### Declaration
 
+```cpp
 GetVideoBitrate(int source)
+```
 
 
 #### Parameters
@@ -747,7 +801,9 @@ Under Mac OS X there is only one output available. Under Microsoft Windows sever
 
 #### Declaration
 
+```obj
 SetAudioBitrate(bitrate:int, index:int):int
+```
 
 #### Parameters
 {!docs/nanostream/general/nanocosmos_method_parameter_header.md!}
@@ -773,7 +829,9 @@ Under Mac OS X the same bitrate is set to all outputs. Under Microsoft Windows e
 
 #### Declaration
 
+```cpp
 GetAudioBitrate(int source)
+```
 
 
 #### Parameters
@@ -795,7 +853,9 @@ Get the current audio bitrate.
 
 #### Declaration
 
+```obj
 SetAudioSamplerate(samplerate:int):int
+```
 
 #### Parameters
 {!docs/nanostream/general/nanocosmos_method_parameter_header.md!}
@@ -818,7 +878,9 @@ Under Windows and Mac OSX.
 
 #### Declaration
 
+```obj
 GetAudioLevel(channel:int):int
+```
 
 #### Parameters
 {!docs/nanostream/general/nanocosmos_method_parameter_header.md!}
@@ -841,7 +903,9 @@ Under Windows and Mac OSX.
 
 #### Declaration
 
+```obj
 SetAudioVolume(volume:int):int
+```
 
 #### Parameters
 {!docs/nanostream/general/nanocosmos_method_parameter_header.md!}
@@ -864,7 +928,9 @@ Under Windows and Mac OSX.
 
 #### Declaration
 
+```obj
 SetAudioPreviewVolume(volume:int):int
+```
 
 #### Parameters
 {!docs/nanostream/general/nanocosmos_method_parameter_header.md!}
@@ -889,7 +955,9 @@ Under Windows and Mac OSX.
 
 #### Declaration
 
+```obj
 SetColorSpace(index:int, mixSource:int):int
+```
 
 #### Parameters
 {!docs/nanostream/general/nanocosmos_method_parameter_header.md!}
@@ -915,7 +983,9 @@ Under Windows and Mac OSX.
 
 #### Declaration
 
+```obj
 GetNumberOfColorspaces(width:int, height:int, mixSource:int):int
+```
 
 #### Parameters
 {!docs/nanostream/general/nanocosmos_method_parameter_header.md!}
@@ -942,7 +1012,9 @@ Under Windows and Mac OSX. Under Mac OSX mix source is not supported.
 
 #### Declaration
 
+```obj
 GetColorspace(index:int, mixSource:int):String
+```
 
 #### Parameters
 {!docs/nanostream/general/nanocosmos_method_parameter_header.md!}
@@ -970,7 +1042,9 @@ Under Windows and Mac OSX. Under Mac OSX only the first mix source is supported.
 
 #### Declaration
 
+```obj
 GetNumberOfResolutions(mixSource:int):int
+```
 
 #### Parameters
 {!docs/nanostream/general/nanocosmos_method_parameter_header.md!}
@@ -995,7 +1069,9 @@ Under Windows and Mac OSX. Under Mac OSX only the first mix source is supported.
 
 #### Declaration
 
+```obj
 GetResolution(index:int, mixSource:int):Object
+```
 
 #### Parameters
 {!docs/nanostream/general/nanocosmos_method_parameter_header.md!}
@@ -1021,7 +1097,9 @@ Under Windows and Mac OSX. Under Mac OSX only the first mix source is supported.
 
 #### Declaration
 
+```obj
 GetNumberOfFramerates(width:int, height:int, colorspace:String, mixSource:int):int
+```
 
 #### Parameters
 {!docs/nanostream/general/nanocosmos_method_parameter_header.md!}
@@ -1049,7 +1127,9 @@ Under Windows and Mac OSX. Under Mac OSX only the first mix source is supported.
 
 #### Declaration
 
+```obj
 GetFramerate(index:int, mixSource:int):Number
+```
 
 #### Parameters
 {!docs/nanostream/general/nanocosmos_method_parameter_header.md!}
@@ -1075,8 +1155,9 @@ Under Windows and Mac OSX. Under Mac OSX only the first mix source is supported.
 
 #### Declaration
 
+```obj
 SetDeinterlacing(mode:int, method:int):int
-
+```
 #### Parameters
 {!docs/nanostream/general/nanocosmos_method_parameter_header.md!}
 | mode|int  | possible values: **0**=off, **1**=auto, **2**=on  \\ no auto mode for mac |
@@ -1101,7 +1182,9 @@ Under Windows and Mac OSX.
 
 #### Declaration
 
+```obj
 GetNumberOfOutputs():int
+```
 
 #### Return Value
 
@@ -1120,7 +1203,9 @@ Only Supported under Microsoft Windows.
 
 #### Declaration
 
+```obj
 AddOutput(url:String):int
+```
 
 #### Parameters
 {!docs/nanostream/general/nanocosmos_method_parameter_header.md!}
@@ -1142,7 +1227,9 @@ Only Supported under Microsoft Windows.
 
 #### Declaration
 
+```obj
 SetOutputUrl(url:String, index:int):int
+```
 
 #### Parameters
 {!docs/nanostream/general/nanocosmos_method_parameter_header.md!}
@@ -1180,7 +1267,9 @@ Under Windows and Mac OSX.
 
 #### Declaration
 
+```obj
 SetFilesourceFilename(url:String):int
+```
 
 #### Parameters
 {!docs/nanostream/general/nanocosmos_method_parameter_header.md!}
@@ -1203,7 +1292,9 @@ Only Supported under Microsoft Windows.
 
 #### Declaration
 
+```obj
 ClearOutputs():int
+```
 
 #### Return Value
 
@@ -1224,7 +1315,9 @@ Only Supported under Microsoft Windows.
 
 #### Declaration
 
+```obj
 SetVideoEffect(mode:int):int
+```
 
 #### Parameters
 {!docs/nanostream/general/nanocosmos_method_parameter_header.md!}
@@ -1247,7 +1340,9 @@ Only Supported under Microsoft Windows.
 
 #### Declaration
 
+```obj
 SetOverlay(url:String):int
+```
 
 #### Parameters
 {!docs/nanostream/general/nanocosmos_method_parameter_header.md!}
@@ -1270,7 +1365,9 @@ Only Supported under Microsoft Windows.
 
 #### Declaration
 
+```objectiv-c
 ShowPropertyPage(value:int):int
+```
 
 #### Parameters
 {!docs/nanostream/general/nanocosmos_method_parameter_header.md!}
@@ -1295,7 +1392,9 @@ Only supported under Microsoft Windows.
 
 #### Declaration
 
+```objectiv-c
 SetLog(logFile:String, logLevel:int):int
+```
 
 #### Parameters
 {!docs/nanostream/general/nanocosmos_method_parameter_header.md!}
@@ -1329,7 +1428,9 @@ Under Windows and Mac OSX.
 
 #### Declaration
 
+```obj
 dispose():void
+```
 
 #### Description
 
