@@ -106,9 +106,10 @@ InitPlugin(xmlPath:String):int
 
 #### Parameters
 
+{!docs/nanostream/general/nanocosmos_method_parameter_header.md!}
+| xmlPath|String | Path to the xml file with configuration information, can be local or a url. <sup>1</sup>|
 
-| xmlPath:String | Path to the xml file with configuration information, can be local or a url. |
-| |**—deprecated - no functionality**|
+<sup>1</sup> **— deprecated - no functionality**|
 
 
 #### Return Value
@@ -155,8 +156,8 @@ On Mac OSX
 SetLicense(licenseStr:String):int
 
 #### Parameters
-
-| licenseStr:String | License String getting from nano. |
+{!docs/nanostream/general/nanocosmos_method_parameter_header.md!}
+| licenseStr|String | License String getting from nano. |
 
 #### Return Value
 
@@ -197,9 +198,9 @@ On Mac OSX
 SetConfig(property:String, value:String):int
 
 #### Parameters
-
-| property:String | Property identifier as string. See property list for configuration on page 32. |
-| value:String  | Value for property as string representation.                  |
+{!docs/nanostream/general/nanocosmos_method_parameter_header.md!}
+| property|String | Property identifier as string. See property list for configuration on page 32. |
+| value|String  | Value for property as string representation.                  |
 
 #### Return Value
 
