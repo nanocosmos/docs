@@ -25,77 +25,10 @@ Intel Core2 Duo or later
 Recommended for HD capture: Intel Core i7 or Xeon
 
 
-| **Method Name**       | **Description**                   | libnanoStream.dylib Support | Mac Plugin Support | Mac Framework Support | ANE Support|
-| InitPlugin       | Initialization of the Plugin.                | nanoStream | initEncoder | init | ✔ |
-| SetXml         | deprecated - no functionality             | ✘ | ✘ | ✘ | ✔ |
-| GetVersion       | Get version number of the SDK                                   |  ✔ |  |  | |
-| SetLicense       | Set license for nano SDK                | ✔ | ✔ | ✔  | ✔ |
-| GetLicense       | Get the current license of the SDK                                   | ✔ |  |  | |
-| SetConfig        | Set property over Identifier.              | ✔ | ✔ | ✔ | ✔ |
-| UpdatePreviewDimensions | Update preview dimensions of the bmp      | ✘ | ✘  | ✘  | ✔ |
-| GetPreviewDimensions       | Get the current preview dimensions                                   | ✔  |  |  | |
-| GetPreviewImage       | Get the preview image                                   | ✔ |  |  | |
-| GetPreviewFrame     | Get current preview Frame            | ✘ | ✘ | ✘ | ✔ |
-| StartPreview      | Start the preview.               | ✔ | ✔ | ✘ | ✔ |
-| StopPreview       | Stop the preview.               | ✔ | ✔ | ✘ | ✔ |
-| StartBroadcast     | Start broadcasting.               | ✔ | ✔ | startStream | ✔ |
-| StopBroadcast      | Stop broadcasting.               | ✔ | ✔ | stopStream | ✔ |
-| GetNumberOfVideoSources | Count video sources with current settings    | ✔ | ✔ | ✔ | ✔ |
-| GetNumberOfAudioSources | Count audio sources with current settings   | ✔  | ✔ | ✔ | ✔ |
-| GetVideoSource     | Get name of the video source as string.     | ✔ | ✔ | ✘ | ✔ |
-| GetAudioSource     | Get name of the audio source as string.     | ✔ | ✔ | ✘ | ✔ |
-| SetVideoSource     | Set video source for preview or broadcasting  | ✔ | VideoSource | ✘  | ✔ |
-| SetVideoSourceFromURL  | URL to an mp4 file source or ramp source    | ✘ | ✘ | ✘ | ✔ |
-| SetAudioSource     | Set audio source for preview or broadcasting  | ✔ | AudioSource | ✘ | ✔ |
-| SetVideoWidth      | Set width of video in pixels          | ✔ | VideoWidth | ✔ | ✔ |
-| GetVideoWidth      | Get width of video in pixels          | ✔ | VideoWidth |  |  |
-| SetVideoHeight     | Set height of video in pixels          | ✔ | VideoHeight | ✔ | ✔ |
-| GetVideoHeight     | Get height of video in pixels          | ✔ | VideoHeight |  |  |
-| SetVideoResizeWidth   | Resize width of video in pixels        | ✘  | ✔ | ✘ | ✔ |
-| SetVideoResizeHeight  | Resize height of video in pixels        | ✘ | ✔ | ✘ | ✔ |
-| SetVideoFramerate    | Set frame rate of video in frames per second  | SetFramerate  | VideoFrameRate | setFrameRate | ✔ |
-| SetNumberOfChannels       | set channel number                                   | ✔  |  |  | |
-| SetVideoBitrate     | Set bitrate of video in kbits per second    | ✔ | ✔ | ✔  | ✔ |
-| GetVideoBitrate       | Get the current video bitrate                                   | ✔ |  |  | |
-| SetAudioBitrate     | Set bitrate of audio in kbits per second    | ✔ | ✔ | ✔ | ✔ |
-| GetAudioBitrate       | Get the current audio bitrate                                   | ✔  |  |  | |
-| SetAudioSamplerate   | Set the samplerate of the audio in Hertz    | ✔ | ✘ | setSampleRate  | ✔ |
-| GetAudioLevel      | Get the audio level of a channel        | ✔ | ✔ | ✔  | ✔ |
-| SetAudioVolume     | Set audio volume                | ✔ | AudioVolume | ✘ | ✔ |
-| SetAudioPreviewVolume  | Set audio volume of preview          | ✔ | AudioPreviewVolume | ✘ | ✔ |
-| SetColorSpace      | Set the color space of an input source     | ✔ | ✔ | ✘ | ✔ |
-| GetNumberOfColorspaces | Get the count of color spaces         | ✔ | ✔ | ✘ | ✔ |
-| GetColorspace      | Get color space name as string         | ✔ | ✔ | ✔ | ✔ |
-| GetNumberOfResolutions | Get count of available resolutions       | ✔  | ✔ | ✘ | ✔ |
-| GetResolution      | Get count of resolutions            | ✔  | ✔ | ✘ | ✔ |
-| GetNumberOfFramerates  | Count of available frame rates as integer value | GetNumberOfFrameRates | ✔ | ✘ | ✔ |
-| GetFramerate      | Get the frame rate of a video source      | ✔  | ✔ | getFrameRate | ✔ |
-| SetDeinterlacing    | Set deinterlacing mode and method       | ✘  | ✘ | ✘ | ✔ |
-| GetNumberOfOutputs   | Get count of output sources          | ✘ | ✔ | ✘ | ✔ |
-| AddOutput        | Add new output source with url         | ✘  | ✔ | ✘ | ✔ |
-| SetOutputUrl      | Set output source with url. Local or rtmp    | ✔  | ✔ | setOutputUrl  | ✔ |
-| GetOutputUrl       |                                   | ✔ |  |  | |
-| GetNumberOfOutputUrls       |                                   | ✔ |  |  | |
-| AcceptDataInSampleBuffer       |                                   | ✔  |  |  | |
-| AddSampleBuffer       |                                   | ✔ |  |  | |
-| SetFilesourceFilename  | Set the filename of a local source      | ✘  | ✘ | ✘ | ✔ |
-| ClearOutputs      | Reset all output sources           |  ✘  | ✔ | ✘ | ✔ |
-| SetVideoEffect     | Add a video effect.              | ✘  | ✔ | ✘ | ✔ |
-| SetOverlay       | Add a overlay to the video           |  ✘  | ✘ | ✘ | ✔ |
-| ShowPropertyPage    | Show property page              |  ✘  | ✔ | ✘  | ✔ |
-| SetLog         | Set log file path and log level.        | ✔ | ✔ | ✔ | ✔ |
-| SetXmlProfile       |                                   | ✔  |  |  | |
-| dispose():void     | Reset buffer                 | ✘  | ✘ | ✘ | ✔ |
-
-
-
-
-
-
 
 | Method Name         | Description                                | libnanoStream.dylib Support  | Mac Plugin Support    | Mac Framework Support  | ANE Support |
 |------------------------------|---------------------------------------------------------------------------|-------------------------------|--------------------------|-------------------------|--------------|
-| -InitPlugin- | -Initialization of the Plugin-             | -nanoStream- | -initEncoder--   | -init- | -✔- |
+| InitPlugin | Initialization of the Plugin             | nanoStream | initEncoder   | init | ✔ |
 | SetXml           | deprecated - no functionality                      | ✘              | ✘           | ✘           | ✔     |
 | GetVersion         | Get version number of the SDK                      | ✔              |             |            |       |
 | SetLicense         | Set license for nano SDK                        | ✔              | ✔           | ✔           | ✔     |
@@ -161,36 +94,36 @@ Recommended for HD capture: Intel Core i7 or Xeon
 
 # Method Description:
 
-===== Setup the Plugin =====
+## Setup the Plugin
 
-==== InitPlugin ====
+### InitPlugin
 
-=== Declaration ===
+#### Declaration
 
 
 InitPlugin(xmlPath:String):int
 
 
-=== Parameters ===
+#### Parameters
 
 
 | xmlPath:String | Path to the xml file with configuration information, can be local or a url. |
 | |**—deprecated - no functionality**|
 
 
-=== Return Value ===
+#### Return Value
 
 
 **-1** if the initialization failed
 
 
-=== Description ===
+#### Description
 
 
 Initialization of the plugin.
 
 
-=== Availability ===
+#### Availability
 
 
 On Windows and Mac OSX
@@ -198,216 +131,214 @@ On Windows and Mac OSX
 
 
 
-==== GetVersion ====
+### GetVersion
 
-=== Declaration ===
+#### Declaration
 
 GetVersion()
 
-=== Return Value ===
+#### Return Value
 
 Version number as int value
 
-=== Description ===
+#### Description
 
 Return the version number of the SDK as int value
 
-=== Availability ===
+#### Availability
 
 On Mac OSX
-==== SetLicense ====
+### SetLicense
 
-=== Declaration ===
+#### Declaration
 
 SetLicense(licenseStr:String):int
 
-=== Parameters ===
+#### Parameters
 
 | licenseStr:String | License String getting from nano. |
 
-=== Return Value ===
+#### Return Value
 
 -**1** if call failed
 
-=== Description ===
+#### Description
 
 Set license for nano SDK
 
-=== Availability ===
+#### Availability
 
 On Windows and Mac OSX
 
 
-==== GetLicense ====
+### GetLicense
 
-=== Declaration ===
+#### Declaration
 
 GetLicense()
 
-=== Return Value ===
+#### Return Value
 
 String represantation of the license
 
-=== Description ===
+#### Description
 
 Get license for nano SDK
 
-=== Availability ===
+#### Availability
 
 On Mac OSX
 
-SetConfig
----------
+### SetConfig
 
-### Declaration
+
+#### Declaration
 
 SetConfig(property:String, value:String):int
 
-### Parameters
+#### Parameters
 
 | property:String | Property identifier as string. See property list for configuration on page 32. |
 | value:String  | Value for property as string representation.                  |
 
-### Return Value
+#### Return Value
 
 **1** if call was successful, **0** otherwise
 
-### Description
+#### Description
 
 Set property over Identifier.
 
-### Availability
+#### Availability
 
 On Windows and Mac OSX
 
-Preview
--------
+## Preview
 
-UpdatePreviewDimensions
------------------------
 
-### Declaration
+### UpdatePreviewDimensions
+
+#### Declaration
 
 UpdatePreviewDimensions():void
 
-### Description
+#### Description
 
 Updates the preview with the current width and height.
 
-### Availability
+#### Availability
 
 On Windows and Mac OSX
 
-GetPreviewDimensions
----------------
+### GetPreviewDimensions
 
-=== Declaration ===
+
+#### Declaration
 
 GetPreviewDimensions(long *width, long *height, long *size)
 
 
-=== Parameters ===
+#### Parameters
 
 | width:long | Pointer to return the video width |
 | height:long | Pointer to return the video height |
 | size:long | Pointer to return the video size |
 
-=== Return Value ===
+#### Return Value
 
 **1** if call failed, **0** otherwise
 
-=== Description ===
+#### Description
 
 Get the current preview dimensions.
 
-GetPreviewImage
----------------
+### GetPreviewImage
 
-=== Declaration ===
+
+#### Declaration
 
 GetPreviewImage(char *pixelBuffer, int size)
 
-=== Parameters ===
+#### Parameters
 
 | pixelBuffer:char | pixel buffer|
 | size:int | size |
 
-=== Return Value ===
+#### Return Value
 
 **1** if call failed, **0** otherwise
 
-=== Description ===
+#### Description
 
 Get the preview image.
 
-GetPreviewFrame
----------------
+### GetPreviewFrame
 
-=== Declaration ===
+
+#### Declaration
 
 GetPreviewFrame(options:int = GET\_FRAME\_BITMAP):Boolean
 
 
-=== Parameters ===
+#### Parameters
 
 | options:int | option as integer. Default is GET\_FRAME\_BITMAP = 2. A\\ Also possible: \\ GET\_FRAME\_RAW\_BYTES:int = 4,\\ GET\_POWER\_OF\_2\_FRAME\_BGRA\_BYTES:int = 8 |
 
-=== Return Value ===
+#### Return Value
 
 True if new frame was received otherwise false
 
-=== Description ===
+#### Description
 
 Get current preview Frame.
 
-StartPreview
-------------
+### StartPreview
 
-### Declaration
+
+#### Declaration
 
 StartPreview():int
 
-### Return Value
+#### Return Value
 
 -**1** if call failed
 
-### Description
+#### Description
 
 Start the preview.
 
-### Availability
+#### Availability
 
 On Windows and Mac OSX
 
-StopPreview
------------
+### StopPreview
 
-### Declaration
+
+#### Declaration
 
 StopPreview():int
 
-### Return Value
+#### Return Value
 
 -**1** if call failed
 
-### Description
+#### Description
 
 Stop the preview.
 
-### Availability
+#### Availability
 
 On Windows and Mac OSX
 
 ## Broadcast
 
-StartBroadcast
---------------
+### StartBroadcast
 
-### Declaration
+#### Declaration
 
 StartBroadcast():int
 
-### Return Value
+#### Return Value
 
 ERROR\_SETUP\_ENCODER\_FAILED = -2
 
@@ -415,127 +346,127 @@ ERROR\_RTMP\_OUTPUT\_SOURCE1\_FAILED = 2
 
 ERROR\_RTMP\_OUTPUT\_SOURCE2\_FAILED = 3
 
-### Description
+#### Description
 
 Start broadcasting.
 
-### Availability
+#### Availability
 
 On Windows and Mac OSX
 
-StopBroadcast
--------------
+### StopBroadcast
 
-### Declaration
+
+#### Declaration
 
 StopBroadcast():int
 
-### Return Value
+#### Return Value
 
 -**1** if call failed
 
-### Description
+#### Description
 
 Stop broadcasting.
 
-### Availability
+#### Availability
 
 On Windows and Mac OSX
 
 ## Video Source & Audio Source handling
 
-GetNumberOfVideoSources
------------------------
+### GetNumberOfVideoSources
 
-### Declaration
+
+#### Declaration
 
 GetNumberOfVideoSources():int
 
-### Return Value
+#### Return Value
 
 Count of all available video sources.
 
-### Description
+#### Description
 
 Count of all available video sources with current settings
 
-### Availability
+#### Availability
 
 On Windows and Mac OSX
 
-GetNumberOfAudioSources
------------------------
+### GetNumberOfAudioSources
 
-### Declaration
+
+#### Declaration
 
 GetNumberOfAudioSources():int
 
-### Return Value
+#### Return Value
 
 Count of all available audio sources.
 
-### Description
+#### Description
 
 Count of all available audio sources with current settings
 
-### Availability
+#### Availability
 
 On Windows and Mac OSX
 
-GetVideoSource
---------------
+### GetVideoSource
 
-### Declaration
+
+#### Declaration
 
 GetVideoSource(index:int):String
 
-### Parameters
+#### Parameters
 
 | index:int | Index of the video source. The index of the video source, from **0 - GetNumberOfVideoSources -1** |
 
-### Return Value
+#### Return Value
 
 Video source name as string.
 
-### Description
+#### Description
 
 Get name of the video source as string. Call **GetNumberOfVideoSources** first.
 
-### Availability
+#### Availability
 
 On Windows and Mac OSX
 
-GetAudioSource
---------------
+### GetAudioSource
 
-### Declaration
+
+#### Declaration
 
 GetAudioSource(index:int):String
 
-### Parameters
+#### Parameters
 
 | index:int | Index of the audio source. The index of the audio source, from **0 - GetNumberOfAudioSources -1** |
 
-### Return Value
+#### Return Value
 
 Audio source name as string.
 
-### Description
+#### Description
 
 Get name of the audio source as string. Call **GetNumberOfAudioSources** first.
 
-### Availability
+#### Availability
 
 On Windows and Mac OSX
 
-SetVideoSource
---------------
+### SetVideoSource
 
-### Declaration
+
+#### Declaration
 
 SetVideoSource(index:int, mixSource:int, mixMode:int):int
 
-### Parameters
+#### Parameters
 
 | index:int   | Index of the video source. The index of the video source goes from **0 - GetNumberOfVideoSources -1** |
 | mixSource:int | set **0** to to set only the first video source. **1** to set a second video source |
@@ -543,538 +474,538 @@ SetVideoSource(index:int, mixSource:int, mixMode:int):int
 | mixMode:int  | when mixSource **1** is set, the mix mode to combine two video sources can be chosen here. See available mix modes on page 33. |
 |        | **—only available on Microsoft Windows** |
 
-### Return Value
+#### Return Value
 
 -**1** if call failed
 
-### Description
+#### Description
 
 Set video source for preview or broadcasting over index. Call **GetNumberOfVideoSources** first. The mix source defines the video source you want set. The mixSource and mixMode is optional and only available on Microsoft Windows. There with you can combine two videos over the mixMode.
 
-### Availability
+#### Availability
 
 On Mac OSX only one video source can use. On Microsoft Windows up to two video sources can be used and be combined in different ways.
 
-SetVideoSourceFromURL
----------------------
+### SetVideoSourceFromURL
 
-### Declaration
+
+#### Declaration
 
 SetVideoSourceFromURL(url:String):int
 
-### Parameters
+#### Parameters
 
 | url:String | URL to use an mp4 file as video source. |
 
-### Return Value
+#### Return Value
 
 -**1** if call failed
 
-### Description
+#### Description
 
 URL to an mp4 file source to stream this file.
 
-### Availability
+#### Availability
 
 Only Supported under Microsoft Windows
 
-SetAudioSource
---------------
+### SetAudioSource
 
-### Declaration
+
+#### Declaration
 
 SetAudioSource(index:int):int
 
-### Parameters
+#### Parameters
 
 | index:int | Index of the audio source. The index of the audio source, from **0 - GetNumberOfAudioSources -1** |
 
-### Return Value
+#### Return Value
 
 -**1** if call failed
 
-### Description
+#### Description
 
 Set audio source for preview or broadcasting over index. Call **GetNumberOfAudioSources** first.
 
-### Availability
+#### Availability
 
 Under Windows and Mac OSX
 
 
 ## Video Properties
 
-SetVideoWidth
--------------
+### SetVideoWidth
 
-### Declaration
+
+#### Declaration
 
 SetVideoWidth(width:int, mixSource:int):int
 
-### Parameters
+#### Parameters
 
 | width:int | Width of the video in pixels as integer value |
 | mixSource:int | set **0** to to set only the first video source. **1** to set a second video source |
 |        | **—second video source only available on Microsoft Windows** |
 
-### Return Value
+#### Return Value
 
 -**1** if call failed
 
-### Description
+#### Description
 
 Set width of video in pixels. With mixSource the height for two video sources can be set.
 
-### Availability
+#### Availability
 
 Set Width is supported under Mac OS X and Microsoft Windows. The second mix source is only available under Microsoft Windows.
 
-SetVideoHeight
---------------
+### SetVideoHeight
 
-### Declaration
+
+#### Declaration
 
 SetVideoHeight(height:int, mixSource:int):int
 
-### Parameters
+#### Parameters
 
 | height:int  | Height of the video in pixels as integer value                   |
 | mixSource:int | set **0** to to set only the first video source. **1** to set a second video source |
 |      | **—second video source only available on Microsoft Windows** |
 
-### Return Value
+#### Return Value
 
 -**1** if call failed
 
-### Description
+#### Description
 
 Set height of video in pixels. With mixSource the height for two video sources can be set.
 
-### Availability
+#### Availability
 
 Set Height is supported under Mac OS X and Microsoft Windows. The second mix source is only available under Microsoft Windows.
 
-SetVideoResizeWidth
--------------------
+### SetVideoResizeWidth
 
-### Declaration
+
+#### Declaration
 
 SetVideoResizeWidth(width:int, index:int):int
 
-### Parameters
+#### Parameters
 
 | width:int | resize width of the video in pixels as integer value               |
 | index:int | Index of the output. The index of the output, from **0 - GetNumberOfOutputs -1** |
 
-### Return Value
+#### Return Value
 
 -**1** if call failed
 
-### Description
+#### Description
 
 Resize width of video in pixels.
 
-### Availability
+#### Availability
 
 Only Supported under Microsoft Windows
 
-SetVideoResizeHeight
---------------------
+### SetVideoResizeHeight
 
-### Declaration
+
+#### Declaration
 
 SetVideoResizeHeight(height:int, index:int):int
 
-### Parameters
+#### Parameters
 
 | height:int | resize height of the video in pixels as integer value              |
 | index:int | Index of the output. The index of the output, from **0 - GetNumberOfOutputs -1** |
 
-### Return Value
+#### Return Value
 
 -**1** if call failed
 
-### Description
+#### Description
 
 Resize height of video in pixels.
 
-### Availability
+#### Availability
 
 Only supported under Microsoft Windows
 
-SetVideoFramerate
------------------
+### SetVideoFramerate
 
-### Declaration
+
+#### Declaration
 
 SetVideoFramerate(framerate:Number, mixSource:int):int
 
-### Parameters
+#### Parameters
 
 | framerate:Number | Frame rate in frames per Second(FPS) as number value.                |
 | mixSource:int  | set **0** to to set only the first video source. **1** to set a second video source |
 |  | **—second video source only available on Microsoft Windows** |
 
-### Return Value
+#### Return Value
 
 -**1** if call failed
 
-### Description
+#### Description
 
 Set frame rate of video in frames per second (FPS). With mixSource the frame rate for two video sources can be set under Microsoft Windows.
 
-### Availability
+#### Availability
 
 Set video frame rate is supported under Mac OS X and Microsoft Windows. Mix Source is only available under Microsoft Windows.
 
-===== SetNumberOfChannels =====
+### SetNumberOfChannels
 
-=== Declaration ===
+#### Declaration
 
 SetNumberOfChannels(int numOfChannels)
 
-=== Parameters ===
+#### Parameters
 
 | numOfChannels:int | Number of channels as int value |
 
-=== Description ===
+#### Description
 
 Set channel number
 
-=== Availability ===
+#### Availability
 
 On Mac OSX
 
-SetVideoBitrate
----------------
+### SetVideoBitrate
 
-=== Declaration ===
+
+#### Declaration
 
 SetVideoBitrate(bitrate:int, index:int):int
 
-=== Parameters ===
+#### Parameters
 
 
 | bitrate:int | Video bitrate as integer value. |
 | index:int  | index of output to set the bitrate for multiple encoders. |
 |       | **—set different outputs is only available on Microsoft Windows. On Mac OS X the same bitrate is set to all outputs.** |
 
-=== Return Value ===
+#### Return Value
 
 -**1** if call failed
 
-=== Description ===
+#### Description
 
 Set bitrate of video in kbits per second (kbits/s).
 
-=== Availability ===
+#### Availability
 
 Under Mac OS X the same bitrate is set to all outputs. Under Microsoft Windows every output can be set to another bitrate.
 
 
 
-GetVideoBitrate
----------------
+### GetVideoBitrate
 
-=== Declaration ===
+
+#### Declaration
 
 GetVideoBitrate(int source)
 
 
-=== Parameters ===
+#### Parameters
 
 | index:int  | index of output to get the bitrate for multiple encoders. |
 |        | **—get different outputs is only available on Microsoft Windows. On Mac OS X there is only one source available.** |
 
-=== Return Value ===
+#### Return Value
 
 Video bitrate as integer value.
 
-=== Description ===
+#### Description
 
 Get the current video bitrate.
 
-=== Availability ===
+#### Availability
 
 Under Mac OS X there is only one output available. Under Microsoft Windows several outputs are available over the index parameter.
 
 ## Audio Properties
 
-SetAudioBitrate
----------------
+### SetAudioBitrate
 
-=== Declaration ===
+
+#### Declaration
 
 SetAudioBitrate(bitrate:int, index:int):int
 
-=== Parameters ===
+#### Parameters
 
 | bitrate:int | Audio bitrate as integer value. |
 | index:int  | index of output to set the bitrate for multiple encoders. |
 |        | **—set different outputs is only available on Microsoft Windows. On Mac OS X the same bitrate is set to all outputs.** |
 
-=== Return Value ===
+#### Return Value
 
 -**1** if call failed
 
-=== Description ===
+#### Description
 
 Set bitrate of audio in kbits per second (kbits/s).
 
-=== Availability ===
+#### Availability
 
 Under Mac OS X the same bitrate is set to all outputs. Under Microsoft Windows every output can be set to another bitrate.
 
-GetAudioBitrate
----------------
+### GetAudioBitrate
 
-=== Declaration ===
+
+#### Declaration
 
 GetAudioBitrate(int source)
 
 
-=== Parameters ===
+#### Parameters
 
 | index:int  | index of output to get the bitrate for multiple encoders. |
 |        | **—Get different outputs is only available on Microsoft Windows. On Mac OS X there is only one source available.** |
 
-=== Return Value ===
+#### Return Value
 
 Audio bitrate as integer value.
 
-=== Description ===
+#### Description 
 
 Get the current audio bitrate.
 
-SetAudioSamplerate
-------------------
+### SetAudioSamplerate
 
-### Declaration
+
+#### Declaration
 
 SetAudioSamplerate(samplerate:int):int
 
-### Parameters
+#### Parameters
 
 | samplerate:int | Samplerate of audio as integer value |
 
-### Return Value
+#### Return Value
 
 -**1** if call failed
 
-### Description
+#### Description
 
 Set the samplerate of the audio in Hertz (Hz).
 
-### Availability
+#### Availability
 
 Under Windows and Mac OSX.
 
-GetAudioLevel
--------------
+### GetAudioLevel
 
-### Declaration
+
+#### Declaration
 
 GetAudioLevel(channel:int):int
 
-### Parameters
+#### Parameters
 
 | channel:int | channel id as integer. |
 
-### Return Value
+#### Return Value
 
 Audiolevel as integer value.
 
-### Description
+#### Description
 
 Get the audio level of a channel.
 
-### Availability
+#### Availability
 
 Under Windows and Mac OSX.
 
-SetAudioVolume
---------------
+### SetAudioVolume
 
-### Declaration
+
+#### Declaration
 
 SetAudioVolume(volume:int):int
 
-### Parameters
+#### Parameters
 
 | volume:int | volume as integer value |
 
-### Return Value
+#### Return Value
 
 **-1** if call failed
 
-### Description
+#### Description
 
 Set audio volume.
 
-### Availability
+#### Availability
 
 Under Windows and Mac OSX.
 
-SetAudioPreviewVolume
----------------------
+### SetAudioPreviewVolume
 
-### Declaration
+
+#### Declaration
 
 SetAudioPreviewVolume(volume:int):int
 
-### Parameters
+#### Parameters
 
 | volume:int | volume as integer value |
 
-### Return Value
+#### Return Value
 
 **-1** if call failed
 
-### Description
+#### Description
 
 Set audio volume of preview.
 
-### Availability
+#### Availability
 
 Under Windows and Mac OSX.
 
 ## Color Management
 
-SetColorSpace
--------------
+### SetColorSpace
 
-### Declaration
+
+#### Declaration
 
 SetColorSpace(index:int, mixSource:int):int
 
-### Parameters
+#### Parameters
 
 | index:int   | index of the input source. |
 | mixSource:int | set **0** to to set only the first mixed source. **1** to set a second mixed source |
 |    | **—second mixed source is only available on Microsoft Windows** |
 
-### Return Value
+#### Return Value
 
 -**1** if call failed
 
-### Description
+#### Description
 
 Set the color space of an input source. Only the firtst source is supported under Mac OS X
 
-### Availability
+#### Availability
 
 Under Windows and Mac OSX.
 
-GetNumberOfColorspaces
-----------------------
+### GetNumberOfColorspaces
 
-### Declaration
+
+#### Declaration
 
 GetNumberOfColorspaces(width:int, height:int, mixSource:int):int
 
-### Parameters
+#### Parameters
 
 | width:int   | width of the video source |
 | height:int  | height of the video source |
 | mixSource:int | set **0** to to get the first mixed source. **1** to get the second mixed source |
 | | **—second mixed source is only available on Microsoft Windows** |
 
-### Return Value
+#### Return Value
 
 Count of color spaces as integer value.
 
-### Description
+#### Description
 
 Get the count of color spaces. Get the color space for the specified with and height.
 
-### Availability
+#### Availability
 
 Under Windows and Mac OSX. Under Mac OSX mix source is not supported.
 
-GetColorspace
--------------
+### GetColorspace
 
-### Declaration
+
+#### Declaration
 
 GetColorspace(index:int, mixSource:int):String
 
-### Parameters
+#### Parameters
 
 | index:int   | Index of the color spaces. The index of the color spaces, from **0 - GetNumberOfColorspaces -1** |
 | mixSource:int | set **0** to to get the first mixed source. **1** to get the second mixed source |
 |  | **—second mixed source is only available on Microsoft Windows** |
 
-### Return Value
+#### Return Value
 
 color space name as String
 
-### Description
+#### Description
 
 Get color space name as string. First call **GetNumberOfColorspaces.**
 
-### Availability
+#### Availability
 
 Under Windows and Mac OSX. Under Mac OSX only the first mix source is supported.
 
 ## Resolution & Frame rate
 
-GetNumberOfResolutions
-----------------------
+### GetNumberOfResolutions
 
-### Declaration
+
+#### Declaration
 
 GetNumberOfResolutions(mixSource:int):int
 
-### Parameters
+#### Parameters
 
 | mixSource:int | set **0** to to get the first mixed source. **1** to get the second mixed source |
 |         | **—second mixed source is only available on Microsoft Windows** |
 
-### Return Value
+#### Return Value
 
 Count of resolutions as integer value.
 
-### Description
+#### Description
 
 Get count of resolutions.
 
-### Availability
+#### Availability
 
 Under Windows and Mac OSX. Under Mac OSX only the first mix source is supported.
 
-GetResolution
--------------
+### GetResolution
 
-### Declaration
+
+#### Declaration
 
 GetResolution(index:int, mixSource:int):Object
 
-### Parameters
+#### Parameters
 
 | index:int   | Index of the resolutions. The index of the resolutions, from **0 - GetNumberOfResolutions -1** |
 | mixSource:int | set **0** to to get the first mixed source. **1** to get the second mixed source |
 |          | **—second mixed source is only available on Microsoft Windows** |
 
-### Return Value
+#### Return Value
 
 Get resolution of video source. First call **GetNumberOfResolutions.**
 
-### Description
+#### Description
 
 Get count of resolutions.
 
-### Availability
+#### Availability
 
 Under Windows and Mac OSX. Under Mac OSX only the first mix source is supported.
 
-GetNumberOfFramerates
----------------------
+### GetNumberOfFramerates
 
-### Declaration
+
+#### Declaration
 
 GetNumberOfFramerates(width:int, height:int, colorspace:String, mixSource:int):int
 
-### Parameters
+#### Parameters
 
 | width:int     | width of the video source |
 | height:int    | height of the video source.                           |
@@ -1082,310 +1013,309 @@ GetNumberOfFramerates(width:int, height:int, colorspace:String, mixSource:int):i
 | mixSource:int   | set **0** to to get the first mixed source. **1** to get the second mixed source |
 |    | **—second mixed source is only available on Microsoft Windows** |
 
-### Return Value
+#### Return Value
 
 Count of available frame rates as integer value.
 
-### Description
+#### Description
 
 Get count of available frame rates.
 
-### Availability
+#### Availability
 
 Under Windows and Mac OSX. Under Mac OSX only the first mix source is supported.
 
-GetFramerate
-------------
+### GetFramerate
 
-### Declaration
+
+#### Declaration
 
 GetFramerate(index:int, mixSource:int):Number
 
-### Parameters
+#### Parameters
 
 | index:int   | Index of the frame rate. The index of the frame rate, from **0 - GetNumberOfFramerates -1** |
 | mixSource:int | set **0** to to get the first mixed source. **1** to get the second mixed source |
 |   | **—second mixed source is only available on Microsoft Windows** |
 
-### Return Value
+#### Return Value
 
 Frame rate (FPS) as number value.
 
-### Description
+#### Description
 
 Get the frame rate of a video source. Call **GetNumberOfFramerates** first.
 
-### Availability
+#### Availability
 
 Under Windows and Mac OSX. Under Mac OSX only the first mix source is supported.
 
-SetDeinterlacing
-----------------
+### SetDeinterlacing
 
-### Declaration
+
+#### Declaration
 
 SetDeinterlacing(mode:int, method:int):int
 
-### Parameters
+#### Parameters
 
 | mode:int  | possible values: **0**=off, **1**=auto, **2**=on  \\ no auto mode for mac |
 | method:int | possible values: **0**=duplicate field/bob, **1**=blend, **2**=vertical filter, **3**=edge, 4=median, **5**=median2 |
 
-### Return Value
+#### Return Value
 
 **-1** if call failed
 
-### Description
+#### Description
 
 Set deinterlacing mode and method.
 
-### Availability
+#### Availability
 
 Under Windows and Mac OSX.
 
 ## Outputs
 
-GetNumberOfOutputs
-------------------
+### GetNumberOfOutputs
 
-### Declaration
+
+#### Declaration
 
 GetNumberOfOutputs():int
 
-### Return Value
+#### Return Value
 
 Count of outputs as integer value.
 
-### Description
+#### Description
 
 Get count of outputs.
 
-### Availability
+#### Availability
 
 Only Supported under Microsoft Windows.
 
-AddOutput
----------
+### AddOutput
 
-### Declaration
+
+#### Declaration
 
 AddOutput(url:String):int
 
-### Parameters
+#### Parameters
 
 | url:String | Url of outputs can be a local mp4 recording or a rtmp source. |
 
-### Return Value
+#### Return Value
 
 **-1** if call failed
 
-### Description
+#### Description
 
 Add new output source with url.
 
-### Availability
+#### Availability
 
 Only Supported under Microsoft Windows.
 
-SetOutputUrl
-------------
+### SetOutputUrl
 
-### Declaration
+#### Declaration
 
 SetOutputUrl(url:String, index:int):int
 
-### Parameters
+#### Parameters
 
 | url:String | Url of outputs can be a local mp4 recording or a rtmp server. |
 | index:int | Index of the output.                     |
 
-### Return Value
+#### Return Value
 
 **-1** if call failed
 
-### Description
+#### Description
 
 Set output with url. A local mp4 recording or a rtmp server.
 
-### Availability
+#### Availability
 
 Under Windows and Mac OSX.
 
 
-GetOutputUrl
----------------
+### GetOutputUrl
 
 
 
 
-GetNumberOfOutputUrls
----------------
+
+### GetNumberOfOutputUrls
 
 
-AcceptDataInSampleBuffer
----------------
 
-SetFilesourceFilename
----------------------
+### AcceptDataInSampleBuffer
 
-### Declaration
+
+### SetFilesourceFilename
+
+
+#### Declaration
 
 SetFilesourceFilename(url:String):int
 
-### Parameters
+#### Parameters
 
 | url:String | Url to the local file |
 
-### Return Value
+#### Return Value
 
 **-1** if call failed
 
-### Description
+#### Description
 
 Set the filename of a local source.
 
-### Availability
+#### Availability
 
 Only Supported under Microsoft Windows.
 
-ClearOutputs
-------------
+### ClearOutputs
 
-### Declaration
+
+#### Declaration
 
 ClearOutputs():int
 
-### Return Value
+#### Return Value
 
 **-1** if call failed
 
-### Description
+#### Description
 
 Reset all outputs except the first one.
 
-### Availability
+#### Availability
 
 Only Supported under Microsoft Windows.
 
 ## Video Special
 
-SetVideoEffect
---------------
+### SetVideoEffect
 
-### Declaration
+
+#### Declaration
 
 SetVideoEffect(mode:int):int
 
-### Parameters
+#### Parameters
 
 | mode:int | Mode of video effect. See possible overlay effects on page 33 |
 
-### Return Value
+#### Return Value
 
 **-1** if call failed
 
-### Description
+#### Description
 
 Add a video effect. For overlay.
 
-### Availability
+#### Availability
 
 Only Supported under Microsoft Windows.
 
-SetOverlay
-----------
+### SetOverlay
 
-### Declaration
+
+#### Declaration
 
 SetOverlay(url:String):int
 
-### Parameters
+#### Parameters
 
 | url:String | Url of the overlay source. Can be a locale path or server url to a png or txt file. Also can be a txt string. |
 
-### Return Value
+#### Return Value
 
 **-1** if call failed
 
-### Description
+#### Description
 
 Add a overlay to the video.
 
-### Availability
+#### Availability
 
 Only Supported under Microsoft Windows.
 
-ShowPropertyPage
-----------------
+### ShowPropertyPage
 
-### Declaration
+
+#### Declaration
 
 ShowPropertyPage(value:int):int
 
-### Parameters
+#### Parameters
 
 | value:int | **1** or **0** are possible values |
 
-### Return Value
+#### Return Value
 
 **-1** if call failed
 
-### Description
+#### Description
 
 Show property page. Only used for Blackmagic devices.
 
-### Availability
+#### Availability
 
 Only supported under Microsoft Windows.
 
 ## Logging
 
-SetLog
-------
+### SetLog
 
-### Declaration
+
+#### Declaration
 
 SetLog(logFile:String, logLevel:int):int
 
-### Parameters
+#### Parameters
 
 | logFile:String | local path for logfile as string.         |
 | logLevel:int  | log level as integer. For possible loglevels 0-9. |
 
-### Return Value
+#### Return Value
 
 **-1** if call failed
 
-### Description
+#### Description
 
 Set log file path and log level.
 
-### Availability
+#### Availability
 
 Under Windows and Mac OSX.
 
-### Availability
+#### Availability
 
 Under Windows and Mac OSX.
 
 
 
 
-SetXmlProfile
----------------
+### SetXmlProfile
 
-dispose
--------
 
-### Declaration
+### dispose
+
+
+#### Declaration
 
 dispose():void
 
-### Description
+#### Description
 
 Destructor.
 
-### Availability
+#### Availability
 
 Under Windows and Mac OSX.
 
