@@ -240,9 +240,10 @@ GetPreviewDimensions(long *width, long *height, long *size)
 
 #### Parameters
 
-| width:long | Pointer to return the video width |
-| height:long | Pointer to return the video height |
-| size:long | Pointer to return the video size |
+{!docs/nanostream/general/nanocosmos_method_parameter_header.md!}
+| width|long | Pointer to return the video width |
+| height|long | Pointer to return the video height |
+| size|long | Pointer to return the video size |
 
 #### Return Value
 
@@ -261,8 +262,9 @@ GetPreviewImage(char *pixelBuffer, int size)
 
 #### Parameters
 
-| pixelBuffer:char | pixel buffer|
-| size:int | size |
+{!docs/nanostream/general/nanocosmos_method_parameter_header.md!}
+| pixelBuffer|char | pixel buffer|
+| size|int | size |
 
 #### Return Value
 
@@ -281,8 +283,8 @@ GetPreviewFrame(options:int = GET\_FRAME\_BITMAP):Boolean
 
 
 #### Parameters
-
-| options:int | option as integer. Default is GET\_FRAME\_BITMAP = 2. A\\ Also possible: \\ GET\_FRAME\_RAW\_BYTES:int = 4,\\ GET\_POWER\_OF\_2\_FRAME\_BGRA\_BYTES:int = 8 |
+{!docs/nanostream/general/nanocosmos_method_parameter_header.md!}
+| options|int | option as integer. Default is GET\_FRAME\_BITMAP = 2. A\\ Also possible: \\ GET\_FRAME\_RAW\_BYTES:int = 4,\\ GET\_POWER\_OF\_2\_FRAME\_BGRA\_BYTES:int = 8 |
 
 #### Return Value
 
@@ -421,8 +423,8 @@ On Windows and Mac OSX
 GetVideoSource(index:int):String
 
 #### Parameters
-
-| index:int | Index of the video source. The index of the video source, from **0 - GetNumberOfVideoSources -1** |
+{!docs/nanostream/general/nanocosmos_method_parameter_header.md!}
+| index|int | Index of the video source. The index of the video source, from **0 - GetNumberOfVideoSources -1** |
 
 #### Return Value
 
@@ -444,8 +446,8 @@ On Windows and Mac OSX
 GetAudioSource(index:int):String
 
 #### Parameters
-
-| index:int | Index of the audio source. The index of the audio source, from **0 - GetNumberOfAudioSources -1** |
+{!docs/nanostream/general/nanocosmos_method_parameter_header.md!}
+| index|int | Index of the audio source. The index of the audio source, from **0 - GetNumberOfAudioSources -1** |
 
 #### Return Value
 
@@ -467,12 +469,15 @@ On Windows and Mac OSX
 SetVideoSource(index:int, mixSource:int, mixMode:int):int
 
 #### Parameters
+{!docs/nanostream/general/nanocosmos_method_parameter_header.md!}
+| index |int   | Index of the video source. The index of the video source goes from **0 - GetNumberOfVideoSources -1** |
+| mixSource|int | set **0** to to set only the first video source. **1** to set a second video source. <sup>1</sup> |
+| mixMode|int  | when mixSource **1** is set, the mix mode to combine two video sources can be chosen here. See available mix modes on page 33.  <sup>2</sup> |
 
-| index:int   | Index of the video source. The index of the video source goes from **0 - GetNumberOfVideoSources -1** |
-| mixSource:int | set **0** to to set only the first video source. **1** to set a second video source |
-|        | **—second video source only available on Microsoft Windows** |
-| mixMode:int  | when mixSource **1** is set, the mix mode to combine two video sources can be chosen here. See available mix modes on page 33. |
-|        | **—only available on Microsoft Windows** |
+
+<sup>1</sup>  **— second video source only available on Microsoft Windows**
+
+<sup>2</sup>  **— only available on Microsoft Windows**
 
 #### Return Value
 
@@ -494,8 +499,8 @@ On Mac OSX only one video source can use. On Microsoft Windows up to two video s
 SetVideoSourceFromURL(url:String):int
 
 #### Parameters
-
-| url:String | URL to use an mp4 file as video source. |
+{!docs/nanostream/general/nanocosmos_method_parameter_header.md!}
+| url|String | URL to use an mp4 file as video source. |
 
 #### Return Value
 
@@ -517,8 +522,8 @@ Only Supported under Microsoft Windows
 SetAudioSource(index:int):int
 
 #### Parameters
-
-| index:int | Index of the audio source. The index of the audio source, from **0 - GetNumberOfAudioSources -1** |
+{!docs/nanostream/general/nanocosmos_method_parameter_header.md!}
+| index|int | Index of the audio source. The index of the audio source, from **0 - GetNumberOfAudioSources -1** |
 
 #### Return Value
 
@@ -544,10 +549,11 @@ SetVideoWidth(width:int, mixSource:int):int
 
 #### Parameters
 
-| width:int | Width of the video in pixels as integer value |
-| mixSource:int | set **0** to to set only the first video source. **1** to set a second video source |
-|        | **—second video source only available on Microsoft Windows** |
+{!docs/nanostream/general/nanocosmos_method_parameter_header.md!}
+| width|int | Width of the video in pixels as integer value |
+| mixSource|int | set **0** to to set only the first video source. **1** to set a second video source. <sup>1</sup> |
 
+<sup>1</sup>  **— second video source only available on Microsoft Windows**
 #### Return Value
 
 -**1** if call failed
@@ -568,10 +574,11 @@ Set Width is supported under Mac OS X and Microsoft Windows. The second mix sour
 SetVideoHeight(height:int, mixSource:int):int
 
 #### Parameters
+{!docs/nanostream/general/nanocosmos_method_parameter_header.md!}
+| height|int  | Height of the video in pixels as integer value                   |
+| mixSource|int | set **0** to to set only the first video source. **1** to set a second video source <sup>1</sup> |
 
-| height:int  | Height of the video in pixels as integer value                   |
-| mixSource:int | set **0** to to set only the first video source. **1** to set a second video source |
-|      | **—second video source only available on Microsoft Windows** |
+<sup>1</sup>  **— second video source only available on Microsoft Windows**
 
 #### Return Value
 
@@ -593,9 +600,9 @@ Set Height is supported under Mac OS X and Microsoft Windows. The second mix sou
 SetVideoResizeWidth(width:int, index:int):int
 
 #### Parameters
-
-| width:int | resize width of the video in pixels as integer value               |
-| index:int | Index of the output. The index of the output, from **0 - GetNumberOfOutputs -1** |
+{!docs/nanostream/general/nanocosmos_method_parameter_header.md!}
+| width|int | resize width of the video in pixels as integer value               |
+| index|int | Index of the output. The index of the output, from **0 - GetNumberOfOutputs -1** |
 
 #### Return Value
 
@@ -617,9 +624,9 @@ Only Supported under Microsoft Windows
 SetVideoResizeHeight(height:int, index:int):int
 
 #### Parameters
-
-| height:int | resize height of the video in pixels as integer value              |
-| index:int | Index of the output. The index of the output, from **0 - GetNumberOfOutputs -1** |
+{!docs/nanostream/general/nanocosmos_method_parameter_header.md!}
+| height|int | resize height of the video in pixels as integer value              |
+| index|int | Index of the output. The index of the output, from **0 - GetNumberOfOutputs -1** |
 
 #### Return Value
 
@@ -641,10 +648,11 @@ Only supported under Microsoft Windows
 SetVideoFramerate(framerate:Number, mixSource:int):int
 
 #### Parameters
+{!docs/nanostream/general/nanocosmos_method_parameter_header.md!}
+| framerate|Number | Frame rate in frames per Second(FPS) as number value.                |
+| mixSource|int  | set **0** to to set only the first video source. **1** to set a second video source. <sup>1</sup> |
 
-| framerate:Number | Frame rate in frames per Second(FPS) as number value.                |
-| mixSource:int  | set **0** to to set only the first video source. **1** to set a second video source |
-|  | **—second video source only available on Microsoft Windows** |
+<sup>1</sup>  **— second video source only available on Microsoft Windows**
 
 #### Return Value
 
@@ -665,8 +673,8 @@ Set video frame rate is supported under Mac OS X and Microsoft Windows. Mix Sour
 SetNumberOfChannels(int numOfChannels)
 
 #### Parameters
-
-| numOfChannels:int | Number of channels as int value |
+{!docs/nanostream/general/nanocosmos_method_parameter_header.md!}
+| numOfChannels|int | Number of channels as int value |
 
 #### Description
 
@@ -685,10 +693,11 @@ SetVideoBitrate(bitrate:int, index:int):int
 
 #### Parameters
 
+{!docs/nanostream/general/nanocosmos_method_parameter_header.md!}
+| bitrate|int | Video bitrate as integer value. |
+| index|int  | index of output to set the bitrate for multiple encoders. <sup>1</sup>|
 
-| bitrate:int | Video bitrate as integer value. |
-| index:int  | index of output to set the bitrate for multiple encoders. |
-|       | **—set different outputs is only available on Microsoft Windows. On Mac OS X the same bitrate is set to all outputs.** |
+<sup>1</sup> **— set different outputs is only available on Microsoft Windows. On Mac OS X the same bitrate is set to all outputs.**
 
 #### Return Value
 
@@ -713,9 +722,10 @@ GetVideoBitrate(int source)
 
 
 #### Parameters
+{!docs/nanostream/general/nanocosmos_method_parameter_header.md!}
+| index|int  | index of output to get the bitrate for multiple encoders. <sup>1</sup>|
 
-| index:int  | index of output to get the bitrate for multiple encoders. |
-|        | **—get different outputs is only available on Microsoft Windows. On Mac OS X there is only one source available.** |
+<sup>1</sup> **— set different outputs is only available on Microsoft Windows. On Mac OS X the same bitrate is set to all outputs.**
 
 #### Return Value
 
@@ -739,10 +749,11 @@ Under Mac OS X there is only one output available. Under Microsoft Windows sever
 SetAudioBitrate(bitrate:int, index:int):int
 
 #### Parameters
+{!docs/nanostream/general/nanocosmos_method_parameter_header.md!}
+| bitrate|int | Audio bitrate as integer value. |
+| index|int  | index of output to set the bitrate for multiple encoders. <sup>1</sup>|
 
-| bitrate:int | Audio bitrate as integer value. |
-| index:int  | index of output to set the bitrate for multiple encoders. |
-|        | **—set different outputs is only available on Microsoft Windows. On Mac OS X the same bitrate is set to all outputs.** |
+<sup>1</sup> **— set different outputs is only available on Microsoft Windows. On Mac OS X the same bitrate is set to all outputs.** |
 
 #### Return Value
 
@@ -765,15 +776,16 @@ GetAudioBitrate(int source)
 
 
 #### Parameters
+{!docs/nanostream/general/nanocosmos_method_parameter_header.md!}
+| index|int  | index of output to get the bitrate for multiple encoders. <sup>1</sup>|
 
-| index:int  | index of output to get the bitrate for multiple encoders. |
-|        | **—Get different outputs is only available on Microsoft Windows. On Mac OS X there is only one source available.** |
+<sup>1</sup> **—Get different outputs is only available on Microsoft Windows. On Mac OS X there is only one source available.** |
 
 #### Return Value
 
 Audio bitrate as integer value.
 
-#### Description 
+#### Description
 
 Get the current audio bitrate.
 
@@ -785,8 +797,8 @@ Get the current audio bitrate.
 SetAudioSamplerate(samplerate:int):int
 
 #### Parameters
-
-| samplerate:int | Samplerate of audio as integer value |
+{!docs/nanostream/general/nanocosmos_method_parameter_header.md!}
+| samplerate|int | Samplerate of audio as integer value |
 
 #### Return Value
 
@@ -808,8 +820,8 @@ Under Windows and Mac OSX.
 GetAudioLevel(channel:int):int
 
 #### Parameters
-
-| channel:int | channel id as integer. |
+{!docs/nanostream/general/nanocosmos_method_parameter_header.md!}
+| channel|int | channel id as integer. |
 
 #### Return Value
 
@@ -831,8 +843,8 @@ Under Windows and Mac OSX.
 SetAudioVolume(volume:int):int
 
 #### Parameters
-
-| volume:int | volume as integer value |
+{!docs/nanostream/general/nanocosmos_method_parameter_header.md!}
+| volume|int | volume as integer value |
 
 #### Return Value
 
@@ -854,8 +866,8 @@ Under Windows and Mac OSX.
 SetAudioPreviewVolume(volume:int):int
 
 #### Parameters
-
-| volume:int | volume as integer value |
+{!docs/nanostream/general/nanocosmos_method_parameter_header.md!}
+| volume|int | volume as integer value |
 
 #### Return Value
 
@@ -879,10 +891,11 @@ Under Windows and Mac OSX.
 SetColorSpace(index:int, mixSource:int):int
 
 #### Parameters
+{!docs/nanostream/general/nanocosmos_method_parameter_header.md!}
+| index|int   | index of the input source. |
+| mixSource|int | set **0** to to set only the first mixed source. **1** to set a second mixed source. <sup>1</sup>|
 
-| index:int   | index of the input source. |
-| mixSource:int | set **0** to to set only the first mixed source. **1** to set a second mixed source |
-|    | **—second mixed source is only available on Microsoft Windows** |
+<sup>1</sup> **—second mixed source is only available on Microsoft Windows**
 
 #### Return Value
 
@@ -904,11 +917,12 @@ Under Windows and Mac OSX.
 GetNumberOfColorspaces(width:int, height:int, mixSource:int):int
 
 #### Parameters
+{!docs/nanostream/general/nanocosmos_method_parameter_header.md!}
+| width|int   | width of the video source |
+| height|int  | height of the video source |
+| mixSource|int | set **0** to to get the first mixed source. **1** to get the second mixed source. <sup>1</sup>|
 
-| width:int   | width of the video source |
-| height:int  | height of the video source |
-| mixSource:int | set **0** to to get the first mixed source. **1** to get the second mixed source |
-| | **—second mixed source is only available on Microsoft Windows** |
+<sup>1</sup>  **—second mixed source is only available on Microsoft Windows**
 
 #### Return Value
 
@@ -930,10 +944,11 @@ Under Windows and Mac OSX. Under Mac OSX mix source is not supported.
 GetColorspace(index:int, mixSource:int):String
 
 #### Parameters
+{!docs/nanostream/general/nanocosmos_method_parameter_header.md!}
+| index|int   | Index of the color spaces. The index of the color spaces, from **0 - GetNumberOfColorspaces -1** |
+| mixSource|int | set **0** to to get the first mixed source. **1** to get the second mixed source. <sup>1</sup>|
 
-| index:int   | Index of the color spaces. The index of the color spaces, from **0 - GetNumberOfColorspaces -1** |
-| mixSource:int | set **0** to to get the first mixed source. **1** to get the second mixed source |
-|  | **—second mixed source is only available on Microsoft Windows** |
+<sup>1</sup>  **—second mixed source is only available on Microsoft Windows**  
 
 #### Return Value
 
@@ -957,9 +972,10 @@ Under Windows and Mac OSX. Under Mac OSX only the first mix source is supported.
 GetNumberOfResolutions(mixSource:int):int
 
 #### Parameters
+{!docs/nanostream/general/nanocosmos_method_parameter_header.md!}
+| mixSource|int | set **0** to to get the first mixed source. **1** to get the second mixed source. <sup>1</sup>|
 
-| mixSource:int | set **0** to to get the first mixed source. **1** to get the second mixed source |
-|         | **—second mixed source is only available on Microsoft Windows** |
+<sup>1</sup>   **—second mixed source is only available on Microsoft Windows**
 
 #### Return Value
 
@@ -981,10 +997,11 @@ Under Windows and Mac OSX. Under Mac OSX only the first mix source is supported.
 GetResolution(index:int, mixSource:int):Object
 
 #### Parameters
+{!docs/nanostream/general/nanocosmos_method_parameter_header.md!}
+| index|int   | Index of the resolutions. The index of the resolutions, from **0 - GetNumberOfResolutions -1** |
+| mixSource|int | set **0** to to get the first mixed source. **1** to get the second mixed source. <sup>1</sup>|
 
-| index:int   | Index of the resolutions. The index of the resolutions, from **0 - GetNumberOfResolutions -1** |
-| mixSource:int | set **0** to to get the first mixed source. **1** to get the second mixed source |
-|          | **—second mixed source is only available on Microsoft Windows** |
+<sup>1</sup>    **—second mixed source is only available on Microsoft Windows**
 
 #### Return Value
 
@@ -1006,12 +1023,13 @@ Under Windows and Mac OSX. Under Mac OSX only the first mix source is supported.
 GetNumberOfFramerates(width:int, height:int, colorspace:String, mixSource:int):int
 
 #### Parameters
+{!docs/nanostream/general/nanocosmos_method_parameter_header.md!}
+| width|int     | width of the video source |
+| height|int    | height of the video source.                           |
+| colorspace|String | name of the color space get from GetColorspace                  |
+| mixSource|int   | set **0** to to get the first mixed source. **1** to get the second mixed source. <sup>1</sup>|
 
-| width:int     | width of the video source |
-| height:int    | height of the video source.                           |
-| colorspace:String | name of the color space get from GetColorspace                  |
-| mixSource:int   | set **0** to to get the first mixed source. **1** to get the second mixed source |
-|    | **—second mixed source is only available on Microsoft Windows** |
+<sup>1</sup>    **—second mixed source is only available on Microsoft Windows**
 
 #### Return Value
 
@@ -1033,10 +1051,11 @@ Under Windows and Mac OSX. Under Mac OSX only the first mix source is supported.
 GetFramerate(index:int, mixSource:int):Number
 
 #### Parameters
+{!docs/nanostream/general/nanocosmos_method_parameter_header.md!}
+| index|int   | Index of the frame rate. The index of the frame rate, from **0 - GetNumberOfFramerates -1** |
+| mixSource|int | set **0** to to get the first mixed source. **1** to get the second mixed source. <sup>1</sup>|
 
-| index:int   | Index of the frame rate. The index of the frame rate, from **0 - GetNumberOfFramerates -1** |
-| mixSource:int | set **0** to to get the first mixed source. **1** to get the second mixed source |
-|   | **—second mixed source is only available on Microsoft Windows** |
+<sup>1</sup>    **—second mixed source is only available on Microsoft Windows**
 
 #### Return Value
 
@@ -1058,9 +1077,9 @@ Under Windows and Mac OSX. Under Mac OSX only the first mix source is supported.
 SetDeinterlacing(mode:int, method:int):int
 
 #### Parameters
-
-| mode:int  | possible values: **0**=off, **1**=auto, **2**=on  \\ no auto mode for mac |
-| method:int | possible values: **0**=duplicate field/bob, **1**=blend, **2**=vertical filter, **3**=edge, 4=median, **5**=median2 |
+{!docs/nanostream/general/nanocosmos_method_parameter_header.md!}
+| mode|int  | possible values: **0**=off, **1**=auto, **2**=on  \\ no auto mode for mac |
+| method|int | possible values: **0**=duplicate field/bob, **1**=blend, **2**=vertical filter, **3**=edge, 4=median, **5**=median2 |
 
 #### Return Value
 
@@ -1103,8 +1122,8 @@ Only Supported under Microsoft Windows.
 AddOutput(url:String):int
 
 #### Parameters
-
-| url:String | Url of outputs can be a local mp4 recording or a rtmp source. |
+{!docs/nanostream/general/nanocosmos_method_parameter_header.md!}
+| url|String | Url of outputs can be a local mp4 recording or a rtmp source. |
 
 #### Return Value
 
@@ -1125,9 +1144,9 @@ Only Supported under Microsoft Windows.
 SetOutputUrl(url:String, index:int):int
 
 #### Parameters
-
-| url:String | Url of outputs can be a local mp4 recording or a rtmp server. |
-| index:int | Index of the output.                     |
+{!docs/nanostream/general/nanocosmos_method_parameter_header.md!}
+| url|String | Url of outputs can be a local mp4 recording or a rtmp server. |
+| index|int | Index of the output.                     |
 
 #### Return Value
 
@@ -1163,8 +1182,8 @@ Under Windows and Mac OSX.
 SetFilesourceFilename(url:String):int
 
 #### Parameters
-
-| url:String | Url to the local file |
+{!docs/nanostream/general/nanocosmos_method_parameter_header.md!}
+| url|String | Url to the local file |
 
 #### Return Value
 
@@ -1207,8 +1226,8 @@ Only Supported under Microsoft Windows.
 SetVideoEffect(mode:int):int
 
 #### Parameters
-
-| mode:int | Mode of video effect. See possible overlay effects on page 33 |
+{!docs/nanostream/general/nanocosmos_method_parameter_header.md!}
+| mode|int | Mode of video effect. See possible overlay effects on page 33 |
 
 #### Return Value
 
@@ -1230,8 +1249,8 @@ Only Supported under Microsoft Windows.
 SetOverlay(url:String):int
 
 #### Parameters
-
-| url:String | Url of the overlay source. Can be a locale path or server url to a png or txt file. Also can be a txt string. |
+{!docs/nanostream/general/nanocosmos_method_parameter_header.md!}
+| url|String | Url of the overlay source. Can be a locale path or server url to a png or txt file. Also can be a txt string. |
 
 #### Return Value
 
@@ -1253,8 +1272,8 @@ Only Supported under Microsoft Windows.
 ShowPropertyPage(value:int):int
 
 #### Parameters
-
-| value:int | **1** or **0** are possible values |
+{!docs/nanostream/general/nanocosmos_method_parameter_header.md!}
+| value|int | **1** or **0** are possible values |
 
 #### Return Value
 
@@ -1278,9 +1297,9 @@ Only supported under Microsoft Windows.
 SetLog(logFile:String, logLevel:int):int
 
 #### Parameters
-
-| logFile:String | local path for logfile as string.         |
-| logLevel:int  | log level as integer. For possible loglevels 0-9. |
+{!docs/nanostream/general/nanocosmos_method_parameter_header.md!}
+| logFile|String | local path for logfile as string.         |
+| logLevel|int  | log level as integer. For possible loglevels 0-9. |
 
 #### Return Value
 
