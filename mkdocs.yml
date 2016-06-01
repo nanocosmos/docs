@@ -4,8 +4,8 @@ pages:
 - About: about.md
 - nanostream:
   - Web:
-    -API Manual: nanostream/web/nanostream-4.x-web-api.md
-    -Javascript Integration: nanostream/web/nanostream_javascript_integration.md
+    - API Manual: 'nanostream/web/nanostream-4.x-web-api.md'
+    - Javascript Integration: 'nanostream/web/nanostream_javascript_integration.md'
   - iOS api: nanostream/ios/nanostream-ios-sdk.md
   - MacOS api: nanostream/macos/nanostream-macos-sdk.md
   - Android:
