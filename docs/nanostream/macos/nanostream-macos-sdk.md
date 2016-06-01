@@ -101,7 +101,7 @@ Recommended for HD capture: Intel Core i7 or Xeon
 #### Declaration
 
 
-```obj
+```cpp
 InitPlugin(xmlPath:String):int
 ```
 
@@ -138,7 +138,7 @@ On Windows and Mac OSX
 
 #### Declaration
 
-```obj
+```cpp
 GetVersion()
 ```
 
@@ -157,7 +157,7 @@ On Mac OSX
 
 #### Declaration
 
-```obj
+```cpp
 SetLicense(licenseStr:String):int
 ```
 
@@ -182,7 +182,7 @@ On Windows and Mac OSX
 
 #### Declaration
 
-```obj
+```cpp
 GetLicense()
 ```
 
@@ -203,7 +203,7 @@ On Mac OSX
 
 #### Declaration
 
-```obj
+```cpp
 SetConfig(property:String, value:String):int
 ```
 
@@ -294,7 +294,7 @@ Get the preview image.
 
 #### Declaration
 
-```obj
+```cpp
 GetPreviewFrame(options:int = GET\_FRAME\_BITMAP):Boolean
 ```
 
@@ -316,7 +316,7 @@ Get current preview Frame.
 
 #### Declaration
 
-```obj
+```cpp
 StartPreview():int
 ```
 
@@ -337,7 +337,7 @@ On Windows and Mac OSX
 
 #### Declaration
 
-```obj
+```cpp
 StopPreview():int
 ```
 
@@ -359,7 +359,7 @@ On Windows and Mac OSX
 
 #### Declaration
 
-```obj
+```cpp
 StartBroadcast():int
 ```
 
@@ -384,7 +384,7 @@ On Windows and Mac OSX
 
 #### Declaration
 
-```obj
+```cpp
 StopBroadcast():int
 ```
 
@@ -407,7 +407,7 @@ On Windows and Mac OSX
 
 #### Declaration
 
-```obj
+```cpp
 GetNumberOfVideoSources():int
 ```
 
@@ -428,7 +428,7 @@ On Windows and Mac OSX
 
 #### Declaration
 
-```obj
+```cpp
 GetNumberOfAudioSources():int
 ```
 
@@ -449,7 +449,7 @@ On Windows and Mac OSX
 
 #### Declaration
 
-```obj
+```cpp
 GetVideoSource(index:int):String
 ```
 
@@ -474,7 +474,7 @@ On Windows and Mac OSX
 
 #### Declaration
 
-```obj
+```cpp
 GetAudioSource(index:int):String
 ```
 
@@ -499,7 +499,7 @@ On Windows and Mac OSX
 
 #### Declaration
 
-```obj
+```cpp
 SetVideoSource(index:int, mixSource:int, mixMode:int):int
 ```
 
@@ -531,7 +531,7 @@ On Mac OSX only one video source can use. On Microsoft Windows up to two video s
 
 #### Declaration
 
-```obj
+```cpp
 SetVideoSourceFromURL(url:String):int
 ```
 
@@ -556,7 +556,7 @@ Only Supported under Microsoft Windows
 
 #### Declaration
 
-```obj
+```cpp
 SetAudioSource(index:int):int
 ```
 
@@ -584,7 +584,7 @@ Under Windows and Mac OSX
 
 #### Declaration
 
-```obj
+```cpp
 SetVideoWidth(width:int, mixSource:int):int
 ```
 
@@ -612,7 +612,7 @@ Set Width is supported under Mac OS X and Microsoft Windows. The second mix sour
 
 #### Declaration
 
-```obj
+```cpp
 SetVideoHeight(height:int, mixSource:int):int
 ```
 
@@ -640,7 +640,7 @@ Set Height is supported under Mac OS X and Microsoft Windows. The second mix sou
 
 #### Declaration
 
-```obj
+```cpp
 SetVideoResizeWidth(width:int, index:int):int
 ```
 
@@ -666,7 +666,7 @@ Only Supported under Microsoft Windows
 
 #### Declaration
 
-```obj
+```cpp
 SetVideoResizeHeight(height:int, index:int):int
 ```
 
@@ -692,7 +692,7 @@ Only supported under Microsoft Windows
 
 #### Declaration
 
-```obj
+```cpp
 SetVideoFramerate(framerate:Number, mixSource:int):int
 ```
 
@@ -740,7 +740,7 @@ On Mac OSX
 
 #### Declaration
 
-```obj
+```cpp
 SetVideoBitrate(bitrate:int, index:int):int
 ```
 
@@ -801,8 +801,8 @@ Under Mac OS X there is only one output available. Under Microsoft Windows sever
 
 #### Declaration
 
-```obj
-SetAudioBitrate(bitrate:int, index:int):int
+```cpp
+SetAudioBitrate(int bitrate, int index): int
 ```
 
 #### Parameters
@@ -830,7 +830,7 @@ Under Mac OS X the same bitrate is set to all outputs. Under Microsoft Windows e
 #### Declaration
 
 ```cpp
-GetAudioBitrate(int source)
+GetAudioBitrate(int source): int
 ```
 
 
@@ -853,8 +853,8 @@ Get the current audio bitrate.
 
 #### Declaration
 
-```obj
-SetAudioSamplerate(samplerate:int):int
+```cpp
+SetAudioSamplerate(int samplerate): int
 ```
 
 #### Parameters
@@ -878,7 +878,7 @@ Under Windows and Mac OSX.
 
 #### Declaration
 
-```obj
+```cpp
 GetAudioLevel(channel:int):int
 ```
 
@@ -903,7 +903,7 @@ Under Windows and Mac OSX.
 
 #### Declaration
 
-```obj
+```cpp
 SetAudioVolume(volume:int):int
 ```
 
@@ -928,7 +928,7 @@ Under Windows and Mac OSX.
 
 #### Declaration
 
-```obj
+```cpp
 SetAudioPreviewVolume(volume:int):int
 ```
 
@@ -955,7 +955,7 @@ Under Windows and Mac OSX.
 
 #### Declaration
 
-```obj
+```cpp
 SetColorSpace(index:int, mixSource:int):int
 ```
 
@@ -983,7 +983,7 @@ Under Windows and Mac OSX.
 
 #### Declaration
 
-```obj
+```cpp
 GetNumberOfColorspaces(width:int, height:int, mixSource:int):int
 ```
 
@@ -1012,7 +1012,7 @@ Under Windows and Mac OSX. Under Mac OSX mix source is not supported.
 
 #### Declaration
 
-```obj
+```cpp
 GetColorspace(index:int, mixSource:int):String
 ```
 
@@ -1042,7 +1042,7 @@ Under Windows and Mac OSX. Under Mac OSX only the first mix source is supported.
 
 #### Declaration
 
-```obj
+```cpp
 GetNumberOfResolutions(mixSource:int):int
 ```
 
@@ -1069,7 +1069,7 @@ Under Windows and Mac OSX. Under Mac OSX only the first mix source is supported.
 
 #### Declaration
 
-```obj
+```cpp
 GetResolution(index:int, mixSource:int):Object
 ```
 
@@ -1097,7 +1097,7 @@ Under Windows and Mac OSX. Under Mac OSX only the first mix source is supported.
 
 #### Declaration
 
-```obj
+```cpp
 GetNumberOfFramerates(width:int, height:int, colorspace:String, mixSource:int):int
 ```
 
@@ -1127,7 +1127,7 @@ Under Windows and Mac OSX. Under Mac OSX only the first mix source is supported.
 
 #### Declaration
 
-```obj
+```cpp
 GetFramerate(index:int, mixSource:int):Number
 ```
 
@@ -1155,7 +1155,7 @@ Under Windows and Mac OSX. Under Mac OSX only the first mix source is supported.
 
 #### Declaration
 
-```obj
+```cpp
 SetDeinterlacing(mode:int, method:int):int
 ```
 #### Parameters
@@ -1182,7 +1182,7 @@ Under Windows and Mac OSX.
 
 #### Declaration
 
-```obj
+```cpp
 GetNumberOfOutputs():int
 ```
 
@@ -1203,7 +1203,7 @@ Only Supported under Microsoft Windows.
 
 #### Declaration
 
-```obj
+```cpp
 AddOutput(url:String):int
 ```
 
@@ -1227,7 +1227,7 @@ Only Supported under Microsoft Windows.
 
 #### Declaration
 
-```obj
+```cpp
 SetOutputUrl(url:String, index:int):int
 ```
 
@@ -1267,7 +1267,7 @@ Under Windows and Mac OSX.
 
 #### Declaration
 
-```obj
+```cpp
 SetFilesourceFilename(url:String):int
 ```
 
@@ -1292,7 +1292,7 @@ Only Supported under Microsoft Windows.
 
 #### Declaration
 
-```obj
+```cpp
 ClearOutputs():int
 ```
 
@@ -1315,7 +1315,7 @@ Only Supported under Microsoft Windows.
 
 #### Declaration
 
-```obj
+```cpp
 SetVideoEffect(mode:int):int
 ```
 
@@ -1340,7 +1340,7 @@ Only Supported under Microsoft Windows.
 
 #### Declaration
 
-```obj
+```cpp
 SetOverlay(url:String):int
 ```
 
@@ -1365,7 +1365,7 @@ Only Supported under Microsoft Windows.
 
 #### Declaration
 
-```objectiv-c
+```cpp
 ShowPropertyPage(value:int):int
 ```
 
@@ -1392,7 +1392,7 @@ Only supported under Microsoft Windows.
 
 #### Declaration
 
-```objectiv-c
+```cpp
 SetLog(logFile:String, logLevel:int):int
 ```
 
@@ -1428,7 +1428,7 @@ Under Windows and Mac OSX.
 
 #### Declaration
 
-```obj
+```cpp
 dispose():void
 ```
 
