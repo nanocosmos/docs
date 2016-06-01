@@ -23,8 +23,44 @@ pages:
         - Delphi : 'nanostream/windows/language_integration/nanostream_delphi_integration.md'
         - VisualC : 'nanostream/windows/language_integration/nanostream_activex_visualcpp.md'
         - MFC : 'nanostream/windows/language_integration/nanostream_activex_visualcpp_mfc.md'
+  - Direct Show:
+    - Audio Volume: 'nanostream/directshow/directshow_audio_volume.md'
+    - H.264:
+      - AVC/H.264 Video Codec: 'nanostream/directshow/directshow_avc_h264.md'
+      - nanoAVC/H.264 DirectShow Decoding: 'nanostream/directshow/directshow_nanoAVC_decoding_sdk.md'
+      - nanoAVC/H.264 DirectShow Encoding: 'nanostream/directshow/directshow_nanoAVC_encoding_sdk.md'
+      - H.264 Video Decoder Filter: 'nanostream/directshow/directshow_h264_video_decoder.md'
+      - H.264 Video Encoder Filter: 'nanostream/directshow/directshow_h264_video_encoder.md'
+    - MPEG:
+      - MPEG2 Broadcast SDK: 'nanostream/directshow/directshow_mpeg2_broadcast_sdk.md'
+      - MPEG2 Video Decoder: 'nanostream/directshow/directshow_mpeg2_video_decoder.md'
+      - MPEG2 Video Encoder: 'nanostream/directshow/directshow_mpeg2_video_encoder.md'
+      - MPEG Audio Encoder: 'nanostream/directshow/directshow_mpeg_audio_encoder.md'
+    - Quicktime IMX Playback: 'nanostream/directshow/directshow_quicktime_imx.md'
+    - RTMP:
+      - RTMP Source: 'nanostream/directshow/directshow_rtmp_source.md'
+      - RTMP Writer: 'nanostream/directshow/directshow_rtmp_writer.md'
+      - RTMP Status & Statistics: 'nanostream/directshow/directshow_rtmp_status_statistics.md'
+    - RTSP:
+      - RTSP Sink: 'nanostream/directshow/directshow_rtsp_sink.md'
+      - RTSP Source: 'nanostream/directshow/directshow_rtsp_source.md'
+    - UDP/TS Streaming: 'nanostream/directshow/directshow_udp_ts_streaming.md'
+    - Video Filter:
+      - Screen Capture Filter: 'nanostream/directshow/directshow_screen_capture_filter.md'
+      - Video Mixer PiP: 'nanostream/directshow/directshow_video_mixer.md'
+      - Video Mixer Overlay: 'nanostream/directshow/directshow_overlay_mixing.md'
   - Additional Knowledge:
+      - Acoustic Echo Cancellation: 'nanostream/support/nanostream_aec.md'
+      - Audio Level: 'nanostream/support/nanostream_audio_levels.md'
+      - Bitrate Control & Statistics: 'nanostream/support/nanostream_bitrate_control_statistics.md'
+      - Latency: 'nanostream/support/nanostream_latency.md'
+      - Low Latency: 'nanostream/support/nanostream_low_latency.md'
+      - Overlay Mixer: 'nanostream/support/nanostream_mixer_overlay.md'
+      - MP4 Recording: 'nanostream/support/nanostream_mp4_recording.md'
+      - Remote Server Recording: 'nanostream/support/nanostream_remote_server_recording.md'
+      - UDP/TS Streaming: 'nanostream/support/nanostream_udp_ts_streaming.md'
       - RTMP: 'nanostream/support/nanostream_rtmp_all.md'
+
 - bintu.live :
   - Android SDK: 'bintu/android/bintu-android-sdk.md'
   - iOS:
