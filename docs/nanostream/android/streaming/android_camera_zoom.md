@@ -16,7 +16,7 @@ getZoomRatios() returns a List of Integer values, this values are the zoom ratio
 The int parameter from setZoom(int zoom) is the index of zoom ratios that returns getZoomRatios().
 #### Zoom Behavior on Camera Switch
 During a camera switch (e.g. from back to front) the zoom remains unaffected.
-### Implementation Example
+### <a name="nanostream_android_camera_zoom_impl_example"></a> Implementation Example
 ```java
 public class MainActivity extends Activity {
   private ScaleGestureDetector scaleGestureDetector;
@@ -95,4 +95,4 @@ public class MainActivity extends Activity {
 
 
 
-  [ef1c8421]: https://www.nanocosmos.de/v4/documentation/android_camera_zoom#zoom_implementation_example "Implementation Example"
+  [ef1c8421]: #nanostream_android_camera_zoom_impl_example "Implementation Example"
