@@ -67,7 +67,7 @@ pages:
 - About: about.md
 
 #theme: readthedocs
-theme: united
+theme: yeti
 
 markdown_extensions:
   - markdown_include.include
