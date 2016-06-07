@@ -29,7 +29,7 @@ The MainActivity contains the main application code. The location is:
 
 Your window should look like this:
 
-![Git-Android-Streamer](/images/2016/06/android_sample_streamer_studio.png)
+![Git-Android-Streamer](img/android_sample_streamer_studio.png)
 
 &nbsp;
 
