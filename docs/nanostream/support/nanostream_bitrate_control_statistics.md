@@ -17,7 +17,7 @@ There is a checkbox “Adaptive”, respectively “Adaptive Bitrate”, availab
 
 ### How to use Adaptive Bitrate Control
 1. Select the target bitrate, that is, the bitrate you want to achieve in the best (optimal) possible case (the maximum permitted bitrate)
-2. Set the minimum bitrate. The default of 150kB can be changed (see [Advanced Configuration Options](#Advanced Configuration Options) below).
+2. Set the minimum bitrate. The default of 150kB can be changed (see [Advanced Configuration Options](nanostream_bitrate_control_statistics.md#advanced_configuration_options) below).
 3. Make sure the checkbox “Adaptive Bitrate” is checked
 4. Start broadcasting
 
@@ -54,15 +54,17 @@ For more information about how to use the statistics, see the Javascript API and
 
 ### Advanced Configuration Options
 The internal algorithm for ABC can be adjusted by following variables, changed via `SetConfig(Option, Value)`:
-| Option | Description |
-|--------|-------------|
-| NumberOfSamplesToUse | how many samples from the statistics should be used for adjusting the bitrate, the default value is 5 |
-| BufferFillnessLimitIncBitrate | the maximum allowed buffer fillness percentage for increasing the bitrate. The default value is five percent (0.05), this value should be smaller than or equal to BufferFillnessLimitDecBitrate |
+
+| Option                        | Description                                                                                                                                                                                        |
+|-------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| NumberOfSamplesToUse          | how many samples from the statistics should be used for adjusting the bitrate, the default value is 5                                                                                              |
+| BufferFillnessLimitIncBitrate | the maximum allowed buffer fillness percentage for increasing the bitrate. The default value is five percent (0.05), this value should be smaller than or equal to BufferFillnessLimitDecBitrate   |
 | BufferFillnessLimitDecBitrate | The minimum buffer fillness percentage, in which case the bitrate is decreased. The default value is ten percent (0.1), this value should be bigger than or equal to BufferFillnessLimitIncBitrate |
-| DesiredBufferFillness | The desired buffer fillness percentage, the default value is 7.5 percent (0.075). This value should be between BufferFillnessLimitIncBitrate and BufferFillnessLimitDecBitrate |
-| MinimumBitrate | This value is the lower limit for the bitrate, the default value is 50Kb (50000) |
-| StartBitrate | The bitrate used at the start of the broadcast, the default value is 150Kb (150000) |
-| RTTLimitFactor | the bitrate is only increased, for the round trip |
+| DesiredBufferFillness         | The desired buffer fillness percentage, the default value is 7.5 percent (0.075). This value should be between BufferFillnessLimitIncBitrate and BufferFillnessLimitDecBitrate                     |
+| MinimumBitrate                | This value is the lower limit for the bitrate, the default value is 50Kb (50000)                                                                                                                   |
+| StartBitrate                  | The bitrate used at the start of the broadcast, the default value is 150Kb (150000)                                                                                                                |
+| RTTLimitFactor                | the bitrate is only increased, for the round trip                                                                                                                                                  |
+
 ### How ABC works
 When broadcasting starts the bitrate is set to the value `StartBitrate`. The bitrate will be checked and possibly adjusted every few seconds - the number of seconds is specified by the value NumberOfSamplesToUse (if set to five, every five seconds). Depending on the conditions at the moment of ckecking, the bitrate will either be increased, decreased or not changed at all. The bitrate value will neither be changed to a value higher than target bitrate (selected by the user) nor lower than the `MinimumBitrate`. If an event lowers the available bandwidth, the bitrate will be decreased accordingly. Vice versa, the bitrate will be increased if there is more bandwidth available. It can take a few minutes to reach the maximum bitrate depending on the size of the gap between the user selected target bitrate and the current bitrate.
 
