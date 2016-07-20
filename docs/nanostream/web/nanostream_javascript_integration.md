@@ -1,9 +1,10 @@
 ## Live Video Encoder - Plugin API
 
 **NOTE: This is the Plugin API for NPAPI and ActiveX.
-For using Chrome Browsers, see our nanoStream Web API 4.x
-https://www.nanocosmos.de/v4/documentation/nanostream_4.x_web_api
+For using Chrome Browsers, see our [nanoStream Web API 4.x][5092bc08]
 **
+
+
 
 ### Browser based usage with HTML and Javascript
 
@@ -123,7 +124,7 @@ nanovid1.VideoHeight = 288;		// Video Pixel Height
 nanovid1.VideoFrameRate = 15;	        // Video FPS
 
 //start the preview from the current camera
-nanovid1.StartPreview();		
+nanovid1.StartPreview();
 
 //Start Encoding/Broadcast
 nanovid1.StartBroadcast();
@@ -134,7 +135,7 @@ nanovid1.StartBroadcast();
 For simple usage, a set of Javascript functions is provided (nanoEncoder.js).
 ```javascript
 // setup a live stream to a Flash Media/Wowza server
-SetEncodingUrl("rtmp://myServer.com/live/myStream");		
+SetEncodingUrl("rtmp://myServer.com/live/myStream");
 SetVideoBitrate(400000); 	// sets the bitrate to 400 kbps
 OnStartPreview();		// calls nanovid1.StartPreview()
 OnStartBroadcast();		// calls nanovid1.StartBroadcast()
@@ -216,7 +217,7 @@ function nanoSetH264Profile(p) {
 // H.264 I-Frame Distance
 nanoSetH264IFrameDistance(50);	        // Default=50
 
-// special h264 settings                             
+// special h264 settings
 nanoSetH264Profile(0);			// 0 or "Baseline", 1 or "Main"
 nanoSetH264VlcMode(1); 		        // VLC mode: 0=auto, 1=cavlc, 2=cabac
 
@@ -275,3 +276,5 @@ Button with "StartBroadcast" event handler:
 See nanoStream.html for an example implementation.
 
 For 2.0, there are a number of additional API functions available which are documented in the separate documentation //LiveVideoEncoder-Plugin-API.
+
+  [5092bc08]: ./nanostream-4.x-web-api.md "nanoStream Web API 4.x"

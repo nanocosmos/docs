@@ -28,7 +28,7 @@ The PlayerActivity contains the main application code. The location is:
 
 Your window should look like this:
 
-<img class="alignnone wp-image-414 size-full" src="img/android_sample_player_studio.png" alt="Git-Android-Player" width="1546" height="1038" />
+![Git-Android-Player](img/android_sample_player_studio.png)
 
 **Step 4: Enter your license in the PlayerActivity**
 

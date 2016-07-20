@@ -29,7 +29,7 @@ The MainActivity contains the main application code. The location is:
 
 Your window should look like this:
 
-<img class="alignnone wp-image-426 size-full" src="img/android_sample_streamer_studio.png" alt="Git-Android-Streamer" width="1544" height="1040" />
+![Git-Android-Streamer](img/android_sample_streamer_studio.png)
 
 &nbsp;
 

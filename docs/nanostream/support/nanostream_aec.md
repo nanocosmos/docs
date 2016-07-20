@@ -82,14 +82,14 @@ To switch on AEC, use the SetConfig method of the Plugin Interface:
 ##### MS Property:
 ```
     MFPKEY_WMAAECMA_FEATR_AGC
-```    
+```
 
 #### Acoustic Echo Cancellation
 
 //Specifies the duration of echo that the acoustic echo cancellation (AEC) algorithm can handle, in milliseconds.//
 ```
     SetConfig("AEC:AecEchoLength", 1024);
-```    
+```
 
 ##### Possible Values:
 ```
@@ -98,7 +98,7 @@ To switch on AEC, use the SetConfig method of the Plugin Interface:
 ##### MS Property:
 ```
     MFPKEY_WMAAECMA_FEATR_ECHO_LENGTH
-```    
+```
 
 #### Additional Information:
 
@@ -122,12 +122,17 @@ Microsoft Voice Capture:
 #### Contact
 //Please contact us for further information, extended services are available upon request.//
 
-[[http://www.nanocosmos.de/|http://www.nanocosmos.de]]
 
-[[mailto:info@nanocosmos.de|info@nanocosmos.de]]
+[http://www.nanocosmos.de][baf6b6bb]
+
+[info@nanocosmos.de][68b1949f]
+
+
 
 (c) 2009-2012, nanocosmos gmbh
 
+[68b1949f]: mailto:info@nanocosmos.de "mailto:info@nanocosmos.de"
+[baf6b6bb]: http://www.nanocosmos.de "http://www.nanocosmos.de"
 [a1031afe]: http://support.microsoft.com/kb/310507 "http://support.microsoft.com/kb/310507"
 [ce6b1f0e]: http://msdn.microsoft.com/en-us/library/ff819492(v=vs.85).aspx "http://msdn.microsoft.com/en-us/library/ff819492(v=vs.85).aspx"
 [9ff1d5b4]: http://msdn.microsoft.com/en-us/library/ff819411(v=vs.85).aspx "http://msdn.microsoft.com/en-us/library/ff819411(v=vs.85).aspx"

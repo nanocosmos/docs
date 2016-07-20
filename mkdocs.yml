@@ -1,7 +1,6 @@
 site_name: nanocosmos Docs
 pages:
 - Home: index.md
-- About: about.md
 - nanostream:
   - Web:
     - API Manual: 'nanostream/web/nanostream-4.x-web-api.md'
@@ -60,16 +59,15 @@ pages:
       - Remote Server Recording: 'nanostream/support/nanostream_remote_server_recording.md'
       - UDP/TS Streaming: 'nanostream/support/nanostream_udp_ts_streaming.md'
       - RTMP: 'nanostream/support/nanostream_rtmp_all.md'
-
 - bintu.live :
   - Android SDK: 'bintu/android/bintu-android-sdk.md'
   - iOS:
     - SDK Documentation: 'bintu/ios/bintu_ios_sdk.md'
     - Sample Documentation: 'bintu/ios/bintu_ios_sample.md'
-  - Getting: 'bintu/index.md'
+- About: about.md
 
 #theme: readthedocs
-theme: united
+theme: yeti
 
 markdown_extensions:
   - markdown_include.include

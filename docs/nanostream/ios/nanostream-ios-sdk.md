@@ -598,6 +598,6 @@ If you encounter a crash, please send us the crash log as explained in the follo
 
 
 [4963b69c]: https://developer.apple.com/library/mac/documentation/GraphicsImaging/Reference/CGAffineTransform/ "https://developer.apple.com/library/mac/documentation/GraphicsImaging/Reference/CGAffineTransform/"
-[576689ff]: http://www.nanocosmos.de/v4/documentation/live_video_encoder_-_adaptive_bitrate#abc_modes "http://www.nanocosmos.de/v4/documentation/live_video_encoder_-_adaptive_bitrate#abc_modes"
+[576689ff]: ../support/nanostream_bitrate_control_statistics.md#abc_modes "ABC Modes"
 [734c6e6f]: https://developer.apple.com/library/ios/recipes/xcode_help-devices_organizer/articles/manage_containers.html "https://developer.apple.com/library/ios/recipes/xcode_help-devices_organizer/articles/manage_containers.html"
 [71f37b02]: https://developer.apple.com/library/ios/qa/qa1747/_index.html "https://developer.apple.com/library/ios/qa/qa1747/_index.html"
