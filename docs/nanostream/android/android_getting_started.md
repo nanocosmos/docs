@@ -1,27 +1,34 @@
-##Introduction
+## Introduction
 
 
-###Purpose
+### Purpose
 
 
 This documentation is about the nanoStream Live Video Streaming SDK for Android and can be used by software developers to integrate nanoStream Live Video Encoding into custom apps.
 
-###Requirements
+### Requirements
 
 
 -	Android 4.1+ (API Level 16)
 
-#### Required application permissions:
+#### Required permissions:
 
--	`android.permission.INTERNET`
--	`android.permission.RECORD_AUDIO`
--	`android.permission.RECORD_VIDEO`
+The nanoStream SDK for android does not request any permissions by itself.
+However, it needs a few permissions to work.
 
-#### Required application permission for local recording:
+The needed permissions are :
+* android.permission.INTERNET - This is needed since the stream should be sent over a network.
+* android.permission.RECORD_AUDIO - In case your stream is not video-only the app needs this permission to record audio data using the microphone.
+* android.permission.RECORD_VIDEO - In case your stream is not audio-only the app needs this permission to record image data using the camera.
+* android.permission.WRITE_EXTERNAL_STORAGE - In case the encoded stream should be written on the phone's memory.
 
--	`android.permission.WRITE_EXTERNAL_STORAGE`
+How these permissions should be requested depends on the used version of android.
 
-###Getting Started
+On devices with android versions prior to Android 6.0 the permissions are getting requested once per app installation. They just need to be configured within the AndroidManifest.xml file, so that the user can give the permission while installing the app.
+
+On devices with android versions from 6.0 upwards the permissions should be requested at run time when needed. It can be checked whether a permission is already granted or not. Afterwards, the needed permissions can be requested. This will create a pop-up, which asks the user to grant the needed permissions. If you are working with our BinutStreamer-Sample, an example of this can be found in the CheckAppPermission-Class.
+
+### Getting Started
 
 
 #### Copy the SDK libraries into your Android Studio project
