@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+
+	<title>MPEG2 Video Encoder - nanocosmos Docs</title>
+
+        <link href="../../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../../css/highlight.css">
+        <link href="../../../css/base.css" rel="stylesheet">
+        <link href="../../../extra.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="../../..">nanocosmos Docs</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <!-- Main navigation -->
+            <ul class="nav navbar-nav">
+            
+            
+                <li >
+                    <a href="../../..">Home</a>
+                </li>
+            
+            
+            
+                <li class="dropdown active">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">nanostream <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Web</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../web/nanostream-4.x-web-api/">API Manual</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../web/nanostream_javascript_integration/">Javascript Integration</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+                    
+                        
+<li >
+    <a href="../../ios/nanostream-ios-sdk/">iOS api</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../../macos/nanostream-macos-sdk/">MacOS api</a>
+</li>
+
+                    
+                        
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Android</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../android/android_developer_manual_streaming/">Streaming Developer Manual</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../android/android_developer_manual_playback/">Playback Developer Manual</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../android/android_developer_manual_sample/">Sample Developer Manual</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+                    
+                        
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Windows api</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../windows/windows_developer_manual/">Developer Manual</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../windows/windows_binares/">Binary Modules</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../windows/windows_license_help/">License Help</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../windows/windows_networkwriter/">RTMP Network Render & Writer</a>
+</li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Language Integration</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../windows/language_integration/nanostream_cpp_integration/">C++</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../windows/language_integration/nanostream_csharp_integration/">C#</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../windows/language_integration/nanostream_delphi_integration/">Delphi</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../windows/language_integration/nanostream_activex_visualcpp/">VisualC</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../windows/language_integration/nanostream_activex_visualcpp_mfc/">MFC</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+    </ul>
+  </li>
+
+                    
+                        
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Direct Show</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../directshow_audio_volume/">Audio Volume</a>
+</li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">H.264</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../directshow_avc_h264/">AVC/H.264 Video Codec</a>
+</li>
+
+        
+            
+<li >
+    <a href="../directshow_nanoAVC_decoding_sdk/">nanoAVC/H.264 DirectShow Decoding</a>
+</li>
+
+        
+            
+<li >
+    <a href="../directshow_nanoAVC_encoding_sdk/">nanoAVC/H.264 DirectShow Encoding</a>
+</li>
+
+        
+            
+<li >
+    <a href="../directshow_h264_video_decoder/">H.264 Video Decoder Filter</a>
+</li>
+
+        
+            
+<li >
+    <a href="../directshow_h264_video_encoder/">H.264 Video Encoder Filter</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">MPEG</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../directshow_mpeg2_broadcast_sdk/">MPEG2 Broadcast SDK</a>
+</li>
+
+        
+            
+<li >
+    <a href="../directshow_mpeg2_video_decoder/">MPEG2 Video Decoder</a>
+</li>
+
+        
+            
+<li class="active">
+    <a href="./">MPEG2 Video Encoder</a>
+</li>
+
+        
+            
+<li >
+    <a href="../directshow_mpeg_audio_encoder/">MPEG Audio Encoder</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+            
+<li >
+    <a href="../directshow_quicktime_imx/">Quicktime IMX Playback</a>
+</li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">RTMP</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../directshow_rtmp_source/">RTMP Source</a>
+</li>
+
+        
+            
+<li >
+    <a href="../directshow_rtmp_writer/">RTMP Writer</a>
+</li>
+
+        
+            
+<li >
+    <a href="../directshow_rtmp_status_statistics/">RTMP Status & Statistics</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">RTSP</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../directshow_rtsp_sink/">RTSP Sink</a>
+</li>
+
+        
+            
+<li >
+    <a href="../directshow_rtsp_source/">RTSP Source</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+            
+<li >
+    <a href="../directshow_udp_ts_streaming/">UDP/TS Streaming</a>
+</li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Video Filter</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../directshow_screen_capture_filter/">Screen Capture Filter</a>
+</li>
+
+        
+            
+<li >
+    <a href="../directshow_video_mixer/">Video Mixer PiP</a>
+</li>
+
+        
+            
+<li >
+    <a href="../directshow_overlay_mixing/">Video Mixer Overlay</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+    </ul>
+  </li>
+
+                    
+                        
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Additional Knowledge</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../support/nanostream_aec/">Acoustic Echo Cancellation</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../support/nanostream_audio_levels/">Audio Level</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../support/nanostream_bitrate_control_statistics/">Bitrate Control & Statistics</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../support/nanostream_latency/">Latency</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../support/nanostream_low_latency/">Low Latency</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../support/nanostream_mixer_overlay/">Overlay Mixer</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../support/nanostream_mp4_recording/">MP4 Recording</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../support/nanostream_remote_server_recording/">Remote Server Recording</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../support/nanostream_udp_ts_streaming/">UDP/TS Streaming</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../support/nanostream_rtmp_all/">RTMP</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">bintu.live <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+<li >
+    <a href="../../../bintu/android/bintu-android-sdk/">Android SDK</a>
+</li>
+
+                    
+                        
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">iOS</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../../bintu/ios/bintu_ios_sdk/">SDK Documentation</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../../bintu/ios/bintu_ios_sample/">Sample Documentation</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li >
+                    <a href="../../../about/">About</a>
+                </li>
+            
+            
+            </ul>
+
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                <li >
+                    <a rel="next" href="../directshow_mpeg2_video_decoder/">
+                        <i class="fa fa-arrow-left"></i> Previous
+                    </a>
+                </li>
+                <li >
+                    <a rel="prev" href="../directshow_mpeg_audio_encoder/">
+                        Next <i class="fa fa-arrow-right"></i>
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#nanocosmos_mpeg-2_video_encoder_filter">nanocosmos MPEG-2 Video Encoder Filter</a></li>
+        
+            <li><a href="#directshow_filter_module">DirectShow Filter / Module</a></li>
+        
+            <li><a href="#directshow_connectivity">DirectShow Connectivity</a></li>
+        
+            <li><a href="#configuration">Configuration</a></li>
+        
+            <li><a href="#setting_the_license_to_unlock_filter">Setting the license to unlock filter</a></li>
+        
+            <li><a href="#common_encoder_settings">Common Encoder Settings</a></li>
+        
+            <li><a href="#configuration_through_inanocodecopts_interface">Configuration through INanoCodecOpts interface</a></li>
+        
+            <li><a href="#configuration_through_directshow_filter_property_page">Configuration through DirectShow  filter property page</a></li>
+        
+            <li><a href="#debug-log_configuration_registry_settings">Debug-Log Configuration Registry Settings</a></li>
+        
+    
+    </ul>
+</div></div>
+            <div class="col-md-9" role="main">
+
+<h2 id="nanocosmos_mpeg-2_video_encoder_filter">nanocosmos MPEG-2 Video Encoder Filter<a class="headerlink" href="#nanocosmos_mpeg-2_video_encoder_filter" title="Permanent link">&para;</a></h2>
+<h3 id="directshow_filter_module">DirectShow Filter / Module<a class="headerlink" href="#directshow_filter_module" title="Permanent link">&para;</a></h3>
+<p>nanocosmos MPEG-2 Video Encoder\
+Module Name: nmpeg2enc.ax</p>
+<h3 id="directshow_connectivity">DirectShow Connectivity<a class="headerlink" href="#directshow_connectivity" title="Permanent link">&para;</a></h3>
+<p>The input is accepting connections to video source, capture and decoder filters matching the following media types:</p>
+<p>Major types:
+  * MEDIATYPE_Video</p>
+<p>Subtypes:
+  * MEDIASUBTYPE_YV12,
+  * MEDIASUBTYPE_I420,
+  * MEDIASUBTYPE_YUY2,
+  * MEDIASUBTYPE_UYVY,
+  * MEDIASUBTYPE_HDYC,
+  * MEDIASUBTYPE_RGB24,
+  * MEDIASUBTYPE_RGB32,
+  * MEDIASUBTYPE_ARGB32,
+  * MEDIASUBTYPE_RGB565,</p>
+<p>Formats:
+  * FORMAT_VideoInfo
+  * FORMAT_VideoInfo2</p>
+<p>The output supports these media types:</p>
+<p>Major types:
+  * MEDIATYPE_Video</p>
+<p>Subtypes:
+  * MEDIASUBTYPE_MPEG2_VIDEO,
+  * MEDIASUBTYPE_mpgv</p>
+<p>Formats:
+  * FORMAT_MPEG2_VIDEO,
+  * FORMAT_NONE</p>
+<h3 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h3>
+<p>The encoding configuration may be set by using either the property page or the COM Interface INanoCodecOpts as declared in header file INanoCodecOpts.h .</p>
+<pre><code class="cpp">// Filter GUID
+// {2327A344-BECC-4f4f-89C6-DABDC5143832}
+DEFINE_GUID(CLSID_NANO_MPEG2_ENCODER, 0x2327a344, 0xbecc, 0x4f4f, 0x89, 0xc6, 0xda, 0xbd, 0xc5, 0x14, 0x38, 0x32);
+
+// Property Page GUID
+// {8A84396A-277A-4835-9EB5-719863194DC9}
+DEFINE_GUID(CLSID_NANO_MPEG2_ENCODER_PROPPAGE, 0x8a84396a, 0x277a, 0x4835, 0x9e, 0xb5, 0x71, 0x98, 0x63, 0x19, 0x4d, 0xc9);
+
+// Configuration Interface GUID
+// {698E0F57-B828-4c40-8867-095FF49F77D6}
+DEFINE_GUID(IID_INanoCodecOpts, 0x698e0f57, 0xb828, 0x4c40, 0x88, 0x67, 0x9, 0x5f, 0xf4, 0x9f, 0x77, 0xd6);
+
+// Configuration interface ICodecProp
+// {0F817204-82C8-4c12-884A-F45FB2F33A6E}
+DEFINE_GUID(IID_ICodecProp, 0xf817204, 0x82c8, 0x4c12, 0x88, 0x4a, 0xf4, 0x5f, 0xb2, 0xf3, 0x3a, 0x6e);
+
+// ICodecProp: IID_nanoPeg_LicenseString
+// type: BSTR / Unicode string
+// Set license string to unlock filter
+// {1788F0B0-5985-4a19-B7FE-8AAC1BFC14B3}
+DEFINE_GUID(IID_nanoPeg_LicenseString, 0x1788f0b0, 0x5985, 0x4a19, 0xb7, 0xfe, 0x8a, 0xac, 0x1b, 0xfc, 0x14, 0xb3);
+</code></pre>
+
+<h3 id="setting_the_license_to_unlock_filter">Setting the license to unlock filter<a class="headerlink" href="#setting_the_license_to_unlock_filter" title="Permanent link">&para;</a></h3>
+<p>The filter can be unlocked either through a license key entry in the windows registry or
+by setting the license key through COM interface ICodecProp::SetProperty with the
+property <strong>IID_nanoPeg_LicenseString</strong> as first parameter. The second license parameter
+has to be a wide/unicode string!</p>
+<h3 id="common_encoder_settings">Common Encoder Settings<a class="headerlink" href="#common_encoder_settings" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Default values</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>profile, level</td>
+<td>Main Profile, Main Level</td>
+<td>MPEG-2 Profile and Level</td>
+</tr>
+<tr>
+<td>base_video.bitrate_kb</td>
+<td>Profile and Level dependend</td>
+<td>Video Bitrate in kBits/second</td>
+</tr>
+<tr>
+<td>base_video.resolution.width</td>
+<td>0 - use input width</td>
+<td>Picture Coding Width</td>
+</tr>
+<tr>
+<td>base_video.resolution.height</td>
+<td>0 - use input height</td>
+<td>Picture Coding Height</td>
+</tr>
+<tr>
+<td>chroma_format_idc</td>
+<td>0 - I420, 1 - I422</td>
+<td>[0,1] Chroma Format</td>
+</tr>
+<tr>
+<td>rate_method</td>
+<td>0 - CBR, 1 - VBR</td>
+<td>[0,1] Rate Control Mode</td>
+</tr>
+<tr>
+<td>distance_i</td>
+<td>12</td>
+<td>Intra Frame Distance / GOP len.</td>
+</tr>
+<tr>
+<td>distance_p</td>
+<td>3</td>
+<td>P Frame Distance</td>
+</tr>
+</tbody>
+</table>
+<h3 id="configuration_through_inanocodecopts_interface">Configuration through INanoCodecOpts interface<a class="headerlink" href="#configuration_through_inanocodecopts_interface" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Version check by calling //GetCodecOptsVersion//// //(optional)</li>
+<li>Instanciating a parameter structure of type //MPDX4_MPEG2EncoderParams//</li>
+<li>Initializing the parameter struct by calling //InitCodecOptions// will set all parameters to default values for the selected profile and level</li>
+<li>Setting custom values for resolution and bitrate</li>
+<li>Applying settings by calling //SetCodecOptions//</li>
+</ul>
+<p>Here a code snippet without error handling to show configuration for IMX 50 format:</p>
+<pre><code class="cpp">#include &quot;mpeg2_enc_params.h&quot;
+
+HRESULT hr = S_OK;
+
+// Query INanoCodecOpts interface from IBaseFilter interface
+// of MPEG-2 Encoder filter
+CComQIPtr&lt;INanoCodecOpts&gt; pNanoCodecOpts = pBaseFilter;
+
+MPDX4_MPEG2EncoderParams mpeg2EncParams;
+memset(&amp;mpeg2EncParams, 0, sizeof(MPDX4_MPEG2EncoderParams));
+
+// Set desired profile and level values
+mpeg2EncParams.profile = MPDX4_MPEG2_PROFILE_422IMX;
+mpeg2EncParams.level = MPDX4_MPEG2_LEVEL_MAIN;
+
+// Intialize the parameter struct according to profile and level set
+hr = pNanoCodecOpts-&gt;InitCodecOptions((MPDX4_BaseCodecOpts*) &amp;mpeg2EncParams, INANOCODECOPTS_VERSION);
+
+// Set custom parameter values
+// Bitrate
+mpeg2EncParams.base_video.bitrate_kb = 50000; // IMX 50
+// If resize is needed
+mpeg2EncParams.base_video.resolution.width = 720;
+mpeg2EncParams.base_video.resolution.height = 608;
+
+// Apply settings and finish configuration
+hr = pNanoCodecOpts-&gt;SetCodecOptions((MPDX4_BaseCodecOpts*) &amp;mpeg2EncParams, INANOCODECOPTS_VERSION);
+</code></pre>
+
+<h3 id="configuration_through_directshow_filter_property_page">Configuration through DirectShow  filter property page<a class="headerlink" href="#configuration_through_directshow_filter_property_page" title="Permanent link">&para;</a></h3>
+<p>The filter&rsquo;s property page offers a subset of encoding parameters, containing the most important options.</p>
+<p><img alt="MPEG-2 Video Encoder Properties" src="../img/directshow_mpeg2_video_enc_prop.png" /></p>
+<h3 id="debug-log_configuration_registry_settings">Debug-Log Configuration Registry Settings<a class="headerlink" href="#debug-log_configuration_registry_settings" title="Permanent link">&para;</a></h3>
+<p>Key: HKEY_CURRENT_USER\Software\DebugNano\nmpeg2enc.ax</p>
+<h4 id="file_name">File name<a class="headerlink" href="#file_name" title="Permanent link">&para;</a></h4>
+<p>Sets the output file name. The folder must already exist.
+  * Value name:     LogToFile
+  * Value type:            REG_SZ / String
+  * Valid values:   a valid output file name to enable file logging or an empty string</p>
+<h4 id="logging_level">Logging level<a class="headerlink" href="#logging_level" title="Permanent link">&para;</a></h4>
+<p>A higher value increases the amount of logging messages sent, and messages get more detailed.
+  * Value name:     TRACE
+  * Value type:     REG_DWORD
+  * Valid values:
+    * 0 - minimal logging
+    * …
+    * 9 - maximal logging</p></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            
+            <center>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</center>
+        </footer>
+
+        <script src="../../../js/jquery-1.10.2.min.js"></script>
+        <script src="../../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../../js/highlight.pack.js"></script>
+        <script>var base_url = '../../..';</script>
+        <script data-main="../../../mkdocs/js/search.js" src="../../../mkdocs/js/require.js"></script>
+        <script src="../../../js/base.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>
+                            From here you can search these documents. Enter
+                            your search terms below.
+                        </p>
+                        <form role="form">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                            </div>
+                        </form>
+                        <div id="mkdocs-search-results"></div>
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

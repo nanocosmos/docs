@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>H.264 Video Encoder Filter - nanocosmos Docs</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "H.264 Video Encoder Filter";
+    var mkdocs_page_input_path = "nanostream/directshow/directshow_h264_video_encoder.md";
+    var mkdocs_page_url = "/nanostream/directshow/directshow_h264_video_encoder/";
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> nanocosmos Docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../..">Home</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>nanostream</span></li>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Web</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../web/nanostream-4.x-web-api/">API Manual</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../web/nanostream_javascript_integration/">Javascript Integration</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../ios/nanostream-ios-sdk/">iOS api</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../macos/nanostream-macos-sdk/">MacOS api</a>
+        
+    </li>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Android</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../android/android_developer_manual_streaming/">Streaming Developer Manual</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../android/android_developer_manual_playback/">Playback Developer Manual</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../android/android_developer_manual_sample/">Sample Developer Manual</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Windows api</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../windows/windows_developer_manual/">Developer Manual</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../windows/windows_binares/">Binary Modules</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../windows/windows_license_help/">License Help</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../windows/windows_networkwriter/">RTMP Network Render & Writer</a>
+        
+    </li>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Language Integration</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../windows/language_integration/nanostream_cpp_integration/">C++</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../windows/language_integration/nanostream_csharp_integration/">C#</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../windows/language_integration/nanostream_delphi_integration/">Delphi</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../windows/language_integration/nanostream_activex_visualcpp/">VisualC</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../windows/language_integration/nanostream_activex_visualcpp_mfc/">MFC</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+    </ul>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Direct Show</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../directshow_audio_volume/">Audio Volume</a>
+        
+    </li>
+
+        
+            
+    <ul class="subnav">
+    <li><span>H.264</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../directshow_avc_h264/">AVC/H.264 Video Codec</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../directshow_nanoAVC_decoding_sdk/">nanoAVC/H.264 DirectShow Decoding</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../directshow_nanoAVC_encoding_sdk/">nanoAVC/H.264 DirectShow Encoding</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../directshow_h264_video_decoder/">H.264 Video Decoder Filter</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="./">H.264 Video Encoder Filter</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#nanocosmos_mpeg-2_broadcast_directshow_sdk">nanocosmos MPEG-2 Broadcast DirectShow SDK</a></li>
+                
+                    <li><a class="toctree-l4" href="#introduction">Introduction</a></li>
+                
+                    <li><a class="toctree-l4" href="#major_features">Major Features</a></li>
+                
+                    <li><a class="toctree-l4" href="#documentation">Documentation</a></li>
+                
+                    <li><a class="toctree-l4" href="#filter_components">Filter components</a></li>
+                
+                    <li><a class="toctree-l4" href="#registering_and_unregistering_components_in_the_directshow_framework">Registering and unregistering components in the DirectShow framework</a></li>
+                
+                    <li><a class="toctree-l4" href="#filter_activation">Filter activation</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+        
+    </ul>
+
+        
+            
+    <ul class="subnav">
+    <li><span>MPEG</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../directshow_mpeg2_broadcast_sdk/">MPEG2 Broadcast SDK</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../directshow_mpeg2_video_decoder/">MPEG2 Video Decoder</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../directshow_mpeg2_video_encoder/">MPEG2 Video Encoder</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../directshow_mpeg_audio_encoder/">MPEG Audio Encoder</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../directshow_quicktime_imx/">Quicktime IMX Playback</a>
+        
+    </li>
+
+        
+            
+    <ul class="subnav">
+    <li><span>RTMP</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../directshow_rtmp_source/">RTMP Source</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../directshow_rtmp_writer/">RTMP Writer</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../directshow_rtmp_status_statistics/">RTMP Status & Statistics</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+            
+    <ul class="subnav">
+    <li><span>RTSP</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../directshow_rtsp_sink/">RTSP Sink</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../directshow_rtsp_source/">RTSP Source</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../directshow_udp_ts_streaming/">UDP/TS Streaming</a>
+        
+    </li>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Video Filter</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../directshow_screen_capture_filter/">Screen Capture Filter</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../directshow_video_mixer/">Video Mixer PiP</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../directshow_overlay_mixing/">Video Mixer Overlay</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+    </ul>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Additional Knowledge</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../support/nanostream_aec/">Acoustic Echo Cancellation</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../support/nanostream_audio_levels/">Audio Level</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../support/nanostream_bitrate_control_statistics/">Bitrate Control & Statistics</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../support/nanostream_latency/">Latency</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../support/nanostream_low_latency/">Low Latency</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../support/nanostream_mixer_overlay/">Overlay Mixer</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../support/nanostream_mp4_recording/">MP4 Recording</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../support/nanostream_remote_server_recording/">Remote Server Recording</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../support/nanostream_udp_ts_streaming/">UDP/TS Streaming</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../support/nanostream_rtmp_all/">RTMP</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>bintu.live</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../../bintu/android/bintu-android-sdk/">Android SDK</a>
+        
+    </li>
+
+        
+            
+    <ul class="subnav">
+    <li><span>iOS</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../../bintu/ios/bintu_ios_sdk/">SDK Documentation</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../../bintu/ios/bintu_ios_sample/">Sample Documentation</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../../about/">About</a>
+        
+    </li>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">nanocosmos Docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Direct Show &raquo;</li>
+        
+      
+        
+          <li>H.264 &raquo;</li>
+        
+      
+    
+    <li>H.264 Video Encoder Filter</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h2 id="nanocosmos_mpeg-2_broadcast_directshow_sdk">nanocosmos MPEG-2 Broadcast DirectShow SDK<a class="headerlink" href="#nanocosmos_mpeg-2_broadcast_directshow_sdk" title="Permanent link">&para;</a></h2>
+<h3 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h3>
+<p>Nanocosmos MPEG-2 Broadcast DirectShow  SDK enables you to perform high quality and high performance video coding for the latest generation video and audio coding standards. It is intended to develop video encoding / transcoding applications based on Microsoft DirectShow technology.\  </p>
+<h3 id="major_features">Major Features<a class="headerlink" href="#major_features" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Encoding of MPEG-2 video streams in Main and High profile</li>
+<li>Highly optimized software coding with support for latest CPU  technology by Intel and AMD (SSE2/SSE3/SSE4 and Dual-Core/Core-Duo, AMD Athlon64</li>
+<li>Real-time Encoding from Capture cards is supported</li>
+<li>File Reader for MOV and MXF</li>
+<li>File Writer for MOV and MXF</li>
+</ul>
+<h3 id="documentation">Documentation<a class="headerlink" href="#documentation" title="Permanent link">&para;</a></h3>
+<p>The SDK\doc folder contains further documentation for the following filters:</p>
+<ul>
+<li>MPEG-2 Video Decoder</li>
+<li>MPEG-2 Video Encoder</li>
+<li>QuickTime Source</li>
+<li>QuickTime Writer</li>
+<li>MXF Reader</li>
+<li>MXF Writer</li>
+</ul>
+<p>//Contact us for additional modules for MPEG Audio Encoding and Multiplexing//</p>
+<h3 id="filter_components">Filter components<a class="headerlink" href="#filter_components" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>nanocosmos MPEG-2 Video Decoder</p>
+<ul>
+<li>Module:       nmpeg2dec.ax</li>
+<li>CLSID:        {223784F1-4D9F-45A5-8281-8F9AFCABD904}</li>
+</ul>
+</li>
+<li>
+<p>nanocosmos MPEG-2 Video Encoder</p>
+<ul>
+<li>Module:       nmpeg2enc.ax</li>
+<li>CLSID:        {2327A344-BECC-4F4F-89C6-DABDC5143832}</li>
+</ul>
+</li>
+<li>
+<p>nanocosmos QuickTime Source Filter</p>
+<ul>
+<li>Module:       nqtsource.ax</li>
+<li>CLSID:        {53718C99-F067-4609-8184-A8A92A241A5A}</li>
+</ul>
+</li>
+<li>
+<p>nanocosmos Quicktime Writer (MPEG2/Broadcast)</p>
+<ul>
+<li>Module:       nmp4mux.ax</li>
+<li>CLSID:        {C2FB362B-CE6C-4797-BC16-F81976DFEF61}</li>
+</ul>
+</li>
+<li>
+<p>nanocosmos MXF Reader</p>
+<ul>
+<li>Module:       nh264dec.ax</li>
+<li>CLSID:        {A3462D0F-3BD0-48A2-BD91-A1366CFC35BB}</li>
+</ul>
+</li>
+<li>
+<p>nanocosmos MXF Writer</p>
+<ul>
+<li>Module:       nh264dec.ax</li>
+<li>CLSID:        {C1C2C181-EBDA-421F-895F-638A4C5F132B}</li>
+</ul>
+</li>
+<li>
+<p>nanocosmos MPEG PS/TS Stream Splitter</p>
+<ul>
+<li>Module:       nmpegsplitter.ax</li>
+<li>CLSID:        {0994D1E8-B697-47DE-B1E3-36D26937D5B4}</li>
+</ul>
+</li>
+<li>
+<p>nanocosmos File Dump Filter</p>
+<ul>
+<li>Module:       nanodump.ax</li>
+<li>CLSID:        {DA67A541-8FEA-11D4-A908-00105A6758CF}</li>
+</ul>
+</li>
+</ul>
+<h3 id="registering_and_unregistering_components_in_the_directshow_framework">Registering and unregistering components in the DirectShow framework<a class="headerlink" href="#registering_and_unregistering_components_in_the_directshow_framework" title="Permanent link">&para;</a></h3>
+<p>In order to use them, filters must be registered in the DirectShow framework. After
+installation all filters are registered. To re-register or unregister components, execute the RegisterFilters.bat or UnregisterFilters.bat batch files from the SDK/bin folder.</p>
+<h3 id="filter_activation">Filter activation<a class="headerlink" href="#filter_activation" title="Permanent link">&para;</a></h3>
+<p>Filters can be activated by installing a license key to windows registry or programmatically by setting a license key through the software interface of a filter instance. How to set license keys to unlock filters is described in the module&rsquo;s documents.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../directshow_mpeg2_broadcast_sdk/" class="btn btn-neutral float-right" title="MPEG2 Broadcast SDK">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../directshow_h264_video_decoder/" class="btn btn-neutral" title="H.264 Video Decoder Filter"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+    
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../directshow_h264_video_decoder/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../directshow_mpeg2_broadcast_sdk/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script src="../../../js/theme.js"></script>
+
+</body>
+</html>

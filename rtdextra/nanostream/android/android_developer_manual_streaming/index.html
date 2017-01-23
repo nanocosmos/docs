@@ -1,0 +1,1658 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>Streaming Developer Manual - nanocosmos Docs</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/highlight.css">
+  <link href="../../../extra.css" rel="stylesheet">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Streaming Developer Manual";
+    var mkdocs_page_input_path = "nanostream/android/android_developer_manual_streaming.md";
+    var mkdocs_page_url = "/nanostream/android/android_developer_manual_streaming/";
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> nanocosmos Docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../..">Home</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>nanostream</span></li>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Web</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../web/nanostream-4.x-web-api/">API Manual</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../web/nanostream_javascript_integration/">Javascript Integration</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../ios/nanostream-ios-sdk/">iOS api</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../macos/nanostream-macos-sdk/">MacOS api</a>
+        
+    </li>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Android</span></li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Streaming Developer Manual</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#nanostream_sdk_android_streaming_developer_manual">nanoStream SDK Android: Streaming Developer Manual</a></li>
+                
+                    <li><a class="toctree-l4" href="#introduction">Introduction</a></li>
+                
+                    <li><a class="toctree-l4" href="#resolution_aspect_ratio_and_orientation">Resolution, Aspect Ratio and Orientation</a></li>
+                
+                    <li><a class="toctree-l4" href="#rotationhelper_class">RotationHelper Class</a></li>
+                
+                    <li><a class="toctree-l4" href="#stream_type">Stream Type</a></li>
+                
+                    <li><a class="toctree-l4" href="#server_authentication">Server Authentication</a></li>
+                
+                    <li><a class="toctree-l4" href="#android_mp4_recording">Android MP4 Recording</a></li>
+                
+                    <li><a class="toctree-l4" href="#snapshot">Snapshot</a></li>
+                
+                    <li><a class="toctree-l4" href="#adaptive_bitrate_streaming">Adaptive Bitrate Streaming</a></li>
+                
+                    <li><a class="toctree-l4" href="#rtmp_quality_statistics">RTMP Quality Statistics</a></li>
+                
+                    <li><a class="toctree-l4" href="#camera_zoom">Camera Zoom</a></li>
+                
+                    <li><a class="toctree-l4" href="#camera_focus">Camera Focus</a></li>
+                
+                    <li><a class="toctree-l4" href="#devicesproperties">DevicesProperties</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#further_questions">Further questions?</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#crash_logs">Crash Logs</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../android_developer_manual_playback/">Playback Developer Manual</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../android_developer_manual_sample/">Sample Developer Manual</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Windows api</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../windows/windows_developer_manual/">Developer Manual</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../windows/windows_binares/">Binary Modules</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../windows/windows_license_help/">License Help</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../windows/windows_networkwriter/">RTMP Network Render & Writer</a>
+        
+    </li>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Language Integration</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../windows/language_integration/nanostream_cpp_integration/">C++</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../windows/language_integration/nanostream_csharp_integration/">C#</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../windows/language_integration/nanostream_delphi_integration/">Delphi</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../windows/language_integration/nanostream_activex_visualcpp/">VisualC</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../windows/language_integration/nanostream_activex_visualcpp_mfc/">MFC</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+    </ul>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Direct Show</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../directshow/directshow_audio_volume/">Audio Volume</a>
+        
+    </li>
+
+        
+            
+    <ul class="subnav">
+    <li><span>H.264</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../directshow/directshow_avc_h264/">AVC/H.264 Video Codec</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../directshow/directshow_nanoAVC_decoding_sdk/">nanoAVC/H.264 DirectShow Decoding</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../directshow/directshow_nanoAVC_encoding_sdk/">nanoAVC/H.264 DirectShow Encoding</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../directshow/directshow_h264_video_decoder/">H.264 Video Decoder Filter</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../directshow/directshow_h264_video_encoder/">H.264 Video Encoder Filter</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+            
+    <ul class="subnav">
+    <li><span>MPEG</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../directshow/directshow_mpeg2_broadcast_sdk/">MPEG2 Broadcast SDK</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../directshow/directshow_mpeg2_video_decoder/">MPEG2 Video Decoder</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../directshow/directshow_mpeg2_video_encoder/">MPEG2 Video Encoder</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../directshow/directshow_mpeg_audio_encoder/">MPEG Audio Encoder</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../directshow/directshow_quicktime_imx/">Quicktime IMX Playback</a>
+        
+    </li>
+
+        
+            
+    <ul class="subnav">
+    <li><span>RTMP</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../directshow/directshow_rtmp_source/">RTMP Source</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../directshow/directshow_rtmp_writer/">RTMP Writer</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../directshow/directshow_rtmp_status_statistics/">RTMP Status & Statistics</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+            
+    <ul class="subnav">
+    <li><span>RTSP</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../directshow/directshow_rtsp_sink/">RTSP Sink</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../directshow/directshow_rtsp_source/">RTSP Source</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../directshow/directshow_udp_ts_streaming/">UDP/TS Streaming</a>
+        
+    </li>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Video Filter</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../directshow/directshow_screen_capture_filter/">Screen Capture Filter</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../directshow/directshow_video_mixer/">Video Mixer PiP</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../directshow/directshow_overlay_mixing/">Video Mixer Overlay</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+    </ul>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Additional Knowledge</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../support/nanostream_aec/">Acoustic Echo Cancellation</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../support/nanostream_audio_levels/">Audio Level</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../support/nanostream_bitrate_control_statistics/">Bitrate Control & Statistics</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../support/nanostream_latency/">Latency</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../support/nanostream_low_latency/">Low Latency</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../support/nanostream_mixer_overlay/">Overlay Mixer</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../support/nanostream_mp4_recording/">MP4 Recording</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../support/nanostream_remote_server_recording/">Remote Server Recording</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../support/nanostream_udp_ts_streaming/">UDP/TS Streaming</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../support/nanostream_rtmp_all/">RTMP</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>bintu.live</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../../bintu/android/bintu-android-sdk/">Android SDK</a>
+        
+    </li>
+
+        
+            
+    <ul class="subnav">
+    <li><span>iOS</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../../bintu/ios/bintu_ios_sdk/">SDK Documentation</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../../bintu/ios/bintu_ios_sample/">Sample Documentation</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../../about/">About</a>
+        
+    </li>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">nanocosmos Docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>nanostream &raquo;</li>
+        
+      
+        
+          <li>Android &raquo;</li>
+        
+      
+    
+    <li>Streaming Developer Manual</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="nanostream_sdk_android_streaming_developer_manual">nanoStream SDK Android: Streaming Developer Manual<a class="headerlink" href="#nanostream_sdk_android_streaming_developer_manual" title="Permanent link">&para;</a></h1>
+<h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
+<h3 id="purpose">Purpose<a class="headerlink" href="#purpose" title="Permanent link">&para;</a></h3>
+<p>This documentation is about the nanoStream Live Video Streaming SDK for Android and can be used by software developers to integrate nanoStream Live Video Encoding into custom apps.</p>
+<h3 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Android 4.1+ (API Level 16)</li>
+</ul>
+<h4 id="required_permissions">Required permissions:<a class="headerlink" href="#required_permissions" title="Permanent link">&para;</a></h4>
+<p>The nanoStream SDK for android does not request any permissions by itself.
+However, it needs a few permissions to work.</p>
+<p>The needed permissions are :
+<em> android.permission.INTERNET - This is needed since the stream should be sent over a network.
+</em> android.permission.RECORD_AUDIO - In case your stream is not video-only the app needs this permission to record audio data using the microphone.
+<em> android.permission.RECORD_VIDEO - In case your stream is not audio-only the app needs this permission to record image data using the camera.
+</em> android.permission.WRITE_EXTERNAL_STORAGE - In case the encoded stream should be written on the phone&rsquo;s memory.</p>
+<p>How these permissions should be requested depends on the used version of android.</p>
+<p>On devices with android versions prior to Android 6.0 the permissions are getting requested once per app installation. They just need to be configured within the AndroidManifest.xml file, so that the user can give the permission while installing the app.</p>
+<p>On devices with android versions from 6.0 upwards the permissions should be requested at run time when needed. It can be checked whether a permission is already granted or not. Afterwards, the needed permissions can be requested. This will create a pop-up, which asks the user to grant the needed permissions. If you are working with our BinutStreamer-Sample, an example of this can be found in the CheckAppPermission-Class.</p>
+<h3 id="getting_started">Getting Started<a class="headerlink" href="#getting_started" title="Permanent link">&para;</a></h3>
+<h4 id="copy_the_sdk_libraries_into_your_android_studio_project">Copy the SDK libraries into your Android Studio project<a class="headerlink" href="#copy_the_sdk_libraries_into_your_android_studio_project" title="Permanent link">&para;</a></h4>
+<p>Add the <code>net.nanocosmos.nanoStream.jar</code> java component to your Android Studio project by copying <code>[SDK]/libs/net.nanocosmos.nanoStream.jar</code> to the folder <code>[projectpath]/app/libs/net.nanocosmos.nanoStream.jar</code> Add the <code>nanoStream.so</code> native components to the Android Studio project by copying the 5 folders <code>[SDK]/libs/[platform]/libRTMPStream.so</code> to [projectpath]/app/src/main/jniLibs/[platform]/libRTMPStream.so`</p>
+<p>Platforms are armeabi, armeabi-v7a, arm64-v8a, x86, mips</p>
+<h4 id="add_the_nanostream_to_the_gradle_file">Add the nanoStream to the gradle file<a class="headerlink" href="#add_the_nanostream_to_the_gradle_file" title="Permanent link">&para;</a></h4>
+<p>Open the build.gradle file (Module:app) and add</p>
+<pre><code>compile files('libs/net.nanocosmos.nanoStream.jar')
+</code></pre>
+
+<p>to the dependencies section.</p>
+<h4 id="check_library_version">Check library version<a class="headerlink" href="#check_library_version" title="Permanent link">&para;</a></h4>
+<pre><code class="java">String nanoStreamVersion = nanoStream.getVersion().fullVersion;
+</code></pre>
+
+<h4 id="initialize_the_library">Initialize the library<a class="headerlink" href="#initialize_the_library" title="Permanent link">&para;</a></h4>
+<p>Implement the interface &ldquo;nanoStreamEventListener&rdquo; in your class:</p>
+<pre><code class="java">public class StreamActivity extends Activity implements NanostreamEventListener {
+  // implement your class
+
+  private class NotificationRunable implements Runnable {
+     private NanostreamEvent m_event;
+
+     public NotificationRunable(NanostreamEvent event) {
+      m_event = event;
+     }
+
+     @Override
+     public void run() {
+       Toast.makeText(getApplicationContext(), m_event.GetDescription(), Toast.LENGTH_SHORT).show();
+     }
+   }
+
+  @Override
+  public void onNanostreamEvent(NanostreamEvent event) {
+    if (event.GetType() != NanostreamEvent.TYPE_RTMP_QUALITY) {
+      this.runOnUiThread(new NotificationRunable(event));
+    }
+  }
+}
+</code></pre>
+
+<p>Configure the nanoStreamSettings object for the library:</p>
+<pre><code class="java">  private String license = &quot;--- add your nanoStream license here ---&quot;;
+  private String serverUrl = &quot;rtmp://example.org/live&quot;;
+  private String streamName = &quot;myStream&quot;;
+  private nanoStream streamLib = null;
+
+  void initStreamLib() {
+    if(null == streamLib) {
+      nanoStreamSettings nss = new nanoStreamSettings();
+      nss.setLicense(license);
+      nss.setLogSettings(logSettings);
+      nss.setStreamUrl(serverUrl);
+      nss.setStreamName(streamName);
+      nss.setEventListener(this);
+
+      try {
+        streamLib = new nanoStream(nss);
+      } catch (NanostreamException en) {
+        Toast.makeText(getApplicationContext(), en.toString(), Toast.LENGTH_LONG).show();
+      }
+
+      if(null != streamLib) {
+        try {
+          streamLib.init();
+        } catch (NanostreamException e) {
+          Toast.makeText(getApplicationContext(), e.toString(), Toast.LENGTH_LONG).show();
+        } catch (IllegalArgumentException e) {
+          e.printStackTrace();
+        }
+      }
+    }
+  }
+</code></pre>
+
+<p>Start/Stop the Stream:</p>
+<pre><code class="java">public void toggleStreaming(View clicked) {
+  if (null == streamLib) {
+    Toast.makeText(getApplicationContext(), &quot;nanoStream failed to initialize&quot;, Toast.LENGTH_LONG).show();
+    return;
+  }
+
+  if (!streamLib.hasState(nanoStream.EncoderState.RUNNING)) {
+    Toast.makeText(getApplicationContext(), &quot;Starting...&quot;, Toast.LENGTH_SHORT).show();
+
+    if (streamLib.hasState(nanoStream.EncoderState.STOPPED) || streamLib.hasState(nanoStream.EncoderState.CREATED)) {
+      try {
+        Logging.log(Logging.LogLevel.DEBUG, TAG, &quot;toggleStreaming init nanoStream&quot;);
+        streamLib.init();
+      } catch (NanostreamException en) {
+        Toast.makeText(getApplicationContext(), en.toString(), Toast.LENGTH_LONG).show();
+        return;
+      }
+    }
+
+    try {
+      streamLib.start();
+    } catch (NanostreamException en) {
+      Toast.makeText(getApplicationContext(), en.toString(), Toast.LENGTH_LONG).show();
+      return;
+    }
+  } else {
+    Toast.makeText(getApplicationContext(), &quot;Stopping...&quot;, Toast.LENGTH_SHORT).show();
+    streamLib.stop();
+  }
+}
+</code></pre>
+
+<h2 id="resolution_aspect_ratio_and_orientation">Resolution, Aspect Ratio and Orientation<a class="headerlink" href="#resolution_aspect_ratio_and_orientation" title="Permanent link">&para;</a></h2>
+<h3 id="resolution">Resolution<a class="headerlink" href="#resolution" title="Permanent link">&para;</a></h3>
+<p>Resolution means the native resolution of the camera (input). In the most situations this will be the same for the output. To set the resolution there is a function in the VideoSettings object called setResolution(Resolution res). If you set a resolution that the device doesn&rsquo;t support, nanoStream will automatically switch to the nearest resolution available on the device. A list of supported resolutions for the current video source can be obtained from getCapabilities().listAvailableVideoResolutions() on the nanoStream object.</p>
+<h3 id="aspect_ratio">Aspect ratio<a class="headerlink" href="#aspect_ratio" title="Permanent link">&para;</a></h3>
+<p>Aspect ratio means the aspect ratio of the outgoing stream. The aspect ratio determines if the input video needs to be cropped. The aspect ratio can be set through the setAspectRatio(AspectRatio aspectRatio) function on the VideoSettings object.</p>
+<h4 id="supported_aspect_ratios">Supported Aspect ratios<a class="headerlink" href="#supported_aspect_ratios" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th align="left">Aspect Ratio</th>
+<th align="left">AspectRatio value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Keep Input</td>
+<td align="left">AspectRatio.RATIOKEEPINPUT</td>
+</tr>
+<tr>
+<td align="left">1:1</td>
+<td align="left">AspectRatio.RATIO11</td>
+</tr>
+<tr>
+<td align="left">4:3</td>
+<td align="left">AspectRatio.RATIO43</td>
+</tr>
+<tr>
+<td align="left">16:9</td>
+<td align="left">AspectRatio.RATIO169</td>
+</tr>
+<tr>
+<td align="left">3:4</td>
+<td align="left">AspectRatio.RATIO34</td>
+</tr>
+<tr>
+<td align="left">9:16</td>
+<td align="left">AspectRatio.RATIO_9_16</td>
+</tr>
+</tbody>
+</table>
+<h3 id="orientation">Orientation<a class="headerlink" href="#orientation" title="Permanent link">&para;</a></h3>
+<p>The default stream orientation is landscape. If you switch to portrait the resolution will swap width and height, e.g. from 640×480 to 480×640. You can set the stream orientation on the nanoStream object with the setStreamRotation function. The stream orientation needs to be set before starting the stream, it is not possible to switch the orientation during the</p>
+<h4 id="supported_orientations">Supported Orientations<a class="headerlink" href="#supported_orientations" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Orientation</th>
+<th>Rotation Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Landscape</td>
+<td>Rotation.ROTATION_0</td>
+</tr>
+<tr>
+<td>Portrait</td>
+<td>Rotation.ROTATION_90</td>
+</tr>
+<tr>
+<td>Landscape Upside Down</td>
+<td>Rotation.ROTATION_180</td>
+</tr>
+<tr>
+<td>Portrait Upside Down</td>
+<td>Rotation.ROTATION_270</td>
+</tr>
+</tbody>
+</table>
+<h3 id="example_combinations_of_aspect_ratios_and_orientations">Example Combinations of Aspect Ratios and Orientations<a class="headerlink" href="#example_combinations_of_aspect_ratios_and_orientations" title="Permanent link">&para;</a></h3>
+<p>The input resolution is set to 640x480 here. The red rectangle marks up the active area that is included in the output stream.</p>
+<table>
+<thead>
+<tr>
+<th>Orientation</th>
+<th>Aspect Ratio</th>
+<th>Stream Area</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Portrait<sup><a href="#fnAS1">1</a></sup></td>
+<td>Keep Input</td>
+<td><img alt="Screenshot" src="../img/portrait_keep_input.png" /></td>
+</tr>
+<tr>
+<td>Portrait<sup><a href="#fnAS1">1</a></sup></td>
+<td>4:3</td>
+<td><img alt="Screenshot" src="../img/portrait_4_3.png" /></td>
+</tr>
+<tr>
+<td>Portrait<sup><a href="#fnAS1">1</a></sup></td>
+<td>3:4</td>
+<td><img alt="Screenshot" src="../img/portrait_3_4.png" /></td>
+</tr>
+<tr>
+<td>Portrait<sup><a href="#fnAS1">1</a></sup></td>
+<td>16:9</td>
+<td><img alt="Screenshot" src="../img/portrait_16_9.png" /></td>
+</tr>
+<tr>
+<td>Portrait<sup><a href="#fnAS1">1</a></sup></td>
+<td>9:16</td>
+<td><img alt="Screenshot" src="../img/portrait_9_16.png" /></td>
+</tr>
+<tr>
+<td>Landscape</td>
+<td>Keep Input</td>
+<td><img alt="Screenshot" src="../img/landscape_keep_input.png" /></td>
+</tr>
+<tr>
+<td>Landscape</td>
+<td>4:3</td>
+<td><img alt="Screenshot" src="../img/landscape_4_3.png" /></td>
+</tr>
+<tr>
+<td>Landscape</td>
+<td>3:4</td>
+<td><img alt="Screenshot" src="../img/landscape_3_4.png" /></td>
+</tr>
+<tr>
+<td>Landscape</td>
+<td>16:9</td>
+<td><img alt="Screenshot" src="../img/landscape_16_9.png" /></td>
+</tr>
+<tr>
+<td>Landscape</td>
+<td>9:16</td>
+<td><img alt="Screenshot" src="../img/landscape_9_16.png" /></td>
+</tr>
+</tbody>
+</table>
+<p><a name="fnAS1">1</a>: In this sample APP we crop the preview so it doesn&rsquo;t look ugly, so the stream is actually larger then the preview.</p>
+<h4 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h4>
+<p>If you want to stream with a resolution of 640x360 but your device doesn&rsquo;t supports this resolution, you need to crop the resolution from 640x480 (this resolution is supported by the most devices) to 640x360. This can be done through the aspect ratio, so you need to set the aspect ratio to 16:9 to stream with a resolution of 640x360.</p>
+<h4 id="implementation_example">Implementation Example<a class="headerlink" href="#implementation_example" title="Permanent link">&para;</a></h4>
+<pre><code class="java">public class MainActifity {
+    ...
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+      super.onCreate(savedInstanceState);
+      nanoStreamSettings nss = new nanoStreamSettings();
+      VideoSettings vs = new VideoSettings();
+      ...
+      vs.setResolution(new Resolution(640, 480)); // default value
+      vs.setAspectRatio(AspectRatio.RATIO_16_9); // default value is AspectRatio.KEEP_INPUT
+      ...
+      streamLib = new nanoStream(nss);
+      streaLib.init();
+
+      streamLib.setStreamRotation(Rotation.ROTATION_0); // default value
+      ...
+    }
+    ...
+}
+</code></pre>
+
+<h2 id="rotationhelper_class">RotationHelper Class<a class="headerlink" href="#rotationhelper_class" title="Permanent link">&para;</a></h2>
+<h3 id="description">Description<a class="headerlink" href="#description" title="Permanent link">&para;</a></h3>
+<p>With the nanoStream SDK 4.3.1 release we added a &lsquo;RotationHelper&rsquo; Class, this Class improves the Rotation handling.</p>
+<h3 id="rotationhelper">RotationHelper<a class="headerlink" href="#rotationhelper" title="Permanent link">&para;</a></h3>
+<p>The RotationHelper class has two static Methods, &lsquo;getDeviceDefaultOrientation(Context context)&rsquo; and &lsquo;getRotation(int orientation, boolean isDefaultOrientationLandscape)&rsquo;.</p>
+<h4 id="getdevicedefaultorientation">getDeviceDefaultOrientation<a class="headerlink" href="#getdevicedefaultorientation" title="Permanent link">&para;</a></h4>
+<p>The return values are one of the following
+<em> <a href="http://developer.android.com/reference/android/content/res/Configuration.html#ORIENTATION_LANDSCAPE" title="Configuration.ORIENTATION_LANDSCAPE">Configuration.ORIENTATION_LANDSCAPE</a>
+</em> <a href="http://developer.android.com/reference/android/content/res/Configuration.html#ORIENTATION_PORTRAIT" title="Configuration.ORIENTATION_PORTRAIT">Configuration.ORIENTATION_PORTRAIT</a></p>
+<h4 id="getrotation">getRotation<a class="headerlink" href="#getrotation" title="Permanent link">&para;</a></h4>
+<h5 id="parameter">Parameter<a class="headerlink" href="#parameter" title="Permanent link">&para;</a></h5>
+<p>The &lsquo;orientation&rsquo; parameter of the &lsquo;getRoation&rsquo; Method is one of the following:
+<em> <a href="http://developer.android.com/reference/android/content/pm/ActivityInfo.html#SCREEN_ORIENTATION_PORTRAIT" title="ActivityInfo.SCREEN_ORIENTATION_PORTRAIT">ActivityInfo.SCREEN_ORIENTATION_PORTRAIT</a>
+</em> <a href="http://developer.android.com/reference/android/content/pm/ActivityInfo.html#SCREEN_ORIENTATION_LANDSCAPE" title="ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE">ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE</a>
+<em> <a href="http://developer.android.com/reference/android/content/pm/ActivityInfo.html#SCREEN_ORIENTATION_REVERSE_PORTRAIT" title="ActivityInfo.SCREEN_ORIENTATION_REVERSE_PORTRAIT">ActivityInfo.SCREEN_ORIENTATION_REVERSE_PORTRAIT</a>
+</em> <a href="http://developer.android.com/reference/android/content/pm/ActivityInfo.html#SCREEN_ORIENTATION_REVERSE_LANDSCAPE" title="ActivityInfo.SCREEN_ORIENTATION_REVERSE_LANDSCAPE">ActivityInfo.SCREEN_ORIENTATION_REVERSE_LANDSCAPE</a></p>
+<p>The &lsquo;isDefaultOrientationLandscape&rsquo; parameter is true or false.</p>
+<h3 id="return_values">Return values<a class="headerlink" href="#return_values" title="Permanent link">&para;</a></h3>
+<p>The return values given from &lsquo;RotationHelper.getRoation&rsquo; can be used as a Parameter for &lsquo;setStreamRotation&rsquo; and &lsquo;setPreviewRotation&rsquo;. is the &lsquo;orientation&rsquo; parameter non of the above described the &lsquo;getRotation&rsquo; Method returns &lsquo;null&rsquo;.</p>
+<h4 id="implementation_example_1">Implementation Example<a class="headerlink" href="#implementation_example_1" title="Permanent link">&para;</a></h4>
+<pre><code class="java">import net.nanocosmos.nanoStream.streamer.Rotation;
+import net.nanocosmos.nanoStream.streamer.RotationHelper;
+
+public class MainActivity extends Activity {
+  // ...
+  private boolean isDefaultOrientationLandscape = false;
+  private CustomOrientationEventListener orientation = null;
+
+  @Override
+  protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    // ...
+    streamLib = new nanoStream(/*settings*/);
+
+    isDefaultOrientationLandscape = (RotationHelper.getDeviceDefaultOrientation(this) == android.content.res.Configuration.ORIENTATION_LANDSCAPE);
+    orientation = new CustomOrientationEventListener(this, SensorManager.SENSOR_DELAY_UI);
+    orientation.enable();
+  }
+
+  private class CustomOrientationEventListener extends OrientationEventListener {
+    private int lastScreenOrientation = 0;
+    public CustomOrientationEventListener(Context context, int rate) {
+      super(context, rate);
+    }
+
+    @Override
+    public void onOrientationChanged(int orientation) {
+      if (null != streamLib) {
+        if(!streamLib.hasState(nanoStream.EncoderState.RUNNING)) {
+          if (isDefaultOrientationLandscape) {
+              orientation -= 90;
+
+              if (orientation &lt; 0) {
+                  orientation += 360;
+              }
+          }
+          int screenOrientation = -1;
+
+          if (orientation &gt; 70 &amp;&amp; orientation &lt; 110) {
+            setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_REVERSE_LANDSCAPE);
+            screenOrientation = ActivityInfo.SCREEN_ORIENTATION_REVERSE_LANDSCAPE;
+          } else if (orientation &gt; 160 &amp;&amp; orientation &lt; 200) {
+            setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_REVERSE_PORTRAIT);
+            screenOrientation = ActivityInfo.SCREEN_ORIENTATION_REVERSE_PORTRAIT;
+          } else if (orientation &gt; 250 &amp;&amp; orientation &lt; 290) {
+            setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+            screenOrientation = ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE;
+          } else if ((orientation &gt; 340 &amp;&amp; orientation &lt;= 360) || (orientation &gt;= 0 &amp;&amp; orientation &lt; 20)) {
+            setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+            screenOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT;
+          }
+
+          if (screenOrientation != lastScreenOrientation) {
+            Rotation rotation = RotationHelper.getRotation(screenOrientation, isDefaultOrientationLandscape);
+            if (null != rotation) {
+              try {
+                streamLib.setPreviewRotation(rotation);
+                streamLib.setStreamRotation(rotation);
+                streamLib.setAspectRatio(videoAspectRatio);
+              } catch (IllegalStateException e) {
+                Logging.log(Logging.LogLevel.ERROR, TAG, &quot;Camera rotate failed&quot;, e);
+              }
+            }
+            lastScreenOrientation = screenOrientation;
+          }
+        }
+      }
+    }
+  }
+}
+</code></pre>
+
+<h2 id="stream_type">Stream Type<a class="headerlink" href="#stream_type" title="Permanent link">&para;</a></h2>
+<p>The SDK supports differnet streaming modes:</p>
+<ul>
+<li>Video and Audio</li>
+<li>Video only</li>
+<li>Audio only</li>
+</ul>
+<p>You can en/disable Video/Audio in the <code>nanoStreamSettings</code>.</p>
+<h3 id="implementation_example_2">Implementation Example<a class="headerlink" href="#implementation_example_2" title="Permanent link">&para;</a></h3>
+<pre><code class="java">nanoStreamSettings nss = new nanoStreamSettings();
+nss.setHaveVideo(true); // false
+nss.setHaveAudio(true); // false
+</code></pre>
+
+<h2 id="server_authentication">Server Authentication<a class="headerlink" href="#server_authentication" title="Permanent link">&para;</a></h2>
+<p>In case authentication is required, the credentials can be set on the <code>nanoStreamSettings</code> object.</p>
+<h3 id="implementation_example_3">Implementation Example<a class="headerlink" href="#implementation_example_3" title="Permanent link">&para;</a></h3>
+<pre><code class="java">nanoStreamSettings nss = new nanoStreamSettings();
+nss.setAuthUser(&quot;user&quot;);
+nss.setAuthPassword(&quot;password&quot;);
+</code></pre>
+
+<h2 id="android_mp4_recording">Android MP4 Recording<a class="headerlink" href="#android_mp4_recording" title="Permanent link">&para;</a></h2>
+<h3 id="description_1">Description<a class="headerlink" href="#description_1" title="Permanent link">&para;</a></h3>
+<p>The nanoStream Android SDK supports, MP4 recording to do this there needs to be set a valid Path to the nanoStreamSettings object. And the MP4 Recording needs to be enabled. This feature allows you to record the current stream to the Device internal/external sd card.</p>
+<h3 id="enable_mp4_recording">Enable MP4 recording<a class="headerlink" href="#enable_mp4_recording" title="Permanent link">&para;</a></h3>
+<p>To enable the MP4 recording there are tow functions in the nanoStreamSettings Class.</p>
+<ol>
+<li>setRecordMp4(boolean)</li>
+<li>setMp4Path(String)</li>
+</ol>
+<h3 id="setrecordmp4boolean">setRecordMp4(boolean)<a class="headerlink" href="#setrecordmp4boolean" title="Permanent link">&para;</a></h3>
+<p>The setRecordMp4 function takes a boolean as parameter, this is to enable/disable the recording function.</p>
+<h3 id="setmp4pathstring">setMp4Path(String)<a class="headerlink" href="#setmp4pathstring" title="Permanent link">&para;</a></h3>
+<p>The setMp4Path function takes a String as parameter, this string needs to be a valid file path (e.g. /sdcard/test.mp4). Much better is to use the getExternalStoragePublicDirectory from the <a href="http://developer.android.com/reference/android/os/Environment.html" title="Android Environment API Reference">Environment</a> Android API, and add a file name to this directory Path.</p>
+<h3 id="android_permission">Android permission<a class="headerlink" href="#android_permission" title="Permanent link">&para;</a></h3>
+<p>To write to an external File Path your Android App needs the following permission (Add this to your AndroidMainfest.xml).</p>
+<pre><code class="xml">&lt;uses-permission android:name=&quot;android.permission.WRITE_EXTERNAL_STORAGE&quot; /&gt;
+&lt;uses-permission android:name=&quot;android.permission.STORAGE&quot; /&gt;
+</code></pre>
+
+<h4 id="android_60">Android 6.0<a class="headerlink" href="#android_60" title="Permanent link">&para;</a></h4>
+<p>Due to the new Permission handling it is possible that you can&rsquo;t write in external Directorys if the user isn&rsquo;t granted this permission, you can always write in your own data directory (/Android/data/com.companyname.appname/)</p>
+<h3 id="implementation_example_4">Implementation Example<a class="headerlink" href="#implementation_example_4" title="Permanent link">&para;</a></h3>
+<pre><code class="java">File externalFilePath = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM);
+File filePath = new File(externalFilePath, &quot;myMp4File.mp4&quot;);
+String mp4FilePath = filePath.getAbsolutePath();
+
+nanoStreamSettings nss = new nanoStreamSettings();
+nss.setRecordMp4(true);
+nss.setMp4Path(mp4FilePath);
+</code></pre>
+
+<h2 id="snapshot">Snapshot<a class="headerlink" href="#snapshot" title="Permanent link">&para;</a></h2>
+<p>To get a snapshot (image) of the current preview/stream, the method <code>takeSnapshot</code> can be used. This is a non blocking function, for the result you need to implement the SnapshotCallback interface. The snapshot returns as a base64 encoded JPEG</p>
+<h3 id="implementation_example_5">Implementation Example<a class="headerlink" href="#implementation_example_5" title="Permanent link">&para;</a></h3>
+<pre><code class="java">private class CustomSnapshotCallback implements SnapshotCallback {
+  @Override
+  void onSuccess(String arg0){
+    // do something with the base64 encoded JPEG.
+  }
+
+  @Override
+ void onFailure(){
+   Log.d(TAG, &quot;takeSnapshot() failed!&quot;)
+ }
+}
+private void shapshot() {
+  streamLib.takeSnapshot(new CustomSnapshotCallback());
+}
+</code></pre>
+
+<h2 id="adaptive_bitrate_streaming">Adaptive Bitrate Streaming<a class="headerlink" href="#adaptive_bitrate_streaming" title="Permanent link">&para;</a></h2>
+<p>By using the Adaptive Bitrate Control (ABC) the stream will automatically adjust to changes of the bandwidth. There are four modes available:</p>
+<ul>
+<li>DISABLED: The Adaptive Bitrate Control is disabled.</li>
+<li>QUALITY_DEGRADE: The video quality will be changed if the bandwidth changes. For instance, if not enough bandwidth is available, the video bitrate will be decreased, which in turn degrades the video quality.</li>
+<li>FRAME_DROP: Low bandwidth is compensated by decreasing the framerate (FPS), but maintaining the video qualtiy.</li>
+<li>QUALITY_DEGRADE_AND_FRAME_DROP: The video quality and the framerate (FPS) decreased if the not enough bandwidth is available.</li>
+</ul>
+<p>Make sure to set the ABC settings before a stream is started.</p>
+<h3 id="implementation_example_6">Implementation Example<a class="headerlink" href="#implementation_example_6" title="Permanent link">&para;</a></h3>
+<pre><code class="java">private AdaptiveBitrateControlSettings.AdaptiveBitrateControlMode abcMode = AdaptiveBitrateControlSettings.AdaptiveBitrateControlMode.QUALITY_DEGRADE_AND_FRAME_DROP;
+private int videoBitrate = 500000;
+
+private void initStreamLib() {
+  AdaptiveBitrateControlSettings abcSettings = new AdaptiveBitrateControlSettings(abcMode);
+  abcSettings.SetMaximumBitrate((int)(videoBitrate * 1.5));
+
+  nanoStreamSettings nss = new nanoStreamSettings();
+  nss.setAbcSettings(abcSettings);
+}
+</code></pre>
+
+<h3 id="measuring_the_available_bandwidth">Measuring the available bandwidth<a class="headerlink" href="#measuring_the_available_bandwidth" title="Permanent link">&para;</a></h3>
+<p>For measuring the available bandwidth you can use the method <code>runBandwidthCheck</code>. After the check finished, the result can be used to set the bitrate for the nanoStream object.
+The check measures the bandwidth by running a test stream to the server.
+The BandwidthCheck Class has three public functions:</p>
+<ul>
+<li>runBandwidthCheck(BandwidthCheckSettings settings, BandwidthCheckResultCallback callback()</li>
+<li>forceStop()</li>
+<li>abort()</li>
+</ul>
+<p>There is a BandwidthCheckSettings Class, the constructor creates a standard object of BandwidthCheckSettings, with the following settings:</p>
+<table>
+<thead>
+<tr>
+<th align="left">property</th>
+<th align="left">default values</th>
+<th align="left">meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">prerollSeconds</td>
+<td align="left">1 (in sec.)</td>
+<td align="left">this is the pre roll time to connect to the server</td>
+</tr>
+<tr>
+<td align="left">runTime</td>
+<td align="left">5 (in sec.)</td>
+<td align="left">the run time of the bandwidth check</td>
+</tr>
+<tr>
+<td align="left">maxBitrate</td>
+<td align="left">3000000 (bit/s = 3 MBit/s)</td>
+<td align="left">the maximum bit rate for the bandwidth check</td>
+</tr>
+<tr>
+<td align="left">rtmpUrl</td>
+<td align="left">empty</td>
+<td align="left">the rtmp url for the bandwidth check</td>
+</tr>
+<tr>
+<td align="left">streamId</td>
+<td align="left">empty</td>
+<td align="left">the stream id for the bandwidth check</td>
+</tr>
+</tbody>
+</table>
+<p>With this settings you can call the runBandwidthCheck methode, the second parameter is the callback for the results. This callback class has a finished method that will be called after bandwidth check is done.
+The finished method has one parameter from type BandwidthCheckResult, this object has 6 getter methods:</p>
+<ul>
+<li>getAverageBitrate() // the average measured bandwidth</li>
+<li>getMedianBitrate() // the median measured bandwidth</li>
+<li>getMaxBitrate() // the maximum measured bandwidth</li>
+<li>getMinBitrate() // the minimum measured bandwidth</li>
+<li>getRunTimeMS() // the run time in ms</li>
+<li>getErrorCode() // the error code if all is ok this is nanoResults.N_OK (all error codes can be found in the nanoStream API Reference documentation for nanoResults)</li>
+</ul>
+<p>The forceStop call stops the bandwidth check and will return the results that where measured until then. The abort call stops the bandwidth check but don&rsquo;t return any results.</p>
+<p>The bandwidth check, sends a special type of metadata that will not be recorded on the Streaming Server.</p>
+<h4 id="implementation_example_7">Implementation Example<a class="headerlink" href="#implementation_example_7" title="Permanent link">&para;</a></h4>
+<pre><code class="java">private BandwidthCheck bwCheck = null;
+
+private class CustomBandwidthCheckResultCallback implements BandwidthCheckResultCallback {
+  @Override
+  public void finished(final BandwidthCheckResult bandwidthCheckResult) {
+    Log.d(TAG, &quot;BandwidthCheck results: &quot; +
+      &quot;\n\tAverage Bitrate (kBit/s): &quot; + bandwidthCheckResult.getAverageBitrate() / 1000 +
+      &quot;\n\tMedian Bitrate  (kBit/s): &quot; + bandwidthCheckResult.getMedianBitrate() / 1000 +
+      &quot;\n\tMax Bitrate     (kBit/s): &quot; + bandwidthCheckResult.getMaxBitrate() / 1000 +
+      &quot;\n\tMin Bitrate     (kBit/s): &quot; + bandwidthCheckResult.getMinBitrate() / 1000 +
+      &quot;\n\tRun Time        (ms)    : &quot; + bandwidthCheckResult.getRunTimeMS());
+  }
+}
+
+private void initBandwidthCheck() {
+  if(null == bwCheck) {
+    BandwidthCheckSettings settings = new BandwidthCheckSettings();
+    settings.setRtmpUrl(serverUrl);
+    settings.setStreamId(streamName);
+    bwCheck = new BandwidthCheck();
+    bwCheck.runBandwidthCheck(settings, new CustomBandwidthCheckResultCallback());
+  }
+}
+</code></pre>
+
+<h2 id="rtmp_quality_statistics">RTMP Quality Statistics<a class="headerlink" href="#rtmp_quality_statistics" title="Permanent link">&para;</a></h2>
+<h3 id="description_2">Description<a class="headerlink" href="#description_2" title="Permanent link">&para;</a></h3>
+<p>The RTMP Module provides the current RTMP Quality over the &lsquo;NanostreamEventListener&rsquo;. These includes the &lsquo;output bit rate&rsquo;, &lsquo;buffer fullness&rsquo;, &lsquo;bit rate&rsquo; and &lsquo;frame rate&rsquo;.</p>
+<h4 id="implementation_example_8">Implementation Example<a class="headerlink" href="#implementation_example_8" title="Permanent link">&para;</a></h4>
+<pre><code class="java">public class MainActivity extends Activity implements NanostreamEventListener {
+  private LinearLayout qualityView = null;
+    private TextView outputBitrate = null;
+    private TextView bufferFullness = null;
+    private TextView bitrate = null;
+    private TextView framerate = null;
+
+  @Override
+  protected void onCreate(Bundle savedInstanceState) {
+    qualityView = (LinearLayout) findViewById(R.id.qualityView);
+        outputBitrate = (TextView) findViewById(R.id.outputBitrateText);
+        bufferFullness = (TextView) findViewById(R.id.bufferfillnessText);
+        bitrate = (TextView) findViewById(R.id.bitrateText);
+        framerate = (TextView) findViewById(R.id.framerateText);
+
+    // Init nanoStream
+  }
+
+  @Override
+    public void onNanostreamEvent(NanostreamEvent event)
+    {
+        if (event.GetType() == NanostreamEvent.TYPE_RTMP_QUALITY)
+        {
+            this.runOnUiThread(new ViewQualityRunnable(event));
+        }
+    }
+
+  private class ViewQualityRunnable implements Runnable
+    {
+        private NanostreamEvent m_event;
+        private DecimalFormat format;
+
+        public ViewQualityRunnable(NanostreamEvent m_event)
+        {
+            super();
+            this.m_event = m_event;
+            format = new DecimalFormat(&quot;#0.00&quot;);
+        }
+
+        @Override
+        public void run()
+        {
+            if (qualityView.getAlpha() == 0 &amp;&amp; m_event.GetParam1() != 0 &amp;&amp; m_event.GetParam2() != 0 &amp;&amp; m_event.GetParam3() != 0 &amp;&amp; m_event.GetParam4() != 0)
+            {
+                qualityView.setAlpha(0.5f);
+            }
+            int qualityColor = Color.YELLOW;
+            if (m_event.GetParam2() &gt;= 1000)
+            {
+                qualityColor = Color.rgb(255, 0, 0);
+            } else if (m_event.GetParam2() &gt;= 750)
+            {
+                qualityColor = Color.YELLOW;
+            } else if (m_event.GetParam2() &lt;= 750)
+            {
+                qualityColor = Color.GREEN;
+            }
+
+            outputBitrate.setText(Long.toString(m_event.GetParam1() / 1000) + &quot;kbit/s&quot;);
+            outputBitrate.setTextColor(qualityColor);
+            bufferFullness.setText(format.format(((double) m_event.GetParam2() / 100.0)) + &quot;%&quot;);
+            bufferFullness.setTextColor(qualityColor);
+            bitrate.setText(Long.toString(m_event.GetParam3() / 1000) + &quot;kbit/s&quot;);
+            framerate.setText(m_event.GetParam4() + &quot;fps&quot;);
+
+        }
+    }
+}
+</code></pre>
+
+<h2 id="camera_zoom">Camera Zoom<a class="headerlink" href="#camera_zoom" title="Permanent link">&para;</a></h2>
+<h3 id="description_3">Description<a class="headerlink" href="#description_3" title="Permanent link">&para;</a></h3>
+<p>The nanoStream Android SDK supports camera zoom, if the internal camera supports it. Therefor there are a few functions, the most important are:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Function</th>
+<th align="left">Return Type</th>
+<th align="left">returns</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">hasZoom()</td>
+<td align="left">boolean</td>
+<td align="left">true if zoom is supported by the video source/ device</td>
+</tr>
+<tr>
+<td align="left">getZoomRatios()</td>
+<td align="left">List<Integer></td>
+<td align="left">list with of ale zoom ratios</td>
+</tr>
+<tr>
+<td align="left">getZoom()</td>
+<td align="left">int</td>
+<td align="left">the index of the List<Integer> that returned from getZoomRatios()</td>
+</tr>
+<tr>
+<td align="left">setZoom(int)</td>
+<td align="left">int</td>
+<td align="left">the new index of the List<Integer> that returned from getZoomRatios()</td>
+</tr>
+</tbody>
+</table>
+<p>It is recommended to use pinch to zoom, therefor you need to implement a ScaleGestureDetector.SimpleOnScaleGestureListener, and a pinch2zoom function, that takes the scalefactor from the SimpleOnScaleGestureListener as a int parameter, take a look at the <a href="#nanostream_android_camera_zoom_impl_example" title="Implementation Example">Implementation Example</a>.</p>
+<h4 id="getzoomratios">getZoomRatios()<a class="headerlink" href="#getzoomratios" title="Permanent link">&para;</a></h4>
+<p>getZoomRatios() returns a List of Integer values, this values are the zoom ratios in 1/100 increments (e.g. a zoom of 3.2x is returned as 320).</p>
+<h4 id="setzoomint">setZoom(int)<a class="headerlink" href="#setzoomint" title="Permanent link">&para;</a></h4>
+<p>The int parameter from setZoom(int zoom) is the index of zoom ratios that returns getZoomRatios().</p>
+<h4 id="zoom_behavior_on_camera_switch">Zoom Behavior on Camera Switch<a class="headerlink" href="#zoom_behavior_on_camera_switch" title="Permanent link">&para;</a></h4>
+<p>During a camera switch (e.g. from back to front) the zoom remains unaffected.</p>
+<h3 id="implementation_example_9"><a name="nanostream_android_camera_zoom_impl_example"></a> Implementation Example<a class="headerlink" href="#implementation_example_9" title="Permanent link">&para;</a></h3>
+<pre><code class="java">public class MainActivity extends Activity {
+  private ScaleGestureDetector scaleGestureDetector;
+  private List&lt;Integer&gt; mZoomRatios = null;
+
+  private nanoStream streamLib = null;
+
+  @Override
+  protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+
+    nanoStreamSettings nss = new nanoStreamSettings();
+    // configure nanoStreamSettings
+
+    streamLib = new nanoStream(nss);
+
+    if(streamLib.hasZoom()) {
+      mZoomRatios = streamLib.getZoomRatio();
+    }
+
+    if(null == scaleGestureDetector) {
+      scaleGestureDetector = new ScaleGestureDetector(this, new ScaleGestureListener());
+    }
+  }
+
+  @Override
+  public boolean onTouchEvent(MotionEvent event)
+  {
+    if (scaleGestureDetector != null)
+    {
+      scaleGestureDetector.onTouchEvent(event);
+    }
+    return true;
+  }
+
+  private class ScaleGestureListener extends ScaleGestureDetector.SimpleOnScaleGestureListener {
+    @Override
+    public boolean onScale(ScaleGestureDetector detector) {
+      if(null != streamLib) {
+        if (streamLib.hasZoom()) {
+          pinch2Zoom(detector.getScaleFactor());
+        }
+      }
+      return true;
+    }
+  }
+
+  public void pinch2Zoom(float scaleFactor) {
+    if (streamLib.hasZoom() &amp;&amp; null != mZoomRatios) {
+      int zoomFactor = streamLib.getZoom();
+      float zoomRatio = mZoomRatios.get(zoomFactor) / 100f;
+      zoomRatio *= scaleFactor;
+      if (zoomRatio &gt; 1.0f) {
+        if (scaleFactor &gt; 1.0f) {
+          for (int i = zoomFactor; i &lt; mZoomRatios.size(); i++) {
+            Double zoom = mZoomRatios.get(i) / 100.0;
+            if (zoom &gt;= zoomRatio) {
+              streamLib.setZoom(i);
+              break;
+            }
+          }
+        } else {
+          for (int i = zoomFactor; i &gt; 0; i--) {
+            Double zoom = mZoomRatios.get(i) / 100.0;
+            if (zoom &lt;= zoomRatio) {
+              streamLib.setZoom(i);
+              break;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+</code></pre>
+
+<h2 id="camera_focus">Camera Focus<a class="headerlink" href="#camera_focus" title="Permanent link">&para;</a></h2>
+<h3 id="description_4">Description<a class="headerlink" href="#description_4" title="Permanent link">&para;</a></h3>
+<p>The nanoStream Android SDK supports Camera focus and focus lock, if the the internal cameras supports them. There are two nonblocking functions</p>
+<pre><code class="java">setFocusArea(int focusWidth, int focusHeight, float areaMultiple, int x, int y, int previewWidth, int previewHeight, int weigh)
+setFocusLockArea(int focusWidth, int focusHeight, float areaMultiple, int x, int y, int previewWidth, int previewHeight, int weigh)
+</code></pre>
+
+<p>through the</p>
+<pre><code class="java">addFocusCalback(FocusCallback callback)
+removeFocusCalback(FocusCallback callback)
+</code></pre>
+
+<p>you can attach or remove a FocusCallback listener.
+To check if your device Supports focus you can call</p>
+<pre><code class="java">isFocusSupported()
+</code></pre>
+
+<p>this will return true or false</p>
+<h3 id="parameter_list">Parameter List<a class="headerlink" href="#parameter_list" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th align="left">Parameter name</th>
+<th align="left">meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">focusWidth</td>
+<td align="left">the focus Area width</td>
+</tr>
+<tr>
+<td align="left">focusHeight</td>
+<td align="left">the focus Area height</td>
+</tr>
+<tr>
+<td align="left">areaMultiple</td>
+<td align="left">a Multiple for the focus area (default: 1f)</td>
+</tr>
+<tr>
+<td align="left">x</td>
+<td align="left">the x position on the Screen</td>
+</tr>
+<tr>
+<td align="left">y</td>
+<td align="left">the y position on the Screen</td>
+</tr>
+<tr>
+<td align="left">previewWidth</td>
+<td align="left">the width of the preview</td>
+</tr>
+<tr>
+<td align="left">previewHeight</td>
+<td align="left">the height of the preview</td>
+</tr>
+<tr>
+<td align="left">weight</td>
+<td align="left">the weight of the area must be range from 1 to 1000</td>
+</tr>
+</tbody>
+</table>
+<h3 id="focuscallback_interface">FocusCallback interface<a class="headerlink" href="#focuscallback_interface" title="Permanent link">&para;</a></h3>
+<p>The FocusCallback interface has three abstract functions</p>
+<pre><code class="java">onSuccess()
+onSuccess(Rect rect, Boolean focusLock)
+onFailure()
+</code></pre>
+
+<h3 id="implementation_example_10">Implementation Example<a class="headerlink" href="#implementation_example_10" title="Permanent link">&para;</a></h3>
+<pre><code class="java">public class MainActifity extens Actifity implements FocusCallback {
+  private GestureDetector gestureDetector;
+  private nanoStream streamLib = null;
+
+  @Override
+  protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    streamLib = new nanoStream(new nanoStreamSettings());
+    if(streamLib.isFocusSupported()) {
+      gestureDetector = new GestureDetector(this, new GestureListener());
+    }
+    ...
+  }
+
+  @Override
+  public boolean onTouchEvent(MotionEvent event)
+  {
+    if (gestureDetector != null)
+    {
+        gestureDetector.onTouchEvent(event);
+    }
+    return true;
+  }
+  ....
+  private class GestureListener implements OnGestureListener {
+
+     @Override
+     public boolean onSingleTapUp(MotionEvent e)
+     {
+         if (streamLib != null)
+         {
+             streamLib.setFocusArea(300, 300, 1f, (int) e.getX(), (int) e.getY(), surface.getWidth(), surface.getHeight(), 1000);
+         }
+         return true;
+     }
+
+    @Override
+     public void onLongPress(MotionEvent e)
+     {
+         if (streamLib != null)
+         {
+             streamLib.setFocusLockArea(300, 300, 1f, (int) e.getX(), (int) e.getY(), surface.getWidth(), surface.getHeight(), 1000);
+         }
+     }
+   }
+
+   @Override
+    public void onSuccess(Rect rect, Boolean aBoolean) {
+      Log.i(TAG, &quot;focus success&quot;);
+    }
+
+    @Override
+    public void onFailure() {
+      Log.i(TAG, &quot;focus failed&quot;);
+    }
+}
+</code></pre>
+
+<h2 id="devicesproperties">DevicesProperties<a class="headerlink" href="#devicesproperties" title="Permanent link">&para;</a></h2>
+<p>Before Android 4.3 there was no obligation for Android hardware manufacturers to pass the video related parts of the CTS (Compatibility Test Suite).
+Therefore some Android 4.1 and 4.2 Devices show non standard behaviour in regard to color format definitions and representation of video frames in memory.
+This could lead to issues in the video stream like switched red and blue colors, dislocated color components or a green bar at the bottom of the video frame.
+nanoStream Android now provides the functionality to detect and compensate common issues related to this.</p>
+<h3 id="description_5">Description<a class="headerlink" href="#description_5" title="Permanent link">&para;</a></h3>
+<p>nanoStream.getDeviceProperties() is a static function that is running a test on the device hardware to detect non standard behaviour and returning a DeviceProperties object containing the result.
+DeviceProperties.getFlags() is returning the test result as an integer value that can be stored in the application preferences, to avoid running the device test on every app start.
+The DeviceProperties can be applied to a new nanoStream instance by calling nanoStream.setDeviceProperties(DeviceProperties).
+We recommend to call getDeviceProperties() in a background thread during the first app start on a pre 4.3 device, because the call is blocking and might last up to 5 seconds on older/weaker devices.
+We also recommend to store the OS version in the preferences, to be able to detect OS updates and to eventually rerun the device test or stop setting the DeviceProperties if the new OS is 4.3 or higher.</p>
+<h3 id="implementation_example_11">Implementation Example<a class="headerlink" href="#implementation_example_11" title="Permanent link">&para;</a></h3>
+<pre><code class="java">public class App extends Application
+{
+    private static DeviceProperties deviceProp = null;
+
+    public void onCreate()
+    {
+        super.onCreate();
+
+        Thread chkThread = new Thread(new Runnable()
+        {
+            @Override
+            public void run()
+            {
+                try
+                {
+                    SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+                    int curApiVer = android.os.Build.VERSION.SDK_INT;
+                    int curAppVer = getPackageManager().getPackageInfo(getPackageName(), 0).versionCode;
+                    int curEncVer = DeviceProperties.VERSION;
+
+                    int oldApiVer = prefs.getInt(&quot;Pref_Android_API&quot;, 0);
+                    int oldAppVer = prefs.getInt(&quot;Pref_App_Version&quot;, 0);
+                    int oldChkVer = prefs.getInt(&quot;Pref_Check_Version&quot;, 0);
+                    int oldChkResult = prefs.getInt(&quot;Pref_Check_Result&quot;, -1);
+
+                    if (((oldApiVer * oldAppVer * oldApiVer) == 0)
+                    || (oldApiVer &lt; curApiVer)
+                    || (oldAppVer &lt; curAppVer)
+                    || (oldChkVer &lt; curEncVer)
+                    || oldChkResult &lt; 0)
+                    {
+
+                        Editor edit = prefs.edit();
+                        edit.putInt(&quot;Pref_Android_API&quot;, curApiVer);
+                        edit.putInt(&quot;Pref_App_Version&quot;, curAppVer);
+
+                        /* Run  device check */
+                        try
+                        {
+                            deviceProp = nanoStream.getDeviceProperties();
+
+                            edit.putInt(&quot;Pref_Check_Result&quot;, deviceProp.getFlags());
+                            edit.putInt(&quot;Pref_Check_Version&quot;, deviceProp.getVersion());
+                            edit.commit();
+                        }
+                        catch (RuntimeException e)
+                        {
+                            Log.d(&quot;Device Check failed&quot;, e.toString());
+                            edit.putInt(&quot;Pref_Check_Result&quot;, -1);
+                            edit.putInt(&quot;Pref_Check_Version&quot;, 0);
+                            edit.commit();
+                        }
+
+                    }
+                    else
+                    {
+                        deviceProp = new DeviceProperties(oldChkResult);
+                    }
+
+                    Log.d(&quot;Device Properties: &quot;, deviceProp.toString());
+                }
+                catch (Exception e)
+                {
+                    Log.d(this.getClass().getName(), &quot;Device Check Runnable&quot;);
+                    e.printStackTrace();
+                }
+            }
+        });
+
+        if (android.os.Build.VERSION.SDK_INT &lt; 18)
+        {
+            chkThread.start();
+        }
+
+        ...
+    }
+
+    public static DeviceProperties getDeviceProperties()
+    {
+        return deviceProp;
+    }
+}
+</code></pre>
+
+<pre><code class="java">public class MainActivity extends Activity implements NanostreamEventListener
+{
+    ...
+    @Override
+    protected void onCreate(Bundle savedInstanceState)
+    {
+        try
+        {
+            nanoStreamSettings nss = new nanoStreamSettings();
+
+            streamLib = new nanoStream(nss);
+
+            DeviceProperties deviceProperties = App.getDeviceProperties();
+
+            if(null != streamLib &amp;&amp; null != deviceProperties)
+            {
+                streamLib.setDeviceProperties(deviceProperties);
+            }
+        }
+        catch(NanostreamException en)
+        {
+            Toast.makeText(getApplicationContext(), en.toString(), Toast.LENGTH_LONG).show();
+        }
+    }
+    ...
+}
+}
+</code></pre>
+
+<h1 id="further_questions">Further questions?<a class="headerlink" href="#further_questions" title="Permanent link">&para;</a></h1>
+<p>Would you like a feature not available yet?</p>
+<p>We can make it work for you based on our consulting and development / implementation services. <a href="https://www.nanocosmos.de/v6/#section_call" title="Contect us">Contact us</a></p>
+<h1 id="crash_logs">Crash Logs<a class="headerlink" href="#crash_logs" title="Permanent link">&para;</a></h1>
+<p>If you encounter a crash, please send us the crash log as explained in the following steps:</p>
+<ul>
+<li>Plug in the device and open Android Studio</li>
+<li>In Android Studios Android Monitor<ul>
+<li>Clear the logcat output</li>
+<li>Set the Log Level to <code>Verbose</code></li>
+<li>Set the filter to <code>No Filters</code></li>
+</ul>
+</li>
+<li>Run the critical section</li>
+<li>Mark the entire logcat output</li>
+<li>Right click in the logcat View and <code>Copy as Plain Text</code></li>
+<li>Open an editor of your choice</li>
+<li>Paste the logcat output into the editor and Save the logcat output as .txt file</li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../android_developer_manual_playback/" class="btn btn-neutral float-right" title="Playback Developer Manual">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../../macos/nanostream-macos-sdk/" class="btn btn-neutral" title="MacOS api"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+    
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../../macos/nanostream-macos-sdk/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../android_developer_manual_playback/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script src="../../../js/theme.js"></script>
+
+</body>
+</html>

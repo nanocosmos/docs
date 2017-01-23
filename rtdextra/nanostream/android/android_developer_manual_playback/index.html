@@ -1,0 +1,1293 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>Playback Developer Manual - nanocosmos Docs</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/highlight.css">
+  <link href="../../../extra.css" rel="stylesheet">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Playback Developer Manual";
+    var mkdocs_page_input_path = "nanostream/android/android_developer_manual_playback.md";
+    var mkdocs_page_url = "/nanostream/android/android_developer_manual_playback/";
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> nanocosmos Docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../..">Home</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>nanostream</span></li>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Web</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../web/nanostream-4.x-web-api/">API Manual</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../web/nanostream_javascript_integration/">Javascript Integration</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../ios/nanostream-ios-sdk/">iOS api</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../macos/nanostream-macos-sdk/">MacOS api</a>
+        
+    </li>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Android</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../android_developer_manual_streaming/">Streaming Developer Manual</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Playback Developer Manual</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#nanostream_sdk_android_playback_developer_manual">nanoStream SDK Android: Playback Developer Manual</a></li>
+                
+                    <li><a class="toctree-l4" href="#introduction">Introduction</a></li>
+                
+                    <li><a class="toctree-l4" href="#interface">Interface </a></li>
+                
+                    <li><a class="toctree-l4" href="#creating_an_instance">Creating an Instance</a></li>
+                
+                    <li><a class="toctree-l4" href="#configuration_and_settings">Configuration and Settings</a></li>
+                
+                    <li><a class="toctree-l4" href="#playersettings">PlayerSettings:</a></li>
+                
+                    <li><a class="toctree-l4" href="#player_state">Player State</a></li>
+                
+                    <li><a class="toctree-l4" href="#event_notification">Event Notification</a></li>
+                
+                    <li><a class="toctree-l4" href="#status_events">Status Events</a></li>
+                
+                    <li><a class="toctree-l4" href="#results_and_error_events">Results and Error Events</a></li>
+                
+                    <li><a class="toctree-l4" href="#audio_video_format">Audio / Video Format</a></li>
+                
+                    <li><a class="toctree-l4" href="#implementation_example">Implementation Example </a></li>
+                
+            
+                <li class="toctree-l3"><a href="#further_questions">Further questions?</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#crash_logs">Crash Logs</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../android_developer_manual_sample/">Sample Developer Manual</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Windows api</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../windows/windows_developer_manual/">Developer Manual</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../windows/windows_binares/">Binary Modules</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../windows/windows_license_help/">License Help</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../windows/windows_networkwriter/">RTMP Network Render & Writer</a>
+        
+    </li>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Language Integration</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../windows/language_integration/nanostream_cpp_integration/">C++</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../windows/language_integration/nanostream_csharp_integration/">C#</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../windows/language_integration/nanostream_delphi_integration/">Delphi</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../windows/language_integration/nanostream_activex_visualcpp/">VisualC</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../windows/language_integration/nanostream_activex_visualcpp_mfc/">MFC</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+    </ul>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Direct Show</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../directshow/directshow_audio_volume/">Audio Volume</a>
+        
+    </li>
+
+        
+            
+    <ul class="subnav">
+    <li><span>H.264</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../directshow/directshow_avc_h264/">AVC/H.264 Video Codec</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../directshow/directshow_nanoAVC_decoding_sdk/">nanoAVC/H.264 DirectShow Decoding</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../directshow/directshow_nanoAVC_encoding_sdk/">nanoAVC/H.264 DirectShow Encoding</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../directshow/directshow_h264_video_decoder/">H.264 Video Decoder Filter</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../directshow/directshow_h264_video_encoder/">H.264 Video Encoder Filter</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+            
+    <ul class="subnav">
+    <li><span>MPEG</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../directshow/directshow_mpeg2_broadcast_sdk/">MPEG2 Broadcast SDK</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../directshow/directshow_mpeg2_video_decoder/">MPEG2 Video Decoder</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../directshow/directshow_mpeg2_video_encoder/">MPEG2 Video Encoder</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../directshow/directshow_mpeg_audio_encoder/">MPEG Audio Encoder</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../directshow/directshow_quicktime_imx/">Quicktime IMX Playback</a>
+        
+    </li>
+
+        
+            
+    <ul class="subnav">
+    <li><span>RTMP</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../directshow/directshow_rtmp_source/">RTMP Source</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../directshow/directshow_rtmp_writer/">RTMP Writer</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../directshow/directshow_rtmp_status_statistics/">RTMP Status & Statistics</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+            
+    <ul class="subnav">
+    <li><span>RTSP</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../directshow/directshow_rtsp_sink/">RTSP Sink</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../directshow/directshow_rtsp_source/">RTSP Source</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../directshow/directshow_udp_ts_streaming/">UDP/TS Streaming</a>
+        
+    </li>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Video Filter</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../directshow/directshow_screen_capture_filter/">Screen Capture Filter</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../directshow/directshow_video_mixer/">Video Mixer PiP</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../directshow/directshow_overlay_mixing/">Video Mixer Overlay</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+    </ul>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Additional Knowledge</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../support/nanostream_aec/">Acoustic Echo Cancellation</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../support/nanostream_audio_levels/">Audio Level</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../support/nanostream_bitrate_control_statistics/">Bitrate Control & Statistics</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../support/nanostream_latency/">Latency</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../support/nanostream_low_latency/">Low Latency</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../support/nanostream_mixer_overlay/">Overlay Mixer</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../support/nanostream_mp4_recording/">MP4 Recording</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../support/nanostream_remote_server_recording/">Remote Server Recording</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../support/nanostream_udp_ts_streaming/">UDP/TS Streaming</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../support/nanostream_rtmp_all/">RTMP</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>bintu.live</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../../bintu/android/bintu-android-sdk/">Android SDK</a>
+        
+    </li>
+
+        
+            
+    <ul class="subnav">
+    <li><span>iOS</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../../bintu/ios/bintu_ios_sdk/">SDK Documentation</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../../bintu/ios/bintu_ios_sample/">Sample Documentation</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../../about/">About</a>
+        
+    </li>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">nanocosmos Docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>nanostream &raquo;</li>
+        
+      
+        
+          <li>Android &raquo;</li>
+        
+      
+    
+    <li>Playback Developer Manual</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="nanostream_sdk_android_playback_developer_manual">nanoStream SDK Android: Playback Developer Manual<a class="headerlink" href="#nanostream_sdk_android_playback_developer_manual" title="Permanent link">&para;</a></h1>
+<h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
+<h3 id="description">Description <a name="rtmp_playback_description"></a><a class="headerlink" href="#description" title="Permanent link">&para;</a></h3>
+<p>RTMP Playback Component enables application developers to add playback of RTMP live and on demand streams to their apps.</p>
+<p>Supported codecs are H.264 Video, AAC and MP3 Audio.</p>
+<p>Video streams are decoded and rendered on a Surface that is hold by the application, usually connected to a <code>SurfaceView</code>.</p>
+<p>Audio streams are decoded and rendered to system audio using the Android AudioSession/AudioTrack API.</p>
+<p>The interface and usage are similar to the Android MediaPlayer. The Android MediaPlayerControl interface is implemented to enable control through an <code>android.widget.MediaController</code> instance.</p>
+<h3 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Permanent link">&para;</a></h3>
+<p>Related nanoStream SDK Version: 4.1</p>
+<p>Minimum supported Android OS/API: 4.1/API 16</p>
+<p>Required application permissions:</p>
+<ul>
+<li><code>android.permission.INTERNET</code></li>
+<li><code>android.permission.RECORD_AUDIO</code></li>
+<li><code>android.permission.RECORD_VIDEO</code></li>
+<li><code>android.permission.MODIFY_AUDIO_SETTINGS</code></li>
+</ul>
+<h3 id="license">License<a class="headerlink" href="#license" title="Permanent link">&para;</a></h3>
+<p>The playback component requires a special feature flag to be enabled in your nanoStream license key. It not necessarily included in nanoStream Android SDK licenses.</p>
+<h2 id="interface">Interface <a name="rtmp_playback_interface"></a><a class="headerlink" href="#interface" title="Permanent link">&para;</a></h2>
+<h3 id="package_name">Package name<a class="headerlink" href="#package_name" title="Permanent link">&para;</a></h3>
+<p><code>net.nanocosmos.nanoStream.streamer</code></p>
+<h3 id="declaration">Declaration<a class="headerlink" href="#declaration" title="Permanent link">&para;</a></h3>
+<p><code>public abstract class NanostreamPlayer implements MediaPlayercontrol, Surfaceholder.Callback</code></p>
+<h3 id="function_life_cycle">Function Life Cycle<a class="headerlink" href="#function_life_cycle" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Instance Handling</th>
+<th>Initialization</th>
+<th>Capabilities</th>
+<th>Queries</th>
+<th>Playback Control</th>
+<th>Supported by RTMP Player</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>createNanostreamPlayer</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>setSettings</td>
+<td></td>
+<td></td>
+<td></td>
+<td>yes</td>
+</tr>
+<tr>
+<td></td>
+<td>setPlayerEventListener</td>
+<td></td>
+<td></td>
+<td></td>
+<td>yes</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>canPrepare</td>
+<td></td>
+<td></td>
+<td>yes</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>canPrepareAsync</td>
+<td></td>
+<td></td>
+<td>yes</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>canPause</td>
+<td></td>
+<td></td>
+<td>yes</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>canSeekBackward</td>
+<td></td>
+<td></td>
+<td>yes</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>canSeekForward</td>
+<td></td>
+<td></td>
+<td>yes</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td>getState</td>
+<td></td>
+<td>yes</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td>isPlaying</td>
+<td></td>
+<td>yes</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td>getCurrentPosition</td>
+<td></td>
+<td>no</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td>getDuration</td>
+<td></td>
+<td>no</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>prepare</td>
+<td>no</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>prepareAsync</td>
+<td>no</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>start</td>
+<td>yes</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>pause</td>
+<td>yes  <sup><a href="#fnAV2">2</a></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>seekTo</td>
+<td>yes    <sup><a href="#fnAV1">1</a></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>stop</td>
+<td>yes</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>start</td>
+<td>yes</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>stop</td>
+<td>yes</td>
+</tr>
+<tr>
+<td></td>
+<td>close</td>
+<td></td>
+<td></td>
+<td></td>
+<td>no</td>
+</tr>
+<tr>
+<td></td>
+<td>release</td>
+<td></td>
+<td></td>
+<td></td>
+<td>yes</td>
+</tr>
+</tbody>
+</table>
+<h2 id="creating_an_instance">Creating an Instance<a class="headerlink" href="#creating_an_instance" title="Permanent link">&para;</a></h2>
+<p><code>NanostreamPlayer</code> instances can be created through the static factory function <code>createNanostreamPlayer</code> at the top level <code>nanoStream class</code>. NanostreamPlayer is designed to support multiple player instances. The number of parallel instances can be limited by system resources such as codec,surfaces,memory, network connections and bandwidth.</p>
+<h2 id="configuration_and_settings">Configuration and Settings<a class="headerlink" href="#configuration_and_settings" title="Permanent link">&para;</a></h2>
+<p>Initial player settings are wrapped by the <code>NanostreamPlayer.PlayerSettings</code> class. The settings can be applied by calling <code>NanostreamPlayer.setSettings</code>.</p>
+<h2 id="playersettings">PlayerSettings:<a class="headerlink" href="#playersettings" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Functions</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default Values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>License</td>
+<td>getLicense/setLicense</td>
+<td>nanoStream license key</td>
+<td>String</td>
+<td>empty</td>
+</tr>
+<tr>
+<td>Url</td>
+<td>getUrl/setUrl</td>
+<td>RTMP url</td>
+<td>String</td>
+<td>empty</td>
+</tr>
+<tr>
+<td>Stream Name</td>
+<td>getStreamname/setStreamname</td>
+<td>RTMP stream name</td>
+<td>String</td>
+<td>empty</td>
+</tr>
+<tr>
+<td>User Name</td>
+<td>getUsername/setUsername</td>
+<td>User name if RTMP authentication is required</td>
+<td>String</td>
+<td>empty</td>
+</tr>
+<tr>
+<td>Password</td>
+<td>getPassword/setPassword Password if RTMP authentication is required</td>
+<td>String</td>
+<td>empty</td>
+<td></td>
+</tr>
+<tr>
+<td>Buffer Time</td>
+<td>getBufferTimeMs/setBufferTimeMs</td>
+<td>Length of the stream buffer in milliseconds</td>
+<td>Integer</td>
+<td>2000ms/2s</td>
+</tr>
+<tr>
+<td>Frame Dropping Mode</td>
+<td>getFrameDroppingMode/setFrameDroppingMode</td>
+<td>Configuration of the dropping mode regarding different droppable frame types</td>
+<td>FrameDroppingMode</td>
+<td>DROP_NO_FRAMES</td>
+</tr>
+<tr>
+<td>Stream Playback</td>
+<td>getVideoPlayback/getAudioPlayback/setStreamPlayback</td>
+<td>Enable stream types to be decoded and played</td>
+<td>boolean</td>
+<td>video:true, audio:true</td>
+</tr>
+<tr>
+<td>TrackTimout</td>
+<td>getTrackTimeout/setTrackTimeout</td>
+<td>Timeout to waiting for Track info</td>
+<td>long</td>
+<td>10000</td>
+</tr>
+<tr>
+<td>EndlessMode</td>
+<td>getEndlessMode/setEndlessMode</td>
+<td>Reopen the stream until stop call</td>
+<td>boolean</td>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+<h2 id="player_state">Player State<a class="headerlink" href="#player_state" title="Permanent link">&para;</a></h2>
+<p>The player stat can be queried through the <code>getState()</code> function</p>
+<pre><code class="java">/**
+*
+* The different states of the player instance.
+*
+*/
+public enum PlayerState
+{
+    IDLE, INITIALIZED, PREPARED, STARTED, PAUSED, SEEKING, BUFFERING, RECONNECTING, PLAYBACKCOMPLETED, STOPPING, STOPPED;
+}
+</code></pre>
+
+<table>
+<thead>
+<tr>
+<th>State</th>
+<th>Description</th>
+<th>Supported by RTMP Player</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PlayerState.IDLE</td>
+<td>Initial state. Player has not yet been initialized or has been closed.</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>PlayerState.INITIALIZED</td>
+<td>Player has been initialized with license and settings.</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>PlayerState.PREPARED</td>
+<td>Player has been prepared and is ready to start.</td>
+<td>no</td>
+</tr>
+<tr>
+<td>PlayerState.STARTED</td>
+<td>Playback has been started.</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>PlayerState.PAUSED</td>
+<td>Playback has been paused.</td>
+<td>yes   <sup><a href="#fnAV2">2</a></sup></td>
+</tr>
+<tr>
+<td>PlayerState.SEEKING</td>
+<td>Player is Seeking</td>
+<td>yes       <sup><a href="#fnAV1">1</a></sup></td>
+</tr>
+<tr>
+<td>PlayerState.BUFFERING</td>
+<td>Player is buffering stream data.</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>PlayerState.RECONNECTING</td>
+<td>Player is performing a reconnect</td>
+<td>no</td>
+</tr>
+<tr>
+<td>PlayerState.PLAYBACKCOMPLETED</td>
+<td>Playback has ended due to end of stream.</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>PlayerState.STOPPING</td>
+<td>Player is stopping</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>PlayerState.STOPPED</td>
+<td>Player is stopped</td>
+<td>yes</td>
+</tr>
+</tbody>
+</table>
+<h2 id="event_notification">Event Notification<a class="headerlink" href="#event_notification" title="Permanent link">&para;</a></h2>
+<p>Event notifications can be received through the <code>NanostreamPlayer.PlayerEventListener</code> interface. Derive your listener from this interface and add it to the player by calling <code>setPlayerEventListener()</code>.</p>
+<h2 id="status_events">Status Events<a class="headerlink" href="#status_events" title="Permanent link">&para;</a></h2>
+<p>Event Type : <code>TYPE_RTMP_STATUS</code></p>
+<table>
+<thead>
+<tr>
+<th>Event Code</th>
+<th>Description</th>
+<th>Corresponding State</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NanostreamEvent.CODE_STREAM_STARTED</td>
+<td>Playback has been started.</td>
+<td>PlayerState.STARTED</td>
+</tr>
+<tr>
+<td>NanostreamEvent.CODE_STREAM_STOPPING</td>
+<td>Playback will stop.</td>
+<td>PlayerState.STOPPING</td>
+</tr>
+<tr>
+<td>NanostreamEvent.CODE_STREAM_STOPPED</td>
+<td>Playback has been stopped.</td>
+<td>PlayerState.STOPPED</td>
+</tr>
+<tr>
+<td>NanostreamEvent.CODE_STREAM_ERROR_CONNECT</td>
+<td>The connect to the stream url failed.</td>
+<td>PlayerState.STOPPED</td>
+</tr>
+<tr>
+<td>NanostreamEvent.CODE_STREAM_BUFFERING</td>
+<td>Player is buffering stream data</td>
+<td>PlayerState.BUFFERING</td>
+</tr>
+<tr>
+<td>NanostreamEvent.CODE_STREAM_PLAYBACKCOMPLETED</td>
+<td>Playback has ended due to end of stream.</td>
+<td>PlayerState.PLAYBACKCOMPLETED</td>
+</tr>
+<tr>
+<td>NanostreamEvent.CODE_STREAM_NOT_FOUND</td>
+<td>The specified stream could not be found.</td>
+<td>PlayerState.STOPPED</td>
+</tr>
+<tr>
+<td>NanostreamEvent.CODE_STREAM_SEEKING    <sup><a href="#fnAV1">1</a></td>
+<td>The Stream is seeking.</td>
+<td>PlayerState.SEEKING</td>
+</tr>
+<tr>
+<td>NanostreamEvent.CODE_STREAM_PAUSED   <sup><a href="#fnAV2">2</a></td>
+<td>The Stream is paused</td>
+<td>PlayerState.PAUSED</td>
+</tr>
+<tr>
+<td>NanostreamEvent.CODE_STREAM_VIDEO_FORMAT_AVAILABLE  <sup><a href="#fnAV1">1</a></td>
+<td>The Stream has a MediaFormat for the Video Track</td>
+<td></td>
+</tr>
+<tr>
+<td>NanostreamEvent.CODE_STREAM_AUDIO_FORMAT_AVAILABLE  <sup><a href="#fnAV1">1</a></td>
+<td>The Stream has a MediaFormat for the Audio Track</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="results_and_error_events">Results and Error Events<a class="headerlink" href="#results_and_error_events" title="Permanent link">&para;</a></h2>
+<p>Event Type : <code>TYPENANORESULTS</code> Event Codes : Values of type nanoResults</p>
+<table>
+<thead>
+<tr>
+<th>Event Code</th>
+<th>Description</th>
+<th>Corresponding State</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>nanoResults.N_NOT_INITIALIZED</td>
+<td>The RTMP library has not been initialized properly.</td>
+<td>PlayerState.STOPPED</td>
+</tr>
+<tr>
+<td>nanoResults.N_ALLOCATEDATA_FAILED_RTMP_SRC</td>
+<td>Memory allocation failed.</td>
+<td>PlayerState.STOPPED</td>
+</tr>
+<tr>
+<td>nanoResults.N_LICENSE_INVALID</td>
+<td>License check failed - License invalid.</td>
+<td>PlayerState.STOPPED</td>
+</tr>
+<tr>
+<td>nanoResults.N_LICENSE_INVALID_RTMP_SRC</td>
+<td>License check failed - RTMP playback is not included.</td>
+<td>PlayerState.STOPPED</td>
+</tr>
+<tr>
+<td>nanoResults.N_LICENSE_EXPIRED</td>
+<td>License check failed - The license period has ended.</td>
+<td>PlayerState.STOPPED</td>
+</tr>
+<tr>
+<td>nanoResults.N_TCP_CONNECT_FAILED</td>
+<td>TCP connect failed.</td>
+<td>PlayerState.STOPPED</td>
+</tr>
+<tr>
+<td>nanoResults.N_RTMP_HANDSHAKE_FAILED</td>
+<td>RTMP handshake failed.</td>
+<td>PlayerState.STOPPED</td>
+</tr>
+<tr>
+<td>nanoResults.N_RTMP_CONNECT_FAILED</td>
+<td>RTMP connect failed.</td>
+<td>PlayerState.STOPPED</td>
+</tr>
+<tr>
+<td>nanoResults.N_RTMP_AUTH_FAILED</td>
+<td>RTMP authentication is required and failed.</td>
+<td>PlayerState.STOPPED</td>
+</tr>
+<tr>
+<td>nanoResults.N_RTMP_APP_INVALID</td>
+<td>The application part of the url is invalid and has been rejected.</td>
+<td>PlayerState.STOPPED</td>
+</tr>
+<tr>
+<td>nanoResults.N_RTMP_STATUS_PLAY_STREAM_NOT_FOUND</td>
+<td>The stream name could not be found.</td>
+<td>PlayerState.STOPPED</td>
+</tr>
+<tr>
+<td>nanoResults.N_RTMP_STATUS_PLAY_STREAM_SEEK    <sup><a href="#fnAV1">1</a></td>
+<td>The player is seeking.</td>
+<td>PlayerState.SEEKING</td>
+</tr>
+<tr>
+<td>nanoResults.N_RTMP_SEEK_NOT_AVAILABLE  <sup><a href="#fnAV1">1</a></td>
+<td>The stream can not seek.</td>
+<td></td>
+</tr>
+<tr>
+<td>nanoResults.N_RTMP_SEEK_FAILED   <sup><a href="#fnAV1">1</a></td>
+<td>The stream can not seek.</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="audio_video_format">Audio / Video Format<a class="headerlink" href="#audio_video_format" title="Permanent link">&para;</a></h2>
+<p>After the <code>NanostreamEvent.CODE_STREAM_AUDIO/VIDEO_FORMAT_AVAILABLE</code> event, you can get the MediaFormat Object with the <code>getAudio/VideoFormat()</code><sup><a href="#fnAV1">1</a></sup> function call.</p>
+<p>We added two custom Fields for the Video MediaFormat:</p>
+<ul>
+<li><code>NanostreamPlayer.KEY_ASPECT_RATIO_WIDTH</code></li>
+<li><code>NanostreamPlayer.KEY_ASPECT_RATIO_HEIGHT</code></li>
+</ul>
+<p>With these custom fields you can get the aspect ratio width and height.</p>
+<pre><code class="java">MediaFormat videoFormat = mPlayer.getVideoFormat();
+
+int aspectRatioWidth = videoFormat.getInteger(NanostreamPlayer.KEY_ASPECT_RATIO_WIDTH);
+int aspectRatioHeight = videoFormat.getInteger(NanostreamPlayer.KEY_ASPECT_RATIO_HEIGHT);
+</code></pre>
+
+<h2 id="implementation_example">Implementation Example <a name="rtmp_playback_implementation_example"></a><a class="headerlink" href="#implementation_example" title="Permanent link">&para;</a></h2>
+<pre><code class="java">public class PlayerActivity extends Activity implements PlayerEventListener, SurfaceHolder.Callback {
+    ...
+    private NanostreamPlayer mPlayer = null;
+    private String license = &quot;YOUR LICENSE CODE&quot;;
+
+    private String strStreamUrl = &quot;rtmp://192.168.1.100/vod&quot;;
+    private String strStreamname = &quot;mp4:file.mp4&quot;;
+
+    private LinearLayout root;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        root = new LinearLayout(this);
+        root.setOrientation(LinearLayout.VERTICAL);
+        root.setLayoutParams(containerParams);
+        root.setBackgroundColor(Color.BLACK);
+
+        ...
+
+        mPlayer = nanoStream.createNanostreamPlayer();
+
+        PlayerSettings settings = mPlayer.new PlayerSettings();
+
+        settings.setLicense(license);
+        settings.setUrl(strStreamUrl);
+        settings.setStreamname(strStreamname);
+        settings.setAuthUsername(&quot;&quot;);
+        settings.setAuthPassword(&quot;&quot;);
+        settings.setBufferTimeMs(2000);
+
+        mPlayer.setSettings(settings);
+        mPlayer.setPlayerEventListener(this);
+
+        ...
+        // we need a surface Callback for the application
+        LinearLayout.LayoutParams surfaceParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.FILL_PARENT, ViewGroup.LayoutParams.FILL_PARENT, 0.5F);
+        surfaceParams.gravity = Gravity.CENTER;
+        surfaceParams.weight = 0.5f;
+
+        SurfaceView surfaceView = new SurfaceView(this);
+        surfaceView.setLayoutParams(surfaceParams);
+        surfaceView.getHolder.addCallback(this);
+
+        root.addView(surfaceView);
+        setContentView(root);
+    }
+
+    ...
+
+    @Override
+    public void onPlayerEvent(NanostreamEvent event, NanostreamPlayer instance) {
+        final String msg = event.GetDescription();
+        Log.d(this.getClass().getName(), event.GetDescription());
+    }
+
+    @Override
+    public void surfaceCreated(SurfaceHolder holder) {
+        mPlayer.surfaceCreated(holder);
+
+        try {
+            if (!mPlayer.getState().equals(PlayerState.STARTED)) {
+                mPlayer.start();
+            }
+        } catch (IllegalStateException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void surfaceChanged(SurfaceHolder holder, int format, int width, int height) {
+        mPlayer.surfaceChanged(holder, format, width, height);
+    }
+
+    @Override
+    public void surfaceDestroyed(SurfaceHolder holder) {
+        mPlayer.surfaceDestroyed(holder);
+    }
+}
+</code></pre>
+
+<p><a name="fnAV1">1</a>: since nanoStream Android SDK 3.2
+<a name="fnAV2">2</a>: since nanoStream Android SDK 3.3</p>
+<h1 id="further_questions">Further questions?<a class="headerlink" href="#further_questions" title="Permanent link">&para;</a></h1>
+<p>Would you like a feature not available yet?</p>
+<p>We can make it work for you based on our consulting and development / implementation services. <a href="https://www.nanocosmos.de/v6/#section_call" title="Contect us">Contact us</a></p>
+<h1 id="crash_logs">Crash Logs<a class="headerlink" href="#crash_logs" title="Permanent link">&para;</a></h1>
+<p>If you encounter a crash, please send us the crash log as explained in the following steps:</p>
+<ul>
+<li>Plug in the device and open Android Studio</li>
+<li>In Android Studios Android Monitor<ul>
+<li>Clear the logcat output</li>
+<li>Set the Log Level to <code>Verbose</code></li>
+<li>Set the filter to <code>No Filters</code></li>
+</ul>
+</li>
+<li>Run the critical section</li>
+<li>Mark the entire logcat output</li>
+<li>Right click in the logcat View and <code>Copy as Plain Text</code></li>
+<li>Open an editor of your choice</li>
+<li>Paste the logcat output into the editor and Save the logcat output as .txt file</li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../android_developer_manual_sample/" class="btn btn-neutral float-right" title="Sample Developer Manual">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../android_developer_manual_streaming/" class="btn btn-neutral" title="Streaming Developer Manual"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+    
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../android_developer_manual_streaming/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../android_developer_manual_sample/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script src="../../../js/theme.js"></script>
+
+</body>
+</html>

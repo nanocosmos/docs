@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>Javascript Integration - nanocosmos Docs</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Javascript Integration";
+    var mkdocs_page_input_path = "nanostream/web/nanostream_javascript_integration.md";
+    var mkdocs_page_url = "/nanostream/web/nanostream_javascript_integration/";
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> nanocosmos Docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../..">Home</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>nanostream</span></li>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Web</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../nanostream-4.x-web-api/">API Manual</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Javascript Integration</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#live_video_encoder_-_plugin_api">Live Video Encoder - Plugin API</a></li>
+                
+                    <li><a class="toctree-l4" href="#browser_based_usage_with_html_and_javascript">Browser based usage with HTML and Javascript</a></li>
+                
+                    <li><a class="toctree-l4" href="#how_to_embed_the_encoder_plugin_into_html">How to embed the encoder plugin into HTML</a></li>
+                
+                    <li><a class="toctree-l4" href="#accessing_the_plugin">Accessing the plugin</a></li>
+                
+                    <li><a class="toctree-l4" href="#plugin_interface">Plugin Interface</a></li>
+                
+                    <li><a class="toctree-l4" href="#new_functions_for_version_15">New functions for Version 1.5</a></li>
+                
+                    <li><a class="toctree-l4" href="#new_javascript_functions_for_version_20">New Javascript functions for Version 2.0</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+        
+    </ul>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../ios/nanostream-ios-sdk/">iOS api</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../macos/nanostream-macos-sdk/">MacOS api</a>
+        
+    </li>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Android</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../android/android_developer_manual_streaming/">Streaming Developer Manual</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../android/android_developer_manual_playback/">Playback Developer Manual</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../android/android_developer_manual_sample/">Sample Developer Manual</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Windows api</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../windows/windows_developer_manual/">Developer Manual</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../windows/windows_binares/">Binary Modules</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../windows/windows_license_help/">License Help</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../windows/windows_networkwriter/">RTMP Network Render & Writer</a>
+        
+    </li>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Language Integration</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../windows/language_integration/nanostream_cpp_integration/">C++</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../windows/language_integration/nanostream_csharp_integration/">C#</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../windows/language_integration/nanostream_delphi_integration/">Delphi</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../windows/language_integration/nanostream_activex_visualcpp/">VisualC</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../windows/language_integration/nanostream_activex_visualcpp_mfc/">MFC</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+    </ul>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Direct Show</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../directshow/directshow_audio_volume/">Audio Volume</a>
+        
+    </li>
+
+        
+            
+    <ul class="subnav">
+    <li><span>H.264</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../directshow/directshow_avc_h264/">AVC/H.264 Video Codec</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../directshow/directshow_nanoAVC_decoding_sdk/">nanoAVC/H.264 DirectShow Decoding</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../directshow/directshow_nanoAVC_encoding_sdk/">nanoAVC/H.264 DirectShow Encoding</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../directshow/directshow_h264_video_decoder/">H.264 Video Decoder Filter</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../directshow/directshow_h264_video_encoder/">H.264 Video Encoder Filter</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+            
+    <ul class="subnav">
+    <li><span>MPEG</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../directshow/directshow_mpeg2_broadcast_sdk/">MPEG2 Broadcast SDK</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../directshow/directshow_mpeg2_video_decoder/">MPEG2 Video Decoder</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../directshow/directshow_mpeg2_video_encoder/">MPEG2 Video Encoder</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../directshow/directshow_mpeg_audio_encoder/">MPEG Audio Encoder</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../directshow/directshow_quicktime_imx/">Quicktime IMX Playback</a>
+        
+    </li>
+
+        
+            
+    <ul class="subnav">
+    <li><span>RTMP</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../directshow/directshow_rtmp_source/">RTMP Source</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../directshow/directshow_rtmp_writer/">RTMP Writer</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../directshow/directshow_rtmp_status_statistics/">RTMP Status & Statistics</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+            
+    <ul class="subnav">
+    <li><span>RTSP</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../directshow/directshow_rtsp_sink/">RTSP Sink</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../directshow/directshow_rtsp_source/">RTSP Source</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../directshow/directshow_udp_ts_streaming/">UDP/TS Streaming</a>
+        
+    </li>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Video Filter</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../directshow/directshow_screen_capture_filter/">Screen Capture Filter</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../directshow/directshow_video_mixer/">Video Mixer PiP</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../directshow/directshow_overlay_mixing/">Video Mixer Overlay</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+    </ul>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Additional Knowledge</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../support/nanostream_aec/">Acoustic Echo Cancellation</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../support/nanostream_audio_levels/">Audio Level</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../support/nanostream_bitrate_control_statistics/">Bitrate Control & Statistics</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../support/nanostream_latency/">Latency</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../support/nanostream_low_latency/">Low Latency</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../support/nanostream_mixer_overlay/">Overlay Mixer</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../support/nanostream_mp4_recording/">MP4 Recording</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../support/nanostream_remote_server_recording/">Remote Server Recording</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../support/nanostream_udp_ts_streaming/">UDP/TS Streaming</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../support/nanostream_rtmp_all/">RTMP</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>bintu.live</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../../bintu/android/bintu-android-sdk/">Android SDK</a>
+        
+    </li>
+
+        
+            
+    <ul class="subnav">
+    <li><span>iOS</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../../bintu/ios/bintu_ios_sdk/">SDK Documentation</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../../bintu/ios/bintu_ios_sample/">Sample Documentation</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../../about/">About</a>
+        
+    </li>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">nanocosmos Docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>nanostream &raquo;</li>
+        
+      
+        
+          <li>Web &raquo;</li>
+        
+      
+    
+    <li>Javascript Integration</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h2 id="live_video_encoder_-_plugin_api">Live Video Encoder - Plugin API<a class="headerlink" href="#live_video_encoder_-_plugin_api" title="Permanent link">&para;</a></h2>
+<p><strong>NOTE: This is the Plugin API for NPAPI and ActiveX.
+For using Chrome Browsers, see our <a href="../nanostream-4.x-web-api/" title="nanoStream Web API 4.x">nanoStream Web API 4.x</a>
+</strong></p>
+<h3 id="browser_based_usage_with_html_and_javascript">Browser based usage with HTML and Javascript<a class="headerlink" href="#browser_based_usage_with_html_and_javascript" title="Permanent link">&para;</a></h3>
+<p>The Live Video Encoder core components are available as plugins for several browsers:\
+Internet Explorer (IE), based on ActiveX, and NP-Plugin based browsers (Firefox, Safari, Chrome).\
+The same API is valid for integration into other languages, C++, .NET, Delphi, etc.\
+See the sample web page for functionality or contact us for further help.\</p>
+<h3 id="how_to_embed_the_encoder_plugin_into_html">How to embed the encoder plugin into HTML<a class="headerlink" href="#how_to_embed_the_encoder_plugin_into_html" title="Permanent link">&para;</a></h3>
+<h4 id="active-x_control">Active-X Control<a class="headerlink" href="#active-x_control" title="Permanent link">&para;</a></h4>
+<p>The Active-X Control is compatible with Microsoft Internet Explorer only. It is loaded by specifying the classid for the plugin. The plugin then may be accessed by Javascript via the ID specified, here &ldquo;nanovid1&rdquo;.</p>
+<p><strong>Simple Version without auto-install:</strong></p>
+<pre><code class="xml">&lt;object ID=&quot;nanovid1&quot; classid=&quot;clsid:E6F9EDB5-797B-4bc3-95E2-B7EA0886273B&quot;&gt;
+&lt;/object&gt;
+</code></pre>
+
+<p><strong>Advanced Version with auto-install from CAB file:</strong></p>
+<pre><code class="xml">&lt;object ID=&quot;nanovid1&quot;
+  classid=&quot;clsid:E6F9EDB5-797B-4bc3-95E2-B7EA0886273B&quot;
+  width=&quot;480&quot; height=&quot;360&quot;
+  codebase=&quot;../packages/nanostream-1.5.0.6.cab#version=1,5,0,6&quot;&gt;
+&lt;/object&gt;
+</code></pre>
+
+<p>Note: replace the codebase path and version with the cab file you received for installation.</p>
+<h4 id="npapi_plugin">NPAPI Plugin<a class="headerlink" href="#npapi_plugin" title="Permanent link">&para;</a></h4>
+<p>The NPAPI plugin is compatible with Mozilla Firefox, Apple Safari and Google Chrome.</p>
+<pre><code class="xml">    &lt;embed id=&quot;nanovid1&quot; type=&quot;application/x-nanocosmos-LiveVideoEncoder&quot; width=480 height=360&gt;
+    &lt;noembed&gt;
+      Can't embed plugin.
+    &lt;/noembed&gt;
+    &lt;/embed&gt;
+</code></pre>
+
+<p>It may be used with an <object> tag as well.</p>
+<h4 id="browser_independent_plugin_loading">Browser independent plugin loading<a class="headerlink" href="#browser_independent_plugin_loading" title="Permanent link">&para;</a></h4>
+<p>The object tags may be nested to support all browser types:</p>
+<pre><code class="xml">&lt;object ID=&quot;nanovid1&quot;
+  classid=&quot;clsid:E6F9EDB5-797B-4bc3-95E2-B7EA0886273B&quot; width=&quot;480&quot; height=&quot;360&quot;&gt;
+    &lt;comment&gt;
+        &lt;embed id=&quot;nanovid1&quot; type=&quot;application/x-nanocosmos-LiveVideoEncoder&quot; width=480 height=360&gt;
+            &lt;noembed&gt;Can't embed plugin.&lt;/noembed&gt;
+        &lt;/embed&gt;
+    &lt;/comment&gt;
+&lt;/object&gt;
+</code></pre>
+
+<h4 id="license_and_other_custom_settings">License and other custom settings<a class="headerlink" href="#license_and_other_custom_settings" title="Permanent link">&para;</a></h4>
+<p>The License key is a string which needs to be placed into the nanoLicense.js file.\
+The nanoLicense.js also contains the mime type and path to the Mozilla based plugin (XPI). The default path is &ldquo;../packages/nanostream.xpi&rdquo;:</p>
+<h5 id="contents_of_nanolicensejs">Contents of nanoLicense.js<a class="headerlink" href="#contents_of_nanolicensejs" title="Permanent link">&para;</a></h5>
+<pre><code class="javascript">// nanoStream License Code and custom settings
+// replace the &quot;nlic&quot; string with your custom license
+g_nanoLicense = &quot;nlic:1.0:nanoLiveEncDemo:……… &quot;;
+
+//url to xpi installer package
+var nano_xpi_source = &quot;../packages/nanostream.xpi&quot;;
+</code></pre>
+
+<h4 id="dynamic_dom_loading_of_the_plugin">Dynamic DOM Loading of the Plugin<a class="headerlink" href="#dynamic_dom_loading_of_the_plugin" title="Permanent link">&para;</a></h4>
+<p>The plugin may be loaded into the HTML Document (DOM) by dynamically creating it with Javascript:</p>
+<pre><code class="javascript">function createNanoVideoObject()
+{
+    var nanovid = document.createElement(&quot;object&quot;);
+    if(isIE)
+        nanovid.setAttribute(&quot;classid&quot;,&quot;clsid:E6F9EDB5-797B-4bc3-95E2-B7EA0886273B&quot;);
+    else
+          nanovid.setAttribute(&quot;type&quot;,&quot;application/x-nanocosmos-LiveVideoEncoder&quot;);
+    return nanovid;
+}
+</code></pre>
+
+<h3 id="accessing_the_plugin">Accessing the plugin<a class="headerlink" href="#accessing_the_plugin" title="Permanent link">&para;</a></h3>
+<p>nanoStream is then available as a DOM object with the id &ldquo;nanovid1&rdquo;. The member functions and variables can be accessed as other Javascript objects, e.g. nanovid1.StartPreview().</p>
+<h3 id="plugin_interface">Plugin Interface<a class="headerlink" href="#plugin_interface" title="Permanent link">&para;</a></h3>
+<p>The nanoStream Plugin may be controlled from almost any language which is able to load the plugin.\
+The plugin exposes methods and properties to set options, start preview and encoding.</p>
+<h4 id="list_of_propertiesfunctions_with_example_settings">List of Properties/Functions with example settings:<a class="headerlink" href="#list_of_propertiesfunctions_with_example_settings" title="Permanent link">&para;</a></h4>
+<pre><code class="javascript">destination URL (Flash or Wowza Media Server, or local file)
+nanovid1.DestinationURL = &quot;rtmp://localhost/live+myStream&quot;;
+nanovid1.DestinationURL = &quot;c:\temp\h264.mp4&quot;;
+nanovid1.VideoSource = 0;       // Video Capture Device ID
+nanovid1.AudioSource = 0;       // Audio Capture Device ID
+nanovid1.VideoBitrate = 400000;         // Video Bitrate (bits/s)
+nanovid1.AudioBitrate = 32000;          // Audio Bitrate (bits/s)
+nanovid1.VideoWidth = 352;      // Video Pixel Width
+nanovid1.VideoHeight = 288;     // Video Pixel Height
+nanovid1.VideoFrameRate = 15;           // Video FPS
+
+//start the preview from the current camera
+nanovid1.StartPreview();
+
+//Start Encoding/Broadcast
+nanovid1.StartBroadcast();
+</code></pre>
+
+<h4 id="javascript_helper_functions">Javascript Helper Functions<a class="headerlink" href="#javascript_helper_functions" title="Permanent link">&para;</a></h4>
+<p>For simple usage, a set of Javascript functions is provided (nanoEncoder.js).</p>
+<pre><code class="javascript">// setup a live stream to a Flash Media/Wowza server
+SetEncodingUrl(&quot;rtmp://myServer.com/live/myStream&quot;);
+SetVideoBitrate(400000);    // sets the bitrate to 400 kbps
+OnStartPreview();       // calls nanovid1.StartPreview()
+OnStartBroadcast();     // calls nanovid1.StartBroadcast()
+</code></pre>
+
+<p>Additional Configuration can be set with <strong>nanoSetConfig();</strong></p>
+<p>Example:</p>
+<pre><code class="javascript">nanoSetConfig(&quot;H264Profile&quot;,&quot;Baseline&quot;);
+</code></pre>
+
+<h4 id="javascript_api_nanoencoderjs">Javascript API (nanoEncoder.js)<a class="headerlink" href="#javascript_api_nanoencoderjs" title="Permanent link">&para;</a></h4>
+<pre><code class="javascript">// SetEncodingUrl()
+// call this to set custom encoding URL here
+function SetEncodingUrl(url)
+
+// get current internal encoding url
+function GetEncodingUrl()
+
+// SetVideoBitrate()
+// sets encoder bitrate (bits/s)
+function SetVideoBitrate(bitrate)
+
+function GetVideoBitrate()
+
+// SetVideoResolution()
+// sets video capture resolution (x/y)
+// warning: resolutions are hardware/driver dependent!
+function SetVideoResolution(x,y)
+
+// SetVideoFrameRate()
+// sets video capture frames/sec (e.g. 15, 25)
+function SetVideoFrameRate(fps)
+
+// Start/Stop Video Capture Preview
+function OnStartPreview(doCheckFormat)
+function OnStopPreview()
+
+// OnStartBroadcast()
+// starts encoding / network broadcast
+function OnStartBroadcast()
+function OnStopBroadcast()
+
+// SetAudioSource()
+// sets audio source device id (0...)
+function SetAudioSource(audioSource) {
+
+// SetVideoSource()
+// sets video  source device id (0...)
+function SetVideoSource(source) {
+
+// event_OnStop
+// called by plugin on stop events
+function event_OnStop(e)
+
+// set basic encoding options to init plugin
+function nanoSetOptions()
+
+// Set license string to unlock the API
+function nanoSetLicense(license) // call this before Init
+</code></pre>
+
+<h3 id="new_functions_for_version_15">New functions for Version 1.5<a class="headerlink" href="#new_functions_for_version_15" title="Permanent link">&para;</a></h3>
+<p>Special configuration data can be sent with the SetConfig method:\
+nanovid1.SetConfig(property,value);</p>
+<p>For some functions wrapper functions are available.</p>
+<pre><code class="javascript">// H264 Encoding Profile (&quot;Baseline&quot; or &quot;Main&quot;)
+function nanoSetH264Profile(p) {
+    nanoSetConfig(&quot;H264Profile&quot;,p);
+}
+
+// H.264 I-Frame Distance
+nanoSetH264IFrameDistance(50);          // Default=50
+
+// special h264 settings
+nanoSetH264Profile(0);          // 0 or &quot;Baseline&quot;, 1 or &quot;Main&quot;
+nanoSetH264VlcMode(1);              // VLC mode: 0=auto, 1=cavlc, 2=cabac
+
+// Constant/Variable Bit Rate
+nanoSetConfig(&quot;RateControl&quot;,0);     // 0=auto, 1=cbr, 2=vbr
+
+// set server authentication (wowza/flash media server)
+function nanoSetServerAuth(user,pass) {
+    nanoSetConfig(&quot;Auth&quot;,user+pass);
+}
+
+
+// SetVideoResolution()
+// sets video capture resolution (x/y)
+// warning: resolutions are hardware/driver dependent!
+function SetVideoResolution(x,y) {
+    nlog(&quot;SetVideoResolution &quot;+x+&quot;x&quot;+y);
+    nanovid1.VideoWidth = x;
+    nanovid1.VideoHeight = y;
+}
+
+// SetVideoResize()
+// sets video resize resolution (x/y) (output of encoder)
+function SetVideoResize(x,y,enableResize) {
+    if(enableResize) {
+        nlog(&quot;SetVideoResize &quot;+x+&quot;x&quot;+y);
+        nanovid1.VideoResizeWidth = resizeWidth;
+        nanovid1.VideoResizeHeight = resizeHeight;
+        nanovid1.EnableResize = 1;
+    }
+}
+
+// set deinterlacing mode
+nanoSetConfig(&quot;DeinterlacingMode&quot;, m);      // 0=off, 1=auto, 2=always
+nanoSetConfig(&quot;DeinterlacingMethod&quot;, m);    // 0=bob/weave, 1=blend, 2=filter, 3=edge
+</code></pre>
+
+<h3 id="new_javascript_functions_for_version_20">New Javascript functions for Version 2.0<a class="headerlink" href="#new_javascript_functions_for_version_20" title="Permanent link">&para;</a></h3>
+<p>Beginning with nanoStream API 2.0, the Javascript code has been restructured with a surrounding object &ldquo;nanoStream.api&rdquo;.</p>
+<p>Simple example:\
+In nanoEncoder.js:</p>
+<pre><code class="javascript">// set one global liveObj
+var liveObj = nanoStream.api;
+</code></pre>
+
+<p>HTML usage:\
+Button with &ldquo;StartBroadcast&rdquo; event handler:
+<code>`html
+&lt;input type="button" value="Start BroadCasting" onclick='liveObj.StartBroadcast()'&gt;</code></p>
+<p>See nanoStream.html for an example implementation.</p>
+<p>For 2.0, there are a number of additional API functions available which are documented in the separate documentation //LiveVideoEncoder-Plugin-API.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../ios/nanostream-ios-sdk/" class="btn btn-neutral float-right" title="iOS api">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../nanostream-4.x-web-api/" class="btn btn-neutral" title="API Manual"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+    
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../nanostream-4.x-web-api/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../../ios/nanostream-ios-sdk/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script src="../../../js/theme.js"></script>
+
+</body>
+</html>

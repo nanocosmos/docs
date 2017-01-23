@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>RTMP Writer - nanocosmos Docs</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/highlight.css">
+  <link href="../../../extra.css" rel="stylesheet">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "RTMP Writer";
+    var mkdocs_page_input_path = "nanostream/directshow/directshow_rtmp_writer.md";
+    var mkdocs_page_url = "/nanostream/directshow/directshow_rtmp_writer/";
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> nanocosmos Docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../..">Home</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>nanostream</span></li>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Web</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../web/nanostream-4.x-web-api/">API Manual</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../web/nanostream_javascript_integration/">Javascript Integration</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../ios/nanostream-ios-sdk/">iOS api</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../macos/nanostream-macos-sdk/">MacOS api</a>
+        
+    </li>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Android</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../android/android_developer_manual_streaming/">Streaming Developer Manual</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../android/android_developer_manual_playback/">Playback Developer Manual</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../android/android_developer_manual_sample/">Sample Developer Manual</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Windows api</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../windows/windows_developer_manual/">Developer Manual</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../windows/windows_binares/">Binary Modules</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../windows/windows_license_help/">License Help</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../windows/windows_networkwriter/">RTMP Network Render & Writer</a>
+        
+    </li>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Language Integration</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../windows/language_integration/nanostream_cpp_integration/">C++</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../windows/language_integration/nanostream_csharp_integration/">C#</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../windows/language_integration/nanostream_delphi_integration/">Delphi</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../windows/language_integration/nanostream_activex_visualcpp/">VisualC</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../windows/language_integration/nanostream_activex_visualcpp_mfc/">MFC</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+    </ul>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Direct Show</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../directshow_audio_volume/">Audio Volume</a>
+        
+    </li>
+
+        
+            
+    <ul class="subnav">
+    <li><span>H.264</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../directshow_avc_h264/">AVC/H.264 Video Codec</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../directshow_nanoAVC_decoding_sdk/">nanoAVC/H.264 DirectShow Decoding</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../directshow_nanoAVC_encoding_sdk/">nanoAVC/H.264 DirectShow Encoding</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../directshow_h264_video_decoder/">H.264 Video Decoder Filter</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../directshow_h264_video_encoder/">H.264 Video Encoder Filter</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+            
+    <ul class="subnav">
+    <li><span>MPEG</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../directshow_mpeg2_broadcast_sdk/">MPEG2 Broadcast SDK</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../directshow_mpeg2_video_decoder/">MPEG2 Video Decoder</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../directshow_mpeg2_video_encoder/">MPEG2 Video Encoder</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../directshow_mpeg_audio_encoder/">MPEG Audio Encoder</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../directshow_quicktime_imx/">Quicktime IMX Playback</a>
+        
+    </li>
+
+        
+            
+    <ul class="subnav">
+    <li><span>RTMP</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../directshow_rtmp_source/">RTMP Source</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="./">RTMP Writer</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#rtmp_network_renderer_writer">RTMP Network Renderer &amp; Writer</a></li>
+                
+                    <li><a class="toctree-l4" href="#purpose">Purpose</a></li>
+                
+                    <li><a class="toctree-l4" href="#module_version">Module / Version</a></li>
+                
+                    <li><a class="toctree-l4" href="#directshow_connectivity">DirectShow Connectivity</a></li>
+                
+                    <li><a class="toctree-l4" href="#configuration">Configuration</a></li>
+                
+                    <li><a class="toctree-l4" href="#configuration_with_directshow_filter_property_page">Configuration with DirectShow filter property page</a></li>
+                
+                    <li><a class="toctree-l4" href="#connection_test">Connection Test</a></li>
+                
+                    <li><a class="toctree-l4" href="#rtmp_authentication">RTMP Authentication</a></li>
+                
+                    <li><a class="toctree-l4" href="#automatic_reconnection">Automatic Reconnection:</a></li>
+                
+                    <li><a class="toctree-l4" href="#advanced_configuration_options">Advanced Configuration Options</a></li>
+                
+                    <li><a class="toctree-l4" href="#log_debug_configuration_registry_settings">Log / Debug Configuration Registry Settings</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../directshow_rtmp_status_statistics/">RTMP Status & Statistics</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+            
+    <ul class="subnav">
+    <li><span>RTSP</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../directshow_rtsp_sink/">RTSP Sink</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../directshow_rtsp_source/">RTSP Source</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../directshow_udp_ts_streaming/">UDP/TS Streaming</a>
+        
+    </li>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Video Filter</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../directshow_screen_capture_filter/">Screen Capture Filter</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../directshow_video_mixer/">Video Mixer PiP</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../directshow_overlay_mixing/">Video Mixer Overlay</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+    </ul>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Additional Knowledge</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../support/nanostream_aec/">Acoustic Echo Cancellation</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../support/nanostream_audio_levels/">Audio Level</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../support/nanostream_bitrate_control_statistics/">Bitrate Control & Statistics</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../support/nanostream_latency/">Latency</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../support/nanostream_low_latency/">Low Latency</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../support/nanostream_mixer_overlay/">Overlay Mixer</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../support/nanostream_mp4_recording/">MP4 Recording</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../support/nanostream_remote_server_recording/">Remote Server Recording</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../support/nanostream_udp_ts_streaming/">UDP/TS Streaming</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../support/nanostream_rtmp_all/">RTMP</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>bintu.live</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../../bintu/android/bintu-android-sdk/">Android SDK</a>
+        
+    </li>
+
+        
+            
+    <ul class="subnav">
+    <li><span>iOS</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../../bintu/ios/bintu_ios_sdk/">SDK Documentation</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../../bintu/ios/bintu_ios_sample/">Sample Documentation</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../../about/">About</a>
+        
+    </li>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">nanocosmos Docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Direct Show &raquo;</li>
+        
+      
+        
+          <li>RTMP &raquo;</li>
+        
+      
+    
+    <li>RTMP Writer</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h2 id="rtmp_network_renderer_writer">RTMP Network Renderer &amp; Writer<a class="headerlink" href="#rtmp_network_renderer_writer" title="Permanent link">&para;</a></h2>
+<h3 id="purpose">Purpose<a class="headerlink" href="#purpose" title="Permanent link">&para;</a></h3>
+<p>Writing RTMP compatible video/audio streams over a network connection</p>
+<p>DirectShow filter for streaming to Wowza and Flash Media Servers</p>
+<ul>
+<li>Supported Architectures: Microsoft DirectShow, Windows XP, Vista, 7, Server</li>
+<li>Supported Formats: H.264 + AAC</li>
+</ul>
+<h3 id="module_version">Module / Version<a class="headerlink" href="#module_version" title="Permanent link">&para;</a></h3>
+<p>nanocosmos RTMP Network Writer \
+nRtmpRenderer.ax  Version 3.0.3.1</p>
+<h3 id="directshow_connectivity">DirectShow Connectivity<a class="headerlink" href="#directshow_connectivity" title="Permanent link">&para;</a></h3>
+<p>The RTMP Writer is implemented as a &ldquo;Renderer Filter&rdquo;, which means it only has 2 input pins for compressed video and audio and no output pin.\
+The input is accepting connections matching the following media types:</p>
+<ul>
+<li>Pin 1 Media Types:<ul>
+<li>MEDIATYPE_Video</li>
+</ul>
+</li>
+<li>Pin 1 Media Subtypes:<ul>
+<li>FourCCs: H264, h264</li>
+</ul>
+</li>
+<li>Pin 1 Formats:<ul>
+<li>FORMAT_MPEG2_VIDEO,</li>
+<li>FORMAT_NONE</li>
+</ul>
+</li>
+<li>Pin 2 Major Media Types:<ul>
+<li>MEDIATYPE_Audio</li>
+</ul>
+</li>
+<li>Pin 2 Media Subtypes:<ul>
+<li>MEDIASUBTYPE_AAC,  FourCC: 0x000000FF</li>
+</ul>
+</li>
+<li>Pin 2 Formats:<ul>
+<li>FORMAT_WaveFormatEx,</li>
+<li>FORMAT_NONE</li>
+</ul>
+</li>
+</ul>
+<h3 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h3>
+<p>The configuration may be set by using either the property page or the COM-Interface IRTMPOptions as declared in header file RTMPWriterOptions.h.</p>
+<pre><code class="c">// Filter Guids
+// {B4FB59C5-983B-4d96-9204-F8B0E46704EE}
+DEFINE_GUID(CLSID_NANO_RTMP_WRITER,  0xb4fb59c5, 0x983b, 0x4d96, 0x92, 0x4, 0xf8, 0xb0, 0xe4, 0x67, 0x4, 0xee);
+
+// Property Page GUID
+// {EFC673DE-E20E-4699-8331-9522C5DF7A6D}
+DEFINE_GUID(CLSID_NANO_RTMP_WRITER_PROPPAGE, 0xefc673de, 0xe20e, 0x4699, 0x83, 0x31, 0x95, 0x22, 0xc5, 0xdf, 0x7a, 0x6d);
+
+// Configuration Interface GUID
+// IID_IRTMPOptions interface
+// {B8AF4593-BE31-449c-8485-3E6D65CBC1FE}
+DEFINE_GUID(IID_IRTMPOptions, 0xb8af4593, 0xbe31, 0x449c, 0x84, 0x85, 0x3e, 0x6d, 0x65, 0xcb, 0xc1, 0xfe)
+</code></pre>
+
+<p>The streaming url can be set by using standard DirectShow interface IFileSinkFilter .</p>
+<h3 id="configuration_with_directshow_filter_property_page">Configuration with DirectShow filter property page<a class="headerlink" href="#configuration_with_directshow_filter_property_page" title="Permanent link">&para;</a></h3>
+<p><img alt="RTMP Writer Properties" src="../img/directshow_rtmp_writer_properties.png" /></p>
+<p>The filter&rsquo;s property page offers a subset of encoding parameters, containing the most important options.</p>
+<p>URL formatting:\
+rtmp:// [hostname / IP address]/[application]+[stream name]</p>
+<p>for example:\
+rtmp://127.0.0.1/live+myStream</p>
+<p>with:\
+IP address: 127.0.0.1\
+Application name: live,   Stream name: myStream</p>
+<h3 id="connection_test">Connection Test<a class="headerlink" href="#connection_test" title="Permanent link">&para;</a></h3>
+<p>Connect/Disconnect buttons. Allows to connect before starting the graph and disconnect during the streaming (this stops the running graph).</p>
+<h3 id="rtmp_authentication">RTMP Authentication<a class="headerlink" href="#rtmp_authentication" title="Permanent link">&para;</a></h3>
+<p>RTMP Authentication expects a user name and a password for unlocking access to the Media Server.
+This has been verified with Flash Media Server (3.x and 4) and Wowza Media Server (2.x).
+CDNs are supported on a case-by-case basis.
+Special tuning as been made for some CDN access
+(e.g. Limelight).</p>
+<h3 id="automatic_reconnection">Automatic Reconnection:<a class="headerlink" href="#automatic_reconnection" title="Permanent link">&para;</a></h3>
+<p>Attempts to restore network connection after n seconds to the server in case of network interrupts. During the reconnect attempts the graph still playing. 0 means no attempts to reconnect to server.</p>
+<h3 id="advanced_configuration_options">Advanced Configuration Options<a class="headerlink" href="#advanced_configuration_options" title="Permanent link">&para;</a></h3>
+<p>The advanced options should be handled carefully. They can severely affect network and streaming performance. Contact support if you want to fine tune any settings.</p>
+<p>//<strong>Buffering:</strong>//</p>
+<p>Data Flow:  RTMP multiplexed data -&gt; application buffer -&gt; socket buffer -&gt; network.</p>
+<p>There are 2 buffer types:
+  * Socket level buffer
+Size of the network socket buffer, much dependent on the underlying network architecture</p>
+<ul>
+<li>Application level buffer (Output Buffer Size, Output packet size),  0=no buffer
+Affects bandwidth utilization, prevents bitrate changes and puts the sending process to a separate thread.</li>
+</ul>
+<h4 id="advanced_settings">Advanced Settings:<a class="headerlink" href="#advanced_settings" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Live Mode:<ul>
+<li>Turns on/off blocking of input pins.  (should be off by default)</li>
+</ul>
+</li>
+<li>TCP No Delay:<ul>
+<li>Activates the TCP_NODELAY option for TCP transmission (&ldquo;Nagle Algorithm&rdquo;)</li>
+</ul>
+</li>
+<li>Timecode Options:<ul>
+<li>Sends Time Code in RTMP Meta Data</li>
+</ul>
+</li>
+<li>Allow B Frames:<ul>
+<li>should be on</li>
+</ul>
+</li>
+<li>Reduces the buffer/delay in H.264 Main Profile without B Frames. No effect in Baseline Mode.</li>
+<li>Timecode Options:<ul>
+<li>send Time Code in RTMP Meta Data</li>
+</ul>
+</li>
+</ul>
+<h4 id="connection_status_notification">Connection Status Notification<a class="headerlink" href="#connection_status_notification" title="Permanent link">&para;</a></h4>
+<p>There are two possibilities to get the status of the connection to the server:</p>
+<ul>
+<li>Event messages are sent via IMediaEventSink with the event code EC_NANO_RTMP_WRITER_STATUS  declared in RTMPWriterOptions.h (#define EC_NANO_RTMP_WRITER_STATUS EC_USER+181).  A message is sent when the connection state changes. The different states are represented by (also declared in RTMPWriterOptions.h):</li>
+<li>RTMPWriterConnected=0</li>
+<li>RTMPWriterDisconnected=1</li>
+<li>RTMPWriterReconnecting=2</li>
+<li>Using a callback function, which is called when the connection state changes:</li>
+<li>Query for the interface IRTMPStatusNotify</li>
+<li>Set the callback function via SetStatusNotifyHandler()</li>
+</ul>
+<h5 id="rtmp_writer_filter_crashes_when_using_setstatusnotifyhandler">Rtmp Writer Filter crashes when using SetStatusNotifyHandler()<a class="headerlink" href="#rtmp_writer_filter_crashes_when_using_setstatusnotifyhandler" title="Permanent link">&para;</a></h5>
+<p>This problem is probably caused by calling a function declared with one calling convention with a function pointer declared with a different calling convention. Here is pretty good explanation of the problem:
+  * <a href="http://stackoverflow.com/questions/301655/c-visual-studio-runtime-error" title="Stackoverflow C visual studio runtime error">http://stackoverflow.com/questions/301655/c-visual-studio-runtime-error</a>
+  * <a href="http://stackoverflow.com/questions/10079625/c-run-time-check-failure-0-the-value-of-esp-was-not-properly-saved-across-a" title="Stackoverflow c run time check failure">http://stackoverflow.com/questions/10079625/c-run-time-check-failure-0-the-value-of-esp-was-not-properly-saved-across-a</a></p>
+<p>Conclusion: Make sure you use __stdcall in your declaration.</p>
+<h3 id="log_debug_configuration_registry_settings">Log / Debug Configuration Registry Settings<a class="headerlink" href="#log_debug_configuration_registry_settings" title="Permanent link">&para;</a></h3>
+<p>Key: HKEY_CURRENT_USER\Software\DebugNano\ nRtmpRenderer.ax</p>
+<h4 id="file_name">File name<a class="headerlink" href="#file_name" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Sets the output file name. The folder must exist.</li>
+<li>Value name:     LogToFile</li>
+<li>Value type:     REG_SZ / String</li>
+<li>Valid values:   a valid output file name to enable file logging or an empty string</li>
+</ul>
+<h4 id="logging_level">Logging level<a class="headerlink" href="#logging_level" title="Permanent link">&para;</a></h4>
+<ul>
+<li>A higher value increases the amount of logging messages sent, and messages get more detailed.</li>
+<li>Value name:     TRACE</li>
+<li>Value type:     REG_DWORD</li>
+<li>Valid values:<ul>
+<li>0 - minimal logging</li>
+<li>…</li>
+<li>9 - maximal logging</li>
+</ul>
+</li>
+</ul>
+<h4 id="contact">Contact<a class="headerlink" href="#contact" title="Permanent link">&para;</a></h4>
+<p>//Please contact us for further information, extended services are available upon request.//</p>
+<p><a href="http://www.nanocosmos.de" title="http://www.nanocosmos.de">http://www.nanocosmos.de</a></p>
+<p><a href="mailto:info@nanocosmos.de" title="Mail to : info@nanocosmos.de">info@nanocosmos.de</a></p>
+<p>(c) 2009-2012, nanocosmos gmbh</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../directshow_rtmp_status_statistics/" class="btn btn-neutral float-right" title="RTMP Status & Statistics">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../directshow_rtmp_source/" class="btn btn-neutral" title="RTMP Source"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+    
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../directshow_rtmp_source/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../directshow_rtmp_status_statistics/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script src="../../../js/theme.js"></script>
+
+</body>
+</html>

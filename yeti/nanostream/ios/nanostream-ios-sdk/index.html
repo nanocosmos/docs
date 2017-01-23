@@ -1,0 +1,1090 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+
+	<title>iOS api - nanocosmos Docs</title>
+
+        <link href="../../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../../css/highlight.css">
+        <link href="../../../css/base.css" rel="stylesheet">
+        <link href="../../../extra.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="../../..">nanocosmos Docs</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <!-- Main navigation -->
+            <ul class="nav navbar-nav">
+            
+            
+                <li >
+                    <a href="../../..">Home</a>
+                </li>
+            
+            
+            
+                <li class="dropdown active">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">nanostream <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Web</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../web/nanostream-4.x-web-api/">API Manual</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../web/nanostream_javascript_integration/">Javascript Integration</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+                    
+                        
+<li class="active">
+    <a href="./">iOS api</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../../macos/nanostream-macos-sdk/">MacOS api</a>
+</li>
+
+                    
+                        
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Android</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../android/android_developer_manual_streaming/">Streaming Developer Manual</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../android/android_developer_manual_playback/">Playback Developer Manual</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../android/android_developer_manual_sample/">Sample Developer Manual</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+                    
+                        
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Windows api</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../windows/windows_developer_manual/">Developer Manual</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../windows/windows_binares/">Binary Modules</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../windows/windows_license_help/">License Help</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../windows/windows_networkwriter/">RTMP Network Render & Writer</a>
+</li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Language Integration</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../windows/language_integration/nanostream_cpp_integration/">C++</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../windows/language_integration/nanostream_csharp_integration/">C#</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../windows/language_integration/nanostream_delphi_integration/">Delphi</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../windows/language_integration/nanostream_activex_visualcpp/">VisualC</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../windows/language_integration/nanostream_activex_visualcpp_mfc/">MFC</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+    </ul>
+  </li>
+
+                    
+                        
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Direct Show</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../directshow/directshow_audio_volume/">Audio Volume</a>
+</li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">H.264</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../directshow/directshow_avc_h264/">AVC/H.264 Video Codec</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../directshow/directshow_nanoAVC_decoding_sdk/">nanoAVC/H.264 DirectShow Decoding</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../directshow/directshow_nanoAVC_encoding_sdk/">nanoAVC/H.264 DirectShow Encoding</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../directshow/directshow_h264_video_decoder/">H.264 Video Decoder Filter</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../directshow/directshow_h264_video_encoder/">H.264 Video Encoder Filter</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">MPEG</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../directshow/directshow_mpeg2_broadcast_sdk/">MPEG2 Broadcast SDK</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../directshow/directshow_mpeg2_video_decoder/">MPEG2 Video Decoder</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../directshow/directshow_mpeg2_video_encoder/">MPEG2 Video Encoder</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../directshow/directshow_mpeg_audio_encoder/">MPEG Audio Encoder</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+            
+<li >
+    <a href="../../directshow/directshow_quicktime_imx/">Quicktime IMX Playback</a>
+</li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">RTMP</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../directshow/directshow_rtmp_source/">RTMP Source</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../directshow/directshow_rtmp_writer/">RTMP Writer</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../directshow/directshow_rtmp_status_statistics/">RTMP Status & Statistics</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">RTSP</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../directshow/directshow_rtsp_sink/">RTSP Sink</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../directshow/directshow_rtsp_source/">RTSP Source</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+            
+<li >
+    <a href="../../directshow/directshow_udp_ts_streaming/">UDP/TS Streaming</a>
+</li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Video Filter</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../directshow/directshow_screen_capture_filter/">Screen Capture Filter</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../directshow/directshow_video_mixer/">Video Mixer PiP</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../directshow/directshow_overlay_mixing/">Video Mixer Overlay</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+    </ul>
+  </li>
+
+                    
+                        
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Additional Knowledge</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../support/nanostream_aec/">Acoustic Echo Cancellation</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../support/nanostream_audio_levels/">Audio Level</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../support/nanostream_bitrate_control_statistics/">Bitrate Control & Statistics</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../support/nanostream_latency/">Latency</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../support/nanostream_low_latency/">Low Latency</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../support/nanostream_mixer_overlay/">Overlay Mixer</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../support/nanostream_mp4_recording/">MP4 Recording</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../support/nanostream_remote_server_recording/">Remote Server Recording</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../support/nanostream_udp_ts_streaming/">UDP/TS Streaming</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../support/nanostream_rtmp_all/">RTMP</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">bintu.live <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+<li >
+    <a href="../../../bintu/android/bintu-android-sdk/">Android SDK</a>
+</li>
+
+                    
+                        
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">iOS</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../../bintu/ios/bintu_ios_sdk/">SDK Documentation</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../../bintu/ios/bintu_ios_sample/">Sample Documentation</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li >
+                    <a href="../../../about/">About</a>
+                </li>
+            
+            
+            </ul>
+
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                <li >
+                    <a rel="next" href="../../web/nanostream_javascript_integration/">
+                        <i class="fa fa-arrow-left"></i> Previous
+                    </a>
+                </li>
+                <li >
+                    <a rel="prev" href="../../macos/nanostream-macos-sdk/">
+                        Next <i class="fa fa-arrow-right"></i>
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#nanostream_sdk_for_ios_-_developer_manual">nanoStream SDK for iOS - Developer Manual</a></li>
+        
+            <li><a href="#purpose">Purpose</a></li>
+        
+            <li><a href="#requirements">Requirements</a></li>
+        
+            <li><a href="#getting_started">Getting Started</a></li>
+        
+            <li><a href="#advanced_settingsusage">Advanced Settings/Usage</a></li>
+        
+            <li><a href="#possible_issues">Possible Issues</a></li>
+        
+            <li><a href="#logging_information">Logging Information</a></li>
+        
+            <li><a href="#crash_logs">Crash Logs</a></li>
+        
+    
+    </ul>
+</div></div>
+            <div class="col-md-9" role="main">
+
+<p>This is Markdown.
+vergleiche
+http://www.nanocosmos.de/v4/documentation/nanostream_sdk_for_ios_-_developer_documentation</p>
+<h1 id="nanostream_sdk_for_ios_-_developer_manual">nanoStream SDK for iOS - Developer Manual<a class="headerlink" href="#nanostream_sdk_for_ios_-_developer_manual" title="Permanent link">&para;</a></h1>
+<h2 id="purpose">Purpose<a class="headerlink" href="#purpose" title="Permanent link">&para;</a></h2>
+<p>This documentation is about the nanoStream Live Video Streaming SDK for iOS and can be used by software developers to integrate nanoStream Live Video Encoding into custom apps.</p>
+<h2 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Apple Mac with MacOS 10.9 with XCode 6 or higher</li>
+<li>Apple iPhone with iOS 7 or later (min. iOS 8.1 recommended)</li>
+</ul>
+<h2 id="getting_started">Getting Started<a class="headerlink" href="#getting_started" title="Permanent link">&para;</a></h2>
+<h3 id="preparation">Preparation<a class="headerlink" href="#preparation" title="Permanent link">&para;</a></h3>
+<p>Add the library &ldquo;libnanostreamAVC.a&rdquo; as dependency (Link Binary With Libraries) to your project.
+Further required dependencies:</p>
+<ul>
+<li>libc++.dylib</li>
+<li>libstdc++.dylib</li>
+<li>AVFoundation.framework</li>
+<li>Accelerate.framework</li>
+<li>CoreGraphics.framework</li>
+<li>CoreMedia.framework</li>
+<li>CoreVideo.framework</li>
+<li>Foundation.framework</li>
+<li>SystemConfiguration.framework</li>
+<li>VideoToolbox.framework (link as Optional, not as Required)</li>
+<li>AudioToolbox.framework</li>
+</ul>
+<p>Include the header &ldquo;libnanostreamAVC.h&rdquo; in your source code.</p>
+<h3 id="check_library_version">Check library version<a class="headerlink" href="#check_library_version" title="Permanent link">&para;</a></h3>
+<pre><code class="objc">int version = [nanostreamAVC getVersion];
+if(version!=NANOSTREAM_AVC_VERSION)
+{
+    // Handle header and library version mismatch
+}
+
+</code></pre>
+
+<h3 id="initialize_the_library">Initialize the library<a class="headerlink" href="#initialize_the_library" title="Permanent link">&para;</a></h3>
+<p>Implement the interface <code>nanostreamEventListener</code> in your class:</p>
+<pre><code class="objc">@interface SampleLiveViewController : UIViewController &lt;nanostreamEventListener&gt;
+...
+@property (nonatomic, strong) nanostreamAVC *nAVC;
+@property (nonatomic, strong) IBOutlet UIView *previewView;
+...
+@end
+
+@implementation SampleLiveViewController
+...
+-(void)nanostreamEventHandlerWithType:(nanostreamEvent)type andLevel:(int)level andDescription:(NSString *)description
+{
+    switch (type) {
+        case StreamStarted:
+            break;
+        case StreamStopped:
+            break;
+        case StreamError:
+            NSLog(@&quot;nanostreamEventHandlerWithType: StreamError: %@&quot;, description);
+            break;
+        case StreamErrorConnect:
+            NSLog(@&quot;nanostreamEventHandlerWithType: StreamErrorConnect: %@&quot;, description);
+            break;
+        case StreamConnectionStatus:
+            NSLog(@&quot;nanostreamEventHandlerWithType: RtmpConnectionStatus %@&quot;, description);
+            break;
+        case GeneralError:
+            break;
+        default:
+            break;
+    }
+}
+...
+@end
+</code></pre>
+
+<p>Configure the settings object for the library:</p>
+<pre><code class="objc">nanostreamAVCSettings *nAVCSettings = [[nanostreamAVCSettings alloc] init];
+
+// set the rtmp url, you want to stream to
+[nAVCSettings setUrl: @&quot;rtmp://localhost/live&quot;];
+[nAVCSettings setStreamId: @&quot;myStream&quot;];
+
+// set the video settings
+[nAVCSettings setVideoResolution: Resolution640x480];
+[nAVCSettings setVideoBitrate: 512];
+[nAVCSettings setKeyFramerate: 60];
+[nAVCSettings setOrientation: AVCaptureVideoOrientationLandscapeRight];
+[nAVCSettings setCropMode: NoCrop];
+[nAVCSettings setFramerate: 30];
+[nAVCSettings setH264Level: Baseline30];
+
+// set the audio settings
+[nAVCSettings setInitialVolume: 1.0];
+[nAVCSettings setAudioMonoStereo: Stereo];
+[nAVCSettings setAudioSamplerate: 44100.0f];
+</code></pre>
+
+<p>Then the library itself can be initialized:</p>
+<pre><code class="objc">// nAVC and previewView are properties of the controller class in this example
+self.nAVC = [[nanostreamAVC alloc] initWithSettings: nAVCSettings
+                                          uiPreview: self.previewView
+                                      errorListener: self];
+
+// set the license key (required for streaming)
+[self.nanostream setLicense: @&quot;nlic:1.2:LiveEnc:1.1:LvApp=1.....288&quot;];
+</code></pre>
+
+<h3 id="start_a_stream">Start a stream<a class="headerlink" href="#start_a_stream" title="Permanent link">&para;</a></h3>
+<pre><code class="objc">// Start broadcast asynchronously with completion handler
+[self.nAVC start:^(bool success)
+{
+    // use main queue to change UI related things
+    dispatch_async(dispatch_get_main_queue(), ^
+    {
+        if (success)
+        {
+            // Handle succesful stream start
+            ...
+        }
+        else
+        {
+            // Handle failure
+            ...
+        }
+    }
+}
+</code></pre>
+
+<h3 id="stop_a_running_stream">Stop a running stream<a class="headerlink" href="#stop_a_running_stream" title="Permanent link">&para;</a></h3>
+<p>If the parameter &ldquo;blocking&rdquo; of the stop method is set to YES, all the remaining data (to this moment) will be sent before stopping the stream.
+If set to NO, the stream will stop immediately, discarding the remaining data.</p>
+<pre><code class="objc">// Stop broadcast asynchronously with completion handler
+[self.nAVC stop:YES withCompletion:^
+{
+    // use main queue to change UI related things
+    dispatch_async(dispatch_get_main_queue(), ^
+    {
+        // Handle stream stop
+    }
+}
+</code></pre>
+
+<h2 id="advanced_settingsusage">Advanced Settings/Usage<a class="headerlink" href="#advanced_settingsusage" title="Permanent link">&para;</a></h2>
+<h3 id="orientation">Orientation<a class="headerlink" href="#orientation" title="Permanent link">&para;</a></h3>
+<p>The orientation of the stream can be set to portrait or landscape with the property <code>orientation</code> of the settings object.</p>
+<p>As of version 4.4.0.6 the orientation can also be changed after the initialization with the property <code>orientation</code> of the nanostreamAVC object itself.</p>
+<p><strong>Important:</strong> The orientation change will only affect the stream, but not the preview. The orientation for the preview has to be managed on the application level. This can be achieved by using e.g. <code>CGAffineTransformMakeRotation</code> (<a href="https://developer.apple.com/library/mac/documentation/GraphicsImaging/Reference/CGAffineTransform/" title="https://developer.apple.com/library/mac/documentation/GraphicsImaging/Reference/CGAffineTransform/">https://developer.apple.com/library/mac/documentation/GraphicsImaging/Reference/CGAffineTransform/</a>).</p>
+<h3 id="stream_type">Stream Type<a class="headerlink" href="#stream_type" title="Permanent link">&para;</a></h3>
+<p>The SDK supports different streaming modes:</p>
+<ul>
+<li>Video and Audio</li>
+<li>Video only</li>
+<li>Audio only</li>
+</ul>
+<p>You can configure the mode with the property <code>streamType</code> of the settings object.</p>
+<h3 id="server_authentication">Server Authentication<a class="headerlink" href="#server_authentication" title="Permanent link">&para;</a></h3>
+<p>In case authentication is required, the credentials can be set with the method</p>
+<pre><code class="objc">-(void) setAuthentication: (NSString*) user withPassword: (NSString*) password;
+</code></pre>
+
+<p>The method has to be invoked before a stream is started.</p>
+<p>For example:</p>
+<pre><code class="objc">// set up nAVC object
+...
+[nAVC setAuthentication: @&quot;MyUser&quot; withPassword: @&quot;MyPassword&quot;];
+...
+// start the stream
+</code></pre>
+
+<h3 id="cropping">Cropping<a class="headerlink" href="#cropping" title="Permanent link">&para;</a></h3>
+<p>The stream can be transformed to a different format than the input from the camera.</p>
+<p>The following example shows how to crop the format to 16:9.</p>
+<pre><code class="objc">[nAVCSettings setCropMode: CropTo16By9];
+</code></pre>
+
+<h3 id="local_recording">Local Recording<a class="headerlink" href="#local_recording" title="Permanent link">&para;</a></h3>
+<p>It is possible to make a local copy of the stream, on the iOS device.
+This is an extra feature and needs to be unlocked by the license - the license should contain the string &ldquo;MP4=2&rdquo;.</p>
+<pre><code class="objc">NSString *homeDirectory = [NSHomeDirectory() stringByAppendingPathComponent:@&quot;Documents&quot;];
+NSDateFormatter *dateFormatter=[[NSDateFormatter alloc] init];
+[dateFormatter setDateFormat:@&quot;yyyy-MM-dd_HH-mm-ss&quot;];
+NSString *locStr = [homeDirectory stringByAppendingPathComponent: [[dateFormatter stringFromDate:[NSDate date]] stringByAppendingString: @&quot;.mp4&quot;]];
+
+[nAVCSettings setLocalRecordingMode:AVCRecordingModeDoubleAtLeastOneMbit];
+[nAVCSettings setLocalRecordingPath:locStr];
+</code></pre>
+
+<p>There are three modes available:</p>
+<ul>
+<li>AVCRecordingModeStartBitrate: uses the video bitrate set with nanostreamAVCSettings</li>
+<li>AVCRecordingModeDoubleAtLeastOneMbit: uses double the video bitrate, but at least 1Mbps</li>
+<li>AVCRecordingMode720p2Mbit: independent of the set video bitrate, always uses 2Mbps and a resolution of 1280x720</li>
+</ul>
+<p>The bitrate for the recording remains constant during a stream. The adaptive bitrate mechanism only influences the bitrate for the stream, but not the bitrate for the recording.</p>
+<p>The bitrate for the recording also depends on the video material. If there is a lot of movement in the video the bitrate will be higher than for recordings with little to no movement.</p>
+<h3 id="adaptive_bitrate">Adaptive Bitrate<a class="headerlink" href="#adaptive_bitrate" title="Permanent link">&para;</a></h3>
+<p>By using the Adaptive Bitrate Control (ABC) the stream will automatically adjust to changes of the bandwidth.
+There are two modes available:</p>
+<ul>
+<li>AdaptiveBitrateControlModeQualityDegrade: The video quality will be changed if the bandwidth changes. For instance, if not enough bandwidth is available, the video bitrate will be decreased, which in turn degrades the video quality.</li>
+<li>AdaptiveBitrateControlModeFrameDrop: Low bandwidth is compensated by decreasing the framerate (FPS), but maintaining the video qualtiy.</li>
+</ul>
+<p>Make sure to set the ABC settings before a stream is started.</p>
+<pre><code class="objc">[self.nAVC setAdaptiveBitrateControlMode: AdaptiveBitrateControlModeQualityDegrade];
+
+AdaptiveBitrateControlSettings abr;
+abr.minimumBitrate = 100000;  // 100kb
+abr.minimumFramerate = 15;
+abr.maxPercentBitrateChange = 50;  // if the bitrate drops to less than 50% of the previous bitrate, all buffered data will be discarded
+
+[self.nAVC setAdaptiveBitrateControlSettings: abr];
+</code></pre>
+
+<p>Possible properties:</p>
+<table>
+<thead>
+<tr>
+<th>property</th>
+<th>default values</th>
+<th>range of values</th>
+<th>optional</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>minimumBitrate</td>
+<td>5000 (50 kb)</td>
+<td>50000 - 10 000 000</td>
+<td>YES</td>
+</tr>
+<tr>
+<td>minimumFramerate</td>
+<td>15 (fps)</td>
+<td>5 - 60</td>
+<td>YES</td>
+</tr>
+<tr>
+<td>maxPercentBitrateChange</td>
+<td>50 (%)</td>
+<td>0 - 100</td>
+<td>YES</td>
+</tr>
+</tbody>
+</table>
+<p>_</p>
+<p>For more information look here at <a href="../../support/nanostream_bitrate_control_statistics/#abc_modes" title="ABC Modes">nanoStream Documentation for Adaptive Bitrate</a></p>
+<h3 id="measuring_the_available_bandwidth">Measuring the available bandwidth<a class="headerlink" href="#measuring_the_available_bandwidth" title="Permanent link">&para;</a></h3>
+<p>For measuring the available bandwidth you can use the method <code>runBandwidthCheck</code>. After the check finished, the result can be used to set the bitrate for the nanostreamAVC object.</p>
+<p>The check measures the bandwidth by running a test stream to the server.</p>
+<pre><code class="objc">NSXBandwidthCheckSettings *bwSettings = [[NSXBandwidthCheckSettings alloc] init];
+// the URL settings are identical to the URL settings for the nanostreamAVCSettings
+// for testing the bandwidth it is advised to use the same server you want to stream to
+// you might want to use a stream id different from the stream id for the actual stream, to distinguish between a bandwidth check and a real stream
+bwSettings.url = @&quot;rtmp://localhost/live&quot;;
+bwSettings.streamId = @&quot;bwcheck&quot;;
+// the maxium bitrate that should be tested - if this value is lower than the actual bandwidth, the result will be similar to the maximum bitrate
+bwSettings.maxBitrate = 5000000;  // 5Mb
+
+[self.nAVC runBandwidthCheck: bwSettings withCompletionBlock:^(NSXBandwidthCheckResult* measuredBandwidth){
+    NSLog(@&quot;measuredBandwidth: avg=%i, median=%i, min=%i, max=%i, runTimeMs=%i&quot;, (int)measuredBandwidth.avgBitrate, (int)measuredBandwidth.medianBitrate, (int)measuredBandwidth.minBitrate, (int)measuredBandwidth.maxBitrate, (int)measuredBandwidth.runTimeMs);
+}];
+</code></pre>
+
+<p>The default run time is 10 seconds. The run time can be changed with the property <code>runTime</code>.
+If the bandwidth check should be stopped before it finished on itself, the method <code>stopBandwidthCheck</code> can be used. This will force the bandwidth check to stop and return the result based on the collected information up to this point.</p>
+<pre><code class="objc">[self.nAVC stopBandwidthCheck];    // stop bw check if still running
+</code></pre>
+
+<p>The result of the bandwidth check can be used as bitrate setting for library object. At the moment it is not possible to change the video bitrate after the initialization of the library object, thus the object need to be re-initialized. (This will change in future releases.)</p>
+<h3 id="snaphot_from_the_current_stream">Snaphot from the current stream<a class="headerlink" href="#snaphot_from_the_current_stream" title="Permanent link">&para;</a></h3>
+<p>To get a snaphot (image) of the current preview/stream, the method <code>grabStillImageWithCompletionBlock</code> can be used.</p>
+<pre><code class="objc">[self.nAVC grabStillImageWithCompletionBlock:^(UIImage *image, NSError *error) {
+    // do something with the image
+}];
+</code></pre>
+
+<h3 id="overlaywatermark">Overlay/Watermark<a class="headerlink" href="#overlaywatermark" title="Permanent link">&para;</a></h3>
+<p>It is possible to use an overlay (image, text, or both) for a stream. Notice that the CPU usage will be increased slightly when an overlay is used.
+This is an extra feature and needs to be unlocked by the license - the license should contain the string &ldquo;OVL=1&rdquo;.</p>
+<p>The easiest way to use an overlay is to use the class <code>AVCFullImageOverlay</code>:</p>
+<pre><code class="objc">UIImage *overlayImg = [UIImage imageNamed:@&quot;button&quot;];  // uses an image from the bundle resources, named &quot;button&quot;
+
+UIGraphicsBeginImageContextWithOptions(CGSizeMake(640, 480), NO, 1.0);  // assuming the video resolution is set to &quot;Resolution640x480&quot;
+[overlayImg drawInRect:CGRectMake(200, 200, 240, 80) blendMode:kCGBlendModeNormal alpha:0.5];
+UIFont *font = [UIFont boldSystemFontOfSize:20];
+[[UIColor whiteColor] set];
+NSString *text = @&quot;Watermark&quot;;
+[text drawInRect:CGRectMake(200, 300, 100, 50) withFont:font];
+UIImage *finalOverlayImage = UIGraphicsGetImageFromCurrentImageContext();
+UIGraphicsEndImageContext();
+
+[self.nAVC setOverlay: [[AVCFullImageOverlay alloc] initWithImage: finalOverlayImage]];
+</code></pre>
+
+<p>Notice that the final output resolution can be different, if an option like cropping is used.
+In this case it is better to implement your own overlay class, which is shown in the following example:</p>
+<pre><code class="objc">@interface NSXWatermark : NSObject &lt;AVCOverlay&gt;
+
+@property (assign) AVCOverlayRawBuffer buffer;
+
+@end
+
+@implementation NSXWatermark
+
+@synthesize imageSize;
+@synthesize overlayBoundingRect;
+
+-(AVCOverlayRawBuffer)overlayImageWithStreamTime:(NSTimeInterval)time
+{
+    if (self.buffer.buffer == NULL) {
+        UIImage *image = [NSXWatermark generateWatermarkWithSize:self.imageSize inBoundingRect:self.overlayBoundingRect];
+        self.buffer = [NSXWatermark makeBufferFromUIImage:image];
+    }
+
+    return self.buffer;
+}
+
++(UIImage *)generateWatermarkWithSize:(CGSize)size inBoundingRect:(CGRect)boundingRect
+{
+    UIImage *watermarkImage = ...  // use your desired UIImage here
+    CGFloat padding = 10.0;
+    CGSize overlaySize = watermarkImage.size;
+
+    CGFloat height = size.height / 3;
+    if (overlaySize.height &gt; height) {
+        overlaySize.width = height;
+        overlaySize.height = height;
+    }
+
+    CGFloat boundingMaxX = boundingRect.origin.x + boundingRect.size.width;
+    CGFloat boundingMaxY = boundingRect.origin.y + boundingRect.size.height;
+
+    CGRect overlayRect = CGRectMake(boundingMaxX - overlaySize.width, boundingMaxY - overlaySize.height, overlaySize.width, overlaySize.height);
+
+    //  CGRect overlayRect = CGRectMake(size.width - overlaySize.width, size.height - overlaySize.height, overlaySize.width, overlaySize.height);
+    CGRect realRect =  AVMakeRectWithAspectRatioInsideRect(watermarkImage.size, overlayRect);
+
+    realRect.origin.y -= padding;
+    realRect.origin.x -= padding;
+
+    UIGraphicsBeginImageContext(size);
+    [watermarkImage drawInRect:realRect];
+
+    UIImage *overlayImage = UIGraphicsGetImageFromCurrentImageContext();
+
+    UIGraphicsEndImageContext();
+
+    return overlayImage;
+}
+
++(AVCOverlayRawBuffer)makeBufferFromUIImage:(UIImage *)image
+{
+    CGImageRef rawPic = [image CGImage];
+
+    CGDataProviderRef inProvider = CGImageGetDataProvider(rawPic);
+    CFDataRef inBitmapData = CGDataProviderCopyData(inProvider);
+
+    size_t inBitmapDataBytesPerRow = CGImageGetBytesPerRow(rawPic);
+
+    UInt8 *buffer = (UInt8*)CFDataGetBytePtr(inBitmapData);
+
+    AVCOverlayRawBuffer rawBuf;
+    rawBuf.buffer = buffer;
+    rawBuf.bytesPerRow = (int)inBitmapDataBytesPerRow;
+    rawBuf.bufferType = AVCOverlayBufferTypeBGRA;
+    return rawBuf;
+}
+@end
+</code></pre>
+
+<h3 id="initwithsession">initWithSession<a class="headerlink" href="#initwithsession" title="Permanent link">&para;</a></h3>
+<p>Instead of letting the SDK manage the video and audio input, you can also do that yourself. This is helpful to supply video and audio samples which are not coming from the standard input devices. Or to modify video and/or audio samples before they are used for the stream.</p>
+<p>The SDK provides a separate init method <code>initWithSession</code>.</p>
+<p>An example for a custom capture session, which supplies CVPixelBufferRef&rsquo;s to the SDK:</p>
+<pre><code class="objc">@interface CustomCaptureSession : AVCaptureSession
+...
+@end
+
+@implementation CustomCaptureSession
+
+-(void) addOutput:(AVCaptureOutput )output
+{
+    if ([output isKindOfClass:[AVCaptureVideoDataOutput class]]) {
+        self.myVideoOutput = (AVCaptureVideoDataOutput)output;
+    }else if([output isKindOfClass:[AVCaptureAudioDataOutput class]])
+    {
+        //self.myAudioOutput = (AVCaptureAudioDataOutput*)output; // if you want to use a custom audio capture device
+        [super addOutput: output]; // uses the standard microphone of the iOS device
+    }
+}
+
+-(void) addInput:(AVCaptureInput *)input
+{
+    [super addInput:input]; // this is required, because nanostreamAVC checks the available inputs
+}
+
+-(void) startRunning
+{
+    [super startRunning];
+}
+
+// this method has to be called periodically - e.g. with CADisplayLink
+-(void) supplyCMSampleBufferRef
+{
+    CVPixelBufferRef buffer = [self getCVPixelBufferRef]; // get the CVPixelBufferRef from somewhere
+
+    CMSampleBufferRef newSampleBuffer = NULL;
+    CMSampleTimingInfo timingInfo = kCMTimingInfoInvalid;
+    timingInfo.duration = CMTimeMake(33, 1000);    // assuming 30fps, change if otherwise
+    timingInfo.decodeTimeStamp = CMTimeMake(ts, 1000);    // timestamp information required
+    timingInfo.presentationTimeStamp = timingInfo.decodeTimeStamp;
+
+    CMVideoFormatDescriptionRef videoInfo = NULL;
+    CMVideoFormatDescriptionCreateForImageBuffer(NULL, buffer, &amp;videoInfo);
+
+    CMSampleBufferCreateForImageBuffer(kCFAllocatorDefault,buffer,true,NULL,NULL,videoInfo,&amp;timingInfo,&amp;newSampleBuffer);
+
+    // the following line submits the new CMSampleBufferRef to the nanostreamAVC lib
+    [self.myVideoOutput.sampleBufferDelegate captureOutput:self.myVideoOutput didOutputSampleBuffer:newSampleBuffer fromConnection:nil];
+
+    CFRelease(videoInfo);
+    CFRelease(buffer);
+    CFRelease(newSampleBuffer);
+
+}
+
+@end
+
+// you need to use initWithSession for nanostreamAVC to use your custom session
+...
+session = [[CustomCaptureSession alloc] init];
+
+// Add input nodes
+if(videoInput != nil)
+{
+    [session addInput: videoInput];
+}
+
+if(audioInput != nil)
+{
+    [session addInput: audioInput]; // if the stream is video only, don't add an audioInput
+}
+
+[session startRunning];
+
+...
+self.stream = [[nanostreamAVC alloc] initWithSession: session settings: nAVCSettings errorListener: self];
+...
+</code></pre>
+
+<h2 id="possible_issues">Possible Issues<a class="headerlink" href="#possible_issues" title="Permanent link">&para;</a></h2>
+<h3 id="general">General<a class="headerlink" href="#general" title="Permanent link">&para;</a></h3>
+<p>For older versions of the sdk, without support for arm64, architecture in Xcode has to be set to armv7 and/or armv7s. This works also for newer iOS-Devcies like iPhone 5s.
+This is not required for newer sdk versions, which also support arm64.</p>
+<h3 id="compilerlinker">Compiler/Linker<a class="headerlink" href="#compilerlinker" title="Permanent link">&para;</a></h3>
+<h4 id="libstdc">libstdc++<a class="headerlink" href="#libstdc" title="Permanent link">&para;</a></h4>
+<p>If there are linker errors with &ldquo;std::&rdquo;: &ldquo;symbol(s) not found for architecture&rdquo;, make sure that you added the libraries &ldquo;libstdc++.dylib&rdquo; and &ldquo;libc++.dylib&rdquo; to your project.</p>
+<p>Due to a bug in Xcode, depending on the selected Base SDK and deployment target, there might be still linker errors regarding &ldquo;std&rdquo;. In this case you need to add a specific version of the libstdc++ to your project, e.g.: libstdc++-6.0.9.dylib instead of libstdc++.dylib</p>
+<h4 id="undefined_symbols_for_parrot_dji">Undefined Symbols for Parrot &amp; DJI<a class="headerlink" href="#undefined_symbols_for_parrot_dji" title="Permanent link">&para;</a></h4>
+<p><strong>The following part is only relevant for SDK versions from 3.3.x to 4.1.x.</strong>
+As of version 4.2.x the drone dependencies are removed from the standard SDK package.</p>
+<p>It might be possible that there are linker errors for the classes</p>
+<ul>
+<li>ParrotBebopCaptureSession or</li>
+<li>DJIPhantom2CaptureSession</li>
+</ul>
+<p>Generally, if the Parrot &amp; DJI extensions are not used, the symbols should be stripped automatically by Xcode and you do not need to link the frameworks.
+However this is not the case when the linker flag &ldquo;-ObjC&rdquo; is used in the app project. This causes the linker to load all symbols included in all linked object files (including the Parrot &amp; DJI symbols). This prevents the automatic stripping.</p>
+<p>To use our library without Parrot &amp; DJI, either remove the &ldquo;-ObjC&rdquo; linker flag from the project or replace the &ldquo;-ObjC&rdquo; linker flag with the &ldquo;-force_load&rdquo; flag for each library that you want to use. Do not use &ldquo;-force_load&rdquo; with libnanostreamAVC.a.
+For examples see http://stackoverflow.com/questions/11254269/using-the-force-load-linker-flag-with-restkit-ios</p>
+<h3 id="breakpoints">Breakpoints<a class="headerlink" href="#breakpoints" title="Permanent link">&para;</a></h3>
+<p>If you debug your application, it is possible that breakpoints are being hit due to internal exceptions. Exceptions on the SDK level are handled in the SDK and do not affect the workflow of your application.</p>
+<p>You can prevent the breakpoint from pausing the workflow of your application, if you use the right settings for the breakpoint.
+The default setting is most likely that every exception causes a break.
+To change that, use the settings from the following screenshot:</p>
+<p><img alt="Screenshot" src="../img/screenshot_exception_breakpoint.png" /></p>
+<p>This way only Objective-C exceptions will be catched and C++ exceptions will be ignored.</p>
+<h3 id="crashes">Crashes<a class="headerlink" href="#crashes" title="Permanent link">&para;</a></h3>
+<h4 id="calayergetdelegate_calayergetsuperlayer_other_calayer">CALayerGetDelegate / CALayerGetSuperlayer / Other CALayer<a class="headerlink" href="#calayergetdelegate_calayergetsuperlayer_other_calayer" title="Permanent link">&para;</a></h4>
+<p>If there are crashes occurring in your app that include above symbols in the stack trace and are otherwise not obvious, check to see if you added a subviews to the preview view. The UIView instance that is passed to</p>
+<pre><code class="objc">[RtmpSourceCaptureSession initWithPreview:andStatusListener:andLogLevel:]
+</code></pre>
+
+<p>and</p>
+<pre><code class="objc">[nanostreamAVC initWithSettings:uiPreview:errorListener:]
+</code></pre>
+
+<p>cannot contain any subviews (UIButtons or otherwise).</p>
+<h2 id="logging_information">Logging Information<a class="headerlink" href="#logging_information" title="Permanent link">&para;</a></h2>
+<p>If you encounter a problem with the nanostreamAVC library and you want to report the problem, log files will help us to comprehend the problem.</p>
+<p>Please use the following steps to create the log files:</p>
+<ul>
+<li>enable logging for the library with the method <code>SetLogLevel</code>, use LogLevelVerbose:</li>
+</ul>
+<p><code>objc
+  [self.nAVC SetLogLevel: LogLevelVerbose];  // set the log level before the method "start" is invoked</code></p>
+<ul>
+<li>try to reproduce the problem</li>
+<li>download the app container (for your app) from the iOS device with Xcode, as explained here: <a href="https://developer.apple.com/library/ios/recipes/xcode_help-devices_organizer/articles/manage_containers.html" title="https://developer.apple.com/library/ios/recipes/xcode_help-devices_organizer/articles/manage_containers.html">https://developer.apple.com/library/ios/recipes/xcode_help-devices_organizer/articles/manage_containers.html</a></li>
+<li>in Finder right click on the downloaded container and select &ldquo;Show Package Contents&rdquo;</li>
+<li>send us the logfiles located (in the container) in the folder &ldquo;/AppData/Library/Caches/Logs/&rdquo;</li>
+</ul>
+<h2 id="crash_logs">Crash Logs<a class="headerlink" href="#crash_logs" title="Permanent link">&para;</a></h2>
+<p>If you encounter a crash, please send us the crash log as explained in the following steps:</p>
+<ul>
+<li>Plug in the device and open Xcode</li>
+<li>Choose Window -&gt; Devices from the menu bar</li>
+<li>Under the DEVICES section in the left column, choose the device</li>
+<li>To see the device console, click the up-triangle at the bottom left of the right hand panel</li>
+<li>Click the down arrow on the bottom right to save the console as a file</li>
+<li>To see crash logs, select the View Device Logs button under the Device Information section on the right hand panel</li>
+<li>Find your app in the Process column and select the Crash log to see the contents.</li>
+<li>To save a crash log, right click the entry on the left column and choose &ldquo;Export Log&rdquo;</li>
+</ul>
+<p>(Taken from <a href="https://developer.apple.com/library/ios/qa/qa1747/_index.html" title="https://developer.apple.com/library/ios/qa/qa1747/_index.html">https://developer.apple.com/library/ios/qa/qa1747/_index.html</a>)</p></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            
+            <center>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</center>
+        </footer>
+
+        <script src="../../../js/jquery-1.10.2.min.js"></script>
+        <script src="../../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../../js/highlight.pack.js"></script>
+        <script>var base_url = '../../..';</script>
+        <script data-main="../../../mkdocs/js/search.js" src="../../../mkdocs/js/require.js"></script>
+        <script src="../../../js/base.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>
+                            From here you can search these documents. Enter
+                            your search terms below.
+                        </p>
+                        <form role="form">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                            </div>
+                        </form>
+                        <div id="mkdocs-search-results"></div>
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
