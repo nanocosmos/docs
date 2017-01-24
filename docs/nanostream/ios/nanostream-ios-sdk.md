@@ -188,7 +188,6 @@ For a complete running sample, see our SDK package including broadcasting and pl
       
 ### Start playback
 
-      
     [self.session start];
     
 ## Advanced Settings/Usage
@@ -199,14 +198,13 @@ The camera (front/back) can be switched during preview and broadcast, with the m
 
 ```objc
 	-(bool) useFrontCamera: (bool) value;   // returns true if switch was successful
-
+```
 
 It is also possible to select the desired camera directly, when initializing the library, by using the property
 
 ```objc
 	@property (assign) BOOL frontCamera;
 ```
-
 
 of the ```nanostreamAVCSettings``` object.
 
