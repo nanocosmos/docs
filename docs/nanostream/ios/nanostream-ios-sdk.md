@@ -251,7 +251,7 @@ The following example shows how to crop the format to 16:9.
 
 ```objc
 	[nAVCSettings setCropMode: CropTo16By9];
-
+```
 
 ### Local Recording
 
@@ -301,8 +301,8 @@ Make sure to set the ABC settings before a stream is started.
 	[self.nAVC setAdaptiveBitrateControlSettings: abr];
 ```
 
-
 Possible properties:
+
  | property                | default values | range of values    | optional | 
  | --------                | -------------- | ---------------    | -------- | 
  | minimumBitrate          | 5000 (50 kb)   | 50000 - 10 000 000 | YES      | 
