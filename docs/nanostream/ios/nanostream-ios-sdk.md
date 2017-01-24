@@ -218,18 +218,21 @@ nanoStream supports live playback from RTMP sources.
 For a complete running sample, see our SDK package including broadcasting and playback samples.
 
 ### Initialize the library for playback
-
-    
+   
+```objc
     self.session = [[RtmpSourceCaptureSession alloc] initWithPreview:self.playerView andStatusListener:self andLogLevel:LogLevelMinimal];
     
     [self.session setLicense: myLicenseKey];
     
     [self.session setUrl:self.rtmpServerURL];
     [self.session setStreamId:self.rtmpStreamName];
+```
       
 ### Start playback
 
+```objc
     [self.session start];
+```
     
 ## Advanced Settings/Usage
 
