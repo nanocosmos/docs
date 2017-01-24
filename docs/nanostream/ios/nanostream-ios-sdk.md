@@ -303,13 +303,11 @@ Make sure to set the ABC settings before a stream is started.
 
 Possible properties:
 
- | property                | default values | range of values    | optional | 
- | --------                | -------------- | ---------------    | -------- | 
- | minimumBitrate          | 5000 (50 kb)   | 50000 - 10 000 000 | YES      | 
- | minimumFramerate        | 15 (fps)       | 5 - 60             | YES      | 
- | maxPercentBitrateChange | 50 (%)         | 0 - 100            | YES      | 
-
-_
+| property                | default values | range of values    | optional | 
+| ----------------------- | -------------- |------------------- |--------- |
+| minimumBitrate          | 5000 (50 kb)   | 50000 - 10 000 000 | YES      | 
+| minimumFramerate        | 15 (fps)       | 5 - 60             | YES      | 
+| maxPercentBitrateChange | 50 (%)         | 0 - 100            | YES      | 
 
 For more information look here http://www.nanocosmos.de/v4/documentation/live_video_encoder_-_adaptive_bitrate#abc_modes
 
