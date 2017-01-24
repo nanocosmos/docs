@@ -815,6 +815,7 @@ Please use the following steps to create the log files:
 *  in Finder right click on the downloaded container and select "Show Package Contents"
 
 *  send us all logfiles located (in the container) in the folder "/AppData/Library/Caches/Logs/"
+
 ## Crash Logs
 
 If you encounter a crash, please send us the crash log as explained in the following steps:
