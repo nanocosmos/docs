@@ -1,12 +1,37 @@
 # nanoStream License Deployment Information
-For temporary license keys, you need to ensure your app will be updated early enough before expiration. To avoid in-app expiration, you may load the license key from your server over a secure https connection. You need to ensure the server connection is protected against 3rd party access
+
+For temporary (expiring) license keys, you need to ensure your app will be updated early enough before expiration.
+To avoid in-app expiration and creating new product releases, you may load the license key from your server over a secure https connection within your app.
+You need to ensure the server connection is protected against 3rd party access.
+
+Example:
+
+license url = 
+
+https://yourserver.com/nanolicense.txt
+
+nanolicense.txt contains the nanoStream license key string ("nlic:...")
+
+Do the download every month:
+
+- download license within your app with "downloadLicenseFromURL(url)"
+
+- store the license key in local storage (registry, local file, ...)
+
+Do the license check on every app start:
+
+- load the local license key and put to the nanoStream API
+
 
 ## Sample code for iOS
+
 ```objc
+
 NSString * const kNSXLicenseKey = @"kNSXLicenseKey";
 
 @implementation NSXLicenseHelper
 
+// download nanoStream license key from url
 -(void)downloadLicenseFromURL:(NSURL *)url handler:(void ()(NSString *license))completion
 {
 if (!completion) {
