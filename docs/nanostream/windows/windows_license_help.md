@@ -15,6 +15,7 @@ The nanocosmos Live Encoder Application needs a properly set up license to work.
 ## Setting the license key in the registry
 The registry contains previous licenses (if any), you can place a new or an updated license in one
 of the following locations:
+
 1. Windows XP/7 32 bit, local machine global key:
 `HKEY_LOCAL_MACHINE\SOFTWARE\nanocosmos\LiveVideoEncoder`
 “License”=“nlic:1.0:nanoLiveEnc:…”
