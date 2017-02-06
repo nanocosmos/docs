@@ -27,29 +27,29 @@ A collection of descriptions of some functionalities of the directshow filters.
 
 - [Audio Volume](nanostream/directshow/directshow_audio_volume.md)
 - H.264:
-  - [AVC/H.264 Video Codec](nanostream/directshow/directshow_avc_h264.md)
-  - [nanoAVC/H.264 DirectShow Decoding](nanostream/directshow/directshow_nanoAVC_decoding_sdk.md)
-  - [nanoAVC/H.264 DirectShow Encoding](nanostream/directshow/directshow_nanoAVC_encoding_sdk.md)
-  - [H.264 Video Decoder Filter](nanostream/directshow/directshow_h264_video_decoder.md)
-  - [H.264 Video Encoder Filter](nanostream/directshow/directshow_h264_video_encoder.md)
+    * [AVC/H.264 Video Codec](nanostream/directshow/directshow_avc_h264.md)
+    * [nanoAVC/H.264 DirectShow Decoding](nanostream/directshow/directshow_nanoAVC_decoding_sdk.md)
+    * [nanoAVC/H.264 DirectShow Encoding](nanostream/directshow/directshow_nanoAVC_encoding_sdk.md)
+    * [H.264 Video Decoder Filter](nanostream/directshow/directshow_h264_video_decoder.md)
+    * [H.264 Video Encoder Filter](nanostream/directshow/directshow_h264_video_encoder.md)
 - MPEG:
-  - [MPEG2 Broadcast SDK](nanostream/directshow/directshow_mpeg2_broadcast_sdk.md)
-  - [MPEG2 Video Decoder](nanostream/directshow/directshow_mpeg2_video_decoder.md)
-  - [MPEG2 Video Encoder](nanostream/directshow/directshow_mpeg2_video_encoder.md)
-  - [MPEG Audio Encoder](nanostream/directshow/directshow_mpeg_audio_encoder.md)
+    - [MPEG2 Broadcast SDK](nanostream/directshow/directshow_mpeg2_broadcast_sdk.md)
+    - [MPEG2 Video Decoder](nanostream/directshow/directshow_mpeg2_video_decoder.md)
+    - [MPEG2 Video Encoder](nanostream/directshow/directshow_mpeg2_video_encoder.md)
+    - [MPEG Audio Encoder](nanostream/directshow/directshow_mpeg_audio_encoder.md)
 - [Quicktime IMX Playback](nanostream/directshow/directshow_quicktime_imx.md)
 - RTMP:
-  - [RTMP Source](nanostream/directshow/directshow_rtmp_source.md)
-  - [RTMP Writer](nanostream/directshow/directshow_rtmp_writer.md)
-  - [RTMP Status & Statistics](nanostream/directshow/directshow_rtmp_status_statistics.md)
+    - [RTMP Source](nanostream/directshow/directshow_rtmp_source.md)
+    - [RTMP Writer](nanostream/directshow/directshow_rtmp_writer.md)
+    - [RTMP Status & Statistics](nanostream/directshow/directshow_rtmp_status_statistics.md)
 - RTSP:
-  - [RTSP Sink](nanostream/directshow/directshow_rtsp_sink.md)
-  - [RTSP Source](nanostream/directshow/directshow_rtsp_source.md)
+    - [RTSP Sink](nanostream/directshow/directshow_rtsp_sink.md)
+    - [RTSP Source](nanostream/directshow/directshow_rtsp_source.md)
 - [UDP/TS Streaming](nanostream/directshow/directshow_udp_ts_streaming.md)
 - Video Filter:
-  - [Screen Capture Filter](nanostream/directshow/directshow_screen_capture_filter.md)
-  - [Video Mixer PiP](nanostream/directshow/directshow_video_mixer.md)
-  - [Video Mixer Overlay](nanostream/directshow/directshow_overlay_mixing.md)
+    - [Screen Capture Filter](nanostream/directshow/directshow_screen_capture_filter.md)
+    - [Video Mixer PiP](nanostream/directshow/directshow_video_mixer.md)
+    - [Video Mixer Overlay](nanostream/directshow/directshow_overlay_mixing.md)
 
 ### Additional Knowledge
 A collection of articles about some general topics in streaming media related to the nanocosmos products.
