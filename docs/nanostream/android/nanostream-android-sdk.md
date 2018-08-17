@@ -10,10 +10,9 @@ This documentation is about the nanoStream Live Video Streaming SDK for Android 
 
 ### Requirements
 
-
 -	Android 4.1+ (API Level 16)
 
-#### Required permissions:
+#### Required permissions
 
 The nanoStream SDK for android does not request any permissions by itself.
 However, it needs a few permissions to work.
@@ -245,6 +244,296 @@ public class MainActivity {
 }
 ```
 
+## Stream Type
+
+The SDK supports differnet streaming modes:
+
+-	Video and Audio
+-	Video only
+-	Audio only
+
+You can en/disable Video/Audio in the `nanoStreamSettings`.object
+
+### Implementation Example
+
+```java
+nanoStreamSettings nss = new nanoStreamSettings();
+nss.setHaveVideo(true); // false
+nss.setHaveAudio(true); // false
+```
+
+## Server Authentication
+
+
+In case authentication is required, the credentials can be set on the `nanoStreamSettings` object.
+
+### Implementation Example
+
+```java
+nanoStreamSettings nss = new nanoStreamSettings();
+nss.setAuthUser("user");
+nss.setAuthPassword("password");
+```
+## Local Recording
+
+### Description
+
+The nanoStream Android SDK supports local file recording on the device in MP4 format. This document describes how to enable and configure nanoStream for local recording.
+
+### Steps to configure MP4 recording
+
+MP4 recording can be configured with two function calls on a nanoStreamSettings object.
+
+-	Enabling MP4 recording: setRecordMp4(boolean)
+-	Setting up the file path: setMp4Path(String)
+
+### setRecordMp4(boolean)
+
+The setRecordMp4 function takes a boolean as parameter to enable/disable the recording function.
+
+### setMp4Path(String)
+
+The setMp4Path function takes a String as parameter. This string needs to be a valid file path (e.g. /sdcard/test.mp4).
+It is recommended to use the getExternalStorageDirectory or getExternalStoragePublicDirectory functions from the
+[Android Enviroment][8928e181] API, and add a file name to the returned path. Please find the code snippet below as an example.
+
+### Android Permission
+
+To be able to write to an external file path your Android app needs the following permissions to be added to the app manifest (AndroidMainfest.xml).
+
+```xml
+<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+<uses-permission android:name="android.permission.STORAGE" />
+```
+
+#### Android 6.0
+
+Due to the new permission handling in Android 6 (M) writing to external directories (DCIM) requires a permission by user. Writing to the applications own data directory (/Android/data/com.companyname.appname/) is not restricted.
+
+### Implementation Example
+
+```java
+File externalFilePath = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM);
+File filePath = new File(externalFilePath, "myMp4File.mp4");
+String mp4FilePath = filePath.getAbsolutePath();
+
+nanoStreamSettings nss = new nanoStreamSettings();
+nss.setRecordMp4(true);
+nss.setMp4Path(mp4FilePath);
+```
+
+## Adaptive Bitrate Streaming
+
+By using the Adaptive Bitrate Control (ABC) the stream will automatically adjust to changes of the bandwidth. There are four modes available:
+
+-	DISABLED: The Adaptive Bitrate Control is disabled.
+-	QUALITY_DEGRADE: The video quality will be changed if the bandwidth changes. For instance, if not enough bandwidth is available, the video bitrate will be decreased, which in turn degrades the video quality.
+-	FRAME_DROP: Low bandwidth is compensated by decreasing the framerate (FPS), but maintaining the video qualtiy.
+-	QUALITY_DEGRADE_AND_FRAME_DROP: The video quality and the framerate (FPS) decreased if the not enough bandwidth is available.
+
+Make sure to set the ABC settings before a stream is started.
+
+### Implementation Example
+
+```java
+private AdaptiveBitrateControlSettings.AdaptiveBitrateControlMode abcMode = AdaptiveBitrateControlSettings.AdaptiveBitrateControlMode.QUALITY_DEGRADE_AND_FRAME_DROP;
+private int videoBitrate = 500000;
+
+private void initStreamLib() {
+  AdaptiveBitrateControlSettings abcSettings = new AdaptiveBitrateControlSettings(abcMode);
+  abcSettings.SetMaximumBitrate((int)(videoBitrate * 1.5));
+
+  nanoStreamSettings nss = new nanoStreamSettings();
+  nss.setAbcSettings(abcSettings);
+}
+```
+
+### Measuring the available bandwidth
+
+
+For measuring the available bandwidth you can use the method `runBandwidthCheck`. After the check finished, the result can be used to set the bitrate for the nanoStream object.
+The check measures the bandwidth by running a test stream to the server.
+The BandwidthCheck Class has three public functions:
+
+* runBandwidthCheck(BandwidthCheckSettings settings, BandwidthCheckResultCallback callback()
+* forceStop()
+* abort()
+
+There is a BandwidthCheckSettings Class, the constructor creates a standard object of BandwidthCheckSettings, with the following settings:
+
+| property | default values	|	meaning|
+|:------------------------------------------------|:----------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| prerollSeconds                                  | 1 (in sec.)                 | this is the pre roll time to connect to the server                                                                                                                                                                                                                                     |
+| runTime                                         | 5 (in sec.)                 | the run time of the bandwidth check                                                                                                                                                                                                                                                    |
+| maxBitrate                                      | 3000000 (bit/s = 3 MBit/s)  | the maximum bit rate for the bandwidth check                                                                                                                                                                                                                                           |
+| rtmpUrl                                         | empty                       | the rtmp url for the bandwidth check                                                                                                                                                                                                                                                   |
+| streamId                                        | empty                       | the stream id for the bandwidth check                                                                                                                                                                                                                                                  |
+
+With this settings you can call the runBandwidthCheck methode, the second parameter is the callback for the results. This callback class has a finished method that will be called after bandwidth check is done.
+The finished method has one parameter from type BandwidthCheckResult, this object has 6 getter methods:
+
+ - getAverageBitrate() // the average measured bandwidth
+ - getMedianBitrate() // the median measured bandwidth
+ - getMaxBitrate() // the maximum measured bandwidth
+ - getMinBitrate() // the minimum measured bandwidth
+ - getRunTimeMS() // the run time in ms
+ - getErrorCode() // the error code if all is ok this is nanoResults.N_OK (all error codes can be found in the nanoStream API Reference documentation for nanoResults)
+
+The forceStop call stops the bandwidth check and will return the results that where measured until then. The abort call stops the bandwidth check but don't return any results.
+
+The bandwidth check, sends a special type of metadata that will not be recorded on the Streaming Server.
+
+#### Implementation Example
+
+```java
+private BandwidthCheck bwCheck = null;
+
+private class CustomBandwidthCheckResultCallback implements BandwidthCheckResultCallback {
+  @Override
+  public void finished(final BandwidthCheckResult bandwidthCheckResult) {
+    Log.d(TAG, "BandwidthCheck results: " +
+      "\n\tAverage Bitrate (kBit/s): " + bandwidthCheckResult.getAverageBitrate() / 1000 +
+      "\n\tMedian Bitrate  (kBit/s): " + bandwidthCheckResult.getMedianBitrate() / 1000 +
+      "\n\tMax Bitrate     (kBit/s): " + bandwidthCheckResult.getMaxBitrate() / 1000 +
+      "\n\tMin Bitrate     (kBit/s): " + bandwidthCheckResult.getMinBitrate() / 1000 +
+      "\n\tRun Time        (ms)    : " + bandwidthCheckResult.getRunTimeMS());
+  }
+}
+
+private void initBandwidthCheck() {
+  if(null == bwCheck) {
+    BandwidthCheckSettings settings = new BandwidthCheckSettings();
+    settings.setRtmpUrl(serverUrl);
+    settings.setStreamId(streamName);
+    bwCheck = new BandwidthCheck();
+    bwCheck.runBandwidthCheck(settings, new CustomBandwidthCheckResultCallback());
+  }
+}
+```
+##Snapshot
+
+To get a snapshot (image) of the current preview/stream, the method `takeSnapshot` can be used. This is a non blocking function, for the result you need to implement the SnapshotCallback interface. The snapshot returns as a base64 encoded JPEG
+
+### Implementation Example
+
+```java
+private class CustomSnapshotCallback implements SnapshotCallback {
+  @Override
+  void onSuccess(String arg0){
+    // do something with the base64 encoded JPEG.
+  }
+
+  @Override
+ void onFailure(){
+   Log.d(TAG, "takeSnapshot() failed!")
+ }
+}
+private void shapshot() {
+  streamLib.takeSnapshot(new CustomSnapshotCallback());
+}
+```
+
+## Camera Zoom
+
+### Description
+
+The nanoStream Android SDK supports camera zoom, if the internal camera supports it. Therefor there are a few functions, the most important are:
+
+| Function        | Return Type   | returns                                                               |
+|:----------------|:--------------|:----------------------------------------------------------------------|
+| hasZoom()       | boolean       | true if zoom is supported by the video source/ device                 |
+| getZoomRatios() | List<Integer> | list with of ale zoom ratios                                          |
+| getZoom()       | int           | the index of the List<Integer> that returned from getZoomRatios()     |
+| setZoom(int)    | int           | the new index of the List<Integer> that returned from getZoomRatios() |
+
+It is recommended to use pinch to zoom, therefor you need to implement a ScaleGestureDetector.SimpleOnScaleGestureListener, and a pinch2zoom function, that takes the scalefactor from the SimpleOnScaleGestureListener as a int parameter, take a loaok at the [Implementation Example][ef1c8421].
+#### getZoomRatios()
+getZoomRatios() returns a List of Integer values, this values are the zoom ratios in 1/100 increments (e.g. a zoom of 3.2x is returned as 320).
+#### setZoom(int)
+The int parameter from setZoom(int zoom) is the index of zoom ratios that returns getZoomRatios().
+#### Zoom Behavior on Camera Switch
+During a camera switch (e.g. from back to front) the zoom remains unaffected.
+
+#### Implementation Example
+
+```java
+public class MainActivity extends Activity {
+  private ScaleGestureDetector scaleGestureDetector;
+  private List<Integer> mZoomRatios = null;
+
+  private nanoStream streamLib = null;
+
+  @Override
+  protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+
+    nanoStreamSettings nss = new nanoStreamSettings();
+    // configure nanoStreamSettings
+
+    streamLib = new nanoStream(nss);
+
+    if(streamLib.hasZoom()) {
+      mZoomRatios = streamLib.getZoomRatio();
+    }
+
+    if(null == scaleGestureDetector) {
+      scaleGestureDetector = new ScaleGestureDetector(this, new ScaleGestureListener());
+    }
+  }
+
+  @Override
+  public boolean onTouchEvent(MotionEvent event)
+  {
+    if (scaleGestureDetector != null)
+    {
+      scaleGestureDetector.onTouchEvent(event);
+    }
+    return true;
+  }
+
+  private class ScaleGestureListener extends ScaleGestureDetector.SimpleOnScaleGestureListener {
+    @Override
+    public boolean onScale(ScaleGestureDetector detector) {
+      if(null != streamLib) {
+        if (streamLib.hasZoom()) {
+          pinch2Zoom(detector.getScaleFactor());
+        }
+      }
+      return true;
+    }
+  }
+
+  public void pinch2Zoom(float scaleFactor) {
+    if (streamLib.hasZoom() && null != mZoomRatios) {
+      int zoomFactor = streamLib.getZoom();
+      float zoomRatio = mZoomRatios.get(zoomFactor) / 100f;
+      zoomRatio *= scaleFactor;
+      if (zoomRatio > 1.0f) {
+        if (scaleFactor > 1.0f) {
+          for (int i = zoomFactor; i < mZoomRatios.size(); i++) {
+            Double zoom = mZoomRatios.get(i) / 100.0;
+            if (zoom >= zoomRatio) {
+              streamLib.setZoom(i);
+              break;
+            }
+          }
+        } else {
+          for (int i = zoomFactor; i > 0; i--) {
+            Double zoom = mZoomRatios.get(i) / 100.0;
+            if (zoom <= zoomRatio) {
+              streamLib.setZoom(i);
+              break;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+```
+
+  [ef1c8421]: #nanostream_android_camera_zoom_impl_example "Implementation Example"
+
 ## Camera Focus
 
 ### Description
@@ -269,7 +558,7 @@ which will return true or false.
 
 ### Parameter List
 
-| Parameter name | meaning                                             |
+| **Parameter name** | **meaning**                                             |
 |----------------|-----------------------------------------------------|
 | focusWidth     | the focus Area width                                |
 | focusHeight    | the focus Area height                               |
@@ -281,6 +570,7 @@ which will return true or false.
 | weight         | the weight of the area must be range from 1 to 1000 |
 
 ### FocusCallback interface
+
 The FocusCallback interface has three abstract functions
 ```java
 onSuccess()
@@ -488,19 +778,8 @@ Audio streams are decoded and rendered to system audio using the Android AudioSe
 
 The interface and usage are similar to the Android MediaPlayer. The Android MediaPlayerControl interface is implemented to enable control through an `android.widget.MediaController` instance.
 
-### Requirements
-
-Related nanoStream SDK Version: 4.1
-
-Minimum supported Android OS/API: 4.1/API 16
-
-Required application permissions:
-- `android.permission.INTERNET`
-- `android.permission.RECORD_AUDIO`
-- `android.permission.RECORD_VIDEO`
-- `android.permission.MODIFY_AUDIO_SETTINGS`
-
 ### License
+
 The playback component requires a special feature flag to be enabled in your nanoStream license key. It not necessarily included in nanoStream Android SDK licenses.
 
 ### Interface
@@ -509,6 +788,7 @@ The playback component requires a special feature flag to be enabled in your nan
 #### Declaration
 `public abstract class NanostreamPlayer implements MediaPlayercontrol, Surfaceholder.Callback`
 #### Function Life Cycle
+
 | Instance Handling      | Initialization         | Capabilities    | Queries            | Playback Control | Supported by RTMP Player |
 |------------------------|------------------------|-----------------|--------------------|------------------|--------------------------|
 | createNanostreamPlayer |                        |                 |                    |                  |                          |
@@ -721,78 +1001,22 @@ public class PlayerActivity extends Activity implements PlayerEventListener, Sur
 }
 ```
 
-## MP4 Local Recording
 
-### Description
+## Logging / Debugging
 
-The nanoStream Android SDK supports local file recording on the device in MP4 format.
-This document describes how to enable and configure nanoStream for local recording.
+If you encounter an issue, our support team is able to help.
+Please send us the log file as explained in the following steps:
 
-### Steps to configure MP4 recording
-
-MP4 recording can be configured with two function calls on a nanoStreamSettings object.
-
-1. Enabling MP4 recording: setRecordMp4(boolean)
-2. Setting up the file path: setMp4Path(String)
-
-### setRecordMp4(boolean)
-
-The setRecordMp4 function takes a boolean as parameter to enable/disable the recording function.
-
-### setMp4Path(String)
-
-The setMp4Path function takes a String as parameter. This string needs to be a valid file path (e.g. /sdcard/test.mp4).
-It is recommended to use the getExternalStorageDirectory or getExternalStoragePublicDirectory functions from the Android [Enviroment][53119650] API, and add a file name to the returned path.
-Please find the code snippet below as an example.
-
-### Android Permission
-
-To be able to write to an external file path your Android app needs the following permissions to be added to the
-app manifest (AndroidMainfest.xml).
-
-```xml
-<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-<uses-permission android:name="android.permission.STORAGE" />
-```
-
-#### Android 6.0
-
-Due to the new permission handling in Android 6 (M) writing to external directories (DCIM) requires a permission by user.
-Writing to the applications own data directory (/Android/data/com.companyname.appname/) is not restricted.
-
-### Implementation Example
-
-```java
-File externalFilePath = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM);
-File filePath = new File(externalFilePath, "myMp4File.mp4");
-String mp4FilePath = filePath.getAbsolutePath();
-
-nanoStreamSettings nss = new nanoStreamSettings();
-nss.setRecordMp4(true);
-nss.setMp4Path(mp4FilePath);
-```
-
-## Android 6.0 Permissions
-### <a name="android_6_description">Description</a>
-Google introduced a new [permission management][b0ac27b1] in Android 6.0. In this section we will list all nanoStream SDK functions that needs some permissions to run correctly.
-
-| function                                                                                                                                        | permission                | return value without permission |
-|-------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------|---------------------------------|
-| nanoStream.listAvailableVideoResolutions()                                                                                                      | android.permission.CAMERA | null                            |
-| nanoStream.listAvailableVideoFramerates()                                                                                                       | android.permission.CAMERA | null                            |
-| nanoStream.hasZoom()                                                                                                                            | android.permission.CAMERA | false                           |
-| nanoStream.getZoom()                                                                                                                            | android.permission.CAMERA | 0                               |
-| nanoStream.getMaxZoomFactor                                                                                                                     | android.permission.CAMERA | 0                               |
-| nanoStream.getZoomRatios()                                                                                                                      | android.permission.CAMERA | null                            |
-| nanoStream.setZoom(int zoom)                                                                                                                    | android.permission.CAMERA | -2                              |
-| nanoStream.isFocusSupported()                                                                                                                   | android.permission.CAMERA | false                           |
-| nanoStream.setFocusArea(int focusWidth, int focusHeight, float areaMultiple, int x, int y, int previewWidth, int previewHeight, int weight)     | android.permission.CAMERA | -                               |
-| nanoStream.setFocusLockArea(int focusWidth, int focusHeight, float areaMultiple, int x, int y, int previewWidth, int previewHeight, int weight) | android.permission.CAMERA | -                               |
-| nanoStream.toggleTorch(boolean isEnabled)                                                                                                       | android.permission.CAMERA | -                               |
-| nanoStream.isTorchEnabled()                                                                                                                     | android.permission.CAMERA | false                           |
-| nanoStream.addFocusCalback(FocusCallback callback)                                                                                              | android.permission.CAMERA | -                               |
-| nanoStream.removeFocusCalback(FocusCallback callback)                                                                                           | android.permission.CAMERA | -                               |
-| NanostreamMediaController.getCameraResolutions()                                                                                                | android.permission.CAMERA | null                            |
+- Plug in the device and open Android Studio
+- In Android Studios Android Monitor
+ 1.  Clear the logcat output
+ 2.  Set the Log Level to `Verbose`
+ 3.  Set the filter to `No Filters`
+- Run the critical section
+- Mark the entire logcat output
+- Right click in the logcat View and `Copy as Plain Text`
+- Open an editor of your choice
+- Paste the logcat output into the editor and Save the logcat output as .txt file
 
 ## Further questions? Would you like a feature not available yet?
 We can make it work for you based on our consulting and development / implementation services. [Contact us](http://www.nanocosmos.de/v4/en/contact-form.html)
