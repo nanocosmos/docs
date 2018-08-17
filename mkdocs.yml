@@ -5,10 +5,13 @@ pages:
   - Web:
     - API Manual: 'nanostream/web/nanostream-4.x-web-api.md'
     - Javascript Integration: 'nanostream/web/nanostream_javascript_integration.md'
-  - iOS api: nanostream/ios/nanostream-ios-sdk.md
   - MacOS api: nanostream/macos/nanostream-macos-sdk.md
-<<<<<<< HEAD
-  - Android:
+  - iOS api:
+    - 'Quick Start': nanostream/ios/ios-quick-start.md
+    - 'Developer Manual': nanostream/ios/ios-sdk-developer-manual.md
+    - iOS api: nanostream/ios/nanostream-ios-sdk.md
+  - MacOS api: nanostream/macos/nanostream-macos-sdk.md
+  - Android api:
     - 'Getting Started': 'nanostream/android/getting-started.md'
     - 'Advanced Settings/Usage': 'nanostream/android/android-advanced-settings.md'
     - 'RTMP Playback': 'nanostream/android/rtmp-playback.md'
