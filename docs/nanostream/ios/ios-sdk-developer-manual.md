@@ -59,25 +59,15 @@ Add the library "libnanostreamAVC.a" as dependency (Link Binary With Libraries) 
 Further required dependencies:
 
 *  libc++.dylib
-
 *  libstdc++.dylib
-
 *  AVFoundation.framework
-
 *  Accelerate.framework
-
 *  CoreGraphics.framework
-
 *  CoreMedia.framework
-
 *  CoreVideo.framework
-
 *  Foundation.framework
-
 *  SystemConfiguration.framework
-
 *  VideoToolbox.framework (link as Optional, not as Required)
-
 *  AudioToolbox.framework
 
 Include the header "libnanostreamAVC.h" in your source code.
@@ -236,6 +226,22 @@ For a complete running sample, see our SDK package including broadcasting and pl
     
 ## Advanced Settings/Usage
 
+### Meaning of Events and Errors (nanostreamEvent)
+
+Events:
+
+- StreamStarted/StreamStopped: notification that a stream was successfully started/stopped
+- StreamConnectionStatus: indicates the connection status: connected, disconnected or reconnecting
+
+Errors:
+
+- StreamSettingCropModeNotSupported: a larger input resolution is required for the crop mode
+- StreamError:
+- StreamErrorConnect: the connection to the server could not be established, server might no be reachable or there are network problems
+- StreamErrorConnectSSL: the connection process failed when trying to setup SSL, maybe the server certificates could not be verified
+- StreamError: an error occurred while initializing the stream, or during the stream, used license might be invalid or expired
+- GeneralError: a general error
+
 ### Switch Camera
 
 The camera (front/back) can be switched during preview and broadcast, with the method
@@ -269,6 +275,53 @@ The SDK supports different streaming modes:
 * Audio only
 
 You can configure the mode with the property ```streamType``` of the settings object.
+
+### Zoom
+
+Following Methods are available for zooming:
+
+```objc
+/**
+
+ *  maxZoomFactor
+ *
+ *  Returns the maximum zoom factor that can be set on the current device.
+ *  This includes the zoom via upscaling.
+ *
+ *  @return Maximum Zoom factor that can be set on the current device
+ */
+-(CGFloat)maxZoomFactor;
+```
+
+```objc
+/**
+
+ *  Newer devices can use an almost-optical zoom, using the bigger sensor sizes.
+ *  Setting the zoom factor to a value smaller than this value uses a lossless
+ *  zoom.
+ *
+ *  @return Max Zoom factor that can be set without using upscaling.
+ */
+-(CGFloat)maxZoomFactorWithoutUpscaling;
+```
+
+```objc
+/**
+
+ *  Sets the zoom factor for the camera. Available from iOS 7.1 onwards.
+ *
+ *  @param factor Double between 1.0 and maxZoomFactor. Will be set for the 
+ *  current capture device. Will be reset when the device changes (camera rotation)
+ *  Zoom factor will be applied with a ramp function, which results in a smooth
+ *  transition to the given factor. If a value smaller than 
+ *  maxZoomFactorWithoutUpscaling is set, the zoom will be lossless.
+ *
+ *  @return YES if zoom was set. NO if not.
+ */
+-(BOOL)setZoomFactor:(CGFloat)factor;
+```
+
+Zooming is also demonstrated in the sample project "BintuStream", included in the SDK packet.
 
 ### Server Authentication
 
@@ -842,7 +895,9 @@ If there are crashes occurring in your app that include above symbols in the sta
 
 and 
 
-`-[nanostreamAVC initWithSettings:uiPreview:errorListener:]`{objc} 
+```objc
+-[nanostreamAVC initWithSettings:uiPreview:errorListener:]
+```
 
 cannot contain any subviews (UIButtons or otherwise).
 
@@ -863,12 +918,6 @@ Please use the following steps to create the log files:
 *  in Finder right click on the downloaded container and select "Show Package Contents"
 
 *  send us all logfiles located (in the container) in the folder "/AppData/Library/Caches/Logs/"
-
-- try to reproduce the problem
-- download the app container (for your app) from the iOS device with Xcode, as explained here: [https://developer.apple.com/library/ios/recipes/xcode_help-devices_organizer/articles/manage_containers.html][6308e43e]
-- in Finder right click on the downloaded container and select "Show Package Contents"
-- send us the logfiles located (in the container) in the folder "/AppData/Library/Caches/Logs/"
-
 
 
 ## Crash Logs

@@ -1,6 +1,6 @@
 # bintu.live client SDK
 
-(c) 2016 nanocosmos gmbh
+(c) 2016-2018 nanocosmos gmbh
 http://www.nanocosmos.de
 
 Version 0.2.1
