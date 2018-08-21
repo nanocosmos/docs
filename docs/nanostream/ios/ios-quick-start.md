@@ -1,6 +1,9 @@
 Copied from : [https://www.nanocosmos.de/wiki/nanostream-sdk-for-ios-developer-quickstart/][8ffbac7a]
 
 # NANOSTREAM SDK FOR IOS – DEVELOPER QUICKSTART
+
+(c) 2017-2018 nanocosmos gmbh, http://www.nanocosmos.de
+
 ## Purpose
 This documentation is about the [nanoStream Live Video Streaming][870448de] SDK for iOS and can be used by software developers to integrate nanoStream Live Video Encoding into custom apps.
 ## Requirements
