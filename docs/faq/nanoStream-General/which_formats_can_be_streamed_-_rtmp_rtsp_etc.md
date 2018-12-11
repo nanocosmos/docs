@@ -1,0 +1,1 @@
+see [http://nanocosmos.de/v4/documentation/doku.php?id=which_video_audio_and_streaming_formats_do_you_support_h264_rtmp_rtsp_etc](which_video_audio_and_streaming_formats_do_you_support_h264_rtmp_rtsp_etc)
