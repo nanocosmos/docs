@@ -29,22 +29,32 @@
       "cloud/cloud_ios_streaming_app"
     ],
     "Other Information" : ["nanoplayer/nanoplayer_blogposts"] 
-  },  "docs-other": {
-    "First Category": ["doc5"],
-    "Second Category": ["doc3"]
+  },
+  "nanostream": {
+    "nanoStream SDKs/Apps": [
+      "nanostream/nanostream",
+      "nanostream/android/nanostream-android-sdk",
+      "nanostream/ios/nanostream-ios-sdk",
+      "nanostream/ios/nanostream_ios_license_deployment"
+    ],
+    "Other Information" : ["nanoplayer/nanoplayer_blogposts"] 
   },
   "faq" : {
-    "Live Encoding and Streaming" : [
-      "faq/encoding_and_streaming",
-      "faq/3d_stereo_vr",
+    "Live Streaming" : [
+      "faq/faq_streaming",
+      "faq/faq_devices_support",
+      "faq/faq_adv_codec_config",
+      "faq/faq_3d_stereo_vr",
       "faq/programming_sdk_api",
-      "faq/devices_support",
-      "faq/adv_codec_config"
-    ],
-    "Purchase and License" : ["faq/purchase_and_license"],
-    "Windows Application, SDK, Codecs Installation/Settings" : [
-      "faq/installation_and_setup",
+      "faq/faq_nanostream_sdk_win",
       "faq/programming"
+    ],
+    "Purchase and License" : ["faq/faq_purchase_and_license"],
+    "nanoStream SDK for Windows, Codecs Setup" : [
     ]
+  },
+  "docs-other": {
+    "First Category": ["doc5"],
+    "Second Category": ["doc3"]
   }
 }
