@@ -51,33 +51,44 @@
               }
             });
         </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Getting started</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="embedding-h5live-player-on-your-own-web-page"></a><a href="#embedding-h5live-player-on-your-own-web-page" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Embedding H5Live player on your own web page</h2>
-<p>You find an embed code snippet on the demo page.</p>
+<p>You can embed this code snippet to test the H5Live player on your page in no time.</p>
+<p><strong>Important:</strong> replace <code>CUSTOM-STREAMID</code>  with your own <code>streamid</code>.</p>
+<p><br></p>
+<blockquote>
+<p>**Note: **</p>
+<p>If you don't know how to get your custom <code>streamid</code> click <a href="www.testing.de">here</a> .</p>
+</blockquote>
 <pre><code class="hljs css language-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"playerDiv"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"//demo.nanocosmos.de/nanoplayer/api/release/nanoplayer.3.min.js?20170505"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://demo.nanocosmos.de/nanoplayer/api/release/nanoplayer.3.min.js?20190313"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
-  <span class="hljs-keyword">var</span> player;
-  <span class="hljs-keyword">var</span> config = {
+<span class="hljs-keyword">var</span> player;
+<span class="hljs-keyword">var</span> config = {
     <span class="hljs-string">"source"</span>: {
-        <span class="hljs-string">"h5live"</span>: {
-          <span class="hljs-string">"server"</span>: {
-            <span class="hljs-string">"websocket"</span>: <span class="hljs-string">"wss://h5live.nanocosmos.de:443/h5live/stream"</span>,
-            <span class="hljs-string">"hls"</span>: <span class="hljs-string">"https://h5live.nanocosmos.de:443/h5live/http/playlist.m3u8"</span>,
-            <span class="hljs-string">"progressive"</span>: <span class="hljs-string">"https://h5live.nanocosmos.de:443/h5live/http/stream.mp4"</span>
-          },
-          <span class="hljs-string">"rtmp"</span>: {
-            <span class="hljs-string">"url"</span>: <span class="hljs-string">"rtmp://my.server.com/live"</span>,
-            <span class="hljs-string">"streamname"</span>: <span class="hljs-string">"myStream"</span>
-          }
+        <span class="hljs-string">"bintu"</span>: {
+            <span class="hljs-string">"apiurl"</span>: <span class="hljs-string">"https://bintu.nanocosmos.de"</span>,
+            <span class="hljs-string">"streamid"</span>: <span class="hljs-string">"CUSTOM-STREAMID"</span>
         }
     },
-  };
-  <span class="hljs-built_in">document</span>.addEventListener(<span class="hljs-string">'DOMContentLoaded'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+    <span class="hljs-string">"playback"</span>: {
+        <span class="hljs-string">"autoplay"</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-string">"automute"</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-string">"muted"</span>: <span class="hljs-literal">false</span>,
+        <span class="hljs-string">"forceTech"</span>: <span class="hljs-string">"h5live"</span>,
+        <span class="hljs-string">"flashplayer"</span>: <span class="hljs-string">"//demo.nanocosmos.de/nanoplayer/nano.player.swf"</span>
+    },
+    <span class="hljs-string">"style"</span>: {
+        <span class="hljs-string">"controls"</span>: <span class="hljs-literal">true</span>
+    }
+};
+<span class="hljs-built_in">document</span>.addEventListener(<span class="hljs-string">'DOMContentLoaded'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
     player = <span class="hljs-keyword">new</span> NanoPlayer(<span class="hljs-string">"playerDiv"</span>);
-       player.setup(config).then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">config</span>) </span>{
-       }, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">error</span>) </span>{
+    player.setup(config).then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">config</span>) </span>{
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"setup success"</span>);
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"config: "</span> + <span class="hljs-built_in">JSON</span>.stringify(config, <span class="hljs-literal">undefined</span>, <span class="hljs-number">4</span>));
+    }, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">error</span>) </span>{
         alert(error.message);
     });
-  });
+});
 </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
 </code></pre>
 <h2><a class="anchor" aria-hidden="true" id="frameworks"></a><a href="#frameworks" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Frameworks</h2>
@@ -111,7 +122,13 @@
 </code></pre>
 <p><br></p>
 <ol start="3">
-<li>Add a new variable called <code>config</code> to your <code>data() method</code> inside your component</li>
+<li><p>Add a new variable called <code>config</code> to your <code>data() method</code> inside your component</p>
+<p><strong>Important</strong>: replace <code>CUSTOM-STREAMID</code>  with your own <code>streamid</code></p>
+<p><br></p>
+<blockquote>
+<p>**Note: **</p>
+<p>If you don't know how to get your custom <code>streamid</code> click <a href="www.testing.de">here</a> .</p>
+</blockquote></li>
 </ol>
 <pre><code class="hljs css language-html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
     <span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
@@ -121,7 +138,7 @@
             <span class="hljs-attr">source</span>: {
               <span class="hljs-attr">bintu</span>: {
                   <span class="hljs-string">"apiurl"</span>: <span class="hljs-string">"https://bintu.nanocosmos.de"</span>,
-                  <span class="hljs-string">"streamid"</span>: <span class="hljs-string">"45f8c052-7285-4965-9fbe-36eaeeb9387d"</span>
+                  <span class="hljs-string">"streamid"</span>: <span class="hljs-string">"CUSTOM-STREAMID"</span>
               }
             },
             <span class="hljs-attr">playback</span>: {
@@ -199,7 +216,13 @@ Now you should see the player running in your browser window.</p>
 </code></pre>
 <p><br></p>
 <ol start="3">
-<li>Add a new variable called <code>config</code> to your <code>data() method</code> inside your component</li>
+<li><p>Add a new variable called <code>config</code> to your <code>data() method</code> inside your component</p>
+<p>Important**: replace <code>CUSTOM-STREAMID</code>  with your own <code>streamid</code></p>
+<p><br></p>
+<blockquote>
+<p>**Note: **</p>
+<p>If you don't know how to get your custom <code>streamid</code> click <a href="www.testing.de">here</a> .</p>
+</blockquote></li>
 </ol>
 <pre><code class="hljs css language-html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
     <span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
@@ -209,7 +232,7 @@ Now you should see the player running in your browser window.</p>
             <span class="hljs-attr">source</span>: {
               <span class="hljs-attr">bintu</span>: {
                   <span class="hljs-string">"apiurl"</span>: <span class="hljs-string">"https://bintu.nanocosmos.de"</span>,
-                  <span class="hljs-string">"streamid"</span>: <span class="hljs-string">"45f8c052-7285-4965-9fbe-36eaeeb9387d"</span>
+                  <span class="hljs-string">"streamid"</span>: <span class="hljs-string">"CUSTOM-STREAMID"</span>
               }
             },
             <span class="hljs-attr">playback</span>: {
@@ -292,7 +315,13 @@ Now you should see the player running in your browser window.</p>
 </code></pre>
 <p><br></p>
 <ol start="3">
-<li>Add a new variable called <code>config</code> to your <code>data() method</code> inside your component</li>
+<li><p>Add a new variable called <code>config</code> to your <code>data() method</code> inside your component</p>
+<p>Important**: replace <code>CUSTOM-STREAMID</code>  with your own <code>streamid</code></p>
+<p><br></p>
+<blockquote>
+<p>**Note: **</p>
+<p>If you don't know how to get your custom <code>streamid</code> click <a href="www.testing.de">here</a> .</p>
+</blockquote></li>
 </ol>
 <pre><code class="hljs css language-html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
     <span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
@@ -302,7 +331,7 @@ Now you should see the player running in your browser window.</p>
             <span class="hljs-attr">source</span>: {
               <span class="hljs-attr">bintu</span>: {
                   <span class="hljs-string">"apiurl"</span>: <span class="hljs-string">"https://bintu.nanocosmos.de"</span>,
-                  <span class="hljs-string">"streamid"</span>: <span class="hljs-string">"45f8c052-7285-4965-9fbe-36eaeeb9387d"</span>
+                  <span class="hljs-string">"streamid"</span>: <span class="hljs-string">"CUSTOM-STREAMID"</span>
               }
             },
             <span class="hljs-attr">playback</span>: {

@@ -1,0 +1,109 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>nanostream/support/nanostream_remote_server_recording · Documentation</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;h2&gt;&lt;a class=&quot;anchor&quot; aria-hidden=&quot;true&quot; id=&quot;nanostream-remote-server-recording&quot;&gt;&lt;/a&gt;&lt;a href=&quot;#nanostream-remote-server-recording&quot; aria-hidden=&quot;true&quot; class=&quot;hash-link&quot;&gt;&lt;svg class=&quot;hash-link-icon&quot; aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;nanoStream Remote Server Recording&lt;/h2&gt;
+"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="nanostream/support/nanostream_remote_server_recording · Documentation"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.nanocosmos.de//index.html"/><meta property="og:description" content="&lt;h2&gt;&lt;a class=&quot;anchor&quot; aria-hidden=&quot;true&quot; id=&quot;nanostream-remote-server-recording&quot;&gt;&lt;/a&gt;&lt;a href=&quot;#nanostream-remote-server-recording&quot; aria-hidden=&quot;true&quot; class=&quot;hash-link&quot;&gt;&lt;svg class=&quot;hash-link-icon&quot; aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;nanoStream Remote Server Recording&lt;/h2&gt;
+"/><meta property="og:image" content="https://docs.nanocosmos.de/img/docusaurus.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://docs.nanocosmos.de/img/docusaurus.png"/><link rel="shortcut icon" href="/img/favicon_nano.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/nanocosmos_header_logo.png" alt="Documentation"/><h2 class="headerTitleWithLogo">Documentation</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/docs/nanoplayer/nanoplayer_introduction" target="_self">H5Live Player</a></li><li class=""><a href="/docs/faq/faq_streaming" target="_self">FAQ</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">nanostream/support/nanostream_remote_server_recording</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="nanostream-remote-server-recording"></a><a href="#nanostream-remote-server-recording" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>nanoStream Remote Server Recording</h2>
+<h3><a class="anchor" aria-hidden="true" id="recording-on-demand-on-flash-media-server"></a><a href="#recording-on-demand-on-flash-media-server" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Recording on demand on Flash Media Server</h3>
+<h4><a class="anchor" aria-hidden="true" id="general-information"></a><a href="#general-information" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>General Information</h4>
+<p>nanoStream 2.0 supports a &quot;Remote Server Record&quot; mode to enable server based video recording functionality. Currently this works only with Flash Media Server. See Wowza section for how to record on demand to Wowza Media Server.</p>
+<h4><a class="anchor" aria-hidden="true" id="requirements"></a><a href="#requirements" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Requirements:</h4>
+<ul>
+<li>Flash Media Server 3/4 or higher</li>
+<li>The application must support recording. Some preinstalled applications (live on FMS4) dont. To test recording, you have to create a new application folder in FMS_DIR\applications, and copy the files from FMS_DIR\samples\applications\live into it.</li>
+<li>Streams containing H.264/AVC video data have to be named matching the <strong>mp4:streamname</strong> scheme, otherwise recording will fail. Sample stream URL: <code>rtmp://localhost/liverec+mp4:samplerec.mp4</code></li>
+<li>The recorded file can be found in the directory specified with LIVE_DIR in the config file FMS_DIR\conf\fms.ini</li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="usage"></a><a href="#usage" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Usage:</h4>
+<ul>
+<li>Set the publish mode with a call to <strong>SetRTMPPublishMode</strong> before calling <strong>StartBroadcast()</strong> - if you use the RTMP filter directly use the property <strong>PROPID_nanoRTMPPublishMode</strong>
+<ul>
+<li>Valid Values are:
+<ul>
+<li>0 - live(no recording),</li>
+<li>1 - record(rewrite file),</li>
+<li>2 - append(append to file)</li>
+</ul></li>
+</ul></li>
+<li>Javascript API:
+<ul>
+<li>call the function SetRTMPPublishMode()to configure publish mode</li>
+</ul></li>
+<li>Plugin API / ActiveX / C/C++:
+<ul>
+<li>Call the API function setConfig with parameter name <strong>RTMPPublishMode</strong>:
+<ul>
+<li>nanoStream.setConfig(&quot;RTMPPublishMode&quot;,&quot;1&quot;);</li>
+</ul></li>
+</ul></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="sample-web-application"></a><a href="#sample-web-application" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Sample Web Application:</h4>
+<p>See the HTML web page in the folder web/liveEncoder/nanoStream.html\
+The feature is implemented there under &quot;Advanced Options&quot;.\
+See the function code for SetRTMPPublishMode  in nanoEncoder.js for how it is implemented in Javascript.\</p>
+<h3><a class="anchor" aria-hidden="true" id="recording-on-demand-on-wowza-media-server"></a><a href="#recording-on-demand-on-wowza-media-server" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Recording on demand on Wowza Media Server</h3>
+<h4><a class="anchor" aria-hidden="true" id="general-information-1"></a><a href="#general-information-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>General Information</h4>
+<p>nanoStream 2.0 supports a &quot;Remote Server Record&quot; mode to enable server based video recording functionality. Currently this works only with Wowza Media Server and an additional server plugin.</p>
+<h4><a class="anchor" aria-hidden="true" id="wowza-streaming-engine"></a><a href="#wowza-streaming-engine" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Wowza Streaming Engine</h4>
+<ul>
+<li>Edit the file Application.xml at: [install-dir]/conf/[application]/</li>
+<li>Edit the &quot;StreamType&quot; to: &quot;<StreamType>live-record</StreamType>&quot;</li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="older-versions"></a><a href="#older-versions" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Older Versions</h4>
+<h4><a class="anchor" aria-hidden="true" id="requirements-1"></a><a href="#requirements-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Requirements:</h4>
+<ul>
+<li>Wowza Media Server 2.0.0.4 or higher.</li>
+<li>Wowza Plugin Module &quot;LiveStreamRecord: Module for recording a live stream on demand.</li>
+</ul>
+<p>Download Link: <a href="http://www.wowzamedia.com/downloads/forums/livestreamrecord/LiveStreamRecord_2.0.zip" title="http://www.wowzamedia.com/downloads/forums/livestreamrecord/LiveStreamRecord_2.0.zip">Wowza LiveStreamRecord 2.0</a></p>
+<h4><a class="anchor" aria-hidden="true" id="installation"></a><a href="#installation" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Installation:</h4>
+<ul>
+<li>Unpack the ZIP file and copy the jar files wms-plugin-into the Wowza installation folder: [install-dir]/lib</li>
+<li>Edit the file Application.xml at: [install-dir]/conf/[application]/</li>
+<li>Add this <Module> at the end of the <Modules> list:</li>
+</ul>
+<pre><code class="hljs css language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">Module</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Name</span>&gt;</span>ModuleLiveStreamRecord<span class="hljs-tag">&lt;/<span class="hljs-name">Name</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Description</span>&gt;</span>ModuleLiveStreamRecord<span class="hljs-tag">&lt;/<span class="hljs-name">Description</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Class</span>&gt;</span>com.wowza.wms.plugin.livestreamrecord.ModuleLiveStreamRecord<span class="hljs-tag">&lt;/<span class="hljs-name">Class</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">Module</span>&gt;</span>
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="usage-1"></a><a href="#usage-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Usage:</h4>
+<ul>
+<li>Recording requires a running encoder start with <strong>StartBroadcast()</strong></li>
+<li>Javascript API:
+<ul>
+<li>call the function <strong>StartServerRecording()</strong>to advise the server to record the stream</li>
+</ul></li>
+<li>Plugin API / ActiveX / C/C++:
+<ul>
+<li>Call the API function <strong>sendCommandObject</strong> - if you use the RTMP filter directly the interface <strong>IRTMPMetadataSink</strong> has to be used (see [[can_i_add_meta_data_to_the_live_stream|here]] for a description):
+<ul>
+<li>nanoStream.sendCommandObject(myStreamName,&quot;startRecording&quot;,cmd);
+<ul>
+<li>myStreamName is the current RTMP Stream Name (e.g. &quot;livestream1&quot;)</li>
+<li>cmd is a command object, or NULL (please contact us for sample code for C++)
+<ul>
+<li>Sample JavaScript Code:</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">var</span> myStreamName = <span class="hljs-string">"YourStreamName"</span>; <span class="hljs-comment">// replace with your stream name</span>
+<span class="hljs-keyword">var</span> cmd = {};
+cmd.streamName = myStreamName;   <span class="hljs-comment">// rtmp stream name</span>
+cmd.cmd2 = {};
+
+cmd.cmd2.format = <span class="hljs-string">"mp4"</span>;        <span class="hljs-comment">// video format - mp4 recommended</span>
+cmd.cmd2.append = <span class="hljs-literal">false</span>;         <span class="hljs-comment">// append files or write new files</span>
+cmd.cmd2.startOnKeyFrame = <span class="hljs-literal">true</span>; <span class="hljs-comment">// start recording on a video key frame</span>
+cmd.cmd2.recordData = <span class="hljs-literal">false</span>;
+cmd.cmd2.versionFile = <span class="hljs-literal">true</span>;     <span class="hljs-comment">// start recorded</span>
+
+pluginObj.SendRtmpCommand(myStreamName, <span class="hljs-string">"startRecording"</span>, cmd);
+</code></pre>
+<h5><a class="anchor" aria-hidden="true" id="sample-web-application-1"></a><a href="#sample-web-application-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Sample Web Application:</h5>
+<p>See the HTML web page in the folder web/liveEncoder/nanoStream.html\
+The feature is implemented there under &quot;Advanced Options&quot;.\
+See the function code for //StartServerRecording// in nanoEncoder.js for how it is implemented in Javascript.</p>
+<h4><a class="anchor" aria-hidden="true" id="contact"></a><a href="#contact" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Contact</h4>
+<p>{!docs/nanostream/general/nanocosmos_contact.md!}</p>
+</span></div></article></div><div class="docs-prevnext"></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#nanostream-remote-server-recording">nanoStream Remote Server Recording</a><ul class="toc-headings"><li><a href="#recording-on-demand-on-flash-media-server">Recording on demand on Flash Media Server</a></li><li><a href="#recording-on-demand-on-wowza-media-server">Recording on demand on Wowza Media Server</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/docusaurus.svg" alt="Documentation" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/en/doc1.html">Getting Started (or other categories)</a><a href="/docs/en/doc2.html">Guides (or other categories)</a><a href="/docs/en/doc3.html">API Reference (or other categories)</a></div><div><h5>Community</h5><a href="/en/users.html">User Showcase</a><a href="http://stackoverflow.com/questions/tagged/" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://discordapp.com/">Project Chat</a><a href="https://twitter.com/" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="/blog">Blog</a><a href="https://github.com/">GitHub</a><a class="github-button" href="https://github.com/nanocosmos/demo" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://code.facebook.com/projects/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2019 nanocosmos GmbH</section></footer></div></body></html>

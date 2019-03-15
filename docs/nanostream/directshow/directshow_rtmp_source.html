@@ -1,0 +1,192 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>nanostream/directshow/directshow_rtmp_source · Documentation</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;h2&gt;&lt;a class=&quot;anchor&quot; aria-hidden=&quot;true&quot; id=&quot;nanocosmos-rtmp-source-filter&quot;&gt;&lt;/a&gt;&lt;a href=&quot;#nanocosmos-rtmp-source-filter&quot; aria-hidden=&quot;true&quot; class=&quot;hash-link&quot;&gt;&lt;svg class=&quot;hash-link-icon&quot; aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;nanocosmos RTMP Source Filter&lt;/h2&gt;
+"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="nanostream/directshow/directshow_rtmp_source · Documentation"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.nanocosmos.de//index.html"/><meta property="og:description" content="&lt;h2&gt;&lt;a class=&quot;anchor&quot; aria-hidden=&quot;true&quot; id=&quot;nanocosmos-rtmp-source-filter&quot;&gt;&lt;/a&gt;&lt;a href=&quot;#nanocosmos-rtmp-source-filter&quot; aria-hidden=&quot;true&quot; class=&quot;hash-link&quot;&gt;&lt;svg class=&quot;hash-link-icon&quot; aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;nanocosmos RTMP Source Filter&lt;/h2&gt;
+"/><meta property="og:image" content="https://docs.nanocosmos.de/img/docusaurus.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://docs.nanocosmos.de/img/docusaurus.png"/><link rel="shortcut icon" href="/img/favicon_nano.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/nanocosmos_header_logo.png" alt="Documentation"/><h2 class="headerTitleWithLogo">Documentation</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/docs/nanoplayer/nanoplayer_introduction" target="_self">H5Live Player</a></li><li class=""><a href="/docs/faq/faq_streaming" target="_self">FAQ</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">nanostream/directshow/directshow_rtmp_source</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="nanocosmos-rtmp-source-filter"></a><a href="#nanocosmos-rtmp-source-filter" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>nanocosmos RTMP Source Filter</h2>
+<h3><a class="anchor" aria-hidden="true" id="introduction"></a><a href="#introduction" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Introduction</h3>
+<ul>
+<li>DirectShow filter for RTMP Downstreaming / Playback</li>
+<li>Supported Architectures: Microsoft DirectShow, Windows XP, Vista, 7, Server</li>
+<li>Supported Formats: H.264 + AAC + MP3</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="module-name-version"></a><a href="#module-name-version" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Module Name / Version</h3>
+<p>Module: nRTMPSource.ax \
+Version: 1.3.1.1</p>
+<h3><a class="anchor" aria-hidden="true" id="directshow-connectivity"></a><a href="#directshow-connectivity" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>DirectShow Connectivity</h3>
+<p>The output pins are accepting connections matching the following media types:</p>
+<ul>
+<li>Major types:
+<ul>
+<li>MEDIATYPE_Video</li>
+</ul></li>
+<li>Subtypes:
+<ul>
+<li>FourCCs: H264, h264</li>
+</ul></li>
+<li>Formats:
+<ul>
+<li>FORMAT_MPEG2_VIDEO,</li>
+<li>FORMAT_NONE</li>
+</ul></li>
+<li>Major types:
+<ul>
+<li>AAC:     MEDIATYPE_Audio</li>
+<li>MP3:     MEDIATYPE_Audio</li>
+<li>SPEEX: MEDIATYPE Ogg Stream</li>
+</ul></li>
+<li>Subtypes:
+<ul>
+<li>AAC:    MEDIASUBTYPE_AAC,  FourCC: 0x000000FF,</li>
+<li>MP3:     MEDIASUBTYPE_MP3,  FourCC: 0x00000055</li>
+<li>SPEEX:  MEDIASUBTYPE_None</li>
+</ul></li>
+<li>Formats:</li>
+<li>AAC, MP3:   FORMAT_WaveFormatEx,</li>
+<li>SPEEX:  FORMAT_Speex</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="filter-guids"></a><a href="#filter-guids" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Filter GUIDs</h3>
+<pre><code class="hljs css language-cpp"><span class="hljs-comment">// Filter GUID</span>
+<span class="hljs-comment">// {440E11F2-FB35-4699-809B-157C390E9238}</span>
+DEFINE_GUID(CLSID_NANO_RTMP_SOURCE, <span class="hljs-number">0x440e11f2</span>, <span class="hljs-number">0xfb35</span>, <span class="hljs-number">0x4699</span>, <span class="hljs-number">0x80</span>, <span class="hljs-number">0x9b</span>, <span class="hljs-number">0x15</span>, <span class="hljs-number">0x7c</span>, <span class="hljs-number">0x39</span>, <span class="hljs-number">0xe</span>, <span class="hljs-number">0x92</span>, <span class="hljs-number">0x38</span>);
+
+<span class="hljs-comment">// Property Page GUID</span>
+<span class="hljs-comment">// {7A05E2F3-9258-4952-920A-54F6AE6A0D66}</span>
+DEFINE_GUID(CLSID_NANO_RTMP_SOURCE_PROPPAGE, <span class="hljs-number">0x7a05e2f3</span>, <span class="hljs-number">0x9258</span>, <span class="hljs-number">0x4952</span>, <span class="hljs-number">0x92</span>, <span class="hljs-number">0xa</span>, <span class="hljs-number">0x54</span>, <span class="hljs-number">0xf6</span>, <span class="hljs-number">0xae</span>, <span class="hljs-number">0x6a</span>, <span class="hljs-number">0xd</span>, <span class="hljs-number">0x66</span>);
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="configuration-through-com-interface"></a><a href="#configuration-through-com-interface" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Configuration through COM Interface</h3>
+<p>The streaming url can be set by using standard DirectShow interface IFileSourceFilter .</p>
+<h4><a class="anchor" aria-hidden="true" id="url-format"></a><a href="#url-format" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>URL format</h4>
+<p>rtmp:%%//%% [ IP:port ]/[ application name]/[ stream name]\
+If no port is specified, standard rtmp port 1935 will be used.</p>
+<p>Example:\
+rtmp:%%//%%127.0.0.1:1935/live/myStream</p>
+<p>Following options can be set by using standard DirectShow interface ICodecAPI.
+See DirectShow documentation for usage of ICodecAPI interface.</p>
+<h4><a class="anchor" aria-hidden="true" id="connect-to-nanocosmos-decoder-filters-only"></a><a href="#connect-to-nanocosmos-decoder-filters-only" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Connect to nanocosmos decoder filters only</h4>
+<p>Value Type:     Integer, Variant::intVal, VT_INT\
+Valid values:   yes: 1, no: 0 \
+GUID:</p>
+<pre><code class="hljs css language-cpp"><span class="hljs-comment">// {FB5005A0-3231-4171-A218-A3A3431D7790}</span>
+DEFINE_GUID(PROPID_nanoSourceConnectToNanoDecodersOnly, <span class="hljs-number">0xfb5005a0</span>, <span class="hljs-number">0x3231</span>, <span class="hljs-number">0x4171</span>, <span class="hljs-number">0xa2</span>, <span class="hljs-number">0x18</span>, <span class="hljs-number">0xa3</span>, <span class="hljs-number">0xa3</span>, <span class="hljs-number">0x43</span>, <span class="hljs-number">0x1d</span>, <span class="hljs-number">0x77</span>, <span class="hljs-number">0x90</span>);
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="buffering-delay-in-milliseconds"></a><a href="#buffering-delay-in-milliseconds" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Buffering delay in milliseconds</h4>
+<p>Under low bandwidth conditions a higher value leads to smoother playback.</p>
+<p>Value Type:     Integer, Variant::intVal, VT_INT\
+Valid values:   0...INT32_MAX\
+GUID:</p>
+<pre><code class="hljs css language-cpp"><span class="hljs-comment">// {3641DC07-82CD-40b0-9293-DCBE25E0C274}</span>
+DEFINE_GUID(PROPID_nanoSourceBufferingDelay, <span class="hljs-number">0x3641dc07</span>, <span class="hljs-number">0x82cd</span>, <span class="hljs-number">0x40b0</span>, <span class="hljs-number">0x92</span>, <span class="hljs-number">0x93</span>, <span class="hljs-number">0xdc</span>, <span class="hljs-number">0xbe</span>, <span class="hljs-number">0x25</span>, <span class="hljs-number">0xe0</span>, <span class="hljs-number">0xc2</span>, <span class="hljs-number">0x74</span>);
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="buffering-mode"></a><a href="#buffering-mode" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Buffering mode</h4>
+<p>Use this GUID to configure the buffering mode\
+Value Type:     VT_I4 / VARIANT::intVal, get/set \
+Valid values:   0 - Fill buffer once on start, 1 - Refill buffer always if empty\
+Default value: 1\</p>
+<pre><code class="hljs css language-cpp"><span class="hljs-comment">// {AB91A1D9-6701-4133-8733-6EB3A20E9583}</span>
+DEFINE_GUID(PROPID_nanoSourceBufferingMode, <span class="hljs-number">0xab91a1d9</span>, <span class="hljs-number">0x6701</span>, <span class="hljs-number">0x4133</span>, <span class="hljs-number">0x87</span>, <span class="hljs-number">0x33</span>, <span class="hljs-number">0x6e</span>, <span class="hljs-number">0xb3</span>, <span class="hljs-number">0xa2</span>, <span class="hljs-number">0xe</span>, <span class="hljs-number">0x95</span>, <span class="hljs-number">0x83</span>);
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="receive-timeout-in-milliseconds"></a><a href="#receive-timeout-in-milliseconds" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Receive timeout in milliseconds</h4>
+<p>A stream is stopped if no data is present for this amount of time Overrides registry value ReceiveTimeout
+Value Type:      Integer, Variant::intVal, VT_I4\
+Valid values:   1000...INT (1-30 seconds), default: 5000 (5 seconds)\
+GUID:</p>
+<pre><code class="hljs css language-cpp"><span class="hljs-comment">// {767B756C-A55B-4fd9-88F8-159B338207ED}</span>
+DEFINE_GUID(PROPID_nanoRTMPReceiveTimeoutMs, <span class="hljs-number">0x767b756c</span>, <span class="hljs-number">0xa55b</span>, <span class="hljs-number">0x4fd9</span>, <span class="hljs-number">0x88</span>, <span class="hljs-number">0xf8</span>, <span class="hljs-number">0x15</span>, <span class="hljs-number">0x9b</span>, <span class="hljs-number">0x33</span>, <span class="hljs-number">0x82</span>, <span class="hljs-number">0x7</span>, <span class="hljs-number">0xed</span>);
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="stream-format-detection-timeout-in-milliseconds"></a><a href="#stream-format-detection-timeout-in-milliseconds" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Stream format detection timeout in milliseconds</h4>
+<p>The detection is stopped after this amount of time, even if less than 2 streams found Overrides registry value DetectStreamFormatTimeout
+Value Type:     Integer, Variant::intVal, VT_I4\
+Valid values:   1000...INT32_MAX, default: 10000 (10 seconds)\
+GUID:</p>
+<pre><code class="hljs css language-cpp"><span class="hljs-comment">// {7400166F-8140-4b81-8B3E-C97CB7D972DF}</span>
+DEFINE_GUID(PROPID_nanoRTMPDetectStreamFormatTimeoutMs, <span class="hljs-number">0x7400166f</span>, <span class="hljs-number">0x8140</span>, <span class="hljs-number">0x4b81</span>, <span class="hljs-number">0x8b</span>, <span class="hljs-number">0x3e</span>, <span class="hljs-number">0xc9</span>, <span class="hljs-number">0x7c</span>, <span class="hljs-number">0xb7</span>, <span class="hljs-number">0xd9</span>, <span class="hljs-number">0x72</span>, <span class="hljs-number">0xdf</span>);
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="configuration-through-directshow-filter-property-page"></a><a href="#configuration-through-directshow-filter-property-page" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Configuration through DirectShow filter property page</h4>
+<p><img src="img/directshow_rtmp_source_properties.png" alt="RTMP Source Properties"></p>
+<h4><a class="anchor" aria-hidden="true" id="configuration-registry-settings"></a><a href="#configuration-registry-settings" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Configuration Registry Settings</h4>
+<p>Key: HKEY_CURRENT_USER\Software\nanocosmos\nRTMPSource</p>
+<h4><a class="anchor" aria-hidden="true" id="receive-timeout"></a><a href="#receive-timeout" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Receive timeout</h4>
+<p>A stream is stopped if no data is present for this this amount of time\
+Value name:     DetectStreamFormatTimeout\
+Value type:     REG_DWORD\
+Valid values:   1 second - 30 seconds, default: 5 seconds</p>
+<h4><a class="anchor" aria-hidden="true" id="stream-format-detection-mode"></a><a href="#stream-format-detection-mode" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Stream format detection mode</h4>
+<p>Determines if stream format settings are detected from the RTMP network stream or from registry preset values below.\
+Value name:     DetectStreamFormatMode\
+Value type:     REG_DWORD\
+Valid values:   0: Detect from stream (default), 1: Use registry preset\</p>
+<h4><a class="anchor" aria-hidden="true" id="stream-format-detection-timeout"></a><a href="#stream-format-detection-timeout" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Stream format detection timeout</h4>
+<p>Timeout for format detection in seconds\
+Value name:     DetectStreamFormatTimeout\
+Value type:     REG_DWORD\
+Valid values:   1 second - 30 seconds, default: 10 seconds</p>
+<h4><a class="anchor" aria-hidden="true" id="audio-codec"></a><a href="#audio-codec" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Audio Codec</h4>
+<p>Sets the audio codec if DetectStreamFormatMode = 1.\
+Value name:     AudioCodec\
+Value type:     REG_DWORD\
+Valid values:   0: Auto/Default(AAC), 1: AAC, 2: MP3, 3: SPEEX</p>
+<h4><a class="anchor" aria-hidden="true" id="audio-channels"></a><a href="#audio-channels" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Audio Channels</h4>
+<p>Sets the number of audio channels if DetectStreamFormatMode = 1.\
+Value name:     AudioChannels\
+Value type:     REG_DWORD\
+Valid values:   0: Auto/Default(Stereo), 1: Mono, 2: Stereo</p>
+<h4><a class="anchor" aria-hidden="true" id="audio-bitlength"></a><a href="#audio-bitlength" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Audio Bitlength</h4>
+<p>Sets the number of bits per audio sample if DetectStreamFormatMode = 1.\
+Value name:     AudioBitlength\
+Value type:     REG_DWORD\
+Valid values:   0: Auto/Default(16 Bit), 1: 8 Bit, 2: 16 Bit</p>
+<h4><a class="anchor" aria-hidden="true" id="audio-samplerate"></a><a href="#audio-samplerate" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Audio Samplerate</h4>
+<p>Sets the audio samplerate if DetectStreamFormatMode = 1.\
+Codecs support different sampling rates and have different default values!!!\
+Value name:     AudioRate\
+Value type:     REG_DWORD\</p>
+<h5><a class="anchor" aria-hidden="true" id="valid-values-aac"></a><a href="#valid-values-aac" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Valid values AAC:</h5>
+<ul>
+<li>0: Auto/Default(44100),</li>
+<li>1: 8000 ,</li>
+<li>2: 11025,</li>
+<li>3: 12000,</li>
+<li>4: 16000,</li>
+<li>5: 22050,</li>
+<li>6: 24000</li>
+<li>7: 32000,</li>
+<li>8: 44100,</li>
+<li>9: 48000,</li>
+<li>10: 64000,</li>
+<li>11: 88200,</li>
+<li>12: 96000</li>
+</ul>
+<h5><a class="anchor" aria-hidden="true" id="valid-values-mp3"></a><a href="#valid-values-mp3" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Valid values MP3:</h5>
+<ul>
+<li>0: Auto/Default(44100),</li>
+<li>1: 5500 ,</li>
+<li>2: 11025,</li>
+<li>3: 22050,</li>
+<li>4: 44100</li>
+</ul>
+<h5><a class="anchor" aria-hidden="true" id="valid-values-speex"></a><a href="#valid-values-speex" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Valid values SPEEX:</h5>
+<ul>
+<li>0: Auto/Default(16000),</li>
+<li>1: 8000 ,</li>
+<li>2: 16000,</li>
+<li>3: 32000,</li>
+<li>4: 44100
+SPEEX internal sampling is usually 16000 (wideband).
+It differs from flash's Microphone::rate value!</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="debug-log-configuration-registry-settings"></a><a href="#debug-log-configuration-registry-settings" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Debug-Log Configuration Registry Settings</h3>
+<p>Key: HKEY_CURRENT_USER\Software\DebugNano\nRTMPSource.ax</p>
+<h4><a class="anchor" aria-hidden="true" id="file-name"></a><a href="#file-name" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>File name</h4>
+<p>Sets the output file name. The folder must already exist.\
+Value name:     LogToFile\
+Value type:     REG_SZ / String\
+Valid values:   a valid output file name to enable file logging or an empty string</p>
+<h4><a class="anchor" aria-hidden="true" id="logging-level"></a><a href="#logging-level" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Logging level</h4>
+<p>A higher value increases the amount of logging messages sent, and messages get more detailed. \
+Value name:     TRACE\
+Value type:     REG_DWORD\
+Valid values:</p>
+<ul>
+<li>0 - minimal logging</li>
+<li>…</li>
+<li>9 - maximal logging</li>
+</ul>
+</span></div></article></div><div class="docs-prevnext"></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#nanocosmos-rtmp-source-filter">nanocosmos RTMP Source Filter</a><ul class="toc-headings"><li><a href="#introduction">Introduction</a></li><li><a href="#module-name-version">Module Name / Version</a></li><li><a href="#directshow-connectivity">DirectShow Connectivity</a></li><li><a href="#filter-guids">Filter GUIDs</a></li><li><a href="#configuration-through-com-interface">Configuration through COM Interface</a></li><li><a href="#debug-log-configuration-registry-settings">Debug-Log Configuration Registry Settings</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/docusaurus.svg" alt="Documentation" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/en/doc1.html">Getting Started (or other categories)</a><a href="/docs/en/doc2.html">Guides (or other categories)</a><a href="/docs/en/doc3.html">API Reference (or other categories)</a></div><div><h5>Community</h5><a href="/en/users.html">User Showcase</a><a href="http://stackoverflow.com/questions/tagged/" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://discordapp.com/">Project Chat</a><a href="https://twitter.com/" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="/blog">Blog</a><a href="https://github.com/">GitHub</a><a class="github-button" href="https://github.com/nanocosmos/demo" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://code.facebook.com/projects/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2019 nanocosmos GmbH</section></footer></div></body></html>

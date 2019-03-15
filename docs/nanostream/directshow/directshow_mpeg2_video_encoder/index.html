@@ -1,0 +1,151 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>nanostream/directshow/directshow_mpeg2_video_encoder · Documentation</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;h2&gt;&lt;a class=&quot;anchor&quot; aria-hidden=&quot;true&quot; id=&quot;nanocosmos-mpeg-2-video-encoder-filter&quot;&gt;&lt;/a&gt;&lt;a href=&quot;#nanocosmos-mpeg-2-video-encoder-filter&quot; aria-hidden=&quot;true&quot; class=&quot;hash-link&quot;&gt;&lt;svg class=&quot;hash-link-icon&quot; aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;nanocosmos MPEG-2 Video Encoder Filter&lt;/h2&gt;
+"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="nanostream/directshow/directshow_mpeg2_video_encoder · Documentation"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.nanocosmos.de//index.html"/><meta property="og:description" content="&lt;h2&gt;&lt;a class=&quot;anchor&quot; aria-hidden=&quot;true&quot; id=&quot;nanocosmos-mpeg-2-video-encoder-filter&quot;&gt;&lt;/a&gt;&lt;a href=&quot;#nanocosmos-mpeg-2-video-encoder-filter&quot; aria-hidden=&quot;true&quot; class=&quot;hash-link&quot;&gt;&lt;svg class=&quot;hash-link-icon&quot; aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;nanocosmos MPEG-2 Video Encoder Filter&lt;/h2&gt;
+"/><meta property="og:image" content="https://docs.nanocosmos.de/img/docusaurus.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://docs.nanocosmos.de/img/docusaurus.png"/><link rel="shortcut icon" href="/img/favicon_nano.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/nanocosmos_header_logo.png" alt="Documentation"/><h2 class="headerTitleWithLogo">Documentation</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/docs/nanoplayer/nanoplayer_introduction" target="_self">H5Live Player</a></li><li class=""><a href="/docs/faq/faq_streaming" target="_self">FAQ</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">nanostream/directshow/directshow_mpeg2_video_encoder</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="nanocosmos-mpeg-2-video-encoder-filter"></a><a href="#nanocosmos-mpeg-2-video-encoder-filter" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>nanocosmos MPEG-2 Video Encoder Filter</h2>
+<h3><a class="anchor" aria-hidden="true" id="directshow-filter-module"></a><a href="#directshow-filter-module" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>DirectShow Filter / Module</h3>
+<p>nanocosmos MPEG-2 Video Encoder\
+Module Name: nmpeg2enc.ax</p>
+<h3><a class="anchor" aria-hidden="true" id="directshow-connectivity"></a><a href="#directshow-connectivity" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>DirectShow Connectivity</h3>
+<p>The input is accepting connections to video source, capture and decoder filters matching the following media types:</p>
+<p>Major types:</p>
+<ul>
+<li>MEDIATYPE_Video</li>
+</ul>
+<p>Subtypes:</p>
+<ul>
+<li>MEDIASUBTYPE_YV12,</li>
+<li>MEDIASUBTYPE_I420,</li>
+<li>MEDIASUBTYPE_YUY2,</li>
+<li>MEDIASUBTYPE_UYVY,</li>
+<li>MEDIASUBTYPE_HDYC,</li>
+<li>MEDIASUBTYPE_RGB24,</li>
+<li>MEDIASUBTYPE_RGB32,</li>
+<li>MEDIASUBTYPE_ARGB32,</li>
+<li>MEDIASUBTYPE_RGB565,</li>
+</ul>
+<p>Formats:</p>
+<ul>
+<li>FORMAT_VideoInfo</li>
+<li>FORMAT_VideoInfo2</li>
+</ul>
+<p>The output supports these media types:</p>
+<p>Major types:</p>
+<ul>
+<li>MEDIATYPE_Video</li>
+</ul>
+<p>Subtypes:</p>
+<ul>
+<li>MEDIASUBTYPE_MPEG2_VIDEO,</li>
+<li>MEDIASUBTYPE_mpgv</li>
+</ul>
+<p>Formats:</p>
+<ul>
+<li>FORMAT_MPEG2_VIDEO,</li>
+<li>FORMAT_NONE</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="configuration"></a><a href="#configuration" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Configuration</h3>
+<p>The encoding configuration may be set by using either the property page or the COM Interface INanoCodecOpts as declared in header file INanoCodecOpts.h .</p>
+<pre><code class="hljs css language-cpp"><span class="hljs-comment">// Filter GUID</span>
+<span class="hljs-comment">// {2327A344-BECC-4f4f-89C6-DABDC5143832}</span>
+DEFINE_GUID(CLSID_NANO_MPEG2_ENCODER, <span class="hljs-number">0x2327a344</span>, <span class="hljs-number">0xbecc</span>, <span class="hljs-number">0x4f4f</span>, <span class="hljs-number">0x89</span>, <span class="hljs-number">0xc6</span>, <span class="hljs-number">0xda</span>, <span class="hljs-number">0xbd</span>, <span class="hljs-number">0xc5</span>, <span class="hljs-number">0x14</span>, <span class="hljs-number">0x38</span>, <span class="hljs-number">0x32</span>);
+
+<span class="hljs-comment">// Property Page GUID</span>
+<span class="hljs-comment">// {8A84396A-277A-4835-9EB5-719863194DC9}</span>
+DEFINE_GUID(CLSID_NANO_MPEG2_ENCODER_PROPPAGE, <span class="hljs-number">0x8a84396a</span>, <span class="hljs-number">0x277a</span>, <span class="hljs-number">0x4835</span>, <span class="hljs-number">0x9e</span>, <span class="hljs-number">0xb5</span>, <span class="hljs-number">0x71</span>, <span class="hljs-number">0x98</span>, <span class="hljs-number">0x63</span>, <span class="hljs-number">0x19</span>, <span class="hljs-number">0x4d</span>, <span class="hljs-number">0xc9</span>);
+
+<span class="hljs-comment">// Configuration Interface GUID</span>
+<span class="hljs-comment">// {698E0F57-B828-4c40-8867-095FF49F77D6}</span>
+DEFINE_GUID(IID_INanoCodecOpts, <span class="hljs-number">0x698e0f57</span>, <span class="hljs-number">0xb828</span>, <span class="hljs-number">0x4c40</span>, <span class="hljs-number">0x88</span>, <span class="hljs-number">0x67</span>, <span class="hljs-number">0x9</span>, <span class="hljs-number">0x5f</span>, <span class="hljs-number">0xf4</span>, <span class="hljs-number">0x9f</span>, <span class="hljs-number">0x77</span>, <span class="hljs-number">0xd6</span>);
+
+<span class="hljs-comment">// Configuration interface ICodecProp</span>
+<span class="hljs-comment">// {0F817204-82C8-4c12-884A-F45FB2F33A6E}</span>
+DEFINE_GUID(IID_ICodecProp, <span class="hljs-number">0xf817204</span>, <span class="hljs-number">0x82c8</span>, <span class="hljs-number">0x4c12</span>, <span class="hljs-number">0x88</span>, <span class="hljs-number">0x4a</span>, <span class="hljs-number">0xf4</span>, <span class="hljs-number">0x5f</span>, <span class="hljs-number">0xb2</span>, <span class="hljs-number">0xf3</span>, <span class="hljs-number">0x3a</span>, <span class="hljs-number">0x6e</span>);
+
+<span class="hljs-comment">// ICodecProp: IID_nanoPeg_LicenseString</span>
+<span class="hljs-comment">// type: BSTR / Unicode string</span>
+<span class="hljs-comment">// Set license string to unlock filter</span>
+<span class="hljs-comment">// {1788F0B0-5985-4a19-B7FE-8AAC1BFC14B3}</span>
+DEFINE_GUID(IID_nanoPeg_LicenseString, <span class="hljs-number">0x1788f0b0</span>, <span class="hljs-number">0x5985</span>, <span class="hljs-number">0x4a19</span>, <span class="hljs-number">0xb7</span>, <span class="hljs-number">0xfe</span>, <span class="hljs-number">0x8a</span>, <span class="hljs-number">0xac</span>, <span class="hljs-number">0x1b</span>, <span class="hljs-number">0xfc</span>, <span class="hljs-number">0x14</span>, <span class="hljs-number">0xb3</span>);
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="setting-the-license-to-unlock-filter"></a><a href="#setting-the-license-to-unlock-filter" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Setting the license to unlock filter</h3>
+<p>The filter can be unlocked either through a license key entry in the windows registry or
+by setting the license key through COM interface ICodecProp::SetProperty with the
+property <strong>IID_nanoPeg_LicenseString</strong> as first parameter. The second license parameter
+has to be a wide/unicode string!</p>
+<h3><a class="anchor" aria-hidden="true" id="common-encoder-settings"></a><a href="#common-encoder-settings" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Common Encoder Settings</h3>
+<table>
+<thead>
+<tr><th>Parameter</th><th>Default values</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>profile, level</td><td>Main Profile, Main Level</td><td>MPEG-2 Profile and Level</td></tr>
+<tr><td>base_video.bitrate_kb</td><td>Profile and Level dependend</td><td>Video Bitrate in kBits/second</td></tr>
+<tr><td>base_video.resolution.width</td><td>0 - use input width</td><td>Picture Coding Width</td></tr>
+<tr><td>base_video.resolution.height</td><td>0 - use input height</td><td>Picture Coding Height</td></tr>
+<tr><td>chroma_format_idc</td><td>0 - I420, 1 - I422</td><td>[0,1] Chroma Format</td></tr>
+<tr><td>rate_method</td><td>0 - CBR, 1 - VBR</td><td>[0,1] Rate Control Mode</td></tr>
+<tr><td>distance_i</td><td>12</td><td>Intra Frame Distance / GOP len.</td></tr>
+<tr><td>distance_p</td><td>3</td><td>P Frame Distance</td></tr>
+</tbody>
+</table>
+<h3><a class="anchor" aria-hidden="true" id="configuration-through-inanocodecopts-interface"></a><a href="#configuration-through-inanocodecopts-interface" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Configuration through INanoCodecOpts interface</h3>
+<ul>
+<li>Version check by calling //GetCodecOptsVersion//// //(optional)</li>
+<li>Instanciating a parameter structure of type //MPDX4_MPEG2EncoderParams//</li>
+<li>Initializing the parameter struct by calling //InitCodecOptions// will set all parameters to default values for the selected profile and level</li>
+<li>Setting custom values for resolution and bitrate</li>
+<li>Applying settings by calling //SetCodecOptions//</li>
+</ul>
+<p>Here a code snippet without error handling to show configuration for IMX 50 format:</p>
+<pre><code class="hljs css language-cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">"mpeg2_enc_params.h"</span></span>
+
+HRESULT hr = S_OK;
+
+<span class="hljs-comment">// Query INanoCodecOpts interface from IBaseFilter interface</span>
+<span class="hljs-comment">// of MPEG-2 Encoder filter</span>
+CComQIPtr&lt;INanoCodecOpts&gt; pNanoCodecOpts = pBaseFilter;
+
+MPDX4_MPEG2EncoderParams mpeg2EncParams;
+<span class="hljs-built_in">memset</span>(&amp;mpeg2EncParams, <span class="hljs-number">0</span>, <span class="hljs-keyword">sizeof</span>(MPDX4_MPEG2EncoderParams));
+
+<span class="hljs-comment">// Set desired profile and level values</span>
+mpeg2EncParams.profile = MPDX4_MPEG2_PROFILE_422IMX;
+mpeg2EncParams.level = MPDX4_MPEG2_LEVEL_MAIN;
+
+<span class="hljs-comment">// Intialize the parameter struct according to profile and level set</span>
+hr = pNanoCodecOpts-&gt;InitCodecOptions((MPDX4_BaseCodecOpts*) &amp;mpeg2EncParams, INANOCODECOPTS_VERSION);
+
+<span class="hljs-comment">// Set custom parameter values</span>
+<span class="hljs-comment">// Bitrate</span>
+mpeg2EncParams.base_video.bitrate_kb = <span class="hljs-number">50000</span>; <span class="hljs-comment">// IMX 50</span>
+<span class="hljs-comment">// If resize is needed</span>
+mpeg2EncParams.base_video.resolution.width = <span class="hljs-number">720</span>;
+mpeg2EncParams.base_video.resolution.height = <span class="hljs-number">608</span>;
+
+<span class="hljs-comment">// Apply settings and finish configuration</span>
+hr = pNanoCodecOpts-&gt;SetCodecOptions((MPDX4_BaseCodecOpts*) &amp;mpeg2EncParams, INANOCODECOPTS_VERSION);
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="configuration-through-directshow-filter-property-page"></a><a href="#configuration-through-directshow-filter-property-page" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Configuration through DirectShow  filter property page</h3>
+<p>The filter's property page offers a subset of encoding parameters, containing the most important options.</p>
+<p><img src="img/directshow_mpeg2_video_enc_prop.png" alt="MPEG-2 Video Encoder Properties"></p>
+<h3><a class="anchor" aria-hidden="true" id="debug-log-configuration-registry-settings"></a><a href="#debug-log-configuration-registry-settings" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Debug-Log Configuration Registry Settings</h3>
+<p>Key: HKEY_CURRENT_USER\Software\DebugNano\nmpeg2enc.ax</p>
+<h4><a class="anchor" aria-hidden="true" id="file-name"></a><a href="#file-name" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>File name</h4>
+<p>Sets the output file name. The folder must already exist.</p>
+<ul>
+<li>Value name:     LogToFile</li>
+<li>Value type:            REG_SZ / String</li>
+<li>Valid values:   a valid output file name to enable file logging or an empty string</li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="logging-level"></a><a href="#logging-level" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Logging level</h4>
+<p>A higher value increases the amount of logging messages sent, and messages get more detailed.</p>
+<ul>
+<li>Value name:     TRACE</li>
+<li>Value type:     REG_DWORD</li>
+<li>Valid values:
+<ul>
+<li>0 - minimal logging</li>
+<li>…</li>
+<li>9 - maximal logging</li>
+</ul></li>
+</ul>
+</span></div></article></div><div class="docs-prevnext"></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#nanocosmos-mpeg-2-video-encoder-filter">nanocosmos MPEG-2 Video Encoder Filter</a><ul class="toc-headings"><li><a href="#directshow-filter-module">DirectShow Filter / Module</a></li><li><a href="#directshow-connectivity">DirectShow Connectivity</a></li><li><a href="#configuration">Configuration</a></li><li><a href="#setting-the-license-to-unlock-filter">Setting the license to unlock filter</a></li><li><a href="#common-encoder-settings">Common Encoder Settings</a></li><li><a href="#configuration-through-inanocodecopts-interface">Configuration through INanoCodecOpts interface</a></li><li><a href="#configuration-through-directshow-filter-property-page">Configuration through DirectShow filter property page</a></li><li><a href="#debug-log-configuration-registry-settings">Debug-Log Configuration Registry Settings</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/docusaurus.svg" alt="Documentation" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/en/doc1.html">Getting Started (or other categories)</a><a href="/docs/en/doc2.html">Guides (or other categories)</a><a href="/docs/en/doc3.html">API Reference (or other categories)</a></div><div><h5>Community</h5><a href="/en/users.html">User Showcase</a><a href="http://stackoverflow.com/questions/tagged/" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://discordapp.com/">Project Chat</a><a href="https://twitter.com/" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="/blog">Blog</a><a href="https://github.com/">GitHub</a><a class="github-button" href="https://github.com/nanocosmos/demo" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://code.facebook.com/projects/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2019 nanocosmos GmbH</section></footer></div></body></html>

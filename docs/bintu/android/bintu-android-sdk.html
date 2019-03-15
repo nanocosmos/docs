@@ -1,0 +1,94 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>bintu/android/bintu-android-sdk · Documentation</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;h1&gt;&lt;a class=&quot;anchor&quot; aria-hidden=&quot;true&quot; id=&quot;bintulive-client-sdk-for-android&quot;&gt;&lt;/a&gt;&lt;a href=&quot;#bintulive-client-sdk-for-android&quot; aria-hidden=&quot;true&quot; class=&quot;hash-link&quot;&gt;&lt;svg class=&quot;hash-link-icon&quot; aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;bintu.live client SDK for Android&lt;/h1&gt;
+"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="bintu/android/bintu-android-sdk · Documentation"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.nanocosmos.de//index.html"/><meta property="og:description" content="&lt;h1&gt;&lt;a class=&quot;anchor&quot; aria-hidden=&quot;true&quot; id=&quot;bintulive-client-sdk-for-android&quot;&gt;&lt;/a&gt;&lt;a href=&quot;#bintulive-client-sdk-for-android&quot; aria-hidden=&quot;true&quot; class=&quot;hash-link&quot;&gt;&lt;svg class=&quot;hash-link-icon&quot; aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;bintu.live client SDK for Android&lt;/h1&gt;
+"/><meta property="og:image" content="https://docs.nanocosmos.de/img/docusaurus.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://docs.nanocosmos.de/img/docusaurus.png"/><link rel="shortcut icon" href="/img/favicon_nano.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/nanocosmos_header_logo.png" alt="Documentation"/><h2 class="headerTitleWithLogo">Documentation</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/docs/nanoplayer/nanoplayer_introduction" target="_self">H5Live Player</a></li><li class=""><a href="/docs/faq/faq_streaming" target="_self">FAQ</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">bintu/android/bintu-android-sdk</h1></header><article><div><span><h1><a class="anchor" aria-hidden="true" id="bintulive-client-sdk-for-android"></a><a href="#bintulive-client-sdk-for-android" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>bintu.live client SDK for Android</h1>
+<p>© 2016 nanocosmos gmbh [<a href="http://www.nanocosmos.de][e98cabe4]">http://www.nanocosmos.de][e98cabe4]</a></p>
+<p>Version 0.1.1</p>
+<p>The bintu.live client SDK is used to generate and access live stream URLs from the bintu.live service to be used in combination with the nanoStream SDKs for live video encoding and broadcast.</p>
+<h2><a class="anchor" aria-hidden="true" id="legal-notice"></a><a href="#legal-notice" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Legal Notice</h2>
+<p>This material is subject to the terms and conditions defined in separate license conditions ('LICENSE.txt') All information contained herein is, and remains the property of nanocosmos GmbH and its suppliers if any. The intellectual and technical concepts contained herein are proprietary to nanocosmos GmbH, and are protected by trade secret or copyright law. Dissemination of this information or reproduction of this material is strictly forbidden unless prior written permission is obtained from nanocosmos.</p>
+<h2><a class="anchor" aria-hidden="true" id="project-setup"></a><a href="#project-setup" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Project setup</h2>
+<h3><a class="anchor" aria-hidden="true" id="android-studio"></a><a href="#android-studio" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Android Studio</h3>
+<p>To use the bintu.live SDK in your Android Studio project you need to include the bintu android archive as a module. In order to do this copy the android archive (bintu-sdk.aar) to your drive and open the &quot;Create Module&quot; menu in Android Studio (via File -&gt; New -&gt; Create Module). On the &quot;Create New Module&quot; menu select &quot;Import .JAR/.AAR Package&quot;, as shown below, and click on &quot;Next&quot;.
+![Create Module Menu][Create_Module]</p>
+<p>Afterwards select the location of the bintu.live sdk archive file and enter a name for this module (e.g. &quot;BintuSDK&quot;).
+After finishing the bintu.live sdk is included in your project and ready to use.</p>
+<h3><a class="anchor" aria-hidden="true" id="eclipse-adt"></a><a href="#eclipse-adt" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Eclipse ADT</h3>
+<h2><a class="anchor" aria-hidden="true" id="bintulive-platform-connection"></a><a href="#bintulive-platform-connection" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>bintu.live platform connection</h2>
+<p>Our bintu.live connection component (bintu-sdk.aar) consists of an entry point API client class BintuSDK (net.nanocosmos.bintu.bintusdk.BintuSDK) which you use to make calls to our streaming platform. There are other classes, like StreamInfo (net.nanocosmos.bintu.bintusdk.stream.StreamInfo) and RtmpIngest  (net.nanocosmos.bintu.bintusdk.stream.RtmpIngest), which mainly hold the configuration you receive from the BintuSDK.</p>
+<p>In general, if you want to interface with our streaming platform, you construct an instance of the BintuSDK with its main constructor:</p>
+<pre><code class="hljs css language-java">BintuSDK bintuSDK = <span class="hljs-keyword">new</span> BintuSDK(apiKey);
+</code></pre>
+<p>Once you have an instance, you can create new streams with it, receive information about a previously created stream or list all streams that are present on your account.</p>
+<p>Lets step through these in detail:</p>
+<p>With the createStream call you create a new stream. You would use this in your broadcaster app. As argument you pass an instace of an implementation of the StreamInfoResponseHandler interface to the createStream call. This interface represents callback classes to handle the result of the create stream call. It contains two method declarations. One to handle the success result, called &quot;handle&quot;, and one to handle errors, called &quot;onError&quot;. One of these will be executed as result of the createStream call. When the &quot;handle&quot;-method is executed it is passed the result data of the createStream call as a StreamInfo object.</p>
+<pre><code class="hljs css language-java">bintu.createStream(<span class="hljs-keyword">new</span> StreamInfoResponseHandler() {
+                <span class="hljs-meta">@Override</span>
+                <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">handle</span><span class="hljs-params">(StreamInfo streamInfo)</span> </span>{
+                    <span class="hljs-comment">//TODO Handle the Result</span>
+                }
+
+                <span class="hljs-meta">@Override</span>
+                <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onError</span><span class="hljs-params">(Throwable error)</span> </span>{
+                    <span class="hljs-comment">//TODO Handle the Error</span>
+                }
+
+            });
+</code></pre>
+<p>With the getStream call you can receive information about a previously created stream, by passing its id to the call. In most cases, you would take the stream ID you get while creating a stream and store it on your own server somewhere. If anyone wants to view a stream, you send that ID to the player app. Then you can receive that stream's playout information. For example, if you want to play the stream via RTMP:</p>
+<pre><code class="hljs css language-java">bintuSDK.getStream(streamID, <span class="hljs-keyword">new</span> StreamInfoResponseHandler() {
+            <span class="hljs-meta">@Override</span>
+            <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">handle</span><span class="hljs-params">(StreamInfo streamInfo)</span> </span>{
+                RtmpPlayout rtmpPlayout = streamInfo.getRtmpPlayouts().get(<span class="hljs-number">0</span>);
+                String rtmpURL = rtmpPlayout.getUrl();
+                String streamName = rtmpPlayout.getStreamName();
+                <span class="hljs-comment">//TODO Play the stream</span>
+            }
+
+            <span class="hljs-meta">@Override</span>
+            <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onError</span><span class="hljs-params">(Throwable error)</span> </span>{
+                <span class="hljs-comment">//TODO Handle the Error</span>
+            }
+        });
+</code></pre>
+<p>You can also list all streams on your account with the getStreams call. For example, you can bypass your server, get all streams on the player and let the user select the one they want to see. Or you just play the first one that is live, like shown below:</p>
+<pre><code class="hljs css language-java">bintuSDK.getStreams(<span class="hljs-keyword">new</span> StreamInfoListResponseHandler() {
+               <span class="hljs-meta">@Override</span>
+               <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">handle</span><span class="hljs-params">(List&lt;StreamInfo&gt; result)</span> </span>{
+                 <span class="hljs-keyword">for</span>(StreamInfo info : result){
+                       <span class="hljs-keyword">if</span> (info.getState() == State.LIVE){
+                           <span class="hljs-comment">//TODO Play this stream</span>
+                           <span class="hljs-keyword">break</span>;
+                       }
+                   }
+               }
+
+               <span class="hljs-meta">@Override</span>
+               <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onError</span><span class="hljs-params">(Throwable e)</span> </span>{
+                   <span class="hljs-comment">//TODO Handle the Error</span>
+               }
+           });
+</code></pre>
+<p>But this example can be made simpler. There is also the getStreams call (added in version 0.?.? of the bintu-sdk.aar) which allows you filter the streams by state directly on the server, resulting in quicker load times. The above example can be implemented like this:</p>
+<pre><code class="hljs css language-java">bintuSDK.getStreams(State.LIVE, <span class="hljs-keyword">new</span> StreamInfoListResponseHandler() {
+                <span class="hljs-meta">@Override</span>
+                <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">handle</span><span class="hljs-params">(List&lt;StreamInfo&gt; result)</span> </span>{
+                    <span class="hljs-keyword">try</span> {
+                        StreamInfo info = result.get(<span class="hljs-number">0</span>);
+                        <span class="hljs-comment">//TODO Play stream</span>
+                    }<span class="hljs-keyword">catch</span> (Exception ex){
+                        <span class="hljs-comment">//TODO Handle the Error    </span>
+                    }
+                }
+
+                <span class="hljs-meta">@Override</span>
+                <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onError</span><span class="hljs-params">(Throwable e)</span> </span>{
+                    <span class="hljs-comment">//TODO Handle the Error</span>
+                }
+            });
+</code></pre>
+<p>That was a basic overview of our bintu.live component.</p>
+<!--- --------list of references -------- --->
+  [e98cabe4]: http://www.nanocosmos.de "http://www.nanocosmos.de"
+<!--- ------- Table of figures -------- --->
+  [Create_Module]: img/android_studio_create_module.png "Create New Module Menu"
+</span></div></article></div><div class="docs-prevnext"></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#legal-notice">Legal Notice</a></li><li><a href="#project-setup">Project setup</a><ul class="toc-headings"><li><a href="#android-studio">Android Studio</a></li><li><a href="#eclipse-adt">Eclipse ADT</a></li></ul></li><li><a href="#bintulive-platform-connection">bintu.live platform connection</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/docusaurus.svg" alt="Documentation" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/en/doc1.html">Getting Started (or other categories)</a><a href="/docs/en/doc2.html">Guides (or other categories)</a><a href="/docs/en/doc3.html">API Reference (or other categories)</a></div><div><h5>Community</h5><a href="/en/users.html">User Showcase</a><a href="http://stackoverflow.com/questions/tagged/" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://discordapp.com/">Project Chat</a><a href="https://twitter.com/" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="/blog">Blog</a><a href="https://github.com/">GitHub</a><a class="github-button" href="https://github.com/nanocosmos/demo" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://code.facebook.com/projects/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2019 nanocosmos GmbH</section></footer></div></body></html>

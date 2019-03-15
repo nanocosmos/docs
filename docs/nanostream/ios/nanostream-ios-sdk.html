@@ -1,0 +1,781 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>nanostream/ios/nanostream-ios-sdk · Documentation</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;h1&gt;&lt;a class=&quot;anchor&quot; aria-hidden=&quot;true&quot; id=&quot;nanostream-sdk-for-ios-developer-manual&quot;&gt;&lt;/a&gt;&lt;a href=&quot;#nanostream-sdk-for-ios-developer-manual&quot; aria-hidden=&quot;true&quot; class=&quot;hash-link&quot;&gt;&lt;svg class=&quot;hash-link-icon&quot; aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;nanoStream SDK for iOS - Developer Manual&lt;/h1&gt;
+"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="nanostream/ios/nanostream-ios-sdk · Documentation"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.nanocosmos.de//index.html"/><meta property="og:description" content="&lt;h1&gt;&lt;a class=&quot;anchor&quot; aria-hidden=&quot;true&quot; id=&quot;nanostream-sdk-for-ios-developer-manual&quot;&gt;&lt;/a&gt;&lt;a href=&quot;#nanostream-sdk-for-ios-developer-manual&quot; aria-hidden=&quot;true&quot; class=&quot;hash-link&quot;&gt;&lt;svg class=&quot;hash-link-icon&quot; aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;nanoStream SDK for iOS - Developer Manual&lt;/h1&gt;
+"/><meta property="og:image" content="https://docs.nanocosmos.de/img/docusaurus.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://docs.nanocosmos.de/img/docusaurus.png"/><link rel="shortcut icon" href="/img/favicon_nano.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/nanocosmos_header_logo.png" alt="Documentation"/><h2 class="headerTitleWithLogo">Documentation</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/docs/nanoplayer/nanoplayer_introduction" target="_self">H5Live Player</a></li><li class=""><a href="/docs/faq/faq_streaming" target="_self">FAQ</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">nanostream/ios/nanostream-ios-sdk</h1></header><article><div><span><h1><a class="anchor" aria-hidden="true" id="nanostream-sdk-for-ios-developer-manual"></a><a href="#nanostream-sdk-for-ios-developer-manual" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>nanoStream SDK for iOS - Developer Manual</h1>
+<h2><a class="anchor" aria-hidden="true" id="purpose"></a><a href="#purpose" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Purpose</h2>
+<p>This documentation is about the nanoStream Live Video Streaming SDK for iOS and can be used by software developers to integrate nanoStream Live Video Encoding into custom apps.</p>
+<h2><a class="anchor" aria-hidden="true" id="contents"></a><a href="#contents" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Contents</h2>
+<ul>
+<li><a href="#nanostream-sdk-for-ios---developer-manual">nanoStream SDK for iOS - Developer Manual</a>
+<ul>
+<li><a href="#purpose">Purpose</a></li>
+<li><a href="#requirements">Requirements</a></li>
+<li><a href="#getting-started">Getting Started</a>
+<ul>
+<li><a href="#preparation">Preparation</a></li>
+<li><a href="#check-library-version">Check library version</a></li>
+<li><a href="#initialize-the-library">Initialize the library</a></li>
+<li><a href="#start-a-stream">Start a stream</a></li>
+<li><a href="#stop-a-running-stream">Stop a running stream</a></li>
+</ul></li>
+<li><a href="#live-playback">Live Playback</a>
+<ul>
+<li><a href="#initialize-the-library-for-playback">Initialize the library for playback</a></li>
+<li><a href="#start-playback">Start playback</a></li>
+</ul></li>
+<li><a href="#advanced-settings-usage">Advanced Settings/Usage</a>
+<ul>
+<li><a href="#switch-camera">Switch Camera</a></li>
+<li><a href="#orientation">Orientation</a></li>
+<li><a href="#stream-type">Stream Type</a></li>
+<li><a href="#server-authentication">Server Authentication</a></li>
+<li><a href="#cropping">Cropping</a></li>
+<li><a href="#local-recording">Local Recording</a></li>
+<li><a href="#adaptive-bitrate">Adaptive Bitrate</a></li>
+<li><a href="#statistics-during-streaming">Statistics during streaming</a></li>
+<li><a href="#measuring-the-available-bandwidth">Measuring the available bandwidth</a></li>
+<li><a href="#snaphot-from-the-current-stream">Snaphot from the current stream</a></li>
+<li><a href="#overlay-watermark">Overlay/Watermark</a></li>
+<li><a href="#initwithsession">initWithSession</a></li>
+</ul></li>
+<li><a href="#specific-use-cases">Specific use cases</a>
+<ul>
+<li><a href="#stream-from-a-gopro">Stream from a GoPro</a></li>
+<li><a href="#stream-from-a-drone">Stream from a Drone</a></li>
+</ul></li>
+<li><a href="#possible-issues">Possible Issues</a>
+<ul>
+<li><a href="#general">General</a></li>
+<li><a href="#compiler-linker">Compiler/Linker</a>
+<ul>
+<li><a href="#libstdc--">libstdc++</a></li>
+<li><a href="#undefined-symbols-for-parrot---dji">Undefined Symbols for Parrot &amp; DJI</a></li>
+<li><a href="#duplicate-symbols">Duplicate Symbols</a></li>
+</ul></li>
+<li><a href="#breakpoints">Breakpoints</a></li>
+<li><a href="#crashes">Crashes</a>
+<ul>
+<li><a href="#calayergetdelegate---calayergetsuperlayer---other-calayer">CALayerGetDelegate / CALayerGetSuperlayer / Other CALayer</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#logging-information">Logging Information</a></li>
+<li><a href="#crash-logs">Crash Logs</a></li>
+</ul></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="requirements"></a><a href="#requirements" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Requirements</h2>
+<ul>
+<li>Apple Mac with MacOS 10.9 with XCode 6 or higher</li>
+<li>Apple iPhone with iOS 7 or later (min. iOS 8.1 recommended)</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="getting-started"></a><a href="#getting-started" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Getting Started</h2>
+<h3><a class="anchor" aria-hidden="true" id="preparation"></a><a href="#preparation" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Preparation</h3>
+<p>Add the library &quot;libnanostreamAVC.a&quot; as dependency (Link Binary With Libraries) to your project.
+Further required dependencies:</p>
+<ul>
+<li>libc++.dylib</li>
+<li>libstdc++.dylib</li>
+<li>AVFoundation.framework</li>
+<li>Accelerate.framework</li>
+<li>CoreGraphics.framework</li>
+<li>CoreMedia.framework</li>
+<li>CoreVideo.framework</li>
+<li>Foundation.framework</li>
+<li>SystemConfiguration.framework</li>
+<li>VideoToolbox.framework (link as Optional, not as Required)</li>
+<li>AudioToolbox.framework</li>
+</ul>
+<p>Include the header &quot;libnanostreamAVC.h&quot; in your source code.</p>
+<h3><a class="anchor" aria-hidden="true" id="check-library-version"></a><a href="#check-library-version" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Check library version</h3>
+<pre><code class="hljs css language-objc"><span class="hljs-keyword">int</span> version = [nanostreamAVC getVersion];
+<span class="hljs-keyword">if</span>(version!=NANOSTREAM_AVC_VERSION)
+{
+    <span class="hljs-comment">// Handle header and library version mismatch</span>
+}
+
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="initialize-the-library"></a><a href="#initialize-the-library" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Initialize the library</h3>
+<p>Implement the interface <code>nanostreamEventListener</code> in your class:</p>
+<pre><code class="hljs css language-objc"><span class="hljs-class"><span class="hljs-keyword">@interface</span> <span class="hljs-title">SampleLiveViewController</span> : <span class="hljs-title">UIViewController</span> &lt;<span class="hljs-title">nanostreamEventListener</span>&gt;</span>
+...
+<span class="hljs-keyword">@property</span> (<span class="hljs-keyword">nonatomic</span>, <span class="hljs-keyword">strong</span>) nanostreamAVC *nAVC;
+<span class="hljs-keyword">@property</span> (<span class="hljs-keyword">nonatomic</span>, <span class="hljs-keyword">strong</span>) <span class="hljs-keyword">IBOutlet</span> <span class="hljs-built_in">UIView</span> *previewView;
+...
+<span class="hljs-keyword">@end</span>
+
+<span class="hljs-class"><span class="hljs-keyword">@implementation</span> <span class="hljs-title">SampleLiveViewController</span></span>
+...
+-(<span class="hljs-keyword">void</span>)nanostreamEventHandlerWithType:(nanostreamEvent)type andLevel:(<span class="hljs-keyword">int</span>)level andDescription:(<span class="hljs-built_in">NSString</span> *)description
+{
+    <span class="hljs-keyword">switch</span> (type) {
+        <span class="hljs-keyword">case</span> StreamStarted:
+            <span class="hljs-keyword">break</span>;
+        <span class="hljs-keyword">case</span> StreamStopped:
+            <span class="hljs-keyword">break</span>;
+        <span class="hljs-keyword">case</span> StreamError:
+            <span class="hljs-built_in">NSLog</span>(<span class="hljs-string">@"nanostreamEventHandlerWithType: StreamError: %@"</span>, description);
+            <span class="hljs-keyword">break</span>;
+        <span class="hljs-keyword">case</span> StreamErrorConnect:
+            <span class="hljs-built_in">NSLog</span>(<span class="hljs-string">@"nanostreamEventHandlerWithType: StreamErrorConnect: %@"</span>, description);
+            <span class="hljs-keyword">break</span>;
+        <span class="hljs-keyword">case</span> StreamConnectionStatus:
+            <span class="hljs-built_in">NSLog</span>(<span class="hljs-string">@"nanostreamEventHandlerWithType: RtmpConnectionStatus %@"</span>, description);
+            <span class="hljs-keyword">break</span>;
+        <span class="hljs-keyword">case</span> GeneralError:
+            <span class="hljs-keyword">break</span>;
+        <span class="hljs-keyword">default</span>:
+            <span class="hljs-keyword">break</span>;
+    }
+}
+...
+<span class="hljs-keyword">@end</span>
+</code></pre>
+<p>Configure the settings object for the library:</p>
+<pre><code class="hljs css language-objc">nanostreamAVCSettings *nAVCSettings = [[nanostreamAVCSettings alloc] init];
+
+<span class="hljs-comment">// set the rtmp url, you want to stream to</span>
+[nAVCSettings setUrl: <span class="hljs-string">@"rtmp://localhost/live"</span>];
+[nAVCSettings setStreamId: <span class="hljs-string">@"myStream"</span>];
+
+<span class="hljs-comment">// set the video settings</span>
+[nAVCSettings setVideoResolution: Resolution640x480];
+[nAVCSettings setVideoBitrate: <span class="hljs-number">512</span>];
+[nAVCSettings setKeyFramerate: <span class="hljs-number">60</span>];
+[nAVCSettings setOrientation: <span class="hljs-built_in">AVCaptureVideoOrientationLandscapeRight</span>];
+[nAVCSettings setCropMode: NoCrop];
+[nAVCSettings setFramerate: <span class="hljs-number">30</span>];
+[nAVCSettings setH264Level: Baseline30];
+
+<span class="hljs-comment">// set the audio settings</span>
+[nAVCSettings setInitialVolume: <span class="hljs-number">1.0</span>];
+[nAVCSettings setAudioMonoStereo: Stereo];
+[nAVCSettings setAudioSamplerate: <span class="hljs-number">44100.0</span>f];
+</code></pre>
+<p>Then the library itself can be initialized:</p>
+<pre><code class="hljs css language-objc"><span class="hljs-comment">// nAVC and previewView are properties of the controller class in this example</span>
+<span class="hljs-keyword">self</span>.nAVC = [[nanostreamAVC alloc] initWithSettings: nAVCSettings
+                                          uiPreview: <span class="hljs-keyword">self</span>.previewView
+                                      errorListener: <span class="hljs-keyword">self</span>];
+
+<span class="hljs-comment">// set the license key (required for streaming)</span>
+[<span class="hljs-keyword">self</span>.nanostream setLicense: <span class="hljs-string">@"nlic:1.2:LiveEnc:1.1:LvApp=1.....288"</span>];
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="start-a-stream"></a><a href="#start-a-stream" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Start a stream</h3>
+<pre><code class="hljs css language-objc">    <span class="hljs-comment">// Start broadcast asynchronously with completion handler</span>
+    [<span class="hljs-keyword">self</span>.nAVC start:^(<span class="hljs-keyword">bool</span> success)
+    {
+      <span class="hljs-comment">// use main queue to change UI related things</span>
+      <span class="hljs-built_in">dispatch_async</span>(dispatch_get_main_queue(), ^
+      {
+        <span class="hljs-keyword">if</span> (success)
+        {
+          <span class="hljs-comment">// Handle succesful stream start</span>
+          ...
+        }
+        <span class="hljs-keyword">else</span>
+        {
+          <span class="hljs-comment">// Handle failure</span>
+          ...
+        }
+      }
+    }
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="stop-a-running-stream"></a><a href="#stop-a-running-stream" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Stop a running stream</h3>
+<p>If the parameter &quot;blocking&quot; of the stop method is set to YES, all the remaining data (to this moment) will be sent before stopping the stream.
+If set to NO, the stream will stop immediately, discarding the remaining data.</p>
+<pre><code class="hljs css language-objc">    <span class="hljs-comment">// Stop broadcast asynchronously with completion handler</span>
+    [<span class="hljs-keyword">self</span>.nAVC stop:<span class="hljs-literal">YES</span> withCompletion:^
+    {
+      <span class="hljs-comment">// use main queue to change UI related things</span>
+      <span class="hljs-built_in">dispatch_async</span>(dispatch_get_main_queue(), ^
+      {
+        <span class="hljs-comment">// Handle stream stop</span>
+      }
+    }
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="live-playback"></a><a href="#live-playback" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Live Playback</h2>
+<p>nanoStream supports live playback from RTMP sources.
+For a complete running sample, see our SDK package including broadcasting and playback samples.</p>
+<h3><a class="anchor" aria-hidden="true" id="initialize-the-library-for-playback"></a><a href="#initialize-the-library-for-playback" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Initialize the library for playback</h3>
+<pre><code class="hljs css language-objc">    <span class="hljs-keyword">self</span>.session = [[RtmpSourceCaptureSession alloc] initWithPreview:<span class="hljs-keyword">self</span>.playerView andStatusListener:<span class="hljs-keyword">self</span> andLogLevel:LogLevelMinimal];
+    
+    [<span class="hljs-keyword">self</span>.session setLicense: myLicenseKey];
+    
+    [<span class="hljs-keyword">self</span>.session setUrl:<span class="hljs-keyword">self</span>.rtmpServerURL];
+    [<span class="hljs-keyword">self</span>.session setStreamId:<span class="hljs-keyword">self</span>.rtmpStreamName];
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="start-playback"></a><a href="#start-playback" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Start playback</h3>
+<pre><code class="hljs css language-objc">    [<span class="hljs-keyword">self</span>.session start];
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="advanced-settings-usage"></a><a href="#advanced-settings-usage" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Advanced Settings/Usage</h2>
+<h3><a class="anchor" aria-hidden="true" id="meaning-of-events-and-errors-nanostreamevent"></a><a href="#meaning-of-events-and-errors-nanostreamevent" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Meaning of Events and Errors (nanostreamEvent)</h3>
+<p>Events:</p>
+<ul>
+<li>StreamStarted/StreamStopped: notification that a stream was successfully started/stopped</li>
+<li>StreamConnectionStatus: indicates the connection status: connected, disconnected or reconnecting</li>
+</ul>
+<p>Errors:</p>
+<ul>
+<li>StreamSettingCropModeNotSupported: a larger input resolution is required for the crop mode</li>
+<li>StreamError:</li>
+<li>StreamErrorConnect: the connection to the server could not be established, server might no be reachable or there are network problems</li>
+<li>StreamErrorConnectSSL: the connection process failed when trying to setup SSL, maybe the server certificates could not be verified</li>
+<li>StreamError: an error occurred while initializing the stream, or during the stream, used license might be invalid or expired</li>
+<li>GeneralError: a general error</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="switch-camera"></a><a href="#switch-camera" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Switch Camera</h3>
+<p>The camera (front/back) can be switched during preview and broadcast, with the method</p>
+<pre><code class="hljs css language-objc">    -(<span class="hljs-keyword">bool</span>) useFrontCamera: (<span class="hljs-keyword">bool</span>) value;   <span class="hljs-comment">// returns true if switch was successful</span>
+</code></pre>
+<p>It is also possible to select the desired camera directly, when initializing the library, by using the property</p>
+<pre><code class="hljs css language-objc">    <span class="hljs-keyword">@property</span> (<span class="hljs-keyword">assign</span>) <span class="hljs-built_in">BOOL</span> frontCamera;
+</code></pre>
+<p>of the <code>nanostreamAVCSettings</code> object.</p>
+<h3><a class="anchor" aria-hidden="true" id="orientation"></a><a href="#orientation" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Orientation</h3>
+<p>The orientation of the stream can be set to portrait or landscape with the property <code>orientation</code> of the settings object.</p>
+<p>As of version 4.4.0.6 the orientation can also be changed after the initialization with the property <code>orientation</code> of the nanostreamAVC object itself.</p>
+<p><strong>Important:</strong> The orientation change will only affect the stream, but not the preview. The orientation for the preview has to be managed on the application level. This can be achieved by using e.g. <code>CGAffineTransformMakeRotation</code> (<a href="https///developer.apple.com/library/mac/documentation/GraphicsImaging/Reference/CGAffineTransform/">https://developer.apple.com/library/mac/documentation/GraphicsImaging/Reference/CGAffineTransform/</a>).</p>
+<h3><a class="anchor" aria-hidden="true" id="stream-type"></a><a href="#stream-type" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Stream Type</h3>
+<p>The SDK supports different streaming modes:</p>
+<ul>
+<li>Video and Audio</li>
+<li>Video only</li>
+<li>Audio only</li>
+</ul>
+<p>You can configure the mode with the property <code>streamType</code> of the settings object.</p>
+<h3><a class="anchor" aria-hidden="true" id="zoom"></a><a href="#zoom" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Zoom</h3>
+<p>Following Methods are available for zooming:</p>
+<pre><code class="hljs css language-objc"><span class="hljs-comment">/**
+
+ *  maxZoomFactor
+ *
+ *  Returns the maximum zoom factor that can be set on the current device.
+ *  This includes the zoom via upscaling.
+ *
+ *  @return Maximum Zoom factor that can be set on the current device
+ */</span>
+-(<span class="hljs-built_in">CGFloat</span>)maxZoomFactor;
+</code></pre>
+<pre><code class="hljs css language-objc"><span class="hljs-comment">/**
+
+ *  Newer devices can use an almost-optical zoom, using the bigger sensor sizes.
+ *  Setting the zoom factor to a value smaller than this value uses a lossless
+ *  zoom.
+ *
+ *  @return Max Zoom factor that can be set without using upscaling.
+ */</span>
+-(<span class="hljs-built_in">CGFloat</span>)maxZoomFactorWithoutUpscaling;
+</code></pre>
+<pre><code class="hljs css language-objc"><span class="hljs-comment">/**
+
+ *  Sets the zoom factor for the camera. Available from iOS 7.1 onwards.
+ *
+ *  @param factor Double between 1.0 and maxZoomFactor. Will be set for the 
+ *  current capture device. Will be reset when the device changes (camera rotation)
+ *  Zoom factor will be applied with a ramp function, which results in a smooth
+ *  transition to the given factor. If a value smaller than 
+ *  maxZoomFactorWithoutUpscaling is set, the zoom will be lossless.
+ *
+ *  @return YES if zoom was set. NO if not.
+ */</span>
+-(<span class="hljs-built_in">BOOL</span>)setZoomFactor:(<span class="hljs-built_in">CGFloat</span>)factor;
+</code></pre>
+<p>Zooming is also demonstrated in the sample project &quot;BintuStream&quot;, included in the SDK packet.</p>
+<h3><a class="anchor" aria-hidden="true" id="server-authentication"></a><a href="#server-authentication" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Server Authentication</h3>
+<p>In case authentication is required, the credentials can be set with the method <code>-(void) setAuthentication: (NSString*) user withPassword: (NSString*) password;</code>{objc}</p>
+<p>The method has to be invoked before a stream is started.</p>
+<p>For example:</p>
+<pre><code class="hljs css language-objc"><span class="hljs-comment">// set up nAVC object</span>
+...
+[nAVC setAuthentication: <span class="hljs-string">@"MyUser"</span> withPassword: <span class="hljs-string">@"MyPassword"</span>];
+...
+<span class="hljs-comment">// start the stream</span>
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="cropping"></a><a href="#cropping" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Cropping</h3>
+<p>The stream can be transformed to a different format than the input from the camera.</p>
+<p>The following example shows how to crop the format to 16:9.</p>
+<pre><code class="hljs css language-objc">    [nAVCSettings setCropMode: CropTo16By9];
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="local-recording"></a><a href="#local-recording" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Local Recording</h3>
+<p>It is possible to make a local copy of the stream, on the iOS device.
+This is an extra feature and needs to be unlocked by the license - the license should contain the string &quot;MP4=2&quot;.</p>
+<pre><code class="hljs css language-objc"><span class="hljs-built_in">NSString</span> *homeDirectory = [<span class="hljs-built_in">NSHomeDirectory</span>() stringByAppendingPathComponent:<span class="hljs-string">@"Documents"</span>];
+<span class="hljs-built_in">NSDateFormatter</span> *dateFormatter=[[<span class="hljs-built_in">NSDateFormatter</span> alloc] init];
+[dateFormatter setDateFormat:<span class="hljs-string">@"yyyy-MM-dd_HH-mm-ss"</span>];
+<span class="hljs-built_in">NSString</span> *locStr = [homeDirectory stringByAppendingPathComponent: [[dateFormatter stringFromDate:[<span class="hljs-built_in">NSDate</span> date]] stringByAppendingString: <span class="hljs-string">@".mp4"</span>]];
+
+[nAVCSettings setLocalRecordingMode:<span class="hljs-built_in">AVCRecordingModeDoubleAtLeastOneMbit</span>];
+[nAVCSettings setLocalRecordingPath:locStr];
+</code></pre>
+<p>There are three modes available:</p>
+<ul>
+<li>AVCRecordingModeStartBitrate: uses the video bitrate set with nanostreamAVCSettings</li>
+<li>AVCRecordingModeDoubleAtLeastOneMbit: uses double the video bitrate, but at least 1Mbps</li>
+<li>AVCRecordingMode720p2Mbit: independent of the set video bitrate, always uses 2Mbps and a resolution of 1280x720</li>
+</ul>
+<p>The bitrate for the recording remains constant during a stream. The adaptive bitrate mechanism only influences the bitrate for the stream, but not the bitrate for the recording.</p>
+<p>The bitrate for the recording also depends on the video material. If there is a lot of movement in the video the bitrate will be higher than for recordings with little to no movement.</p>
+<h3><a class="anchor" aria-hidden="true" id="adaptive-bitrate"></a><a href="#adaptive-bitrate" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Adaptive Bitrate</h3>
+<p>By using the Adaptive Bitrate Control (ABC) the stream will automatically adjust to changes of the bandwidth.
+There are two modes available:</p>
+<ul>
+<li><p>AdaptiveBitrateControlModeQualityDegrade: The video quality will be changed if the bandwidth changes. For instance, if not enough bandwidth is available, the video bitrate will be decreased, which in turn degrades the video quality.</p></li>
+<li><p>AdaptiveBitrateControlModeFrameDrop: Low bandwidth is compensated by decreasing the framerate (FPS), but maintaining the video qualtiy.</p></li>
+</ul>
+<p>Make sure to set the ABC settings before a stream is started.</p>
+<pre><code class="hljs css language-objc">    [<span class="hljs-keyword">self</span>.nAVC setAdaptiveBitrateControlMode: AdaptiveBitrateControlModeQualityDegrade];
+        
+    AdaptiveBitrateControlSettings abr;
+    abr.minimumBitrate = <span class="hljs-number">100000</span>;  <span class="hljs-comment">// 100kb</span>
+    abr.minimumFramerate = <span class="hljs-number">15</span>;
+    abr.maxPercentBitrateChange = <span class="hljs-number">50</span>;  <span class="hljs-comment">// if the bitrate drops to less than 50% of the previous bitrate, all buffered data will be discarded</span>
+    
+    [<span class="hljs-keyword">self</span>.nAVC setAdaptiveBitrateControlSettings: abr];
+</code></pre>
+<p>Possible properties:</p>
+<table>
+<thead>
+<tr><th>property</th><th>default values</th><th>range of values</th><th>optional</th></tr>
+</thead>
+<tbody>
+<tr><td>minimumBitrate</td><td>5000 (50 kb)</td><td>50000 - 10 000 000</td><td>YES</td></tr>
+<tr><td>minimumFramerate</td><td>15 (fps)</td><td>5 - 60</td><td>YES</td></tr>
+<tr><td>maxPercentBitrateChange</td><td>50 (%)</td><td>0 - 100</td><td>YES</td></tr>
+</tbody>
+</table>
+<p>For more information look here <a href="http://www.nanocosmos.de/v4/documentation/live_video_encoder_-_adaptive_bitrate#abc_modes">http://www.nanocosmos.de/v4/documentation/live_video_encoder_-_adaptive_bitrate#abc_modes</a></p>
+<h3><a class="anchor" aria-hidden="true" id="statistics-during-streaming"></a><a href="#statistics-during-streaming" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Statistics during streaming</h3>
+<p>You can track the current bandwidth with the delegate method</p>
+<pre><code class="hljs css language-objc">    -(<span class="hljs-keyword">void</span>)nanoStreamStatisticsHandlerWithOutputBitrate:(<span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span>)oBitrate
+                                            andFillness:(<span class="hljs-keyword">double</span>)fillness
+                                 andCurrentVideoBitrate:(<span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span>)vBitrate
+                               andCurrentVideoFramerate:(<span class="hljs-keyword">double</span>)vFramerate
+</code></pre>
+<p>This method will be invoked every second.</p>
+<p>Meaning of the parameters:</p>
+<ul>
+<li>oBitrate: the measured outgoing bitrate for the stream - this is an estimation and probably not 100% accurate</li>
+<li>fillness: the fillness, in percent, of the buffer used for outgoing packages</li>
+<li>vBitrate: the currently used bitrate for video</li>
+<li>vFramerate: the currently used framerate for video</li>
+</ul>
+<table>
+<thead>
+<tr><th style="text-align:left">property</th><th style="text-align:left">default values</th><th style="text-align:left">range of values</th><th style="text-align:left">optional</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align:left">minimumBitrate</td><td style="text-align:left">5000 (50 kb)</td><td style="text-align:left">50000 - 10 000 000</td><td style="text-align:left">YES</td></tr>
+<tr><td style="text-align:left">minimumFramerate</td><td style="text-align:left">15 (fps)</td><td style="text-align:left">5 - 60</td><td style="text-align:left">YES</td></tr>
+<tr><td style="text-align:left">maxPercentBitrateChange</td><td style="text-align:left">50 (%)</td><td style="text-align:left">0 - 100</td><td style="text-align:left">YES</td></tr>
+</tbody>
+</table>
+<p>For more information look here : <a href="http://www.nanocosmos.de/v4/documentation/live_video_encoder_-_adaptive_bitrate#abc_modes">http://www.nanocosmos.de/v4/documentation/live_video_encoder_-_adaptive_bitrate#abc_modes</a></p>
+<h3><a class="anchor" aria-hidden="true" id="measuring-the-available-bandwidth"></a><a href="#measuring-the-available-bandwidth" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Measuring the available bandwidth</h3>
+<p>For measuring the available bandwidth you can use the method &quot;runBandwidthCheck&quot;. After the check finished, the result can be used to set the bitrate for the nanostreamAVC object.</p>
+<p>The check measures the bandwidth by running a test stream to the server.</p>
+<pre><code class="hljs css language-objc">    <span class="hljs-built_in">NSXBandwidthCheckSettings</span> *bwSettings = [[<span class="hljs-built_in">NSXBandwidthCheckSettings</span> alloc] init];
+    <span class="hljs-comment">// the URL settings are identical to the URL settings for the nanostreamAVCSettings</span>
+    <span class="hljs-comment">// for testing the bandwidth it is advised to use the same server you want to stream to</span>
+    <span class="hljs-comment">// you might want to use a stream id different from the stream id for the actual stream, to distinguish between a bandwidth check and a real stream</span>
+    bwSettings.url = <span class="hljs-string">@"rtmp://localhost/live"</span>;
+    bwSettings.streamId = <span class="hljs-string">@"bwcheck"</span>;
+    <span class="hljs-comment">// the maxium bitrate that should be tested - if this value is lower than the actual bandwidth, the result will be similar to the maximum bitrate</span>
+    bwSettings.maxBitrate = <span class="hljs-number">5000000</span>;  <span class="hljs-comment">// 5Mb</span>
+    
+    [<span class="hljs-keyword">self</span>.nAVC runBandwidthCheck: bwSettings withCompletionBlock:^(<span class="hljs-built_in">NSXBandwidthCheckResult</span>* measuredBandwidth){
+      <span class="hljs-built_in">NSLog</span>(<span class="hljs-string">@"measuredBandwidth: avg=%i, median=%i, min=%i, max=%i, runTimeMs=%i"</span>, (<span class="hljs-keyword">int</span>)measuredBandwidth.avgBitrate, (<span class="hljs-keyword">int</span>)measuredBandwidth.medianBitrate, (<span class="hljs-keyword">int</span>)measuredBandwidth.minBitrate, (<span class="hljs-keyword">int</span>)measuredBandwidth.maxBitrate, (<span class="hljs-keyword">int</span>)measuredBandwidth.runTimeMs);
+    }];
+</code></pre>
+<p>The default run time is 10 seconds. The run time can be changed with the property &quot;runTime&quot;.
+If the bandwidth check should be stopped before it finished on itself, the method &quot;stopBandwidthCheck&quot; can be used. This will force the bandwidth check to stop and return the result based on the collected information up to this point.</p>
+<pre><code class="hljs css language-objc">    [<span class="hljs-keyword">self</span>.nAVC stopBandwidthCheck];    <span class="hljs-comment">// stop bw check if still running</span>
+</code></pre>
+<p>The result of the bandwidth check can be used as bitrate setting for library object. At the moment it is not possible to change the video bitrate after the initialization of the library object, thus the object need to be re-initialized. (This will change in future releases.)</p>
+<h3><a class="anchor" aria-hidden="true" id="snaphot-from-the-current-stream"></a><a href="#snaphot-from-the-current-stream" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Snaphot from the current stream</h3>
+<p>To get a snaphot (image) of the current preview/stream, the method &quot;grabStillImageWithCompletionBlock&quot; can be used.</p>
+<pre><code class="hljs css language-objc">    [<span class="hljs-keyword">self</span>.nAVC grabStillImageWithCompletionBlock:^(<span class="hljs-built_in">UIImage</span> *image, <span class="hljs-built_in">NSError</span> *error) {
+      <span class="hljs-comment">// do something with the image</span>
+    }];
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="overlay-watermark"></a><a href="#overlay-watermark" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Overlay/Watermark</h3>
+<p>It is possible to use an overlay (image, text, or both) for a stream. Notice that the CPU usage will be increased slightly when an overlay is used.
+This is an extra feature and needs to be unlocked by the license - the license should contain the string &quot;OVL=1&quot;.</p>
+<p>The easiest way to use an overlay is to use the class &quot;AVCFullImageOverlay&quot;:</p>
+<pre><code class="hljs css language-objc">    <span class="hljs-built_in">UIImage</span> *overlayImg = [<span class="hljs-built_in">UIImage</span> imageNamed:<span class="hljs-string">@"button"</span>];  <span class="hljs-comment">// uses an image from the bundle resources, named "button"</span>
+        
+    <span class="hljs-built_in">UIGraphicsBeginImageContextWithOptions</span>(<span class="hljs-built_in">CGSizeMake</span>(<span class="hljs-number">640</span>, <span class="hljs-number">480</span>), <span class="hljs-literal">NO</span>, <span class="hljs-number">1.0</span>);  <span class="hljs-comment">// assuming the video resolution is set to "Resolution640x480"</span>
+    [overlayImg drawInRect:<span class="hljs-built_in">CGRectMake</span>(<span class="hljs-number">200</span>, <span class="hljs-number">200</span>, <span class="hljs-number">240</span>, <span class="hljs-number">80</span>) blendMode:kCGBlendModeNormal alpha:<span class="hljs-number">0.5</span>];
+    <span class="hljs-built_in">UIFont</span> *font = [<span class="hljs-built_in">UIFont</span> boldSystemFontOfSize:<span class="hljs-number">20</span>];
+    [[<span class="hljs-built_in">UIColor</span> whiteColor] set];
+    <span class="hljs-built_in">NSString</span> *text = <span class="hljs-string">@"Watermark"</span>;
+    [text drawInRect:<span class="hljs-built_in">CGRectMake</span>(<span class="hljs-number">200</span>, <span class="hljs-number">300</span>, <span class="hljs-number">100</span>, <span class="hljs-number">50</span>) withFont:font];
+    <span class="hljs-built_in">UIImage</span> *finalOverlayImage = <span class="hljs-built_in">UIGraphicsGetImageFromCurrentImageContext</span>();
+    <span class="hljs-built_in">UIGraphicsEndImageContext</span>();
+        
+    [<span class="hljs-keyword">self</span>.nAVC setOverlay: [[<span class="hljs-built_in">AVCFullImageOverlay</span> alloc] initWithImage: finalOverlayImage]];
+</code></pre>
+<p>Notice that the final output resolution can be different, if an option like cropping is used.
+In this case it is better to implement your own overlay class, which is shown in the following example:</p>
+<pre><code class="hljs css language-objc">    <span class="hljs-class"><span class="hljs-keyword">@interface</span> <span class="hljs-title">NSXWatermark</span> () : <span class="hljs-title">NSObject</span> `&lt;​<span class="hljs-title">AVCOverlay</span>&gt;`​</span>
+    
+    <span class="hljs-keyword">@property</span> (<span class="hljs-keyword">assign</span>) <span class="hljs-built_in">AVCOverlayRawBuffer</span> buffer;
+    <span class="hljs-keyword">@property</span> (<span class="hljs-keyword">strong</span>) __attribute__((<span class="hljs-built_in">NSObject</span>)) <span class="hljs-built_in">CFDataRef</span> imageDataForBuffer;
+    
+    <span class="hljs-keyword">@end</span>
+    
+    
+    <span class="hljs-class"><span class="hljs-keyword">@implementation</span> <span class="hljs-title">NSXWatermark</span></span>
+    
+    <span class="hljs-keyword">@synthesize</span> overlayBoundingRect;
+    <span class="hljs-keyword">@synthesize</span> imageSize;
+    
+    
+    -(<span class="hljs-built_in">AVCOverlayRawBuffer</span>)overlayImageWithStreamTime:(<span class="hljs-built_in">NSTimeInterval</span>)time
+    {
+        <span class="hljs-keyword">if</span> (<span class="hljs-keyword">self</span>.buffer.buffer == <span class="hljs-literal">NULL</span>) {
+            <span class="hljs-built_in">UIImage</span> *image = [<span class="hljs-keyword">self</span> generateWatermarkWithSize:<span class="hljs-keyword">self</span>.imageSize inBoundingRect:<span class="hljs-keyword">self</span>.overlayBoundingRect];
+            <span class="hljs-keyword">if</span> (image) {
+                [<span class="hljs-keyword">self</span> setupBufferWithImage:image];
+            }
+        }
+        
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">self</span>.buffer;
+    }
+    
+    -(<span class="hljs-built_in">UIImage</span> *)generateWatermarkWithSize:(<span class="hljs-built_in">CGSize</span>)size inBoundingRect:(<span class="hljs-built_in">CGRect</span>)boundingRect {
+        
+        <span class="hljs-built_in">UIImage</span> *overlayImage;
+        <span class="hljs-built_in">CGFloat</span> padding = <span class="hljs-number">10.0</span>;
+        
+        <span class="hljs-comment">// Permanent Overlay</span>
+        <span class="hljs-built_in">CGRect</span> permRealRect;
+        <span class="hljs-built_in">UIImage</span> *permanentImage = <span class="hljs-keyword">self</span>.permanentOverlayImage;
+        <span class="hljs-keyword">if</span> (permanentImage) {
+            <span class="hljs-built_in">CGSize</span> overlaySize = permanentImage.size;
+            
+            <span class="hljs-built_in">CGFloat</span> height = size.height / <span class="hljs-number">3</span>;
+            <span class="hljs-keyword">if</span> (overlaySize.height &gt; height) {
+                overlaySize.width = height;
+                overlaySize.height = height;
+            }
+            
+            <span class="hljs-built_in">CGFloat</span> boundingMaxX = boundingRect.origin.x + boundingRect.size.width;
+            <span class="hljs-built_in">CGFloat</span> boundingMaxY = boundingRect.origin.y + boundingRect.size.height;
+            
+            
+            <span class="hljs-built_in">CGRect</span> permOverlayRect = <span class="hljs-built_in">CGRectMake</span>(boundingMaxX - overlaySize.width/<span class="hljs-number">2</span>, boundingMaxY - overlaySize.height/<span class="hljs-number">2</span>, overlaySize.width/<span class="hljs-number">2</span>, overlaySize.height/<span class="hljs-number">2</span>);
+            
+            permRealRect =  <span class="hljs-built_in">AVMakeRectWithAspectRatioInsideRect</span>(permanentImage.size, permOverlayRect);
+            
+            permRealRect.origin.y -= padding;
+            permRealRect.origin.x -= padding;
+        }
+        
+        <span class="hljs-built_in">UIGraphicsBeginImageContext</span>(size);
+        
+        <span class="hljs-keyword">if</span> (permanentImage) {
+            [permanentImage drawInRect:permRealRect];
+        }
+        
+        overlayImage = <span class="hljs-built_in">UIGraphicsGetImageFromCurrentImageContext</span>();
+        
+        <span class="hljs-built_in">UIGraphicsEndImageContext</span>();
+        
+        <span class="hljs-keyword">return</span> overlayImage;
+    }
+    
+    - (<span class="hljs-keyword">void</span>)setupBufferWithImage:(<span class="hljs-built_in">UIImage</span> *)image
+    {
+        <span class="hljs-built_in">CGImageRef</span> rawPic = [image <span class="hljs-built_in">CGImage</span>];
+        <span class="hljs-built_in">CFDataRef</span> data = [<span class="hljs-built_in">NSXWatermark</span> copyDataFromUIImage:rawPic];
+        <span class="hljs-built_in">AVCOverlayRawBuffer</span> buf = [<span class="hljs-built_in">NSXWatermark</span> makeBufferFromData:data andImage:rawPic];
+        
+        <span class="hljs-keyword">self</span>.buffer = buf;
+        <span class="hljs-keyword">self</span>.imageDataForBuffer = data;
+        
+        <span class="hljs-built_in">CFRelease</span>(data);
+    }
+    
+    +(<span class="hljs-built_in">CFDataRef</span>)copyDataFromUIImage:(<span class="hljs-built_in">CGImageRef</span>)image
+    {
+        <span class="hljs-built_in">CGDataProviderRef</span> inProvider = <span class="hljs-built_in">CGImageGetDataProvider</span>(image);
+        <span class="hljs-built_in">CFDataRef</span> inBitmapData = <span class="hljs-built_in">CGDataProviderCopyData</span>(inProvider);
+        <span class="hljs-keyword">return</span> inBitmapData;
+    }
+    
+    +(<span class="hljs-built_in">AVCOverlayRawBuffer</span>)makeBufferFromData:(<span class="hljs-built_in">CFDataRef</span>)inBitmapData andImage:(<span class="hljs-built_in">CGImageRef</span>)rawPic
+    {
+        <span class="hljs-built_in">AVCOverlayRawBuffer</span> rawBuf;
+        
+        size_t inBitmapDataBytesPerRow = <span class="hljs-built_in">CGImageGetBytesPerRow</span>(rawPic);
+        
+        <span class="hljs-built_in">UInt8</span> *buffer = (<span class="hljs-built_in">UInt8</span>*)<span class="hljs-built_in">CFDataGetBytePtr</span>(inBitmapData);
+        
+        rawBuf.buffer = buffer;
+        rawBuf.bytesPerRow = (<span class="hljs-keyword">int</span>)inBitmapDataBytesPerRow;
+        rawBuf.bufferType = <span class="hljs-built_in">AVCOverlayBufferTypeBGRA</span>;
+        <span class="hljs-keyword">return</span> rawBuf;
+    }
+    
+    <span class="hljs-keyword">@end</span>
+</code></pre>
+<p>If you want to use a dynamic overlay, e.g. a scoreboard, you can modify the above class (NSXWatermark) like so:</p>
+<pre><code class="hljs css language-objc">...
+<span class="hljs-keyword">@property</span> (<span class="hljs-keyword">strong</span>) <span class="hljs-built_in">NSString</span> *overlayURL;   <span class="hljs-comment">// needs to be set</span>
+<span class="hljs-keyword">@property</span> (<span class="hljs-keyword">nonatomic</span>, <span class="hljs-keyword">strong</span>) <span class="hljs-built_in">NSDate</span> *date;
+<span class="hljs-keyword">@property</span> (<span class="hljs-keyword">nonatomic</span>, <span class="hljs-keyword">strong</span>) <span class="hljs-built_in">UIImage</span> *watermarkHttpImage;
+
+...
+-(<span class="hljs-built_in">AVCOverlayRawBuffer</span>)overlayImageWithStreamTime:(<span class="hljs-built_in">NSTimeInterval</span>)time
+{
+    <span class="hljs-keyword">if</span> (!<span class="hljs-keyword">self</span>.date) {
+        <span class="hljs-keyword">self</span>.date = [<span class="hljs-built_in">NSDate</span> date];
+    }
+    <span class="hljs-built_in">NSTimeInterval</span> timeInterval = time &lt;= <span class="hljs-number">0.6</span> ? <span class="hljs-number">0.6</span> : time;
+    <span class="hljs-built_in">NSTimeInterval</span> passedTime = [[<span class="hljs-built_in">NSDate</span> date] timeIntervalSinceDate:<span class="hljs-keyword">self</span>.date];
+    <span class="hljs-keyword">if</span> (passedTime &gt; timeInterval &amp;&amp; <span class="hljs-keyword">self</span>.overlayURL) {
+
+        [<span class="hljs-keyword">self</span> loadHTTPImageAsync];
+        <span class="hljs-built_in">UIImage</span> *image = [<span class="hljs-keyword">self</span> generateWatermarkWithSize:<span class="hljs-keyword">self</span>.imageSize inBoundingRect:<span class="hljs-keyword">self</span>.overlayBoundingRect];
+        <span class="hljs-keyword">if</span> (image) {
+            [<span class="hljs-keyword">self</span> setupBufferWithImage:image];
+            <span class="hljs-keyword">self</span>.date = [<span class="hljs-built_in">NSDate</span> date];
+        }
+    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-keyword">self</span>.buffer.buffer == <span class="hljs-literal">NULL</span>) {
+        <span class="hljs-built_in">UIImage</span> *image = [<span class="hljs-keyword">self</span> generateWatermarkWithSize:<span class="hljs-keyword">self</span>.imageSize inBoundingRect:<span class="hljs-keyword">self</span>.overlayBoundingRect];
+        <span class="hljs-keyword">if</span> (image) {
+            [<span class="hljs-keyword">self</span> setupBufferWithImage:image];
+            <span class="hljs-keyword">self</span>.date = [<span class="hljs-built_in">NSDate</span> date];
+        }
+    }
+
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">self</span>.buffer;
+}
+
+-(<span class="hljs-built_in">UIImage</span> *)generateWatermarkWithSize:(<span class="hljs-built_in">CGSize</span>)size inBoundingRect:(<span class="hljs-built_in">CGRect</span>)boundingRect
+{
+    ...
+        <span class="hljs-comment">// Dynamic Overlay</span>
+    <span class="hljs-built_in">CGRect</span> dynRealRect;
+    <span class="hljs-built_in">UIImage</span> *dynamicWatermarkImage = <span class="hljs-keyword">self</span>.watermarkHttpImage;
+    <span class="hljs-keyword">if</span> (dynamicWatermarkImage) {
+        <span class="hljs-built_in">CGSize</span> overlaySize = dynamicWatermarkImage.size;
+
+        <span class="hljs-built_in">CGFloat</span> height = size.height / <span class="hljs-number">3</span>;
+        <span class="hljs-keyword">if</span> (overlaySize.height &gt; height) {
+            overlaySize.width = height;
+            overlaySize.height = height;
+        }
+
+        <span class="hljs-built_in">CGRect</span> dynOverlayRect = <span class="hljs-built_in">CGRectMake</span>(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, overlaySize.width, overlaySize.height);
+
+        dynRealRect =  <span class="hljs-built_in">AVMakeRectWithAspectRatioInsideRect</span>(dynamicWatermarkImage.size, dynOverlayRect);
+
+        dynRealRect.origin.y = padding;
+        dynRealRect.origin.x = padding;
+    }
+    ...
+}
+
+-(<span class="hljs-keyword">void</span>)loadHTTPImageAsync {
+    <span class="hljs-built_in">dispatch_async</span>(dispatch_get_global_queue(<span class="hljs-number">0</span>,<span class="hljs-number">0</span>), ^{
+        <span class="hljs-built_in">NSData</span> * data = [[<span class="hljs-built_in">NSData</span> alloc] initWithContentsOfURL: [<span class="hljs-built_in">NSURL</span> URLWithString:<span class="hljs-keyword">self</span>.overlayURL]];
+        <span class="hljs-keyword">if</span> ( data == <span class="hljs-literal">nil</span> )
+            <span class="hljs-keyword">return</span>;
+        <span class="hljs-built_in">dispatch_async</span>(dispatch_get_main_queue(), ^{
+            <span class="hljs-keyword">self</span>.watermarkHttpImage = [<span class="hljs-built_in">UIImage</span> imageWithData: data];
+        });
+    });
+}
+...
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="initwithsession"></a><a href="#initwithsession" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>initWithSession</h3>
+<p>Instead of letting the SDK manage the video and audio input, you can also do that yourself. This is helpful to supply video and audio samples which are not coming from the standard input devices. Or to modify video and/or audio samples before they are used for the stream.</p>
+<p>The SDK provides a separate init method <code>initWithSession</code>.</p>
+<p>An example for a custom capture session, which supplies CVPixelBufferRef's to the SDK:</p>
+<pre><code class="hljs css language-objc"><span class="hljs-class"><span class="hljs-keyword">@interface</span> <span class="hljs-title">CustomCaptureSession</span> : <span class="hljs-title">AVCaptureSession</span></span>
+
+<span class="hljs-keyword">@property</span> (<span class="hljs-keyword">nonatomic</span>, <span class="hljs-keyword">strong</span>) <span class="hljs-built_in">AVCaptureVideoDataOutput</span>* myVideoOutput;
+<span class="hljs-keyword">@property</span> (<span class="hljs-keyword">nonatomic</span>, <span class="hljs-keyword">strong</span>) <span class="hljs-built_in">AVCaptureAudioDataOutput</span>* myAudioOutput;
+
+...
+<span class="hljs-keyword">@end</span>
+
+<span class="hljs-class"><span class="hljs-keyword">@implementation</span> <span class="hljs-title">CustomCaptureSession</span></span>
+
+-(<span class="hljs-keyword">void</span>) addOutput:(<span class="hljs-built_in">AVCaptureOutput</span> *)output
+{
+    <span class="hljs-keyword">if</span> ([output isKindOfClass:[<span class="hljs-built_in">AVCaptureVideoDataOutput</span> <span class="hljs-keyword">class</span>]]) {
+        <span class="hljs-keyword">self</span>.myVideoOutput = (<span class="hljs-built_in">AVCaptureVideoDataOutput</span>*)output;
+    }<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>([output isKindOfClass:[<span class="hljs-built_in">AVCaptureAudioDataOutput</span> <span class="hljs-keyword">class</span>]])
+    {
+        *<span class="hljs-keyword">self</span>.myAudioOutput = (<span class="hljs-built_in">AVCaptureAudioDataOutput</span>*)output; * <span class="hljs-keyword">if</span> you want to use a custom audio capture device
+        [<span class="hljs-keyword">super</span> addOutput: output]; <span class="hljs-comment">// uses the standard microphone of the iOS device</span>
+    }
+}
+
+-(<span class="hljs-keyword">void</span>) addInput:(<span class="hljs-built_in">AVCaptureInput</span> *)input
+{
+    [<span class="hljs-keyword">super</span> addInput:input]; <span class="hljs-comment">// this is required, because nanostreamAVC checks the available inputs</span>
+}
+
+-(<span class="hljs-keyword">void</span>) startRunning
+{
+    [<span class="hljs-keyword">super</span> startRunning];
+}
+
+<span class="hljs-comment">// this method has to be called periodically - e.g. with CADisplayLink</span>
+-(<span class="hljs-keyword">void</span>) supplyCMSampleBufferRef
+{
+    CVPixelBufferRef buffer = [<span class="hljs-keyword">self</span> getCVPixelBufferRef]; <span class="hljs-comment">// get the CVPixelBufferRef from somewhere</span>
+
+    <span class="hljs-built_in">CMSampleBufferRef</span> newSampleBuffer = <span class="hljs-literal">NULL</span>;
+    <span class="hljs-built_in">CMSampleTimingInfo</span> timingInfo = kCMTimingInfoInvalid;
+    timingInfo.duration = <span class="hljs-built_in">CMTimeMake</span>(<span class="hljs-number">33</span>, <span class="hljs-number">1000</span>);    <span class="hljs-comment">// assuming 30fps, change if otherwise</span>
+    timingInfo.decodeTimeStamp = <span class="hljs-built_in">CMTimeMake</span>(ts, <span class="hljs-number">1000</span>);    <span class="hljs-comment">// timestamp information required</span>
+    timingInfo.presentationTimeStamp = timingInfo.decodeTimeStamp;
+
+    <span class="hljs-built_in">CMVideoFormatDescriptionRef</span> videoInfo = <span class="hljs-literal">NULL</span>;
+    <span class="hljs-built_in">CMVideoFormatDescriptionCreateForImageBuffer</span>(<span class="hljs-literal">NULL</span>, buffer, &amp;videoInfo);
+
+    <span class="hljs-built_in">CMSampleBufferCreateForImageBuffer</span>(kCFAllocatorDefault,buffer,<span class="hljs-literal">true</span>,<span class="hljs-literal">NULL</span>,<span class="hljs-literal">NULL</span>,videoInfo,&amp;timingInfo,&amp;newSampleBuffer);
+
+    <span class="hljs-comment">// the following line submits the new CMSampleBufferRef to the nanostreamAVC lib</span>
+    [<span class="hljs-keyword">self</span>.myVideoOutput.sampleBufferDelegate captureOutput:<span class="hljs-keyword">self</span>.myVideoOutput didOutputSampleBuffer:newSampleBuffer fromConnection:<span class="hljs-literal">nil</span>];
+
+    <span class="hljs-built_in">CFRelease</span>(videoInfo);
+    <span class="hljs-built_in">CFRelease</span>(buffer);
+    <span class="hljs-built_in">CFRelease</span>(newSampleBuffer);
+
+}
+
+<span class="hljs-keyword">@end</span>
+
+<span class="hljs-comment">// you need to use initWithSession for nanostreamAVC to use your custom session</span>
+...
+session = [[CustomCaptureSession alloc] init];
+
+<span class="hljs-comment">// use microphone from iOS device as audio source</span>
+<span class="hljs-built_in">NSError</span> *error;
+<span class="hljs-built_in">AVCaptureInput</span> *audioInput = [<span class="hljs-built_in">AVCaptureDeviceInput</span> deviceInputWithDevice: [<span class="hljs-built_in">AVCaptureDevice</span> defaultDeviceWithMediaType:<span class="hljs-built_in">AVMediaTypeAudio</span>] error: &amp;error];
+
+<span class="hljs-keyword">if</span>(audioInput != <span class="hljs-literal">nil</span>)
+{
+    [session addInput: audioInput]; <span class="hljs-comment">// if the stream should be video only, don't add an audioInput</span>
+}
+
+[session startRunning];
+
+...
+<span class="hljs-keyword">self</span>.stream = [[nanostreamAVC alloc] initWithSession: session settings: nAVCSettings errorListener: <span class="hljs-keyword">self</span>];
+...
+
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="specific-use-cases"></a><a href="#specific-use-cases" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Specific use cases</h2>
+<h3><a class="anchor" aria-hidden="true" id="stream-from-a-gopro"></a><a href="#stream-from-a-gopro" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Stream from a GoPro</h3>
+<p>Instead of using the build-in camera and microphone of an iOS device, it is also possible to use external devices like a GoPro camera.</p>
+<p>To use this feature you will need a special build of our SDK. Please contact us for more information.</p>
+<p>The following pseudo code shows how to use a GoPro camera as source:</p>
+<pre><code class="hljs css language-objc"><span class="hljs-meta">#import <span class="hljs-meta-string">"nanostreamAVCExternals.h"</span></span>
+
+<span class="hljs-class"><span class="hljs-keyword">@interface</span> <span class="hljs-title">YourLiveViewController</span> `&lt;<span class="hljs-title">nanostreamEventListener</span>, <span class="hljs-title">ExtendedCaptureSessionStatusListener</span>&gt;`</span>
+...
+<span class="hljs-keyword">@property</span> (<span class="hljs-keyword">nonatomic</span>, <span class="hljs-keyword">strong</span>) nanostreamAVC *stream;
+<span class="hljs-keyword">@property</span> (<span class="hljs-keyword">strong</span>) <span class="hljs-built_in">AVCaptureSession</span> *session;
+<span class="hljs-keyword">@property</span> (<span class="hljs-keyword">nonatomic</span>, <span class="hljs-keyword">strong</span>) <span class="hljs-keyword">IBOutlet</span> <span class="hljs-built_in">UIView</span> *cameraView;
+...
+<span class="hljs-keyword">@end</span>
+
+<span class="hljs-class"><span class="hljs-keyword">@implementation</span> <span class="hljs-title">YourLiveViewController</span></span>
+
+...
+
+<span class="hljs-keyword">if</span> (<span class="hljs-keyword">self</span>.cameraSource == GoProHero3) {
+    <span class="hljs-keyword">self</span>.session = [[HLSCaptureSession alloc] initWithPreview: cameraView andStatusListener: <span class="hljs-keyword">self</span> andUDP: <span class="hljs-literal">NO</span>];
+
+}
+<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-keyword">self</span>.cameraSource == GoProHero4) {
+    <span class="hljs-keyword">self</span>.session = [[HLSCaptureSession alloc] initWithPreview: cameraView andStatusListener: <span class="hljs-keyword">self</span> andUDP: <span class="hljs-literal">YES</span>];
+}
+
+[<span class="hljs-keyword">self</span>.session startRunning];
+
+<span class="hljs-comment">// set up settings for nanostreamAVC</span>
+...
+
+<span class="hljs-keyword">self</span>.stream = [[nanostreamAVC alloc] initWithSession: <span class="hljs-keyword">self</span>.session
+                                            settings: nAVCSettings
+                                       errorListener: <span class="hljs-keyword">self</span>];
+
+...
+
+<span class="hljs-keyword">@end</span>
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="stream-from-a-drone"></a><a href="#stream-from-a-drone" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Stream from a Drone</h3>
+<p>Get in touch with us to learn how to send a live stream from a Drone (Parrot Bebop or DJI)</p>
+<h2><a class="anchor" aria-hidden="true" id="possible-issues"></a><a href="#possible-issues" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Possible Issues</h2>
+<h3><a class="anchor" aria-hidden="true" id="general"></a><a href="#general" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>General</h3>
+<p>For older versions of the sdk, without support for arm64, architecture in Xcode has to be set to armv7 and/or armv7s. This works also for newer iOS-Devcies like iPhone 5s.
+This is not required for newer sdk versions, which also support arm64.</p>
+<h3><a class="anchor" aria-hidden="true" id="compiler-linker"></a><a href="#compiler-linker" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Compiler/Linker</h3>
+<h4><a class="anchor" aria-hidden="true" id="libstdc"></a><a href="#libstdc" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>libstdc++</h4>
+<p>If there are linker errors with &quot;std::&quot;: &quot;symbol(s) not found for architecture&quot;, make sure that you added the libraries &quot;libstdc++.dylib&quot; and &quot;libc++.dylib&quot; to your project.</p>
+<p>Due to a bug in Xcode, depending on the selected Base SDK and deployment target, there might be still linker errors regarding &quot;std&quot;. In this case you need to add a specific version of the libstdc++ to your project, e.g.: libstdc++-6.0.9.dylib instead of libstdc++.dylib</p>
+<h4><a class="anchor" aria-hidden="true" id="undefined-symbols-for-parrot-dji"></a><a href="#undefined-symbols-for-parrot-dji" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Undefined Symbols for Parrot &amp; DJI</h4>
+<p><strong>The following part is only relevant for SDK versions from 3.3.x to 4.1.x.</strong>
+As of version 4.2.x the drone dependencies are removed from the standard SDK package.</p>
+<p>It might be possible that there are linker errors for the classes</p>
+<ul>
+<li><p>ParrotBebopCaptureSession or</p></li>
+<li><p>DJIPhantom2CaptureSession</p></li>
+</ul>
+<p>Generally, if the Parrot &amp; DJI extensions are not used, the symbols should be stripped automatically by Xcode and you do not need to link the frameworks.
+However this is not the case when the linker flag &quot;-ObjC&quot; is used in the app project. This causes the linker to load all symbols included in all linked object files (including the Parrot &amp; DJI symbols). This prevents the automatic stripping.</p>
+<p>To use our library without Parrot &amp; DJI, either remove the &quot;-ObjC&quot; linker flag from the project or replace the &quot;-ObjC&quot; linker flag with the &quot;-force_load&quot; flag for each library that you want to use. Do not use &quot;-force_load&quot; with libnanostreamAVC.a.
+For examples see <a href="http://stackoverflow.com/questions/11254269/using-the-force-load-linker-flag-with-restkit-ios">http://stackoverflow.com/questions/11254269/using-the-force-load-linker-flag-with-restkit-ios</a></p>
+<h4><a class="anchor" aria-hidden="true" id="duplicate-symbols"></a><a href="#duplicate-symbols" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Duplicate Symbols</h4>
+<p>If there are duplicate symbol errors, check the &quot;Other Linker Flags&quot; setting. Select a target, go to &quot;Build Settings&quot; and type into the search field &quot;Other Linker Flags&quot;.</p>
+<p>Check if the linker flag &quot;-all_load&quot; is used. Either remove the flag or if you have to use it, consider using the flag &quot;-force_load&quot; or &quot;-ObjC&quot; instead.</p>
+<p>See also here for more information on the &quot;-force_load&quot; flag: <a href="http://stackoverflow.com/questions/3354864/xcode-project-target-settings-syntax-for-linker-flag-force-load-on-iphone">http://stackoverflow.com/questions/3354864/xcode-project-target-settings-syntax-for-linker-flag-force-load-on-iphone</a></p>
+<p>Check also this information if you have a &quot;selector not recognized&quot; runtime exception: <a href="https://developer.apple.com/library/mac/qa/qa1490/_index.html">https://developer.apple.com/library/mac/qa/qa1490/_index.html</a></p>
+<h3><a class="anchor" aria-hidden="true" id="breakpoints"></a><a href="#breakpoints" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Breakpoints</h3>
+<p>If you debug your application, it is possible that breakpoints are being hit due to internal exceptions. Exceptions on the SDK level are handled in the SDK and do not affect the workflow of your application.</p>
+<p>You can prevent the breakpoint from pausing the workflow of your application, if you use the right settings for the breakpoint.
+The default setting is most likely that every exception causes a break.
+To change that, use the settings from the following screenshot:</p>
+<p><img src="docs/nanostream/ios/img/screenshot_exception_breakpoint.png" alt="Screenshot"></p>
+<p>This way only Objective-C exceptions will be catched and C++ exceptions will be ignored.</p>
+<h3><a class="anchor" aria-hidden="true" id="crashes"></a><a href="#crashes" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Crashes</h3>
+<h4><a class="anchor" aria-hidden="true" id="calayergetdelegate-calayergetsuperlayer-other-calayer"></a><a href="#calayergetdelegate-calayergetsuperlayer-other-calayer" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>CALayerGetDelegate / CALayerGetSuperlayer / Other CALayer</h4>
+<p>If there are crashes occurring in your app that include above symbols in the stack trace and are otherwise not obvious, check to see if you added a subviews to the preview view. The UIView instance that is passed to</p>
+<pre><code class="hljs css language-objc">    -[RtmpSourceCaptureSession initWithPreview:andStatusListener:andLogLevel:]
+</code></pre>
+<p>and</p>
+<pre><code class="hljs css language-objc">-[nanostreamAVC initWithSettings:uiPreview:errorListener:]
+</code></pre>
+<p>cannot contain any subviews (UIButtons or otherwise).</p>
+<h2><a class="anchor" aria-hidden="true" id="logging-information"></a><a href="#logging-information" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Logging Information</h2>
+<p>If you encounter a problem with the nanostreamAVC library and you want to report the problem, log files will help us to comprehend the problem.</p>
+<p>Please use the following steps to create the log files:</p>
+<ul>
+<li><p><strong>for the encoder (nanostreamAVC)</strong>: enable logging for the library with the method &quot;SetLogLevel&quot;, use LogLevelCustomSupport (if not available use LogLevelVerbose): <code>[self.nAVC SetLogLevel: LogLevelCustomSupport]; // set the log level before the method &quot;start&quot; is invoked</code></p></li>
+<li><p><strong>for the player (RtmpSourceCaptureSession)</strong>: the log level has to be set in the constructor: <code>self.session = [[RtmpSourceCaptureSession alloc] initWithPreview:self.playerView andStatusListener:self andLogLevel:LogLevelCustomSupport];</code></p></li>
+<li><p>try to reproduce the problem</p></li>
+<li><p>download the app container (for your app) from the iOS device with Xcode, as explained here: <a href="http://help.apple.com/xcode/mac/8.0/#/dev816c242e1">http://help.apple.com/xcode/mac/8.0/#/dev816c242e1</a></p></li>
+<li><p>in Finder right click on the downloaded container and select &quot;Show Package Contents&quot;</p></li>
+<li><p>send us <strong>all</strong> log files located (in the container) in the folder &quot;/AppData/Library/Caches/Logs/&quot;</p></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="crash-logs"></a><a href="#crash-logs" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Crash Logs</h2>
+<p>If you encounter a crash, please send us the crash log as explained in the following steps:</p>
+<ul>
+<li>Plug in the device and open Xcode</li>
+<li>Choose Window -&gt; Devices from the menu bar</li>
+<li>Under the DEVICES section in the left column, choose the device</li>
+<li>To see the device console, click the up-triangle at the bottom left of the right hand panel</li>
+<li>Click the down arrow on the bottom right to save the console as a file</li>
+<li>To see crash logs, select the View Device Logs button under the Device Information section on the right hand panel</li>
+<li><strong>Wait until the Scanning Process is complete</strong>, this can take a while (there should be a text at the top of the Window, something like &quot;Scanning '...crash'...&quot;)</li>
+<li>Use the column &quot;Date/Time&quot; to order the crashes after dates.</li>
+<li>Find your app in the Process column and select the Crash log to see the contents.</li>
+<li>To save a crash log, right click the entry on the left column and choose &quot;Export Log&quot;</li>
+</ul>
+<p>(Taken from <a href="https://developer.apple.com/library/ios/qa/qa1747/_index.html">https://developer.apple.com/library/ios/qa/qa1747/_index.html</a>)</p>
+</span></div></article></div><div class="docs-prevnext"></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#purpose">Purpose</a></li><li><a href="#contents">Contents</a></li><li><a href="#requirements">Requirements</a></li><li><a href="#getting-started">Getting Started</a><ul class="toc-headings"><li><a href="#preparation">Preparation</a></li><li><a href="#check-library-version">Check library version</a></li><li><a href="#initialize-the-library">Initialize the library</a></li><li><a href="#start-a-stream">Start a stream</a></li><li><a href="#stop-a-running-stream">Stop a running stream</a></li></ul></li><li><a href="#live-playback">Live Playback</a><ul class="toc-headings"><li><a href="#initialize-the-library-for-playback">Initialize the library for playback</a></li><li><a href="#start-playback">Start playback</a></li></ul></li><li><a href="#advanced-settings-usage">Advanced Settings/Usage</a><ul class="toc-headings"><li><a href="#meaning-of-events-and-errors-nanostreamevent">Meaning of Events and Errors (nanostreamEvent)</a></li><li><a href="#switch-camera">Switch Camera</a></li><li><a href="#orientation">Orientation</a></li><li><a href="#stream-type">Stream Type</a></li><li><a href="#zoom">Zoom</a></li><li><a href="#server-authentication">Server Authentication</a></li><li><a href="#cropping">Cropping</a></li><li><a href="#local-recording">Local Recording</a></li><li><a href="#adaptive-bitrate">Adaptive Bitrate</a></li><li><a href="#statistics-during-streaming">Statistics during streaming</a></li><li><a href="#measuring-the-available-bandwidth">Measuring the available bandwidth</a></li><li><a href="#snaphot-from-the-current-stream">Snaphot from the current stream</a></li><li><a href="#overlay-watermark">Overlay/Watermark</a></li><li><a href="#initwithsession">initWithSession</a></li></ul></li><li><a href="#specific-use-cases">Specific use cases</a><ul class="toc-headings"><li><a href="#stream-from-a-gopro">Stream from a GoPro</a></li><li><a href="#stream-from-a-drone">Stream from a Drone</a></li></ul></li><li><a href="#possible-issues">Possible Issues</a><ul class="toc-headings"><li><a href="#general">General</a></li><li><a href="#compiler-linker">Compiler/Linker</a></li><li><a href="#breakpoints">Breakpoints</a></li><li><a href="#crashes">Crashes</a></li></ul></li><li><a href="#logging-information">Logging Information</a></li><li><a href="#crash-logs">Crash Logs</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/docusaurus.svg" alt="Documentation" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/en/doc1.html">Getting Started (or other categories)</a><a href="/docs/en/doc2.html">Guides (or other categories)</a><a href="/docs/en/doc3.html">API Reference (or other categories)</a></div><div><h5>Community</h5><a href="/en/users.html">User Showcase</a><a href="http://stackoverflow.com/questions/tagged/" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://discordapp.com/">Project Chat</a><a href="https://twitter.com/" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="/blog">Blog</a><a href="https://github.com/">GitHub</a><a class="github-button" href="https://github.com/nanocosmos/demo" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://code.facebook.com/projects/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2019 nanocosmos GmbH</section></footer></div></body></html>
