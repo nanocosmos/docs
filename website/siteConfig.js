@@ -15,7 +15,7 @@ const users = [
     // You will need to prepend the image path with your baseUrl
     // if it is not '/', like: '/test-site/img/docusaurus.svg'.
     image: '/img/logo-nav.png',
-    infoLink: 'https://nanocosmos.de',
+    infoLink: 'https://www.nanocosmos.de',
     pinned: true,
   },
     {
@@ -23,7 +23,7 @@ const users = [
     // You will need to prepend the image path with your baseUrl
     // if it is not '/', like: '/test-site/img/docusaurus.svg'.
     image: '/img/logo-nav.png',
-    infoLink: 'https://nanocosmos.de',
+    infoLink: 'https://www.nanocosmos.de',
     pinned: true,
   },
     {
@@ -31,7 +31,7 @@ const users = [
     // You will need to prepend the image path with your baseUrl
     // if it is not '/', like: '/test-site/img/docusaurus.svg'.
     image: '/img/logo-nav.png',
-    infoLink: 'https://nanocosmos.de',
+    infoLink: 'https://www.nanocosmos.de',
     pinned: true,
   },
 ];
@@ -39,7 +39,9 @@ const users = [
 const siteConfig = {
   title: 'Documentation', // Title for your website.
   tagline: 'A website for testing',
-  url: 'https://nanocosmos.de', // Your website URL
+  url: 'https://docs.nanocosmos.de/', // Your website URL
+  //baseUrl: './', // Base URL for your project */
+  //baseUrl: '/docs', // Base URL for your project */
   baseUrl: '/', // Base URL for your project */
   // For github.io type URLs, you would set the url and baseUrl like:
   //   url: 'https://facebook.github.io',
@@ -55,10 +57,10 @@ const siteConfig = {
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
     {doc: 'nanoplayer/nanoplayer_introduction', label: 'H5Live Player'},
-    {doc: 'cloud', label: 'Cloud'},
-    {doc: 'webrtc', label: 'WebRTC'},
-    {doc: 'sdks', label: 'Apps and SDKs'},
-    {doc: 'faq/encoding_and_streaming', label: 'FAQ'}
+    //{doc: 'cloud', label: 'Cloud'},
+    //{doc: 'webrtc', label: 'WebRTC'},
+    //{doc: 'sdks', label: 'Apps and SDKs'},
+    {doc: 'faq/faq_streaming', label: 'FAQ'}
   ],
 
   // If you have users set above, you add it here:
