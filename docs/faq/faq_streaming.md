@@ -1,5 +1,5 @@
 ---
-id: encoding_and_streaming
+id: faq_streaming
 title: Live Encoding and Streaming
 sidebar_label: Live Encoding and Streaming
 ---
