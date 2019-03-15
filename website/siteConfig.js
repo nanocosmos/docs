@@ -44,7 +44,8 @@ const siteConfig = {
   // For github.io type URLs, you would set the url and baseUrl like:
   //   url: 'https://facebook.github.io',
   //   baseUrl: '/test-site/',
-
+  cname: 'docs.nanocosmos.de',
+  
   // Used for publishing and more
   projectName: 'docs',
   organizationName: 'nanocosmos',
@@ -54,11 +55,11 @@ const siteConfig = {
 
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
-    {doc: 'nanoplayer/nanoplayer_introduction', label: 'H5Live Player'},
+    {doc: 'cloud/cloud_introduction', label: 'nanoStream Cloud'},
     //{doc: 'cloud', label: 'Cloud'},
+    {doc: 'nanoplayer/nanoplayer_introduction', label: 'H5Live Player'},
+    {doc: 'webrtc/nanostream_webrtc_introduction', label: 'WebRTC.live'},
     //{doc: 'webrtc', label: 'WebRTC'},
-    {doc: 'cloud/cloud_introduction', label: 'Cloud Intro'},
-    {doc: 'webrtc/nanostream_webrtc_introduction', label: 'WebRTC Intro'},
     {doc: 'nanostream/nanostream', label: 'nanoStream Apps and SDKs'},
     {doc: 'faq/faq_streaming', label: 'FAQ'}
   ],
