@@ -1,0 +1,40 @@
+/* your custom css */
+
+details > summary > strong {
+	color: #ed7d0e;
+	cursor: pointer;
+}
+
+.siteNavGroupActive, .siteNavItemActive{
+	color: white;
+}
+
+.navigationSlider .slidingNav ul{
+	background-color: #ed7d0e;
+	color: rgba(255,255,255,0.6);
+}
+/*
+blockquote{
+	background-color: rgba(237, 125, 14, 0.2);
+	border-left: 8px solid #ed7d0e;
+}
+*/
+
+img.logo {
+	margin-right: 25px !important;
+}
+
+@media only screen and (min-device-width: 360px) and (max-device-width: 736px) {
+}
+
+@media only screen and (min-width: 1024px) {
+}
+
+@media only screen and (max-width: 1023px) {
+}
+
+@media only screen and (min-width: 1400px) {
+}
+
+@media only screen and (min-width: 1500px) {
+}
