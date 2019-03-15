@@ -1,64 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-    
-    <url>
-     <loc>None/</loc>
-     <lastmod>2016-04-12</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    
-
-    
-    <url>
-     <loc>None/about/</loc>
-     <lastmod>2016-04-12</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    
-
-    
-        
-    <url>
-     <loc>None/nanostream/web/nanostream-4.x-web-api/</loc>
-     <lastmod>2016-04-12</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>None/nanostream/ios/nanostream-ios-sdk/</loc>
-     <lastmod>2016-04-12</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>None/nanostream/macos/nanostream-macos-sdk/</loc>
-     <lastmod>2016-04-12</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>None</loc>
-     <lastmod></lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    
-
-    
-        
-    <url>
-     <loc>None/bintu/android/bintu-android-sdk/</loc>
-     <lastmod>2016-04-12</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>None/bintu/</loc>
-     <lastmod>2016-04-12</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    
-
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+<url> <loc>https://nanocosmos.de/help</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> <xhtml:link rel="alternate" hreflang="en" href="https://nanocosmos.de/en/help" /> </url>
+<url> <loc>https://nanocosmos.de/index</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> <xhtml:link rel="alternate" hreflang="en" href="https://nanocosmos.de/en/index" /> </url>
+<url> <loc>https://nanocosmos.de/users</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> <xhtml:link rel="alternate" hreflang="en" href="https://nanocosmos.de/en/users" /> </url>
+<url> <loc>https://nanocosmos.de/blog/2017/10/24/new-version-1.0.0</loc> <changefreq>weekly</changefreq> <priority>0.3</priority> </url>
+<url> <loc>https://nanocosmos.de/blog/2017/09/26/adding-rss</loc> <changefreq>weekly</changefreq> <priority>0.3</priority> </url>
+<url> <loc>https://nanocosmos.de/blog/2017/09/25/testing-rss</loc> <changefreq>weekly</changefreq> <priority>0.3</priority> </url>
+<url> <loc>https://nanocosmos.de/blog/2017/04/10/blog-post-two</loc> <changefreq>weekly</changefreq> <priority>0.3</priority> </url>
+<url> <loc>https://nanocosmos.de/blog/2016/03/11/blog-post</loc> <changefreq>weekly</changefreq> <priority>0.3</priority> </url>
+<url> <loc>https://nanocosmos.de/docs/faq/3d_stereo_vr</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://nanocosmos.de/docs/faq/3d_stereo_vr" /> </url>
+<url> <loc>https://nanocosmos.de/docs/faq/adv_codec_config</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://nanocosmos.de/docs/faq/adv_codec_config" /> </url>
+<url> <loc>https://nanocosmos.de/docs/faq/devices_support</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://nanocosmos.de/docs/faq/devices_support" /> </url>
+<url> <loc>https://nanocosmos.de/docs/faq/installation_and_setup</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://nanocosmos.de/docs/faq/installation_and_setup" /> </url>
+<url> <loc>https://nanocosmos.de/docs/faq/purchase_and_license</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://nanocosmos.de/docs/faq/purchase_and_license" /> </url>
+<url> <loc>https://nanocosmos.de/docs/faq/faq_streaming</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://nanocosmos.de/docs/faq/faq_streaming" /> </url>
+<url> <loc>https://nanocosmos.de/docs/faq/programming_sdk_api</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://nanocosmos.de/docs/faq/programming_sdk_api" /> </url>
+<url> <loc>https://nanocosmos.de/docs/faq/programming</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://nanocosmos.de/docs/faq/programming" /> </url>
+<url> <loc>https://nanocosmos.de/docs/nanoplayer/nanoplayer_api_class</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://nanocosmos.de/docs/nanoplayer/nanoplayer_api_class" /> </url>
+<url> <loc>https://nanocosmos.de/docs/nanoplayer/nanoplayer_api_events</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://nanocosmos.de/docs/nanoplayer/nanoplayer_api_events" /> </url>
+<url> <loc>https://nanocosmos.de/docs/nanoplayer/nanoplayer_api_global</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://nanocosmos.de/docs/nanoplayer/nanoplayer_api_global" /> </url>
+<url> <loc>https://nanocosmos.de/docs/nanoplayer/nanoplayer_blogposts</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://nanocosmos.de/docs/nanoplayer/nanoplayer_blogposts" /> </url>
+<url> <loc>https://nanocosmos.de/docs/nanoplayer/nanoplayer_getting_started</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://nanocosmos.de/docs/nanoplayer/nanoplayer_getting_started" /> </url>
+<url> <loc>https://nanocosmos.de/docs/nanoplayer/nanoplayer_gettingstarted_frameworks</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://nanocosmos.de/docs/nanoplayer/nanoplayer_gettingstarted_frameworks" /> </url>
+<url> <loc>https://nanocosmos.de/docs/nanoplayer/nanoplayer_introduction</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://nanocosmos.de/docs/nanoplayer/nanoplayer_introduction" /> </url>
+<url> <loc>https://nanocosmos.de/docs/nanoplayer/nanoplayer_supported_browsers</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://nanocosmos.de/docs/nanoplayer/nanoplayer_supported_browsers" /> </url>
+<url> <loc>https://nanocosmos.de/docs/nanoplayer/nanoplayer_token_security</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://nanocosmos.de/docs/nanoplayer/nanoplayer_token_security" /> </url>
 </urlset>

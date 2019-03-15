@@ -1,0 +1,117 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Capture Devices and Camera Support · Documentation</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;p&gt;&lt;details&gt;&lt;summary&gt;&lt;strong&gt;Which capture cards are compatible with the nanoStream product?&lt;/strong&gt;&lt;/summary&gt;&lt;/p&gt;
+"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Capture Devices and Camera Support · Documentation"/><meta property="og:type" content="website"/><meta property="og:url" content="https://nanocosmos.de/index.html"/><meta property="og:description" content="&lt;p&gt;&lt;details&gt;&lt;summary&gt;&lt;strong&gt;Which capture cards are compatible with the nanoStream product?&lt;/strong&gt;&lt;/summary&gt;&lt;/p&gt;
+"/><meta property="og:image" content="https://nanocosmos.de/img/docusaurus.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://nanocosmos.de/img/docusaurus.png"/><link rel="shortcut icon" href="/img/favicon_nano.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/nanocosmos_header_logo.png" alt="Documentation"/><h2 class="headerTitleWithLogo">Documentation</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/docs/nanoplayer/nanoplayer_introduction" target="_self">H5Live Player</a></li><li class=""><a href="/docs/faq/faq_streaming" target="_self">FAQ</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>Live Encoding and Streaming</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Live Encoding and Streaming</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/faq/3d_stereo_vr">3D / Stereo / VR / 360</a></li><li class="navListItem"><a class="navItem" href="/docs/faq/programming_sdk_api">Programming / SDK / API</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/faq/devices_support">Capture Devices and Camera Support</a></li><li class="navListItem"><a class="navItem" href="/docs/faq/adv_codec_config">Advanced Codec Configuration</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Purchase and License</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/faq/purchase_and_license">Purchase and License</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Windows Application, SDK, Codecs Installation/Settings</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/faq/installation_and_setup">Installation and Setup</a></li><li class="navListItem"><a class="navItem" href="/docs/faq/programming">Programming</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Capture Devices and Camera Support</h1></header><article><div><span><p><details><summary><strong>Which capture cards are compatible with the nanoStream product?</strong></summary></p>
+<p>Basically every capture card should be compatible dependent on the driver architecture. <code>Blackmagic design cards</code> proved to be working well with our product.</p>
+<blockquote>
+<p>For Windows, the driver needs to be <code>DirectShow</code> compatible which is usually the case.</p>
+</blockquote>
+<blockquote>
+<p>For MacOS, either <code>AVFoundation</code> or <code>Quicktime</code> compatible drivers can be used.</p>
+</blockquote>
+<p>!!! Todo: Please contact us for details and specific support. !! CONTACT LINK
+</details></p>
+<p><details><summary><strong>Which cameras are compatible with the nanoStream product?</strong></summary></p>
+<p>Basically every camera which has a compatible driver installed can be used.</p>
+<p>There is a range of cameras which are tested in our lab and verified.</p>
+<p><strong>Our recommendations</strong>:</p>
+<ul>
+<li>Web cams: <code>Logitech</code> or <code>Microsoft</code></li>
+<li>Studio based encoding <code>Blackmagic Decklink</code> and <code>Intensity Osprey</code>
+</details></li>
+</ul>
+<p><details><summary><strong>Can I stream from an IP camera?</strong></summary></p>
+<p>It depends, if the drivers for the IP camera supports <code>directshow</code>. For instance IP cameras from axis are supported.
+We can also provide custom development for unsupported IP cameras.
+</details></p>
+<p><details><summary><strong>Devices and cameras supported for Android and iOS?</strong></summary></p>
+<h4><a class="anchor" aria-hidden="true" id="web-applications-nanostream-h5live"></a><a href="#web-applications-nanostream-h5live" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Web Applications / nanoStream H5Live</h4>
+<p><strong>nanoStream H5Live Player</strong></p>
+<p>nanoStream H5Live player is compatible to most HTML5 browsers, either based on - <code>ULL HLS</code> (Safari/iOS) - <code>MSE</code> (other browsers)</p>
+<p>Known to work for H5Live plugin-free are <code>Chrome</code>, <code>Firefox</code>, <code>Safari</code>, <code>Edge</code> and <code>IE</code></p>
+<p>For Windows 7 / IE there is a Flash player fallback</p>
+<blockquote>
+<p>Note: some builtin browsers, especially on Android, do not fully support HTML5. This might &gt;affect builtin Samsung browsers. <strong>We recommend using Chrome.</strong></p>
+</blockquote>
+<p><strong>nanoStream WebRTC.live Broadcaster</strong></p>
+<p>Most browsers supporting the latest HTML5 WebRTC standards should work.
+Apple introduced WebRTC support end 2017 for iOS/Safari, and the WebRTC standard is not fully finalized yet, so there might be specific issues on specific devices. Please contact us for details.</p>
+<h4><a class="anchor" aria-hidden="true" id="native-applications-nanostream-sdks"></a><a href="#native-applications-nanostream-sdks" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Native Applications / nanoStream SDKs</h4>
+<p><strong>nanoStream native SDK iOS</strong></p>
+<p>All iOS devices running <code>iOS8 and higher</code> should be compatible with nanoStream Live Encoder for iOS. It is recommended to use at least <code>iPhone 5s or higher</code> with the latest updates available.</p>
+<p><strong>nanoStream native SDK for Android</strong></p>
+<p>min. required Android version is <code>4.1</code> Recommended Android version is <code>4.4</code></p>
+<p><strong>Compatible devices for Android:</strong></p>
+<p>There is a wide range of Android devices known to work with nanoStream Live Encoder. Here is a small excerpt:</p>
+<ul>
+<li>Samsung Galaxy S</li>
+<li>Google/HTC/LG Nexus</li>
+<li>Samsung Galaxy Tab</li>
+<li>Sony XPeria Z1 mini and higher (Z3, etc)</li>
+<li>Asus Iconia Tab</li>
+<li>Amazon Fire HD</li>
+<li>LG G3</li>
+<li>HTC One</li>
+</ul>
+<blockquote>
+<p><strong>There is specific support for region specific devices (e.g. East Asia), dependent on your &gt;support level agreement. Please contact us for details.</strong></p>
+</blockquote>
+<p></details></p>
+<p><details><summary><strong>Are there any drawbacks when using deinterlacing for non-interlaced material?</strong></summary></p>
+<p>The drawbacks of having deinterlacing turned on all the time are:</p>
+<ul>
+<li>degraded picture quality for non-interlaced material (The picture quality degration is dependent on the deinterlacer algorithm. Using a good algorithm, quality should not be affected.)</li>
+<li>higher cpu load (the amount of extra cpu time required depends on the algorithm used for deinterlacing - algorithm requiring more cpu time produce better results)</li>
+</ul>
+<p>For detailed explanation <a href="http://www.100fps.com/video_resolution_vs_fluidity.htm">click here</a></p>
+<p></details></p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/faq/programming_sdk_api"><span class="arrow-prev">← </span><span>Programming / SDK / API</span></a><a class="docs-next button" href="/docs/faq/adv_codec_config"><span>Advanced Codec Configuration</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/docusaurus.svg" alt="Documentation" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/en/doc1.html">Getting Started (or other categories)</a><a href="/docs/en/doc2.html">Guides (or other categories)</a><a href="/docs/en/doc3.html">API Reference (or other categories)</a></div><div><h5>Community</h5><a href="/en/users.html">User Showcase</a><a href="http://stackoverflow.com/questions/tagged/" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://discordapp.com/">Project Chat</a><a href="https://twitter.com/" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="/blog">Blog</a><a href="https://github.com/">GitHub</a><a class="github-button" href="https://github.com/nanocosmos/demo" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://code.facebook.com/projects/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2019 nanocosmos GmbH</section></footer></div></body></html>

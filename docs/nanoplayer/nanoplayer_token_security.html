@@ -1,0 +1,145 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Secure playback with H5Live · Documentation</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;h2&gt;&lt;a class=&quot;anchor&quot; aria-hidden=&quot;true&quot; id=&quot;encrypted-playback&quot;&gt;&lt;/a&gt;&lt;a href=&quot;#encrypted-playback&quot; aria-hidden=&quot;true&quot; class=&quot;hash-link&quot;&gt;&lt;svg class=&quot;hash-link-icon&quot; aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Encrypted playback&lt;/h2&gt;
+"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Secure playback with H5Live · Documentation"/><meta property="og:type" content="website"/><meta property="og:url" content="https://nanocosmos.de/index.html"/><meta property="og:description" content="&lt;h2&gt;&lt;a class=&quot;anchor&quot; aria-hidden=&quot;true&quot; id=&quot;encrypted-playback&quot;&gt;&lt;/a&gt;&lt;a href=&quot;#encrypted-playback&quot; aria-hidden=&quot;true&quot; class=&quot;hash-link&quot;&gt;&lt;svg class=&quot;hash-link-icon&quot; aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Encrypted playback&lt;/h2&gt;
+"/><meta property="og:image" content="https://nanocosmos.de/img/docusaurus.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://nanocosmos.de/img/docusaurus.png"/><link rel="shortcut icon" href="/img/favicon_nano.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/nanocosmos_header_logo.png" alt="Documentation"/><h2 class="headerTitleWithLogo">Documentation</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/docs/nanoplayer/nanoplayer_introduction" target="_self">H5Live Player</a></li><li class=""><a href="/docs/faq/faq_streaming" target="_self">FAQ</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>H5Live Player</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">H5Live Player</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/nanoplayer/nanoplayer_introduction">Introduction</a></li><li class="navListItem"><a class="navItem" href="/docs/nanoplayer/nanoplayer_getting_started">Getting started</a></li><li class="navListItem"><a class="navItem" href="/docs/nanoplayer/nanoplayer_supported_browsers">Supported Browsers</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/nanoplayer/nanoplayer_token_security">Secure playback with H5Live</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">API</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/nanoplayer/nanoplayer_api_class">Class</a></li><li class="navListItem"><a class="navItem" href="/docs/nanoplayer/nanoplayer_api_events">Events</a></li><li class="navListItem"><a class="navItem" href="/docs/nanoplayer/nanoplayer_api_global">Global</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Other Information</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/nanoplayer/nanoplayer_blogposts">Blog</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Secure playback with H5Live</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="encrypted-playback"></a><a href="#encrypted-playback" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Encrypted playback</h2>
+<p>When using H5Live player, all playback is done with SSL-Encrypted URLs over <code>HTTPS</code>.</p>
+<h2><a class="anchor" aria-hidden="true" id="token-security-for-nanostream-h5live-player"></a><a href="#token-security-for-nanostream-h5live-player" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Token Security for nanoStream H5Live Player</h2>
+<p>H5Live Player supports signed URLs with tokens to restrict playback to a specific time or / and domain. To use token security, you need a security enabled bintu account in nanoStream Cloud.</p>
+<p>Please <a href="mailto:support@nanocosmos.de">contact us</a> for further details.</p>
+<h2><a class="anchor" aria-hidden="true" id="signing-urls"></a><a href="#signing-urls" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Signing URLs</h2>
+<h3><a class="anchor" aria-hidden="true" id="step-1-generate-a-record-for-a-stream"></a><a href="#step-1-generate-a-record-for-a-stream" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Step 1. Generate a record for a stream</h3>
+<p>Test data (common):</p>
+<ul>
+<li>Stream name: your Bintu stream name as a <code>String</code></li>
+<li>Secret: your secret as a <code>String</code></li>
+</ul>
+<p><em>Request</em>:</p>
+<pre><code class="hljs css language-bash">curl -X POST https://bintu-splay.nanocosmos.de/secure/stream -H <span class="hljs-string">"Content-Type: application/json"</span> -H <span class="hljs-string">"X-BINTU-APIKEY: [your Bintu API key]"</span> -d <span class="hljs-string">"{"</span>streamname<span class="hljs-string">": "</span>[your Bintu stream name]<span class="hljs-string">", "</span>secret<span class="hljs-string">": "</span>[your secret]<span class="hljs-string">"}"</span>
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="step-2-generate-a-token-"></a><a href="#step-2-generate-a-token-" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Step 2. Generate a token ...</h3>
+<blockquote>
+<p><strong>Attention:</strong></p>
+<p>The expiration date time for the parameter <code>expires</code> is expected to be in <strong>SECONDS</strong>. Using milliseconds will lead to expiration dates far in the future and won't be accepted by the token generation API!</p>
+</blockquote>
+<h4><a class="anchor" aria-hidden="true" id="a-with-a-custom-tag-and-an-expiration-date-"></a><a href="#a-with-a-custom-tag-and-an-expiration-date-" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>(a) ... with a custom tag and an expiration date</h4>
+<p>Test data (additional):</p>
+<ul>
+<li>Expires: 1567728000 = 09/06/2019 @ 12:00am (UTC) <strong>[expiration date and time in SECONDS in Unix time format and UTC; cannot be in the past or more than 365 days in the future]</strong></li>
+</ul>
+<p><em>Request:</em></p>
+<pre><code class="hljs css language-bash">curl -X POST https://bintu-splay.nanocosmos.de/secure/token -H <span class="hljs-string">"Content-Type: application/json"</span> -H <span class="hljs-string">"X-BINTU-APIKEY: [your Bintu API key]"</span> -d <span class="hljs-string">"{"</span>streamname<span class="hljs-string">": "</span>[your Bintu stream name]<span class="hljs-string">", "</span>tag<span class="hljs-string">": "</span>[your custom tag]<span class="hljs-string">", "</span>expires<span class="hljs-string">": "</span>1567728000<span class="hljs-string">"}"</span>
+</code></pre>
+<p><em>Response:</em></p>
+<pre><code class="hljs">{
+    <span class="hljs-attr">"h5live"</span>: {
+        <span class="hljs-attr">"security"</span>: {
+            <span class="hljs-attr">"expires"</span>: <span class="hljs-string">"1567728000"</span>,
+            <span class="hljs-attr">"tag"</span>: <span class="hljs-string">"[your custom tag]"</span>,
+            <span class="hljs-attr">"token"</span>: <span class="hljs-string">"[your token will be here]"</span>,
+            <span class="hljs-attr">"options"</span>: <span class="hljs-number">9</span>
+        }
+    }
+}
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="b-with-a-client-ip-"></a><a href="#b-with-a-client-ip-" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>(b) ... with a client IP</h4>
+<p><em>Request:</em></p>
+<pre><code class="hljs css language-bash">curl -X POST https://bintu-splay.nanocosmos.de/secure/token -H <span class="hljs-string">"Content-Type: application/json"</span> -H <span class="hljs-string">"X-BINTU-APIKEY: [your Bintu API key]"</span> -d <span class="hljs-string">"{"</span>streamname<span class="hljs-string">": "</span>[your Bintu stream name]<span class="hljs-string">", "</span>ip<span class="hljs-string">": "</span>[your client ip]<span class="hljs-string">"}"</span>
+</code></pre>
+<p><em>Response:</em></p>
+<pre><code class="hljs">{
+    <span class="hljs-attr">"h5live"</span>: {
+        <span class="hljs-attr">"security"</span>: {
+            <span class="hljs-attr">"expires"</span>: <span class="hljs-string">""</span>,
+            <span class="hljs-attr">"tag"</span>: <span class="hljs-string">""</span>,
+            <span class="hljs-attr">"token"</span>: <span class="hljs-string">"[your token will be here]"</span>,
+            <span class="hljs-attr">"options"</span>: <span class="hljs-number">2</span>
+        }
+    }
+}
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="c-with-a-custom-tag-and-a-referer-"></a><a href="#c-with-a-custom-tag-and-a-referer-" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>(c) ... with a custom tag and a referer</h4>
+<p>Test data (additional): <em>Referer:</em> <code>demo.nanocosmos.de</code></p>
+<p><em>Request</em>:</p>
+<pre><code class="hljs css language-bash">curl -X POST https://bintu-splay.nanocosmos.de/secure/token -H <span class="hljs-string">"Content-Type: application/json"</span> -H <span class="hljs-string">"X-BINTU-APIKEY: [your Bintu API key]"</span> -d <span class="hljs-string">"{"</span>streamname<span class="hljs-string">": "</span>[your Bintu stream name]<span class="hljs-string">", "</span>tag<span class="hljs-string">": "</span>[your custom tag]<span class="hljs-string">", "</span>referer<span class="hljs-string">": "</span>demo.nanocosmos.de<span class="hljs-string">"}"</span>
+</code></pre>
+<p><em>Response</em>:</p>
+<pre><code class="hljs">{
+    <span class="hljs-attr">"h5live"</span>: {
+        <span class="hljs-attr">"security"</span>: {
+            <span class="hljs-attr">"expires"</span>: <span class="hljs-string">""</span>,
+            <span class="hljs-attr">"tag"</span>: <span class="hljs-string">"[your custom tag]"</span>,
+            <span class="hljs-attr">"token"</span>: <span class="hljs-string">"[your token will be here]"</span>,
+            <span class="hljs-attr">"options"</span>: <span class="hljs-number">12</span>
+        }
+    }
+}
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="verifying-playbacks"></a><a href="#verifying-playbacks" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Verifying playbacks</h2>
+<p>Playback url - you have to replace the highlighted parameter values with your specific values:</p>
+<pre><code class="hljs">https://demo.nanocosmos.de/nanoplayer/<span class="hljs-keyword">release</span>/nanoplayer.html?h5live.<span class="hljs-keyword">server</span>.websocket=wss://bintu-splay.nanocosmos.de/h5live/authstream&amp;h5live.<span class="hljs-keyword">server</span>.hls=https://bintu-splay.nanocosmos.de/h5live/authhttp/playlist.m3u8&amp;h5live.rtmp.url=rtmp://bintu-splay.nanocosmos.de/splay&amp;h5live.rtmp.streamname=[your Bintu stream <span class="hljs-type">name</span>]&amp;h5live.<span class="hljs-keyword">security</span>.expires=[expires <span class="hljs-keyword">from</span> response]&amp;h5live.<span class="hljs-keyword">security</span>.tag=[tag <span class="hljs-keyword">from</span> response]&amp;h5live.<span class="hljs-keyword">security</span>.token=[token <span class="hljs-keyword">from</span> response]&amp;h5live.<span class="hljs-keyword">security</span>.<span class="hljs-keyword">options</span>=[<span class="hljs-keyword">options</span> <span class="hljs-keyword">from</span> response]
+</code></pre>
+<blockquote>
+<p><strong>Explanation:</strong></p>
+<ul>
+<li>Step 2 (a): the URL hasn’t expired yet, so the playback works.</li>
+<li>Step 2 (b): the playback only works for a specified client ip.</li>
+<li>Step 2 (c): the referrer is <code>demo.nanocosmos.de</code>, so the playback works.</li>
+</ul>
+</blockquote>
+<p>To verify that the playback doesn't work with an incorrect referrer,
+copy the code snippet generated on the link above to an <code>.html</code> file on a different domain.
+Try to playback the stream from the newly created web page.</p>
+<blockquote>
+<p><strong>Explanation:</strong>
+The referrer is not <code>demo.nanocosmos.de</code>, so the playback doesn’t work.</p>
+</blockquote>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/nanoplayer/nanoplayer_supported_browsers"><span class="arrow-prev">← </span><span>Supported Browsers</span></a><a class="docs-next button" href="/docs/nanoplayer/nanoplayer_api_class"><span>Class</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#encrypted-playback">Encrypted playback</a></li><li><a href="#token-security-for-nanostream-h5live-player">Token Security for nanoStream H5Live Player</a></li><li><a href="#signing-urls">Signing URLs</a><ul class="toc-headings"><li><a href="#step-1-generate-a-record-for-a-stream">Step 1. Generate a record for a stream</a></li><li><a href="#step-2-generate-a-token-">Step 2. Generate a token ...</a></li></ul></li><li><a href="#verifying-playbacks">Verifying playbacks</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/docusaurus.svg" alt="Documentation" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/en/doc1.html">Getting Started (or other categories)</a><a href="/docs/en/doc2.html">Guides (or other categories)</a><a href="/docs/en/doc3.html">API Reference (or other categories)</a></div><div><h5>Community</h5><a href="/en/users.html">User Showcase</a><a href="http://stackoverflow.com/questions/tagged/" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://discordapp.com/">Project Chat</a><a href="https://twitter.com/" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="/blog">Blog</a><a href="https://github.com/">GitHub</a><a class="github-button" href="https://github.com/nanocosmos/demo" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://code.facebook.com/projects/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2019 nanocosmos GmbH</section></footer></div></body></html>
