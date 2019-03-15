@@ -26,6 +26,18 @@
       "bintu/ios/step-by-step": {
         "title": "bintu/ios/step-by-step"
       },
+      "cloud/cloud_getting_started": {
+        "title": "Getting started",
+        "sidebar_label": "Getting started"
+      },
+      "cloud/cloud_introduction": {
+        "title": "Introduction",
+        "sidebar_label": "Introduction"
+      },
+      "cloud/cloud_ios_streaming_app": {
+        "title": "iOS Streaming App in 5 Minutes",
+        "sidebar_label": "iOS Streaming App in 5 Minutes"
+      },
       "faq/3d_stereo_vr": {
         "title": "3D / Stereo / VR / 360",
         "sidebar_label": "3D / Stereo / VR / 360"
@@ -109,6 +121,10 @@
         "title": "Global",
         "sidebar_label": "Global"
       },
+      "nanoplayer/nanoplayer_api": {
+        "title": "NanoPlayer",
+        "sidebar_label": "NanoPlayer"
+      },
       "nanoplayer/nanoplayer_blogposts": {
         "title": "Other Information",
         "sidebar_label": "Blog"
@@ -123,6 +139,10 @@
       "nanoplayer/nanoplayer_introduction": {
         "title": "Introduction",
         "sidebar_label": "Introduction"
+      },
+      "nanoplayer/nanoplayer_release_history": {
+        "title": "Release History",
+        "sidebar_label": "Release History"
       },
       "nanoplayer/nanoplayer_supported_browsers": {
         "title": "Support Browsers",
@@ -365,6 +385,22 @@
       },
       "nanostream/windows/windows_networkwriter": {
         "title": "nanostream/windows/windows_networkwriter"
+      },
+      "webrtc/nanostream_webrtc_api": {
+        "title": "nanoStream WebRTC API",
+        "sidebar_label": "WebRTC API"
+      },
+      "webrtc/nanostream_webrtc_browser_api": {
+        "title": "nanoStream WebRTC  Browser API",
+        "sidebar_label": "Browser API"
+      },
+      "webrtc/nanostream_webrtc_getting_started": {
+        "title": "Getting started",
+        "sidebar_label": "Getting started"
+      },
+      "webrtc/nanostream_webrtc_introduction": {
+        "title": "Introduction",
+        "sidebar_label": "Introduction"
       }
     },
     "links": {

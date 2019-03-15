@@ -57,10 +57,10 @@ const siteConfig = {
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
     {doc: 'nanoplayer/nanoplayer_introduction', label: 'H5Live Player'},
-    //{doc: 'cloud', label: 'Cloud'},
-    //{doc: 'webrtc', label: 'WebRTC'},
-    //{doc: 'sdks', label: 'Apps and SDKs'},
-    {doc: 'faq/faq_streaming', label: 'FAQ'}
+    {doc: 'cloud', label: 'Cloud'},
+    {doc: 'webrtc', label: 'WebRTC'},
+    {doc: 'sdks', label: 'Apps and SDKs'},
+    {doc: 'faq/encoding_and_streaming', label: 'FAQ'}
   ],
 
   // If you have users set above, you add it here:
