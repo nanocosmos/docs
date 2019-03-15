@@ -39,8 +39,10 @@ const users = [
 const siteConfig = {
   title: 'nanocosmos Documentation', // Title for your website.
   tagline: 'nanoStream Cloud & H5Live Player - Around The World in 1 Second',
-  url: 'https://docs.nanocosmos.de', // Your website URL
-  baseUrl: '/', // Base URL for your project */
+  //url: 'https://docs.nanocosmos.de', // Your website URL
+  //baseUrl: '/', // Base URL for your project */
+  url: 'https://nanocosmos-docs.netlify.com', // Your website URL
+  baseUrl: '/docs', // Base URL for your project */
   // For github.io type URLs, you would set the url and baseUrl like:
   //   url: 'https://facebook.github.io',
   //   baseUrl: '/test-site/',
