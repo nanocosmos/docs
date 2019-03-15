@@ -6,35 +6,48 @@ sidebar_label: Getting started
 
 ## Embedding H5Live player on your own web page
 
-You find an embed code snippet on the demo page.
+You can embed this code snippet to test the H5Live player on your page in no time. 
+
+**Important:** replace `CUSTOM-STREAMID`  with your own `streamid`.
+
+<br>
+
+> **Note: ** 
+>
+> If you don't know how to get your custom `streamid` click [here](www.testing.de) .
 
 ```html
 <div id="playerDiv"></div>
-<script src="//demo.nanocosmos.de/nanoplayer/api/release/nanoplayer.3.min.js?20170505"></script>
+<script src="https://demo.nanocosmos.de/nanoplayer/api/release/nanoplayer.3.min.js?20190313"></script>
 <script>
-  var player;
-  var config = {
+var player;
+var config = {
     "source": {
- 	    "h5live": {
- 	      "server": {
- 	        "websocket": "wss://h5live.nanocosmos.de:443/h5live/stream",
- 	        "hls": "https://h5live.nanocosmos.de:443/h5live/http/playlist.m3u8",
- 	        "progressive": "https://h5live.nanocosmos.de:443/h5live/http/stream.mp4"
- 	      },
- 	      "rtmp": {
- 	        "url": "rtmp://my.server.com/live",
- 	        "streamname": "myStream"
- 	      }
- 	    }
+        "bintu": {
+            "apiurl": "https://bintu.nanocosmos.de",
+            "streamid": "CUSTOM-STREAMID"
+        }
     },
-  };
-  document.addEventListener('DOMContentLoaded', function () {
+    "playback": {
+        "autoplay": true,
+        "automute": true,
+        "muted": false,
+        "forceTech": "h5live",
+        "flashplayer": "//demo.nanocosmos.de/nanoplayer/nano.player.swf"
+    },
+    "style": {
+        "controls": true
+    }
+};
+document.addEventListener('DOMContentLoaded', function () {
     player = new NanoPlayer("playerDiv");
- 	   player.setup(config).then(function (config) {
- 	   }, function (error) {
- 	    alert(error.message);
+    player.setup(config).then(function (config) {
+        console.log("setup success");
+        console.log("config: " + JSON.stringify(config, undefined, 4));
+    }, function (error) {
+        alert(error.message);
     });
-  });
+});
 </script>
 ```
 
@@ -85,6 +98,14 @@ Example `index.html`
 
 3. Add a new variable called `config` to your `data() method` inside your component
 
+   **Important**: replace `CUSTOM-STREAMID`  with your own `streamid`
+
+   <br>
+
+   > **Note: ** 
+   >
+   > If you don't know how to get your custom `streamid` click [here](www.testing.de) .
+
 ```html
 <script>
     export default {
@@ -94,7 +115,7 @@ Example `index.html`
             source: {
               bintu: {
                   "apiurl": "https://bintu.nanocosmos.de",
-                  "streamid": "45f8c052-7285-4965-9fbe-36eaeeb9387d"
+                  "streamid": "CUSTOM-STREAMID"
               }
             },
             playback: {
@@ -193,6 +214,14 @@ Example `index.html`
 
 3. Add a new variable called `config` to your `data() method` inside your component
 
+   Important**: replace `CUSTOM-STREAMID`  with your own `streamid`
+
+   <br>
+
+   > **Note: ** 
+   >
+   > If you don't know how to get your custom `streamid` click [here](www.testing.de) .
+
 ```html
 <script>
     export default {
@@ -202,7 +231,7 @@ Example `index.html`
             source: {
               bintu: {
                   "apiurl": "https://bintu.nanocosmos.de",
-                  "streamid": "45f8c052-7285-4965-9fbe-36eaeeb9387d"
+                  "streamid": "CUSTOM-STREAMID"
               }
             },
             playback: {
@@ -306,6 +335,14 @@ Example `index.html`
 
 3. Add a new variable called `config` to your `data() method` inside your component
 
+   Important**: replace `CUSTOM-STREAMID`  with your own `streamid`
+
+   <br>
+
+   > **Note: ** 
+   >
+   > If you don't know how to get your custom `streamid` click [here](www.testing.de) .
+
 ```html
 <script>
     export default {
@@ -315,7 +352,7 @@ Example `index.html`
             source: {
               bintu: {
                   "apiurl": "https://bintu.nanocosmos.de",
-                  "streamid": "45f8c052-7285-4965-9fbe-36eaeeb9387d"
+                  "streamid": "CUSTOM-STREAMID"
               }
             },
             playback: {
