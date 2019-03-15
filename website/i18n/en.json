@@ -3,7 +3,7 @@
   "localized-strings": {
     "next": "Next",
     "previous": "Previous",
-    "tagline": "A website for testing",
+    "tagline": "nanoStream Cloud & H5Live Player - Around The World in 1 Second",
     "docs": {
       "about": {
         "title": "about"
@@ -308,6 +308,10 @@
       "nanostream/macos/nanostream-macos-sdk": {
         "title": "nanostream/macos/nanostream-macos-sdk"
       },
+      "nanostream/nanostream": {
+        "title": "Introduction",
+        "sidebar_label": "Introduction"
+      },
       "nanostream/support/nanostream_aec": {
         "title": "nanostream/support/nanostream_aec"
       },
@@ -405,12 +409,17 @@
     },
     "links": {
       "H5Live Player": "H5Live Player",
+      "Cloud Intro": "Cloud Intro",
+      "WebRTC Intro": "WebRTC Intro",
+      "nanoStream Apps and SDKs": "nanoStream Apps and SDKs",
       "FAQ": "FAQ"
     },
     "categories": {
       "H5Live Player": "H5Live Player",
       "API": "API",
       "Other Information": "Other Information",
+      "WebRTC.live": "WebRTC.live",
+      "nanoStream Cloud": "nanoStream Cloud",
       "First Category": "First Category",
       "Second Category": "Second Category",
       "Live Encoding and Streaming": "Live Encoding and Streaming",

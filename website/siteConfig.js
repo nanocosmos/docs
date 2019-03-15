@@ -37,19 +37,17 @@ const users = [
 ];
 
 const siteConfig = {
-  title: 'Documentation', // Title for your website.
-  tagline: 'A website for testing',
-  url: 'https://docs.nanocosmos.de/', // Your website URL
-  //baseUrl: './', // Base URL for your project */
-  //baseUrl: '/docs', // Base URL for your project */
+  title: 'nanocosmos Documentation', // Title for your website.
+  tagline: 'nanoStream Cloud & H5Live Player - Around The World in 1 Second',
+  url: 'https://docs.nanocosmos.de', // Your website URL
   baseUrl: '/', // Base URL for your project */
   // For github.io type URLs, you would set the url and baseUrl like:
   //   url: 'https://facebook.github.io',
   //   baseUrl: '/test-site/',
 
   // Used for publishing and more
-  projectName: 'nanocosmos-documentaion',
-  organizationName: 'nanocosmos GmbH',
+  projectName: 'docs',
+  organizationName: 'nanocosmos',
   // For top-level user or org sites, the organization is still the same.
   // e.g., for the https://JoelMarcey.github.io site, it would be set like...
   //   organizationName: 'JoelMarcey'
@@ -57,10 +55,12 @@ const siteConfig = {
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
     {doc: 'nanoplayer/nanoplayer_introduction', label: 'H5Live Player'},
-    {doc: 'cloud', label: 'Cloud'},
-    {doc: 'webrtc', label: 'WebRTC'},
-    {doc: 'sdks', label: 'Apps and SDKs'},
-    {doc: 'faq/encoding_and_streaming', label: 'FAQ'}
+    //{doc: 'cloud', label: 'Cloud'},
+    //{doc: 'webrtc', label: 'WebRTC'},
+    {doc: 'cloud/cloud_introduction', label: 'Cloud Intro'},
+    {doc: 'webrtc/nanostream_webrtc_introduction', label: 'WebRTC Intro'},
+    {doc: 'nanostream/nanostream', label: 'nanoStream Apps and SDKs'},
+    {doc: 'faq/faq_streaming', label: 'FAQ'}
   ],
 
   // If you have users set above, you add it here:
@@ -68,7 +68,7 @@ const siteConfig = {
 
   /* path to images for header/footer */
   headerIcon: 'img/nanocosmos_header_logo.png',
-  footerIcon: 'img/docusaurus.svg',
+  footerIcon: 'img/nanocosmos_header_logo.png',
   favicon: 'img/favicon_nano.png',
 
   /* Colors for website */

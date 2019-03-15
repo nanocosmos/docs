@@ -1,5 +1,5 @@
 {
-  "docs": {
+  "h5live": {
     "H5Live Player": [
       "nanoplayer/nanoplayer_introduction",
       "nanoplayer/nanoplayer_getting_started",
@@ -13,7 +13,23 @@
     ],
     "Other Information" : ["nanoplayer/nanoplayer_blogposts"] 
   },
-  "docs-other": {
+  "webrtc": {
+    "WebRTC.live": [
+      "webrtc/nanostream_webrtc_introduction",
+      "webrtc/nanostream_webrtc_getting_started",
+      "webrtc/nanostream_webrtc_browser_api",
+      "webrtc/nanostream_webrtc_api"
+    ],
+    "Other Information" : ["nanoplayer/nanoplayer_blogposts"] 
+  },
+  "cloud": {
+    "nanoStream Cloud": [
+      "cloud/cloud_introduction",
+      "cloud/cloud_getting_started",
+      "cloud/cloud_ios_streaming_app"
+    ],
+    "Other Information" : ["nanoplayer/nanoplayer_blogposts"] 
+  },  "docs-other": {
     "First Category": ["doc5"],
     "Second Category": ["doc3"]
   },
