@@ -53,14 +53,15 @@ class Footer extends React.Component {
               User Showcase
             </a>
             <a
-              href="http://stackoverflow.com/questions/tagged/"
+              href="https://www.nanocosmos.de/"
               target="_blank"
               rel="noreferrer noopener">
-              Stack Overflow
+              Homepage
             </a>
-            <a href="https://discordapp.com/">Project Chat</a>
+            <a href="https://www.nanocosmos.de/contact">Contact</a>
+            <a href="https://www.nanocosmos.de/support">Support</a>
             <a
-              href="https://twitter.com/"
+              href="https://twitter.com/nanovideo"
               target="_blank"
               rel="noreferrer noopener">
               Twitter
