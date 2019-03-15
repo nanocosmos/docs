@@ -1,7 +1,7 @@
 ---
-id: installation_and_setup
-title: Installation and Setup
-sidebar_label: Installation and Setup
+id: faq_nanostream_sdk_win
+title: nanoStream SDK for Windows
+sidebar_label: nanoStream SDK for Windows
 ---
 
 <details><summary><strong>How do I enable logging for the plugin?</strong></summary>

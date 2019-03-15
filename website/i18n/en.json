@@ -38,29 +38,29 @@
         "title": "iOS Streaming App in 5 Minutes",
         "sidebar_label": "iOS Streaming App in 5 Minutes"
       },
-      "faq/3d_stereo_vr": {
+      "faq/faq_3d_stereo_vr": {
         "title": "3D / Stereo / VR / 360",
         "sidebar_label": "3D / Stereo / VR / 360"
       },
-      "faq/adv_codec_config": {
+      "faq/faq_adv_codec_config": {
         "title": "Advanced Codec Configuration",
         "sidebar_label": "Advanced Codec Configuration"
       },
-      "faq/devices_support": {
+      "faq/faq_devices_support": {
         "title": "Capture Devices and Camera Support",
         "sidebar_label": "Capture Devices and Camera Support"
       },
-      "faq/installation_and_setup": {
-        "title": "Installation and Setup",
-        "sidebar_label": "Installation and Setup"
+      "faq/faq_nanostream_sdk_win": {
+        "title": "nanoStream SDK for Windows",
+        "sidebar_label": "nanoStream SDK for Windows"
       },
-      "faq/purchase_and_license": {
+      "faq/faq_purchase_and_license": {
         "title": "Purchase and License",
         "sidebar_label": "Purchase and License"
       },
       "faq/faq_streaming": {
-        "title": "Live Encoding and Streaming",
-        "sidebar_label": "Live Encoding and Streaming"
+        "title": "FAQ nanoStream Live Streaming",
+        "sidebar_label": "Live Streaming"
       },
       "faq/faq": {
         "title": "faq/faq"
@@ -395,7 +395,7 @@
         "sidebar_label": "WebRTC API"
       },
       "webrtc/nanostream_webrtc_browser_api": {
-        "title": "nanoStream WebRTC  Browser API",
+        "title": "nanoStream WebRTC Browser API",
         "sidebar_label": "Browser API"
       },
       "webrtc/nanostream_webrtc_getting_started": {
@@ -408,9 +408,9 @@
       }
     },
     "links": {
+      "nanoStream Cloud": "nanoStream Cloud",
       "H5Live Player": "H5Live Player",
-      "Cloud Intro": "Cloud Intro",
-      "WebRTC Intro": "WebRTC Intro",
+      "WebRTC.live": "WebRTC.live",
       "nanoStream Apps and SDKs": "nanoStream Apps and SDKs",
       "FAQ": "FAQ"
     },
@@ -420,11 +420,12 @@
       "Other Information": "Other Information",
       "WebRTC.live": "WebRTC.live",
       "nanoStream Cloud": "nanoStream Cloud",
-      "First Category": "First Category",
-      "Second Category": "Second Category",
-      "Live Encoding and Streaming": "Live Encoding and Streaming",
+      "nanoStream SDKs/Apps": "nanoStream SDKs/Apps",
+      "Live Streaming": "Live Streaming",
       "Purchase and License": "Purchase and License",
-      "Windows Application, SDK, Codecs Installation/Settings": "Windows Application, SDK, Codecs Installation/Settings"
+      "nanoStream SDK for Windows, Codecs Setup": "nanoStream SDK for Windows, Codecs Setup",
+      "First Category": "First Category",
+      "Second Category": "Second Category"
     }
   },
   "pages-strings": {

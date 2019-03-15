@@ -1,5 +1,5 @@
 ---
-id: 3d_stereo_vr
+id: faq_3d_stereo_vr
 title: 3D / Stereo / VR / 360
 sidebar_label: 3D / Stereo / VR / 360
 ---

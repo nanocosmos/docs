@@ -1,5 +1,5 @@
 ---
-id: devices_support
+id: faq_devices_support
 title: Capture Devices and Camera Support
 sidebar_label: Capture Devices and Camera Support
 ---

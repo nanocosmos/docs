@@ -1,5 +1,5 @@
 ---
-id: adv_codec_config
+id: faq_adv_codec_config
 title: Advanced Codec Configuration
 sidebar_label: Advanced Codec Configuration
 ---

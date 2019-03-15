@@ -1,7 +1,7 @@
 ---
 id: faq_streaming
-title: Live Encoding and Streaming
-sidebar_label: Live Encoding and Streaming
+title: FAQ nanoStream Live Streaming
+sidebar_label: Live Streaming
 ---
 
 <details><summary><strong>Is low latency streaming available?</strong></summary>

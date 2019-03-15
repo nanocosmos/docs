@@ -1,5 +1,5 @@
 ---
-id: purchase_and_license
+id: faq_purchase_and_license
 title: Purchase and License
 sidebar_label: Purchase and License
 ---
