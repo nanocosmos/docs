@@ -1,0 +1,87 @@
+site_name: nanocosmos Docs
+pages:
+- Home: index.md
+- nanostream:
+  - Web:
+    - API Manual: 'nanostream/web/nanostream-4.x-web-api.md'
+    - Javascript Integration: 'nanostream/web/nanostream_javascript_integration.md'
+  - MacOS api: nanostream/macos/nanostream-macos-sdk.md
+  - iOS api:
+    - 'Quick Start': nanostream/ios/ios-quick-start.md
+    - 'Developer Manual': nanostream/ios/ios-sdk-developer-manual.md
+    - iOS api: nanostream/ios/nanostream-ios-sdk.md
+  - MacOS api: nanostream/macos/nanostream-macos-sdk.md
+  - Android api:
+    - 'Getting Started': 'nanostream/android/getting-started.md'
+    - 'Advanced Settings/Usage': 'nanostream/android/android-advanced-settings.md'
+    - 'RTMP Playback': 'nanostream/android/rtmp-playback.md'
+    - Streaming Developer Manual : 'nanostream/android/android_developer_manual_streaming.md'
+    - Playback Developer Manual : 'nanostream/android/android_developer_manual_playback.md'
+    - Sample Developer Manual : 'nanostream/android/android_developer_manual_sample.md'
+  - Windows api:
+    - Developer Manual: 'nanostream/windows/windows_developer_manual.md'
+    - Binary Modules: 'nanostream/windows/windows_binares.md'
+    - License Help: 'nanostream/windows/windows_license_help.md'
+    - RTMP Network Render & Writer: 'nanostream/windows/windows_networkwriter.md'
+    - Language Integration :
+        - C++ : 'nanostream/windows/language_integration/nanostream_cpp_integration.md'
+        - C# : 'nanostream/windows/language_integration/nanostream_csharp_integration.md'
+        - Delphi : 'nanostream/windows/language_integration/nanostream_delphi_integration.md'
+        - VisualC : 'nanostream/windows/language_integration/nanostream_activex_visualcpp.md'
+        - MFC : 'nanostream/windows/language_integration/nanostream_activex_visualcpp_mfc.md'
+  - Direct Show:
+    - Audio Volume: 'nanostream/directshow/directshow_audio_volume.md'
+    - H.264:
+      - AVC/H.264 Video Codec: 'nanostream/directshow/directshow_avc_h264.md'
+      - nanoAVC/H.264 DirectShow Decoding: 'nanostream/directshow/directshow_nanoAVC_decoding_sdk.md'
+      - nanoAVC/H.264 DirectShow Encoding: 'nanostream/directshow/directshow_nanoAVC_encoding_sdk.md'
+      - H.264 Video Decoder Filter: 'nanostream/directshow/directshow_h264_video_decoder.md'
+      - H.264 Video Encoder Filter: 'nanostream/directshow/directshow_h264_video_encoder.md'
+    - MPEG:
+      - MPEG2 Broadcast SDK: 'nanostream/directshow/directshow_mpeg2_broadcast_sdk.md'
+      - MPEG2 Video Decoder: 'nanostream/directshow/directshow_mpeg2_video_decoder.md'
+      - MPEG2 Video Encoder: 'nanostream/directshow/directshow_mpeg2_video_encoder.md'
+      - MPEG Audio Encoder: 'nanostream/directshow/directshow_mpeg_audio_encoder.md'
+    - Quicktime IMX Playback: 'nanostream/directshow/directshow_quicktime_imx.md'
+    - RTMP:
+      - RTMP Source: 'nanostream/directshow/directshow_rtmp_source.md'
+      - RTMP Writer: 'nanostream/directshow/directshow_rtmp_writer.md'
+      - RTMP Status & Statistics: 'nanostream/directshow/directshow_rtmp_status_statistics.md'
+    - RTSP:
+      - RTSP Sink: 'nanostream/directshow/directshow_rtsp_sink.md'
+      - RTSP Source: 'nanostream/directshow/directshow_rtsp_source.md'
+    - UDP/TS Streaming: 'nanostream/directshow/directshow_udp_ts_streaming.md'
+    - Video Filter:
+      - Screen Capture Filter: 'nanostream/directshow/directshow_screen_capture_filter.md'
+      - Video Mixer PiP: 'nanostream/directshow/directshow_video_mixer.md'
+      - Video Mixer Overlay: 'nanostream/directshow/directshow_overlay_mixing.md'
+  - Additional Knowledge:
+      - Acoustic Echo Cancellation: 'nanostream/support/nanostream_aec.md'
+      - Audio Level: 'nanostream/support/nanostream_audio_levels.md'
+      - Bitrate Control & Statistics: 'nanostream/support/nanostream_bitrate_control_statistics.md'
+      - Latency: 'nanostream/support/nanostream_latency.md'
+      - Low Latency: 'nanostream/support/nanostream_low_latency.md'
+      - Overlay Mixer: 'nanostream/support/nanostream_mixer_overlay.md'
+      - MP4 Recording: 'nanostream/support/nanostream_mp4_recording.md'
+      - Remote Server Recording: 'nanostream/support/nanostream_remote_server_recording.md'
+      - UDP/TS Streaming: 'nanostream/support/nanostream_udp_ts_streaming.md'
+      - RTMP: 'nanostream/support/nanostream_rtmp_all.md'
+- bintu.live :
+  - Android SDK: 'bintu/android/bintu-android-sdk.md'
+  - iOS:
+    - 5 Minute Tutorial : 'bintu/ios/5min.md'
+    - Step by step Tutorial : 'bintu/ios/step-by-step.md'
+    - SDK Documentation: 'bintu/ios/bintu_ios_sdk.md'
+    - Sample Documentation: 'bintu/ios/bintu_ios_sample.md'
+- About: about.md
+
+#theme: readthedocs
+theme: yeti
+
+markdown_extensions:
+  - markdown_include.include
+  - smarty
+  - toc:
+      permalink: True
+      separator: "_"
+#extra_css: [extra.css]

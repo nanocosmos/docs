@@ -1,0 +1,60 @@
+{
+  "h5live": {
+    "H5Live Player": [
+      "nanoplayer/nanoplayer_introduction",
+      "nanoplayer/nanoplayer_getting_started",
+      "nanoplayer/nanoplayer_supported_browsers",
+    	"nanoplayer/nanoplayer_token_security"
+    ],
+    "API" : [
+      "nanoplayer/nanoplayer_api_class",
+      "nanoplayer/nanoplayer_api_events",
+      "nanoplayer/nanoplayer_api_global"
+    ],
+    "Other Information" : ["nanoplayer/nanoplayer_blogposts"] 
+  },
+  "webrtc": {
+    "WebRTC.live": [
+      "webrtc/nanostream_webrtc_introduction",
+      "webrtc/nanostream_webrtc_getting_started",
+      "webrtc/nanostream_webrtc_browser_api",
+      "webrtc/nanostream_webrtc_api"
+    ],
+    "Other Information" : ["nanoplayer/nanoplayer_blogposts"] 
+  },
+  "cloud": {
+    "nanoStream Cloud": [
+      "cloud/cloud_introduction",
+      "cloud/cloud_getting_started",
+      "cloud/cloud_ios_streaming_app"
+    ],
+    "Other Information" : ["nanoplayer/nanoplayer_blogposts"] 
+  },
+  "nanostream": {
+    "nanoStream SDKs/Apps": [
+      "nanostream/nanostream",
+      "nanostream/android/nanostream-android-sdk",
+      "nanostream/ios/nanostream-ios-sdk",
+      "nanostream/ios/nanostream_ios_license_deployment"
+    ],
+    "Other Information" : ["nanoplayer/nanoplayer_blogposts"] 
+  },
+  "faq" : {
+    "Live Streaming" : [
+      "faq/faq_streaming",
+      "faq/faq_devices_support",
+      "faq/faq_adv_codec_config",
+      "faq/faq_3d_stereo_vr",
+      "faq/programming_sdk_api",
+      "faq/faq_nanostream_sdk_win",
+      "faq/programming"
+    ],
+    "Purchase and License" : ["faq/faq_purchase_and_license"],
+    "nanoStream SDK for Windows, Codecs Setup" : [
+    ]
+  },
+  "docs-other": {
+    "First Category": ["doc5"],
+    "Second Category": ["doc3"]
+  }
+}
