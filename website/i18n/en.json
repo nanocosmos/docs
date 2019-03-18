@@ -179,6 +179,9 @@
       "nanostream/android/android-advanced-settings": {
         "title": "nanostream/android/android-advanced-settings"
       },
+      "nanostream/android/nanostream-android-index": {
+        "title": "nanostream/android/nanostream-android-index"
+      },
       "nanostream/android/nanostream-android-sdk": {
         "title": "nanostream/android/nanostream-android-sdk"
       },
@@ -290,6 +293,9 @@
       "nanostream/directshow/directshow_video_mixer": {
         "title": "nanostream/directshow/directshow_video_mixer"
       },
+      "nanostream/directshow/index": {
+        "title": "nanostream/directshow/index"
+      },
       "nanostream/general/nanocosmos_contact": {
         "title": "nanostream/general/nanocosmos_contact"
       },
@@ -311,6 +317,9 @@
       "nanostream/nanostream": {
         "title": "Introduction",
         "sidebar_label": "Introduction"
+      },
+      "nanostream/support/index": {
+        "title": "nanostream/support/index"
       },
       "nanostream/support/nanostream_aec": {
         "title": "nanostream/support/nanostream_aec"
@@ -389,6 +398,9 @@
       },
       "nanostream/windows/windows_networkwriter": {
         "title": "nanostream/windows/windows_networkwriter"
+      },
+      "sidebar": {
+        "title": "sidebar"
       },
       "webrtc/nanostream_webrtc_api": {
         "title": "nanoStream WebRTC API",
