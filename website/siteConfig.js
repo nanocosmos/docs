@@ -8,34 +8,6 @@
 // See https://docusaurus.io/docs/site-config for all the possible
 // site configuration options.
 
-// List of projects/orgs using your project for the users page.
-const users = [
-  {
-    caption: 'Customer 1',
-    // You will need to prepend the image path with your baseUrl
-    // if it is not '/', like: '/test-site/img/docusaurus.svg'.
-    image: '/img/logo-nav.png',
-    infoLink: 'https://www.nanocosmos.de',
-    pinned: true,
-  },
-    {
-    caption: 'Customer 2',
-    // You will need to prepend the image path with your baseUrl
-    // if it is not '/', like: '/test-site/img/docusaurus.svg'.
-    image: '/img/logo-nav.png',
-    infoLink: 'https://www.nanocosmos.de',
-    pinned: true,
-  },
-    {
-    caption: 'Customer 3',
-    // You will need to prepend the image path with your baseUrl
-    // if it is not '/', like: '/test-site/img/docusaurus.svg'.
-    image: '/img/logo-nav.png',
-    infoLink: 'https://www.nanocosmos.de',
-    pinned: true,
-  },
-];
-
 const siteConfig = {
   title: 'nanocosmos Documentation', // Title for your website.
   tagline: 'nanoStream Cloud & H5Live Player - Around The World in 1 Second',
@@ -63,9 +35,6 @@ const siteConfig = {
     {doc: 'nanostream/nanostream', label: 'nanoStream Apps and SDKs'},
     {doc: 'faq/faq_streaming', label: 'FAQ'}
   ],
-
-  // If you have users set above, you add it here:
-  users,
 
   /* path to images for header/footer */
   headerIcon: 'img/nanocosmos_header_logo.png',

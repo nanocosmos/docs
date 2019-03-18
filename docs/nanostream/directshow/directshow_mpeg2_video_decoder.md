@@ -3,7 +3,8 @@
 ### DirectShow Filter / Module
 
 nanocosmos MPEG-2 HD/SD Video Decoder\\
-Module Name: nmpeg2dec.ax
+Module Name: `nmpeg2dec.ax`
+
 ### Connectivity
 
 The input is accepting connections to splitter filters or combined source/splitter filters matching the following media types:
@@ -67,7 +68,10 @@ has to be a wide/unicode string!
 
 ### Decoder Configuration Registry Settings
 
-Key: HKEY_CURRENT_USER\Software\nanocosmos\nmpeg2dec
+Key: 
+```
+HKEY_CURRENT_USER\Software\nanocosmos\nmpeg2dec
+```
 
 #### Frame dropping / skipping mode
 
@@ -75,23 +79,23 @@ Determines the behaviour in the case of timing / performance problems.
   * Value name: 	DroppingMode
   * Value type: 	REG_DWORD
   * Valid values:
-    * 0 - disabled
-    * 1 - enabled, __default value__
+    * `0` - `disabled`
+    * `1` - `enabled`, `__default value__`
 
 #### Output color space selection
 
 Forces the filter to use a desired output color format. If no or no valid value is set, the output color format will be negotiated with the downstream renderer filter (usually YV12).
   * Value name: 	ForceOutputFourCC
-  * Value type: 	        REG_SZ / String
+  * Value type: 	        `REG_SZ / String`
   * Valid values:
-    * YV12,
-    * I420,
-    * IYUV,
-    * YUY2,
-    * RGB32,
-    * RGB24,
-    * RGB565,
-    * ARGB32
+    * `YV12`,
+    * `I420`,
+    * `IYUV`,
+    * `YUY2`,
+    * `RGB32`,
+    * `RGB24`,
+    * `RGB565`,
+    * `ARGB32`
 
 #### Deinterlacing Mode
 
@@ -99,59 +103,62 @@ Determines the deinterlacing behaviour.
   * Value name: DeinterlacingMode
   * Value type:   REG_DWORD
   * Valid values:
-    * 0 - disabled
-    * 1 - duplicate, __default value__
-    * 2 - blend
-    * 3 - median
-    * 4 - edge detection
-    * 5 - median threshold
-    * 6 - content adaptive vertical temporal
+    * `0` - disabled
+    * `1` - duplicate, __default value__
+    * `2` - blend
+    * `3` - median
+    * `4` - edge detection
+    * `5` - median threshold
+    * `6` - content adaptive vertical temporal
 
 #### DirectShow Editing Services (DES) Return Mode
 
-Receive returns HRESULT error values if Deliver fails.\\
+Receive returns HRESULT error values if Deliver fails.
 Needs to be enabled for DES.
-  * Value name: DESReturnMode
-  * Value type: REG_DWORD
+  * Value name: `DESReturnMode`
+  * Value type: `REG_DWORD`
   * Valid values:
-    * 0 - disabled, __default value__
-    * 1 - enabled
+    * `0` - disabled, __default value__
+    * `1` - enabled
 
 #### Threading Mode
 
-Determines the threading behaviour.\\
+Determines the threading behaviour.
 Auto detection or number of decoding threads.
-  * Value name: DESReturnMode
-  * Value type: REG_DWORD
+  * Value name: `DESReturnMode`
+  * Value type: `REG_DWORD`
   * Valid values:
-    * 0 - auto detect number of cpus, __default value__
-    * 1-8 - set number of decoding threads
+    * `0` - auto detect number of cpus, __default value__
+    * `1-8` - set number of decoding threads
 
 #### Output resolution alignment 
 
 Determines the alignment of the output resolution,
 to adjust it to multiples of this value.
-  * Value name: OutputAlignment
-  * Value type: REG_DWORD
+  * Value name: `OutputAlignment`
+  * Value type: `REG_DWORD`
   * Valid values:
-    * 1-16, __default value:__ 4
+    * `1-16`, __default value:__ 4
 
 ### Debug-Log Configuration Registry Settings
 
-Key: HKEY_CURRENT_USER\Software\DebugNano\nmpeg2dec.ax
+Key: 
+```
+HKEY_CURRENT_USER\Software\DebugNano\nmpeg2dec.ax
+```
 
 #### File name
 Sets the output file name. The folder must already exist.
-  * Value name: 	LogToFile
-  * Value type: 	        REG_SZ / String
+  * Value name: 	`LogToFile`
+  * Value type: 	        `REG_SZ` / `String`
   * Valid values:	a valid output file name to enable file logging or an empty string
 
 ### Logging level
 
 A higher value increases the amount of logging messages sent, and messages get more detailed.
-  * Value name: 	TRACE
-  * Value type: 	        REG_DWORD
+  * Value name: 	`TRACE`
+  * Value type: 	        `REG_DWORD`
   * Valid values:
-    * 0 - minimal logging
+    * `0` - minimal logging
     * …
-    * 9 - maximal logging
+    * `9` - maximal logging
