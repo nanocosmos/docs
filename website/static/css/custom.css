@@ -20,6 +20,14 @@
 	margin-top: 3px;
 	border: 5px solid lightgrey !important;
 	border-radius: 3px;
+	width: 100%;
+	overflow-y: auto;
+	max-height: 500px;
+	position: absolute;
+	top: 100%;
+	z-index: 100;
+	left: 0px;
+	right: auto;
 }
 
 .aa-dropdown-menu a {

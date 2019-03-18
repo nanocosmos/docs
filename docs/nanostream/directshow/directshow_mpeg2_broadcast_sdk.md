@@ -2,7 +2,7 @@
 
 ### Introduction
 
-Nanocosmos MPEG-2 Broadcast DirectShow  SDK enables you to perform high quality and high performance video coding for the latest generation video and audio coding standards. It is intended to develop video encoding / transcoding applications based on Microsoft DirectShow technology.\\  
+Nanocosmos MPEG-2 Broadcast DirectShow  SDK enables you to perform high quality and high performance video coding for the latest generation video and audio coding standards. It is intended to develop video encoding / transcoding applications based on Microsoft DirectShow technology.
 
 ### Major Features
 
@@ -23,7 +23,7 @@ The SDK\doc folder contains further documentation for the following filters:
   * MXF Reader
   * MXF Writer
 
-//Contact us for additional modules for MPEG Audio Encoding and Multiplexing//
+> Contact us for additional modules for MPEG Audio Encoding and Multiplexing
 
 ### Filter components
 
@@ -62,7 +62,7 @@ The SDK\doc folder contains further documentation for the following filters:
 ### Registering and unregistering components in the DirectShow framework
 
 In order to use them, filters must be registered in the DirectShow framework. After
-installation all filters are registered. To re-register or unregister components, execute the RegisterFilters.bat or UnregisterFilters.bat batch files from the SDK/bin folder.
+installation all filters are registered. To re-register or unregister components, execute the `RegisterFilters.bat` or `UnregisterFilters.bat` batch files from the SDK/bin folder.
 
 ### Filter activation 
 

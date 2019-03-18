@@ -1,87 +1,133 @@
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function() {
+	
+	/** Adds searchbar widget to the header
+		 * parses sitemap XML file to search through links
+		 * filters links by matching search query input
+		*/
+	var Searchbar = (function() {
+		// testing with a static sitemap.xml file in 'static/xml/' directory
+		const pathXMLSitemap = "../xml/sitemap.xml";
+		// sitemap.xml path after build
+		//const pathXMLSitemap = "../sitemap.xml";
+		const searchbarEntryPoint = document.getElementsByClassName('nav-site nav-site-internal');
 
-  function loadSitemap() {
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            parseXML(this)
-        }
-    };
-    xhttp.open("GET", "../sitemap.xml", true);
-    xhttp.send();
-  }
+		var docsLinks = [];
+		var searchbar_input, dropdown_menu;
 
-  // parses XML and returns sitemap hrefs
-  function parseXML(xml) {
-    var xmlDoc = xml.responseXML;
-    var sitemapLinks = xmlDoc.getElementsByTagName("url");
-    filterDocsLinks(sitemapLinks)
-  }
+		/** loads in XML file and parses it 
+		 * calls filterXMLForDocLinks method
+		*/
+		var loadXMLFile = function() {
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+						var xmlDoc = this.responseXML;
+						filterXMLForDocLinks(xmlDoc);
+          }
+      };
+      xhttp.open("GET", pathXMLSitemap, true);
+    	xhttp.send();
+		}
+		
+		/**
+		 * filters xml file for 'docs' links
+		 * @param {xml} xmlFile Array of Links 
+		 */
+		var filterXMLForDocLinks = function(xmlFile) {
+			var xmlDocLinks = xmlFile.getElementsByTagName("url");
+			for (i = 0; i < xmlDocLinks.length; i++) {
+					var href = xmlDocLinks[i].childNodes[1].innerHTML;
+					// removes everything in front of last '/' occurance
+					// removes special characters '-' '_'
+					if (href.includes('/docs/')) {
+							// keep string after last '/' and make readable
+							var title = href.substr(href.lastIndexOf("/") + 1).replace(/#|_|-/g, ' ').replace(/\s\s+/g, ' ');
+							// keep string after '/docs/
+							href = href.substr(href.lastIndexOf("/docs/") + 1);
+							docsLinks.push({
+									title: title,
+									href: href
+							})
+					}
+			}
+		}
 
-  // filters sitemap links for 'docs' links 
-  function filterDocsLinks(sitemapLinks) {
-    for (i = 0; i < sitemapLinks.length; i++) {
-      var href = sitemapLinks[i].childNodes[1].innerHTML;
-      if (href.includes('/docs/')) {
-        var title = href.substr(href.lastIndexOf("/") + 1).replace(/#|_|-/g,' ').replace(/\s\s+/g, ' ')
-        docsLinks.push({
-          title: title,
-          href: href
-        })
-     }
-    }
-  }
+		/**
+		 * filters docLinks for search query 
+		 * calls addLinkToDropdownList for matched links
+		 * @param {String} query search query
+		 */
+		var filterDocsLinksForSearchQuery = function(query) {
+			for (i = 0; i < docsLinks.length; i++) {
+				if (docsLinks[i].title.includes(query)) {
+					addLinkToDropdownList(docsLinks[i], query);
+				}
+			}
+		}
 
-  // filters docLinks for query and calls addResultsToDropdownList for matched links
-  function filterDocsLinksForSearchQuery(query) {
-    for (i = 0; i < docsLinks.length; i++) {
-      if (docsLinks[i].title.includes(query)) addResultsToDropdownList(docsLinks[i], query);
-    }
-  }
+		/** removes all nodes from dropdown list */
+		var emptyDropdownList = function() {
+			while (dropdown_menu.firstChild) {
+					dropdown_menu.removeChild(dropdown_menu.firstChild);
+			}
+		}
 
-  function addResultsToDropdownList(link, query) {
-    dropdown_menu.classList.add('show');
-    var a = document.createElement('a');
-    a.setAttribute('href', link.href);
-    a.innerHTML = link.title.replace(query, `<span class="highlight">${query}</span>`);      
-    a.addEventListener('mousedown', function() {
-      event.preventDefault();
-    });
-    dropdown_menu.appendChild(a);
-  }
+		/**
+		 * adds a link to dropdown list
+		 * @param {Object} link doc link object
+		 * @param {String} query search query
+		 */
+		var addLinkToDropdownList = function(link, query) {
+			dropdown_menu.classList.add('show');
+			var a = document.createElement('a');
+			// builds path 
+			var locationHref = window.location.href + link.href;
+			a.setAttribute('href', locationHref);
+			// highlights matched query
+			a.innerHTML = link.title.replace(query, `<span class="highlight">${query}</span>`);
+			a.addEventListener('mousedown', function() {
+					event.preventDefault();
+			});
+			dropdown_menu.appendChild(a);
+	 	}
 
-  function emptyDropdownList() {
-    while (dropdown_menu.firstChild) {
-      dropdown_menu.removeChild(dropdown_menu.firstChild);
-    }
-  }
+		var bindFunctions = function() {
+			searchbar_input.addEventListener('blur', function() {
+				dropdown_menu.classList.remove('show');
+				searchbar_input.value = '';
+			})
+		
+			searchbar_input.addEventListener('input', function(e) {
+					emptyDropdownList();
+					filterDocsLinksForSearchQuery(this.value);
+			});
+		}
 
-  loadSitemap();
-  let docsLinks = [];
-   
-  // add searchbar to header
-  var nav = document.getElementsByClassName('nav-site nav-site-internal');
-  var searchbar = `
-  <li class="navSearchWrapper reactNavSearchWrapper">
-    <span class="algolia-autocomplete" style="position: relative; display: inline-block; direction: ltr;">
-      <input type="text" id="search_input_react" placeholder="Search" title="Search" class="aa-input" autocomplete="off" spellcheck="false" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-labelledby="search_input_react" aria-owns="algolia-autocomplete-listbox-0" dir="auto" style="position: relative; vertical-align: top;">
-      <pre aria-hidden="true" style="position: absolute; visibility: hidden; white-space: pre; font-family: system-ui; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 300; word-spacing: 0px; letter-spacing: normal; text-indent: 0px; text-rendering: auto; text-transform: none;"></pre>
-      <span class="aa-dropdown-menu hide" role="listbox" id="autocomplete-list" style="width: 100%;overflow-y: auto; max-height: 500px;position: absolute; top: 100%; z-index: 100; left: 0px; right: auto;">
-      </span>
-    </span>
-  </li>`;
-  nav[0].insertAdjacentHTML('beforeend', searchbar);
-  
-  var searchbar_input = document.getElementById('search_input_react');
-  var dropdown_menu = document.getElementById('autocomplete-list');
+		/* Adds searchbar to DOM */
+		var addSearchbar = function() {
+			var searchbar = `
+				<li class="navSearchWrapper reactNavSearchWrapper">
+					<span class="algolia-autocomplete">
+						<input type="text" id="search_input_react" placeholder="Search" title="Search" class="aa-input">
+						<span class="aa-dropdown-menu hide" role="listbox" id="autocomplete-list">
+						</span>
+					</span>
+				</li>`;
+			searchbarEntryPoint[0].insertAdjacentHTML('beforeend', searchbar);
+			searchbar_input = document.getElementById('search_input_react');
+			dropdown_menu = document.getElementById('autocomplete-list');
+		}
 
-  searchbar_input.addEventListener('blur', function() {
-    dropdown_menu.classList.remove('show');
-    searchbar_input.value = '';
-  })
-  
-  searchbar_input.addEventListener('input', function(e) {
-    emptyDropdownList();
-    filterDocsLinksForSearchQuery(this.value);
-  });
+		var init = function() {
+			loadXMLFile();
+			addSearchbar();
+			bindFunctions();
+		}
+
+		return {
+			init: init
+		}
+	})();
+
+	Searchbar.init();
 });
