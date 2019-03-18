@@ -1,4 +1,8 @@
-# Android nanoStream SDK
+---
+id: nanostream-android-sdk
+title: SDK for Android
+sidebar_label: SDK for Android
+---
 
 ## Introduction
 

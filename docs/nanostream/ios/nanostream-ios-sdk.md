@@ -1,4 +1,8 @@
-# nanoStream SDK for iOS - Developer Manual
+---
+id: nanostream-ios-sdk
+title: SDK for iOS
+sidebar_label: SDK for iOS
+---
 
 ## Purpose
 

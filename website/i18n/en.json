@@ -183,7 +183,8 @@
         "title": "nanostream/android/nanostream-android-index"
       },
       "nanostream/android/nanostream-android-sdk": {
-        "title": "nanostream/android/nanostream-android-sdk"
+        "title": "SDK for Android",
+        "sidebar_label": "SDK for Android"
       },
       "nanostream/android/sample/android_sample_player": {
         "title": "nanostream/android/sample/android_sample_player"
@@ -306,10 +307,12 @@
         "title": "nanostream/ios/ios-quick-start"
       },
       "nanostream/ios/nanostream_ios_license_deployment": {
-        "title": "nanostream/ios/nanostream_ios_license_deployment"
+        "title": "License Deployment Information",
+        "sidebar_label": "License Deployment Information"
       },
       "nanostream/ios/nanostream-ios-sdk": {
-        "title": "nanostream/ios/nanostream-ios-sdk"
+        "title": "SDK for iOS",
+        "sidebar_label": "SDK for iOS"
       },
       "nanostream/macos/nanostream-macos-sdk": {
         "title": "nanostream/macos/nanostream-macos-sdk"
