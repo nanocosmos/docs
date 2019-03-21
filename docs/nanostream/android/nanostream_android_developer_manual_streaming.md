@@ -58,16 +58,16 @@ The red rectangle marks up the active area that is included in the output stream
 
 | Orientation                    | Aspect Ratio | Stream Area                                 |
 | ------------------------------ | ------------ | ------------------------------------------- |
-| Portrait<sup>[1](#fnAS1)</sup> | Keep Input   | ![Screenshot](img/portrait_keep_input.png)  |
-| Portrait<sup>[1](#fnAS1)</sup> | 4:3          | ![Screenshot](img/portrait_4_3.png)         |
-| Portrait<sup>[1](#fnAS1)</sup> | 3:4          | ![Screenshot](img/portrait_3_4.png)         |
-| Portrait<sup>[1](#fnAS1)</sup> | 16:9         | ![Screenshot](img/portrait_16_9.png)        |
-| Portrait<sup>[1](#fnAS1)</sup> | 9:16         | ![Screenshot](img/portrait_9_16.png)        |
-| Landscape                      | Keep Input   | ![Screenshot](img/landscape_keep_input.png) |
-| Landscape                      | 4:3          | ![Screenshot](img/landscape_4_3.png)        |
-| Landscape                      | 3:4          | ![Screenshot](img/landscape_3_4.png)        |
-| Landscape                      | 16:9         | ![Screenshot](img/landscape_16_9.png)       |
-| Landscape                      | 9:16         | ![Screenshot](img/landscape_9_16.png)       |
+| Portrait<sup>[1](#fnAS1)</sup> | Keep Input   | ![Screenshot](/img/nanostream/android/portrait_keep_input.png)  |
+| Portrait<sup>[1](#fnAS1)</sup> | 4:3          | ![Screenshot](/img/nanostream/android/portrait_4_3.png)         |
+| Portrait<sup>[1](#fnAS1)</sup> | 3:4          | ![Screenshot](/img/nanostream/android/portrait_3_4.png)         |
+| Portrait<sup>[1](#fnAS1)</sup> | 16:9         | ![Screenshot](/img/nanostream/android/portrait_16_9.png)        |
+| Portrait<sup>[1](#fnAS1)</sup> | 9:16         | ![Screenshot](/img/nanostream/android/portrait_9_16.png)        |
+| Landscape                      | Keep Input   | ![Screenshot](/img/nanostream/android/landscape_keep_input.png) |
+| Landscape                      | 4:3          | ![Screenshot](/img/nanostream/android/landscape_4_3.png)        |
+| Landscape                      | 3:4          | ![Screenshot](/img/nanostream/android/landscape_3_4.png)        |
+| Landscape                      | 16:9         | ![Screenshot](/img/nanostream/android/landscape_16_9.png)       |
+| Landscape                      | 9:16         | ![Screenshot](/img/nanostream/android/landscape_9_16.png)       |
 
 <a name="fnAS1">1</a>: In this sample APP we crop the preview so it doesn't look ugly, so the stream is actually larger then the preview.
 

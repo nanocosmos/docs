@@ -60,7 +60,7 @@ The filter's property page offers a subset of parameters, containing the most im
 
 
 
-![RTSP Network Writer Properties](img/directshow_rtsp_writer_properties.png)
+![RTSP Network Writer Properties](/img/nanostream/directshow/directshow_rtsp_writer_properties.png)
 
 URL format:
 ```

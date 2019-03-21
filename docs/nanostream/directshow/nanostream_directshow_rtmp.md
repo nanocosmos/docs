@@ -133,7 +133,7 @@ DEFINE_GUID(PROPID_nanoRTMPDetectStreamFormatTimeoutMs, 0x7400166f, 0x8140, 0x4b
 
 #### Configuration through DirectShow filter property page
 
-![RTMP Source Properties](img/directshow_rtmp_source_properties.png)
+![RTMP Source Properties](/img/nanostream/directshow/directshow_rtmp_source_properties.png)
 
 
 #### Configuration Registry Settings
@@ -309,7 +309,7 @@ The streaming url can be set by using standard DirectShow interface IFileSinkFil
 
 ### Configuration with DirectShow filter property page
 
-![RTMP Writer Properties](img/directshow_rtmp_writer_properties.png)
+![RTMP Writer Properties](/img/nanostream/directshow/directshow_rtmp_writer_properties.png)
 
 The filter's property page offers a subset of encoding parameters, containing the most important options.
 
