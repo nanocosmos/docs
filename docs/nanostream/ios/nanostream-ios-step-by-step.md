@@ -1,3 +1,8 @@
+---
+id: nanostream-ios-step-by-step
+title: nanostream-ios-step-by-step
+sidebar_label: nanostream-ios-step-by-step
+---
 # Tutorial / Getting started with nanoStream and bintu.live
 
 # Overview
