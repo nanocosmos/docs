@@ -23,7 +23,7 @@ class HomeSplash extends React.Component {
 
     const SplashContainer = props => (
       <div className="homeContainer">
-        <div className="homeSplashFade">
+        <div className="homeSplash">
           <div className="wrapper homeWrapper">{props.children}</div>
         </div>
       </div>
@@ -57,8 +57,8 @@ class HomeSplash extends React.Component {
           <div className="contentWrapper">
           <ProjectTitle siteConfig={siteConfig} />
           <div className="buttonWrapper">
-            <Button className="button_outline button button_cta" href="http://docs.nanocosmos.de/docs/cloud/cloud_introduction">Get started</Button>
-            <Button className="button_filled button button_cta" href="http://docs.nanocosmos.de/docs/faq/faq_streaming">FAQ</Button>
+            <Button className="button_filled button button_cta" href="http://docs.nanocosmos.de/docs/cloud/cloud_introduction">Get started</Button>
+            <Button className="button button_outline button_cta" href="http://docs.nanocosmos.de/docs/faq/faq_streaming">Browse FAQs</Button>
           </div>
           </div>
         </div>
@@ -74,7 +74,7 @@ class Index extends React.Component {
 
     const Block = props => (
       <Container
-        padding={['bottom', 'top']}
+        padding={['bottom']}
         id={props.id}
         background={props.background}>
         <GridBlock
@@ -101,11 +101,11 @@ class Index extends React.Component {
           <div className="showcaseCta">
             <div>
               <p><span>nanoStream WebRTC.live:</span> browser-based live encoder</p>
-              <Button className="button button_cta" href="http://docs.nanocosmos.de/docs/cloud/cloud_introduction">More about nanoStream WebRTC.live</Button>
+              <Button className="button button_outline_inverted button_cta" href="/docs/webrtc/nanostream_webrtc_introduction">More about nanoStream WebRTC.live</Button>
             </div>
             <div>
-              <p><span>nanoStream WebRTC.live:</span> browser-based live encoder</p>
-              <Button className="button button_cta" href="http://docs.nanocosmos.de/docs/faq/faq_streaming">More about nanoStream Apps and SDKs</Button>
+              <p><span>nanoStream Apps and SDKs:</span> Windows, macos, iOS</p>
+              <Button className="button button_outline_inverted button_cta" href="/docs/nanostream/nanostream">More about nanoStream Apps and SDKs</Button>
             </div>
           </div>
           <div>
@@ -132,12 +132,12 @@ class Index extends React.Component {
               title: 'Scalable',
             },
             {
-              content: 'Create awesome interactive live streams with real-time feedback from your audience. nanoStream Cloud has ultra-low latency and doesn\'t take more than 1 second to get you live around the world.',
-              title: 'Interactive',
+              content: 'Provide content to your audience on any device. It doesn\'t matter when your viewers are, nanoStream Cloud works on all HTML5 browsers, including Safari on iOS.',
+              title: 'Cross-platform',
             },
             {
-              content: 'Reach your viewers all over the world through a trustful live streaming Cloud. Don\'t worry about contantly changing viewership, nanoStream Cloud will rock your live streams.',
-              title: 'Scalable',
+              content: 'Enjoy the ease of use of an end-to-end solution and let us take care of the technical part of your live streams. Or integrate nanoStream Cloud to your existing workflow as an ultra-low latency CDN.',
+              title: 'Flexible ',
             },
           ]}
         </Block>
@@ -147,11 +147,11 @@ class Index extends React.Component {
     const Help = () => (
       <div className="helpSection"> 
         <div>
-          <h2 className="sectionHeader">Need Help?</h2>
+          <h2 className="sectionHeader">Any questions?</h2>
         </div>
         <div className="helpCta">
-          <Button className="button button_fill_invert button_cta" href="http://docs.nanocosmos.de/docs/cloud/cloud_introduction">Browse FAQs</Button>
-          <Button className="button button_cta" href="http://docs.nanocosmos.de/docs/faq/faq_streaming">Contact Support</Button>
+          <Button className="button_filled button button_cta" href="http://docs.nanocosmos.de/docs/cloud/cloud_introduction">Browse FAQs</Button>
+          <Button className="button button_outline button_cta" href="http://docs.nanocosmos.de/docs/faq/faq_streaming">Contact Support</Button>
         </div>
       </div>
     );
