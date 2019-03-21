@@ -14,6 +14,16 @@
       "bintu/index": {
         "title": "bintu/index"
       },
+      "cloud/bintu_api": {
+        "title": "nanoStream Cloud bintu api",
+        "sidebar_label": "bintu api"
+      },
+      "cloud/bintu_custom_webhooks": {
+        "title": "cloud/bintu_custom_webhooks"
+      },
+      "cloud/bintu_stream_tags": {
+        "title": "cloud/bintu_stream_tags"
+      },
       "cloud/cloud_getting_started": {
         "title": "Getting started",
         "sidebar_label": "Getting started"
@@ -29,6 +39,12 @@
       "cloud/cloud_overview": {
         "title": "nanoStream Cloud Product and Services Overview",
         "sidebar_label": "Overview"
+      },
+      "cloud/network-diagnostics-mtr": {
+        "title": "cloud/network-diagnostics-mtr"
+      },
+      "cloud/network-diagnostics": {
+        "title": "cloud/network-diagnostics"
       },
       "faq/faq_3d_stereo_vr": {
         "title": "3D / Stereo / VR / 360",
@@ -380,7 +396,7 @@
       "nanostream/general/nanocosmos_method_parameter_header": {
         "title": "nanostream/general/nanocosmos_method_parameter_header"
       },
-      "nanostream/ios/cloud_ios_streaming_app": {
+      "nanostream/ios/bintu_ios_sample": {
         "title": "iOS Streaming App in 5 Minutes",
         "sidebar_label": "iOS Streaming App in 5 Minutes"
       },

@@ -30,7 +30,10 @@
       "cloud/cloud_overview",
       "cloud/cloud_introduction",
       "cloud/cloud_getting_started",
-      "cloud/cloud_ios_streaming_app"
+      "cloud/bintu_api",
+      "cloud/bintu_custom_webhooks",
+      "cloud/bintu_stream_tags",
+      "cloud/network_diagnostics"
     ]
   },
   "nanostream": {

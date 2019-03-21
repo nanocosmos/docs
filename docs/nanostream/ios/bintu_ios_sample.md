@@ -1,5 +1,5 @@
 ---
-id: cloud_ios_streaming_app
+id: bintu_ios_sample
 title: iOS Streaming App in 5 Minutes
 sidebar_label: iOS Streaming App in 5 Minutes
 ---
