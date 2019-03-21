@@ -85,6 +85,14 @@ Within your HTML:
       bintuApiKey: "myBintuApiKey"
     });
     
+    // set bitrate config, 0=default
+    user.setConfig({
+         bitrates: {
+           videoSendInitialBitrate: 500, // initial webrtc bitrate 500 kbits/s
+           videoSendBitrate: 1500 // target webrtc bitrate 1500 kbits/s
+         }
+    );
+
     // example bintu rtmp url
     // you should use the bintu api to obtain a valid ingest URL (see below)
     var myOutputStream = "rtmp://bintu-stream.nanocosmos.de/live/P4gSV-12345";
