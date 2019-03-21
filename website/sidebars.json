@@ -17,29 +17,68 @@
     "WebRTC.live": [
       "webrtc/nanostream_webrtc_introduction",
       "webrtc/nanostream_webrtc_getting_started",
-      "webrtc/nanostream_webrtc_browser_api",
-      "webrtc/nanostream_webrtc_api"
+      "webrtc/nanostream_webrtc_demos",
+      "webrtc/nanostream_webrtc_screen_sharing",
+      "webrtc/nanostream_webrtc_support"
     ],
-    "Other Information" : ["nanoplayer/nanoplayer_blogposts"] 
+    "API": [
+      "webrtc/nanostream_webrtc_api"
+    ]
   },
   "cloud": {
     "nanoStream Cloud": [
       "cloud/cloud_introduction",
       "cloud/cloud_getting_started",
       "cloud/cloud_ios_streaming_app"
-    ],
-    "Other Information" : ["nanoplayer/nanoplayer_blogposts"] 
+    ]
   },
   "nanostream": {
     "nanoStream SDKs/Apps": [
-      "nanostream/nanostream",
-      "nanostream/android/nanostream-android-sdk",
-      "nanostream/ios/nanostream-ios-sdk",
+      "nanostream/nanostream"
+    ],
+    "Android" : [
+      "nanostream/android/nanostream_android_getting_started",
+      "nanostream/android/nanostream_android_developer_manual_playback_new",
+      "nanostream/android/nanostream_android_developer_manual_streaming_new",
+      "nanostream/android/nanostream_android_developer_manual_sample_new"
+    ],
+    "iOS" : [
+      "nanostream/ios/nanostream_ios_quick_start",
+      "nanostream/ios/nanostream_ios_sdk",
       "nanostream/ios/nanostream_ios_license_deployment"
     ],
-    "Other Information" : ["nanoplayer/nanoplayer_blogposts"] 
+    "MacOSX" : ["nanostream/macos/nanostream_macos_sdk"],
+    "Windows" : [
+      "nanostream/windows/nanostream_windows_binaries",
+      "nanostream/windows/nanostream_windows_developer_manual",
+      "nanostream/windows/nanostream_windows_language_integration",
+      "nanostream/windows/nanostream_windows_license_help",
+      "nanostream/windows/nanostream_windows_networkwriter"
+    ],
+    "DirectShow": [
+      "nanostream/directshow/nanostream_directshow_audio_volume",
+      "nanostream/directshow/nanostream_directshow_h264",
+      "nanostream/directshow/nanostream_directshow_mpeg",
+      "nanostream/directshow/nanostream_directshow_quicktime",
+      "nanostream/directshow/nanostream_directshow_rtmp",
+      "nanostream/directshow/nanostream_directshow_rtsp",
+      "nanostream/directshow/nanostream_directshow_udp_streaming",
+      "nanostream/directshow/nanostream_directshow_video_filter"
+    ]
   },
   "faq" : {
+    "H5Live Player": [
+      "faq/faq_h5live_player_general",
+      "faq/faq_h5live_player_bintu",
+      "faq/faq_h5live_player_adjust_style",
+      "faq/faq_h5live_player_metrics",
+      "faq/faq_h5live_player_security"
+    ],
+    "WebRTC.live": [
+      "faq/faq_WebRTC_general",
+      "faq/faq_WebRTC_devices",
+      "faq/faq_WebRTC_broadcast"
+    ],
     "Live Streaming" : [
       "faq/faq_streaming",
       "faq/faq_devices_support",
@@ -50,9 +89,5 @@
       "faq/programming"
     ],
     "Purchase and License" : ["faq/faq_purchase_and_license"]
-  },
-  "docs-other": {
-    "First Category": ["doc5"],
-    "Second Category": ["doc3"]
   }
 }

@@ -1,7 +1,7 @@
 ---
 id: nanostream_webrtc_api
 title: nanoStream WebRTC API
-sidebar_label: WebRTC API
+sidebar_label: Class
 ---
 
 <a name="RtcUser"></a>
