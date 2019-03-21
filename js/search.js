@@ -5,10 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		 * filters links by matching search query input
 		*/
 	var Searchbar = (function() {
-		// testing with a static sitemap.xml file in 'static/xml/' directory
-		const pathXMLSitemap = "../xml/sitemap.xml";
-		// sitemap.xml path after build
-		//const pathXMLSitemap = "../sitemap.xml";
+		const pathXMLSitemap = "/sitemap.xml";
 		const searchbarEntryPoint = document.getElementsByClassName('nav-site nav-site-internal');
 
 		var docsLinks = [];
