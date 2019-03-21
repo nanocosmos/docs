@@ -50,6 +50,26 @@
         "title": "Capture Devices and Camera Support",
         "sidebar_label": "Capture Devices and Camera Support"
       },
+      "faq/faq_h5live_player_adjust_style": {
+        "title": "Adjust/Style",
+        "sidebar_label": "Adjust/Style"
+      },
+      "faq/faq_h5live_player_bintu": {
+        "title": "bintu",
+        "sidebar_label": "bintu"
+      },
+      "faq/faq_h5live_player_general": {
+        "title": "General",
+        "sidebar_label": "General"
+      },
+      "faq/faq_h5live_player_metrics": {
+        "title": "Metrics",
+        "sidebar_label": "Metrics"
+      },
+      "faq/faq_h5live_player_security": {
+        "title": "Security",
+        "sidebar_label": "Security"
+      },
       "faq/faq_nanostream_sdk_win": {
         "title": "nanoStream SDK for Windows",
         "sidebar_label": "nanoStream SDK for Windows"
@@ -61,6 +81,18 @@
       "faq/faq_streaming": {
         "title": "FAQ nanoStream Live Streaming",
         "sidebar_label": "Live Streaming"
+      },
+      "faq/faq_WebRTC_broadcast": {
+        "title": "Broadcast",
+        "sidebar_label": "Broadcast"
+      },
+      "faq/faq_WebRTC_devices": {
+        "title": "Devices",
+        "sidebar_label": "Devices"
+      },
+      "faq/faq_WebRTC_general": {
+        "title": "General",
+        "sidebar_label": "General"
       },
       "faq/faq": {
         "title": "faq/faq"
@@ -179,6 +211,22 @@
       "nanostream/android/android-advanced-settings": {
         "title": "nanostream/android/android-advanced-settings"
       },
+      "nanostream/android/nanostream_android_developer_manual_playback": {
+        "title": "Playback",
+        "sidebar_label": "Playback"
+      },
+      "nanostream/android/nanostream_android_developer_manual_sample": {
+        "title": "Sample",
+        "sidebar_label": "Sample"
+      },
+      "nanostream/android/nanostream_android_developer_manual_streaming": {
+        "title": "Streaming Media",
+        "sidebar_label": "Streaming Media"
+      },
+      "nanostream/android/nanostream_android_getting_started": {
+        "title": "Getting started",
+        "sidebar_label": "Getting started"
+      },
       "nanostream/android/nanostream-android-index": {
         "title": "nanostream/android/nanostream-android-index"
       },
@@ -232,7 +280,8 @@
         "title": "nanostream/directshow/directshow_audio_volume"
       },
       "nanostream/directshow/directshow_avc_h264": {
-        "title": "nanostream/directshow/directshow_avc_h264"
+        "title": "DirectShow AVC H264 Codec",
+        "sidebar_label": "directshow_avc_h264"
       },
       "nanostream/directshow/directshow_code_statistics": {
         "title": "nanostream/directshow/directshow_code_statistics"
@@ -295,7 +344,40 @@
         "title": "nanostream/directshow/directshow_video_mixer"
       },
       "nanostream/directshow/index": {
-        "title": "nanostream/directshow/index"
+        "title": "DirectShow Overview",
+        "sidebar_label": "index"
+      },
+      "nanostream/directshow/nanostream_directshow_audio_volume": {
+        "title": "Audio Volume",
+        "sidebar_label": "Audio Volume"
+      },
+      "nanostream/directshow/nanostream_directshow_h264": {
+        "title": "H264",
+        "sidebar_label": "H264"
+      },
+      "nanostream/directshow/nanostream_directshow_mpeg": {
+        "title": "MPEG",
+        "sidebar_label": "MPEG"
+      },
+      "nanostream/directshow/nanostream_directshow_quicktime": {
+        "title": "Quicktime IMX Playback",
+        "sidebar_label": "Quicktime IMX Playback"
+      },
+      "nanostream/directshow/nanostream_directshow_rtmp": {
+        "title": "RTMP",
+        "sidebar_label": "RTMP"
+      },
+      "nanostream/directshow/nanostream_directshow_rtsp": {
+        "title": "RTSP",
+        "sidebar_label": "RTSP"
+      },
+      "nanostream/directshow/nanostream_directshow_udp_streaming": {
+        "title": "UDP/TS Streaming",
+        "sidebar_label": "UDP/TS Streaming"
+      },
+      "nanostream/directshow/nanostream_directshow_video_filter": {
+        "title": "Video Filter",
+        "sidebar_label": "Video Filter"
       },
       "nanostream/general/nanocosmos_contact": {
         "title": "nanostream/general/nanocosmos_contact"
@@ -310,9 +392,21 @@
         "title": "License Deployment Information",
         "sidebar_label": "License Deployment Information"
       },
+      "nanostream/ios/nanostream_ios_quick_start": {
+        "title": "Developer Quickstart",
+        "sidebar_label": "Developer Quickstart"
+      },
+      "nanostream/ios/nanostream_ios_sdk": {
+        "title": "SDK for iOS",
+        "sidebar_label": "SDK for iOS"
+      },
       "nanostream/ios/nanostream-ios-sdk": {
         "title": "SDK for iOS",
         "sidebar_label": "SDK for iOS"
+      },
+      "nanostream/macos/nanostream_macos_sdk": {
+        "title": "MacOSX API",
+        "sidebar_label": "MacOSX API"
       },
       "nanostream/macos/nanostream-macos-sdk": {
         "title": "nanostream/macos/nanostream-macos-sdk"
@@ -372,6 +466,14 @@
       "nanostream/web/live_video_encoder_-_plugin_jscript": {
         "title": "nanostream/web/live_video_encoder_-_plugin_jscript"
       },
+      "nanostream/web/nanostream_4.x_web_api": {
+        "title": "nanoStream Web API 4.x",
+        "sidebar_label": "nanoStream Web API 4.x"
+      },
+      "nanostream/web/nanostream_live_video_encoder_-_plugin_jscript": {
+        "title": "Live Video Encoder - Plugin API",
+        "sidebar_label": "Live Video Encoder - Plugin API"
+      },
       "nanostream/web/nanostream-4.x-web-api": {
         "title": "nanostream/web/nanostream-4.x-web-api"
       },
@@ -390,6 +492,26 @@
       "nanostream/windows/language_integration/nanostream_delphi_integration": {
         "title": "nanostream/windows/language_integration/nanostream_delphi_integration"
       },
+      "nanostream/windows/nanostream_windows_binaries": {
+        "title": "Binary Modules for Windows",
+        "sidebar_label": "Binary Modules for Windows"
+      },
+      "nanostream/windows/nanostream_windows_developer_manual": {
+        "title": "Developer Manual",
+        "sidebar_label": "Developer Manual"
+      },
+      "nanostream/windows/nanostream_windows_language_integration": {
+        "title": "Language Integration",
+        "sidebar_label": "Language Integration"
+      },
+      "nanostream/windows/nanostream_windows_license_help": {
+        "title": "Setting the license",
+        "sidebar_label": "Setting the license"
+      },
+      "nanostream/windows/nanostream_windows_networkwriter": {
+        "title": "RTMP Network Renderer & Writer",
+        "sidebar_label": "RTMP Network Renderer & Writer"
+      },
       "nanostream/windows/windows_binares": {
         "title": "nanostream/windows/windows_binares"
       },
@@ -407,11 +529,15 @@
       },
       "webrtc/nanostream_webrtc_api": {
         "title": "nanoStream WebRTC API",
-        "sidebar_label": "WebRTC API"
+        "sidebar_label": "Class"
       },
       "webrtc/nanostream_webrtc_browser_api": {
         "title": "nanoStream WebRTC Browser API",
         "sidebar_label": "Browser API"
+      },
+      "webrtc/nanostream_webrtc_demos": {
+        "title": "Browser demos",
+        "sidebar_label": "Browser Demos"
       },
       "webrtc/nanostream_webrtc_getting_started": {
         "title": "Getting started",
@@ -420,6 +546,14 @@
       "webrtc/nanostream_webrtc_introduction": {
         "title": "Introduction",
         "sidebar_label": "Introduction"
+      },
+      "webrtc/nanostream_webrtc_screen_sharing": {
+        "title": "Screen Sharing",
+        "sidebar_label": "Screen Sharing"
+      },
+      "webrtc/nanostream_webrtc_support": {
+        "title": "Support",
+        "sidebar_label": "Support"
       }
     },
     "links": {
@@ -436,11 +570,13 @@
       "WebRTC.live": "WebRTC.live",
       "nanoStream Cloud": "nanoStream Cloud",
       "nanoStream SDKs/Apps": "nanoStream SDKs/Apps",
+      "Android": "Android",
+      "iOS": "iOS",
+      "MacOSX": "MacOSX",
+      "Windows": "Windows",
+      "DirectShow": "DirectShow",
       "Live Streaming": "Live Streaming",
-      "Purchase and License": "Purchase and License",
-      "nanoStream SDK for Windows, Codecs Setup": "nanoStream SDK for Windows, Codecs Setup",
-      "First Category": "First Category",
-      "Second Category": "Second Category"
+      "Purchase and License": "Purchase and License"
     }
   },
   "pages-strings": {

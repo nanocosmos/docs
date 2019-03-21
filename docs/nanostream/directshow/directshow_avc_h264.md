@@ -1,3 +1,9 @@
+---
+id: directshow_avc_h264
+title: DirectShow AVC H264 Codec
+sidebar_label: directshow_avc_h264
+---
+
 ## AVC/H.264 Video Codec / SDK
 
 ### High Quality and High Performance Video Coding

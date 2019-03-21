@@ -1,3 +1,9 @@
+---
+id: index
+title: DirectShow Overview
+sidebar_label: index
+---
+
 ### DirectShow
 A collection of descriptions of some functionalities of the directshow filters.
 

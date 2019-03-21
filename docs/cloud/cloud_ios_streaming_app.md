@@ -87,9 +87,9 @@ From here on you would probably want to integrate the live streaming function in
 > These samples are pretty basic for better understanding what is going on. For a more complete sample on how to use nanoStream and bintu.live, see the samples `BintuEncoder` and `BintuPlayer` in the SDK `samples` folder.
 
 <br>
-### More Info
+### New to bintu.live?
 
-See our blog posts about bintu.live [here](https://www.nanocosmos.de/blog/2016/07/live-streaming-with-bintu-live)
+If you don't have a bintu.live account yet click [here](http://docs.nanocosmos.de/docs/cloud/cloud_getting_started) to learn how to create one.
 
 <br>
 ### Getting help

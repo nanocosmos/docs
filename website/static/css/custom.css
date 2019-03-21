@@ -1,7 +1,139 @@
-/* your custom css */
+/* #livechatHandle {
+	cursor: pointer;
+} */
 
-#back-to-top { background: #ed7d0e; }
-/* your custom css */
+.homeSplashFade {
+	background: #ed7d0e;
+	height: 600px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.sectionHeader {
+	font-size: 3rem;
+	text-align: center;
+}
+
+.showcaseBanner {
+	padding: 40px 0 80px 0;
+}
+
+.showcaseCta, .helpCta{
+	display: flex;
+	padding-top: 40px;
+}
+
+.showcaseCta .button_cta {
+	width: 100%;
+	text-transform: capitalize;
+	font-weight: 500;
+}
+
+.helpSection {
+	background: #ed7d0e;
+}
+
+
+
+.helpCta {
+	justify-content: center;
+}
+
+
+.helpCta .button_cta {
+	width: 200px; 
+	text-align: center;
+	margin-right: 1rem;
+}
+
+.showcaseCta > div {
+	padding-right: 1rem;
+}
+
+.showcaseCta span {
+	color: #ed7d0e;
+	font-weight: 500;
+}
+
+.showcaseCta > div {
+	margin: 10px;
+}
+
+.inner {
+	display: flex;
+	max-width: 1140px !important;
+	justify-content: center;
+	align-items: center;
+}
+
+.projectLogo, .contentWrapper {
+	max-width: 50%;
+}
+
+.projectLogo img{
+	max-height: 350px !important;
+}
+
+.projectTitle {
+	color: white;
+	text-align: left;
+	line-height: 1.125;
+	max-width: 80%;
+	font-weight: bold;
+}
+
+.projectTitle small {
+	line-height: 1.125;
+	font-weight: 200;
+	font-size: 2rem;
+}
+
+.buttonWrapper { 
+	display: flex;
+	max-width: 80%;
+}
+
+.button_cta {
+	padding: 12px;
+	font-size: 1rem;
+	margin-right: 20px;
+	width: 100%;
+	border-radius: 5px;
+	width: 175px;
+}
+
+.button_filled {
+	background-color: white !important;
+	color: #ed7d0e !important;
+}
+
+.button_filled_inverted {
+	color: white !important;
+	background-color: #ed7d0e !important;
+}
+
+.button_outline {
+	border: 2px solid white;
+	color: white; 
+}
+
+.blockContent {
+	padding: 0 30px;
+}
+
+.blockContent > h2 > div > span > p {
+	font-size: 16px;
+	color: #ed7d0e;
+}
+
+/* .rocketchat-widget {
+	width: 400px !important;
+} */
+
+#back-to-top { 
+	background: #ed7d0e; 
+}
 
 .show {
 	display: unset !important;
@@ -39,6 +171,7 @@
 	text-align: left;
 	width: 100%;
 	border-bottom: 1px solid lightgrey !important;
+	text-transform: capitalize;
 }
 
 .aa-dropdown-menu a:hover {
@@ -48,11 +181,6 @@
 details > summary > strong {
 	color: #ed7d0e;
 	cursor: pointer;
-}
-
-.button_filled {
- background-color: #ed7d0e !important;
- color: white !important;
 }
 
 .siteNavGroupActive, .siteNavItemActive{

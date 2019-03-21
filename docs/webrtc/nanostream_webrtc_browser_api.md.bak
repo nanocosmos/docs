@@ -1,26 +1,16 @@
 ---
-id: nanostream_webrtc_getting_started
-title: Getting started
-sidebar_label: Getting started
+id: nanostream_webrtc_browser_api
+title: nanoStream WebRTC Browser API
+sidebar_label: Browser API
 ---
-## How to use WebRTC.live with nanoStream Cloud?
-
-It is very simple to test and use nanoStream WebRTC.live as your live encoder to nanoStream Cloud with integrated nanoStream H5Live Player. You need a camera connected to your computer or built-in on your device, and a WebRTC-compatible browser. We recommend using Google Chrome.
-
-### Create your own nanoStream Cloud account
-
-To stream directly to nanoStream Cloud you will need to register at [bintu.live](https://bintu.nanocosmos.de/) . 
-
->Bintu.live is the rest API and stream management tool included in nanoStream Cloud. You can find the step-by-step guide to register by [clicking here.](http://docs.nanocosmos.de/docs/cloud/cloud_getting_started)
->
->Once registered, you can create new URLs by calling the bintu API with a valid API key.
-
------
 
 ## nanoStream WebRTC Browser API
 
 The nanoStream WebRTC Browser API is based on a Javascript API connected to the nanoStream WebRTC Server. It can be used for creating your own live video broadcast web page for plugin-free live streaming with WebRTC.
 
+See the separate documentation for our ready-to-use web page for instant streaming.
+
+See our [blog article](https://www.nanocosmos.de/blog/2016/11/setting-up-nanostream-webrtc-for-live-video-broadcast/).
 
 
 
@@ -33,7 +23,7 @@ You will need the following requirements to be fulfilled in order to host a WebR
 
 
 
-## Broadcast Sample
+### Broadcast Sample
 
 The following sample shows how to initiate a broadcast (one-to-many stream) from a WebRTC enabled HTML5 browser.
 
@@ -158,6 +148,14 @@ Within your HTML:
 
 
 
+## API Documentation
+
+See the full documentation on the window.nanowebrtc.user object:
+
+https://webrtc.nanocosmos.de/release/doc/webrtc/index.html
+
+
+
 ## nanoStream Cloud End-To-End Workflow
 
 The following describes a plugin free end to end streaming solution with nanostream WebRTC, nanostream cloud and nanostream h5live player.
@@ -196,7 +194,7 @@ If you don't already have a stream url you can create a new webrtc enabled strea
 </script>
 ```
 
-> You can find the bintu.js documentation [here](https://webrtc.nanocosmos.de/release/doc/bintu/Bintu.html)
+for more information see: [bintu.js documentation](https://webrtc.nanocosmos.de/release/doc/bintu/Bintu.html)
 
 
 
@@ -238,21 +236,13 @@ var broadcastConfig = {
 
 The bintu.live REST API or Dashboard can be used to generate and manage live streams.
 
-> More information can be found [here](http://docs.nanocosmos.de/docs/cloud/cloud_getting_started).
+https://www.nanocosmos.de/v4/documentation/documentation#nanostream_cloud_bintulive_api
 
 
 
 ## Stream Status
 
-The call to
-```
-/stream/<YOUR-STREAM-ID>
-```
-should give you all the info. The `state` value should be `live` when your broadcast is running.
-
-> You can find the full bintu.live documentation [here](https://bintu.nanocosmos.de/doc/#stream-stream-info).
-
-
+the call to https://bintu.nanocosmos.de/doc/#stream-stream-info should give you all the info. The "state" value should be "live" when your broadcast is running.
 
 Example:
 
@@ -272,13 +262,74 @@ Example:
 ```
 
 
+
 ## Playing back from our servers
 
-You can play back from our servers with the [H5Live Player](http://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_introduction)
+For additional info on the h5live player, see [here](https://www.nanocosmos.de/v4/documentation/nanoplayer-h5live)
 
 
 
 ## Camera / Capture Device Testing
 
 https://webrtc.github.io/samples/src/content/devices/input-output/
+
+
+
+## Screen Sharing 
+
+`WebRTC` supports screen sharing! You can use a screen or a window, depending on a browser used, as a live video source instead of a web camera.
+
+Screen sharing is currently available in:
+
+  * Google Chrome
+  * Firefox
+
+
+
+## Screen sharing with Google Chrome
+
+Chrome on Desktop since version 72 supports screen sharing without any further installation.
+For former versions, a certified browser extension was required due to Google security policy.
+
+You find the nanoStream branded screen capture extension [here](https://chrome.google.com/webstore/detail/nanostream-screen-capture/jfjljfmoopheadghnkjbonkmgbkjhjdo)
+
+
+
+## Reporting bugs or issues 
+
+To report any bugs or issues, please send a complete issue report including the following:
+
+- a description of the issue and expected results
+- the configuration you are using for webrtc, bintu.live and h5live
+- potential stream IDs which show the issue
+- how to replicate the issue
+
+
+
+### Log information
+
+#### browser console log
+
+Press `Ctrl+Shift+J` or `F12` (Windows / Linux) or `Cmd+Opt+J` (Mac)
+copy/paste the result of the console
+
+
+
+#### use debug-log information 
+
+Enhanced logging can be enabled by adding `&debug=3` to the web page URL
+
+
+
+#### Chrome webrtc-internals 
+
+Open a separate browser tab and open the URL `chrome://webrtc-internals` click `dump` and download the data and send to us.
+
+
+
+### Remote Support 
+
+- any potential issues might be best resolved based on a remote support session,
+    dependent on your support level.
+    Please contact us to arrange an online meeting.
 
