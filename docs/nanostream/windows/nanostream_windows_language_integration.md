@@ -10,11 +10,11 @@ This tutorial shows how to create a custom Live Encoding and Streaming applicati
 *This tutorial was created with VisualStudio 2008 but should work similar with VS 2010.*
 Create a new Win32 Console Application Project (File/New Project)
 
-![visualc_1](img/visualc_1-300x215.png)
+![visualc_1](/img/nanostream/windows/visualc_1-300x215.png)
 
 Leave all options to default and press “Finish”
 
-![visualc_2](img/visualc_2-300x252.png)
+![visualc_2](/img/nanostream/windows/visualc_2-300x252.png)
 
 
 
@@ -24,49 +24,49 @@ This tutorial shows how to create a custom Live Encoding and Streaming applicati
 This tutorial was created with VisualStudio 2008 but should work similar with VS 2010.
 Create a new MFC Application Project (File/New Project)
 
-![mfc_1](img/nanostream_activex_visualcpp_mfc1.png)
+![mfc_1](/img/nanostream/windows/nanostream_activex_visualcpp_mfc1.png)
 
 In the following MFC Application Wizard, select “Dialog Based Application”
 
-![mfc_2](img/nanostream_activex_visualcpp_mfc2.png)
+![mfc_2](/img/nanostream/windows/nanostream_activex_visualcpp_mfc2.png)
 
 Select all default values for the rest and Finish
 
-![mfc_3](img/nanostream_activex_visualcpp_mfc3.png)
+![mfc_3](/img/nanostream/windows/nanostream_activex_visualcpp_mfc3.png)
 
 A new project solution is created based on an empty dialog.
 
 Right-click on the dialog and select “Insert ActiveX Control…”
 
-![mfc_4](img/nanostream_activex_visualcpp_mfc4.png)
+![mfc_4](/img/nanostream/windows/nanostream_activex_visualcpp_mfc4.png)
 
 Select “nanoStream RTMPActiveX Class”
 
-![mfc_5](img/nanostream_activex_visualcpp_mfc5.png)
+![mfc_5](/img/nanostream/windows/nanostream_activex_visualcpp_mfc5.png)
 
 Position and resize the control window accordingly.
 
 The window will show a live camera preview later.
 
-![mfc_6](img/nanostream_activex_visualcpp_mfc6.png)
+![mfc_6](/img/nanostream/windows/nanostream_activex_visualcpp_mfc6.png)
 
 Create a class member variable for the control for simpler access:
 
-![mfc_7](img/nanostream_activex_visualcpp_mfc7.png)
+![mfc_7](/img/nanostream/windows/nanostream_activex_visualcpp_mfc7.png)
 
-![mfc_8](img/nanostream_activex_visualcpp_mfc8.png)
+![mfc_8](/img/nanostream/windows/nanostream_activex_visualcpp_mfc8.png)
 
 Now let us create a button to create a camera preview.
 
 From the Toolbox, select “Button” and place the button on the dialog.
 
-![mfc_9](img/nanostream_activex_visualcpp_mfc9.png)
+![mfc_9](/img/nanostream/windows/nanostream_activex_visualcpp_mfc9.png)
 
 
 
 Double-Click on the button to edit the new source code event handler:
 
-![mfc_10](img/nanostream_activex_visualcpp_mfc10.png)
+![mfc_10](/img/nanostream/windows/nanostream_activex_visualcpp_mfc10.png)
 
 
 
@@ -300,19 +300,19 @@ put_ShowPropertyPage( /* [in] */ LONG newVal)
 
 Add a New Visual C# Project / Windows Forms application
 
-![c_sharp_1](img/c_sharp_1-300x202.png)
+![c_sharp_1](/img/nanostream/windows/c_sharp_1-300x202.png)
 
 Move mouse to the left to the *Toolbox* list, search for *General* and right click to select *Choose Items…*
 
-![c_sharp_2](img/c_sharp_2-241x300.png)
+![c_sharp_2](/img/nanostream/windows/c_sharp_2-241x300.png)
 
 Select tab *COM Components* under *Name* nanoStream RTMPActiveX Class.
 
-![c_sharp_3](img/c_sharp_3-300x206.png)
+![c_sharp_3](/img/nanostream/windows/c_sharp_3-300x206.png)
 
 Drag the *nanoStream* Object Icon from the Toolbox onto your Form, and drag a Button onto your Form.
 
-![c_sharp_5](img/c_sharp_5-278x300.png)
+![c_sharp_5](/img/nanostream/windows/c_sharp_5-278x300.png)
 
 Double Click the “Button” to add source code:
 
@@ -326,7 +326,7 @@ axRTMPActiveX1.StartPreview();
 
 Run the application and press the button. You should see a video image from your default camera.
 
-![c_sharp_6](img/c_sharp_6-300x300.png)
+![c_sharp_6](/img/nanostream/windows/c_sharp_6-300x300.png)
 
 
 
@@ -347,23 +347,23 @@ This document describes how to use the nanoStream plugins from within the Delphi
 
 In a Delphi Project, first *Import ActiveX Control* under the *Component* tab
 
-![delphi_1](img/delphi_1-300x95.png)
+![delphi_1](/img/nanostream/windows/delphi_1-300x95.png)
 
 Search for nanoStream Live Video Encoder.
 
-![Delphi_import_activex](img/Delphi_import_activex-264x300.png)
+![Delphi_import_activex](/img/nanostream/windows/Delphi_import_activex-264x300.png)
 
 Create a *RTMP ActiveX* Unit.
 
-![Delphi_rtmp_activex](img/Delphi_rtmp_activex-300x86.png)
+![Delphi_rtmp_activex](/img/nanostream/windows/Delphi_rtmp_activex-300x86.png)
 
 On the resulting form, pull an area with the mouse.
 
-![Delphi_FormArea](img/Delphi_FormArea.png)
+![Delphi_FormArea](/img/nanostream/windows/Delphi_FormArea.png)
 
 Then add a standard button to test nanoStream:
 
-![Delphi_Button](img/Delphi_button.png)
+![Delphi_Button](/img/nanostream/windows/Delphi_button.png)
 
 Double Click the button and add this code:
 

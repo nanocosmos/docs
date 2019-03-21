@@ -379,7 +379,7 @@ hr = pNanoCodecOpts->SetCodecOptions((MPDX4_BaseCodecOpts*) &mpeg2EncParams, INA
 
 The filter's property page offers a subset of encoding parameters, containing the most important options.
 
-![MPEG-2 Video Encoder Properties](img/directshow_mpeg2_video_enc_prop.png)
+![MPEG-2 Video Encoder Properties](/img/nanostream/directshow/directshow_mpeg2_video_enc_prop.png)
 
 ### Debug-Log Configuration Registry Settings
 

@@ -50,7 +50,7 @@ The PlayerActivity contains the main application code. The location is:
 
 Your window should look like this:
 
-![Git-Android-Player](img/android_sample_player_studio.png)
+![Git-Android-Player](/img/nanostream/android/android_sample_player_studio.png)
 
 
 
@@ -120,7 +120,7 @@ The MainActivity contains the main application code. The location is:
 
 Your window should look like this:
 
-![Git-Android-Streamer](img/android_sample_streamer_studio.png)
+![Git-Android-Streamer](/img/nanostream/android/android_sample_streamer_studio.png)
 
 
 

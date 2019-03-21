@@ -113,7 +113,7 @@ The nanocosmos H.264/AVC Video Decoder supports streams in baseline, main and hi
 
 
 
-![Example playback filtergraph](img/directshow_h264_decoding_filtergraph.png)
+![Example playback filtergraph](/img/nanostream/directshow/directshow_h264_decoding_filtergraph.png)
 
 Figure 1.  Example playback filtergraph
 
@@ -218,7 +218,7 @@ The SDK\doc folder contains the following further documents:
     * CLSID:		{2C6E92AB-523E-4C90-8A01-394FC0FC273C}
 
 
-![Example filtergraph](img/directshow_h264_encoding_filtergraph.png)
+![Example filtergraph](/img/nanostream/directshow/directshow_h264_encoding_filtergraph.png)
 
 Figure 1.  Example  filtergraph
 

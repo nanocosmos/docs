@@ -44,7 +44,7 @@ Formats:
 
 
 
-![Direct Show Example](img/directshow_qt_example.png)
+![Direct Show Example](/img/nanostream/directshow/directshow_qt_example.png)
 
 Direct Show Example
 
@@ -66,7 +66,7 @@ QuickTime IMX Codec Package can be used in all Quicktime based applications, for
 
 The Codec is a QuickTime Decoder Component developed by nanocosmos.
 
-![Quicktime IMX Example](img/directshow_imx_example.png)
+![Quicktime IMX Example](/img/nanostream/directshow/directshow_imx_example.png)
 
 Quicktime IMX Example
 

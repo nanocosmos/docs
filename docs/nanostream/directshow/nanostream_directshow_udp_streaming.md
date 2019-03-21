@@ -47,7 +47,7 @@ The DirectShow pins are accepting connections matching the following media types
 
 #### Configuration through the Property Page   
 
-![Source Properties](img/directshow_udp_ts_streaming_source.jpg)
+![Source Properties](/img/nanostream/directshow/directshow_udp_ts_streaming_source.jpg)
 
 **Interface**: Desired network interface or Any
 
@@ -62,7 +62,7 @@ The DirectShow pins are accepting connections matching the following media types
 **Input Stream Mediatype**: Display of the current video format if online
 
 
-![Source Properties](img/directshow_udp_ts_streaming_writer.jpg)
+![Source Properties](/img/nanostream/directshow/directshow_udp_ts_streaming_writer.jpg)
 
 **Interface**: Desired network interface or Any
 
