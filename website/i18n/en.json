@@ -38,6 +38,10 @@
         "title": "iOS Streaming App in 5 Minutes",
         "sidebar_label": "iOS Streaming App in 5 Minutes"
       },
+      "cloud/cloud_overview": {
+        "title": "nanoStream Cloud Product and Services Overview",
+        "sidebar_label": "Overview"
+      },
       "faq/faq_3d_stereo_vr": {
         "title": "3D / Stereo / VR / 360",
         "sidebar_label": "3D / Stereo / VR / 360"

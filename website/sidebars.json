@@ -27,6 +27,7 @@
   },
   "cloud": {
     "nanoStream Cloud": [
+      "cloud/cloud_overview",
       "cloud/cloud_introduction",
       "cloud/cloud_getting_started",
       "cloud/cloud_ios_streaming_app"

@@ -27,7 +27,7 @@ const siteConfig = {
 
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
-    {doc: 'cloud/cloud_introduction', label: 'nanoStream Cloud'},
+    {doc: 'cloud/cloud_overview', label: 'nanoStream Cloud'},
     //{doc: 'cloud', label: 'Cloud'},
     {doc: 'nanoplayer/nanoplayer_introduction', label: 'H5Live Player'},
     {doc: 'webrtc/nanostream_webrtc_introduction', label: 'WebRTC.live'},
