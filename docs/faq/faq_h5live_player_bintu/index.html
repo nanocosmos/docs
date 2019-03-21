@@ -1,0 +1,71 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>bintu · nanocosmos Documentation</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;p&gt;&lt;details&gt;&lt;summary&gt;&lt;strong&gt;How can I play a bintu stream?&lt;/strong&gt;&lt;/summary&gt;&lt;/p&gt;
+"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="bintu · nanocosmos Documentation"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.nanocosmos.de/index.html"/><meta property="og:description" content="&lt;p&gt;&lt;details&gt;&lt;summary&gt;&lt;strong&gt;How can I play a bintu stream?&lt;/strong&gt;&lt;/summary&gt;&lt;/p&gt;
+"/><meta property="og:image" content="https://docs.nanocosmos.de/img/docusaurus.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://docs.nanocosmos.de/img/docusaurus.png"/><link rel="shortcut icon" href="/img/favicon_nano.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="/js/search.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/nanocosmos_header_logo.png" alt="nanocosmos Documentation"/><h2 class="headerTitleWithLogo">nanocosmos Documentation</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/docs/cloud/cloud_introduction" target="_self">nanoStream Cloud</a></li><li class=""><a href="/docs/nanoplayer/nanoplayer_introduction" target="_self">H5Live Player</a></li><li class=""><a href="/docs/webrtc/nanostream_webrtc_introduction" target="_self">WebRTC.live</a></li><li class=""><a href="/docs/nanostream/nanostream" target="_self">nanoStream Apps and SDKs</a></li><li class="siteNavGroupActive"><a href="/docs/faq/faq_streaming" target="_self">FAQ</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>H5Live Player</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">H5Live Player</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/faq/faq_h5live_player_general">General</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/faq/faq_h5live_player_bintu">bintu</a></li><li class="navListItem"><a class="navItem" href="/docs/faq/faq_h5live_player_adjust_style">Adjust/Style</a></li><li class="navListItem"><a class="navItem" href="/docs/faq/faq_h5live_player_metrics">Metrics</a></li><li class="navListItem"><a class="navItem" href="/docs/faq/faq_h5live_player_security">Security</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">WebRTC.live</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/faq/faq_WebRTC_general">General</a></li><li class="navListItem"><a class="navItem" href="/docs/faq/faq_WebRTC_devices">Devices</a></li><li class="navListItem"><a class="navItem" href="/docs/faq/faq_WebRTC_broadcast">Broadcast</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Live Streaming</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/faq/faq_streaming">Live Streaming</a></li><li class="navListItem"><a class="navItem" href="/docs/faq/faq_devices_support">Capture Devices and Camera Support</a></li><li class="navListItem"><a class="navItem" href="/docs/faq/faq_adv_codec_config">Advanced Codec Configuration</a></li><li class="navListItem"><a class="navItem" href="/docs/faq/faq_3d_stereo_vr">3D / Stereo / VR / 360</a></li><li class="navListItem"><a class="navItem" href="/docs/faq/programming_sdk_api">Programming / SDK / API</a></li><li class="navListItem"><a class="navItem" href="/docs/faq/faq_nanostream_sdk_win">nanoStream SDK for Windows</a></li><li class="navListItem"><a class="navItem" href="/docs/faq/programming">Programming</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Purchase and License</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/faq/faq_purchase_and_license">Purchase and License</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">bintu</h1></header><article><div><span><p><details><summary><strong>How can I play a bintu stream?</strong></summary></p>
+<p>Use for the <code>config.source</code> object the subobject <code>bintu</code>. It’s only necessary to pass the property <code>streamid</code></p>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">var</span> config = {
+    <span class="hljs-string">"source"</span>: {
+        <span class="hljs-string">"bintu"</span>: {
+            <span class="hljs-string">"apiurl"</span>: <span class="hljs-string">"https://bintu.nanocosmos.de"</span>,
+            <span class="hljs-string">"streamid"</span>: <span class="hljs-string">"39b2cc18-7116-43a4-81bd-f62b7a1a9dbc"</span>
+         }
+
+}
+</code></pre>
+<p></details></p>
+<p><details><summary><strong>Can I check capabilities?</strong></summary></p>
+<p>Yes, you can check the static capabilities array of the NanoPlayers class <code>NanoPlayer.capabilities</code>. If the array has values, the player is supported. Values can be <code>h5live</code>, <code>flash</code> and <code>native</code>.</p>
+<p></details></p>
+<p><details><summary><strong>Is there an API documentation available?</strong></summary></p>
+<p>Yes, you can find it <a href="http://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_api_class">here</a>.</p>
+<p></details></p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/faq/faq_h5live_player_general"><span class="arrow-prev">← </span><span>General</span></a><a class="docs-next button" href="/docs/faq/faq_h5live_player_adjust_style"><span>Adjust/Style</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><div><h5>Docs</h5><a href="/docs/faq/encoding_and_streaming">FAQ</a><a href="/docs/nanoplayer/nanoplayer_introduction">H5Live</a><a href="/docs/nanoplayer/nanoplayer_introduction">Nanostream Cloud</a><a href="/docs/nanoplayer/nanoplayer_introduction">WebRTC.Live</a><a href="/docs/nanoplayer/nanoplayer_introduction">Apps and SDKs</a></div><div><h5>Products</h5><a href="https://www.nanocosmos.de/v6/cloud">Nanostream Cloud with Bintu.Live</a><a href="https://www.nanocosmos.de/v6/h5live">H5Live Low Latency HTML5-Player</a><a href="https://www.nanocosmos.de/v6/webrtc">WebRTC.Live</a><a href="https://discordapp.com/">Nanostream Apps and SDK</a></div><div><h5>More</h5><a href="https://www.nanocosmos.de/blog/">Blog</a><a href="https://www.facebook.com/nanocosmos.net/">Facebook</a><a href="https://twitter.com/nanovideo">Twitter</a><a href="https://www.linkedin.com/company/nanocosmos-gmbh">LinkedIn</a><a href="https://github.com/nanocosmos">GitHub</a><a class="github-button" href="https://github.com/nanocosmos/demo" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://nanocosmos.de/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/footer_logo.png" alt="nanocosmos GmbH" width="170" height="45"/></a><section class="copyright">Copyright © 2019 nanocosmos GmbH</section></footer></div></body></html>

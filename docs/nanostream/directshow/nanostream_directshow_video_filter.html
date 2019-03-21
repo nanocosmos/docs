@@ -1,0 +1,230 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Video Filter · nanocosmos Documentation</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;h2&gt;&lt;a class=&quot;anchor&quot; aria-hidden=&quot;true&quot; id=&quot;how-to-use-the-screen-capture-directshow-filter&quot;&gt;&lt;/a&gt;&lt;a href=&quot;#how-to-use-the-screen-capture-directshow-filter&quot; aria-hidden=&quot;true&quot; class=&quot;hash-link&quot;&gt;&lt;svg class=&quot;hash-link-icon&quot; aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;How to use the Screen Capture DirectShow filter&lt;/h2&gt;
+"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Video Filter · nanocosmos Documentation"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.nanocosmos.de/index.html"/><meta property="og:description" content="&lt;h2&gt;&lt;a class=&quot;anchor&quot; aria-hidden=&quot;true&quot; id=&quot;how-to-use-the-screen-capture-directshow-filter&quot;&gt;&lt;/a&gt;&lt;a href=&quot;#how-to-use-the-screen-capture-directshow-filter&quot; aria-hidden=&quot;true&quot; class=&quot;hash-link&quot;&gt;&lt;svg class=&quot;hash-link-icon&quot; aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;How to use the Screen Capture DirectShow filter&lt;/h2&gt;
+"/><meta property="og:image" content="https://docs.nanocosmos.de/img/docusaurus.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://docs.nanocosmos.de/img/docusaurus.png"/><link rel="shortcut icon" href="/img/favicon_nano.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="/js/search.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/nanocosmos_header_logo.png" alt="nanocosmos Documentation"/><h2 class="headerTitleWithLogo">nanocosmos Documentation</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/docs/cloud/cloud_introduction" target="_self">nanoStream Cloud</a></li><li class=""><a href="/docs/nanoplayer/nanoplayer_introduction" target="_self">H5Live Player</a></li><li class=""><a href="/docs/webrtc/nanostream_webrtc_introduction" target="_self">WebRTC.live</a></li><li class="siteNavGroupActive"><a href="/docs/nanostream/nanostream" target="_self">nanoStream Apps and SDKs</a></li><li class=""><a href="/docs/faq/faq_streaming" target="_self">FAQ</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>DirectShow</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">nanoStream SDKs/Apps</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/nanostream/nanostream">Introduction</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Android</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/nanostream/android/nanostream_android_getting_started">Getting started</a></li><li class="navListItem"><a class="navItem" href="/docs/nanostream/android/nanostream_android_developer_manual_playback">Playback</a></li><li class="navListItem"><a class="navItem" href="/docs/nanostream/android/nanostream_android_developer_manual_streaming">Streaming Media</a></li><li class="navListItem"><a class="navItem" href="/docs/nanostream/android/nanostream_android_developer_manual_sample">Sample</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">iOS</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/nanostream/ios/nanostream_ios_quick_start">Developer Quickstart</a></li><li class="navListItem"><a class="navItem" href="/docs/nanostream/ios/nanostream_ios_sdk">SDK for iOS</a></li><li class="navListItem"><a class="navItem" href="/docs/nanostream/ios/nanostream_ios_license_deployment">License Deployment Information</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">MacOSX</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/nanostream/macos/nanostream_macos_sdk">MacOSX API</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Windows</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/nanostream/windows/nanostream_windows_binaries">Binary Modules for Windows</a></li><li class="navListItem"><a class="navItem" href="/docs/nanostream/windows/nanostream_windows_developer_manual">Developer Manual</a></li><li class="navListItem"><a class="navItem" href="/docs/nanostream/windows/nanostream_windows_language_integration">Language Integration</a></li><li class="navListItem"><a class="navItem" href="/docs/nanostream/windows/nanostream_windows_license_help">Setting the license</a></li><li class="navListItem"><a class="navItem" href="/docs/nanostream/windows/nanostream_windows_networkwriter">RTMP Network Renderer &amp; Writer</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">DirectShow</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/nanostream/directshow/">index</a></li><li class="navListItem"><a class="navItem" href="/docs/nanostream/directshow/nanostream_directshow_h264">H264</a></li><li class="navListItem"><a class="navItem" href="/docs/nanostream/directshow/directshow_avc_h264">directshow_avc_h264</a></li><li class="navListItem"><a class="navItem" href="/docs/nanostream/directshow/nanostream_directshow_rtmp">RTMP</a></li><li class="navListItem"><a class="navItem" href="/docs/nanostream/directshow/nanostream_directshow_rtsp">RTSP</a></li><li class="navListItem"><a class="navItem" href="/docs/nanostream/directshow/nanostream_directshow_udp_streaming">UDP/TS Streaming</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/nanostream/directshow/nanostream_directshow_video_filter">Video Filter</a></li><li class="navListItem"><a class="navItem" href="/docs/nanostream/directshow/nanostream_directshow_audio_volume">Audio Volume</a></li><li class="navListItem"><a class="navItem" href="/docs/nanostream/directshow/nanostream_directshow_mpeg">MPEG</a></li><li class="navListItem"><a class="navItem" href="/docs/nanostream/directshow/nanostream_directshow_quicktime">Quicktime IMX Playback</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Video Filter</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="how-to-use-the-screen-capture-directshow-filter"></a><a href="#how-to-use-the-screen-capture-directshow-filter" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>How to use the Screen Capture DirectShow filter</h2>
+<h3><a class="anchor" aria-hidden="true" id="capture-modes"></a><a href="#capture-modes" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Capture Modes</h3>
+<ul>
+<li>Mouse Follow</li>
+<li>Region</li>
+<li>Screen</li>
+<li>Window Handle</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="screen-capture-single-window"></a><a href="#screen-capture-single-window" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Screen Capture - Single Window</h3>
+<p>It is possible to capture a single window instead of the entire screen. The content of the window is captured even if the window is partially or completely in the background. You need to enter the Window handle or Window class name into the field.</p>
+<p>At the moment there are two modes for capturing a single window:</p>
+<ul>
+<li>Auto Size: adjusts the output size depending on the size of the window to capture, before the directshow graph is started</li>
+</ul>
+<p><img src="img/directshow_screen_capture_single_autosize.jpg" alt="Auto Size"></p>
+<ul>
+<li>Fullscreen: the output size is equivalent to the screen size, the window size is not scaled, the window can be resized while the graph is running and one can see the whole window at all times</li>
+</ul>
+<p><img src="img/directshow_screen_capture_single_fullscreen.jpg" alt="Fullscreen"></p>
+<ul>
+<li>Scaling example: if you need to downscale a full screen capture, use the additional <code>Resize/Scale</code> functionality in the encoder or add a resizer/scaler filter to the DirectShow filter graph</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="region-capture"></a><a href="#region-capture" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Region Capture</h3>
+<p>If the output of the region area seems to be different from the specified region, check if Windows display zoom is enabled:</p>
+<p><img src="img/directshow_screen_capture_region.jpg" alt="Zoom"></p>
+<hr>
+<h2><a class="anchor" aria-hidden="true" id="video-mixer-picture-in-picture"></a><a href="#video-mixer-picture-in-picture" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Video Mixer / Picture-in-Picture</h2>
+<p>This document describes the DirectShow filter configuration for the nanocosmos Video Mixer 2.</p>
+<p>See also the nanoStream API for the VideoMixer.</p>
+<h4><a class="anchor" aria-hidden="true" id="requirements"></a><a href="#requirements" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Requirements:</h4>
+<ul>
+<li>DirectShow architecture / C++</li>
+<li>Nanocosmos Video Mixer 2 Filter</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="picture-in-picture-mode-for-2-video-inputs"></a><a href="#picture-in-picture-mode-for-2-video-inputs" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Picture-in-picture mode for 2 video inputs</h3>
+<p>This short C++ example code shows how to configure the Video Mixer to show video 2 in the right top corner of video 1.</p>
+<pre><code class="hljs css language-cpp"><span class="hljs-comment">// {0ED06AB0-B2F3-421b-BA63-2E591C932802}</span>
+<span class="hljs-keyword">static</span> <span class="hljs-keyword">const</span> GUID CLSID_nanoVideoMixer2 = { <span class="hljs-number">0xed06ab0</span>, <span class="hljs-number">0xb2f3</span>, <span class="hljs-number">0x421b</span>, { <span class="hljs-number">0xba</span>, <span class="hljs-number">0x63</span>, <span class="hljs-number">0x2e</span>, <span class="hljs-number">0x59</span>, <span class="hljs-number">0x1c</span>, <span class="hljs-number">0x93</span>, <span class="hljs-number">0x28</span>, <span class="hljs-number">0x2</span> } };
+
+<span class="hljs-comment">// {2140722A-9F1E-4ac7-8A81-CF77CA6DD683}</span>
+<span class="hljs-keyword">static</span> <span class="hljs-keyword">const</span> GUID IID_IVideoPlacement = { <span class="hljs-number">0x2140722a</span>, <span class="hljs-number">0x9f1e</span>, <span class="hljs-number">0x4ac7</span>, { <span class="hljs-number">0x8a</span>, <span class="hljs-number">0x81</span>, <span class="hljs-number">0xcf</span>, <span class="hljs-number">0x77</span>, <span class="hljs-number">0xca</span>, <span class="hljs-number">0x6d</span>, <span class="hljs-number">0xd6</span>, <span class="hljs-number">0x83</span> } };
+
+CComPtr&lt;IBaseFilter&gt; m_pVideoMixer;
+m_pVideoMixer.CoCreateInstance(CLSID_nanoVideoMixer2);
+
+<span class="hljs-comment">// target area picture-in-picture: right top corner of picture 1</span>
+RECT rcTarget = {m_VideoWidth * <span class="hljs-number">7</span>/<span class="hljs-number">10</span>, m_VideoHeight*<span class="hljs-number">1</span>/<span class="hljs-number">20</span>,
+m_VideoWidth * <span class="hljs-number">9</span>/<span class="hljs-number">20</span>, m_VideoHeight * <span class="hljs-number">3</span>/<span class="hljs-number">10</span>};
+
+CComQIPtr &lt;IVideoPlacement&gt; api = m_pVideoMixer;        
+<span class="hljs-keyword">if</span> (api){
+    api-&gt;SetVideoFrameDuration( (REFERENCE_TIME)(<span class="hljs-number">10000000L</span>L / m_VideoFrameRate) );
+    api-&gt;SetOutputSize(m_VideoWidth, m_VideoHeight);
+    RECT rc = {<span class="hljs-number">0</span>,<span class="hljs-number">0</span>, m_VideoWidth, m_VideoHeight};
+    api-&gt;SetVideoPosition(<span class="hljs-number">0</span>, &amp;rc);
+    api-&gt;SetVideoPosition(<span class="hljs-number">1</span>, &amp;rcTarget);
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+</code></pre>
+<hr>
+<h2><a class="anchor" aria-hidden="true" id="nanocosmos-video-mixer-overlay"></a><a href="#nanocosmos-video-mixer-overlay" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>nanocosmos Video Mixer / Overlay</h2>
+<h3><a class="anchor" aria-hidden="true" id="general-information"></a><a href="#general-information" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>General Information</h3>
+<p>nanoStream 2.0 supports a video mixing of 2 input video signals and text and bitmap overlay functions. Both functions can be used from within nanoStream plugin applications or by using DirectShow filter setups.</p>
+<h3><a class="anchor" aria-hidden="true" id="requirements-1"></a><a href="#requirements-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Requirements:</h3>
+<ul>
+<li>Nanocosmos Video Mixer DirectShow Filter (for video mixing)</li>
+<li>Nanocosmos Text/Bitmap Overlay Filter (for text or image overlay)</li>
+<li>nanoStream Plugins (optional)</li>
+<li>Video mixing and text/image overlay can be used independently.</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="usage-of-video-mixer"></a><a href="#usage-of-video-mixer" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Usage of Video Mixer:</h3>
+<p>Use the IVideoPlacement Interface of the VideoMixer 2 filter:</p>
+<h4><a class="anchor" aria-hidden="true" id="picture-in-picture-this-example-shows-how-to-display-one-video-source-within-another-video-source"></a><a href="#picture-in-picture-this-example-shows-how-to-display-one-video-source-within-another-video-source" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Picture-in-Picture: This example shows how to display one video source within another video source.</h4>
+<pre><code class="hljs css language-cpp"><span class="hljs-comment">// specify how both capture sources should be mixed</span>
+CComPtr&lt;IVideoPlacement&gt; api ;
+m_pVideoMixer-&gt;QueryInterface(IID_IVideoPlacement, <span class="hljs-keyword">reinterpret_cast</span>&lt;<span class="hljs-keyword">void</span>**&gt;(&amp;api));
+<span class="hljs-keyword">if</span> (api) {
+    api-&gt;SetVideoFrameDuration((REFERENCE_TIME)(<span class="hljs-number">10000000L</span>L / m_VideoFrameRate) );
+    api-&gt;SetOutputSize(width, height);
+    RECT rc = {<span class="hljs-number">0</span>,<span class="hljs-number">0</span>, width, height};
+    api-&gt;SetVideoPosition(<span class="hljs-number">0</span>, &amp;rc);            <span class="hljs-comment">// specify display area for first capture source</span>
+    <span class="hljs-comment">// target area picture-in-picture: right top corner of picture 1</span>
+    RECT rcTarget = {width * <span class="hljs-number">7</span>/<span class="hljs-number">10</span>, height*<span class="hljs-number">1</span>/<span class="hljs-number">20</span>, width * <span class="hljs-number">9</span>/<span class="hljs-number">20</span>, height * <span class="hljs-number">3</span>/<span class="hljs-number">10</span>};
+    api-&gt;SetVideoPosition(<span class="hljs-number">1</span>, &amp;rcTarget);     <span class="hljs-comment">// specify display area for second capture source</span>
+}
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="left-right-example-showing-how-to-mix-two-video-sources-side-by-side-left-right"></a><a href="#left-right-example-showing-how-to-mix-two-video-sources-side-by-side-left-right" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Left/Right: Example showing how to mix two video sources side by side (left/right)</h4>
+<pre><code class="hljs css language-cpp"><span class="hljs-comment">// specify how both capture sources should be mixed</span>
+CComPtr&lt;IVideoPlacement&gt; api ;
+m_pVideoMixer-&gt;QueryInterface(IID_IVideoPlacement, <span class="hljs-keyword">reinterpret_cast</span>&lt;<span class="hljs-keyword">void</span>**&gt;(&amp;api));
+<span class="hljs-keyword">if</span> (api) {
+    api-&gt;SetVideoFrameDuration((REFERENCE_TIME)(<span class="hljs-number">10000000L</span>L / videoFrameRate));
+    api-&gt;SetOutputSize(videoWidth, videoHeight);
+    RECT left = {<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, videoWidth / <span class="hljs-number">2</span>, videoHeight};
+    api-&gt;SetVideoPosition(<span class="hljs-number">0</span>, &amp;left);    <span class="hljs-comment">// specify display area for first capture source</span>
+    RECT right = {videoWidth / <span class="hljs-number">2</span>, <span class="hljs-number">0</span>, videoWidth, videoHeight};
+    api-&gt;SetVideoPosition(<span class="hljs-number">1</span>, &amp;right);   <span class="hljs-comment">// specify display area for second capture source</span>
+}
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="usage-of-text-bitmap-overlay"></a><a href="#usage-of-text-bitmap-overlay" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Usage of Text/Bitmap Overlay:</h3>
+<h4><a class="anchor" aria-hidden="true" id="text-overlay"></a><a href="#text-overlay" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Text Overlay:</h4>
+<p>The text to overlay can either be copied directly to the item text buffer or can be specified by the path to a file, containing the overlay text. The text within that file is then loaded by the overlay filter.</p>
+<p>Use the INanoTextOverlay interface of the overlay filter:</p>
+<pre><code class="hljs css language-cpp">CComQIPtr&lt;INanoTextOverlay, &amp;IID_INanoTextOverlay&gt; m_pTextOverlay;
+m_pTextOverlay = m_pOverlayFilter;
+<span class="hljs-keyword">if</span>(m_pTextOverlay) {
+    <span class="hljs-comment">// you can add more than one item to the overlay filter, for the sake of simplicity we add only one item here</span>
+    <span class="hljs-keyword">overlay_item_t</span> item;
+    <span class="hljs-comment">// if we draw text text overlay filter uses only top/left coords.</span>
+    <span class="hljs-comment">// width/height of the text it determined from font params</span>
+    item.output_rect.left       = videoWidth * <span class="hljs-number">1</span>/<span class="hljs-number">20</span>;
+    item.output_rect.top       = videoHeight * <span class="hljs-number">1</span>/<span class="hljs-number">20</span>;
+    item.output_rect.bottom = videoHeight * <span class="hljs-number">19</span>/<span class="hljs-number">20</span>;
+    item.output_rect.right     = videoWidth * <span class="hljs-number">19</span>/<span class="hljs-number">20</span>;
+    item.back_color                 = COLORREF(<span class="hljs-number">0x00000000</span>);
+    item.text_color             = COLORREF(<span class="hljs-number">0x000099FF</span>);
+    item.alpha                  = <span class="hljs-number">0.5</span>;           <span class="hljs-comment">// the opacity of the overlay text</span>
+    <span class="hljs-comment">// (if skip color is equal to back_color then text will be drawn without background color)</span>
+    item.skip_color = COLORREF(<span class="hljs-number">0x00000000</span>);
+
+    CString text = _T(<span class="hljs-string">"Text Overlay"</span>);  <span class="hljs-comment">// the text that should be overlayed</span>
+    item.use_filename = <span class="hljs-literal">false</span>;                  <span class="hljs-comment">// assign true, if text specifies a path to a file,</span>
+                                                                <span class="hljs-comment">// containing text</span>
+    wcscpy(item.text, text.GetBuffer());
+    item.speed                  = <span class="hljs-number">-2.0</span>; <span class="hljs-comment">//speed of string moving</span>
+
+    <span class="hljs-comment">// set font properties</span>
+    item.font.lfHeight      = <span class="hljs-number">-8</span>;
+    item.font.lfWidth               = <span class="hljs-number">0</span>;
+    item.font.lfEscapement  = <span class="hljs-number">0</span>;
+    item.font.lfOrientation = <span class="hljs-number">0</span>;
+    item.font.lfWeight      = FW_BOLD;
+    item.font.lfItalic              = <span class="hljs-number">0</span>;
+    item.font.lfUnderline       = <span class="hljs-number">0</span>;
+    item.font.lfStrikeOut       = <span class="hljs-number">0</span>;
+    item.font.lfCharSet     = <span class="hljs-number">0</span>;
+    item.font.lfOutPrecision    = <span class="hljs-number">3</span>;
+    item.font.lfClipPrecision   = <span class="hljs-number">2</span>;
+    item.font.lfQuality     = DEFAULT_QUALITY;
+    item.font.lfPitchAndFamily  = DEFAULT_PITCH|FF_DONTCARE;
+
+    TCHAR fontName[<span class="hljs-number">100</span>] = _T(<span class="hljs-string">"Arial"</span>);
+    _tccpy(item.font.lfFaceName, fontName);         <span class="hljs-comment">// face name of the font</span>
+
+    m_pTextOverlay-&gt;AddItem(&amp;item, <span class="hljs-literal">NULL</span>);       <span class="hljs-comment">// add the item to the overlay filter</span>
+}
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="picture-overlay"></a><a href="#picture-overlay" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Picture Overlay:</h4>
+<p>The image to overlay is not loaded by the overlay filter. The image data has to be loaded beforehand. In this example the class CImage is used.</p>
+<p>Use the INanoTextOverlay interface of the overlay filter:</p>
+<pre><code class="hljs css language-cpp">CComQIPtr&lt;INanoTextOverlay, &amp;IID_INanoTextOverlay&gt; m_pPicOverlay;
+m_pPicOverlay = m_pOverlayFilter;
+<span class="hljs-keyword">if</span>(m_pPicOverlay) {
+    <span class="hljs-keyword">overlay_item_t</span> item;
+    item.output_rect.left       = videoWidth * <span class="hljs-number">1</span>/<span class="hljs-number">20</span>;
+    item.output_rect.top       = videoHeight * <span class="hljs-number">1</span>/<span class="hljs-number">20</span>;
+    item.output_rect.bottom = videoHeight * <span class="hljs-number">19</span>/<span class="hljs-number">20</span>;
+    item.output_rect.right     = videoWidth * <span class="hljs-number">19</span>/<span class="hljs-number">20</span>;
+    item.alpha                  = <span class="hljs-number">0.5</span>;
+
+    CString imagePath = _T(<span class="hljs-string">"C:\temp\my_image.bmp"</span>); <span class="hljs-comment">// path to the image - .png and .jpg</span>
+                                                                                        <span class="hljs-comment">// is also possible</span>
+    CImage image;
+    m_Image.Load(imagePath .GetBuffer());
+    item.image.data          = m_Image.GetBits();
+    item.image.width     = m_Image.GetWidth();
+    item.image.height    = m_Image.GetHeight();
+    item.image.pitch             = m_Image.GetPitch();
+    item.use_image       = <span class="hljs-literal">true</span>;
+    item.use_image_alpha = <span class="hljs-literal">false</span>; <span class="hljs-comment">// assign true for using the alpha value of png images</span>
+
+    m_pPicOverlay-&gt;AddItem(&amp;item, <span class="hljs-literal">NULL</span>);    <span class="hljs-comment">// add the item to the overlay filter</span>
+}
+</code></pre>
+<blockquote>
+<p>If the alpha values of a png picture should be used <strong>item.use_image_alpha</strong> has to be set to true.</p>
+</blockquote>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/nanostream/directshow/nanostream_directshow_udp_streaming"><span class="arrow-prev">← </span><span>UDP/TS Streaming</span></a><a class="docs-next button" href="/docs/nanostream/directshow/nanostream_directshow_audio_volume"><span>Audio Volume</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#how-to-use-the-screen-capture-directshow-filter">How to use the Screen Capture DirectShow filter</a><ul class="toc-headings"><li><a href="#capture-modes">Capture Modes</a></li><li><a href="#screen-capture-single-window">Screen Capture - Single Window</a></li><li><a href="#region-capture">Region Capture</a></li></ul></li><li><a href="#video-mixer-picture-in-picture">Video Mixer / Picture-in-Picture</a><ul class="toc-headings"><li><a href="#picture-in-picture-mode-for-2-video-inputs">Picture-in-picture mode for 2 video inputs</a></li></ul></li><li><a href="#nanocosmos-video-mixer-overlay">nanocosmos Video Mixer / Overlay</a><ul class="toc-headings"><li><a href="#general-information">General Information</a></li><li><a href="#requirements-1">Requirements:</a></li><li><a href="#usage-of-video-mixer">Usage of Video Mixer:</a></li><li><a href="#usage-of-text-bitmap-overlay">Usage of Text/Bitmap Overlay:</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><div><h5>Docs</h5><a href="/docs/faq/encoding_and_streaming">FAQ</a><a href="/docs/nanoplayer/nanoplayer_introduction">H5Live</a><a href="/docs/nanoplayer/nanoplayer_introduction">Nanostream Cloud</a><a href="/docs/nanoplayer/nanoplayer_introduction">WebRTC.Live</a><a href="/docs/nanoplayer/nanoplayer_introduction">Apps and SDKs</a></div><div><h5>Products</h5><a href="https://www.nanocosmos.de/v6/cloud">Nanostream Cloud with Bintu.Live</a><a href="https://www.nanocosmos.de/v6/h5live">H5Live Low Latency HTML5-Player</a><a href="https://www.nanocosmos.de/v6/webrtc">WebRTC.Live</a><a href="https://discordapp.com/">Nanostream Apps and SDK</a></div><div><h5>More</h5><a href="https://www.nanocosmos.de/blog/">Blog</a><a href="https://www.facebook.com/nanocosmos.net/">Facebook</a><a href="https://twitter.com/nanovideo">Twitter</a><a href="https://www.linkedin.com/company/nanocosmos-gmbh">LinkedIn</a><a href="https://github.com/nanocosmos">GitHub</a><a class="github-button" href="https://github.com/nanocosmos/demo" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://nanocosmos.de/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/footer_logo.png" alt="nanocosmos GmbH" width="170" height="45"/></a><section class="copyright">Copyright © 2019 nanocosmos GmbH</section></footer></div></body></html>

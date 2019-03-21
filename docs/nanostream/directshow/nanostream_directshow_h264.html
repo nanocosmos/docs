@@ -1,0 +1,458 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>H264 · nanocosmos Documentation</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;h2&gt;&lt;a class=&quot;anchor&quot; aria-hidden=&quot;true&quot; id=&quot;avc-h264-video-codec-sdk&quot;&gt;&lt;/a&gt;&lt;a href=&quot;#avc-h264-video-codec-sdk&quot; aria-hidden=&quot;true&quot; class=&quot;hash-link&quot;&gt;&lt;svg class=&quot;hash-link-icon&quot; aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;AVC/H.264 Video Codec / SDK&lt;/h2&gt;
+"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="H264 · nanocosmos Documentation"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.nanocosmos.de/index.html"/><meta property="og:description" content="&lt;h2&gt;&lt;a class=&quot;anchor&quot; aria-hidden=&quot;true&quot; id=&quot;avc-h264-video-codec-sdk&quot;&gt;&lt;/a&gt;&lt;a href=&quot;#avc-h264-video-codec-sdk&quot; aria-hidden=&quot;true&quot; class=&quot;hash-link&quot;&gt;&lt;svg class=&quot;hash-link-icon&quot; aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;AVC/H.264 Video Codec / SDK&lt;/h2&gt;
+"/><meta property="og:image" content="https://docs.nanocosmos.de/img/docusaurus.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://docs.nanocosmos.de/img/docusaurus.png"/><link rel="shortcut icon" href="/img/favicon_nano.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="/js/search.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/nanocosmos_header_logo.png" alt="nanocosmos Documentation"/><h2 class="headerTitleWithLogo">nanocosmos Documentation</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/docs/cloud/cloud_introduction" target="_self">nanoStream Cloud</a></li><li class=""><a href="/docs/nanoplayer/nanoplayer_introduction" target="_self">H5Live Player</a></li><li class=""><a href="/docs/webrtc/nanostream_webrtc_introduction" target="_self">WebRTC.live</a></li><li class="siteNavGroupActive"><a href="/docs/nanostream/nanostream" target="_self">nanoStream Apps and SDKs</a></li><li class=""><a href="/docs/faq/faq_streaming" target="_self">FAQ</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>DirectShow</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">nanoStream SDKs/Apps</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/nanostream/nanostream">Introduction</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Android</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/nanostream/android/nanostream_android_getting_started">Getting started</a></li><li class="navListItem"><a class="navItem" href="/docs/nanostream/android/nanostream_android_developer_manual_playback">Playback</a></li><li class="navListItem"><a class="navItem" href="/docs/nanostream/android/nanostream_android_developer_manual_streaming">Streaming Media</a></li><li class="navListItem"><a class="navItem" href="/docs/nanostream/android/nanostream_android_developer_manual_sample">Sample</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">iOS</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/nanostream/ios/nanostream_ios_quick_start">Developer Quickstart</a></li><li class="navListItem"><a class="navItem" href="/docs/nanostream/ios/nanostream_ios_sdk">SDK for iOS</a></li><li class="navListItem"><a class="navItem" href="/docs/nanostream/ios/nanostream_ios_license_deployment">License Deployment Information</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">MacOSX</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/nanostream/macos/nanostream_macos_sdk">MacOSX API</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Windows</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/nanostream/windows/nanostream_windows_binaries">Binary Modules for Windows</a></li><li class="navListItem"><a class="navItem" href="/docs/nanostream/windows/nanostream_windows_developer_manual">Developer Manual</a></li><li class="navListItem"><a class="navItem" href="/docs/nanostream/windows/nanostream_windows_language_integration">Language Integration</a></li><li class="navListItem"><a class="navItem" href="/docs/nanostream/windows/nanostream_windows_license_help">Setting the license</a></li><li class="navListItem"><a class="navItem" href="/docs/nanostream/windows/nanostream_windows_networkwriter">RTMP Network Renderer &amp; Writer</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">DirectShow</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/nanostream/directshow/">index</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/nanostream/directshow/nanostream_directshow_h264">H264</a></li><li class="navListItem"><a class="navItem" href="/docs/nanostream/directshow/directshow_avc_h264">directshow_avc_h264</a></li><li class="navListItem"><a class="navItem" href="/docs/nanostream/directshow/nanostream_directshow_rtmp">RTMP</a></li><li class="navListItem"><a class="navItem" href="/docs/nanostream/directshow/nanostream_directshow_rtsp">RTSP</a></li><li class="navListItem"><a class="navItem" href="/docs/nanostream/directshow/nanostream_directshow_udp_streaming">UDP/TS Streaming</a></li><li class="navListItem"><a class="navItem" href="/docs/nanostream/directshow/nanostream_directshow_video_filter">Video Filter</a></li><li class="navListItem"><a class="navItem" href="/docs/nanostream/directshow/nanostream_directshow_audio_volume">Audio Volume</a></li><li class="navListItem"><a class="navItem" href="/docs/nanostream/directshow/nanostream_directshow_mpeg">MPEG</a></li><li class="navListItem"><a class="navItem" href="/docs/nanostream/directshow/nanostream_directshow_quicktime">Quicktime IMX Playback</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">H264</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="avc-h264-video-codec-sdk"></a><a href="#avc-h264-video-codec-sdk" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>AVC/H.264 Video Codec / SDK</h2>
+<h3><a class="anchor" aria-hidden="true" id="high-quality-and-high-performance-video-coding"></a><a href="#high-quality-and-high-performance-video-coding" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>High Quality and High Performance Video Coding</h3>
+<p>nanocosmos AVC/H.264 video codec is a high performance video codec for the latest generation <code>MPEG-AVC / H.264</code> video coding standards. It may be licensed by Professional and OEM customers for integration into custom applications.</p>
+<h3><a class="anchor" aria-hidden="true" id="major-features"></a><a href="#major-features" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Major Features</h3>
+<ul>
+<li>Most advanced video coding standard <code>H.264 (MPEG-AVC)</code></li>
+<li>Highly optimized software coding with support for latest CPU generations (Multicore / Core i7)</li>
+<li>Wide range of applications from Mobile Phones (3GP), Portable Devices (iPod etc.) up to HDTV</li>
+<li>Full HD <code>1080i</code> and <code>1080p</code>support</li>
+<li>X-HD support for Custom Applications (Dome Cinema, Projections), up to <code>2k/4k</code> (4096 x 4096)</li>
+<li>Support for realtime Full HD 1080 encoding and decoding of <code>dual channel video</code> (stereo video / 3d)</li>
+<li>Baseline Profile, Main Profile and HDTV modes supported</li>
+<li>Compatible to <code>ISO Mp4</code> and <code>Flash Media Streaming Server</code> and <code>Wowza</code></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="architecture-and-availability"></a><a href="#architecture-and-availability" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Architecture and Availability</h3>
+<p>The Codec is available for Windows platforms based on DirectShow filters. For MacOS and Linux, custom based solutions are available.</p>
+<h3><a class="anchor" aria-hidden="true" id="components"></a><a href="#components" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Components</h3>
+<ul>
+<li>AVC/H.264 Video Encoder and Decoder, MP4 splitter and multiplexer</li>
+<li>MPEG audio and AAC audio codecs.</li>
+<li>MP4, 3GP and optionally Quicktime and AVI file format writers</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="licensing-model"></a><a href="#licensing-model" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Licensing model</h3>
+<p>We offer several licensing models, dependent on customer requirements.</p>
+<ul>
+<li>Developer License (SDK):  With the Developer License, you will get a documented SDK including shared library objects (DLLs), interface specifications, header files and source code samples to develop video coding applications.</li>
+<li>Redistribution License (Royalties):  For redistributing video coding modules with your application, a per-item additional royalty license is needed. You may also get flat fees for high sales volumes. Please contact us for further information.</li>
+<li>Customization and flat fees are possible</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="h264-avc-video-encoder"></a><a href="#h264-avc-video-encoder" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>H.264 / AVC Video Encoder</h3>
+<p>The Video Encoder produces compatible streams according to <code>ITU H.264 / ISO MPEG/AVC Reference Model JM9.2</code>, as well as MP4 file format output.</p>
+<p>Dual channel encoding for stereo video is supported.</p>
+<p>The encoder accepts the following parameters:</p>
+<ul>
+<li>GOP Structure (I-frame distance / P-frame distance)</li>
+<li>Bit rate</li>
+<li>Profile/Level (baseline, main, extended, high)</li>
+<li>Field Structure (Interlaced/Progressive)</li>
+<li>Frame rate (<code>15</code>, <code>24</code>, <code>25</code>, <code>30</code>, <code>50</code>, <code>60</code>)</li>
+<li>chroma_format / aux_format <code>(monochrome</code>, <code>4:2:0</code>)</li>
+<li>misc. rate controls (fixed quantization, vbr, cbr)</li>
+<li>Motion Estimation method</li>
+<li>full pel, half pel and quarter pel motion vectors</li>
+<li>SVC chroma deblocking filter mode</li>
+<li>transform_8x8_mode</li>
+<li>Frame Size from Mobile to HDTV (<code>64x64</code> to <code>4096x2048</code>)</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="h264-avc-video-decoder"></a><a href="#h264-avc-video-decoder" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>H.264/AVC Video Decoder</h3>
+<p>The decoder supports decoding of files created by <code>JM9.2</code> compliant encoders or later, as well as MP4 file format input. The decoder supports baseline, main, extended and high profiles features, including HD, e.g. 1080i.</p>
+<h3><a class="anchor" aria-hidden="true" id="audio-multiplexer-and-file-formats"></a><a href="#audio-multiplexer-and-file-formats" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Audio, Multiplexer and File Formats</h3>
+<ul>
+<li>Elementary Files, MP4 file format, 3GP file format, Quicktime</li>
+<li>RTMP streaming for Flash compatible streaming servers</li>
+<li>MPEG audio and AAC formats are available.</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="other-codec-types"></a><a href="#other-codec-types" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Other codec types</h3>
+<p>Ask for special configurations and custom codec development, e.g. for <code>IMX</code>, <code>DVCPRO-HD XDCAM</code>.</p>
+<hr>
+<h2><a class="anchor" aria-hidden="true" id="nanoavc-h264-directshow-decoding-sdk"></a><a href="#nanoavc-h264-directshow-decoding-sdk" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>nanoAVC/H.264 DirectShow Decoding SDK</h2>
+<h3><a class="anchor" aria-hidden="true" id="introduction"></a><a href="#introduction" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Introduction</h3>
+<p>nanoAVC/H.264 Direct Show Decoding SDK enables you to decode/play back
+AVC/H.264 video and AAC audio from MP4/3GP or transport stream (TS) sources
+within Windows Media Player and custom applications based on Microsoft DirectShow Framework.</p>
+<p>The nanocosmos H.264/AVC Video Decoder supports streams in baseline, main and high profile. It is highly optimized for use on hyper-threading and multi core systems.</p>
+<h3><a class="anchor" aria-hidden="true" id="filter-components"></a><a href="#filter-components" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Filter components</h3>
+<ul>
+<li>nanocosmos AVC/H.264 Video Decoder
+<ul>
+<li>Module:       nh264dec.ax</li>
+<li>CLSID:        {264DA7DD-CE74-472D-A2FD-796A1F0A379C}</li>
+</ul></li>
+</ul>
+<ul>
+<li>nanocosmos AAC Audio Decoder
+<ul>
+<li>Module:       naacdec.ax</li>
+<li>CLSID:        {AEED2B3D-6DA1-4C84-A85D-83547FA90486}</li>
+</ul></li>
+</ul>
+<ul>
+<li>nanocosmos MP4 Stream Splitter
+<ul>
+<li>Module:       nmp4splitter.ax</li>
+<li>CLSID:        {22F493C4-B51B-4767-BE55-ADFA34D6A205}</li>
+</ul></li>
+</ul>
+<ul>
+<li>nanocosmos MPEG PS/TS Stream Splitter
+<ul>
+<li>Module:       nmpegsplitter.ax</li>
+<li>CLSID:        {0994D1E8-B697-47DE-B1E3-36D26937D5B4}</li>
+</ul></li>
+</ul>
+<p><img src="img/directshow_h264_decoding_filtergraph.png" alt="Example playback filtergraph"></p>
+<p>Figure 1.  Example playback filtergraph</p>
+<h3><a class="anchor" aria-hidden="true" id="registering-and-unregistering-components-in-the-directshow-framework"></a><a href="#registering-and-unregistering-components-in-the-directshow-framework" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Registering and unregistering components in the DirectShow framework</h3>
+<p>In order to use them, filters must be registered in the DirectShow framework. After installation all filters are registered. To re-register or unregister components, execute the RegisterFilters.bat or UnregisterFilters.bat batch files from the SDK/bin folder.</p>
+<h3><a class="anchor" aria-hidden="true" id="evaluation-mode-and-filter-activation"></a><a href="#evaluation-mode-and-filter-activation" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Evaluation mode and filter activation</h3>
+<p>Filters can be activated by installing a license key to windows registry or programmatically by setting a license key through the software interface of a filter instance. How to set license keys to unlock filters is described in the module's documents.
+If filters run in evaluation mode, an overlay logo will be shown on video.</p>
+<h3><a class="anchor" aria-hidden="true" id="embedding-customizing-nanocosmos-technology"></a><a href="#embedding-customizing-nanocosmos-technology" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Embedding / Customizing nanocosmos technology</h3>
+<p>Nanocosmos also offers special OEM and customization service. Dependent on your needs, we may offer different models of licensing or application development.</p>
+<hr>
+<h2><a class="anchor" aria-hidden="true" id="nanoavc-h264-directshow-encoding-sdk"></a><a href="#nanoavc-h264-directshow-encoding-sdk" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>nanoAVC/H.264 DirectShow Encoding SDK</h2>
+<h3><a class="anchor" aria-hidden="true" id="introduction-1"></a><a href="#introduction-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Introduction</h3>
+<p>nanoAVC/H.264 Direct Show Encoding SDK enables you to perform high quality and high performance video coding for the latest generation video and audio coding standards. It is intended to develop  video encoding / transcoding applications based on Microsoft(R) DirectX/DirectShow(R) technology.</p>
+<h3><a class="anchor" aria-hidden="true" id="major-features-1"></a><a href="#major-features-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Major Features</h3>
+<ul>
+<li>ISO 14496 Part 10 (MPEG-AVC) / ITU H.264 compliance for many profiles and levels</li>
+<li>Encoding of H.264 video streams in Baseline, Main, Extended and High profile</li>
+<li>Encoding of AAC-LC/LTP/MAIN/HE(aacPlus) audio streams with up to 6 channels</li>
+<li>Encoding of AMR-NB audio streams</li>
+<li>Highly optimized software coding with support for latest CPU  technology by Intel and AMD (SSE2/SSE3/SSE4 and Dual-Core/Core-Duo, AMD Athlon64</li>
+<li>Real-time Encoding from Capture cards is supported</li>
+<li>Wide range of applications from Mobile Phones (3GP), Portable Devices (iPod, iPhone, Sony PSP etc) up to Professional HDTV</li>
+<li>Multiplexer for MP4, MOV and 3GP</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="documentation"></a><a href="#documentation" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Documentation</h3>
+<p>The SDK\doc folder contains the following further documents:</p>
+<ul>
+<li>H.264/AVC Video Decoder</li>
+<li>H.264/AVC Video Encoder</li>
+<li>AAC Audio Encoder</li>
+<li>AMR-NB Audio Encoder</li>
+<li>MP4/3GP Multiplexer</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="filter-components-1"></a><a href="#filter-components-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Filter components</h3>
+<ul>
+<li>nanocosmos AVC/H.264 Video Encoder
+<ul>
+<li>Module:       nh264enc.ax</li>
+<li>CLSID:        {A88889A8-3C2A-4A32-8EAA-755D491D02A0}</li>
+</ul></li>
+</ul>
+<ul>
+<li>nanocosmos AAC Audio Encoder
+<ul>
+<li>Module:       naacenc.ax</li>
+<li>CLSID:        {0296CC21-B78D-416D-846C-45E26CA46A4A}</li>
+</ul></li>
+</ul>
+<ul>
+<li>nanocosmos AMR-NB Audio Encoder
+<ul>
+<li>Module:       namrnbenc.ax</li>
+<li>CLSID:        {10CAB930-E019-41DF-83B7-60D723706B8F}</li>
+</ul></li>
+</ul>
+<ul>
+<li>nanocosmos MP4 Multiplexer
+<ul>
+<li>Module:       nmp4mux.ax</li>
+<li>CLSID:        {78D670BF-49B5-4A3B-BB8C-E2A36E688FCF}</li>
+</ul></li>
+</ul>
+<ul>
+<li>nanocosmos File Dump Filter
+<ul>
+<li>Module:       nanodump.ax</li>
+<li>CLSID:        {DA67A541-8FEA-11D4-A908-00105A6758CF}</li>
+</ul></li>
+</ul>
+<ul>
+<li>nanocosmos AVC/H.264 Video Decoder
+<ul>
+<li>Module:       nh264dec.ax</li>
+<li>CLSID:        {264DA7DD-CE74-472D-A2FD-796A1F0A379C}</li>
+</ul></li>
+</ul>
+<ul>
+<li>nanocosmos AAC Audio Decoder
+<ul>
+<li>Module:       naacdec.ax</li>
+<li>CLSID:        {AEED2B3D-6DA1-4C84-A85D-83547FA90486}</li>
+</ul></li>
+</ul>
+<ul>
+<li>nanocosmos MP4 Stream Splitter
+<ul>
+<li>Module:       nmp4splitter.ax</li>
+<li>CLSID:        {22F493C4-B51B-4767-BE55-ADFA34D6A205}</li>
+</ul></li>
+</ul>
+<ul>
+<li>nanocosmos MPEG PS/TS Stream Splitter
+<ul>
+<li>Module:       nmpegsplitter.ax</li>
+<li>CLSID:        {0994D1E8-B697-47DE-B1E3-36D26937D5B4}</li>
+</ul></li>
+</ul>
+<ul>
+<li>nanocosmos Color Space Converter
+<ul>
+<li>Module:       ncolconv.ax</li>
+<li>CLSID:        {E855821E-C055-4C85-B04F-19F65D5D50FD}</li>
+</ul></li>
+</ul>
+<ul>
+<li>nanocosmos MPEG TS Writer
+<ul>
+<li>Module:       nanoTsWriter.ax</li>
+<li>CLSID:        {2C6E92AB-523E-4C90-8A01-394FC0FC273C}</li>
+</ul></li>
+</ul>
+<p><img src="img/directshow_h264_encoding_filtergraph.png" alt="Example filtergraph"></p>
+<p>Figure 1.  Example  filtergraph</p>
+<h3><a class="anchor" aria-hidden="true" id="registering-and-unregistering-components-in-the-directshow-framework-1"></a><a href="#registering-and-unregistering-components-in-the-directshow-framework-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Registering and unregistering components in the DirectShow framework</h3>
+<p>In order to use them, filters must be registered in the DirectShow framework. After installation all filters are registered. To re-register or unregister components, execute the <code>RegisterFilters.bat</code> or <code>UnregisterFilters.bat</code> batch files from the SDK/bin folder.</p>
+<h3><a class="anchor" aria-hidden="true" id="evaluation-mode-and-filter-activation-1"></a><a href="#evaluation-mode-and-filter-activation-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Evaluation mode and filter activation</h3>
+<p>Filters can be activated by installing a license key to windows registry or programmatically by setting a license key through the software interface of a filter instance. How to set license keys to unlock filters is described in the module's documents.
+If filters run in evaluation mode, an overlay logo will be shown on video.</p>
+<h3><a class="anchor" aria-hidden="true" id="embedding-customizing-nanopeg-technology"></a><a href="#embedding-customizing-nanopeg-technology" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Embedding / Customizing nanoPEG technology</h3>
+<p>Nanocosmos also offers special OEM and customization service. Dependent on your needs, we may offer different models of licensing or application development.</p>
+<hr>
+<h2><a class="anchor" aria-hidden="true" id="nanocosmos-h264-video-decoder-filter"></a><a href="#nanocosmos-h264-video-decoder-filter" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>nanocosmos H.264 Video Decoder Filter</h2>
+<h3><a class="anchor" aria-hidden="true" id="module-version"></a><a href="#module-version" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Module / Version</h3>
+<p>nanocosmos H.264/AVC Direct Show Video Decoder Filter\
+<code>nh264dec.ax Version 2.5.2.4</code></p>
+<p>The nanocosmos H.264/AVC Video Decoder support streams in baseline, main and high profile. It is highly optimized for use on hyper-threading and multi core systems.</p>
+<h3><a class="anchor" aria-hidden="true" id="connectivity"></a><a href="#connectivity" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Connectivity</h3>
+<p>The input is accepting connections to splitter filters or combined source/splitter filters matching the following media types:</p>
+<p>Major types:</p>
+<ul>
+<li>MEDIATYPE_Video</li>
+</ul>
+<p>Subtypes:</p>
+<ul>
+<li>FourCCs:
+<ul>
+<li>H264, h264,</li>
+<li>AVC1, avc1,</li>
+<li>X264, x264,</li>
+<li>VSSH, vssh,</li>
+<li>MEDIASUBTYPE_H264: {8D2D71CB-243F-45E3-B2D8-5FD7967EC09B}</li>
+</ul></li>
+</ul>
+<p>Formats:</p>
+<ul>
+<li>FORMAT_VideoInfo,</li>
+<li>FORMAT_VideoInfo2,</li>
+<li>FORMAT_MPEG2_VIDEO</li>
+</ul>
+<p>The output supports these media types:</p>
+<p>Major types:</p>
+<ul>
+<li>MEDIATYPE_Video</li>
+</ul>
+<p>Subtypes:</p>
+<ul>
+<li>MEDIASUBTYPE_YV12,</li>
+<li>MEDIASUBTYPE_I420,</li>
+<li>MEDIASUBTYPE_IYUV,</li>
+<li>MEDIASUBTYPE_YUY2,</li>
+<li>MEDIASUBTYPE_RGB24,</li>
+<li>MEDIASUBTYPE_RGB32,</li>
+<li>MEDIASUBTYPE_ARGB32,</li>
+<li>MEDIASUBTYPE_RGB565,</li>
+</ul>
+<p>Formats:</p>
+<ul>
+<li>FORMAT_VideoInfo</li>
+<li>FORMAT_VideoInfo2</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="filter-guids"></a><a href="#filter-guids" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Filter GUIDs</h3>
+<pre><code class="hljs css language-cpp"><span class="hljs-comment">//%% Filter GUID</span>
+<span class="hljs-comment">//%% {264DA7DD-CE74-472d-A2FD-796A1F0A379C}</span>
+DEFINE_GUID(CLSID_NANO_H264_DECODER, <span class="hljs-number">0x264DA7DD</span>, <span class="hljs-number">0xCE74</span>, <span class="hljs-number">0x472d</span>, <span class="hljs-number">0xA2</span>, <span class="hljs-number">0xFD</span>, <span class="hljs-number">0x79</span>, <span class="hljs-number">0x6A</span>, <span class="hljs-number">0x1F</span>, <span class="hljs-number">0x0A</span>, <span class="hljs-number">0x37</span>, <span class="hljs-number">0x9C</span>);
+
+<span class="hljs-comment">//%% Configuration interface ICodecProp</span>
+<span class="hljs-comment">//%% {0F817204-82C8-4c12-884A-F45FB2F33A6E}</span>
+DEFINE_GUID(IID_ICodecProp, <span class="hljs-number">0xf817204</span>, <span class="hljs-number">0x82c8</span>, <span class="hljs-number">0x4c12</span>, <span class="hljs-number">0x88</span>, <span class="hljs-number">0x4a</span>, <span class="hljs-number">0xf4</span>, <span class="hljs-number">0x5f</span>, <span class="hljs-number">0xb2</span>, <span class="hljs-number">0xf3</span>, <span class="hljs-number">0x3a</span>, <span class="hljs-number">0x6e</span>);
+
+<span class="hljs-comment">//%% ICodecProp: IID_nanoPeg_LicenseString</span>
+<span class="hljs-comment">//%% type: BSTR / Unicode string</span>
+<span class="hljs-comment">//%% Set license string to unlock filter</span>
+<span class="hljs-comment">//%% {1788F0B0-5985-4a19-B7FE-8AAC1BFC14B3}</span>
+DEFINE_GUID(IID_nanoPeg_LicenseString, <span class="hljs-number">0x1788f0b0</span>, <span class="hljs-number">0x5985</span>, <span class="hljs-number">0x4a19</span>, <span class="hljs-number">0xb7</span>, <span class="hljs-number">0xfe</span>, <span class="hljs-number">0x8a</span>, <span class="hljs-number">0xac</span>, <span class="hljs-number">0x1b</span>, <span class="hljs-number">0xfc</span>, <span class="hljs-number">0x14</span>, <span class="hljs-number">0xb3</span>);
+
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="setting-the-license-to-unlock-filter"></a><a href="#setting-the-license-to-unlock-filter" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Setting the license to unlock filter</h3>
+<p>The filter can be unlocked either through a license key entry in the windows registry or
+by setting the license key through COM interface ICodecProp::SetProperty with the
+property <strong>IID_nanoPeg_LicenseString</strong> as first parameter.</p>
+<blockquote>
+<p>The second license parameter has to be a wide/unicode string!</p>
+</blockquote>
+<h3><a class="anchor" aria-hidden="true" id="decoder-configuration-registry-settings"></a><a href="#decoder-configuration-registry-settings" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Decoder Configuration Registry Settings</h3>
+<p>The decoder is able to perform an adaptive frame dropping and deblocking depending on the quality / delay messages received from the downstream renderer filter.</p>
+<p>Key:</p>
+<pre><code class="hljs">HKEY_CURRENT_USER<span class="hljs-symbol">\S</span>oftware<span class="hljs-symbol">\n</span>anocosmos<span class="hljs-symbol">\n</span>h264dec
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="frame-dropping-skipping-mode"></a><a href="#frame-dropping-skipping-mode" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Frame dropping / skipping mode</h4>
+<p>Determines the behaviour in the case of timing / performance problems.</p>
+<ul>
+<li>Value name:     <code>DroppingMode</code></li>
+<li>Value type:             <code>REG_DWORD</code></li>
+<li>Valid values:
+<ul>
+<li><code>0</code> - no frames are skipped</li>
+<li><code>1</code> - skip non reference frames only (B-frames)</li>
+<li><code>2</code> - skip non intra frames only (P- and B-frames), <strong>default value</strong></li>
+</ul></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="deblocking-mode"></a><a href="#deblocking-mode" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Deblocking mode</h4>
+<p>Determines the deblocking behaviour.</p>
+<ul>
+<li>Value name:     <code>DeblockingMode</code></li>
+<li>Value type:     <code>REG_DWORD</code></li>
+<li>Valid values:
+<ul>
+<li><code>0</code> - disable deblocking</li>
+<li><code>1</code> - auto, decoder will reduce deblocking temporarily in the case of performance problems, <strong>default value</strong></li>
+<li><code>2</code> - always perform full deblocking</li>
+<li><code>3</code> - always perform deblocking on reference frames only</li>
+</ul></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="output-color-space-selection"></a><a href="#output-color-space-selection" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Output color space selection</h4>
+<p>Forces the filter to use a desired output color format. If no or no valid value is set, the output color format will be negotiated with the downstream renderer filter (usually YV12).</p>
+<ul>
+<li>Value name:     <code>ForceOutputFourCC</code></li>
+<li>Value type:         <code>REG_SZ / String</code></li>
+<li>Valid values:
+<ul>
+<li><code>YV12</code>,</li>
+<li><code>I420</code>,</li>
+<li><code>IYUV</code>,</li>
+<li><code>YUY2</code>,</li>
+<li><code>RGB32</code>,</li>
+<li><code>RGB24</code>,</li>
+<li><code>RGB565</code>,</li>
+<li><code>ARGB32</code></li>
+</ul></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="deinterlacing-mode"></a><a href="#deinterlacing-mode" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Deinterlacing Mode</h4>
+<p>Determines the deinterlacing behaviour.</p>
+<ul>
+<li>Value name:        <code>DeinterlacingMode</code></li>
+<li>Value type:          <code>REG_DWORD</code></li>
+<li>Valid values:
+<ul>
+<li><code>0</code> - disabled</li>
+<li><code>1</code> - duplicate, <strong>default value</strong></li>
+<li><code>2</code> - blend</li>
+<li><code>3</code> - median</li>
+<li><code>4</code> - edge detection</li>
+<li><code>5</code> - median threshold</li>
+<li><code>6</code> - content adaptive vertical temporal</li>
+</ul></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="directshow-editing-services-des-return-mode"></a><a href="#directshow-editing-services-des-return-mode" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>DirectShow Editing Services (DES) Return Mode</h4>
+<p>Receive returns HRESULT error values if Deliver fails. Needs to be enabled for DES.</p>
+<ul>
+<li>Value name:        <code>DESReturnMode</code></li>
+<li>Value type:          <code>REG_DWORD</code></li>
+<li>Valid values:
+<ul>
+<li><code>0</code> - disabled, <strong>default value</strong></li>
+<li><code>1</code> - enabled</li>
+</ul></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="threading-mode"></a><a href="#threading-mode" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Threading Mode</h4>
+<p>Determines the threading behaviour. Auto detection or number of decoding threads.</p>
+<ul>
+<li>Value name:        <code>DESReturnMode</code></li>
+<li>Value type:          <code>REG_DWORD</code></li>
+<li>Valid values:
+<ul>
+<li><code>0</code> - auto detect number of <code>cpus</code>, <code>__default value__</code></li>
+<li><code>1-8</code> - set number of decoding threads</li>
+</ul></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="output-resolution-alignment"></a><a href="#output-resolution-alignment" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Output resolution alignment</h4>
+<p>Determines the alignment of the output resolution,
+to adjust it to multiples of this value.</p>
+<ul>
+<li>Value name:        OutputAlignment</li>
+<li>Value type:          <code>REG_DWORD</code></li>
+<li>Valid values:
+<ul>
+<li><code>1-16</code>, <code>__default value:__ 4</code></li>
+</ul></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="debug-log-configuration-registry-settings"></a><a href="#debug-log-configuration-registry-settings" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Debug-Log Configuration Registry Settings</h3>
+<p>Key:</p>
+<pre><code class="hljs">HKEY_CURRENT_USER<span class="hljs-symbol">\S</span>oftware<span class="hljs-symbol">\D</span>ebugNano<span class="hljs-symbol">\n</span>h264dec.ax
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="file-name"></a><a href="#file-name" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>File name</h4>
+<p>Sets the output file name. The folder must already exist.</p>
+<ul>
+<li>Value name:     <code>LogToFile</code></li>
+<li>Value type:     <code>REG_SZ</code> / <code>String</code></li>
+<li>Valid values:   a valid output file name to enable file logging or an empty string</li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="logging-level"></a><a href="#logging-level" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Logging level</h4>
+<p>A higher value increases the amount of logging messages sent, and messages get more detailed.</p>
+<ul>
+<li>Value name:     <code>TRACE</code></li>
+<li>Value type:     <code>REG_DWORD</code></li>
+<li>Valid values:
+<ul>
+<li><code>0</code> - minimal logging</li>
+<li>…</li>
+<li><code>9</code> - maximal logging</li>
+</ul></li>
+</ul>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/nanostream/directshow/index"><span class="arrow-prev">← </span><span>index</span></a><a class="docs-next button" href="/docs/nanostream/directshow/directshow_avc_h264"><span>directshow_avc_h264</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#avc-h264-video-codec-sdk">AVC/H.264 Video Codec / SDK</a><ul class="toc-headings"><li><a href="#high-quality-and-high-performance-video-coding">High Quality and High Performance Video Coding</a></li><li><a href="#major-features">Major Features</a></li><li><a href="#architecture-and-availability">Architecture and Availability</a></li><li><a href="#components">Components</a></li><li><a href="#licensing-model">Licensing model</a></li><li><a href="#h264-avc-video-encoder">H.264 / AVC Video Encoder</a></li><li><a href="#h264-avc-video-decoder">H.264/AVC Video Decoder</a></li><li><a href="#audio-multiplexer-and-file-formats">Audio, Multiplexer and File Formats</a></li><li><a href="#other-codec-types">Other codec types</a></li></ul></li><li><a href="#nanoavc-h264-directshow-decoding-sdk">nanoAVC/H.264 DirectShow Decoding SDK</a><ul class="toc-headings"><li><a href="#introduction">Introduction</a></li><li><a href="#filter-components">Filter components</a></li><li><a href="#registering-and-unregistering-components-in-the-directshow-framework">Registering and unregistering components in the DirectShow framework</a></li><li><a href="#evaluation-mode-and-filter-activation">Evaluation mode and filter activation</a></li><li><a href="#embedding-customizing-nanocosmos-technology">Embedding / Customizing nanocosmos technology</a></li></ul></li><li><a href="#nanoavc-h264-directshow-encoding-sdk">nanoAVC/H.264 DirectShow Encoding SDK</a><ul class="toc-headings"><li><a href="#introduction-1">Introduction</a></li><li><a href="#major-features-1">Major Features</a></li><li><a href="#documentation">Documentation</a></li><li><a href="#filter-components-1">Filter components</a></li><li><a href="#registering-and-unregistering-components-in-the-directshow-framework-1">Registering and unregistering components in the DirectShow framework</a></li><li><a href="#evaluation-mode-and-filter-activation-1">Evaluation mode and filter activation</a></li><li><a href="#embedding-customizing-nanopeg-technology">Embedding / Customizing nanoPEG technology</a></li></ul></li><li><a href="#nanocosmos-h264-video-decoder-filter">nanocosmos H.264 Video Decoder Filter</a><ul class="toc-headings"><li><a href="#module-version">Module / Version</a></li><li><a href="#connectivity">Connectivity</a></li><li><a href="#filter-guids">Filter GUIDs</a></li><li><a href="#setting-the-license-to-unlock-filter">Setting the license to unlock filter</a></li><li><a href="#decoder-configuration-registry-settings">Decoder Configuration Registry Settings</a></li><li><a href="#debug-log-configuration-registry-settings">Debug-Log Configuration Registry Settings</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><div><h5>Docs</h5><a href="/docs/faq/encoding_and_streaming">FAQ</a><a href="/docs/nanoplayer/nanoplayer_introduction">H5Live</a><a href="/docs/nanoplayer/nanoplayer_introduction">Nanostream Cloud</a><a href="/docs/nanoplayer/nanoplayer_introduction">WebRTC.Live</a><a href="/docs/nanoplayer/nanoplayer_introduction">Apps and SDKs</a></div><div><h5>Products</h5><a href="https://www.nanocosmos.de/v6/cloud">Nanostream Cloud with Bintu.Live</a><a href="https://www.nanocosmos.de/v6/h5live">H5Live Low Latency HTML5-Player</a><a href="https://www.nanocosmos.de/v6/webrtc">WebRTC.Live</a><a href="https://discordapp.com/">Nanostream Apps and SDK</a></div><div><h5>More</h5><a href="https://www.nanocosmos.de/blog/">Blog</a><a href="https://www.facebook.com/nanocosmos.net/">Facebook</a><a href="https://twitter.com/nanovideo">Twitter</a><a href="https://www.linkedin.com/company/nanocosmos-gmbh">LinkedIn</a><a href="https://github.com/nanocosmos">GitHub</a><a class="github-button" href="https://github.com/nanocosmos/demo" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://nanocosmos.de/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/footer_logo.png" alt="nanocosmos GmbH" width="170" height="45"/></a><section class="copyright">Copyright © 2019 nanocosmos GmbH</section></footer></div></body></html>

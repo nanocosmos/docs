@@ -1,0 +1,596 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Streaming Media · nanocosmos Documentation</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;h2&gt;&lt;a class=&quot;anchor&quot; aria-hidden=&quot;true&quot; id=&quot;resolution-aspect-ratio-and-orientation&quot;&gt;&lt;/a&gt;&lt;a href=&quot;#resolution-aspect-ratio-and-orientation&quot; aria-hidden=&quot;true&quot; class=&quot;hash-link&quot;&gt;&lt;svg class=&quot;hash-link-icon&quot; aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Resolution, Aspect Ratio and Orientation&lt;/h2&gt;
+"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Streaming Media · nanocosmos Documentation"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.nanocosmos.de/index.html"/><meta property="og:description" content="&lt;h2&gt;&lt;a class=&quot;anchor&quot; aria-hidden=&quot;true&quot; id=&quot;resolution-aspect-ratio-and-orientation&quot;&gt;&lt;/a&gt;&lt;a href=&quot;#resolution-aspect-ratio-and-orientation&quot; aria-hidden=&quot;true&quot; class=&quot;hash-link&quot;&gt;&lt;svg class=&quot;hash-link-icon&quot; aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Resolution, Aspect Ratio and Orientation&lt;/h2&gt;
+"/><meta property="og:image" content="https://docs.nanocosmos.de/img/docusaurus.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://docs.nanocosmos.de/img/docusaurus.png"/><link rel="shortcut icon" href="/img/favicon_nano.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="/js/search.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/nanocosmos_header_logo.png" alt="nanocosmos Documentation"/><h2 class="headerTitleWithLogo">nanocosmos Documentation</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/docs/cloud/cloud_introduction" target="_self">nanoStream Cloud</a></li><li class=""><a href="/docs/nanoplayer/nanoplayer_introduction" target="_self">H5Live Player</a></li><li class=""><a href="/docs/webrtc/nanostream_webrtc_introduction" target="_self">WebRTC.live</a></li><li class="siteNavGroupActive"><a href="/docs/nanostream/nanostream" target="_self">nanoStream Apps and SDKs</a></li><li class=""><a href="/docs/faq/faq_streaming" target="_self">FAQ</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>Android</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">nanoStream SDKs/Apps</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/nanostream/nanostream">Introduction</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Android</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/nanostream/android/nanostream_android_getting_started">Getting started</a></li><li class="navListItem"><a class="navItem" href="/docs/nanostream/android/nanostream_android_developer_manual_playback">Playback</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/nanostream/android/nanostream_android_developer_manual_streaming">Streaming Media</a></li><li class="navListItem"><a class="navItem" href="/docs/nanostream/android/nanostream_android_developer_manual_sample">Sample</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">iOS</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/nanostream/ios/nanostream_ios_quick_start">Developer Quickstart</a></li><li class="navListItem"><a class="navItem" href="/docs/nanostream/ios/nanostream_ios_sdk">SDK for iOS</a></li><li class="navListItem"><a class="navItem" href="/docs/nanostream/ios/nanostream_ios_license_deployment">License Deployment Information</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">MacOSX</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/nanostream/macos/nanostream_macos_sdk">MacOSX API</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Windows</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/nanostream/windows/nanostream_windows_binaries">Binary Modules for Windows</a></li><li class="navListItem"><a class="navItem" href="/docs/nanostream/windows/nanostream_windows_developer_manual">Developer Manual</a></li><li class="navListItem"><a class="navItem" href="/docs/nanostream/windows/nanostream_windows_language_integration">Language Integration</a></li><li class="navListItem"><a class="navItem" href="/docs/nanostream/windows/nanostream_windows_license_help">Setting the license</a></li><li class="navListItem"><a class="navItem" href="/docs/nanostream/windows/nanostream_windows_networkwriter">RTMP Network Renderer &amp; Writer</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">DirectShow</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/nanostream/directshow/">index</a></li><li class="navListItem"><a class="navItem" href="/docs/nanostream/directshow/nanostream_directshow_h264">H264</a></li><li class="navListItem"><a class="navItem" href="/docs/nanostream/directshow/directshow_avc_h264">directshow_avc_h264</a></li><li class="navListItem"><a class="navItem" href="/docs/nanostream/directshow/nanostream_directshow_rtmp">RTMP</a></li><li class="navListItem"><a class="navItem" href="/docs/nanostream/directshow/nanostream_directshow_rtsp">RTSP</a></li><li class="navListItem"><a class="navItem" href="/docs/nanostream/directshow/nanostream_directshow_udp_streaming">UDP/TS Streaming</a></li><li class="navListItem"><a class="navItem" href="/docs/nanostream/directshow/nanostream_directshow_video_filter">Video Filter</a></li><li class="navListItem"><a class="navItem" href="/docs/nanostream/directshow/nanostream_directshow_audio_volume">Audio Volume</a></li><li class="navListItem"><a class="navItem" href="/docs/nanostream/directshow/nanostream_directshow_mpeg">MPEG</a></li><li class="navListItem"><a class="navItem" href="/docs/nanostream/directshow/nanostream_directshow_quicktime">Quicktime IMX Playback</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Streaming Media</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="resolution-aspect-ratio-and-orientation"></a><a href="#resolution-aspect-ratio-and-orientation" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Resolution, Aspect Ratio and Orientation</h2>
+<h3><a class="anchor" aria-hidden="true" id="resolution"></a><a href="#resolution" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Resolution</h3>
+<p>Resolution means the native resolution of the camera (input). In the most situations this will be the same for the output.
+To set the resolution there is a function in the <code>VideoSettings</code> object called <code>setResolution(Resolution res)</code>. If you set a resolution that the
+device doesn't support, nanoStream will automatically switch to the nearest resolution available on the device. A list of supported resolutions for the current video source can be obtained from <code>getCapabilities().listAvailableVideoResolutions()</code>
+on the <code>nanoStream</code> object.</p>
+<h3><a class="anchor" aria-hidden="true" id="aspect-ratio"></a><a href="#aspect-ratio" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Aspect Ratio</h3>
+<p>Aspect ratio means the aspect ratio of the outgoing stream. The aspect ratio determines if the input video needs to be cropped.
+The aspect ratio can be set through the <code>setAspectRatio(AspectRatio aspectRatio)</code> function on the <code>VideoSettings</code> object.</p>
+<h4><a class="anchor" aria-hidden="true" id="supported-aspect-ratios"></a><a href="#supported-aspect-ratios" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Supported Aspect Ratios</h4>
+<table>
+<thead>
+<tr><th>Aspect Ratio</th><th>AspectRatio value</th></tr>
+</thead>
+<tbody>
+<tr><td><strong><code>Keep Input</code></strong></td><td><code>AspectRatio.RATIO_KEEP_INPUT</code></td></tr>
+<tr><td><strong><code>1:1</code></strong></td><td><code>AspectRatio.RATIO_1_1</code></td></tr>
+<tr><td><strong><code>4:3</code></strong></td><td><code>AspectRatio.RATIO_4_3</code></td></tr>
+<tr><td><strong><code>16:9</code></strong></td><td><code>AspectRatio.RATIO_16_9</code></td></tr>
+<tr><td><strong><code>3:4</code></strong></td><td><code>AspectRatio.RATIO_3_4</code></td></tr>
+<tr><td><strong><code>9:16</code></strong></td><td><code>AspectRatio.RATIO_9_16</code></td></tr>
+</tbody>
+</table>
+<h3><a class="anchor" aria-hidden="true" id="orientation"></a><a href="#orientation" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Orientation</h3>
+<p>The default stream orientation is landscape. If you switch to portrait the resolution will swap width and height, e.g. from <code>640x480</code> to <code>480x640</code>.
+You can set the stream orientation on the <code>nanoStream</code> object with the <code>setStreamRotation</code> function. The stream orientation needs to be set
+before starting the stream, it is not possible to switch the orientation during the stream.</p>
+<h4><a class="anchor" aria-hidden="true" id="supported-orientations"></a><a href="#supported-orientations" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Supported Orientations</h4>
+<table>
+<thead>
+<tr><th>Orientation</th><th>Rotation Value</th></tr>
+</thead>
+<tbody>
+<tr><td><strong><code>Landscape</code></strong></td><td><code>Rotation.ROTATION_0</code></td></tr>
+<tr><td><strong><code>Portrait</code></strong></td><td><code>Rotation.ROTATION_90</code></td></tr>
+<tr><td><strong><code>Landscape Upside Down</code></strong></td><td><code>Rotation.ROTATION_180</code></td></tr>
+<tr><td><strong><code>Portrait Upside Down</code></strong></td><td><code>Rotation.ROTATION_270</code></td></tr>
+</tbody>
+</table>
+<h3><a class="anchor" aria-hidden="true" id="example-combinations-of-aspect-ratios-and-orientations"></a><a href="#example-combinations-of-aspect-ratios-and-orientations" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example Combinations of Aspect Ratios and Orientations</h3>
+<p>The input resolution is set to <code>640x480</code> here.
+The red rectangle marks up the active area that is included in the output stream.</p>
+<table>
+<thead>
+<tr><th>Orientation</th><th>Aspect Ratio</th><th>Stream Area</th></tr>
+</thead>
+<tbody>
+<tr><td>Portrait<sup><a href="#fnAS1">1</a></sup></td><td>Keep Input</td><td><img src="img/portrait_keep_input.png" alt="Screenshot"></td></tr>
+<tr><td>Portrait<sup><a href="#fnAS1">1</a></sup></td><td>4:3</td><td><img src="img/portrait_4_3.png" alt="Screenshot"></td></tr>
+<tr><td>Portrait<sup><a href="#fnAS1">1</a></sup></td><td>3:4</td><td><img src="img/portrait_3_4.png" alt="Screenshot"></td></tr>
+<tr><td>Portrait<sup><a href="#fnAS1">1</a></sup></td><td>16:9</td><td><img src="img/portrait_16_9.png" alt="Screenshot"></td></tr>
+<tr><td>Portrait<sup><a href="#fnAS1">1</a></sup></td><td>9:16</td><td><img src="img/portrait_9_16.png" alt="Screenshot"></td></tr>
+<tr><td>Landscape</td><td>Keep Input</td><td><img src="img/landscape_keep_input.png" alt="Screenshot"></td></tr>
+<tr><td>Landscape</td><td>4:3</td><td><img src="img/landscape_4_3.png" alt="Screenshot"></td></tr>
+<tr><td>Landscape</td><td>3:4</td><td><img src="img/landscape_3_4.png" alt="Screenshot"></td></tr>
+<tr><td>Landscape</td><td>16:9</td><td><img src="img/landscape_16_9.png" alt="Screenshot"></td></tr>
+<tr><td>Landscape</td><td>9:16</td><td><img src="img/landscape_9_16.png" alt="Screenshot"></td></tr>
+</tbody>
+</table>
+<p><a name="fnAS1">1</a>: In this sample APP we crop the preview so it doesn't look ugly, so the stream is actually larger then the preview.</p>
+<h3><a class="anchor" aria-hidden="true" id="example"></a><a href="#example" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h3>
+<p>If you want to stream with a resolution of <code>640x360</code> but your device doesn't supports this resolution, you need to crop the resolution from <code>640x480</code> (this resolution is supported by the most devices) to <code>640x360</code>.
+This can be done through the aspect ratio, so you need to set the aspect ratio to <code>16:9</code> to stream with a resolution of <code>640x360</code>.</p>
+<h3><a class="anchor" aria-hidden="true" id="implementation-example"></a><a href="#implementation-example" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Implementation Example</h3>
+<pre><code class="hljs css language-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MainActivity</span> </span>{
+    ...
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onCreate</span><span class="hljs-params">(Bundle savedInstanceState)</span> </span>{
+      <span class="hljs-keyword">super</span>.onCreate(savedInstanceState);
+      nanoStreamSettings nss = <span class="hljs-keyword">new</span> nanoStreamSettings();
+      VideoSettings vs = <span class="hljs-keyword">new</span> VideoSettings();
+      ...
+      vs.setResolution(<span class="hljs-keyword">new</span> Resolution(<span class="hljs-number">640</span>, <span class="hljs-number">480</span>)); <span class="hljs-comment">// default value</span>
+      vs.setAspectRatio(AspectRatio.RATIO_16_9); <span class="hljs-comment">// default value is AspectRatio.KEEP_INPUT</span>
+      ...
+      streamLib = <span class="hljs-keyword">new</span> nanoStream(nss);
+      streaLib.init();
+
+      streamLib.setStreamRotation(Rotation.ROTATION_0); <span class="hljs-comment">// default value</span>
+      ...
+    }
+    ...
+}
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="stream-type"></a><a href="#stream-type" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Stream Type</h2>
+<p>The SDK supports differnet streaming modes:</p>
+<ul>
+<li>Video and Audio</li>
+<li>Video only</li>
+<li>Audio only</li>
+</ul>
+<p>You can en/disable Video/Audio in the <code>nanoStreamSettings.object</code></p>
+<h3><a class="anchor" aria-hidden="true" id="implementation-example-1"></a><a href="#implementation-example-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Implementation Example</h3>
+<pre><code class="hljs css language-java">nanoStreamSettings nss = <span class="hljs-keyword">new</span> nanoStreamSettings();
+nss.setHaveVideo(<span class="hljs-keyword">true</span>); <span class="hljs-comment">// false</span>
+nss.setHaveAudio(<span class="hljs-keyword">true</span>); <span class="hljs-comment">// false</span>
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="server-authentication"></a><a href="#server-authentication" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Server Authentication</h2>
+<p>In case authentication is required, the credentials can be set on the <code>nanoStreamSettings</code> object.</p>
+<h3><a class="anchor" aria-hidden="true" id="implementation-example-2"></a><a href="#implementation-example-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Implementation Example</h3>
+<pre><code class="hljs css language-java">nanoStreamSettings nss = <span class="hljs-keyword">new</span> nanoStreamSettings();
+nss.setAuthUser(<span class="hljs-string">"user"</span>);
+nss.setAuthPassword(<span class="hljs-string">"password"</span>);
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="local-recording"></a><a href="#local-recording" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Local Recording</h2>
+<h3><a class="anchor" aria-hidden="true" id="description"></a><a href="#description" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Description</h3>
+<p>The nanoStream Android SDK supports local file recording on the device in MP4 format. This document describes how to enable and configure nanoStream for local recording.</p>
+<h3><a class="anchor" aria-hidden="true" id="steps-to-configure-mp4-recording"></a><a href="#steps-to-configure-mp4-recording" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Steps to configure MP4 recording</h3>
+<p>MP4 recording can be configured with two function calls on a nanoStreamSettings object.</p>
+<ul>
+<li>Enabling MP4 recording: <code>setRecordMp4(boolean)</code></li>
+<li>Setting up the file path: <code>setMp4Path(String)</code></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="setrecordmp4boolean"></a><a href="#setrecordmp4boolean" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>setRecordMp4(boolean)</h3>
+<p>The <code>setRecordMp4</code> function takes a boolean as parameter to enable/disable the recording function.</p>
+<h3><a class="anchor" aria-hidden="true" id="setmp4pathstring"></a><a href="#setmp4pathstring" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>setMp4Path(String)</h3>
+<p>The <code>setMp4Path</code> function takes a String as parameter. This string needs to be a valid file path (e.g. <code>/sdcard/test.mp4</code>). It is recommended to use the <code>getExternalStorageDirectory</code> or <code>getExternalStoragePublicDirectory</code> functions from the [Android Enviroment][8928e181] API, and add a file name to the returned path. Please find the code snippet below as an example.</p>
+<h3><a class="anchor" aria-hidden="true" id="android-permission"></a><a href="#android-permission" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Android Permission</h3>
+<p>To be able to write to an external file path your Android app needs the following permissions to be added to the app manifest (<code>AndroidMainfest.xml</code>).</p>
+<pre><code class="hljs css language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">uses-permission</span> <span class="hljs-attr">android:name</span>=<span class="hljs-string">"android.permission.WRITE_EXTERNAL_STORAGE"</span> /&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">uses-permission</span> <span class="hljs-attr">android:name</span>=<span class="hljs-string">"android.permission.STORAGE"</span> /&gt;</span>
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="android-60"></a><a href="#android-60" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Android 6.0</h4>
+<p>Due to the new permission handling in Android 6 (M) writing to external directories (DCIM) requires a permission by user. Writing to the applications own data directory (/Android/data/com.companyname.appname/) is not restricted.</p>
+<h3><a class="anchor" aria-hidden="true" id="implementation-example-3"></a><a href="#implementation-example-3" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Implementation Example</h3>
+<pre><code class="hljs css language-java">File externalFilePath = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM);
+File filePath = <span class="hljs-keyword">new</span> File(externalFilePath, <span class="hljs-string">"myMp4File.mp4"</span>);
+String mp4FilePath = filePath.getAbsolutePath();
+
+nanoStreamSettings nss = <span class="hljs-keyword">new</span> nanoStreamSettings();
+nss.setRecordMp4(<span class="hljs-keyword">true</span>);
+nss.setMp4Path(mp4FilePath);
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="adaptive-bitrate-streaming"></a><a href="#adaptive-bitrate-streaming" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Adaptive Bitrate Streaming</h2>
+<p>By using the Adaptive Bitrate Control (ABC) the stream will automatically adjust to changes of the bandwidth. There are four modes available:</p>
+<ul>
+<li><code>DISABLED</code>: The Adaptive Bitrate Control is disabled.</li>
+<li><code>QUALITY_DEGRADE</code>: The video quality will be changed if the bandwidth changes. For instance, if not enough bandwidth is available, the video bitrate will be decreased, which in turn degrades the video quality.</li>
+<li><code>FRAME_DROP</code>: Low bandwidth is compensated by decreasing the framerate (FPS), but maintaining the video qualtiy.</li>
+<li><code>QUALITY_DEGRADE_AND_FRAME_DROP</code>: The video quality and the framerate (FPS) decreased if the not enough bandwidth is available.</li>
+</ul>
+<p>Make sure to set the ABC settings before a stream is started.</p>
+<h3><a class="anchor" aria-hidden="true" id="implementation-example-4"></a><a href="#implementation-example-4" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Implementation Example</h3>
+<pre><code class="hljs css language-java"><span class="hljs-keyword">private</span> AdaptiveBitrateControlSettings.AdaptiveBitrateControlMode abcMode = AdaptiveBitrateControlSettings.AdaptiveBitrateControlMode.QUALITY_DEGRADE_AND_FRAME_DROP;
+<span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> videoBitrate = <span class="hljs-number">500000</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">initStreamLib</span><span class="hljs-params">()</span> </span>{
+  AdaptiveBitrateControlSettings abcSettings = <span class="hljs-keyword">new</span> AdaptiveBitrateControlSettings(abcMode);
+  abcSettings.SetMaximumBitrate((<span class="hljs-keyword">int</span>)(videoBitrate * <span class="hljs-number">1.5</span>));
+
+  nanoStreamSettings nss = <span class="hljs-keyword">new</span> nanoStreamSettings();
+  nss.setAbcSettings(abcSettings);
+}
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="measuring-the-available-bandwidth"></a><a href="#measuring-the-available-bandwidth" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Measuring the available bandwidth</h3>
+<p>For measuring the available bandwidth you can use the method <code>runBandwidthCheck</code>. After the check finished, the result can be used to set the bitrate for the nanoStream object.
+The check measures the bandwidth by running a test stream to the server.
+The BandwidthCheck Class has three public functions:</p>
+<ul>
+<li><code>runBandwidthCheck(BandwidthCheckSettings settings, BandwidthCheckResultCallback callback())</code></li>
+<li><code>forceStop()</code></li>
+<li><code>abort()</code></li>
+</ul>
+<p>There is a BandwidthCheckSettings Class, the constructor creates a standard object of BandwidthCheckSettings, with the following settings:</p>
+<table>
+<thead>
+<tr><th style="text-align:left">property</th><th style="text-align:left">default values</th><th style="text-align:left">meaning</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align:left"><code>prerollSeconds</code></td><td style="text-align:left">1 (in sec.)</td><td style="text-align:left">this is the pre roll time to connect to the server</td></tr>
+<tr><td style="text-align:left"><code>runTime</code></td><td style="text-align:left">5 (in sec.)</td><td style="text-align:left">the run time of the bandwidth check</td></tr>
+<tr><td style="text-align:left"><code>maxBitrate</code></td><td style="text-align:left">3000000 (bit/s = 3 MBit/s)</td><td style="text-align:left">the maximum bit rate for the bandwidth check</td></tr>
+<tr><td style="text-align:left"><code>rtmpUrl</code></td><td style="text-align:left">empty</td><td style="text-align:left">the rtmp url for the bandwidth check</td></tr>
+<tr><td style="text-align:left"><code>streamId</code></td><td style="text-align:left">empty</td><td style="text-align:left">the stream id for the bandwidth check</td></tr>
+</tbody>
+</table>
+<p>With this settings you can call the runBandwidthCheck methode, the second parameter is the callback for the results. This callback class has a finished method that will be called after bandwidth check is done.
+The finished method has one parameter from type BandwidthCheckResult, this object has 6 getter methods:</p>
+<ul>
+<li><code>getAverageBitrate()</code> // the average measured bandwidth</li>
+<li><code>getMedianBitrate()</code> // the median measured bandwidth</li>
+<li><code>getMaxBitrate()</code> // the maximum measured bandwidth</li>
+<li><code>getMinBitrate()</code> // the minimum measured bandwidth</li>
+<li><code>getRunTimeMS()</code> // the run time in ms</li>
+<li><code>getErrorCode()</code> // the error code if all is ok this is nanoResults.N_OK (all error codes can be found in the nanoStream API Reference documentation for nanoResults)</li>
+</ul>
+<p>The forceStop call stops the bandwidth check and will return the results that where measured until then. The abort call stops the bandwidth check but don't return any results.</p>
+<p>The bandwidth check, sends a special type of metadata that will not be recorded on the Streaming Server.</p>
+<h4><a class="anchor" aria-hidden="true" id="implementation-example-5"></a><a href="#implementation-example-5" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Implementation Example</h4>
+<pre><code class="hljs css language-java"><span class="hljs-keyword">private</span> BandwidthCheck bwCheck = <span class="hljs-keyword">null</span>;
+
+<span class="hljs-keyword">private</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CustomBandwidthCheckResultCallback</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">BandwidthCheckResultCallback</span> </span>{
+  <span class="hljs-meta">@Override</span>
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">finished</span><span class="hljs-params">(<span class="hljs-keyword">final</span> BandwidthCheckResult bandwidthCheckResult)</span> </span>{
+    Log.d(TAG, <span class="hljs-string">"BandwidthCheck results: "</span> +
+      <span class="hljs-string">"\n\tAverage Bitrate (kBit/s): "</span> + bandwidthCheckResult.getAverageBitrate() / <span class="hljs-number">1000</span> +
+      <span class="hljs-string">"\n\tMedian Bitrate  (kBit/s): "</span> + bandwidthCheckResult.getMedianBitrate() / <span class="hljs-number">1000</span> +
+      <span class="hljs-string">"\n\tMax Bitrate     (kBit/s): "</span> + bandwidthCheckResult.getMaxBitrate() / <span class="hljs-number">1000</span> +
+      <span class="hljs-string">"\n\tMin Bitrate     (kBit/s): "</span> + bandwidthCheckResult.getMinBitrate() / <span class="hljs-number">1000</span> +
+      <span class="hljs-string">"\n\tRun Time        (ms)    : "</span> + bandwidthCheckResult.getRunTimeMS());
+  }
+}
+
+<span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">initBandwidthCheck</span><span class="hljs-params">()</span> </span>{
+  <span class="hljs-keyword">if</span>(<span class="hljs-keyword">null</span> == bwCheck) {
+    BandwidthCheckSettings settings = <span class="hljs-keyword">new</span> BandwidthCheckSettings();
+    settings.setRtmpUrl(serverUrl);
+    settings.setStreamId(streamName);
+    bwCheck = <span class="hljs-keyword">new</span> BandwidthCheck();
+    bwCheck.runBandwidthCheck(settings, <span class="hljs-keyword">new</span> CustomBandwidthCheckResultCallback());
+  }
+}
+</code></pre>
+<p>##Snapshot</p>
+<p>To get a snapshot (image) of the current preview/stream, the method <code>takeSnapshot</code> can be used. This is a non blocking function, for the result you need to implement the <code>SnapshotCallback</code> interface. The snapshot returns as a <code>base64</code> encoded <code>JPEG</code></p>
+<h3><a class="anchor" aria-hidden="true" id="implementation-example-6"></a><a href="#implementation-example-6" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Implementation Example</h3>
+<pre><code class="hljs css language-java"><span class="hljs-keyword">private</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CustomSnapshotCallback</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">SnapshotCallback</span> </span>{
+  <span class="hljs-meta">@Override</span>
+  <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">onSuccess</span><span class="hljs-params">(String arg0)</span></span>{
+    <span class="hljs-comment">// do something with the base64 encoded JPEG.</span>
+  }
+
+  <span class="hljs-meta">@Override</span>
+ <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">onFailure</span><span class="hljs-params">()</span></span>{
+   Log.d(TAG, <span class="hljs-string">"takeSnapshot() failed!"</span>)
+ }
+}
+<span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">shapshot</span><span class="hljs-params">()</span> </span>{
+  streamLib.takeSnapshot(<span class="hljs-keyword">new</span> CustomSnapshotCallback());
+}
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="camera-zoom"></a><a href="#camera-zoom" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Camera Zoom</h2>
+<h3><a class="anchor" aria-hidden="true" id="description-1"></a><a href="#description-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Description</h3>
+<p>The nanoStream Android SDK supports camera zoom, if the internal camera supports it. Therefor there are a few functions, the most important are:</p>
+<table>
+<thead>
+<tr><th style="text-align:left">Function</th><th style="text-align:left">Return Type</th><th style="text-align:left">returns</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align:left"><code>hasZoom()</code></td><td style="text-align:left"><code>boolean</code></td><td style="text-align:left">true if zoom is supported by the video source/ device</td></tr>
+<tr><td style="text-align:left"><code>getZoomRatios()</code></td><td style="text-align:left"><code>List&lt;Integer&gt;</code></td><td style="text-align:left">list with of ale zoom ratios</td></tr>
+<tr><td style="text-align:left"><code>getZoom()</code></td><td style="text-align:left"><code>int</code></td><td style="text-align:left">the index of the <code>List&lt;Integer&gt;</code> that returned from <code>getZoomRatios()</code></td></tr>
+<tr><td style="text-align:left"><code>setZoom(int)</code></td><td style="text-align:left"><code>int</code></td><td style="text-align:left">the new index of the <code>List&lt;Integer&gt;</code> that returned from <code>getZoomRatios()</code></td></tr>
+</tbody>
+</table>
+<p>It is recommended to use pinch to zoom, therefor you need to implement a <code>ScaleGestureDetector.SimpleOnScaleGestureListener</code>, and a <code>pinch2zoom</code> function, that takes the <code>scalefactor</code> from the <code>SimpleOnScaleGestureListener</code> as a int parameter, take a look at the [Implementation Example][ef1c8421].</p>
+<h4><a class="anchor" aria-hidden="true" id="getzoomratios"></a><a href="#getzoomratios" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>getZoomRatios()</h4>
+<p><code>getZoomRatios()</code> returns a List of Integer values, this values are the zoom ratios in <code>1/100</code> increments (e.g. a zoom of <code>3.2x</code> is returned as <code>320</code>).</p>
+<h4><a class="anchor" aria-hidden="true" id="setzoomint"></a><a href="#setzoomint" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>setZoom(int)</h4>
+<p>The int parameter from <code>setZoom(int zoom)</code> is the index of zoom ratios that returns <code>getZoomRatios()</code>.</p>
+<h4><a class="anchor" aria-hidden="true" id="zoom-behavior-on-camera-switch"></a><a href="#zoom-behavior-on-camera-switch" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Zoom Behavior on Camera Switch</h4>
+<p>During a camera switch (e.g. from back to front) the zoom remains unaffected.</p>
+<h4><a class="anchor" aria-hidden="true" id="implementation-example-7"></a><a href="#implementation-example-7" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Implementation Example</h4>
+<pre><code class="hljs css language-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MainActivity</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Activity</span> </span>{
+  <span class="hljs-keyword">private</span> ScaleGestureDetector scaleGestureDetector;
+  <span class="hljs-keyword">private</span> List&lt;Integer&gt; mZoomRatios = <span class="hljs-keyword">null</span>;
+
+  <span class="hljs-keyword">private</span> nanoStream streamLib = <span class="hljs-keyword">null</span>;
+
+  <span class="hljs-meta">@Override</span>
+  <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onCreate</span><span class="hljs-params">(Bundle savedInstanceState)</span> </span>{
+    <span class="hljs-keyword">super</span>.onCreate(savedInstanceState);
+
+    nanoStreamSettings nss = <span class="hljs-keyword">new</span> nanoStreamSettings();
+    <span class="hljs-comment">// configure nanoStreamSettings</span>
+
+    streamLib = <span class="hljs-keyword">new</span> nanoStream(nss);
+
+    <span class="hljs-keyword">if</span>(streamLib.hasZoom()) {
+      mZoomRatios = streamLib.getZoomRatio();
+    }
+
+    <span class="hljs-keyword">if</span>(<span class="hljs-keyword">null</span> == scaleGestureDetector) {
+      scaleGestureDetector = <span class="hljs-keyword">new</span> ScaleGestureDetector(<span class="hljs-keyword">this</span>, <span class="hljs-keyword">new</span> ScaleGestureListener());
+    }
+  }
+
+  <span class="hljs-meta">@Override</span>
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">onTouchEvent</span><span class="hljs-params">(MotionEvent event)</span>
+  </span>{
+    <span class="hljs-keyword">if</span> (scaleGestureDetector != <span class="hljs-keyword">null</span>)
+    {
+      scaleGestureDetector.onTouchEvent(event);
+    }
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;
+  }
+
+  <span class="hljs-keyword">private</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ScaleGestureListener</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">ScaleGestureDetector</span>.<span class="hljs-title">SimpleOnScaleGestureListener</span> </span>{
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">onScale</span><span class="hljs-params">(ScaleGestureDetector detector)</span> </span>{
+      <span class="hljs-keyword">if</span>(<span class="hljs-keyword">null</span> != streamLib) {
+        <span class="hljs-keyword">if</span> (streamLib.hasZoom()) {
+          pinch2Zoom(detector.getScaleFactor());
+        }
+      }
+      <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;
+    }
+  }
+
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">pinch2Zoom</span><span class="hljs-params">(<span class="hljs-keyword">float</span> scaleFactor)</span> </span>{
+    <span class="hljs-keyword">if</span> (streamLib.hasZoom() &amp;&amp; <span class="hljs-keyword">null</span> != mZoomRatios) {
+      <span class="hljs-keyword">int</span> zoomFactor = streamLib.getZoom();
+      <span class="hljs-keyword">float</span> zoomRatio = mZoomRatios.get(zoomFactor) / <span class="hljs-number">100f</span>;
+      zoomRatio *= scaleFactor;
+      <span class="hljs-keyword">if</span> (zoomRatio &gt; <span class="hljs-number">1.0f</span>) {
+        <span class="hljs-keyword">if</span> (scaleFactor &gt; <span class="hljs-number">1.0f</span>) {
+          <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = zoomFactor; i &lt; mZoomRatios.size(); i++) {
+            Double zoom = mZoomRatios.get(i) / <span class="hljs-number">100.0</span>;
+            <span class="hljs-keyword">if</span> (zoom &gt;= zoomRatio) {
+              streamLib.setZoom(i);
+              <span class="hljs-keyword">break</span>;
+            }
+          }
+        } <span class="hljs-keyword">else</span> {
+          <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = zoomFactor; i &gt; <span class="hljs-number">0</span>; i--) {
+            Double zoom = mZoomRatios.get(i) / <span class="hljs-number">100.0</span>;
+            <span class="hljs-keyword">if</span> (zoom &lt;= zoomRatio) {
+              streamLib.setZoom(i);
+              <span class="hljs-keyword">break</span>;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="camera-focus"></a><a href="#camera-focus" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Camera Focus</h2>
+<h3><a class="anchor" aria-hidden="true" id="description-2"></a><a href="#description-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Description</h3>
+<p>The nanoStream Android SDK supports camera focus and focus lock, if the internal cameras supports them. There are two non-blocking functions</p>
+<pre><code class="hljs css language-java">setFocusArea(<span class="hljs-keyword">int</span> focusWidth, <span class="hljs-keyword">int</span> focusHeight, <span class="hljs-keyword">float</span> areaMultiple, <span class="hljs-keyword">int</span> x, <span class="hljs-keyword">int</span> y, <span class="hljs-keyword">int</span> previewWidth, <span class="hljs-keyword">int</span> previewHeight, <span class="hljs-keyword">int</span> weigh)
+setFocusLockArea(<span class="hljs-keyword">int</span> focusWidth, <span class="hljs-keyword">int</span> focusHeight, <span class="hljs-keyword">float</span> areaMultiple, <span class="hljs-keyword">int</span> x, <span class="hljs-keyword">int</span> y, <span class="hljs-keyword">int</span> previewWidth, <span class="hljs-keyword">int</span> previewHeight, <span class="hljs-keyword">int</span> weigh)
+</code></pre>
+<p>through the</p>
+<pre><code class="hljs css language-java">addFocusCalback(FocusCallback callback)
+removeFocusCalback(FocusCallback callback)
+</code></pre>
+<p>you can attach or remove a <code>FocusCallback</code> listener.
+To check if your device supports focus call the function</p>
+<pre><code class="hljs css language-java">isFocusSupported()
+</code></pre>
+<p>which will return <code>true</code> or <code>false</code>.</p>
+<h3><a class="anchor" aria-hidden="true" id="parameter-list"></a><a href="#parameter-list" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Parameter List</h3>
+<table>
+<thead>
+<tr><th><strong>Parameter name</strong></th><th><strong>meaning</strong></th></tr>
+</thead>
+<tbody>
+<tr><td><code>focusWidth</code></td><td>the focus Area width</td></tr>
+<tr><td><code>focusHeight</code></td><td>the focus Area height</td></tr>
+<tr><td><code>areaMultiple</code></td><td>a Multiple for the focus area (default: 1f)</td></tr>
+<tr><td><code>x</code></td><td>the x position on the Screen</td></tr>
+<tr><td><code>y</code></td><td>the y position on the Screen</td></tr>
+<tr><td><code>previewWidth</code></td><td>the width of the preview</td></tr>
+<tr><td><code>previewHeight</code></td><td>the height of the preview</td></tr>
+<tr><td><code>weight</code></td><td>the weight of the area must be range from 1 to 1000</td></tr>
+</tbody>
+</table>
+<h3><a class="anchor" aria-hidden="true" id="focuscallback-interface"></a><a href="#focuscallback-interface" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>FocusCallback interface</h3>
+<p>The <code>FocusCallback</code> interface has three abstract functions</p>
+<pre><code class="hljs css language-java">onSuccess()
+onSuccess(Rect rect, Boolean focusLock)
+onFailure()
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="implementation-example-8"></a><a href="#implementation-example-8" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Implementation Example</h3>
+<pre><code class="hljs css language-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MainActifity</span> <span class="hljs-title">extens</span> <span class="hljs-title">Actifity</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">FocusCallback</span> </span>{
+  <span class="hljs-keyword">private</span> GestureDetector gestureDetector;
+  <span class="hljs-keyword">private</span> nanoStream streamLib = <span class="hljs-keyword">null</span>;
+
+  <span class="hljs-meta">@Override</span>
+  <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onCreate</span><span class="hljs-params">(Bundle savedInstanceState)</span> </span>{
+    <span class="hljs-keyword">super</span>.onCreate(savedInstanceState);
+    streamLib = <span class="hljs-keyword">new</span> nanoStream(<span class="hljs-keyword">new</span> nanoStreamSettings());
+    <span class="hljs-keyword">if</span>(streamLib.isFocusSupported()) {
+      gestureDetector = <span class="hljs-keyword">new</span> GestureDetector(<span class="hljs-keyword">this</span>, <span class="hljs-keyword">new</span> GestureListener());
+    }
+    ...
+  }
+
+  <span class="hljs-meta">@Override</span>
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">onTouchEvent</span><span class="hljs-params">(MotionEvent event)</span>
+  </span>{
+    <span class="hljs-keyword">if</span> (gestureDetector != <span class="hljs-keyword">null</span>)
+    {
+        gestureDetector.onTouchEvent(event);
+    }
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;
+  }
+  ....
+  <span class="hljs-keyword">private</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">GestureListener</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">OnGestureListener</span> </span>{
+
+     <span class="hljs-meta">@Override</span>
+     <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">onSingleTapUp</span><span class="hljs-params">(MotionEvent e)</span>
+     </span>{
+         <span class="hljs-keyword">if</span> (streamLib != <span class="hljs-keyword">null</span>)
+         {
+             streamLib.setFocusArea(<span class="hljs-number">300</span>, <span class="hljs-number">300</span>, <span class="hljs-number">1f</span>, (<span class="hljs-keyword">int</span>) e.getX(), (<span class="hljs-keyword">int</span>) e.getY(), surface.getWidth(), surface.getHeight(), <span class="hljs-number">1000</span>);
+         }
+         <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;
+     }
+
+    <span class="hljs-meta">@Override</span>
+     <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onLongPress</span><span class="hljs-params">(MotionEvent e)</span>
+     </span>{
+         <span class="hljs-keyword">if</span> (streamLib != <span class="hljs-keyword">null</span>)
+         {
+             streamLib.setFocusLockArea(<span class="hljs-number">300</span>, <span class="hljs-number">300</span>, <span class="hljs-number">1f</span>, (<span class="hljs-keyword">int</span>) e.getX(), (<span class="hljs-keyword">int</span>) e.getY(), surface.getWidth(), surface.getHeight(), <span class="hljs-number">1000</span>);
+         }
+     }
+   }
+
+   <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onSuccess</span><span class="hljs-params">(Rect rect, Boolean aBoolean)</span> </span>{
+      Log.i(TAG, <span class="hljs-string">"focus success"</span>);
+    }
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onFailure</span><span class="hljs-params">()</span> </span>{
+      Log.i(TAG, <span class="hljs-string">"focus failed"</span>);
+    }
+}
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="deviceproperties"></a><a href="#deviceproperties" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>DeviceProperties</h2>
+<p>Before Android 4.3 there was no obligation for Android hardware manufacturers to pass the video related parts of the CTS (Compatibility Test Suite).
+Therefore some Android 4.1 and 4.2 Devices show non standard behaviour in regard to color format definitions and representation of video frames in memory. This could lead to issues in the video stream like switched red and blue colors, dislocated color components or a green bar at the bottom of the video frame. nanoStream Android now provides the functionality to detect and compensate common issues related to this.</p>
+<h3><a class="anchor" aria-hidden="true" id="description-3"></a><a href="#description-3" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Description</h3>
+<p><code>nanoStream.getDeviceProperties()</code> is a static function that is running a test on the device hardware to detect non standard behaviour and returning a DeviceProperties object containing the result.
+<code>DeviceProperties.getFlags()</code> returns the test result as an integer value that can be stored in the application preferences, to avoid running the device test on every app start.
+DeviceProperties can be applied to a new nanoStream instance by calling <code>nanoStream.setDeviceProperties(DeviceProperties)</code>.
+We recommend to call <code>getDeviceProperties()</code> in a background thread during the first app start on a pre 4.3 device, because the call is blocking and might last up to 5 seconds on older/weaker devices.
+We also recommend to store the OS version in the preferences, to be able to detect OS updates and to eventually rerun the device test or stop setting the DeviceProperties if the new OS is 4.3 or higher.</p>
+<h3><a class="anchor" aria-hidden="true" id="implementation-example-9"></a><a href="#implementation-example-9" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Implementation Example</h3>
+<pre><code class="hljs css language-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">App</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Application</span>
+</span>{
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> DeviceProperties deviceProp = <span class="hljs-keyword">null</span>;
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onCreate</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">super</span>.onCreate();
+
+        Thread chkThread = <span class="hljs-keyword">new</span> Thread(<span class="hljs-keyword">new</span> Runnable()
+        {
+            <span class="hljs-meta">@Override</span>
+            <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">run</span><span class="hljs-params">()</span>
+            </span>{
+                <span class="hljs-keyword">try</span>
+                {
+                    SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+                    <span class="hljs-keyword">int</span> curApiVer = android.os.Build.VERSION.SDK_INT;
+                    <span class="hljs-keyword">int</span> curAppVer = getPackageManager().getPackageInfo(getPackageName(), <span class="hljs-number">0</span>).versionCode;
+                    <span class="hljs-keyword">int</span> curEncVer = DeviceProperties.VERSION;
+
+                    <span class="hljs-keyword">int</span> oldApiVer = prefs.getInt(<span class="hljs-string">"Pref_Android_API"</span>, <span class="hljs-number">0</span>);
+                    <span class="hljs-keyword">int</span> oldAppVer = prefs.getInt(<span class="hljs-string">"Pref_App_Version"</span>, <span class="hljs-number">0</span>);
+                    <span class="hljs-keyword">int</span> oldChkVer = prefs.getInt(<span class="hljs-string">"Pref_Check_Version"</span>, <span class="hljs-number">0</span>);
+                    <span class="hljs-keyword">int</span> oldChkResult = prefs.getInt(<span class="hljs-string">"Pref_Check_Result"</span>, -<span class="hljs-number">1</span>);
+
+                    <span class="hljs-keyword">if</span> (((oldApiVer * oldAppVer * oldApiVer) == <span class="hljs-number">0</span>)
+                    || (oldApiVer &lt; curApiVer)
+                    || (oldAppVer &lt; curAppVer)
+                    || (oldChkVer &lt; curEncVer)
+                    || oldChkResult &lt; <span class="hljs-number">0</span>)
+                    {
+
+                        Editor edit = prefs.edit();
+                        edit.putInt(<span class="hljs-string">"Pref_Android_API"</span>, curApiVer);
+                        edit.putInt(<span class="hljs-string">"Pref_App_Version"</span>, curAppVer);
+
+                        <span class="hljs-comment">/* Run  device check */</span>
+                        <span class="hljs-keyword">try</span>
+                        {
+                            deviceProp = nanoStream.getDeviceProperties();
+
+                            edit.putInt(<span class="hljs-string">"Pref_Check_Result"</span>, deviceProp.getFlags());
+                            edit.putInt(<span class="hljs-string">"Pref_Check_Version"</span>, deviceProp.getVersion());
+                            edit.commit();
+                        }
+                        <span class="hljs-keyword">catch</span> (RuntimeException e)
+                        {
+                            Log.d(<span class="hljs-string">"Device Check failed"</span>, e.toString());
+                            edit.putInt(<span class="hljs-string">"Pref_Check_Result"</span>, -<span class="hljs-number">1</span>);
+                            edit.putInt(<span class="hljs-string">"Pref_Check_Version"</span>, <span class="hljs-number">0</span>);
+                            edit.commit();
+                        }
+
+                    }
+                    <span class="hljs-keyword">else</span>
+                    {
+                        deviceProp = <span class="hljs-keyword">new</span> DeviceProperties(oldChkResult);
+                    }
+
+                    Log.d(<span class="hljs-string">"Device Properties: "</span>, deviceProp.toString());
+                }
+                <span class="hljs-keyword">catch</span> (Exception e)
+                {
+                    Log.d(<span class="hljs-keyword">this</span>.getClass().getName(), <span class="hljs-string">"Device Check Runnable"</span>);
+                    e.printStackTrace();
+                }
+            }
+        });
+
+        <span class="hljs-keyword">if</span> (android.os.Build.VERSION.SDK_INT &lt; <span class="hljs-number">18</span>)
+        {
+            chkThread.start();
+        }
+
+        ...
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> DeviceProperties <span class="hljs-title">getDeviceProperties</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">return</span> deviceProp;
+    }
+}
+</code></pre>
+<pre><code class="hljs css language-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MainActivity</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Activity</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">NanostreamEventListener</span>
+</span>{
+    ...
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onCreate</span><span class="hljs-params">(Bundle savedInstanceState)</span>
+    </span>{
+        <span class="hljs-keyword">try</span>
+        {
+            nanoStreamSettings nss = <span class="hljs-keyword">new</span> nanoStreamSettings();
+
+            streamLib = <span class="hljs-keyword">new</span> nanoStream(nss);
+
+            DeviceProperties deviceProperties = App.getDeviceProperties();
+
+            <span class="hljs-keyword">if</span>(<span class="hljs-keyword">null</span> != streamLib &amp;&amp; <span class="hljs-keyword">null</span> != deviceProperties)
+            {
+                streamLib.setDeviceProperties(deviceProperties);
+            }
+        }
+        <span class="hljs-keyword">catch</span>(NanostreamException en)
+        {
+            Toast.makeText(getApplicationContext(), en.toString(), Toast.LENGTH_LONG).show();
+        }
+    }
+    ...
+}
+}
+</code></pre>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/nanostream/android/nanostream_android_developer_manual_playback"><span class="arrow-prev">← </span><span>Playback</span></a><a class="docs-next button" href="/docs/nanostream/android/nanostream_android_developer_manual_sample"><span>Sample</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#resolution-aspect-ratio-and-orientation">Resolution, Aspect Ratio and Orientation</a><ul class="toc-headings"><li><a href="#resolution">Resolution</a></li><li><a href="#aspect-ratio">Aspect Ratio</a></li><li><a href="#orientation">Orientation</a></li><li><a href="#example-combinations-of-aspect-ratios-and-orientations">Example Combinations of Aspect Ratios and Orientations</a></li><li><a href="#example">Example</a></li><li><a href="#implementation-example">Implementation Example</a></li></ul></li><li><a href="#stream-type">Stream Type</a><ul class="toc-headings"><li><a href="#implementation-example-1">Implementation Example</a></li></ul></li><li><a href="#server-authentication">Server Authentication</a><ul class="toc-headings"><li><a href="#implementation-example-2">Implementation Example</a></li></ul></li><li><a href="#local-recording">Local Recording</a><ul class="toc-headings"><li><a href="#description">Description</a></li><li><a href="#steps-to-configure-mp4-recording">Steps to configure MP4 recording</a></li><li><a href="#setrecordmp4boolean">setRecordMp4(boolean)</a></li><li><a href="#setmp4pathstring">setMp4Path(String)</a></li><li><a href="#android-permission">Android Permission</a></li><li><a href="#implementation-example-3">Implementation Example</a></li></ul></li><li><a href="#adaptive-bitrate-streaming">Adaptive Bitrate Streaming</a><ul class="toc-headings"><li><a href="#implementation-example-4">Implementation Example</a></li><li><a href="#measuring-the-available-bandwidth">Measuring the available bandwidth</a></li><li><a href="#implementation-example-6">Implementation Example</a></li></ul></li><li><a href="#camera-zoom">Camera Zoom</a><ul class="toc-headings"><li><a href="#description-1">Description</a></li></ul></li><li><a href="#camera-focus">Camera Focus</a><ul class="toc-headings"><li><a href="#description-2">Description</a></li><li><a href="#parameter-list">Parameter List</a></li><li><a href="#focuscallback-interface">FocusCallback interface</a></li><li><a href="#implementation-example-8">Implementation Example</a></li></ul></li><li><a href="#deviceproperties">DeviceProperties</a><ul class="toc-headings"><li><a href="#description-3">Description</a></li><li><a href="#implementation-example-9">Implementation Example</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><div><h5>Docs</h5><a href="/docs/faq/encoding_and_streaming">FAQ</a><a href="/docs/nanoplayer/nanoplayer_introduction">H5Live</a><a href="/docs/nanoplayer/nanoplayer_introduction">Nanostream Cloud</a><a href="/docs/nanoplayer/nanoplayer_introduction">WebRTC.Live</a><a href="/docs/nanoplayer/nanoplayer_introduction">Apps and SDKs</a></div><div><h5>Products</h5><a href="https://www.nanocosmos.de/v6/cloud">Nanostream Cloud with Bintu.Live</a><a href="https://www.nanocosmos.de/v6/h5live">H5Live Low Latency HTML5-Player</a><a href="https://www.nanocosmos.de/v6/webrtc">WebRTC.Live</a><a href="https://discordapp.com/">Nanostream Apps and SDK</a></div><div><h5>More</h5><a href="https://www.nanocosmos.de/blog/">Blog</a><a href="https://www.facebook.com/nanocosmos.net/">Facebook</a><a href="https://twitter.com/nanovideo">Twitter</a><a href="https://www.linkedin.com/company/nanocosmos-gmbh">LinkedIn</a><a href="https://github.com/nanocosmos">GitHub</a><a class="github-button" href="https://github.com/nanocosmos/demo" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://nanocosmos.de/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/footer_logo.png" alt="nanocosmos GmbH" width="170" height="45"/></a><section class="copyright">Copyright © 2019 nanocosmos GmbH</section></footer></div></body></html>
