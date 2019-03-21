@@ -10,7 +10,7 @@
 
 const siteConfig = {
   title: 'nanocosmos Documentation', // Title for your website.
-  tagline: 'nanoStream Cloud & H5Live Player - Around The World in 1 Second',
+  tagline: 'True interactive live streaming to engage your audience',
   url: 'https://docs.nanocosmos.de', // Your website URL
   baseUrl: '/', // Base URL for your project */
   // For github.io type URLs, you would set the url and baseUrl like:
@@ -33,7 +33,8 @@ const siteConfig = {
     {doc: 'webrtc/nanostream_webrtc_introduction', label: 'WebRTC.live'},
     //{doc: 'webrtc', label: 'WebRTC'},
     {doc: 'nanostream/nanostream', label: 'nanoStream Apps and SDKs'},
-    {doc: 'faq/faq_streaming', label: 'FAQ'}
+    {doc: 'faq/faq_streaming', label: 'FAQ'},
+    // {page: 'livesupport', label: 'Live Support'}
   ],
 
   /* path to images for header/footer */
@@ -47,20 +48,6 @@ const siteConfig = {
     secondaryColor: '#205C3B',
   },
 
-  /* Custom fonts for website */
-  /*
-  fonts: {
-    myFont: [
-      "Times New Roman",
-      "Serif"
-    ],
-    myOtherFont: [
-      "-apple-system",
-      "system-ui"
-    ]
-  },
-  */
-  //docsSideNavCollapsible : true,
 
   // This copyright info is used in /core/Footer.js and blog RSS/Atom feeds.
   copyright: `Copyright © ${new Date().getFullYear()} nanocosmos GmbH`,
@@ -71,7 +58,10 @@ const siteConfig = {
   },
 
   // Add custom scripts here that would be placed in <script> tags.
-  scripts: ['https://buttons.github.io/buttons.js', '/js/search.js'],
+  scripts: [
+    'https://buttons.github.io/buttons.js', 
+    // '/js/livechat.js',
+    '/js/search.js'],
 
   // On page navigation for the current documentation page.
   onPageNav: 'separate',
@@ -82,15 +72,12 @@ const siteConfig = {
   ogImage: 'img/docusaurus.png',
   twitterImage: 'img/docusaurus.png',
 
-  // Show documentation's last contributor's name.
-  // enableUpdateBy: true,
-
-  // Show documentation's last update time.
-  // enableUpdateTime: true,
-
   // You may provide arbitrary config keys to be used as needed by your
   // template. For example, if you need your repo's URL...
-     repoUrl: 'https://github.com/nanocosmos/demo',
+  repoUrl: 'https://github.com/nanocosmos/demo',
+
+  //Go to Top Button
+  scrollToTop : true,
 };
 
 module.exports = siteConfig;
