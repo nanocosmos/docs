@@ -38,9 +38,9 @@
     ],
     "Android" : [
       "nanostream/android/nanostream_android_getting_started",
-      "nanostream/android/nanostream_android_developer_manual_playback_new",
-      "nanostream/android/nanostream_android_developer_manual_streaming_new",
-      "nanostream/android/nanostream_android_developer_manual_sample_new"
+      "nanostream/android/nanostream_android_developer_manual_playback",
+      "nanostream/android/nanostream_android_developer_manual_streaming",
+      "nanostream/android/nanostream_android_developer_manual_sample"
     ],
     "iOS" : [
       "nanostream/ios/nanostream_ios_quick_start",

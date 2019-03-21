@@ -4,4 +4,4 @@ title: nanoStream WebRTC Browser API
 sidebar_label: Browser API
 ---
 
-Remove?
+Moved to getting-started
