@@ -92,11 +92,16 @@ document.addEventListener('DOMContentLoaded', function() {
 			searchbar_input.addEventListener('blur', function() {
 				dropdown_menu.classList.remove('show');
 				searchbar_input.value = '';
+				searchbar_input.classList.remove('searchbar_active');
 			})
 		
 			searchbar_input.addEventListener('input', function(e) {
 					emptyDropdownList();
 					filterDocsLinksForSearchQuery(this.value);
+			});
+
+			searchbar_input.addEventListener('focus', function(e) {
+				searchbar_input.classList.add('searchbar_active');
 			});
 		}
 

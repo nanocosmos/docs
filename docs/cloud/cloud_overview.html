@@ -1,0 +1,87 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>nanoStream Cloud Product and Services Overview · nanocosmos Documentation</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;p&gt;nanoStream Cloud is a unique &lt;strong&gt;ultra-low-latency live streaming platform&lt;/strong&gt; for your live video/audio content.&lt;/p&gt;
+"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="nanoStream Cloud Product and Services Overview · nanocosmos Documentation"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.nanocosmos.de/"/><meta property="og:description" content="&lt;p&gt;nanoStream Cloud is a unique &lt;strong&gt;ultra-low-latency live streaming platform&lt;/strong&gt; for your live video/audio content.&lt;/p&gt;
+"/><meta property="og:image" content="https://docs.nanocosmos.de/img/docusaurus.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://docs.nanocosmos.de/img/docusaurus.png"/><link rel="shortcut icon" href="/img/favicon_nano.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="/js/search.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/nanocosmos_header_logo.png" alt="nanocosmos Documentation"/><h2 class="headerTitleWithLogo">nanocosmos Documentation</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive siteNavItemActive"><a href="/docs/cloud/cloud_overview" target="_self">nanoStream Cloud</a></li><li class=""><a href="/docs/nanoplayer/nanoplayer_introduction" target="_self">H5Live Player</a></li><li class=""><a href="/docs/webrtc/nanostream_webrtc_introduction" target="_self">WebRTC.live</a></li><li class=""><a href="/docs/nanostream/nanostream" target="_self">nanoStream Apps and SDKs</a></li><li class=""><a href="/docs/faq/faq_streaming" target="_self">FAQ</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>nanoStream Cloud</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">nanoStream Cloud</h3><ul class=""><li class="navListItem navListItemActive"><a class="navItem" href="/docs/cloud/cloud_overview">Overview</a></li><li class="navListItem"><a class="navItem" href="/docs/cloud/cloud_introduction">Introduction</a></li><li class="navListItem"><a class="navItem" href="/docs/cloud/cloud_getting_started">Getting started</a></li><li class="navListItem"><a class="navItem" href="/docs/cloud/cloud_ios_streaming_app">iOS Streaming App in 5 Minutes</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">nanoStream Cloud Product and Services Overview</h1></header><article><div><span><p>nanoStream Cloud is a unique <strong>ultra-low-latency live streaming platform</strong> for your live video/audio content.</p>
+<p>nanoStream software and services can be completely <strong>white-labeled to run under your own brand</strong>.</p>
+<h2><a class="anchor" aria-hidden="true" id="what-makes-nanostream-cloud-different"></a><a href="#what-makes-nanostream-cloud-different" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>What makes nanoStream Cloud different?</h2>
+<p>nanoStream Cloud is a combination of software and services. <br>
+It contains the <a href="https://www.nanocosmos.de/v6/h5live">unique H5Live player for all HTML5 web browsers</a>,<br>
+connected to our <strong>ultra-low-latency (ULL) CDN</strong> for worldwide distribution to large audiences,<br>
+which is managed by our <a href="https://www.nanocosmos.de/v6/cloud">bintu dashboard and API</a></p>
+<p>nanoStream Cloud is available worldwide with server locations in US East/West, Europe, Asia, Australia, etc.
+The system is operating 24/7 for instant live streaming.
+Expected default latency end-to-end (glass-to-glass) is 1-2 seconds.</p>
+<h2><a class="anchor" aria-hidden="true" id="live-encoding"></a><a href="#live-encoding" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Live Encoding</h2>
+<p>Live encoding/ingest is supported with:</p>
+<ul>
+<li>ingest with your own <strong>H264/AAC/RTMP Live Encoders</strong> (e.g. OBS, Wirecast, Hardware Encoders)</li>
+<li>ingest with our <strong>nanoStream Apps/SDKs</strong> (nanoStream Apps for Win/Mac/iOS/Android),</li>
+<li>ingest with plugin-free web based <strong>nanoStream WebRTC.live</strong> broadcaster incl. screen sharing</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="live-playback-with-h5live"></a><a href="#live-playback-with-h5live" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Live Playback with H5Live</h2>
+<p>Live Playback is supported with our unique H5Live player. The same player code runs on all browsers.
+The player code can easily be embedded on your own web page with a code snippet shown on the player page,
+or managed by our Javascript API.</p>
+<h2><a class="anchor" aria-hidden="true" id="stream-management-dashboard-and-api"></a><a href="#stream-management-dashboard-and-api" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Stream Management Dashboard and API</h2>
+<p>Stream Management is done with our bintu dashboard and API.
+You will obtain and manage geo-loadbalanced URLs to enable global scale.</p>
+<h2><a class="anchor" aria-hidden="true" id="new-metrics-and-analytics"></a><a href="#new-metrics-and-analytics" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>New: Metrics and Analytics</h2>
+<p>To get full insight about your quality of service, we created a metrics and analytics system. Ask for details.</p>
+<p>Optional Add-ons</p>
+<ul>
+<li><strong>Screen sharing</strong> (for presentations or gaming)</li>
+<li><strong>External cameras</strong> like HDMI Capture, DJI Drones, Drones, Gopro</li>
+<li>Video mix, live overlay, live meta data, score boarding, ad-insertion</li>
+<li>Other protocols and codecs, UDP, RTSP, MXF and others.</li>
+</ul>
+<p>For best user experience and quality of service, including end-to-end latency control, you can use the combination of nanoStream client software and our nanoStream Cloud live streaming services.</p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-next button" href="/docs/cloud/cloud_introduction"><span>Introduction</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#what-makes-nanostream-cloud-different">What makes nanoStream Cloud different?</a></li><li><a href="#live-encoding">Live Encoding</a></li><li><a href="#live-playback-with-h5live">Live Playback with H5Live</a></li><li><a href="#stream-management-dashboard-and-api">Stream Management Dashboard and API</a></li><li><a href="#new-metrics-and-analytics">New: Metrics and Analytics</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><div><h5>Docs</h5><a href="/docs/faq/encoding_and_streaming">FAQ</a><a href="/docs/nanoplayer/nanoplayer_introduction">H5Live</a><a href="/docs/nanoplayer/nanoplayer_introduction">Nanostream Cloud</a><a href="/docs/nanoplayer/nanoplayer_introduction">WebRTC.Live</a><a href="/docs/nanoplayer/nanoplayer_introduction">Apps and SDKs</a></div><div><h5>Products</h5><a href="https://www.nanocosmos.de/v6/cloud">Nanostream Cloud with Bintu.Live</a><a href="https://www.nanocosmos.de/v6/h5live">H5Live Low Latency HTML5-Player</a><a href="https://www.nanocosmos.de/v6/webrtc">WebRTC.Live</a><a href="https://discordapp.com/">Nanostream Apps and SDK</a></div><div><h5>More</h5><a href="https://www.nanocosmos.de/blog/">Blog</a><a href="https://www.facebook.com/nanocosmos.net/">Facebook</a><a href="https://twitter.com/nanovideo">Twitter</a><a href="https://www.linkedin.com/company/nanocosmos-gmbh">LinkedIn</a><a href="https://github.com/nanocosmos">GitHub</a><a class="github-button" href="https://github.com/nanocosmos/demo" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://nanocosmos.de/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/footer_logo.png" alt="nanocosmos GmbH" width="170" height="45"/></a><section class="copyright">Copyright © 2019 nanocosmos GmbH</section></footer></div></body></html>
