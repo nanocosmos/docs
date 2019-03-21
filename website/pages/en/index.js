@@ -57,8 +57,8 @@ class HomeSplash extends React.Component {
           <div className="contentWrapper">
           <ProjectTitle siteConfig={siteConfig} />
           <div className="buttonWrapper">
-            <Button className="button_filled button button_cta" href="http://docs.nanocosmos.de/docs/cloud/cloud_introduction">Get started</Button>
-            <Button className="button button_outline button_cta" href="http://docs.nanocosmos.de/docs/faq/faq_streaming">Browse FAQs</Button>
+            <Button className="button_filled button button_cta" href="/docs/cloud/cloud_introduction">Get started</Button>
+            <Button className="button button_outline button_cta" href="/docs/faq/faq_streaming">Browse FAQs</Button>
           </div>
           </div>
         </div>
@@ -74,7 +74,7 @@ class Index extends React.Component {
 
     const Block = props => (
       <Container
-        padding={['bottom']}
+        padding={['']}
         id={props.id}
         background={props.background}>
         <GridBlock
@@ -131,6 +131,10 @@ class Index extends React.Component {
               content: 'Reach your viewers all over the world through a trustful live streaming Cloud. Don\'t worry about contantly changing viewership, nanoStream Cloud will rock your live streams.',
               title: 'Scalable',
             },
+          ]}
+        </Block>
+        <Block layout="twoColumn">
+          {[
             {
               content: 'Provide content to your audience on any device. It doesn\'t matter when your viewers are, nanoStream Cloud works on all HTML5 browsers, including Safari on iOS.',
               title: 'Cross-platform',

@@ -6,11 +6,14 @@
 	padding: 40px 0 !important;
 }
 
+/* Landing Page */
+
 .sectionHeader {
 	font-size: 3rem;
 	text-align: center;
 }
 
+/* Homesplash Section */
 .homeSplash {
 	background: #ed7d0e;
 	height: 600px;
@@ -53,6 +56,7 @@
 	max-width: 80%;
 }
 
+/* Showcase Section */
 .showcaseCta > div {
 	padding-right: 1rem;
 }
@@ -80,6 +84,12 @@
 	margin: 10px;
 }
 
+/* Feature Section */
+.featureSection {
+	padding-bottom: 80px;
+}
+
+/* Help Section */
 .helpSection {
 	background: #ed7d0e;
 	padding: 200px 0;
@@ -213,16 +223,77 @@ img.logo {
 	margin-right: 25px !important;
 }
 
-@media only screen and (min-device-width: 360px) and (max-device-width: 736px) {
-	
-}
-
-@media only screen and (min-width: 1024px) {
-}
-
 @media only screen and (max-width: 1023px) {
 	footer {
 		padding: 20px;
+	}
+
+	.homeSplash {
+		height: 500px;
+	}
+
+	.projectLogo {
+		display: block !important;
+		padding: unset !important;
+		position: unset !important;
+	}
+
+	.projectLogo img {
+		max-height: 350px !important;
+		height: 100% !important;
+	}
+}
+
+@media only screen and (min-device-width: 360px) and (max-device-width: 736px) {
+	.aa-dropdown-menu a {
+		font-size: 16px;
+	}
+
+	.projectLogo {
+		display: none !important;
+	}
+	
+	.homeContainer .homeWrapper {
+		padding-top: 0px;
+	}
+
+	.homeSplash {
+		height: 400px;
+	}
+
+	.contentWrapper {
+		max-width: 90%;
+		text-align: center;
+	}
+
+	.projectTitle {
+		text-align: center;
+	}
+
+	.buttonWrapper {
+		justify-content: center;
+		max-width: unset;
+	}
+}
+
+@media only screen and (min-width: 1024px) {
+	.projectLogo {
+		display: block !important;
+		padding: unset !important;
+		position: unset !important;
+	}
+
+	footer {
+		padding: 20px;
+	}
+
+	.homeSplash {
+		height: 400px;
+	}
+
+	.projectLogo img {
+		max-height: 300px !important;
+		height: 100% !important;
 	}
 }
 
