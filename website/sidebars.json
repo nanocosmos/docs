@@ -49,9 +49,7 @@
       "faq/faq_nanostream_sdk_win",
       "faq/programming"
     ],
-    "Purchase and License" : ["faq/faq_purchase_and_license"],
-    "nanoStream SDK for Windows, Codecs Setup" : [
-    ]
+    "Purchase and License" : ["faq/faq_purchase_and_license"]
   },
   "docs-other": {
     "First Category": ["doc5"],
