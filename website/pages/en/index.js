@@ -57,7 +57,7 @@ class HomeSplash extends React.Component {
           <div className="contentWrapper">
           <ProjectTitle siteConfig={siteConfig} />
           <div className="buttonWrapper">
-            <Button className="button_filled button button_cta" href="/docs/cloud/cloud_introduction">Get started</Button>
+            <Button className="button_filled button button_cta" href="/docs/cloud/cloud_overview">Get started</Button>
             <Button className="button button_outline button_cta" href="/docs/faq/faq_streaming">Browse FAQs</Button>
           </div>
           </div>
