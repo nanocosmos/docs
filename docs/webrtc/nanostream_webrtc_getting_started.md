@@ -95,7 +95,8 @@ Within your HTML:
 
     // example bintu rtmp url
     // you should use the bintu api to obtain a valid ingest URL (see below)
-    var myOutputStream = "rtmp://bintu-stream.nanocosmos.de/live/P4gSV-12345";
+    var myOutputStream = "rtmp://bintu-stream.nanocosmos.de/live";
+    var myOutputStreamName = "P4gSV-12345";
         
     // get connected devices
     user.getDevices();
@@ -207,30 +208,29 @@ If you don't already have a stream url you can create a new webrtc enabled strea
 > You can find the bintu.js documentation [here](https://webrtc.nanocosmos.de/release/doc/bintu/Bintu.html)
 
 
+## Live Stream Configuration
 
 ### Streaming to an RTMP URL
 
 If you have a valid `RTMP` URL, you can use this to create a live broadcast: (see the example above):
 
 ```javascript
-// example bintu rtmp url
-// you should use the bintu api to obtain a valid ingest URL (see below)
-var myOutputStream = "rtmp://bintu-stream.nanocosmos.de/live/P4gSV-12345";
 var broadcastConfig = {
-	transcodingTargets: {
-        output: myOutputStream;
+    transcodingTargets: {
+        output: myOutputStreamUrl,  // rtmp://...
+        streamname: myOutputStreamName
     }
 };
 ```
 
 
 
-## Live Stream Configuration
 
 ```javascript
 var broadcastConfig = {
 	transcodingTargets: {
-    	output: rtmpurl,                      	// rtmp live stream URL
+        output: myOutputStreamUrl,  // rtmp://...
+        streamname: myOutputStreamName
         videobitrate: entries.videoBitrate,   	// rtmp/h264 video bitrate
         audiobitrate: entries.audioBitrate,   	// rtmp/aac audio bitrate
         framerate: entries.framerate,         	// rtmp/h264 video framerate
