@@ -154,8 +154,8 @@ class Index extends React.Component {
           <h2 className="sectionHeader">Any questions?</h2>
         </div>
         <div className="helpCta">
-          <Button className="button_filled button button_cta" href="http://docs.nanocosmos.de/docs/cloud/cloud_introduction">Browse FAQs</Button>
-          <Button className="button button_outline button_cta" href="http://docs.nanocosmos.de/docs/faq/faq_streaming">Contact Support</Button>
+          <Button className="button_filled button button_cta" href="/docs/faq/faq_streaming">Browse FAQs</Button>
+          <Button className="button button_outline button_cta" href="mailto:support@nanocosmos.de">Contact Support</Button>
         </div>
       </div>
     );
