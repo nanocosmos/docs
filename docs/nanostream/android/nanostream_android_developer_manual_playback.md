@@ -1,5 +1,5 @@
 ---
-id: nanostream_android_developer_manual_playback_new
+id: nanostream_android_developer_manual_playback
 title: Playback
 sidebar_label: Playback
 ---

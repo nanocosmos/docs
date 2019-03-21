@@ -56,14 +56,16 @@
       "nanostream/windows/nanostream_windows_networkwriter"
     ],
     "DirectShow": [
-      "nanostream/directshow/nanostream_directshow_audio_volume",
+      "nanostream/directshow/index",
       "nanostream/directshow/nanostream_directshow_h264",
-      "nanostream/directshow/nanostream_directshow_mpeg",
-      "nanostream/directshow/nanostream_directshow_quicktime",
+      "nanostream/directshow/directshow_avc_h264",
       "nanostream/directshow/nanostream_directshow_rtmp",
       "nanostream/directshow/nanostream_directshow_rtsp",
       "nanostream/directshow/nanostream_directshow_udp_streaming",
-      "nanostream/directshow/nanostream_directshow_video_filter"
+      "nanostream/directshow/nanostream_directshow_video_filter",
+      "nanostream/directshow/nanostream_directshow_audio_volume",
+      "nanostream/directshow/nanostream_directshow_mpeg",
+      "nanostream/directshow/nanostream_directshow_quicktime"
     ]
   },
   "faq" : {

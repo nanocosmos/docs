@@ -1,5 +1,5 @@
 ---
-id: nanostream_android_developer_manual_streaming_new
+id: nanostream_android_developer_manual_streaming
 title: Streaming Media
 sidebar_label: Streaming Media
 ---

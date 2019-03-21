@@ -3,8 +3,11 @@
   "localized-strings": {
     "next": "Next",
     "previous": "Previous",
-    "tagline": "True interactive live streaming to engage your audience",
+    "tagline": "nanoStream Cloud & H5Live Player - Around The World in 1 Second",
     "docs": {
+      "about": {
+        "title": "about"
+      },
       "bintu/android/bintu-android-sdk": {
         "title": "bintu/android/bintu-android-sdk"
       },
@@ -132,6 +135,12 @@
         "title": "Programming",
         "sidebar_label": "Programming"
       },
+      "index": {
+        "title": "index"
+      },
+      "mkdocs": {
+        "title": "mkdocs"
+      },
       "nanoplayer/nanoplayer_api_class": {
         "title": "Class",
         "sidebar_label": "Class"
@@ -181,8 +190,29 @@
       "nanostream/adobe/nanostream_flex_app_64bit_ane": {
         "title": "nanostream/adobe/nanostream_flex_app_64bit_ane"
       },
+      "nanostream/android/android_developer_manual_playback": {
+        "title": "nanostream/android/android_developer_manual_playback"
+      },
+      "nanostream/android/android_developer_manual_sample": {
+        "title": "nanostream/android/android_developer_manual_sample"
+      },
+      "nanostream/android/android_developer_manual_streaming": {
+        "title": "nanostream/android/android_developer_manual_streaming"
+      },
+      "nanostream/android/android_feedback": {
+        "title": "nanostream/android/android_feedback"
+      },
+      "nanostream/android/android_getting_started": {
+        "title": "nanostream/android/android_getting_started"
+      },
+      "nanostream/android/android_rtmp_playback": {
+        "title": "nanostream/android/android_rtmp_playback"
+      },
+      "nanostream/android/android-advanced-settings": {
+        "title": "nanostream/android/android-advanced-settings"
+      },
       "nanostream/android/nanostream_android_developer_manual_playback": {
-        "title": "Android Playback",
+        "title": "Playback",
         "sidebar_label": "Playback"
       },
       "nanostream/android/nanostream_android_developer_manual_sample": {
@@ -196,12 +226,6 @@
       "nanostream/android/nanostream_android_getting_started": {
         "title": "Getting started",
         "sidebar_label": "Getting started"
-      },      
-      "nanostream/android/android_rtmp_playback": {
-        "title": "nanostream/android/android_rtmp_playback"
-      },
-      "nanostream/android/android-advanced-settings": {
-        "title": "nanostream/android/android-advanced-settings"
       },
       "nanostream/android/nanostream-android-index": {
         "title": "nanostream/android/nanostream-android-index"
@@ -256,7 +280,8 @@
         "title": "nanostream/directshow/directshow_audio_volume"
       },
       "nanostream/directshow/directshow_avc_h264": {
-        "title": "nanostream/directshow/directshow_avc_h264"
+        "title": "DirectShow AVC H264 Codec",
+        "sidebar_label": "directshow_avc_h264"
       },
       "nanostream/directshow/directshow_code_statistics": {
         "title": "nanostream/directshow/directshow_code_statistics"
@@ -319,7 +344,8 @@
         "title": "nanostream/directshow/directshow_video_mixer"
       },
       "nanostream/directshow/index": {
-        "title": "nanostream/directshow/index"
+        "title": "DirectShow Overview",
+        "sidebar_label": "index"
       },
       "nanostream/directshow/nanostream_directshow_audio_volume": {
         "title": "Audio Volume",
@@ -359,6 +385,9 @@
       "nanostream/general/nanocosmos_method_parameter_header": {
         "title": "nanostream/general/nanocosmos_method_parameter_header"
       },
+      "nanostream/ios/ios-quick-start": {
+        "title": "nanostream/ios/ios-quick-start"
+      },
       "nanostream/ios/nanostream_ios_license_deployment": {
         "title": "License Deployment Information",
         "sidebar_label": "License Deployment Information"
@@ -371,9 +400,16 @@
         "title": "SDK for iOS",
         "sidebar_label": "SDK for iOS"
       },
+      "nanostream/ios/nanostream-ios-sdk": {
+        "title": "SDK for iOS",
+        "sidebar_label": "SDK for iOS"
+      },
       "nanostream/macos/nanostream_macos_sdk": {
         "title": "MacOSX API",
         "sidebar_label": "MacOSX API"
+      },
+      "nanostream/macos/nanostream-macos-sdk": {
+        "title": "nanostream/macos/nanostream-macos-sdk"
       },
       "nanostream/nanostream": {
         "title": "Introduction",
@@ -427,6 +463,9 @@
       "nanostream/support/rtmp/nanostream_rtmp_statistics": {
         "title": "nanostream/support/rtmp/nanostream_rtmp_statistics"
       },
+      "nanostream/web/live_video_encoder_-_plugin_jscript": {
+        "title": "nanostream/web/live_video_encoder_-_plugin_jscript"
+      },
       "nanostream/web/nanostream_4.x_web_api": {
         "title": "nanoStream Web API 4.x",
         "sidebar_label": "nanoStream Web API 4.x"
@@ -434,6 +473,24 @@
       "nanostream/web/nanostream_live_video_encoder_-_plugin_jscript": {
         "title": "Live Video Encoder - Plugin API",
         "sidebar_label": "Live Video Encoder - Plugin API"
+      },
+      "nanostream/web/nanostream-4.x-web-api": {
+        "title": "nanostream/web/nanostream-4.x-web-api"
+      },
+      "nanostream/windows/language_integration/nanostream_activex_visualcpp_mfc": {
+        "title": "nanostream/windows/language_integration/nanostream_activex_visualcpp_mfc"
+      },
+      "nanostream/windows/language_integration/nanostream_activex_visualcpp": {
+        "title": "nanostream/windows/language_integration/nanostream_activex_visualcpp"
+      },
+      "nanostream/windows/language_integration/nanostream_cpp_integration": {
+        "title": "nanostream/windows/language_integration/nanostream_cpp_integration"
+      },
+      "nanostream/windows/language_integration/nanostream_csharp_integration": {
+        "title": "nanostream/windows/language_integration/nanostream_csharp_integration"
+      },
+      "nanostream/windows/language_integration/nanostream_delphi_integration": {
+        "title": "nanostream/windows/language_integration/nanostream_delphi_integration"
       },
       "nanostream/windows/nanostream_windows_binaries": {
         "title": "Binary Modules for Windows",
@@ -454,6 +511,21 @@
       "nanostream/windows/nanostream_windows_networkwriter": {
         "title": "RTMP Network Renderer & Writer",
         "sidebar_label": "RTMP Network Renderer & Writer"
+      },
+      "nanostream/windows/windows_binares": {
+        "title": "nanostream/windows/windows_binares"
+      },
+      "nanostream/windows/windows_developer_manual": {
+        "title": "nanostream/windows/windows_developer_manual"
+      },
+      "nanostream/windows/windows_license_help": {
+        "title": "nanostream/windows/windows_license_help"
+      },
+      "nanostream/windows/windows_networkwriter": {
+        "title": "nanostream/windows/windows_networkwriter"
+      },
+      "sidebar": {
+        "title": "sidebar"
       },
       "webrtc/nanostream_webrtc_api": {
         "title": "nanoStream WebRTC API",

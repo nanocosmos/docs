@@ -1,5 +1,5 @@
 ---
-id: nanostream_android_developer_manual_sample_new
+id: nanostream_android_developer_manual_sample
 title: Sample
 sidebar_label: Sample
 ---
