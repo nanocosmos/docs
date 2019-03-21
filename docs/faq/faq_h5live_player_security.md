@@ -5,10 +5,8 @@ sidebar_label: Security
 ---
 
 <details><summary><strong>Can I use secured streaming?</strong></summary>
-Yes, the player supports secured streaming with the `nanoStream cloud` and `bintu`. 
-
-Please contact our [sales team](mailto:sales@nanocosmos.de).
-
+H5Live player supports token-based secure streaming with `nanoStream cloud` and `bintu`. 
+For protecting your ingest point, you can use bintu web hooks.
 
 </details>
 
