@@ -80,7 +80,6 @@ document.addEventListener('DOMContentLoaded', function() {
 			// builds path 
 			var locationHref = '/' + link.href;
 			a.setAttribute('href', locationHref);
-			console.log(locationHref);
 			// highlights matched query
 			a.innerHTML = link.title.replace(query, `<span class="highlight">${query}</span>`);
 			a.addEventListener('mousedown', function() {

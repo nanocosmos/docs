@@ -12,7 +12,7 @@ This can have multiple reasons. First be sure to listen to the proper events for
 
 <details><summary><strong>I am trying to preview my camera but I get an error message. What can this be?</strong></summary>
 
-![error2browser](C:\Users\nano\Desktop\Markdown_faq\error2browser.png)
+![error2browser](/img/faq/error2browser.png)
 
 1. There is no camera connected.
 2. Camera is being used by another browser.

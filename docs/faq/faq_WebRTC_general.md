@@ -17,14 +17,11 @@ Generally we support the two major desktop platforms Windows and MacOS and Andro
 >  Please see the below list for platform/browser combinations that we support officially.
 
 |         | Chrome | Firefox |      MS Edge     | Safari |
+|---------|--------|---------|------------------|--------|
 | Windows |    x   |    x    | with limitations |    -   |
-|  MacOS  |    x   |    x    |         -        |   v11  |
-|   iOS   |    -   |    -    |         -        |   v11  |
+|  MacOS  |    x   |    x    |         -        | => v11  |
+|   iOS   |    -   |    -    |         -        | => v11  |
 | Android |    x   |    -    |         -        |    -   |
-
-
-
-![Tabelle](C:\Users\nano\Desktop\Markdown_faq\Tabelle.PNG)
 
 </details>
 
