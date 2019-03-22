@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', function() {
 			dropdown_menu.classList.add('show');
 			var a = document.createElement('a');
 			// builds path 
-			var locationHref = window.location.href + link.href;
+			var locationHref = '/' + link.href;
 			a.setAttribute('href', locationHref);
 			// highlights matched query
 			a.innerHTML = link.title.replace(query, `<span class="highlight">${query}</span>`);

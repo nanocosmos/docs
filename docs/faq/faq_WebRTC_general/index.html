@@ -58,12 +58,17 @@ Generally we support the two major desktop platforms Windows and MacOS and Andro
 <blockquote>
 <p>Please see the below list for platform/browser combinations that we support officially.</p>
 </blockquote>
-<p>|         | Chrome | Firefox |      MS Edge     | Safari |
-| Windows |    x   |    x    | with limitations |    -   |
-|  MacOS  |    x   |    x    |         -        |   v11  |
-|   iOS   |    -   |    -    |         -        |   v11  |
-| Android |    x   |    -    |         -        |    -   |</p>
-<p><img src="C:\Users\nano\Desktop\Markdown_faq\Tabelle.PNG" alt="Tabelle"></p>
+<table>
+<thead>
+<tr><th></th><th>Chrome</th><th>Firefox</th><th>MS Edge</th><th>Safari</th></tr>
+</thead>
+<tbody>
+<tr><td>Windows</td><td>x</td><td>x</td><td>with limitations</td><td>-</td></tr>
+<tr><td>MacOS</td><td>x</td><td>x</td><td>-</td><td>=&gt; v11</td></tr>
+<tr><td>iOS</td><td>-</td><td>-</td><td>-</td><td>=&gt; v11</td></tr>
+<tr><td>Android</td><td>x</td><td>-</td><td>-</td><td>-</td></tr>
+</tbody>
+</table>
 <p></details></p>
 <p><details><summary><strong>How can I check browser support?</strong></summary></p>
 <p>You can check the static capabilities array of the NanoPlayers class <code>NanoPlayer.capabilities</code>. If the array has values, the player is supported. Values can be <code>h5live</code>, <code>flash</code> and <code>native</code>.</p>
