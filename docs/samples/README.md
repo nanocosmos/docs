@@ -7,6 +7,12 @@
 
 ## Samples for Developers
 
+Some sample code is available in the documentation of the components.
+When using bintu/nanostream Cloud, you will see code samples on the player page
+which shows how to embed the H5Live player in your web browser application.
+
+Other samples are hosted here:
+
 https://github.com/nanostream
 
 (Work in progress)
