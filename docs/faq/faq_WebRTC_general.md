@@ -10,11 +10,6 @@ We support all common cameras that can be connected to the PC via USB.
 
 </details>
 
-<details><summary><strong>Do we support IP cameras?</strong></summary>
-
-No, not yet.
-
-</details>
 
 <details><summary><strong>Which browsers do we support?</strong></summary>
 Generally we support the two major desktop platforms Windows and MacOS and Android and iOS as mobile platforms. Because WebRTC is an “in development” technology there are minor restrictions regarding browser support. 
@@ -33,15 +28,9 @@ Generally we support the two major desktop platforms Windows and MacOS and Andro
 
 </details>
 
-<details><summary><strong>Is Internet Explorer 11 on Windows 7 supported?</strong></summary>
+<details><summary><strong>How can I check browser support?</strong></summary>
 
-For IE 11 Win 7 we provide a flash fallback with with limited but basic functionality.
-
-</details>
-
-<details><summary><strong>Can I check capabilities?</strong></summary>
-
-Yes, you can check the static capabilities array of the NanoPlayers class `NanoPlayer.capabilities`. If the array has values, the player is supported. Values can be `h5live`, `flash` and `native`.
+You can check the static capabilities array of the NanoPlayers class `NanoPlayer.capabilities`. If the array has values, the player is supported. Values can be `h5live`, `flash` and `native`.
 
 </details>
 

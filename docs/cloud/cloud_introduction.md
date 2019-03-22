@@ -4,6 +4,12 @@ title: Introduction
 sidebar_label: Introduction
 ---
 
+# nanoStream Cloud and bintu.live
+
+nanoStream Cloud is a unique live streaming platform based on different components for ultra low latency live streaming.
+
+This section is about bintu, the stream management dashboard and api.
+
 ## What is bintu.live?
 
 The bintu.live stream management software is part of the nanoStream Cloud an enables easy management of low-latency live video streams with nanoStream Live Encoders and Players or any other encoder or playback software.

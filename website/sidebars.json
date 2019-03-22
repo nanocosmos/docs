@@ -27,9 +27,13 @@
   },
   "cloud": {
     "nanoStream Cloud": [
+      "cloud/cloud_overview",
       "cloud/cloud_introduction",
       "cloud/cloud_getting_started",
-      "cloud/cloud_ios_streaming_app"
+      "cloud/bintu_api",
+      "cloud/bintu_custom_webhooks",
+      "cloud/bintu_stream_tags",
+      "cloud/network_diagnostics"
     ]
   },
   "nanostream": {
@@ -45,6 +49,9 @@
     "iOS" : [
       "nanostream/ios/nanostream_ios_quick_start",
       "nanostream/ios/nanostream_ios_sdk",
+      "nanostream/ios/bintu_ios_sample",
+      "nanostream/ios/bintu_ios_sdk",
+      "nanostream/ios/nanostream-ios-step-by-step",
       "nanostream/ios/nanostream_ios_license_deployment"
     ],
     "MacOSX" : ["nanostream/macos/nanostream_macos_sdk"],

@@ -85,9 +85,18 @@ Within your HTML:
       bintuApiKey: "myBintuApiKey"
     });
     
+    // set bitrate config, 0=default
+    user.setConfig({
+         bitrates: {
+           videoSendInitialBitrate: 500, // initial webrtc bitrate 500 kbits/s
+           videoSendBitrate: 1500 // target webrtc bitrate 1500 kbits/s
+         }
+    );
+
     // example bintu rtmp url
     // you should use the bintu api to obtain a valid ingest URL (see below)
-    var myOutputStream = "rtmp://bintu-stream.nanocosmos.de/live/P4gSV-12345";
+    var myOutputStream = "rtmp://bintu-stream.nanocosmos.de/live";
+    var myOutputStreamName = "P4gSV-12345";
         
     // get connected devices
     user.getDevices();
@@ -199,30 +208,29 @@ If you don't already have a stream url you can create a new webrtc enabled strea
 > You can find the bintu.js documentation [here](https://webrtc.nanocosmos.de/release/doc/bintu/Bintu.html)
 
 
+## Live Stream Configuration
 
 ### Streaming to an RTMP URL
 
 If you have a valid `RTMP` URL, you can use this to create a live broadcast: (see the example above):
 
 ```javascript
-// example bintu rtmp url
-// you should use the bintu api to obtain a valid ingest URL (see below)
-var myOutputStream = "rtmp://bintu-stream.nanocosmos.de/live/P4gSV-12345";
 var broadcastConfig = {
-	transcodingTargets: {
-        output: myOutputStream;
+    transcodingTargets: {
+        output: myOutputStreamUrl,  // rtmp://...
+        streamname: myOutputStreamName
     }
 };
 ```
 
 
 
-## Live Stream Configuration
 
 ```javascript
 var broadcastConfig = {
 	transcodingTargets: {
-    	output: rtmpurl,                      	// rtmp live stream URL
+        output: myOutputStreamUrl,  // rtmp://...
+        streamname: myOutputStreamName
         videobitrate: entries.videoBitrate,   	// rtmp/h264 video bitrate
         audiobitrate: entries.audioBitrate,   	// rtmp/aac audio bitrate
         framerate: entries.framerate,         	// rtmp/h264 video framerate
@@ -277,6 +285,60 @@ Example:
 You can play back from our servers with the [H5Live Player](http://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_introduction)
 
 
+
+## Camera / Capture Device Testing
+
+https://webrtc.github.io/samples/src/content/devices/input-output/
+
+
+# Screen Sharing 
+
+WebRTC supports screen sharing! You can use a screen or a window, depending on a browser used, as a live video source instead of a web camera.
+
+Screen sharing is currently available in:
+
+  * Google Chrome
+  * Firefox
+
+Chrome on Desktop since version 72 supports screen sharing without any further installation.
+For former versions, a certified browser extension was required due to Google security policy.
+
+
+
+# Reporting bugs or issues 
+
+To report any bugs or issues, please send a complete issue report including the following:
+
+- a description of the issue and expected results
+- the configuration you are using for webrtc, bintu.live and h5live
+- potential stream IDs which show the issue
+- how to replicate the issue
+
+### Log information
+
+#### browser console log
+
+press Ctrl+Shift+J or F12 (Windows / Linux) or Cmd+Opt+J (Mac)
+copy/paste the result of the console
+
+
+#### use debug-log information 
+
+enhanced logging can be enabled by adding "&debug=3" to the web page URL
+
+
+#### Chrome webrtc-internals 
+
+open a separate browser tab and open the URL 
+    chrome://webrtc-internals
+click "dump" and download the data and send to us
+
+
+### Remote Support 
+
+- any potential issues might be best resolved based on a remote support session,
+    dependent on your support level.
+    Please contact us to arrange an online meeting.
 
 ## Camera / Capture Device Testing
 
