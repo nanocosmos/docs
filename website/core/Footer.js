@@ -26,12 +26,14 @@ class Footer extends React.Component {
       <footer className="nav-footer" id="footer">
         <section className="sitemap">
           <div>
-            <h5>Docs</h5>
+            <h5>Contact</h5>
+            <a href="https://www.nanocosmos.de/">nanocosmos homepage</a>
+            <a href="https://www.nanocosmos.de/contact">Contact</a>
+            <a href="https://www.nanocosmos.de/support">Support</a>
+            <a href="https://www.nanocosmos.de/terma">Legal Terms</a>
+            <!--
             <a href={this.docUrl('faq/encoding_and_streaming')}>FAQ</a>
-            <a href={this.docUrl('nanoplayer/nanoplayer_introduction')}>H5Live</a>
-            <a href={this.docUrl('nanoplayer/nanoplayer_introduction')}>Nanostream Cloud</a>
-            <a href={this.docUrl('nanoplayer/nanoplayer_introduction')}>WebRTC.Live</a>
-            <a href={this.docUrl('nanoplayer/nanoplayer_introduction')}>Apps and SDKs</a>
+            -->
           </div>
           <div>
             <h5>Products</h5>
@@ -43,15 +45,15 @@ class Footer extends React.Component {
           <div>
             <h5>More</h5>
             <a href="https://www.nanocosmos.de/blog/">Blog</a>
-            <a href="https://www.facebook.com/nanocosmos.net/">Facebook</a>
             <a href="https://twitter.com/nanovideo">Twitter</a>
+            <a href="https://www.facebook.com/nanocosmos.net/">Facebook</a>
             <a href="https://www.linkedin.com/company/nanocosmos-gmbh">LinkedIn</a>
-            <a href="https://github.com/nanocosmos">GitHub</a>
+            <a href="https://github.com/nanocosmos/docs">GitHub</a>
             <a
               className="github-button"
               href={this.props.config.repoUrl}
               data-icon="octicon-star"
-              data-count-href="/facebook/docusaurus/stargazers"
+              data-count-href="/nanocosmos/docs/stargazers"
               data-show-count="true"
               data-count-aria-label="# stargazers on GitHub"
               aria-label="Star this project on GitHub">
