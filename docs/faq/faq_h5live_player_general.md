@@ -90,6 +90,15 @@ You can check the static capabilities array of the NanoPlayers class `NanoPlayer
 </details>
 
 
+<details><summary><strong>Is H5Live supported in a Webview on iOS and Android?</strong></summary>
+H5Live Player works both on the native browsers Safari on iOS and Chrome on Android.
+For in-app usage for developers, also Android and iOS Webview works.
+There is one restriction about codec support, the systems need to support both H264 video 
+and AAC audio for playback.
+
+</details>
+
+
 <details><summary><strong>Is there an API documentation available?</strong></summary>
 
 Yes, you can find it [here](http://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_api_class).
