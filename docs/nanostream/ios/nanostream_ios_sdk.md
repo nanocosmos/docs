@@ -9,49 +9,6 @@ sidebar_label: SDK for iOS
 This documentation is about the nanoStream Live Video Streaming SDK for iOS and can be used by software developers to integrate nanoStream Live Video Encoding into custom apps.
 
 
-## Contents
-
-- [nanoStream SDK for iOS - Developer Manual](#nanostream-sdk-for-ios---developer-manual)
-  * [Purpose](#purpose)
-  * [Requirements](#requirements)
-  * [Getting Started](#getting-started)
-    + [Preparation](#preparation)
-    + [Check library version](#check-library-version)
-    + [Initialize the library](#initialize-the-library)
-    + [Start a stream](#start-a-stream)
-    + [Stop a running stream](#stop-a-running-stream)
-  * [Live Playback](#live-playback)
-    + [Initialize the library for playback](#initialize-the-library-for-playback)
-    + [Start playback](#start-playback)
-  * [Advanced Settings/Usage](#advanced-settings-usage)
-    + [Switch Camera](#switch-camera)
-    + [Orientation](#orientation)
-    + [Stream Type](#stream-type)
-    + [Server Authentication](#server-authentication)
-    + [Cropping](#cropping)
-    + [Local Recording](#local-recording)
-    + [Adaptive Bitrate](#adaptive-bitrate)
-    + [Statistics during streaming](#statistics-during-streaming)
-    + [Measuring the available bandwidth](#measuring-the-available-bandwidth)
-    + [Snaphot from the current stream](#snaphot-from-the-current-stream)
-    + [Overlay/Watermark](#overlay-watermark)
-    + [initWithSession](#initwithsession)
-  * [Specific use cases](#specific-use-cases)
-    + [Stream from a GoPro](#stream-from-a-gopro)
-    + [Stream from a Drone](#stream-from-a-drone)
-  * [Possible Issues](#possible-issues)
-    + [General](#general)
-    + [Compiler/Linker](#compiler-linker)
-      - [libstdc++](#libstdc--)
-      - [Undefined Symbols for Parrot & DJI](#undefined-symbols-for-parrot---dji)
-      - [Duplicate Symbols](#duplicate-symbols)
-    + [Breakpoints](#breakpoints)
-    + [Crashes](#crashes)
-      - [CALayerGetDelegate / CALayerGetSuperlayer / Other CALayer](#calayergetdelegate---calayergetsuperlayer---other-calayer)
-  * [Logging Information](#logging-information)
-  * [Crash Logs](#crash-logs)
-
-
 ## Requirements
 
 - Apple Mac with MacOS 10.9 with XCode 6 or higher
@@ -937,7 +894,7 @@ You can prevent the breakpoint from pausing the workflow of your application, if
 The default setting is most likely that every exception causes a break.
 To change that, use the settings from the following screenshot:
 
-![Screenshot](../img/screenshot_exception_breakpoint.png)
+![Screenshot](/img/nanostream/ios/screenshot_exception_breakpoint.png)
 
 This way only `Objective-C exceptions` will be catched and `C++ exceptions` will be ignored.
 

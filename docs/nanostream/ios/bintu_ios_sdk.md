@@ -88,7 +88,7 @@ That was a basic overview of our bintu.live component.
 
 ## Strip simulator architectur slices
 
-Xcode 6 and sometimes higher versions contain a bug where an app containing an embedded framework cannot be submitted to the app store when the framework contains simulator architectures (see [http://www.openradar.me/radar?id=6409498411401216][d74598ff]).
+Xcode 6 and sometimes higher versions contain a bug where an app containing an embedded framework cannot be submitted to the app store when the framework contains simulator architectures (see [here](http://www.openradar.me/radar?id=6409498411401216)).
 
 
 On the other hand, including the simulator architectures in the framework is necessary for anyone that wants to test their app (and also the bintu.live connector) on the simulator.
@@ -104,5 +104,3 @@ bash "${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bintu.framework/strip-fram
 ```
 
 This should be all that is needed to work around the Xcode bug.
-
-[d74598ff]: http://www.openradar.me/radar?id=6409498411401216 "http://www.openradar.me/radar?id=6409498411401216"
