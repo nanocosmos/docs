@@ -21,6 +21,8 @@ class Footer extends React.Component {
     return baseUrl + (language ? `${language}/` : '') + doc;
   }
 
+  //<a href={this.docUrl('faq/encoding_and_streaming')}>FAQ</a>
+
   render() {
     return (
       <footer className="nav-footer" id="footer">
@@ -31,9 +33,6 @@ class Footer extends React.Component {
             <a href="https://www.nanocosmos.de/contact">Contact</a>
             <a href="https://www.nanocosmos.de/support">Support</a>
             <a href="https://www.nanocosmos.de/terma">Legal Terms</a>
-            <!--
-            <a href={this.docUrl('faq/encoding_and_streaming')}>FAQ</a>
-            -->
           </div>
           <div>
             <h5>Products</h5>
