@@ -1,7 +1,7 @@
 ---
 id: index
 title: DirectShow Overview
-sidebar_label: index
+sidebar_label: Overview
 ---
 
 ### DirectShow

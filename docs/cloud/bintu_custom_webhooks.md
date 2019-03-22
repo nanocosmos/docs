@@ -1,4 +1,8 @@
-# bintu custom web hooks
+---
+id: bintu_custom_webhooks
+title: bintu custom web hooks
+sidebar_label: bintu custom web hooks
+---
 
 It's possible to use a custom web hook for custom based authentication. 
 

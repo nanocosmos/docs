@@ -48,10 +48,10 @@
     ],
     "iOS" : [
       "nanostream/ios/nanostream_ios_quick_start",
-      "nanostream/ios/nanostream_ios_sdk",
-      "nanostream/ios/bintu_ios_sample",
-      "nanostream/ios/bintu_ios_sdk",
       "nanostream/ios/nanostream-ios-step-by-step",
+      "nanostream/ios/nanostream_ios_sdk",
+      "nanostream/ios/bintu_ios_sdk",
+      "nanostream/ios/bintu_ios_sample",
       "nanostream/ios/nanostream_ios_license_deployment"
     ],
     "MacOSX" : ["nanostream/macos/nanostream_macos_sdk"],
@@ -65,7 +65,6 @@
     "DirectShow": [
       "nanostream/directshow/index",
       "nanostream/directshow/nanostream_directshow_h264",
-      "nanostream/directshow/directshow_avc_h264",
       "nanostream/directshow/nanostream_directshow_rtmp",
       "nanostream/directshow/nanostream_directshow_rtsp",
       "nanostream/directshow/nanostream_directshow_udp_streaming",

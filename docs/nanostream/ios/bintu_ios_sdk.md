@@ -1,7 +1,10 @@
+---
+id: bintu_ios_sdk
+title: bintu.live client SDK
+sidebar_label: bintu.live client SDK
+---
 
-# bintu.live client SDK
-
-(c) 2016-2018 nanocosmos gmbh
+(c) 2016-2019 nanocosmos gmbh
 http://www.nanocosmos.de
 
 Version 0.2.1

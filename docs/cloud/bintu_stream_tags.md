@@ -1,4 +1,8 @@
-# bintu.live stream tags
+---
+id: bintu_stream_tags
+title: bintu.live Stream Tags
+sidebar_label: bintu.live Stream Tags
+---
 
 You can group and tag streams with bintu stream tags.
 

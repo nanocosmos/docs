@@ -19,10 +19,12 @@
         "sidebar_label": "bintu api"
       },
       "cloud/bintu_custom_webhooks": {
-        "title": "cloud/bintu_custom_webhooks"
+        "title": "bintu custom web hooks",
+        "sidebar_label": "bintu custom web hooks"
       },
       "cloud/bintu_stream_tags": {
-        "title": "cloud/bintu_stream_tags"
+        "title": "bintu.live Stream Tags",
+        "sidebar_label": "bintu.live Stream Tags"
       },
       "cloud/cloud_getting_started": {
         "title": "Getting started",
@@ -356,7 +358,7 @@
       },
       "nanostream/directshow/index": {
         "title": "DirectShow Overview",
-        "sidebar_label": "index"
+        "sidebar_label": "Overview"
       },
       "nanostream/directshow/nanostream_directshow_audio_volume": {
         "title": "Audio Volume",
@@ -401,7 +403,8 @@
         "sidebar_label": "iOS Streaming App in 5 Minutes"
       },
       "nanostream/ios/bintu_ios_sdk": {
-        "title": "nanostream/ios/bintu_ios_sdk"
+        "title": "bintu.live client SDK",
+        "sidebar_label": "bintu.live client SDK"
       },
       "nanostream/ios/ios-quick-start": {
         "title": "nanostream/ios/ios-quick-start"
@@ -419,8 +422,8 @@
         "sidebar_label": "SDK for iOS"
       },
       "nanostream/ios/nanostream-ios-step-by-step": {
-        "title": "nanostream-ios-step-by-step",
-        "sidebar_label": "nanostream-ios-step-by-step"
+        "title": "Tutorial / Getting started with nanoStream and bintu.live",
+        "sidebar_label": "Getting started"
       },
       "nanostream/macos/nanostream_macos_sdk": {
         "title": "MacOSX API",

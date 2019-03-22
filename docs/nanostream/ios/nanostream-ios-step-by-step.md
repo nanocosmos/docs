@@ -1,17 +1,16 @@
 ---
 id: nanostream-ios-step-by-step
-title: nanostream-ios-step-by-step
-sidebar_label: nanostream-ios-step-by-step
+title: Tutorial / Getting started with nanoStream and bintu.live
+sidebar_label: Getting started
 ---
-# Tutorial / Getting started with nanoStream and bintu.live
 
-# Overview
+## Overview
 
 In this guide you will learn how to to build a live video broadcaster app with nanoStream that streams to our bintu.live streaming platform. Learn how to create the connection to bintu and obtain streaming configuration for your client. Setup the nanoStream client SDK to use the configuration we just got and broadcast your own live stream in minutes!
 
 You will learn how to build simple broadcaster and player app from the ground of with XCode for iOS, that can play the stream from our broadcaster app.
 
-# Prerequisites
+## Prerequisites
 
 - nanoStream 4.6 or later, including the bintu.live streaming platform connection
 - a valid Bintu APIKey
@@ -60,9 +59,9 @@ Last but not least, you can list all streams on your account with the ```getStre
 
 That was a basic overview of your bintu.live component. Now we show you how to build an end-to-end system with that.
 
-# Live Video Encoder (broadcast) app
+## Live Video Encoder (broadcast) app
 
-## Setup
+### Setup
 
 Create a new Xcode project with the template "Single View Application".
 
@@ -72,7 +71,7 @@ Save the project somewhere on your computer.
 
 Our app will be in portrait only. Therefore on the "General" tab of your application target in Xcode, under "Deployment Info" -> "Device Orientation", uncheck all except for "Portrait". It should look like this:
 
-## Broadcast View
+### Broadcast View
 
 To create our broadcast view, go into the ```Main.storyboard``` file Xcode should have generated for you. It should be pretty empty right now.
 
@@ -94,7 +93,7 @@ Also add a constraint which horizontally centers the button.
 
 After that, we will again use "Update Frames" and "Fix Misplacement" to make our view conform to our constraints.
 
-## Connection to ViewController
+### Connection to ViewController
 
 Next, enter Automatic Mode and create outlets for the broadcast button and the preview to our ViewController. Do this via holding down Ctrl and dragging from the button/view to the interface section of the ```ViewController.m``` file.
 
@@ -102,7 +101,7 @@ Create an action for the button by dragging from the button to the implementatio
 
 Now we have created our view. We can now move on to importing our modules.
 
-## Importing the SDKs
+### Importing the SDKs
 
 You need the following files: ```Bintu.framework```, ```libnanostreamAVC.a``` and ```nanostreamAVC.h```. Drag all files into your project in the Navigator on the left side. Check "Copy items if needed" for all of them.
 
@@ -112,7 +111,7 @@ Remove the entry for ```Bintu.framework``` from that section (it will get readde
 
 If you build and run this project now on your iPhone, you should see the preview view with our colored background and the broadcast button. If you see a linker error that probably means you did not import the libraries correctly, try to do it again.
 
-## Setting up nanoStream SDK
+### Setting up nanoStream SDK
 
 nanoStream SDK has some dependencies which you need to include, otherwise it will not compile correctly. Go to the "Linked Frameworks and Libraries" section of your target and add following libraries (by clicking the plus sign):
 
@@ -200,7 +199,7 @@ If you build and run this on your device, the app should start and ask for camer
 
 After you accept, it should look something like this, with the preview running and the broadcast button at the bottom:
 
-## Setting up the bintu.live connection
+### Setting up the bintu.live connection
 
 We will now create the connection to bintu so we can get our streaming configuration.
 Add the following import after ```#import "nanostreamAVC.h"```:
@@ -246,7 +245,7 @@ This code will create a stream via the Bintu API and return the info we need.
 If you run your app and tap the broadcast button, after a short while you should see something logged to the console. Either there was an error or you will get a stream.
 If this first test was successful, we can continue. If there was an error logged, please check your API key and your account. The error message should tell you something about the error. If not, contact us.
 
-## Putting it together
+### Putting it together
 
 If the test was successful, we can now really start streaming with the configuration we got. We need to give the configuration to our nanoStream SDK and start the stream. This is done via following code which we add at the end of the completion block of our ```createStream``` call:
 
@@ -358,9 +357,9 @@ We are finished with the broadcaster! Altogether, our ```-toggleStreaming:``` lo
 
 You can find the complete broadcaster sample project in the SDK-folder, at ```samples/SimpleEncoder```. That sample also includes additional error handling and error surfacing, which has been omitted from this guide for brevity.
 
-# Playing App
+## Playing App
 
-## Setup
+### Setup
 
 Again, create a new Xcode project with the template "Single View Application".
 
@@ -370,19 +369,19 @@ Save the project somewhere on your computer where you can find it later.
 
 To correspond with our broadcaster streaming in portrait orientation, the player will also be in portrait mode only. Therefore on the "General" tab of your application target in Xcode, under "Deployment Info" -> "Device Orientation", uncheck all except for "Portrait". It should look like this:
 
-## Playing View
+### Playing View
 
 To create our playing view, go into the ```Main.storyboard``` file.
 
 The UI will be a lot like our broadcaster app, so we just repeat all the steps. But instead of creating a "Start" button for our stream, we create a button with the title "Play" which will play back our stream. The other steps are identical. If you have trouble, please see the section [Broadcast View](#broadcast_view) in the broadcaster part.  The result should look something like this:
 
-## Connection to ViewController
+### Connection to ViewController
 
 Just like in the broadcaster example, we create outlets for our view and our button to the ViewController. If you have trouble with these steps, please see the [section from the broadcaster part](#connection_to_viewcontroller).
 
 We also create an action and name it ```togglePlayback```. The result looks like this:
 
-## Importing the SDKs
+### Importing the SDKs
 
 Just like in our player app, we need to import the nanoStream SDK. If you have trouble with any of the following steps, please see the more [detailed guide in the broadcaster section](#importing_the_sdks).
 
@@ -394,7 +393,7 @@ Again as well, remove ```Bintu.framework``` from the "Linked Frameworks" section
 
 You can now build and run the project on your device. You should see the preview view and your "Play" button.
 
-## Setting up nanoStream SDK
+### Setting up nanoStream SDK
 
 Again, you need to add the dependencies for nanoStream SDK. Please refer to this [guide](#setting_up_nanostream_sdk) for instructions.
 
@@ -463,7 +462,7 @@ After the ```viewDidLoad``` method, add the following lines which will create an
 
 We will configure the player later.
 
-## Setting up the connection to bintu.live
+### Setting up the connection to bintu.live
 
 In this part we again connect to bintu.live, this time we do not want to create a new stream but we want to play an existing one. For this use case, we assume that the last stream that is currently live is our stream. The following code follows that logic. If you have multiple users using your account, this may not work correctly (it may play another user's stream).
 
@@ -539,7 +538,7 @@ If no stream can be found that is live, we log an error to the console.
 
 If you run your app and tap the play button, after a short while you should see something logged to the console. Either there was an error or you will get a stream. If this first test was successful, we can continue. If there was an error logged, please check your API key and your account. The error message should tell you something about the error. If not, contact us.
 
-## Play the stream already!
+### Play the stream already!
 
 If the test was successful, we can now really play the stream that we found. We need to take our streamURL and streamName and put it into our nanoStream Player. The following code achieves this. Below
 
@@ -666,7 +665,7 @@ We are finished with the player. Our complete ```-togglePlayback:``` should look
 
 You can find the complete player sample project in the SDK-folder, at ```samples/SimplePlayer```. That sample also includes additional error handling and error surfacing, which has been omitted from this guide for brevity.
 
-# End-To-End Goodness
+## End-To-End Goodness
 
 You can now use both apps together if you have two devices to test on. Load the broadcaster app on one device and the player app on another one.
 
