@@ -110,6 +110,14 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 ```
 
+```
+<style>
+    video {
+        background-color: #123456;
+    }
+</style>
+```
+
 </details>
 
 <details><summary><strong>Is there a simple code snippet available?</strong></summary>
