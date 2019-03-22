@@ -545,6 +545,9 @@
       "nanostream/windows/windows_networkwriter": {
         "title": "nanostream/windows/windows_networkwriter"
       },
+      "samples/README": {
+        "title": "samples/README"
+      },
       "sidebar": {
         "title": "sidebar"
       },
@@ -582,6 +585,7 @@
       "H5Live Player": "H5Live Player",
       "WebRTC.live": "WebRTC.live",
       "nanoStream Apps and SDKs": "nanoStream Apps and SDKs",
+      "Samples": "Samples",
       "FAQ": "FAQ"
     },
     "categories": {

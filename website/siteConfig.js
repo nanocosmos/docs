@@ -33,6 +33,7 @@ const siteConfig = {
     {doc: 'webrtc/nanostream_webrtc_introduction', label: 'WebRTC.live'},
     //{doc: 'webrtc', label: 'WebRTC'},
     {doc: 'nanostream/nanostream', label: 'nanoStream Apps and SDKs'},
+    {doc: 'samples/README', label: 'Samples'},
     {doc: 'faq/faq_streaming', label: 'FAQ'}
   ],
 
