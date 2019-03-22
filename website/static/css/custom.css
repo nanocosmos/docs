@@ -229,11 +229,11 @@ img.logo {
 	}
 
 	.homeSplash {
-		height: 500px;
+		height: 350px;
 	}
 
 	.projectLogo {
-		display: block !important;
+		display: none !important;
 		padding: unset !important;
 		position: unset !important;
 	}
@@ -241,6 +241,24 @@ img.logo {
 	.projectLogo img {
 		max-height: 350px !important;
 		height: 100% !important;
+	}
+
+	.contentWrapper {
+		max-width: 90%;
+		text-align: center;
+	}
+
+	.projectTitle {
+		text-align: center;
+	}
+
+	.projectTitle > small {
+		max-width: 100%;
+	}
+
+	.buttonWrapper {
+		justify-content: center;
+		max-width: unset;
 	}
 }
 
@@ -261,14 +279,14 @@ img.logo {
 		height: 400px;
 	}
 
-	.contentWrapper {
+	/* .contentWrapper {
 		max-width: 90%;
 		text-align: center;
 	}
 
 	.projectTitle {
 		text-align: center;
-	}
+	} */
 
 	.buttonWrapper {
 		justify-content: center;
