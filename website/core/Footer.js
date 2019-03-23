@@ -21,61 +21,38 @@ class Footer extends React.Component {
     return baseUrl + (language ? `${language}/` : '') + doc;
   }
 
+  //<a href={this.docUrl('faq/encoding_and_streaming')}>FAQ</a>
+
   render() {
     return (
       <footer className="nav-footer" id="footer">
         <section className="sitemap">
-          <a href={this.props.config.baseUrl} className="nav-home">
-            {this.props.config.footerIcon && (
-              <img
-                src={this.props.config.baseUrl + this.props.config.footerIcon}
-                alt={this.props.config.title}
-                width="66"
-                height="58"
-              />
-            )}
-          </a>
           <div>
-            <h5>Docs</h5>
-            <a href={this.docUrl('doc1.html', this.props.language)}>
-              Getting Started (or other categories)
-            </a>
-            <a href={this.docUrl('doc2.html', this.props.language)}>
-              Guides (or other categories)
-            </a>
-            <a href={this.docUrl('doc3.html', this.props.language)}>
-              API Reference (or other categories)
-            </a>
-          </div>
-          <div>
-            <h5>Community</h5>
-            <a href={this.pageUrl('users.html', this.props.language)}>
-              User Showcase
-            </a>
-            <a
-              href="https://www.nanocosmos.de/"
-              target="_blank"
-              rel="noreferrer noopener">
-              Homepage
-            </a>
+            <h5>Contact</h5>
+            <a href="https://www.nanocosmos.de/">nanocosmos homepage</a>
             <a href="https://www.nanocosmos.de/contact">Contact</a>
             <a href="https://www.nanocosmos.de/support">Support</a>
-            <a
-              href="https://twitter.com/nanovideo"
-              target="_blank"
-              rel="noreferrer noopener">
-              Twitter
-            </a>
+            <a href="https://www.nanocosmos.de/terma">Legal Terms</a>
+          </div>
+          <div>
+            <h5>Products</h5>
+            <a href="https://www.nanocosmos.de/cloud">Nanostream Cloud with Bintu.Live</a>
+            <a href="https://www.nanocosmos.de/h5live">H5Live Low Latency HTML5-Player</a>
+            <a href="https://www.nanocosmos.de/webrtc">WebRTC.Live</a>
+            <a href="https://www.nanocosmos.de/#nanostream">Nanostream Apps and SDK</a>
           </div>
           <div>
             <h5>More</h5>
-            <a href={`${this.props.config.baseUrl}blog`}>Blog</a>
-            <a href="https://github.com/">GitHub</a>
+            <a href="https://www.nanocosmos.de/blog/">Blog</a>
+            <a href="https://twitter.com/nanovideo">Twitter</a>
+            <a href="https://www.facebook.com/nanocosmos.net/">Facebook</a>
+            <a href="https://www.linkedin.com/company/nanocosmos-gmbh">LinkedIn</a>
+            <a href="https://github.com/nanocosmos/docs">GitHub</a>
             <a
               className="github-button"
               href={this.props.config.repoUrl}
               data-icon="octicon-star"
-              data-count-href="/nanocosmos/docs"
+              data-count-href="/nanocosmos/docs/stargazers"
               data-show-count="true"
               data-count-aria-label="# stargazers on GitHub"
               aria-label="Star this project on GitHub">
@@ -84,6 +61,18 @@ class Footer extends React.Component {
           </div>
         </section>
 
+        <a
+          href="https://nanocosmos.de/"
+          target="_blank"
+          rel="noreferrer noopener"
+          className="fbOpenSource">
+          <img
+            src={`${this.props.config.baseUrl}img/footer_logo.png`}
+            alt="nanocosmos GmbH"
+            width="170"
+            height="45"
+          />
+        </a>
         <section className="copyright">{this.props.config.copyright}</section>
       </footer>
     );

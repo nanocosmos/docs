@@ -8,23 +8,23 @@
       "about": {
         "title": "about"
       },
-      "bintu/android/bintu-android-sdk": {
-        "title": "bintu/android/bintu-android-sdk"
-      },
       "bintu/android/index": {
         "title": "bintu/android/index"
       },
       "bintu/index": {
         "title": "bintu/index"
       },
-      "bintu/ios/bintu_ios_sample": {
-        "title": "bintu/ios/bintu_ios_sample"
+      "cloud/bintu_api": {
+        "title": "nanoStream Cloud bintu api",
+        "sidebar_label": "bintu api"
       },
-      "bintu/ios/bintu_ios_sdk": {
-        "title": "bintu/ios/bintu_ios_sdk"
+      "cloud/bintu_custom_webhooks": {
+        "title": "bintu custom web hooks",
+        "sidebar_label": "bintu custom web hooks"
       },
-      "bintu/ios/step-by-step": {
-        "title": "bintu/ios/step-by-step"
+      "cloud/bintu_stream_tags": {
+        "title": "bintu.live Stream Tags",
+        "sidebar_label": "bintu.live Stream Tags"
       },
       "cloud/cloud_getting_started": {
         "title": "Getting started",
@@ -38,6 +38,16 @@
         "title": "iOS Streaming App in 5 Minutes",
         "sidebar_label": "iOS Streaming App in 5 Minutes"
       },
+      "cloud/cloud_overview": {
+        "title": "nanoStream Cloud Product and Services Overview",
+        "sidebar_label": "Overview"
+      },
+      "cloud/network-diagnostics-mtr": {
+        "title": "cloud/network-diagnostics-mtr"
+      },
+      "cloud/network-diagnostics": {
+        "title": "cloud/network-diagnostics"
+      },
       "faq/faq_3d_stereo_vr": {
         "title": "3D / Stereo / VR / 360",
         "sidebar_label": "3D / Stereo / VR / 360"
@@ -50,6 +60,26 @@
         "title": "Capture Devices and Camera Support",
         "sidebar_label": "Capture Devices and Camera Support"
       },
+      "faq/faq_h5live_player_adjust_style": {
+        "title": "Adjust/Style",
+        "sidebar_label": "Adjust/Style"
+      },
+      "faq/faq_h5live_player_bintu": {
+        "title": "bintu",
+        "sidebar_label": "bintu"
+      },
+      "faq/faq_h5live_player_general": {
+        "title": "General",
+        "sidebar_label": "General"
+      },
+      "faq/faq_h5live_player_metrics": {
+        "title": "Metrics",
+        "sidebar_label": "Metrics"
+      },
+      "faq/faq_h5live_player_security": {
+        "title": "Security",
+        "sidebar_label": "Security"
+      },
       "faq/faq_nanostream_sdk_win": {
         "title": "nanoStream SDK for Windows",
         "sidebar_label": "nanoStream SDK for Windows"
@@ -61,6 +91,18 @@
       "faq/faq_streaming": {
         "title": "FAQ nanoStream Live Streaming",
         "sidebar_label": "Live Streaming"
+      },
+      "faq/faq_WebRTC_broadcast": {
+        "title": "Broadcast",
+        "sidebar_label": "Broadcast"
+      },
+      "faq/faq_WebRTC_devices": {
+        "title": "Devices",
+        "sidebar_label": "Devices"
+      },
+      "faq/faq_WebRTC_general": {
+        "title": "General",
+        "sidebar_label": "General"
       },
       "faq/faq": {
         "title": "faq/faq"
@@ -125,6 +167,10 @@
         "title": "NanoPlayer",
         "sidebar_label": "NanoPlayer"
       },
+      "nanoplayer/nanoplayer_autoplay": {
+        "title": "Autoplay",
+        "sidebar_label": "Autoplay"
+      },
       "nanoplayer/nanoplayer_blogposts": {
         "title": "Other Information",
         "sidebar_label": "Blog"
@@ -179,8 +225,31 @@
       "nanostream/android/android-advanced-settings": {
         "title": "nanostream/android/android-advanced-settings"
       },
+      "nanostream/android/bintu-android-sdk": {
+        "title": "nanostream/android/bintu-android-sdk"
+      },
+      "nanostream/android/nanostream_android_developer_manual_playback": {
+        "title": "Playback",
+        "sidebar_label": "Playback"
+      },
+      "nanostream/android/nanostream_android_developer_manual_sample": {
+        "title": "Sample",
+        "sidebar_label": "Sample"
+      },
+      "nanostream/android/nanostream_android_developer_manual_streaming": {
+        "title": "Streaming Media",
+        "sidebar_label": "Streaming Media"
+      },
+      "nanostream/android/nanostream_android_getting_started": {
+        "title": "Getting started",
+        "sidebar_label": "Getting started"
+      },
+      "nanostream/android/nanostream-android-index": {
+        "title": "nanostream/android/nanostream-android-index"
+      },
       "nanostream/android/nanostream-android-sdk": {
-        "title": "nanostream/android/nanostream-android-sdk"
+        "title": "SDK for Android",
+        "sidebar_label": "SDK for Android"
       },
       "nanostream/android/sample/android_sample_player": {
         "title": "nanostream/android/sample/android_sample_player"
@@ -228,7 +297,8 @@
         "title": "nanostream/directshow/directshow_audio_volume"
       },
       "nanostream/directshow/directshow_avc_h264": {
-        "title": "nanostream/directshow/directshow_avc_h264"
+        "title": "DirectShow AVC H264 Codec",
+        "sidebar_label": "directshow_avc_h264"
       },
       "nanostream/directshow/directshow_code_statistics": {
         "title": "nanostream/directshow/directshow_code_statistics"
@@ -290,20 +360,78 @@
       "nanostream/directshow/directshow_video_mixer": {
         "title": "nanostream/directshow/directshow_video_mixer"
       },
+      "nanostream/directshow/index": {
+        "title": "DirectShow Overview",
+        "sidebar_label": "Overview"
+      },
+      "nanostream/directshow/nanostream_directshow_audio_volume": {
+        "title": "Audio Volume",
+        "sidebar_label": "Audio Volume"
+      },
+      "nanostream/directshow/nanostream_directshow_h264": {
+        "title": "H264",
+        "sidebar_label": "H264"
+      },
+      "nanostream/directshow/nanostream_directshow_mpeg": {
+        "title": "MPEG",
+        "sidebar_label": "MPEG"
+      },
+      "nanostream/directshow/nanostream_directshow_quicktime": {
+        "title": "Quicktime IMX Playback",
+        "sidebar_label": "Quicktime IMX Playback"
+      },
+      "nanostream/directshow/nanostream_directshow_rtmp": {
+        "title": "RTMP",
+        "sidebar_label": "RTMP"
+      },
+      "nanostream/directshow/nanostream_directshow_rtsp": {
+        "title": "RTSP",
+        "sidebar_label": "RTSP"
+      },
+      "nanostream/directshow/nanostream_directshow_udp_streaming": {
+        "title": "UDP/TS Streaming",
+        "sidebar_label": "UDP/TS Streaming"
+      },
+      "nanostream/directshow/nanostream_directshow_video_filter": {
+        "title": "Video Filter",
+        "sidebar_label": "Video Filter"
+      },
       "nanostream/general/nanocosmos_contact": {
         "title": "nanostream/general/nanocosmos_contact"
       },
       "nanostream/general/nanocosmos_method_parameter_header": {
         "title": "nanostream/general/nanocosmos_method_parameter_header"
       },
+      "nanostream/ios/bintu_ios_sample": {
+        "title": "iOS Streaming App in 5 Minutes",
+        "sidebar_label": "iOS Streaming App in 5 Minutes"
+      },
+      "nanostream/ios/bintu_ios_sdk": {
+        "title": "bintu.live client SDK",
+        "sidebar_label": "bintu.live client SDK"
+      },
       "nanostream/ios/ios-quick-start": {
         "title": "nanostream/ios/ios-quick-start"
       },
       "nanostream/ios/nanostream_ios_license_deployment": {
-        "title": "nanostream/ios/nanostream_ios_license_deployment"
+        "title": "License Deployment Information",
+        "sidebar_label": "License Deployment Information"
       },
-      "nanostream/ios/nanostream-ios-sdk": {
-        "title": "nanostream/ios/nanostream-ios-sdk"
+      "nanostream/ios/nanostream_ios_quick_start": {
+        "title": "Developer Quickstart",
+        "sidebar_label": "Developer Quickstart"
+      },
+      "nanostream/ios/nanostream_ios_sdk": {
+        "title": "nanoStream SDK for iOS",
+        "sidebar_label": "SDK for iOS"
+      },
+      "nanostream/ios/nanostream-ios-step-by-step": {
+        "title": "Tutorial / Getting started with nanoStream and bintu.live",
+        "sidebar_label": "Getting started"
+      },
+      "nanostream/macos/nanostream_macos_sdk": {
+        "title": "MacOSX API",
+        "sidebar_label": "MacOSX API"
       },
       "nanostream/macos/nanostream-macos-sdk": {
         "title": "nanostream/macos/nanostream-macos-sdk"
@@ -311,6 +439,9 @@
       "nanostream/nanostream": {
         "title": "Introduction",
         "sidebar_label": "Introduction"
+      },
+      "nanostream/support/index": {
+        "title": "nanostream/support/index"
       },
       "nanostream/support/nanostream_aec": {
         "title": "nanostream/support/nanostream_aec"
@@ -360,6 +491,14 @@
       "nanostream/web/live_video_encoder_-_plugin_jscript": {
         "title": "nanostream/web/live_video_encoder_-_plugin_jscript"
       },
+      "nanostream/web/nanostream_4.x_web_api": {
+        "title": "nanoStream Web API 4.x",
+        "sidebar_label": "nanoStream Web API 4.x"
+      },
+      "nanostream/web/nanostream_live_video_encoder_-_plugin_jscript": {
+        "title": "Live Video Encoder - Plugin API",
+        "sidebar_label": "Live Video Encoder - Plugin API"
+      },
       "nanostream/web/nanostream-4.x-web-api": {
         "title": "nanostream/web/nanostream-4.x-web-api"
       },
@@ -378,6 +517,26 @@
       "nanostream/windows/language_integration/nanostream_delphi_integration": {
         "title": "nanostream/windows/language_integration/nanostream_delphi_integration"
       },
+      "nanostream/windows/nanostream_windows_binaries": {
+        "title": "Binary Modules for Windows",
+        "sidebar_label": "Binary Modules for Windows"
+      },
+      "nanostream/windows/nanostream_windows_developer_manual": {
+        "title": "Developer Manual",
+        "sidebar_label": "Developer Manual"
+      },
+      "nanostream/windows/nanostream_windows_language_integration": {
+        "title": "Language Integration",
+        "sidebar_label": "Language Integration"
+      },
+      "nanostream/windows/nanostream_windows_license_help": {
+        "title": "Setting the license",
+        "sidebar_label": "Setting the license"
+      },
+      "nanostream/windows/nanostream_windows_networkwriter": {
+        "title": "RTMP Network Renderer & Writer",
+        "sidebar_label": "RTMP Network Renderer & Writer"
+      },
       "nanostream/windows/windows_binares": {
         "title": "nanostream/windows/windows_binares"
       },
@@ -390,13 +549,23 @@
       "nanostream/windows/windows_networkwriter": {
         "title": "nanostream/windows/windows_networkwriter"
       },
+      "samples/README": {
+        "title": "samples/README"
+      },
+      "sidebar": {
+        "title": "sidebar"
+      },
       "webrtc/nanostream_webrtc_api": {
         "title": "nanoStream WebRTC API",
-        "sidebar_label": "WebRTC API"
+        "sidebar_label": "Class"
       },
       "webrtc/nanostream_webrtc_browser_api": {
         "title": "nanoStream WebRTC Browser API",
         "sidebar_label": "Browser API"
+      },
+      "webrtc/nanostream_webrtc_demos": {
+        "title": "Browser demos",
+        "sidebar_label": "Browser Demos"
       },
       "webrtc/nanostream_webrtc_getting_started": {
         "title": "Getting started",
@@ -405,6 +574,14 @@
       "webrtc/nanostream_webrtc_introduction": {
         "title": "Introduction",
         "sidebar_label": "Introduction"
+      },
+      "webrtc/nanostream_webrtc_screen_sharing": {
+        "title": "Screen Sharing",
+        "sidebar_label": "Screen Sharing"
+      },
+      "webrtc/nanostream_webrtc_support": {
+        "title": "Support",
+        "sidebar_label": "Support"
       }
     },
     "links": {
@@ -412,6 +589,7 @@
       "H5Live Player": "H5Live Player",
       "WebRTC.live": "WebRTC.live",
       "nanoStream Apps and SDKs": "nanoStream Apps and SDKs",
+      "Samples": "Samples",
       "FAQ": "FAQ"
     },
     "categories": {
@@ -421,11 +599,13 @@
       "WebRTC.live": "WebRTC.live",
       "nanoStream Cloud": "nanoStream Cloud",
       "nanoStream SDKs/Apps": "nanoStream SDKs/Apps",
+      "Android": "Android",
+      "iOS": "iOS",
+      "MacOSX": "MacOSX",
+      "Windows": "Windows",
+      "DirectShow": "DirectShow",
       "Live Streaming": "Live Streaming",
-      "Purchase and License": "Purchase and License",
-      "nanoStream SDK for Windows, Codecs Setup": "nanoStream SDK for Windows, Codecs Setup",
-      "First Category": "First Category",
-      "Second Category": "Second Category"
+      "Purchase and License": "Purchase and License"
     }
   },
   "pages-strings": {

@@ -35,12 +35,11 @@ Create your first live stream: In the top menu select `Stream`, then `create`
 
 ### Start a live stream broadcast
 
-To start a live stream broadcast, you need a live encoder software, either based on an `RTMP Live Encoder application`, or the browser-based [nanoStream WebRTC.live broadcaster](https://www.nanocosmos.de/webrtc).
+To start a live stream broadcast, you need a live encoder software, either based on an `RTMP Live Encoder application`, or the browser-based [nanoStream WebRTC.live broadcaster](http://docs.nanocosmos.de/docs/webrtc/nanostream_webrtc_introduction).
 
-You can use [nanoStream Apps](https://www.nanocosmos.de/#nanostream), or 3rd part software like [OBS (Open Broadcaster)](https://obsproject.com/) or professional Live Encoders like [Elemental Live](https://www.elemental.com/products/aws-elemental-live).
+You can use [nanoStream Apps](http://docs.nanocosmos.de/docs/nanostream/nanostream), or 3rd part software like [OBS (Open Broadcaster)](https://obsproject.com/) or professional Live Encoders like [Elemental Live](https://www.elemental.com/products/aws-elemental-live).
 
 > The primary ingest protocol is RTMP.
-
 
 **Copy/paste the ingest URL to use it with your live encoder software**
 
@@ -130,7 +129,7 @@ Every tag added to a stream is directly displayed in the Stream Info.
 
 *See more info about tagging and how it is used in our Bintu Encoder and Player sample apps on our* [*blog*](https://www.nanocosmos.de/blog/2016/06/new-bintu-live-grouping-and-tagging-feature-for-streams/)*.*
 
-The Bintu Encoder and Player sample apps are part of our [*mobile nanoStream SDKs*](https://www.nanocosmos.de/v6/demo.php) *for iOS and Android.*
+The Bintu Encoder and Player sample apps are part of our [*mobile nanoStream SDKs*](http://docs.nanocosmos.de/docs/nanostream/android/nanostream-android-sdk) *for iOS and Android.*
 
 -----
 
@@ -158,7 +157,7 @@ Under `Keys` you will find your account’s API Key and Player Key to manage liv
 
 - [bintu.live dashboard](https://bintu.nanocosmos.de)
 - [bintu.live API documentation](https://bintu.nanocosmos.de/doc/)
-- [Create a live streaming app in 5 minutes](https://www.nanocosmos.de/blog/2016/07/live-streaming-with-bintu-live/%22https://www.nanocosmos.de/v4/documentation/nanostream_end-to-end_live_streaming_in_5_minutes%3C/a)
+- [Create a live streaming app in 5 minutes](cloud_ios_streaming_app)
 - [nanoStream and bintu.live](https://www.nanocosmos.de/blog/2016/07/nanostream-and-bintu-live/)
 - [Grouping & Tagging with bintu.live](https://www.nanocosmos.de/blog/2016/06/new-bintu-live-grouping-and-tagging-feature-for-streams/)
 - [nanoStream Presents End-to-End Live Streaming Software](https://www.nanocosmos.de/blog/2016/05/nanocosmos-presents-new-end-to-end-live-streaming-software/)

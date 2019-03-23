@@ -69,12 +69,8 @@ h5live.rtmp.url=rtmp://streaming.server.com/live
 h5live.rtmp.streamname=myStreamName
 ```
 
-
 Below the video element you should see your URL then.
 The` “tech: h5live”` information shows you that the plugin-free H5Live technology is used.
-
-Player API documentation:
-[http://demo.nanocosmos.de/nanoplayer/docs/nanoplayer](http://demo.nanocosmos.de/nanoplayer/docs/nanoplayer)
 
 ## nanoStream + bintu.live end-to-end streaming
 
@@ -90,16 +86,13 @@ http://demo.nanocosmos.de/nanoplayer/release/nanoplayer.html?bintu.apiurl=https:
 
 >h5live can be used in combination with our nanoStream SDKs for Windows, Mac, iOS, Android or the plugin-free browser-based WebRTC.live solution to create plugin-free interactive live streaming applications.
 
-## nanoStream Cloud Analytics and Player Metrics
-
-Todo
 
 ## More Information
 [Product Overview and Live Demo](https://www.nanocosmos.de/h5live)
 
-[API Documentation](https://demo.nanocosmos.de/nanoplayer/docs/nanoplayer/)
+[API Documentation](http://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_api_class)
 
-[H5Live FAQ](https://www.nanocosmos.de/blog/2017/05/nanostream-h5live-low-latency-faq/)
+[H5Live FAQ](http://docs.nanocosmos.de/docs/faq/faq_streaming)
 
 ## Questions? 
 please contact:

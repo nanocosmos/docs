@@ -9,100 +9,338 @@ It is very simple to test and use nanoStream WebRTC.live as your live encoder to
 
 ### Create your own nanoStream Cloud account
 
-To stream directly to nanoStream Cloud you will need to register at [bintu.live](http://bintu.nanocosmos.de/) . 
+To stream directly to nanoStream Cloud you will need to register at [bintu.live](https://bintu.nanocosmos.de/) . 
 
->Bintu.live is the rest API and stream management tool included in nanoStream Cloud. You can find the step-by-step guide to register by [clicking here.](https://www.nanocosmos.de/blog/2016/07/live-streaming-with-bintu-live/)
+>Bintu.live is the rest API and stream management tool included in nanoStream Cloud. You can find the step-by-step guide to register by [clicking here.](http://docs.nanocosmos.de/docs/cloud/cloud_getting_started)
 >
 >Once registered, you can create new URLs by calling the bintu API with a valid API key.
 
 -----
 
-### Easy and quick demo for simple tests
+## nanoStream WebRTC Browser API
 
-1. Click [here]([https://nanocosmos.de/webrtc) to try the WebRTC.live demo. 
-
-<br>
-
-2. On the right-hand side of the page you see the WebRTC.live broadcast from your camera.
+The nanoStream WebRTC Browser API is based on a Javascript API connected to the nanoStream WebRTC Server. It can be used for creating your own live video broadcast web page for plugin-free live streaming with WebRTC.
 
 
-![img](https://i2.wp.com/www.nanocosmos.de/blog/wp-content/uploads/2018/03/3.png?resize=360%2C361&ssl=1)
 
-<br>
-3. Click on the image for a webcam preview.
 
-![img](https://i2.wp.com/www.nanocosmos.de/blog/wp-content/uploads/2018/03/4.png?resize=360%2C384&ssl=1)
+### Hosting Requirements
 
-<br>
-4. Click on the orange button to start the broadcast. You will need to provide your email first.
+You will need the following requirements to be fulfilled in order to host a WebRTC driven website on your own infrastructure:
 
-![img](https://i0.wp.com/www.nanocosmos.de/blog/wp-content/uploads/2018/03/5.png?resize=360%2C394&ssl=1)
+- HTTPS: **WebRTC client web pages need to be hosted via HTTPS** for accessing media devices within the browser and for connecting to the server component. Therefore you will need a valid SSL certificate.
+- Supported browsers: As of 2018, Chrome, Firefox, Edge and Safari are supported. For mobile platforms we recommend Safari on iOS (min iOS11) and Chrome for Android. 
 
-<br>
-5. Your broadcast will then start: the live stream is sent to nanoStream Cloud and a new window from nanoStream H5Live Player will appear right below with your live stream.
 
-![img](https://i0.wp.com/www.nanocosmos.de/blog/wp-content/uploads/2018/03/6.png?resize=360%2C388&ssl=1)
-![img](https://i2.wp.com/www.nanocosmos.de/blog/wp-content/uploads/2018/03/7.png?resize=360%2C392&ssl=1)
 
->  The H5Live Player shows the low latency live stream coming from nanoStream Cloud. You can share the URL to test low latency live playback on any HTML5 browser.
------
+## Broadcast Sample
 
-### Try our sample page
+The following sample shows how to initiate a broadcast (one-to-many stream) from a WebRTC enabled HTML5 browser.
 
- Click [here](https://webrtc.nanocosmos.de/release/webcast.html?bintu.apikey=YOURAPIKEY) to use our sample web page with all broadcast features for further testing. 
+The stream is sent to an `RTMP` ingest point which you can get from our bintu.live API.
+Playback can be done with nanoStream H5Live Player.
 
-> Note: You need a nanoStream Cloud / bintu.live account and API key to use this page. Click [here](www.bintu.live) for instructions.
+Be sure to attach a video device (webcam) to your computer.
 
-<br>
+You also find a full running [sample at codepen](https://codepen.io/nanocosmos-ol/pen/Xybadx)
 
-1. Open the page in a WebRTC-compatible browser (Chrome or Firefox) and  add your bintu API key to the browser URL.
 
+
+###  Setup The User Interface & Embed The Library 
+
+Within your HTML:
+```xml
+<body>
+  <!-- videoelement to preview your video device (camera) -->
+  <video id="video-local" autoplay playsinline style="width:800;height:600"></video>
+
+  <!-- buttons for start/stop of broadcast -->
+  <button id="btn-startbroadcast">broadcast</button>
+  <button id="btn-stopbroadcast">stop broadcast</button>
+	
+  <!-- embed the nanoStream WebRTC.live library -->
+  <!-- replace "<version>" with the version contained in your package -->
+  <script src="./js/api/webrtc/nano.webrtc.<version>.min.js"></script>
+</body>
 ```
-https://webrtc.nanocosmos.de/release/webcast.html?bintu.apikey=YOURAPIKEY
+
+
+
+### Minimal Broadcast Sample
+
+```javascript
+<script type="text/javascript">
+    // entry point
+    
+    // create user object
+    var user = new window.nanowebrtc.user();
+    
+    // sign into the cloud
+    user.signIn({
+      server: "wss://bintu-webrtc.nanocosmos.de/p/webrtcws",
+      userName: "myName",
+      room: "myRoom",
+      // token or bintu API key for authentication
+      token: "myToken",
+      bintuApiKey: "myBintuApiKey"
+    });
+    
+    // set bitrate config, 0=default
+    user.setConfig({
+         bitrates: {
+           videoSendInitialBitrate: 500, // initial webrtc bitrate 500 kbits/s
+           videoSendBitrate: 1500 // target webrtc bitrate 1500 kbits/s
+         }
+    );
+
+    // example bintu rtmp url
+    // you should use the bintu api to obtain a valid ingest URL (see below)
+    var myOutputStream = "rtmp://bintu-stream.nanocosmos.de/live";
+    var myOutputStreamName = "P4gSV-12345";
+        
+    // get connected devices
+    user.getDevices();
+        
+    // devices have been gathered
+    user.on("ReceivedDeviceList", function(event) {
+    
+      // available devices will be listed in "event.data":
+      var audioDevices = event.data.devices.audiodevices;
+      var videoDevices = event.data.devices.videodevices;
+    
+      // we choose the first video device:
+      var videoDeviceConfig = {
+        device: 0
+      };
+          
+      // we choose the first audio device:
+      var audioDeviceConfig = {
+        device: 0
+      };
+    
+      // we start the preview in a video element:
+      var videoElement = "video-local"; // id of `<video>` tag for preview
+      
+      var config = {
+        videoDeviceConfig: videoDeviceConfig,
+        audioDeviceConfig: audioDeviceConfig,
+        elementId: videoElement
+      };
+          
+      user.startPreview(config);
+      
+    });
+        
+    user.on("StartPreviewSuccess", function(event) {  
+      // preview succeeded
+    });
+        
+    user.on("StartPreviewError", function(event) {
+      // handle error
+    });
+        
+    document.getElementById("btn-startbroadcast").addEventListener("click", function() {      
+      var broadcastConfig = {
+        transcodingTargets: {
+          output: myOutputStream 
+        }
+      };
+          
+      // start the broadcast
+      user.startBroadcast(broadcastConfig);
+    });
+    
+    document.getElementById("btn-stopbroadcast").addEventListener("click", function() {
+      // stop the broadcast
+      user.stopBroadcast();
+    });
+        
+    user.on("StartBroadcastSuccess", function(event) {
+      // broadcast has started
+    });
+        
+    user.on("StartBroadcastError", function(event) {
+      // handle error
+    });
+</script>
 ```
-<br>
-![img](https://i1.wp.com/www.nanocosmos.de/blog/wp-content/uploads/2018/03/8.png?resize=800%2C444&ssl=1)
-
-<br>
-2. You will see a preview of your camera image or screen in the `Local Video` window.
-
-<br>
-3. If you want to choose another camera or microphone, select `options`.
-
-<br>
-
-4. You are then ready to start your broadcast. Simply click on `broadcast` to start the live stream.
-
-![img](https://i1.wp.com/www.nanocosmos.de/blog/wp-content/uploads/2018/03/9.png?resize=360%2C79&ssl=1)
-
-<br>
-5. The live stream is sent to nanoStream Cloud and can be played with the H5Live player.
-To start playback click on `play h5live stream`  below the Broadcast Settings.
-
-![img](https://i0.wp.com/www.nanocosmos.de/blog/wp-content/uploads/2018/03/10.png?resize=240%2C59&ssl=1)
-
-<br>
-6. The player will open in a new web page. You share this web page and open on all HTML5 browsers to play the live stream in ultra-low-latency.
-  The player page also shows a Javascript code snippet to embed on your own web page.
 
 
 
-[![img](https://i1.wp.com/www.nanocosmos.de/blog/wp-content/uploads/2018/03/h5live-2.png?resize=300%2C279&ssl=1)](https://i1.wp.com/www.nanocosmos.de/blog/wp-content/uploads/2018/03/h5live-2.png?ssl=1)
+## nanoStream Cloud End-To-End Workflow
 
-> Click [here](www.test.com) for more information on  how to embed the H5LivePlayer on your own webpage.
+The following describes a plugin free end to end streaming solution with nanostream WebRTC, nanostream cloud and nanostream h5live player.
 
-<br>
 
-7. Broadcast configuration
 
-The WebRTC.live broadcast configuration is automatically set to `H264 video` with `500 kbits/s`. Audio is sent with the `Opus audio codec` and will be transcoded automatically to `AAC` for live distribution with nanoStream Cloud.
+## Creating a live stream for broadcasting
 
-[
-![img](https://i0.wp.com/www.nanocosmos.de/blog/wp-content/uploads/2018/03/Screenshot-2018-03-28-11.20.21.png?resize=640%2C804&ssl=1)](https://www.nanocosmos.de/blog/wp-content/uploads/2018/03/Screenshot-2018-03-28-11.20.21.png)
------
+To create a live stream to broadcast to your audience, you need to obtain an `RTMP` ingest URL from either nanoStream Cloud / bintu.live or your own `RTMP` server.
 
-###  Embed nanoStream WebRTC.live as a live encoder and nanoStream H5Live Player in your own webpage
 
-TODO
 
-Click [here](www.test.de) to read on *how to embed nanoStream WebRTC.live and nanoStram H5Live Player in your own web page* in no time. 
+### Creating a stream for bintu.live with bintu.js
+
+If you don't already have a stream url you can create a new webrtc enabled stream with our bintu.js which is included in the nanoStream WebRTC Browser API.
+
+```javascript
+<script src="./js/api/bintu/nano.bintu.js"></script>
+
+<script type="text/javascript">
+    var bintu = new Bintu(BintuApiKey, "https://bintu.nanocosmos.de", true, true);
+
+    var bintuTags = ['newTag, test, webrtc']; // optionally add tags to the stream
+    
+    bintu.createStream(bintuTags, function success(request) {
+      var response = JSON.parse(request.responseText);
+      var ingest = response.ingest;
+      var rtmp = ingest.rtmp;
+      var url = rtmp.url;
+      var streamname = rtmp.streamname;
+      var ingestUrl = url + '/' + streamname;
+    }, function onerror(error) {
+      console.log(error);
+    });
+
+</script>
+```
+
+> You can find the bintu.js documentation [here](https://webrtc.nanocosmos.de/release/doc/bintu/Bintu.html)
+
+
+## Live Stream Configuration
+
+### Streaming to an RTMP URL
+
+If you have a valid `RTMP` URL, you can use this to create a live broadcast: (see the example above):
+
+```javascript
+var broadcastConfig = {
+    transcodingTargets: {
+        output: myOutputStreamUrl,  // rtmp://...
+        streamname: myOutputStreamName
+    }
+};
+```
+
+
+
+
+```javascript
+var broadcastConfig = {
+	transcodingTargets: {
+        output: myOutputStreamUrl,  // rtmp://...
+        streamname: myOutputStreamName
+        videobitrate: entries.videoBitrate,   	// rtmp/h264 video bitrate
+        audiobitrate: entries.audioBitrate,   	// rtmp/aac audio bitrate
+        framerate: entries.framerate,         	// rtmp/h264 video framerate
+        dropframes: this.dropframes,          	// rtmp/h264 allow dropframes
+        h264passthrough: this.h264passthrough, 	// rtmp/h264 passthrough streaming
+    }
+}
+```
+
+
+
+## Streaming to nanoStream Cloud
+
+The bintu.live REST API or Dashboard can be used to generate and manage live streams.
+
+> More information can be found [here](http://docs.nanocosmos.de/docs/cloud/cloud_getting_started).
+
+
+
+## Stream Status
+
+The call to
+```
+/stream/<YOUR-STREAM-ID>
+```
+should give you all the info. The `state` value should be `live` when your broadcast is running.
+
+> You can find the full bintu.live documentation [here](https://bintu.nanocosmos.de/doc/#stream-stream-info).
+
+
+
+Example:
+
+```json
+{
+   "id":"123456-e7a1-46a6-9572-1037beff926c",
+   "state":"live",
+   "type":"low-latency",
+   "created_at":"2018-10-02T08:53:50.377Z",
+   "webrtc":true,
+   "transcoding":false,
+   "webrtc_server":"https://rtc1.nanocosmos.de/prod",
+   "tags":[
+      "myTag"
+   ],
+}
+```
+
+
+## Playing back from our servers
+
+You can play back from our servers with the [H5Live Player](http://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_introduction)
+
+
+
+## Camera / Capture Device Testing
+
+https://webrtc.github.io/samples/src/content/devices/input-output/
+
+
+# Screen Sharing 
+
+WebRTC supports screen sharing! You can use a screen or a window, depending on a browser used, as a live video source instead of a web camera.
+
+Screen sharing is currently available in:
+
+  * Google Chrome
+  * Firefox
+
+Chrome on Desktop since version 72 supports screen sharing without any further installation.
+For former versions, a certified browser extension was required due to Google security policy.
+
+
+
+# Reporting bugs or issues 
+
+To report any bugs or issues, please send a complete issue report including the following:
+
+- a description of the issue and expected results
+- the configuration you are using for webrtc, bintu.live and h5live
+- potential stream IDs which show the issue
+- how to replicate the issue
+
+### Log information
+
+#### browser console log
+
+press Ctrl+Shift+J or F12 (Windows / Linux) or Cmd+Opt+J (Mac)
+copy/paste the result of the console
+
+
+#### use debug-log information 
+
+enhanced logging can be enabled by adding "&debug=3" to the web page URL
+
+
+#### Chrome webrtc-internals 
+
+open a separate browser tab and open the URL 
+    chrome://webrtc-internals
+click "dump" and download the data and send to us
+
+
+### Remote Support 
+
+- any potential issues might be best resolved based on a remote support session,
+    dependent on your support level.
+    Please contact us to arrange an online meeting.
+
+## Camera / Capture Device Testing
+
+https://webrtc.github.io/samples/src/content/devices/input-output/
+
