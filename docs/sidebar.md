@@ -4,6 +4,7 @@
 - [Intro](nanoplayer/nanoplayer_introduction)
 - [Getting Started](nanoplayer/nanoplayer_getting_started)
 - [Supported Browsers](nanoplayer/nanoplayer_supported_browsers)
+- [Autoplay](nanoplayer/nanoplayer_autoplay)
 - [Token Security](nanoplayer/nanoplayer_token_security)
 ## API
 - [Classes](nanoplayer/nanoplayer_api_class)

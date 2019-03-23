@@ -167,6 +167,10 @@
         "title": "NanoPlayer",
         "sidebar_label": "NanoPlayer"
       },
+      "nanoplayer/nanoplayer_autoplay": {
+        "title": "Autoplay",
+        "sidebar_label": "Autoplay"
+      },
       "nanoplayer/nanoplayer_blogposts": {
         "title": "Other Information",
         "sidebar_label": "Blog"

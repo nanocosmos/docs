@@ -4,6 +4,7 @@
       "nanoplayer/nanoplayer_introduction",
       "nanoplayer/nanoplayer_getting_started",
       "nanoplayer/nanoplayer_supported_browsers",
+      "nanoplayer/nanoplayer_autoplay",
     	"nanoplayer/nanoplayer_token_security"
     ],
     "API" : [
