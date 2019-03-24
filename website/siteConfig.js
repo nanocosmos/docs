@@ -37,6 +37,8 @@ const siteConfig = {
     {doc: 'faq/faq_streaming', label: 'FAQ'}
   ],
 
+  gaTrackingId: 'UA-552140-1',
+
   /* path to images for header/footer */
   headerIcon: 'img/nanocosmos_header_logo.png',
   footerIcon: 'img/nanocosmos_header_logo.png',
