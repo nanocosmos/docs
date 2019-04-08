@@ -134,6 +134,6 @@ Yes!
 
 <details><summary><strong>Can I have multiple player instances in one page?</strong></summary>
 
-Yes, …
+Yes!
 
 </details>
