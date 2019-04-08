@@ -122,13 +122,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
 <details><summary><strong>Is there a simple code snippet available?</strong></summary>
 
-Yes, …
+Yes, 
 
 </details>
 
 <details><summary><strong>Can I use the player within a mobile webview?</strong></summary>
 
-Yes! …
+Yes! 
 
 </details>
 
