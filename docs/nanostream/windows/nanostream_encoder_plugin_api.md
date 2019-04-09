@@ -1,6 +1,8 @@
+---
 id: nanostream_encoder_plugin_api
 title: Encoder Plugin API
 sidebar_label: Encoder Plugin API
+---
 
 ## Live Video Encoder - Plugin Interface Version 3.x and 4.x
 

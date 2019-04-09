@@ -20,10 +20,10 @@ Please note, that there is no 100% guarantee to be able to play all combinations
 
 ## How to stream files with the nanoStream API
 
-To stream files, you need to set VideoSource to the value 101 and set FileSourceFilename to the path of the file (including the file name). See [here](live_video_encoder_-_plugin_integration_api), for further information.
+To stream files, you need to set VideoSource to the value 101 and set FileSourceFilename to the path of the file (including the file name). See [here](https://docs.nanocosmos.de/docs/nanostream/windows/nanostream_encoder_plugin_api), for further information.
 
 ## Seemless switch / Ad insertion into live streams
 
 There is also a special stream mode (set with SetConfig("UseSourceBridge", "1")), with which it is possible to stream from a video source (e.g. a webcam) and play files on demand during the streaming. This can be used to play advertisements during a stream for example.
 
-Available options for this special stream mode are described [here](live_video_encoder_-_plugin_integration_api#advanced_settings_for_extra_module_sourcebridge_using_controlcommand).
+Available options for this special stream mode are described [here](https://docs.nanocosmos.de/docs/nanostream/windows/nanostream_encoder_plugin_api).

@@ -517,6 +517,9 @@
       "nanostream/windows/language_integration/nanostream_delphi_integration": {
         "title": "nanostream/windows/language_integration/nanostream_delphi_integration"
       },
+      "nanostream/windows/nanostream_encoder_plugin_api": {
+        "title": "nanostream/windows/nanostream_encoder_plugin_api"
+      },
       "nanostream/windows/nanostream_windows_binaries": {
         "title": "Binary Modules for Windows",
         "sidebar_label": "Binary Modules for Windows"
