@@ -61,7 +61,8 @@
       "nanostream/windows/nanostream_windows_developer_manual",
       "nanostream/windows/nanostream_windows_language_integration",
       "nanostream/windows/nanostream_windows_license_help",
-      "nanostream/windows/nanostream_windows_networkwriter"
+      "nanostream/windows/nanostream_windows_networkwriter",
+      "nanostream/windows/nanostream_encoder_plugin_api"
     ],
     "DirectShow": [
       "nanostream/directshow/index",
