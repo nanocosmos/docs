@@ -9,15 +9,5 @@ Click [here](http://docs.nanocosmos.de/docs/cloud/cloud_introduction) to read mo
 
 </details>
 
-<details><summary><strong>How do I improve the quality of the stream?</strong></summary>
 
-
-
-</details>
-
-<details><summary><strong>I do not see a picture and hear no sound, what to do?</strong></summary>
-
-
-
-</details>
 
