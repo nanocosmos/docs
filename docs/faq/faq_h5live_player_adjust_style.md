@@ -122,7 +122,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 <details><summary><strong>Is there a simple code snippet available?</strong></summary>
 
-Yes, 
+Yes! 
 
 </details>
 
