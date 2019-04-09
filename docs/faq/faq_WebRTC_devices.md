@@ -39,14 +39,3 @@ console.log((event.data.text);
 
 </details>
 
-<details><summary><strong>How to start a preview?</strong></summary>
-
-
-
-</details>
-
-<details><summary><strong>How to start a screen capture?</strong></summary>
-
-
-
-</details>
