@@ -561,7 +561,7 @@
       },
       "webrtc/nanostream_webrtc_api": {
         "title": "nanoStream WebRTC API",
-        "sidebar_label": "Class"
+        "sidebar_label": "WebRTC API"
       },
       "webrtc/nanostream_webrtc_browser_api": {
         "title": "nanoStream WebRTC Browser API",
