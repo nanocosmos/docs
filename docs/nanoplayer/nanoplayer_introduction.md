@@ -9,23 +9,14 @@ sidebar_label: Introduction
 
 nanoPlayer with H5Live is the perfect playback solution for live video streaming in HTML5 web browsers. **Low latency live streaming** (`0.5-2 seconds end-to-end`) and a future-proof, plugin-free implementation enables a lot of exciting use cases. H5Live runs on any platform and is a great replacement for existing Flash players based on RTMP.
 
-H5Live requires the `H5Live server` and `H5Live client`. The server can run as part of the nanoStream cloud services and bintu.live API, You can also obtain a server package for on-premise installations.
+H5Live requires the `H5Live server` and `H5Live client`. The server runs as part of the nanoStream cloud services and global CDN for providing the best end-to-end user experience with a global scale.
 
-H5Live player works on any browser and operates in different modes:
-
-- `fMP4` / `WebSocket` / `MediaSource`: compatible to Chrome, Firefox and other browsers
-- `HLS low-latency`: compatible to Safari on iOS and MacOS
-- `MP4`: compatible to settop boxes and TV Sets
+[More info and demo on our web page](https://www.nanocosmos.de/v6/h5live)
 
 ## H5Live Cloud Usage
 
 H5Live cloud is a global, geo-load-balanced content delivery network which you can use to play your RTMP live streams with ultra-low-latency. It is based on H5Live server components and plugin-free HTML players to “pull” any existing RTMP stream. 
 It can be configured by the player client with a Javascript API or with our demo player page directly on the player URL.
-
-## H5Live Server / On-Premise
-
-H5Live server is a software package which you can install on your own server. It is very light-weight and can be used in combination with your existing streaming server environment.
-You find more information and installation instructions in the download package of h5live-server.
 
 ## H5Live Configuration
 
@@ -85,6 +76,15 @@ http://demo.nanocosmos.de/nanoplayer/release/nanoplayer.html?bintu.apiurl=https:
 ```
 
 >h5live can be used in combination with our nanoStream SDKs for Windows, Mac, iOS, Android or the plugin-free browser-based WebRTC.live solution to create plugin-free interactive live streaming applications.
+
+
+## H5Live Operating Modes
+
+H5Live player works on any browser and operates in different modes:
+
+- `fMP4` / `WebSocket` / `MediaSource`: compatible to Chrome, Firefox and other browsers
+- `HLS low-latency`: compatible to Safari on iOS and MacOS
+- `MP4`: compatible to settop boxes and TV Sets
 
 
 ## More Information

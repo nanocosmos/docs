@@ -6,16 +6,20 @@ sidebar_label: Introduction
 
 # nanoStream Apps and SDKs
 
+
+> Did you know that you do not need native apps anymore for live streaming?
+
+> With nanoStream Cloud and H5Live Player, you can use our web based SDKs.
+
+### nanoStream Cloud 
+
+[nanoStream Cloud Overview](../cloud/cloud_overview)
+
+## nanoStream SDKs for Native Apps
+
 This section is about native SDKs for 
 
 Android, iOS, Windows, MacOS
-
-Did you know that you do not need native apps anymore for live streaming?
-
-With nanoStream Cloud, you can use our web based SDKs (WebRTC, H5Live).
-
-Please check the main index.
-
 
 ### [nanoStream SDK for iOS Documentation](ios/nanostream_ios_sdk)
 The nanoStream iOS documentation provides a short introduction in the basic usage of the nanoStream SDK for iOS.

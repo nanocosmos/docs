@@ -4,10 +4,12 @@
 ### Purpose
 
 
-This documentation is about the nanoStream Live Video Streaming SDK for Android and can be used by software developers to integrate nanoStream Live Video Encoding into custom apps.
+This documentation is about the nanoStream SDK for Android and can be used by software developers to integrate nanoStream RTMP Live Video Encoding and Playback into custom apps.
+
+>For using our web-based Ultra-Low-Latency Live Streaming Technology H5Live, please check our [nanoStream Cloud and H5Live Documentation](../cloud/cloud_overview) 
+
 
 ### Requirements
-
 
 -	Android 4.1+ (API Level 16)
 

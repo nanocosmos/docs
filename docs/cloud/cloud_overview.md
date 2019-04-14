@@ -11,7 +11,7 @@ nanoStream software and services can be completely **white-labeled to run under 
 ## What makes nanoStream Cloud different?
 
 nanoStream Cloud is a combination of software and services. <br>
-It contains the [unique H5Live player for all HTML5 web browsers](https://www.nanocosmos.de/v6/h5live),<br>
+It contains the [unique H5Live player for all HTML5 web browsers](../nanoplayer/nanoplayer_introduction),<br>
 connected to our **ultra-low-latency (ULL) CDN** for worldwide distribution to large audiences,<br>
 which is managed by our [bintu dashboard and API](https://www.nanocosmos.de/v6/cloud)  
 
