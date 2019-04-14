@@ -12,8 +12,8 @@ nanoStream software and services can be completely **white-labeled to run under 
 
 nanoStream Cloud is a combination of software and services. <br>
 It contains the [unique H5Live player for all HTML5 web browsers](../nanoplayer/nanoplayer_introduction),<br>
-connected to our **ultra-low-latency (ULL) CDN** for worldwide distribution to large audiences,<br>
-which is managed by our [bintu dashboard and API](https://www.nanocosmos.de/v6/cloud)  
+connected to our **ultra-low-latency (ULL) CDN** for worldwide distribution to large audiences, 
+which is managed by our [bintu dashboard and API](bintu_api)  
 
 nanoStream Cloud is available worldwide with server locations in US East/West, Europe, Asia, Australia, etc. 
 The system is operating 24/7 for instant live streaming. 

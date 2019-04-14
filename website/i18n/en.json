@@ -15,7 +15,7 @@
         "title": "bintu/index"
       },
       "cloud/bintu_api": {
-        "title": "nanoStream Cloud bintu api",
+        "title": "nanoStream Cloud - bintu",
         "sidebar_label": "bintu api"
       },
       "cloud/bintu_custom_webhooks": {
