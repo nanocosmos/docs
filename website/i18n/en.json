@@ -336,14 +336,16 @@
       "nanostream/directshow/directshow_quicktime_imx": {
         "title": "nanostream/directshow/directshow_quicktime_imx"
       },
-      "nanostream/directshow/directshow_rtmp_source": {
-        "title": "nanostream/directshow/directshow_rtmp_source"
+      "nanostream/directshow/directshow_rtmp_surce": {
+        "title": "RTMP Source",
+        "sidebar_label": "RTMP Source"
       },
       "nanostream/directshow/directshow_rtmp_status_statistics": {
         "title": "nanostream/directshow/directshow_rtmp_status_statistics"
       },
       "nanostream/directshow/directshow_rtmp_writer": {
-        "title": "nanostream/directshow/directshow_rtmp_writer"
+        "title": "RTMP Writer",
+        "sidebar_label": "RTMP Writer"
       },
       "nanostream/directshow/directshow_rtsp_sink": {
         "title": "nanostream/directshow/directshow_rtsp_sink"
@@ -530,8 +532,8 @@
         "sidebar_label": "Developer Manual"
       },
       "nanostream/windows/nanostream_windows_language_integration": {
-        "title": "Language Integration",
-        "sidebar_label": "Language Integration"
+        "title": "nanoStream Windows Language Integration",
+        "sidebar_label": "nanoStream Windows Language Integration"
       },
       "nanostream/windows/nanostream_windows_license_help": {
         "title": "Setting the license",

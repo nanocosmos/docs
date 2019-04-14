@@ -68,6 +68,8 @@
       "nanostream/directshow/index",
       "nanostream/directshow/nanostream_directshow_h264",
       "nanostream/directshow/nanostream_directshow_rtmp",
+      "nanostream/directshow/directshow_rtmp_source",
+      "nanostream/directshow/directshow_rtmp_writer",
       "nanostream/directshow/nanostream_directshow_rtsp",
       "nanostream/directshow/nanostream_directshow_udp_streaming",
       "nanostream/directshow/nanostream_directshow_video_filter",

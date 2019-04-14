@@ -1,3 +1,11 @@
+---
+id: directshow_rtmp_surce
+title: RTMP Source
+sidebar_label: RTMP Source
+---
+
+# nanocosmos DirectShow Filters
+
 ## nanocosmos RTMP Source Filter
 
 ### Introduction
@@ -7,8 +15,8 @@
 
 ### Module Name / Version
 
-Module: nRTMPSource.ax \\
-Version: 1.3.1.1
+Module: `nRTMPSource.ax`
+Version: `1.3.1.1`
 
 ### DirectShow Connectivity
 
@@ -51,11 +59,15 @@ The streaming url can be set by using standard DirectShow interface IFileSourceF
 
 #### URL format
 
-rtmp:%%//%% [ IP:port ]/[ application name]/[ stream name]\\
-If no port is specified, standard rtmp port 1935 will be used.
+```
+rtmp:%%//%% [ IP:port ]/[ application name]/[ stream name]/
+```
+> If no port is specified, standard rtmp port `1935` will be used.
 
-Example:\\
+Example:
+```
 rtmp:%%//%%127.0.0.1:1935/live/myStream
+```
 
 Following options can be set by using standard DirectShow interface ICodecAPI.
 See DirectShow documentation for usage of ICodecAPI interface.
@@ -123,12 +135,15 @@ DEFINE_GUID(PROPID_nanoRTMPDetectStreamFormatTimeoutMs, 0x7400166f, 0x8140, 0x4b
 
 #### Configuration through DirectShow filter property page
 
-![RTMP Source Properties](img/directshow_rtmp_source_properties.png)
+![RTMP Source Properties](/img/nanostream/directshow/directshow_rtmp_source_properties.png)
 
 
 #### Configuration Registry Settings
 
-Key: HKEY_CURRENT_USER\Software\nanocosmos\nRTMPSource
+Key: 
+```
+HKEY_CURRENT_USER\Software\nanocosmos\nRTMPSource
+```
 
 #### Receive timeout
 
@@ -213,7 +228,10 @@ It differs from flash's Microphone::rate value!
 
 ### Debug-Log Configuration Registry Settings
 
-Key: HKEY_CURRENT_USER\Software\DebugNano\nRTMPSource.ax  
+Key: 
+```
+HKEY_CURRENT_USER\Software\DebugNano\nRTMPSource.ax  
+```
 
 #### File name
 Sets the output file name. The folder must already exist.\\

@@ -1,7 +1,7 @@
 ---
 id: nanostream_windows_language_integration
-title: Language Integration
-sidebar_label: Language Integration
+title: nanoStream Windows Language Integration
+sidebar_label: nanoStream Windows Language Integration
 ---
 
 ## VisualC++ Integration

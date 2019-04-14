@@ -24,12 +24,11 @@ The nanoStream iOS documentation provides a short introduction in the basic usag
 An introduction into the nanoStream SDK for MacOS and streaming with it.
 
 ### Windows
-#### [Developer Manual](windows/nanostream_windows_developer_manual) & [Binary Modules](windows/nanostream_windows_binaries)
+#### [Developer Modules](windows/nanostream_windows_developer_manual) & [Binary Modules](windows/nanostream_windows_binaries)
 An overview over the available components for windows and directshow including the GUI-Software and the directshow filter.
 
 #### [License help](windows/nanostream_windows_license_help)
 A tutorial on how to register the license in windows correctly.
-#### [RTMP Network Renderer & Writer](windows/nanostream_windows_networkwriter)
-Description of the RTMP Network Renderer & Writer filter for directshow.
-#### [Language integration](windows/nanostream_windows_language_integration)
+
+#### [nanoStream Active-X for Windows Language Integration](windows/nanostream_windows_language_integration)
 
