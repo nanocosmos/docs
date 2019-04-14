@@ -28,39 +28,41 @@ nanoStream Apps and SDKs are available for different platforms:
 
 </details>
 
-<details><summary><strong>Which video, audio and streaming formats do you support (H264, RTMP, RTSP, ...) ?</strong></summary>
+<details><summary><strong>Which video, audio and streaming formats does nanoStream support (H264, RTMP, RTSP, ...) ?</strong></summary>
 
 **nanocosmos supports the following Streaming formats:**
 
-- RTMP
-- H5Live (unique live streaming with ultra-low-latencyy)
-- HLS (low latency based on H5Live)
-- WebRTC (broadcast/ingest)
+*** Ingest/Upstream from Live Sources:
 
-For plugin-free operation and mobile devices, the built-in hardware codecs are supported (usually H264, AAC).
+- RTMP with H264 Video and AAC Audio (nanoStream Apps/SDKs or 3rd party software/hardware)
+- WebRTC.live (browser based)
+- SRT 
+- Other formats upon request, e.g. RTSP, H265, VP9
+
+*** Playback/Downstream:
+
+- H5Live (unique live streaming with ultra-low-latencyy on all browsers)
+- HLS (ultra-low latency based on H5Live)
+- RTMP
+
+For plugin-free operation and mobile devices, the built-in hardware codecs are supported (H264 Video, AAC Audio).
+
+**** Other platforms / native
 
 The following formats are supported for some platforms only upon request (Windows):
 - RTSP (server mode without streaming server)
 - UDP-TS / MPEG2-TS (point-to-point and Multicast)
-
-This is the list of supported video and audio codecs:
-- H.264 Video
 - MPEG-2 Video, including IMX and XDCAM-HD
-- AAC Audio, including HE (High Efficiency)
-- All formats supporting very low and very high bitrates and profiles
-
-This is the list of supported file formats:
-- MP4 (included segmented writing)
+- MP4 
 - MPEG-PS and TS
 - MXF
-
-**Generally, all formats are supported for both reading and writing.**
 
 </details>
 
 <details><summary><strong>How to use RTMP for Live Encoding from your Application or Server?</strong></summary>
 
-RTMP is originally developed for live streaming with the Flash player, which is now outdated. However, RTMP is still a valid and suitable format for live encoding and broadcast from your camera source. Most Live Encoder software, hardware and servers support RTMP.
+RTMP is originally developed for live streaming with the Flash player. It is not suitable or recommended for playback.
+ However, RTMP is still a valid and suitable format for live encoding and broadcast from your camera source. Most Live Encoder software, hardware and servers support RTMP.
 
 ### RTMP Structure
 RTMP is based on the following URL format:
