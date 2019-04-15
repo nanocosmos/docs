@@ -89,11 +89,13 @@ const siteConfig = {
   // enableUpdateBy: true,
 
   // Show documentation's last update time.
-  // enableUpdateTime: true,
+  enableUpdateTime: true,
 
   // You may provide arbitrary config keys to be used as needed by your
   // template. For example, if you need your repo's URL...
-     repoUrl: 'https://github.com/nanocosmos/demo',
+     repoUrl: 'https://github.com/nanocosmos/docs',
+
+     editUrl: 'https://github.com/nanocosmos/docs/tree/master/docs/'
 };
 
 module.exports = siteConfig;
