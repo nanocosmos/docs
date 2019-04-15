@@ -58,7 +58,7 @@
                 };
               }
             });
-        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">FAQ nanoStream Live Streaming</h1></header><article><div><span><p><details><summary><strong>Is low latency streaming available?</strong></summary></p>
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/nanocosmos/docsfaq/faq_streaming.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 class="postHeaderTitle">FAQ nanoStream Live Streaming</h1></header><article><div><span><p><details><summary><strong>Is low latency streaming available?</strong></summary></p>
 <p>Yes, our nanoStream Cloud software and services support low latency live streaming, on any HTML5 browser with a global scale.</p>
 <blockquote>
 <p><strong>NOTES</strong></p>
@@ -79,37 +79,36 @@
 <li>nanoStream H5Live Player for all HTML5 browsers (desktop and mobile)</li>
 </ul>
 <p></details></p>
-<p><details><summary><strong>Which video, audio and streaming formats do you support (H264, RTMP, RTSP, ...) ?</strong></summary></p>
+<p><details><summary><strong>Which video, audio and streaming formats does nanoStream support (H264, RTMP, RTSP, ...) ?</strong></summary></p>
 <p><strong>nanocosmos supports the following Streaming formats:</strong></p>
+<p>*** Ingest/Upstream from Live Sources:</p>
 <ul>
-<li>RTMP</li>
-<li>H5Live (unique live streaming with ultra-low-latencyy)</li>
-<li>HLS (low latency based on H5Live)</li>
-<li>WebRTC (broadcast/ingest)</li>
+<li>RTMP with H264 Video and AAC Audio (nanoStream Apps/SDKs or 3rd party software/hardware)</li>
+<li>WebRTC.live (browser based)</li>
+<li>SRT</li>
+<li>Other formats upon request, e.g. RTSP, H265, VP9</li>
 </ul>
-<p>For plugin-free operation and mobile devices, the built-in hardware codecs are supported (usually H264, AAC).</p>
+<p>*** Playback/Downstream:</p>
+<ul>
+<li>H5Live (unique live streaming with ultra-low-latencyy on all browsers)</li>
+<li>HLS (ultra-low latency based on H5Live)</li>
+<li>RTMP</li>
+</ul>
+<p>For plugin-free operation and mobile devices, the built-in hardware codecs are supported (H264 Video, AAC Audio).</p>
+<p>**** Other platforms / native</p>
 <p>The following formats are supported for some platforms only upon request (Windows):</p>
 <ul>
 <li>RTSP (server mode without streaming server)</li>
 <li>UDP-TS / MPEG2-TS (point-to-point and Multicast)</li>
-</ul>
-<p>This is the list of supported video and audio codecs:</p>
-<ul>
-<li>H.264 Video</li>
 <li>MPEG-2 Video, including IMX and XDCAM-HD</li>
-<li>AAC Audio, including HE (High Efficiency)</li>
-<li>All formats supporting very low and very high bitrates and profiles</li>
-</ul>
-<p>This is the list of supported file formats:</p>
-<ul>
-<li>MP4 (included segmented writing)</li>
+<li>MP4</li>
 <li>MPEG-PS and TS</li>
 <li>MXF</li>
 </ul>
-<p><strong>Generally, all formats are supported for both reading and writing.</strong></p>
 <p></details></p>
 <p><details><summary><strong>How to use RTMP for Live Encoding from your Application or Server?</strong></summary></p>
-<p>RTMP is originally developed for live streaming with the Flash player, which is now outdated. However, RTMP is still a valid and suitable format for live encoding and broadcast from your camera source. Most Live Encoder software, hardware and servers support RTMP.</p>
+<p>RTMP is originally developed for live streaming with the Flash player. It is not suitable or recommended for playback.
+However, RTMP is still a valid and suitable format for live encoding and broadcast from your camera source. Most Live Encoder software, hardware and servers support RTMP.</p>
 <h3><a class="anchor" aria-hidden="true" id="rtmp-structure"></a><a href="#rtmp-structure" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>RTMP Structure</h3>
 <p>RTMP is based on the following URL format:</p>
 <pre><code class="hljs">rtmp:<span class="hljs-regexp">//</span>servername:port<span class="hljs-regexp">/application/</span>streamname
@@ -388,4 +387,4 @@ RTMP is using ports <code>1935</code> or <code>80</code></p>
 WebRTC is using ports <code>https/443</code> for API calls, port <code>80</code> for turn (udp and tcp), and ports <code>40000-50000</code> over UDP.
 &lt;/details</p>
 </blockquote>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/faq/faq_WebRTC_broadcast"><span class="arrow-prev">← </span><span>Broadcast</span></a><a class="docs-next button" href="/docs/faq/faq_devices_support"><span>Capture Devices and Camera Support</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><div><h5>Contact</h5><a href="https://www.nanocosmos.de/">nanocosmos homepage</a><a href="https://www.nanocosmos.de/contact">Contact</a><a href="https://www.nanocosmos.de/support">Support</a><a href="https://www.nanocosmos.de/terma">Legal Terms</a></div><div><h5>Products</h5><a href="https://www.nanocosmos.de/cloud">Nanostream Cloud with Bintu.Live</a><a href="https://www.nanocosmos.de/h5live">H5Live Low Latency HTML5-Player</a><a href="https://www.nanocosmos.de/webrtc">WebRTC.Live</a><a href="https://www.nanocosmos.de/#nanostream">Nanostream Apps and SDK</a></div><div><h5>More</h5><a href="https://www.nanocosmos.de/blog/">Blog</a><a href="https://twitter.com/nanovideo">Twitter</a><a href="https://www.facebook.com/nanocosmos.net/">Facebook</a><a href="https://www.linkedin.com/company/nanocosmos-gmbh">LinkedIn</a><a href="https://github.com/nanocosmos/docs">GitHub</a><a class="github-button" href="https://github.com/nanocosmos/demo" data-icon="octicon-star" data-count-href="/nanocosmos/docs/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://nanocosmos.de/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/footer_logo.png" alt="nanocosmos GmbH" width="170" height="45"/></a><section class="copyright">Copyright © 2019 nanocosmos GmbH</section></footer></div></body></html>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 2019-4-15</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/faq/faq_WebRTC_broadcast"><span class="arrow-prev">← </span><span>Broadcast</span></a><a class="docs-next button" href="/docs/faq/faq_devices_support"><span>Capture Devices and Camera Support</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><div><h5>Contact</h5><a href="https://www.nanocosmos.de/">nanocosmos homepage</a><a href="https://www.nanocosmos.de/contact">Contact</a><a href="https://www.nanocosmos.de/support">Support</a><a href="https://www.nanocosmos.de/terma">Legal Terms</a></div><div><h5>Products</h5><a href="https://www.nanocosmos.de/cloud">Nanostream Cloud with Bintu.Live</a><a href="https://www.nanocosmos.de/h5live">H5Live Low Latency HTML5-Player</a><a href="https://www.nanocosmos.de/webrtc">WebRTC.Live</a><a href="https://www.nanocosmos.de/#nanostream">Nanostream Apps and SDK</a></div><div><h5>More</h5><a href="https://www.nanocosmos.de/blog/">Blog</a><a href="https://twitter.com/nanovideo">Twitter</a><a href="https://www.facebook.com/nanocosmos.net/">Facebook</a><a href="https://www.linkedin.com/company/nanocosmos-gmbh">LinkedIn</a><a href="https://github.com/nanocosmos/docs">GitHub</a><a class="github-button" href="https://github.com/nanocosmos/docs" data-icon="octicon-star" data-count-href="/nanocosmos/docs/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://nanocosmos.de/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/footer_logo.png" alt="nanocosmos GmbH" width="170" height="45"/></a><section class="copyright">Copyright © 2019 nanocosmos GmbH</section></footer></div></body></html>
