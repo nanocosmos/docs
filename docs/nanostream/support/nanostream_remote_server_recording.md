@@ -1,13 +1,10 @@
-## nanoStream Remote Server Recording
+## nanoStream Remote Server Recording  -  DEPRECATED
 
 
 ### Recording on demand on Flash Media Server
 
 
 #### General Information
-
-
-nanoStream 2.0 supports a "Remote Server Record" mode to enable server based video recording functionality. Currently this works only with Flash Media Server. See Wowza section for how to record on demand to Wowza Media Server.
 
 #### Requirements:
 
@@ -31,45 +28,13 @@ nanoStream 2.0 supports a "Remote Server Record" mode to enable server based vid
 
 #### Sample Web Application:
 
-See the HTML web page in the folder web/liveEncoder/nanoStream.html\\
-The feature is implemented there under "Advanced Options".\\
-See the function code for SetRTMPPublishMode  in nanoEncoder.js for how it is implemented in Javascript.\\
+See the HTML web page in the folder web/liveEncoder/nanoStream.html
+The feature is implemented there under "Advanced Options".
+See the function code for SetRTMPPublishMode  in nanoEncoder.js for how it is implemented in Javascript.
 
 ### Recording on demand on Wowza Media Server
 
 #### General Information
-
-
-nanoStream 2.0 supports a "Remote Server Record" mode to enable server based video recording functionality. Currently this works only with Wowza Media Server and an additional server plugin.
-
-#### Wowza Streaming Engine
-
-  * Edit the file Application.xml at: [install-dir]/conf/[application]/
-  * Edit the "StreamType" to: "<StreamType>live-record</StreamType>"
-
-#### Older Versions
-
-#### Requirements:
-
-
-  * Wowza Media Server 2.0.0.4 or higher.
-  * Wowza Plugin Module "LiveStreamRecord: Module for recording a live stream on demand.
-
-Download Link: [Wowza LiveStreamRecord 2.0][8403a33b]
-
-
-#### Installation:
-
-  * Unpack the ZIP file and copy the jar files wms-plugin-into the Wowza installation folder: [install-dir]/lib
-  * Edit the file Application.xml at: [install-dir]/conf/[application]/
-  * Add this <Module> at the end of the <Modules> list:
-```xml
-<Module>
-    <Name>ModuleLiveStreamRecord</Name>
-    <Description>ModuleLiveStreamRecord</Description>
-    <Class>com.wowza.wms.plugin.livestreamrecord.ModuleLiveStreamRecord</Class>
-</Module>
-```
 
 #### Usage:
 
@@ -107,5 +72,3 @@ See the function code for //StartServerRecording// in nanoEncoder.js for how it 
 #### Contact
 {!docs/nanostream/general/nanocosmos_contact.md!}
 
-
-[8403a33b]: http://www.wowzamedia.com/downloads/forums/livestreamrecord/LiveStreamRecord_2.0.zip "http://www.wowzamedia.com/downloads/forums/livestreamrecord/LiveStreamRecord_2.0.zip"

@@ -107,7 +107,7 @@ NetStream buffer = 0.1   or    0
 ### Wowza Server Configuration
 
 Wowza server can be used as a source for nanoStream Cloud ingest.
-To improve latency, one server based config can be changed on Wowza:\\
+To improve latency, one server based config can be changed on Wowza:
 changeing
 ```xml
 <StreamType>live</StreamType>

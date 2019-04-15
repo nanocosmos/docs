@@ -25,7 +25,7 @@ Plugin for Mozilla/Netscape based browsers, `Javascript` interface (Firefox, Saf
 `DirectShow` filter for creating `MP4` files with `H.264` support
 
 ## nanocosmos RTMP Network Writer (Filename: `nRtmpRenderer.ax`)
-`DirectShow` filter for streaming to Wowza and Flash Media Servers
+`DirectShow` filter for streaming to RTMP Servers
 Example URL: `rtmp://localhost/live+myStream`
 
 ## HD / UDP Streaming Filters

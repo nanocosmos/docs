@@ -112,7 +112,7 @@ The plugin exposes methods and properties to set options, start preview and enco
 #### List of Properties/Functions with example settings:
 
 ```javascript
-destination URL (Flash or Wowza Media Server, or local file)
+destination URL (RTMP Server, or local file)
 nanovid1.DestinationURL = "rtmp://localhost/live+myStream";
 nanovid1.DestinationURL = "c:\temp\h264.mp4";
 nanovid1.VideoSource = 0; 		// Video Capture Device ID
@@ -134,7 +134,7 @@ nanovid1.StartBroadcast();
 
 For simple usage, a set of Javascript functions is provided (nanoEncoder.js).
 ```javascript
-// setup a live stream to a Flash Media/Wowza server
+// setup a live stream to a RTMP server
 SetEncodingUrl("rtmp://myServer.com/live/myStream");
 SetVideoBitrate(400000); 	// sets the bitrate to 400 kbps
 OnStartPreview();		// calls nanovid1.StartPreview()
@@ -224,7 +224,7 @@ nanoSetH264VlcMode(1); 		        // VLC mode: 0=auto, 1=cavlc, 2=cabac
 // Constant/Variable Bit Rate
 nanoSetConfig("RateControl",0); 	// 0=auto, 1=cbr, 2=vbr
 
-// set server authentication (wowza/flash media server)
+// set server authentication
 function nanoSetServerAuth(user,pass) {
     nanoSetConfig("Auth",user+pass);
 }

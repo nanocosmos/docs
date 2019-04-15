@@ -19,7 +19,6 @@ nanocosmos AVC/H.264 video codec is a high performance video codec for the lates
   * X-HD support for Custom Applications (Dome Cinema, Projections), up to `2k/4k` (4096 x 4096)
   * Support for realtime Full HD 1080 encoding and decoding of `dual channel video` (stereo video / 3d)
   * Baseline Profile, Main Profile and HDTV modes supported
-  * Compatible to `ISO Mp4` and `Flash Media Streaming Server` and `Wowza`
 
 
 ### Architecture and Availability

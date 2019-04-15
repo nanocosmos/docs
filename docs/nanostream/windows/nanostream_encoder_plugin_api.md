@@ -806,7 +806,7 @@ nv = nanoStream.NumberOfVideoSources;
 
 // destination URL (Use only one of these, for parallel MP4 storage use DestinationURL2 parameter)
 nanoStream.DestinationURL = "rtmp://localhost/live+myStream";	
-//  Flash or Wowza Media Server
+//  RTMP Ingest URL
 nanoStream.DestinationURL2 = "c:\temp\h264.mp4";		        
 // Local MP4 file storage
 nanoStream.VideoSource = 0					                    

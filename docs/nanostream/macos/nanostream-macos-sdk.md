@@ -6,8 +6,6 @@ The nanoStream MacOS dylib API is a video capture and encoding software for stre
 
 The nanoStream MacOS dylib API supports internet broadcast streaming and local recording at the same time. A lots of video devices are supported, also Blackmagic devices. The resolution, frame rate, samplerate and more can be manipulated. For a full feature list and platform specific features look at the method list below.
 
-It works perfectly together with internet streaming servers like Wowza Media Server and Flash Media Server, streaming to Mobile devices like iPhone, Silverlight and other playback clients is possible.
-
 * Note: this is preliminary documentation, please contact us for further information or help.
 
 ## Setup:

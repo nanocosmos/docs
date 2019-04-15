@@ -97,7 +97,7 @@ m_nanoStream.InitEncoder(); // Init Encoder
 m_nanoStream.put_VideoSource(0); // Select Video Capture Source
 m_nanoStream.put_VideoBitrate(500000); // 500 kBit/s encoded bitrate
 
-// URL to Flash Media Server / Wowza Media Server
+// URL to RTMP Server
 // Syntax: rtmp://&lt;server&gt;/&lt;app&gt;+&lt;stream&gt;
 m_nanoStream.put_DestinationURL(_T("rtmp://ws1.3p0.de/live+mfcStream01"));
 m_nanoStream.StartBroadcast(); // Start Camera Preview in Window
