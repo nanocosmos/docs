@@ -151,18 +151,6 @@
       "mkdocs": {
         "title": "mkdocs"
       },
-      "nanoplayer/nanoplayer_api_class": {
-        "title": "Class",
-        "sidebar_label": "Class"
-      },
-      "nanoplayer/nanoplayer_api_events": {
-        "title": "Events",
-        "sidebar_label": "Events"
-      },
-      "nanoplayer/nanoplayer_api_global": {
-        "title": "Global",
-        "sidebar_label": "Global"
-      },
       "nanoplayer/nanoplayer_api": {
         "title": "NanoPlayer",
         "sidebar_label": "NanoPlayer"

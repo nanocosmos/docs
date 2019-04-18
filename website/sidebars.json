@@ -8,9 +8,7 @@
     	"nanoplayer/nanoplayer_token_security"
     ],
     "API" : [
-      "nanoplayer/nanoplayer_api_class",
-      "nanoplayer/nanoplayer_api_events",
-      "nanoplayer/nanoplayer_api_global"
+      "nanoplayer/nanoplayer_api"
     ],
     "Other Information" : ["nanoplayer/nanoplayer_blogposts"] 
   },
