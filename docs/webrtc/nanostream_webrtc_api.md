@@ -10,7 +10,7 @@ sidebar_label: WebRTC API
 WebRTC Public API Class
 
 **Kind**: global class  
-**Version**: 5.3.0  
+**Version**: 5.4.1  
 
 -----
 
@@ -39,8 +39,8 @@ Checks if nanoStream WebRTC is supported by current browser.
 var supportLevel = RtcUser.checkSupport();
 // 0: fully supported, no expected issues
 // 1: not supported
-// 2: partly supported, outdated browser version
-// 3: partly supported with issues, e.g. Edge
+// 2: partly supported - an outdated browser version
+// 3: partly supported - a critically outdated browser version or a browser with issues, e.g. Edge
 ```
 <a name="RtcUser+signIn"></a>
 
@@ -48,6 +48,7 @@ var supportLevel = RtcUser.checkSupport();
 Signs in.
 
 **Kind**: instance method of [<code>RtcUser</code>](#RtcUser)  
+**Emits**: [<code>SignInSuccess</code>](#RtcUser+event_SignInSuccess), [<code>SignInError</code>](#RtcUser+event_SignInError)  
 <table>
   <thead>
     <tr>
@@ -71,10 +72,10 @@ Signs in.
     <td>[options.token]</td><td><code>string</code></td><td><p>The security token for the server.</p>
 </td>
     </tr><tr>
-    <td>[options.serverUserName]</td><td><code>string</code></td><td><p>The username credential for the server.</p>
+    <td>[options.serverUserName]</td><td><code>string</code></td><td><p>The username credential for the server - Deprecated: will be removed in WebRTC-Client v.6.</p>
 </td>
     </tr><tr>
-    <td>[options.serverPassword]</td><td><code>string</code></td><td><p>The password credential for the server.</p>
+    <td>[options.serverPassword]</td><td><code>string</code></td><td><p>The password credential for the server - Deprecated: will be removed in WebRTC-Client v.6.</p>
 </td>
     </tr><tr>
     <td>[options.bintuApiKey]</td><td><code>string</code></td><td><p>The bintu apikey for authentication.</p>
@@ -100,6 +101,7 @@ rtcUser.signIn(options);
 Signs out.
 
 **Kind**: instance method of [<code>RtcUser</code>](#RtcUser)  
+**Emits**: [<code>SignOutSuccess</code>](#RtcUser+event_SignOutSuccess), [<code>SignOutError</code>](#RtcUser+event_SignOutError)  
 **Example**  
 ```js
 // rtcUser instance of RtcUser
@@ -147,10 +149,10 @@ Sets config for the RtcUser.
     <td>[config.bitrates]</td><td><code>object</code></td><td></td><td><p>The codec object.</p>
 </td>
     </tr><tr>
-    <td>[config.bitrates.videoSendInitialBitrate]</td><td><code>string</code></td><td><code>0</code></td><td><p>The webrtc initial bitrate</p>
+    <td>[config.bitrates.videoSendInitialBitrate]</td><td><code>string</code></td><td><code>0</code></td><td><p>The webrtc initial bitrate.</p>
 </td>
     </tr><tr>
-    <td>[config.bitrates.videoSendBitrate]</td><td><code>string</code></td><td><code>0</code></td><td><p>The webrtc bitrate</p>
+    <td>[config.bitrates.videoSendBitrate]</td><td><code>string</code></td><td><code>0</code></td><td><p>The webrtc bitrate.</p>
 </td>
     </tr><tr>
     <td>[config.iceServers]</td><td><code>Array.&lt;object&gt;</code></td><td></td><td><p>The ice servers object.</p>
@@ -264,7 +266,7 @@ rtcUser.setIceServers(iceServers);
 Checks the state of a webrtc server.
 
 **Kind**: instance method of [<code>RtcUser</code>](#RtcUser)  
-**Emits**: <code>event:ReceivedServerStats</code>  
+**Emits**: [<code>ReceivedServerStats</code>](#RtcUser+event_ReceivedServerStats)  
 <table>
   <thead>
     <tr>
@@ -273,7 +275,7 @@ Checks the state of a webrtc server.
   </thead>
   <tbody>
 <tr>
-    <td>server</td><td><code>string</code></td><td><p>The url of the server.</p>
+    <td>server</td><td><code>string</code></td><td><p>The url of the server - Deprecated: will be removed in WebRTC-Client v.6; the function will check the webrtc server specified in the signIn() call.</p>
 </td>
     </tr>  </tbody>
 </table>
@@ -290,7 +292,7 @@ rtcUser.checkServer(server);
 Enables to receive webrtc stats in a given time interval.
 
 **Kind**: instance method of [<code>RtcUser</code>](#RtcUser)  
-**Emits**: <code>event:ReceivedWebRTCStats</code>  
+**Emits**: [<code>ReceivedWebRTCStats</code>](#RtcUser+event_ReceivedWebRTCStats)  
 <table>
   <thead>
     <tr>
@@ -480,10 +482,10 @@ setTimeout(function() {
 <a name="RtcUser+getDevices"></a>
 
 ### getDevices()
-Gets all connected local video and audio devices.
+Gets all connected input video and audio devices.
 
 **Kind**: instance method of [<code>RtcUser</code>](#RtcUser)  
-**Emits**: <code>event:ReceivedDeviceList</code>  
+**Emits**: [<code>ReceivedDeviceList</code>](#RtcUser+event_ReceivedDeviceList)  
 **Example**  
 ```js
 // rtcUser instance of RtcUser
@@ -676,7 +678,7 @@ var device = rtcUser.getSelectedDevice(config);
 Starts the preview.
 
 **Kind**: instance method of [<code>RtcUser</code>](#RtcUser)  
-**Emits**: <code>event:StartPreviewSuccess</code>, <code>event:StartPreviewError</code>  
+**Emits**: [<code>StartPreviewSuccess</code>](#RtcUser+event_StartPreviewSuccess), [<code>ReceivedDeviceList</code>](#RtcUser+event_ReceivedDeviceList), [<code>StartPreviewError</code>](#RtcUser+event_StartPreviewError)  
 <table>
   <thead>
     <tr>
@@ -691,26 +693,26 @@ Starts the preview.
     <td>config.videoDeviceConfig</td><td><code>object</code></td><td></td><td><p>The video config object.</p>
 </td>
     </tr><tr>
-    <td>config.videoDeviceConfig.device</td><td><code>int</code></td><td></td><td><p>device id to use.</p>
+    <td>config.videoDeviceConfig.device</td><td><code>int</code></td><td></td><td><p>The device id to use.</p>
 </td>
     </tr><tr>
-    <td>[config.videoDeviceConfig.width]</td><td><code>int</code></td><td></td><td><p>video width.</p>
+    <td>[config.videoDeviceConfig.width]</td><td><code>int</code></td><td></td><td><p>The video width.</p>
 </td>
     </tr><tr>
-    <td>[config.videoDeviceConfig.height]</td><td><code>int</code></td><td></td><td><p>video height.</p>
+    <td>[config.videoDeviceConfig.height]</td><td><code>int</code></td><td></td><td><p>The video height.</p>
 </td>
     </tr><tr>
-    <td>[config.videoDeviceConfig.framerate]</td><td><code>int</code></td><td></td><td><p>video framerate.</p>
+    <td>[config.videoDeviceConfig.framerate]</td><td><code>int</code></td><td></td><td><p>The video framerate.</p>
 </td>
     </tr><tr>
-    <td>videoDeviceConfig.source</td><td><code>String</code></td><td></td><td><p>the video source to be requested
+    <td>videoDeviceConfig.source</td><td><code>String</code></td><td></td><td><p>The video source to be requested
 valid parameters: &#39;camera&#39; | &#39;screen&#39;.</p>
 </td>
     </tr><tr>
     <td>config.audioDeviceConfig</td><td><code>object</code></td><td></td><td><p>The audio config object.</p>
 </td>
     </tr><tr>
-    <td>config.audioDeviceConfig.device</td><td><code>int</code></td><td></td><td><p>device id to use.</p>
+    <td>config.audioDeviceConfig.device</td><td><code>int</code></td><td></td><td><p>The device id to use.</p>
 </td>
     </tr><tr>
     <td>config.elementId</td><td><code>string</code></td><td></td><td><p>The id of a video element to pass in the requested stream directly.</p>
@@ -746,7 +748,7 @@ rtcUser.startPreview(config);
 Stops the preview.
 
 **Kind**: instance method of [<code>RtcUser</code>](#RtcUser)  
-**Emits**: <code>event:StopPreviewSuccess</code>, <code>event:StopPreviewError</code>  
+**Emits**: [<code>StopPreviewSuccess</code>](#RtcUser+event_StopPreviewSuccess), [<code>StopPreviewError</code>](#RtcUser+event_StopPreviewError)  
 **Example**  
 ```js
 // rtcUser instance of RtcUser
@@ -877,54 +879,139 @@ rtcUser.injectExternalMediaStream(data);
 -----
 
 ## Events
+<a name="RtcUser+event_SignInSuccess"></a>
+
+### "SignInSuccess"
+SignInSuccess event. The event is fired if sign in succeeded.
+
+**Kind**: event emitted by [<code>RtcUser</code>](#RtcUser)  
+**Typeof**: [<code>SignInSuccessEvent</code>](#SignInSuccessEvent)  
+<a name="RtcUser+event_SignInError"></a>
+
+### "SignInError"
+SignInError event. The event is fired if sign in failed.
+
+**Kind**: event emitted by [<code>RtcUser</code>](#RtcUser)  
+**Typeof**: [<code>ErrorEvent</code>](#ErrorEvent)  
+<a name="RtcUser+event_SignOutSuccess"></a>
+
+### "SignOutSuccess"
+SignOutSuccess event. The event is fired if sign out succeeded.
+
+**Kind**: event emitted by [<code>RtcUser</code>](#RtcUser)  
+**Typeof**: [<code>SuccessEvent</code>](#SuccessEvent)  
+<a name="RtcUser+event_SignOutError"></a>
+
+### "SignOutError"
+SignOutError event. The event is fired if sign out failed.
+
+**Kind**: event emitted by [<code>RtcUser</code>](#RtcUser)  
+**Typeof**: [<code>ErrorEvent</code>](#ErrorEvent)  
+<a name="RtcUser+event_ReceivedServerStats"></a>
+
+### "ReceivedServerStats"
+ReceivedServerStats event. The event is fired if server stats is received.
+
+**Kind**: event emitted by [<code>RtcUser</code>](#RtcUser)  
+**Typeof**: [<code>ServerStatsEvent</code>](#ServerStatsEvent)  
+<a name="RtcUser+event_ReceivedWebRTCStats"></a>
+
+### "ReceivedWebRTCStats"
+ReceivedWebRTCStats event. The event is fired multiple times between the "start" and "stop" broadcast events. The payload contains WebRTC stats information.
+
+**Kind**: event emitted by [<code>RtcUser</code>](#RtcUser)  
+**Typeof**: [<code>WebRTCStatsEvent</code>](#WebRTCStatsEvent)  
 <a name="RtcUser+event_StartBroadcastSuccess"></a>
 
 ### "StartBroadcastSuccess"
-The event is fired if a broadcast started successfully.
+StartBroadcastSuccess event. The event is fired if a broadcast started successfully.
 
 **Kind**: event emitted by [<code>RtcUser</code>](#RtcUser)  
+**Typeof**: [<code>SuccessEvent</code>](#SuccessEvent)  
 <a name="RtcUser+event_StartBroadcastError"></a>
 
 ### "StartBroadcastError"
-The event is fired if a broadcast failed to start.
+StartBroadcastError event. The event is fired if a broadcast failed to start.
 
 **Kind**: event emitted by [<code>RtcUser</code>](#RtcUser)  
+**Typeof**: [<code>ErrorEvent</code>](#ErrorEvent)  
 <a name="RtcUser+event_BroadcastStatus"></a>
 
 ### "BroadcastStatus"
-The event is fired multiple times between the "start" and "stop" broadcast events. The payload contains information about the connection state.
+BroadcastStatus event. The event is fired multiple times between the "start" and "stop" broadcast events. The payload contains information about the connection state.
 
 **Kind**: event emitted by [<code>RtcUser</code>](#RtcUser)  
+**Typeof**: [<code>StatusEvent</code>](#StatusEvent)  
 <a name="RtcUser+event_BroadcastError"></a>
 
 ### "BroadcastError"
-The event is fired if a broadcasting error occurred between the "start" and "stop" broadcast events.
+BroadcastError event. The event is fired if a broadcasting error occurred between the "start" and "stop" broadcast events.
 
 **Kind**: event emitted by [<code>RtcUser</code>](#RtcUser)  
+**Typeof**: [<code>ErrorEvent</code>](#ErrorEvent)  
 <a name="RtcUser+event_StopBroadcastSuccess"></a>
 
 ### "StopBroadcastSuccess"
-StopBroadcastSuccess event. The event is fired in case if a broadcast stopped successfully. It does not contain an event payload.
+StopBroadcastSuccess event. The event is fired if a broadcast stopped successfully. It does not contain an event payload.
 
 **Kind**: event emitted by [<code>RtcUser</code>](#RtcUser)  
+**Typeof**: [<code>SuccessEvent</code>](#SuccessEvent)  
 <a name="RtcUser+event_StopBroadcastError"></a>
 
 ### "StopBroadcastError"
-StopBroadcastError event. The event is fired in case if a broadcast failed to execute the "stop" call as it is expected. Note: the broadcast is guaranteed to stop before the event is fired.
+StopBroadcastError event. The event is fired if a broadcast failed to execute the "stop" call as it is expected. Note: the broadcast is guaranteed to stop before the event is fired.
 
 **Kind**: event emitted by [<code>RtcUser</code>](#RtcUser)  
+**Typeof**: [<code>ErrorEvent</code>](#ErrorEvent)  
+<a name="RtcUser+event_ReceivedDeviceList"></a>
+
+### "ReceivedDeviceList"
+ReceivedDeviceList event. The event is fired if a list of connected input video and audio devices is received.
+
+**Kind**: event emitted by [<code>RtcUser</code>](#RtcUser)  
+**Typeof**: [<code>DevicesReceivedEvent</code>](#DevicesReceivedEvent)  
 <a name="RtcUser+event_GetSelectedDeviceError"></a>
 
 ### "GetSelectedDeviceError"
 GetSelectedDeviceError event. The event is fired if a selected video/audio device getting failed.
 
 **Kind**: event emitted by [<code>RtcUser</code>](#RtcUser)  
+**Typeof**: [<code>ErrorEvent</code>](#ErrorEvent)  
+<a name="RtcUser+event_StartPreviewSuccess"></a>
+
+### "StartPreviewSuccess"
+StartPreviewSuccess event. The event is fired if a preview started successfully.
+
+**Kind**: event emitted by [<code>RtcUser</code>](#RtcUser)  
+**Typeof**: [<code>StartPreviewSuccessEvent</code>](#StartPreviewSuccessEvent)  
+<a name="RtcUser+event_StartPreviewError"></a>
+
+### "StartPreviewError"
+StartPreviewError event. The event is fired if a preview failed to start.
+
+**Kind**: event emitted by [<code>RtcUser</code>](#RtcUser)  
+**Typeof**: [<code>ErrorEvent</code>](#ErrorEvent)  
+<a name="RtcUser+event_StopPreviewSuccess"></a>
+
+### "StopPreviewSuccess"
+StopPreviewSuccess event. The event is fired if a preview stopped successfully.
+
+**Kind**: event emitted by [<code>RtcUser</code>](#RtcUser)  
+**Typeof**: [<code>SuccessEvent</code>](#SuccessEvent)  
+<a name="RtcUser+event_StopPreviewError"></a>
+
+### "StopPreviewError"
+StopPreviewError event. The event is fired if a preview failed to stop. Note: the preview is guaranteed to stop before the event is fired.
+
+**Kind**: event emitted by [<code>RtcUser</code>](#RtcUser)  
+**Typeof**: [<code>ErrorEvent</code>](#ErrorEvent)  
 <a name="RtcUser+event_MuteDeviceError"></a>
 
 ### "MuteDeviceError"
 MuteDeviceError event. The event is fired if a video/audio device mute/unmute failed.
 
 **Kind**: event emitted by [<code>RtcUser</code>](#RtcUser)  
+**Typeof**: [<code>ErrorEvent</code>](#ErrorEvent)  
 
 -----
 
@@ -972,6 +1059,31 @@ MuteDeviceError event. The event is fired if a video/audio device mute/unmute fa
     </tr>  </tbody>
 </table>
 
+<a name="SuccessEvent"></a>
+
+### SuccessEvent : <code>object</code>
+**Kind**: global typedef  
+**Properties**
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th><th>Type</th><th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+<tr>
+    <td>[data]</td><td><code>object</code></td><td><p>The data object. Note: the object is optional, therefore, its presence is not guaranteed.</p>
+</td>
+    </tr><tr>
+    <td>[data.streamname]</td><td><code>string</code></td><td><p>The rtmp ingest streamname. Note: the parameter is optional, therefore, its presence is not guaranteed.</p>
+</td>
+    </tr><tr>
+    <td>[data.stream]</td><td><code>object</code></td><td><p>The stream object. Note: the parameter is optional, therefore, its presence is not guaranteed.</p>
+</td>
+    </tr>  </tbody>
+</table>
+
 <a name="StatusEvent"></a>
 
 ### StatusEvent : <code>object</code>
@@ -1011,6 +1123,287 @@ MuteDeviceError event. The event is fired if a video/audio device mute/unmute fa
 </td>
     </tr><tr>
     <td>[target]</td><td><code>object</code></td><td><p>Reserved for internal developer&#39;s use - Deprecated: will be removed in WebRTC-Client v.6.</p>
+</td>
+    </tr>  </tbody>
+</table>
+
+<a name="DevicesReceivedEvent"></a>
+
+### DevicesReceivedEvent : <code>object</code>
+**Kind**: global typedef  
+**Properties**
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th><th>Type</th><th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+<tr>
+    <td>data</td><td><code>object</code></td><td><p>The data object.</p>
+</td>
+    </tr><tr>
+    <td>data.devices</td><td><code>object</code></td><td><p>The audio and video devices object.</p>
+</td>
+    </tr><tr>
+    <td>[data.devices.audiodevices]</td><td><code>Array.&lt;object&gt;</code></td><td><p>An array of connected input audio devices.</p>
+</td>
+    </tr><tr>
+    <td>data.devices.audiodevices.id</td><td><code>string</code></td><td><p>The id of an audio device.</p>
+</td>
+    </tr><tr>
+    <td>data.devices.audiodevices.index</td><td><code>number</code></td><td><p>The index of an audio device. Note: indices start from 0.</p>
+</td>
+    </tr><tr>
+    <td>[data.devices.videodevices]</td><td><code>Array.&lt;object&gt;</code></td><td><p>An array of connected input video devices.</p>
+</td>
+    </tr><tr>
+    <td>data.devices.videodevices.id</td><td><code>string</code></td><td><p>The id of a video device.</p>
+</td>
+    </tr><tr>
+    <td>data.devices.videodevices.index</td><td><code>number</code></td><td><p>The index of a video device. Note: indices start from 0.</p>
+</td>
+    </tr><tr>
+    <td>data.updated</td><td><code>boolean</code></td><td><p>Reserved for internal developer&#39;s use - Deprecated: will be removed in WebRTC-Client v.6.</p>
+</td>
+    </tr>  </tbody>
+</table>
+
+<a name="StartPreviewSuccessEvent"></a>
+
+### StartPreviewSuccessEvent : <code>object</code>
+**Kind**: global typedef  
+**Properties**
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th><th>Type</th><th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+<tr>
+    <td>data</td><td><code>object</code></td><td><p>The data object.</p>
+</td>
+    </tr><tr>
+    <td>data.constraints</td><td><code>object</code></td><td><p>The constraints object.</p>
+</td>
+    </tr><tr>
+    <td>[data.constraints.audio]</td><td><code>object</code></td><td><p>The audio constraints object.</p>
+</td>
+    </tr><tr>
+    <td>data.constraints.audio.deviceId</td><td><code>object</code></td><td><p>The id of an audio device.</p>
+</td>
+    </tr><tr>
+    <td>[data.constraints.video]</td><td><code>object</code></td><td><p>The video constraints object.</p>
+</td>
+    </tr><tr>
+    <td>data.constraints.video.deviceId</td><td><code>object</code></td><td><p>The id of a video device.</p>
+</td>
+    </tr><tr>
+    <td>[data.constraints.video.framerate]</td><td><code>object</code></td><td><p>The video framerate.</p>
+</td>
+    </tr><tr>
+    <td>[data.constraints.video.height]</td><td><code>object</code></td><td><p>The video height.</p>
+</td>
+    </tr><tr>
+    <td>data.constraints.video.source</td><td><code>string</code></td><td><p>The video source.</p>
+</td>
+    </tr><tr>
+    <td>[data.constraints.video.width]</td><td><code>object</code></td><td><p>The video width.</p>
+</td>
+    </tr><tr>
+    <td>data.metadata</td><td><code>object</code></td><td><p>The metadata object.</p>
+</td>
+    </tr><tr>
+    <td>data.metadata.framerate</td><td><code>number</code></td><td><p>The video framerate set in metdata.</p>
+</td>
+    </tr><tr>
+    <td>data.metadata.hasAudio</td><td><code>number</code></td><td><p>A flag to indicate that audio is present.</p>
+</td>
+    </tr><tr>
+    <td>data.metadata.hasVideo</td><td><code>number</code></td><td><p>A flag to indicate that video is present.</p>
+</td>
+    </tr><tr>
+    <td>data.metadata.height</td><td><code>number</code></td><td><p>The video height set in metadata.</p>
+</td>
+    </tr><tr>
+    <td>data.metadata.width</td><td><code>number</code></td><td><p>The video width set in metadata.</p>
+</td>
+    </tr><tr>
+    <td>data.stream</td><td><code>object</code></td><td><p>The stream object.</p>
+</td>
+    </tr><tr>
+    <td>data.stream.active</td><td><code>boolean</code></td><td><p>A flag to indicate that a stream is active.</p>
+</td>
+    </tr><tr>
+    <td>data.stream.id</td><td><code>string</code></td><td><p>The stream id.</p>
+</td>
+    </tr>  </tbody>
+</table>
+
+<a name="SignInSuccessEvent"></a>
+
+### SignInSuccessEvent : <code>object</code>
+**Kind**: global typedef  
+**Properties**
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th><th>Type</th><th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+<tr>
+    <td>data</td><td><code>object</code></td><td><p>The data object.</p>
+</td>
+    </tr><tr>
+    <td>data.server</td><td><code>string</code></td><td><p>The url of the WebRTC server</p>
+</td>
+    </tr><tr>
+    <td>data.userId</td><td><code>string</code></td><td><p>The user id of the WebRTC server.</p>
+</td>
+    </tr>  </tbody>
+</table>
+
+<a name="ServerStatsEvent"></a>
+
+### ServerStatsEvent : <code>object</code>
+**Kind**: global typedef  
+**Properties**
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th><th>Type</th><th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+<tr>
+    <td>data</td><td><code>object</code></td><td><p>The data object.</p>
+</td>
+    </tr><tr>
+    <td>data.stats</td><td><code>object</code></td><td><p>The stats object.</p>
+</td>
+    </tr><tr>
+    <td>data.stats.active_connections</td><td><code>number</code></td><td><p>The total number of active connections to the WebRTC server.</p>
+</td>
+    </tr><tr>
+    <td>data.stats.active_passthroughs</td><td><code>number</code></td><td><p>The number of active connections with passthrough enabled to the WebRTC server.</p>
+</td>
+    </tr><tr>
+    <td>data.stats.active_transcoders</td><td><code>number</code></td><td><p>The number of active connections with transcoding enabled to the WebRTC server.</p>
+</td>
+    </tr><tr>
+    <td>data.stats.cpu_load</td><td><code>number</code></td><td><p>The WebRTC server CPU load.</p>
+</td>
+    </tr><tr>
+    <td>data.stats.disk_space</td><td><code>number</code></td><td><p>The WebRTC server disk space.</p>
+</td>
+    </tr><tr>
+    <td>data.stats.domainname</td><td><code>string</code></td><td><p>The WebRTC server domain name.</p>
+</td>
+    </tr><tr>
+    <td>data.stats.hostname</td><td><code>string</code></td><td><p>The WebRTC server host name.</p>
+</td>
+    </tr><tr>
+    <td>data.stats.license</td><td><code>object</code></td><td><p>The WebRTC server license.</p>
+</td>
+    </tr><tr>
+    <td>data.stats.license.end</td><td><code>string</code></td><td><p>The license expiration date.</p>
+</td>
+    </tr><tr>
+    <td>data.stats.license.expired</td><td><code>boolean</code></td><td><p>A flag to indicate that the license has expired.</p>
+</td>
+    </tr><tr>
+    <td>data.stats.license.expiring</td><td><code>boolean</code></td><td><p>A flag to indicate if the license has an end date or not.</p>
+</td>
+    </tr><tr>
+    <td>data.stats.license.start</td><td><code>string</code></td><td><p>The license issue date.</p>
+</td>
+    </tr><tr>
+    <td>data.stats.license.valid</td><td><code>boolean</code></td><td><p>A flag to indicate that the license is valid.</p>
+</td>
+    </tr><tr>
+    <td>data.stats.max_cpu_load</td><td><code>number</code></td><td><p>The WebRTC server maximum CPU load.</p>
+</td>
+    </tr><tr>
+    <td>data.stats.max_transcoders</td><td><code>number</code></td><td><p>The WebRTC server maximum number of transcoders.</p>
+</td>
+    </tr><tr>
+    <td>data.stats.server_version</td><td><code>string</code></td><td><p>The version of the WebRTC server.</p>
+</td>
+    </tr><tr>
+    <td>data.stats.transcoder_version</td><td><code>string</code></td><td><p>The version of the transcoder.</p>
+</td>
+    </tr><tr>
+    <td>name</td><td><code>string</code></td><td><p>The name of the event.</p>
+</td>
+    </tr><tr>
+    <td>target</td><td><code>string</code></td><td><p>Reserved for internal developer&#39;s use - Deprecated: will be removed in WebRTC-Client v.6.</p>
+</td>
+    </tr>  </tbody>
+</table>
+
+<a name="WebRTCStatsEvent"></a>
+
+### WebRTCStatsEvent : <code>object</code>
+**Kind**: global typedef  
+**Properties**
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th><th>Type</th><th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+<tr>
+    <td>data</td><td><code>object</code></td><td><p>The data object.</p>
+</td>
+    </tr><tr>
+    <td>data.message</td><td><code>string</code></td><td><p>The connection state message (expected value: &#39;broadcasting&#39;).</p>
+</td>
+    </tr><tr>
+    <td>data.stats.results</td><td><code>object</code></td><td><p>The results object.</p>
+</td>
+    </tr><tr>
+    <td>[data.stats.results.audio_bitrate]</td><td><code>string</code></td><td><p>The audio bitrate. Note: the value is optional, therefore, its presence is not guaranteed.</p>
+</td>
+    </tr><tr>
+    <td>[data.stats.results.audio_codec]</td><td><code>string</code></td><td><p>The audio codec. Note: the value is optional, therefore, its presence is not guaranteed.</p>
+</td>
+    </tr><tr>
+    <td>[data.stats.results.codec]</td><td><code>string</code></td><td><p>The video codec. Note: the value is optional, therefore, its presence is not guaranteed.</p>
+</td>
+    </tr><tr>
+    <td>[data.stats.results.frameHeight]</td><td><code>number</code></td><td><p>The video frame height. Note: the value is optional, therefore, its presence is not guaranteed.</p>
+</td>
+    </tr><tr>
+    <td>[data.stats.results.frameWidth]</td><td><code>number</code></td><td><p>The video frame width. Note: the value is optional, therefore, its presence is not guaranteed.</p>
+</td>
+    </tr><tr>
+    <td>[data.stats.results.framerate]</td><td><code>number</code></td><td><p>The video frame rate. Note: the value is optional, therefore, its presence is not guaranteed.</p>
+</td>
+    </tr><tr>
+    <td>[data.stats.results.video_bitrate]</td><td><code>number</code></td><td><p>The video bitrate. Note: the value is optional, therefore, its presence is not guaranteed.</p>
+</td>
+    </tr><tr>
+    <td>data.stats.state</td><td><code>number</code></td><td><p>The connection state (expected value: 6 = &#39;broadcasting&#39;).</p>
+</td>
+    </tr><tr>
+    <td>data.stats.streamname</td><td><code>string</code></td><td><p>The rtmp ingest streamname.</p>
+</td>
+    </tr><tr>
+    <td>data.stats.text</td><td><code>string</code></td><td><p>The connection state text (expected value: &#39;broadcasting&#39;).</p>
+</td>
+    </tr><tr>
+    <td>name</td><td><code>string</code></td><td><p>The name of the event.</p>
+</td>
+    </tr><tr>
+    <td>target</td><td><code>string</code></td><td><p>Reserved for internal developer&#39;s use - Deprecated: will be removed in WebRTC-Client v.6.</p>
 </td>
     </tr>  </tbody>
 </table>
