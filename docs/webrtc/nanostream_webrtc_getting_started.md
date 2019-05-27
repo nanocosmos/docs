@@ -93,7 +93,7 @@ Within your HTML:
 
     // example bintu rtmp url
     // you should use the bintu api to obtain a valid ingest URL (see below)
-    var myOutputStream = "rtmp://bintu-stream.nanocosmos.de/live";
+    var myOutputStreamUrl = "rtmp://bintu-stream.nanocosmos.de/live";
     var myOutputStreamName = "P4gSV-12345";
         
     // get connected devices
@@ -140,7 +140,7 @@ Within your HTML:
     document.getElementById("btn-startbroadcast").addEventListener("click", function() {      
       var broadcastConfig = {
         transcodingTargets: {
-          output: myOutputStream,
+          output: myOutputStreamUrl,
           streamname: myOutputStreamName
         }
       };
