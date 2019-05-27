@@ -78,8 +78,6 @@ Within your HTML:
     // sign into the cloud
     user.signIn({
       server: "wss://bintu-webrtc.nanocosmos.de/p/webrtcws",
-      userName: "myName",
-      room: "myRoom",
       // token or bintu API key for authentication
       token: "myToken",
       bintuApiKey: "myBintuApiKey"
@@ -142,7 +140,8 @@ Within your HTML:
     document.getElementById("btn-startbroadcast").addEventListener("click", function() {      
       var broadcastConfig = {
         transcodingTargets: {
-          output: myOutputStream 
+          output: myOutputStream,
+          streamname: myOutputStreamName
         }
       };
           
