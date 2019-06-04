@@ -5,7 +5,44 @@ sidebar_label: Release History
 ---
 
 
+
+## [3.18.2]
+
+### Added
+
+- new config parameter 'style.backgroundColor' to enable custom background colors in the player div
+- new config parameter 'style.fullScreenControl' to show or hide the full-screen button in the inline player controls
+
+~~~~
+        config.style.backgroundColor = 'black'
+        config.style.fullScreenControl = true
+~~~~
+
+### Improved
+
+- browser version detection for Safari macOS
+
+## [3.18.1]
+
+### Added
+
+- new config parameter 'playback.allowSafariHlsPlayback' to enable selecting the playback method in Safari Mac OS X and utilize H5Live low latency HLS if appropriate (default:false)
+
+~~~~
+        config.playback.allowSafariHlsPlayback = true
+~~~~
+
+- send quality values in metrics stats event
+
+### Fixed
+
+- use bintu rtmp playout object in case h5live rtmp object isn't defined
+- catch missing server object in config
+- fix 'undefined' error at destroy
+- always recover playback on Edge at frame dropping if player is visible
+
 ## [3.17.4]
+
 
 ### Release Notes
 
