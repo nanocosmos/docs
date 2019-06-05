@@ -106,18 +106,24 @@ Within your HTML:
       var audioDevices = event.data.devices.audiodevices;
       var videoDevices = event.data.devices.videodevices;
     
+      // SELECT A/V DEVICES TO PREVIEW 
+      // select a device by index from audioDevices/videoDevices,
+      // for simplicity of this sample we select the first device
+      // for audio and video (index = 0) in the next step.
+      // you might need to change this for multiple cams/mics 
+ 
       // we choose the first video device:
       var videoDeviceConfig = {
-        device: 0
+        device: 0 // first camera
       };
           
       // we choose the first audio device:
       var audioDeviceConfig = {
-        device: 0
+        device: 0 // first microphone
       };
     
-      // we start the preview in a video element:
-      var videoElement = "video-local"; // id of `<video>` tag for preview
+      // we start the preview in this html <video> element:
+      var videoElement = "video-local"; 
       
       var config = {
         videoDeviceConfig: videoDeviceConfig,
@@ -125,18 +131,13 @@ Within your HTML:
         elementId: videoElement
       };
           
+      // start camera preview
       user.startPreview(config);
       
     });
-        
-    user.on("StartPreviewSuccess", function(event) {  
-      // preview succeeded
-    });
-        
-    user.on("StartPreviewError", function(event) {
-      // handle error
-    });
-        
+
+    // start/stop button handlers
+    
     document.getElementById("btn-startbroadcast").addEventListener("click", function() {      
       var broadcastConfig = {
         transcodingTargets: {
@@ -153,7 +154,17 @@ Within your HTML:
       // stop the broadcast
       user.stopBroadcast();
     });
-        
+
+    // event/error handlers
+ 
+    user.on("StartPreviewSuccess", function(event) {  
+      console.log("preview succeeded");
+    });
+ 
+    user.on("StartPreviewError", function(event) {
+      console.log('Error starting preview: ' + event.data.error);
+    });
+
     user.on("StartBroadcastSuccess", function(event) {
       // broadcast has started
     });
@@ -164,11 +175,37 @@ Within your HTML:
 </script>
 ```
 
+## Streaming only audio or video
 
+If you want to braodcast a stream that contains only audio or video you can do that by starting the preview accordingly:
+
+<code javascript>
+...
+// we pass "false" for either the video device configuration or
+// for the audio device configuration
+ var videoDeviceConfig = {
+  device: false // set "device: false" for "audio only" streaming
+ };
+ 
+ // we choose the first audio device:
+ var audioDeviceConfig = {
+  device: false // set "device: false" for "video only" streaming
+ };
+
+var config = {
+  videoDeviceConfig: videoDeviceConfig,
+  audioDeviceConfig: audioDeviceConfig,
+  elementId: videoElement
+};
+ 
+user.startPreview(config);
+...
+
+</code>
 
 ## nanoStream Cloud End-To-End Workflow
 
-The following describes a plugin free end to end streaming solution with nanostream WebRTC, nanostream cloud and nanostream h5live player.
+The following describes a plugin-free end to end streaming solution from the camera to the viewer, with nanostream WebRTC, nanoStream Cloud and nanoStream h5live player.
 
 
 
@@ -214,14 +251,21 @@ If you don't already have a stream url you can create a new webrtc enabled strea
 If you have a valid `RTMP` URL, you can use this to create a live broadcast: (see the example above):
 
 ```javascript
-var broadcastConfig = {
-    transcodingTargets: {
-        output: myOutputStreamUrl,  // rtmp://...
-        streamname: myOutputStreamName
-    }
-};
+   // example bintu rtmp url
+   // you should use the bintu api to obtain a valid ingest URL
+   var myOutputStreamUrl = "rtmp://bintu-stream.nanocosmos.de/live/";
+   var myOutputStreamName = "P4gSV-12345";
+ 
+   var broadcastConfig = {
+       transcodingTargets: {
+           output: myOutputStreamUrl,
+           streamname: myOutputStreamName
+       }
+   };
+ 
+    // start the broadcast
+    user.startBroadcast(broadcastConfig);
 ```
-
 
 
 
@@ -279,7 +323,7 @@ Example:
 ```
 
 
-## Playing back from our servers
+## Live Playback with H5Live Player and nanoStream Cloud
 
 You can play back from our servers with the [H5Live Player](http://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_introduction)
 
