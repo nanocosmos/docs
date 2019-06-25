@@ -9,14 +9,13 @@
 // site configuration options.
 
 const siteConfig = {
-  title: 'nanocosmos Documentation', // Title for your website.
   tagline: 'nanoStream Cloud & H5Live Player - Around The World in 1 Second',
   url: 'https://docs.nanocosmos.de', // Your website URL
   baseUrl: '/', // Base URL for your project */
   // For github.io type URLs, you would set the url and baseUrl like:
   //   url: 'https://facebook.github.io',
   //   baseUrl: '/test-site/',
-  cname: 'docs.nanocosmos.de',
+  cname: 'docs-gh.nanocosmos.de',
   
   // Used for publishing and more
   projectName: 'docs',
