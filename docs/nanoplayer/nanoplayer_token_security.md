@@ -26,7 +26,7 @@ Test data (common):
 *Request*:
 
 ```bash
-curl -X POST https://bintu-splay.nanocosmos.de/secure/stream -H "Content-Type: application/json" -H "X-BINTU-APIKEY: [your Bintu API key]" -d "{"streamname": "[your Bintu stream name]", "secret": "[your secret]"}"
+curl -X POST https://bintu-splay.nanocosmos.de/secure/stream -H "Content-Type: application/json" -H "X-BINTU-APIKEY: [your Bintu API key]" -d "{\"streamname\": \"[your Bintu stream name]\", \"secret\": \"[your secret]\"}"
 ```
 
 ### Step 2. Generate a token ...
@@ -35,16 +35,16 @@ curl -X POST https://bintu-splay.nanocosmos.de/secure/stream -H "Content-Type: a
 >
 > The expiration date time for the parameter `expires` is expected to be in **SECONDS**. Using milliseconds will lead to expiration dates far in the future and won't be accepted by the token generation API!
 
-#### (a) ... with a custom tag and an expiration date
+#### (a). ...with a Bintu stream name, custom tag, and an expiration date in the future
 
 Test data (additional):
 
-  * Expires: 1567728000 = 09/06/2019 @ 12:00am (UTC) **[expiration date and time in SECONDS in Unix time format and UTC; cannot be in the past or more than 365 days in the future]**
+  * Expires: 1591747200 = 06/10/2020 @ 12:00am (UTC) **[expiration date and time in SECONDS in Unix time format and UTC; cannot be in the past or more than 365 days in the future]**
 
 *Request:*
 
 ```bash
-curl -X POST https://bintu-splay.nanocosmos.de/secure/token -H "Content-Type: application/json" -H "X-BINTU-APIKEY: [your Bintu API key]" -d "{"streamname": "[your Bintu stream name]", "tag": "[your custom tag]", "expires": "1567728000"}"
+curl -X POST https://bintu-splay.nanocosmos.de/secure/token -H "Content-Type: application/json" -H "X-BINTU-APIKEY: [your Bintu API key]" -d "{\"streamname\": \"[your Bintu stream name]\", \"tag\": \"[your custom tag]\", \"expires\": \"1591747200\"}"
 ```
 
 *Response:*
@@ -53,7 +53,7 @@ curl -X POST https://bintu-splay.nanocosmos.de/secure/token -H "Content-Type: ap
 {
     "h5live": {
         "security": {
-            "expires": "1567728000",
+            "expires": "1591747200",
             "tag": "[your custom tag]",
             "token": "[your token will be here]",
             "options": 9
@@ -62,12 +62,39 @@ curl -X POST https://bintu-splay.nanocosmos.de/secure/token -H "Content-Type: ap
 }
 ```
 
-#### (b) ... with a client IP
+#### (b). ...with a Bintu orga hash, custom tag, and an expiration date in the future
+
+Test data (additional):
+
+  * Expires: 1591747200 = 06/10/2020 @ 12:00am (UTC) **[expiration date and time in SECONDS in Unix time format and UTC; cannot be in the past or more than 365 days in the future]**
 
 *Request:*
 
 ```bash
-curl -X POST https://bintu-splay.nanocosmos.de/secure/token -H "Content-Type: application/json" -H "X-BINTU-APIKEY: [your Bintu API key]" -d "{"streamname": "[your Bintu stream name]", "ip": "[your client ip]"}"
+curl -X POST https://bintu-splay.nanocosmos.de/secure/token -H "Content-Type: application/json" -H "X-BINTU-APIKEY: [your Bintu API key]" -d "{\"orga\": \"[your Bintu orga hash]\", \"tag\": \"[your custom tag]\", \"expires\": \"1591747200\"}"
+```
+
+*Response:*
+
+```
+{
+    "h5live": {
+        "security": {
+            "expires": "1591747200",
+            "tag": "[your custom tag]",
+            "token": "[your token will be here]",
+            "options": 25
+        }
+    }
+}
+```
+
+#### (c). ...with a client IP
+
+*Request:*
+
+```bash
+curl -X POST https://bintu-splay.nanocosmos.de/secure/token -H "Content-Type: application/json" -H "X-BINTU-APIKEY: [your Bintu API key]" -d "{\"streamname\": \"[your Bintu stream name]\", \"ip\": \"[your client ip]\"}"
 ```
 
 *Response:*
@@ -85,14 +112,15 @@ curl -X POST https://bintu-splay.nanocosmos.de/secure/token -H "Content-Type: ap
 }
 ```
 
-#### (c) ... with a custom tag and a referer
+#### (d). ...with a custom tag and a referer
 
-Test data (additional): *Referer:* `demo.nanocosmos.de`
+Test data (additional): 
+  * Referer: `demo.nanocosmos.de`
 
 *Request*:
 
 ```bash
-curl -X POST https://bintu-splay.nanocosmos.de/secure/token -H "Content-Type: application/json" -H "X-BINTU-APIKEY: [your Bintu API key]" -d "{"streamname": "[your Bintu stream name]", "tag": "[your custom tag]", "referer": "demo.nanocosmos.de"}"
+curl -X POST https://bintu-splay.nanocosmos.de/secure/token -H "Content-Type: application/json" -H "X-BINTU-APIKEY: [your Bintu API key]" -d "{\"streamname\": \"[your Bintu stream name]\", \"tag\": \"[your custom tag]\", \"referer\": \"demo.nanocosmos.de\"}"
 ```
 
 *Response*:
@@ -115,13 +143,14 @@ curl -X POST https://bintu-splay.nanocosmos.de/secure/token -H "Content-Type: ap
 Playback url - you have to replace the highlighted parameter values with your specific values:
 
 ```
-https://demo.nanocosmos.de/nanoplayer/release/nanoplayer.html?h5live.server.websocket=wss://bintu-splay.nanocosmos.de/h5live/authstream&h5live.server.hls=https://bintu-splay.nanocosmos.de/h5live/authhttp/playlist.m3u8&h5live.rtmp.url=rtmp://bintu-splay.nanocosmos.de/splay&h5live.rtmp.streamname=[your Bintu stream name]&h5live.security.expires=[expires from response]&h5live.security.tag=[tag from response]&h5live.security.token=[token from response]&h5live.security.options=[options from response]
+https://demo.nanocosmos.de/nanoplayer/release/nanoplayer.html?h5live.server.websocket=wss://bintu-splay.nanocosmos.de/h5live/authstream&h5live.server.hls=https://bintu-splay.nanocosmos.de/h5live/authhttp/playlist.m3u8&h5live.rtmp.url=rtmp://bintu-splay.nanocosmos.de/splay&h5live.rtmp.streamname=**[your Bintu stream name]**&h5live.security.expires=**[expires from response]**&h5live.security.tag=**[tag from response]**&h5live.security.token=**[token from response]**&h5live.security.options=**[options from response]**
 ```
 
 >**Explanation:**
->- Step 2 (a): the URL hasn’t expired yet, so the playback works.
->- Step 2 (b): the playback only works for a specified client ip.
->- Step 2 (c): the referrer is `demo.nanocosmos.de`, so the playback works.
+  * Step 2 (a): the URL hasn’t expired yet, so the playback works for a particular stream.
+  * Step 2 (b): the URL hasn’t expired yet, so the playback works for all the stream for a particular Bintu orga hash.
+  * Step 2 (c): the playback only works for a specified client ip.
+  * Step 2 (d): the referrer is demo.nanocosmos.de, so the playback works.
 
 To verify that the playback doesn't work with an incorrect referrer, 
 copy the code snippet generated on the link above to an `.html` file on a different domain.
