@@ -134,18 +134,24 @@ Playback can be done with nanoStream H5Live Player.</p>
       <span class="hljs-keyword">var</span> audioDevices = event.data.devices.audiodevices;
       <span class="hljs-keyword">var</span> videoDevices = event.data.devices.videodevices;
     
+      <span class="hljs-comment">// SELECT A/V DEVICES TO PREVIEW </span>
+      <span class="hljs-comment">// select a device by index from audioDevices/videoDevices,</span>
+      <span class="hljs-comment">// for simplicity of this sample we select the first device</span>
+      <span class="hljs-comment">// for audio and video (index = 0) in the next step.</span>
+      <span class="hljs-comment">// you might need to change this for multiple cams/mics </span>
+ 
       <span class="hljs-comment">// we choose the first video device:</span>
       <span class="hljs-keyword">var</span> videoDeviceConfig = {
-        <span class="hljs-attr">device</span>: <span class="hljs-number">0</span>
+        <span class="hljs-attr">device</span>: <span class="hljs-number">0</span> <span class="hljs-comment">// first camera</span>
       };
           
       <span class="hljs-comment">// we choose the first audio device:</span>
       <span class="hljs-keyword">var</span> audioDeviceConfig = {
-        <span class="hljs-attr">device</span>: <span class="hljs-number">0</span>
+        <span class="hljs-attr">device</span>: <span class="hljs-number">0</span> <span class="hljs-comment">// first microphone</span>
       };
     
-      <span class="hljs-comment">// we start the preview in a video element:</span>
-      <span class="hljs-keyword">var</span> videoElement = <span class="hljs-string">"video-local"</span>; <span class="hljs-comment">// id of `&lt;video&gt;` tag for preview</span>
+      <span class="hljs-comment">// we start the preview in this html &lt;video&gt; element:</span>
+      <span class="hljs-keyword">var</span> videoElement = <span class="hljs-string">"video-local"</span>; 
       
       <span class="hljs-keyword">var</span> config = {
         <span class="hljs-attr">videoDeviceConfig</span>: videoDeviceConfig,
@@ -153,18 +159,13 @@ Playback can be done with nanoStream H5Live Player.</p>
         <span class="hljs-attr">elementId</span>: videoElement
       };
           
+      <span class="hljs-comment">// start camera preview</span>
       user.startPreview(config);
       
     });
-        
-    user.on(<span class="hljs-string">"StartPreviewSuccess"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">event</span>) </span>{  
-      <span class="hljs-comment">// preview succeeded</span>
-    });
-        
-    user.on(<span class="hljs-string">"StartPreviewError"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">event</span>) </span>{
-      <span class="hljs-comment">// handle error</span>
-    });
-        
+
+    <span class="hljs-comment">// start/stop button handlers</span>
+    
     <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"btn-startbroadcast"</span>).addEventListener(<span class="hljs-string">"click"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{      
       <span class="hljs-keyword">var</span> broadcastConfig = {
         <span class="hljs-attr">transcodingTargets</span>: {
@@ -181,7 +182,17 @@ Playback can be done with nanoStream H5Live Player.</p>
       <span class="hljs-comment">// stop the broadcast</span>
       user.stopBroadcast();
     });
-        
+
+    <span class="hljs-comment">// event/error handlers</span>
+ 
+    user.on(<span class="hljs-string">"StartPreviewSuccess"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">event</span>) </span>{  
+      <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"preview succeeded"</span>);
+    });
+ 
+    user.on(<span class="hljs-string">"StartPreviewError"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">event</span>) </span>{
+      <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Error starting preview: '</span> + event.data.error);
+    });
+
     user.on(<span class="hljs-string">"StartBroadcastSuccess"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">event</span>) </span>{
       <span class="hljs-comment">// broadcast has started</span>
     });
@@ -191,8 +202,29 @@ Playback can be done with nanoStream H5Live Player.</p>
     });
 <span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span>
 </code></pre>
+<h2><a class="anchor" aria-hidden="true" id="streaming-only-audio-or-video"></a><a href="#streaming-only-audio-or-video" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Streaming only audio or video</h2>
+<p>If you want to braodcast a stream that contains only audio or video you can do that by starting the preview accordingly:</p>
+<p><code javascript>
+...
+// we pass &quot;false&quot; for either the video device configuration or
+// for the audio device configuration
+var videoDeviceConfig = {
+device: false // set &quot;device: false&quot; for &quot;audio only&quot; streaming
+};</p>
+<p>// we choose the first audio device:
+var audioDeviceConfig = {
+device: false // set &quot;device: false&quot; for &quot;video only&quot; streaming
+};</p>
+<p>var config = {
+videoDeviceConfig: videoDeviceConfig,
+audioDeviceConfig: audioDeviceConfig,
+elementId: videoElement
+};</p>
+<p>user.startPreview(config);
+...</p>
+<p></code></p>
 <h2><a class="anchor" aria-hidden="true" id="nanostream-cloud-end-to-end-workflow"></a><a href="#nanostream-cloud-end-to-end-workflow" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>nanoStream Cloud End-To-End Workflow</h2>
-<p>The following describes a plugin free end to end streaming solution with nanostream WebRTC, nanostream cloud and nanostream h5live player.</p>
+<p>The following describes a plugin-free end to end streaming solution from the camera to the viewer, with nanostream WebRTC, nanoStream Cloud and nanoStream h5live player.</p>
 <h2><a class="anchor" aria-hidden="true" id="creating-a-live-stream-for-broadcasting"></a><a href="#creating-a-live-stream-for-broadcasting" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Creating a live stream for broadcasting</h2>
 <p>To create a live stream to broadcast to your audience, you need to obtain an <code>RTMP</code> ingest URL from either nanoStream Cloud / bintu.live or your own <code>RTMP</code> server.</p>
 <h3><a class="anchor" aria-hidden="true" id="creating-a-stream-for-bintulive-with-bintujs"></a><a href="#creating-a-stream-for-bintulive-with-bintujs" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Creating a stream for bintu.live with bintu.js</h3>
@@ -223,12 +255,20 @@ Playback can be done with nanoStream H5Live Player.</p>
 <h2><a class="anchor" aria-hidden="true" id="live-stream-configuration"></a><a href="#live-stream-configuration" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Live Stream Configuration</h2>
 <h3><a class="anchor" aria-hidden="true" id="streaming-to-an-rtmp-url"></a><a href="#streaming-to-an-rtmp-url" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Streaming to an RTMP URL</h3>
 <p>If you have a valid <code>RTMP</code> URL, you can use this to create a live broadcast: (see the example above):</p>
-<pre><code class="hljs css language-javascript"><span class="hljs-keyword">var</span> broadcastConfig = {
-    <span class="hljs-attr">transcodingTargets</span>: {
-        <span class="hljs-attr">output</span>: myOutputStreamUrl,  <span class="hljs-comment">// rtmp://...</span>
-        streamname: myOutputStreamName
-    }
-};
+<pre><code class="hljs css language-javascript">   <span class="hljs-comment">// example bintu rtmp url</span>
+   <span class="hljs-comment">// you should use the bintu api to obtain a valid ingest URL</span>
+   <span class="hljs-keyword">var</span> myOutputStreamUrl = <span class="hljs-string">"rtmp://bintu-stream.nanocosmos.de/live/"</span>;
+   <span class="hljs-keyword">var</span> myOutputStreamName = <span class="hljs-string">"P4gSV-12345"</span>;
+ 
+   <span class="hljs-keyword">var</span> broadcastConfig = {
+       <span class="hljs-attr">transcodingTargets</span>: {
+           <span class="hljs-attr">output</span>: myOutputStreamUrl,
+           <span class="hljs-attr">streamname</span>: myOutputStreamName
+       }
+   };
+ 
+    <span class="hljs-comment">// start the broadcast</span>
+    user.startBroadcast(broadcastConfig);
 </code></pre>
 <pre><code class="hljs css language-javascript"><span class="hljs-keyword">var</span> broadcastConfig = {
     <span class="hljs-attr">transcodingTargets</span>: {
@@ -269,7 +309,7 @@ Playback can be done with nanoStream H5Live Player.</p>
    ],
 }
 </code></pre>
-<h2><a class="anchor" aria-hidden="true" id="playing-back-from-our-servers"></a><a href="#playing-back-from-our-servers" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Playing back from our servers</h2>
+<h2><a class="anchor" aria-hidden="true" id="live-playback-with-h5live-player-and-nanostream-cloud"></a><a href="#live-playback-with-h5live-player-and-nanostream-cloud" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Live Playback with H5Live Player and nanoStream Cloud</h2>
 <p>You can play back from our servers with the <a href="http://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_introduction">H5Live Player</a></p>
 <h2><a class="anchor" aria-hidden="true" id="camera-capture-device-testing"></a><a href="#camera-capture-device-testing" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Camera / Capture Device Testing</h2>
 <p><a href="https://webrtc.github.io/samples/src/content/devices/input-output/">https://webrtc.github.io/samples/src/content/devices/input-output/</a></p>
@@ -308,4 +348,4 @@ Please contact us to arrange an online meeting.</li>
 </ul>
 <h2><a class="anchor" aria-hidden="true" id="camera-capture-device-testing-1"></a><a href="#camera-capture-device-testing-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Camera / Capture Device Testing</h2>
 <p><a href="https://webrtc.github.io/samples/src/content/devices/input-output/">https://webrtc.github.io/samples/src/content/devices/input-output/</a></p>
-</span></div></article></div><div class="docLastUpdate"><em>Last updated on 2019-5-27</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/webrtc/nanostream_webrtc_introduction"><span class="arrow-prev">← </span><span>Introduction</span></a><a class="docs-next button" href="/docs/webrtc/nanostream_webrtc_demos"><span>Browser Demos</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#how-to-use-webrtclive-with-nanostream-cloud">How to use WebRTC.live with nanoStream Cloud?</a><ul class="toc-headings"><li><a href="#create-your-own-nanostream-cloud-account">Create your own nanoStream Cloud account</a></li></ul></li><li><a href="#nanostream-webrtc-browser-api">nanoStream WebRTC Browser API</a><ul class="toc-headings"><li><a href="#hosting-requirements">Hosting Requirements</a></li></ul></li><li><a href="#broadcast-sample">Broadcast Sample</a><ul class="toc-headings"><li><a href="#setup-the-user-interface-embed-the-library">Setup The User Interface &amp; Embed The Library</a></li><li><a href="#minimal-broadcast-sample">Minimal Broadcast Sample</a></li></ul></li><li><a href="#nanostream-cloud-end-to-end-workflow">nanoStream Cloud End-To-End Workflow</a></li><li><a href="#creating-a-live-stream-for-broadcasting">Creating a live stream for broadcasting</a><ul class="toc-headings"><li><a href="#creating-a-stream-for-bintulive-with-bintujs">Creating a stream for bintu.live with bintu.js</a></li></ul></li><li><a href="#live-stream-configuration">Live Stream Configuration</a><ul class="toc-headings"><li><a href="#streaming-to-an-rtmp-url">Streaming to an RTMP URL</a></li></ul></li><li><a href="#streaming-to-nanostream-cloud">Streaming to nanoStream Cloud</a></li><li><a href="#stream-status">Stream Status</a></li><li><a href="#playing-back-from-our-servers">Playing back from our servers</a></li><li><a href="#camera-capture-device-testing">Camera / Capture Device Testing</a><ul class="toc-headings"><li><a href="#log-information">Log information</a></li><li><a href="#remote-support">Remote Support</a></li></ul></li><li><a href="#camera-capture-device-testing-1">Camera / Capture Device Testing</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><div><h5>Contact</h5><a href="https://www.nanocosmos.de/">nanocosmos homepage</a><a href="https://www.nanocosmos.de/contact">Contact</a><a href="https://www.nanocosmos.de/support">Support</a><a href="https://www.nanocosmos.de/terma">Legal Terms</a></div><div><h5>Products</h5><a href="https://www.nanocosmos.de/cloud">Nanostream Cloud with Bintu.Live</a><a href="https://www.nanocosmos.de/h5live">H5Live Low Latency HTML5-Player</a><a href="https://www.nanocosmos.de/webrtc">WebRTC.Live</a><a href="https://www.nanocosmos.de/#nanostream">Nanostream Apps and SDK</a></div><div><h5>More</h5><a href="https://www.nanocosmos.de/blog/">Blog</a><a href="https://twitter.com/nanovideo">Twitter</a><a href="https://www.facebook.com/nanocosmos.net/">Facebook</a><a href="https://www.linkedin.com/company/nanocosmos-gmbh">LinkedIn</a><a href="https://github.com/nanocosmos/docs">GitHub</a><a class="github-button" href="https://github.com/nanocosmos/docs" data-icon="octicon-star" data-count-href="/nanocosmos/docs/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://nanocosmos.de/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/footer_logo.png" alt="nanocosmos GmbH" width="170" height="45"/></a><section class="copyright">Copyright © 2019 nanocosmos GmbH</section></footer></div></body></html>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 6/4/2019</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/webrtc/nanostream_webrtc_introduction"><span class="arrow-prev">← </span><span>Introduction</span></a><a class="docs-next button" href="/docs/webrtc/nanostream_webrtc_demos"><span>Browser Demos</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#how-to-use-webrtclive-with-nanostream-cloud">How to use WebRTC.live with nanoStream Cloud?</a><ul class="toc-headings"><li><a href="#create-your-own-nanostream-cloud-account">Create your own nanoStream Cloud account</a></li></ul></li><li><a href="#nanostream-webrtc-browser-api">nanoStream WebRTC Browser API</a><ul class="toc-headings"><li><a href="#hosting-requirements">Hosting Requirements</a></li></ul></li><li><a href="#broadcast-sample">Broadcast Sample</a><ul class="toc-headings"><li><a href="#setup-the-user-interface-embed-the-library">Setup The User Interface &amp; Embed The Library</a></li><li><a href="#minimal-broadcast-sample">Minimal Broadcast Sample</a></li></ul></li><li><a href="#streaming-only-audio-or-video">Streaming only audio or video</a></li><li><a href="#nanostream-cloud-end-to-end-workflow">nanoStream Cloud End-To-End Workflow</a></li><li><a href="#creating-a-live-stream-for-broadcasting">Creating a live stream for broadcasting</a><ul class="toc-headings"><li><a href="#creating-a-stream-for-bintulive-with-bintujs">Creating a stream for bintu.live with bintu.js</a></li></ul></li><li><a href="#live-stream-configuration">Live Stream Configuration</a><ul class="toc-headings"><li><a href="#streaming-to-an-rtmp-url">Streaming to an RTMP URL</a></li></ul></li><li><a href="#streaming-to-nanostream-cloud">Streaming to nanoStream Cloud</a></li><li><a href="#stream-status">Stream Status</a></li><li><a href="#live-playback-with-h5live-player-and-nanostream-cloud">Live Playback with H5Live Player and nanoStream Cloud</a></li><li><a href="#camera-capture-device-testing">Camera / Capture Device Testing</a><ul class="toc-headings"><li><a href="#log-information">Log information</a></li><li><a href="#remote-support">Remote Support</a></li></ul></li><li><a href="#camera-capture-device-testing-1">Camera / Capture Device Testing</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><div><h5>Contact</h5><a href="https://www.nanocosmos.de/">nanocosmos homepage</a><a href="https://www.nanocosmos.de/contact">Contact</a><a href="https://www.nanocosmos.de/support">Support</a><a href="https://www.nanocosmos.de/terma">Legal Terms</a></div><div><h5>Products</h5><a href="https://www.nanocosmos.de/cloud">Nanostream Cloud with Bintu.Live</a><a href="https://www.nanocosmos.de/h5live">H5Live Low Latency HTML5-Player</a><a href="https://www.nanocosmos.de/webrtc">WebRTC.Live</a><a href="https://www.nanocosmos.de/#nanostream">Nanostream Apps and SDK</a></div><div><h5>More</h5><a href="https://www.nanocosmos.de/blog/">Blog</a><a href="https://twitter.com/nanovideo">Twitter</a><a href="https://www.facebook.com/nanocosmos.net/">Facebook</a><a href="https://www.linkedin.com/company/nanocosmos-gmbh">LinkedIn</a><a href="https://github.com/nanocosmos/docs">GitHub</a><a class="github-button" href="https://github.com/nanocosmos/docs" data-icon="octicon-star" data-count-href="/nanocosmos/docs/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://nanocosmos.de/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/footer_logo.png" alt="nanocosmos GmbH" width="170" height="45"/></a><section class="copyright">Copyright © 2019 nanocosmos GmbH</section></footer></div></body></html>

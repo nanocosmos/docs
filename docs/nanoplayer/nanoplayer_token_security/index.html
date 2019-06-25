@@ -71,26 +71,26 @@
 <li>Secret: your secret as a <code>String</code></li>
 </ul>
 <p><em>Request</em>:</p>
-<pre><code class="hljs css language-bash">curl -X POST https://bintu-splay.nanocosmos.de/secure/stream -H <span class="hljs-string">"Content-Type: application/json"</span> -H <span class="hljs-string">"X-BINTU-APIKEY: [your Bintu API key]"</span> -d <span class="hljs-string">"{"</span>streamname<span class="hljs-string">": "</span>[your Bintu stream name]<span class="hljs-string">", "</span>secret<span class="hljs-string">": "</span>[your secret]<span class="hljs-string">"}"</span>
+<pre><code class="hljs css language-bash">curl -X POST https://bintu-splay.nanocosmos.de/secure/stream -H <span class="hljs-string">"Content-Type: application/json"</span> -H <span class="hljs-string">"X-BINTU-APIKEY: [your Bintu API key]"</span> -d <span class="hljs-string">"{\"streamname\": \"[your Bintu stream name]\", \"secret\": \"[your secret]\"}"</span>
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="step-2-generate-a-token-"></a><a href="#step-2-generate-a-token-" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Step 2. Generate a token ...</h3>
 <blockquote>
 <p><strong>Attention:</strong></p>
 <p>The expiration date time for the parameter <code>expires</code> is expected to be in <strong>SECONDS</strong>. Using milliseconds will lead to expiration dates far in the future and won't be accepted by the token generation API!</p>
 </blockquote>
-<h4><a class="anchor" aria-hidden="true" id="a-with-a-custom-tag-and-an-expiration-date-"></a><a href="#a-with-a-custom-tag-and-an-expiration-date-" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>(a) ... with a custom tag and an expiration date</h4>
+<h4><a class="anchor" aria-hidden="true" id="a-with-a-bintu-stream-name-custom-tag-and-an-expiration-date-in-the-future-"></a><a href="#a-with-a-bintu-stream-name-custom-tag-and-an-expiration-date-in-the-future-" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>(a). ...with a Bintu stream name, custom tag, and an expiration date in the future</h4>
 <p>Test data (additional):</p>
 <ul>
-<li>Expires: 1567728000 = 09/06/2019 @ 12:00am (UTC) <strong>[expiration date and time in SECONDS in Unix time format and UTC; cannot be in the past or more than 365 days in the future]</strong></li>
+<li>Expires: 1591747200 = 06/10/2020 @ 12:00am (UTC) <strong>[expiration date and time in SECONDS in Unix time format and UTC; cannot be in the past or more than 365 days in the future]</strong></li>
 </ul>
 <p><em>Request:</em></p>
-<pre><code class="hljs css language-bash">curl -X POST https://bintu-splay.nanocosmos.de/secure/token -H <span class="hljs-string">"Content-Type: application/json"</span> -H <span class="hljs-string">"X-BINTU-APIKEY: [your Bintu API key]"</span> -d <span class="hljs-string">"{"</span>streamname<span class="hljs-string">": "</span>[your Bintu stream name]<span class="hljs-string">", "</span>tag<span class="hljs-string">": "</span>[your custom tag]<span class="hljs-string">", "</span>expires<span class="hljs-string">": "</span>1567728000<span class="hljs-string">"}"</span>
+<pre><code class="hljs css language-bash">curl -X POST https://bintu-splay.nanocosmos.de/secure/token -H <span class="hljs-string">"Content-Type: application/json"</span> -H <span class="hljs-string">"X-BINTU-APIKEY: [your Bintu API key]"</span> -d <span class="hljs-string">"{\"streamname\": \"[your Bintu stream name]\", \"tag\": \"[your custom tag]\", \"expires\": \"1591747200\"}"</span>
 </code></pre>
 <p><em>Response:</em></p>
 <pre><code class="hljs">{
     <span class="hljs-attr">"h5live"</span>: {
         <span class="hljs-attr">"security"</span>: {
-            <span class="hljs-attr">"expires"</span>: <span class="hljs-string">"1567728000"</span>,
+            <span class="hljs-attr">"expires"</span>: <span class="hljs-string">"1591747200"</span>,
             <span class="hljs-attr">"tag"</span>: <span class="hljs-string">"[your custom tag]"</span>,
             <span class="hljs-attr">"token"</span>: <span class="hljs-string">"[your token will be here]"</span>,
             <span class="hljs-attr">"options"</span>: <span class="hljs-number">9</span>
@@ -98,9 +98,29 @@
     }
 }
 </code></pre>
-<h4><a class="anchor" aria-hidden="true" id="b-with-a-client-ip-"></a><a href="#b-with-a-client-ip-" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>(b) ... with a client IP</h4>
+<h4><a class="anchor" aria-hidden="true" id="b-with-a-bintu-orga-hash-custom-tag-and-an-expiration-date-in-the-future-"></a><a href="#b-with-a-bintu-orga-hash-custom-tag-and-an-expiration-date-in-the-future-" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>(b). ...with a Bintu orga hash, custom tag, and an expiration date in the future</h4>
+<p>Test data (additional):</p>
+<ul>
+<li>Expires: 1591747200 = 06/10/2020 @ 12:00am (UTC) <strong>[expiration date and time in SECONDS in Unix time format and UTC; cannot be in the past or more than 365 days in the future]</strong></li>
+</ul>
 <p><em>Request:</em></p>
-<pre><code class="hljs css language-bash">curl -X POST https://bintu-splay.nanocosmos.de/secure/token -H <span class="hljs-string">"Content-Type: application/json"</span> -H <span class="hljs-string">"X-BINTU-APIKEY: [your Bintu API key]"</span> -d <span class="hljs-string">"{"</span>streamname<span class="hljs-string">": "</span>[your Bintu stream name]<span class="hljs-string">", "</span>ip<span class="hljs-string">": "</span>[your client ip]<span class="hljs-string">"}"</span>
+<pre><code class="hljs css language-bash">curl -X POST https://bintu-splay.nanocosmos.de/secure/token -H <span class="hljs-string">"Content-Type: application/json"</span> -H <span class="hljs-string">"X-BINTU-APIKEY: [your Bintu API key]"</span> -d <span class="hljs-string">"{\"orga\": \"[your Bintu orga hash]\", \"tag\": \"[your custom tag]\", \"expires\": \"1591747200\"}"</span>
+</code></pre>
+<p><em>Response:</em></p>
+<pre><code class="hljs">{
+    <span class="hljs-attr">"h5live"</span>: {
+        <span class="hljs-attr">"security"</span>: {
+            <span class="hljs-attr">"expires"</span>: <span class="hljs-string">"1591747200"</span>,
+            <span class="hljs-attr">"tag"</span>: <span class="hljs-string">"[your custom tag]"</span>,
+            <span class="hljs-attr">"token"</span>: <span class="hljs-string">"[your token will be here]"</span>,
+            <span class="hljs-attr">"options"</span>: <span class="hljs-number">25</span>
+        }
+    }
+}
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="c-with-a-client-ip-"></a><a href="#c-with-a-client-ip-" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>(c). ...with a client IP</h4>
+<p><em>Request:</em></p>
+<pre><code class="hljs css language-bash">curl -X POST https://bintu-splay.nanocosmos.de/secure/token -H <span class="hljs-string">"Content-Type: application/json"</span> -H <span class="hljs-string">"X-BINTU-APIKEY: [your Bintu API key]"</span> -d <span class="hljs-string">"{\"streamname\": \"[your Bintu stream name]\", \"ip\": \"[your client ip]\"}"</span>
 </code></pre>
 <p><em>Response:</em></p>
 <pre><code class="hljs">{
@@ -114,10 +134,13 @@
     }
 }
 </code></pre>
-<h4><a class="anchor" aria-hidden="true" id="c-with-a-custom-tag-and-a-referer-"></a><a href="#c-with-a-custom-tag-and-a-referer-" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>(c) ... with a custom tag and a referer</h4>
-<p>Test data (additional): <em>Referer:</em> <code>demo.nanocosmos.de</code></p>
+<h4><a class="anchor" aria-hidden="true" id="d-with-a-custom-tag-and-a-referer-"></a><a href="#d-with-a-custom-tag-and-a-referer-" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>(d). ...with a custom tag and a referer</h4>
+<p>Test data (additional):</p>
+<ul>
+<li>Referer: <code>demo.nanocosmos.de</code></li>
+</ul>
 <p><em>Request</em>:</p>
-<pre><code class="hljs css language-bash">curl -X POST https://bintu-splay.nanocosmos.de/secure/token -H <span class="hljs-string">"Content-Type: application/json"</span> -H <span class="hljs-string">"X-BINTU-APIKEY: [your Bintu API key]"</span> -d <span class="hljs-string">"{"</span>streamname<span class="hljs-string">": "</span>[your Bintu stream name]<span class="hljs-string">", "</span>tag<span class="hljs-string">": "</span>[your custom tag]<span class="hljs-string">", "</span>referer<span class="hljs-string">": "</span>demo.nanocosmos.de<span class="hljs-string">"}"</span>
+<pre><code class="hljs css language-bash">curl -X POST https://bintu-splay.nanocosmos.de/secure/token -H <span class="hljs-string">"Content-Type: application/json"</span> -H <span class="hljs-string">"X-BINTU-APIKEY: [your Bintu API key]"</span> -d <span class="hljs-string">"{\"streamname\": \"[your Bintu stream name]\", \"tag\": \"[your custom tag]\", \"referer\": \"demo.nanocosmos.de\"}"</span>
 </code></pre>
 <p><em>Response</em>:</p>
 <pre><code class="hljs">{
@@ -133,16 +156,17 @@
 </code></pre>
 <h2><a class="anchor" aria-hidden="true" id="verifying-playbacks"></a><a href="#verifying-playbacks" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Verifying playbacks</h2>
 <p>Playback url - you have to replace the highlighted parameter values with your specific values:</p>
-<pre><code class="hljs">https://demo.nanocosmos.de/nanoplayer/<span class="hljs-keyword">release</span>/nanoplayer.html?h5live.<span class="hljs-keyword">server</span>.websocket=wss://bintu-splay.nanocosmos.de/h5live/authstream&amp;h5live.<span class="hljs-keyword">server</span>.hls=https://bintu-splay.nanocosmos.de/h5live/authhttp/playlist.m3u8&amp;h5live.rtmp.url=rtmp://bintu-splay.nanocosmos.de/splay&amp;h5live.rtmp.streamname=[your Bintu stream <span class="hljs-type">name</span>]&amp;h5live.<span class="hljs-keyword">security</span>.expires=[expires <span class="hljs-keyword">from</span> response]&amp;h5live.<span class="hljs-keyword">security</span>.tag=[tag <span class="hljs-keyword">from</span> response]&amp;h5live.<span class="hljs-keyword">security</span>.token=[token <span class="hljs-keyword">from</span> response]&amp;h5live.<span class="hljs-keyword">security</span>.<span class="hljs-keyword">options</span>=[<span class="hljs-keyword">options</span> <span class="hljs-keyword">from</span> response]
+<pre><code class="hljs"><span class="hljs-link">https://demo.nanocosmos.de/nanoplayer/release/nanoplayer.html?h5live.server.websocket=wss://bintu-splay.nanocosmos.de/h5live/authstream&amp;h5live.server.hls=https://bintu-splay.nanocosmos.de/h5live/authhttp/playlist.m3u8&amp;h5live.rtmp.url=rtmp://bintu-splay.nanocosmos.de/splay&amp;h5live.rtmp.streamname=**</span>[<span class="hljs-string">your Bintu stream name</span>]*<span class="hljs-strong">*&amp;h5live.security.expires=*</span><span class="hljs-strong">*[expires from response]*</span><span class="hljs-strong">*&amp;h5live.security.tag=*</span><span class="hljs-strong">*[tag from response]*</span><span class="hljs-strong">*&amp;h5live.security.token=*</span><span class="hljs-strong">*[token from response]*</span><span class="hljs-strong">*&amp;h5live.security.options=*</span><span class="hljs-strong">*[options from response]*</span>*
 </code></pre>
 <blockquote>
 <p><strong>Explanation:</strong></p>
-<ul>
-<li>Step 2 (a): the URL hasn’t expired yet, so the playback works.</li>
-<li>Step 2 (b): the playback only works for a specified client ip.</li>
-<li>Step 2 (c): the referrer is <code>demo.nanocosmos.de</code>, so the playback works.</li>
-</ul>
 </blockquote>
+<ul>
+<li>Step 2 (a): the URL hasn’t expired yet, so the playback works for a particular stream.</li>
+<li>Step 2 (b): the URL hasn’t expired yet, so the playback works for all the stream for a particular Bintu orga hash.</li>
+<li>Step 2 (c): the playback only works for a specified client ip.</li>
+<li>Step 2 (d): the referrer is demo.nanocosmos.de, so the playback works.</li>
+</ul>
 <p>To verify that the playback doesn't work with an incorrect referrer,
 copy the code snippet generated on the link above to an <code>.html</code> file on a different domain.
 Try to playback the stream from the newly created web page.</p>
@@ -150,4 +174,4 @@ Try to playback the stream from the newly created web page.</p>
 <p><strong>Explanation:</strong>
 The referrer is not <code>demo.nanocosmos.de</code>, so the playback doesn’t work.</p>
 </blockquote>
-</span></div></article></div><div class="docLastUpdate"><em>Last updated on 2019-3-15</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/nanoplayer/nanoplayer_autoplay"><span class="arrow-prev">← </span><span>Autoplay</span></a><a class="docs-next button" href="/docs/nanoplayer/nanoplayer_api"><span class="function-name-prevnext">NanoPlayer</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#encrypted-playback">Encrypted playback</a></li><li><a href="#token-security-for-nanostream-h5live-player">Token Security for nanoStream H5Live Player</a></li><li><a href="#signing-urls">Signing URLs</a><ul class="toc-headings"><li><a href="#step-1-generate-a-record-for-a-stream">Step 1. Generate a record for a stream</a></li><li><a href="#step-2-generate-a-token-">Step 2. Generate a token ...</a></li></ul></li><li><a href="#verifying-playbacks">Verifying playbacks</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><div><h5>Contact</h5><a href="https://www.nanocosmos.de/">nanocosmos homepage</a><a href="https://www.nanocosmos.de/contact">Contact</a><a href="https://www.nanocosmos.de/support">Support</a><a href="https://www.nanocosmos.de/terma">Legal Terms</a></div><div><h5>Products</h5><a href="https://www.nanocosmos.de/cloud">Nanostream Cloud with Bintu.Live</a><a href="https://www.nanocosmos.de/h5live">H5Live Low Latency HTML5-Player</a><a href="https://www.nanocosmos.de/webrtc">WebRTC.Live</a><a href="https://www.nanocosmos.de/#nanostream">Nanostream Apps and SDK</a></div><div><h5>More</h5><a href="https://www.nanocosmos.de/blog/">Blog</a><a href="https://twitter.com/nanovideo">Twitter</a><a href="https://www.facebook.com/nanocosmos.net/">Facebook</a><a href="https://www.linkedin.com/company/nanocosmos-gmbh">LinkedIn</a><a href="https://github.com/nanocosmos/docs">GitHub</a><a class="github-button" href="https://github.com/nanocosmos/docs" data-icon="octicon-star" data-count-href="/nanocosmos/docs/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://nanocosmos.de/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/footer_logo.png" alt="nanocosmos GmbH" width="170" height="45"/></a><section class="copyright">Copyright © 2019 nanocosmos GmbH</section></footer></div></body></html>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 6/25/2019</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/nanoplayer/nanoplayer_autoplay"><span class="arrow-prev">← </span><span>Autoplay</span></a><a class="docs-next button" href="/docs/nanoplayer/nanoplayer_api"><span class="function-name-prevnext">NanoPlayer</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#encrypted-playback">Encrypted playback</a></li><li><a href="#token-security-for-nanostream-h5live-player">Token Security for nanoStream H5Live Player</a></li><li><a href="#signing-urls">Signing URLs</a><ul class="toc-headings"><li><a href="#step-1-generate-a-record-for-a-stream">Step 1. Generate a record for a stream</a></li><li><a href="#step-2-generate-a-token-">Step 2. Generate a token ...</a></li></ul></li><li><a href="#verifying-playbacks">Verifying playbacks</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><div><h5>Contact</h5><a href="https://www.nanocosmos.de/">nanocosmos homepage</a><a href="https://www.nanocosmos.de/contact">Contact</a><a href="https://www.nanocosmos.de/support">Support</a><a href="https://www.nanocosmos.de/terma">Legal Terms</a></div><div><h5>Products</h5><a href="https://www.nanocosmos.de/cloud">Nanostream Cloud with Bintu.Live</a><a href="https://www.nanocosmos.de/h5live">H5Live Low Latency HTML5-Player</a><a href="https://www.nanocosmos.de/webrtc">WebRTC.Live</a><a href="https://www.nanocosmos.de/#nanostream">Nanostream Apps and SDK</a></div><div><h5>More</h5><a href="https://www.nanocosmos.de/blog/">Blog</a><a href="https://twitter.com/nanovideo">Twitter</a><a href="https://www.facebook.com/nanocosmos.net/">Facebook</a><a href="https://www.linkedin.com/company/nanocosmos-gmbh">LinkedIn</a><a href="https://github.com/nanocosmos/docs">GitHub</a><a class="github-button" href="https://github.com/nanocosmos/docs" data-icon="octicon-star" data-count-href="/nanocosmos/docs/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://nanocosmos.de/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/footer_logo.png" alt="nanocosmos GmbH" width="170" height="45"/></a><section class="copyright">Copyright © 2019 nanocosmos GmbH</section></footer></div></body></html>
