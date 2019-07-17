@@ -142,9 +142,7 @@ curl -X POST https://bintu-splay.nanocosmos.de/secure/token -H "Content-Type: ap
 
 Playback url - you have to replace the highlighted parameter values with your specific values:
 
-```
-https://demo.nanocosmos.de/nanoplayer/release/nanoplayer.html?h5live.server.websocket=wss://bintu-splay.nanocosmos.de/h5live/authstream&h5live.server.hls=https://bintu-splay.nanocosmos.de/h5live/authhttp/playlist.m3u8&h5live.rtmp.url=rtmp://bintu-splay.nanocosmos.de/splay&h5live.rtmp.streamname=**[your Bintu stream name]**&h5live.security.expires=**[expires from response]**&h5live.security.tag=**[tag from response]**&h5live.security.token=**[token from response]**&h5live.security.options=**[options from response]**
-```
+<pre><code>https://demo.nanocosmos.de/nanoplayer/release/nanoplayer.html?h5live.server.websocket=wss://bintu-splay.nanocosmos.de/h5live/authstream&h5live.server.hls=https://bintu-splay.nanocosmos.de/h5live/authhttp/playlist.m3u8&h5live.rtmp.url=rtmp://bintu-splay.nanocosmos.de/splay&h5live.rtmp.streamname=<b>[your Bintu stream name]</b>&h5live.security.expires=<b>[expires from response]</b>&h5live.security.tag=<b>[tag from response]</b>&h5live.security.token=<b>[token from response]</b>&h5live.security.options=<b>[options from response]</b></pre></code>
 
 >**Explanation:**
   * Step 2 (a): the URL hasn’t expired yet, so the playback works for a particular stream.
