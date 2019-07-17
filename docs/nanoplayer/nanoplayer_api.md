@@ -6,32 +6,24 @@ sidebar_label: NanoPlayer
 
 <a name="NanoPlayer"></a>
 
-### NanoPlayer
-NanoPlayer (H5Live) Public API Class 3.18.2
+## NanoPlayer
+NanoPlayer (H5Live) Public API Class 3.18.3
 
 **Kind**: global class  
-**Version**: 3.18.2  
+**Version**: 3.18.3  
 
 -----
 
 ## Constructors
 <a name="new_NanoPlayer_new"></a>
 
-### new NanoPlayer(playerDivId)
+## new NanoPlayer(playerDivId)
 The constructor. The source can be loaded via script tag, AMD (requirejs) or CommonJS
 
-<table>
-  <thead>
-    <tr>
-      <th>Param</th><th>Type</th><th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-<tr>
-    <td>playerDivId</td><td><code>string</code></td><td><p>The div element the player will be embedded into.</p>
-</td>
-    </tr>  </tbody>
-</table>
+
+| Param | Type | Description |
+| --- | --- | --- |
+| playerDivId | <code>string</code> | The div element the player will be embedded into. |
 
 **Example**  
 ```xml
@@ -135,73 +127,54 @@ The constructor. The source can be loaded via script tag, AMD (requirejs) or Com
 ```
 <a name="NanoPlayer+version"></a>
 
-### nanoPlayer.version : <code>string</code>
+## nanoPlayer.version : <code>string</code>
 The version of the player.
 
 **Kind**: instance property of [<code>NanoPlayer</code>](#NanoPlayer)  
 <a name="NanoPlayer+coreversion"></a>
 
-### nanoPlayer.coreversion : <code>string</code>
+## nanoPlayer.coreversion : <code>string</code>
 The version of the core.
 
 **Kind**: instance property of [<code>NanoPlayer</code>](#NanoPlayer)  
 <a name="NanoPlayer+viewversion"></a>
 
-### nanoPlayer.viewversion : <code>string</code>
+## nanoPlayer.viewversion : <code>string</code>
 The version of the view.
 
 **Kind**: instance property of [<code>NanoPlayer</code>](#NanoPlayer)  
 <a name="NanoPlayer+type"></a>
 
-### nanoPlayer.type : <code>string</code>
+## nanoPlayer.type : <code>string</code>
 The type of the player.
 
 **Kind**: instance property of [<code>NanoPlayer</code>](#NanoPlayer)  
 <a name="NanoPlayer+id"></a>
 
-### nanoPlayer.id : <code>string</code>
+## nanoPlayer.id : <code>string</code>
 The unique id of the player.
 
 **Kind**: instance property of [<code>NanoPlayer</code>](#NanoPlayer)  
 <a name="window.NanoPlayer"></a>
 
-### window.NanoPlayer
+## window.NanoPlayer
 This marks will be set via 'performance.mark()' and are related to a websocket connection only. Marks can be read with performance.getEntriesByName(name) that returns an array with objects. The object has the properties 'entryType=mark', 'name' and 'startTime'. The middle part of the name string is the element id of the player container. Not supported on Safari 11 OSX and iOS.
 
 **Kind**: static property of <code>window</code>  
 **Properties**
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th><th>Type</th><th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-<tr>
-    <td>nano.[playerDivId].connecting</td><td><code>string</code></td><td><p>Will be set if the websocket connect is started.</p>
-</td>
-    </tr><tr>
-    <td>nano.[playerDivId].connected</td><td><code>string</code></td><td><p>Will be set if the websocket connection is established.</p>
-</td>
-    </tr><tr>
-    <td>nano.[playerDivId].disconnected</td><td><code>string</code></td><td><p>Will be set if the websocket connection is closed.</p>
-</td>
-    </tr><tr>
-    <td>nano.[playerDivId].resuming</td><td><code>string</code></td><td><p>Will be set if the websocket connection is established and a play command will be send (keepConnection only).</p>
-</td>
-    </tr><tr>
-    <td>nano.[playerDivId].firstFragmentReceived</td><td><code>string</code></td><td><p>Will be set if the first fragment is received over the websocket connection.</p>
-</td>
-    </tr><tr>
-    <td>nano.[playerDivId].firstFrameRendered</td><td><code>string</code></td><td><p>Will be set if the first frame is received over the websocket connection.</p>
-</td>
-    </tr>  </tbody>
-</table>
+| Name | Type | Description |
+| --- | --- | --- |
+| nano.[playerDivId].connecting | <code>string</code> | Will be set if the websocket connect is started. |
+| nano.[playerDivId].connected | <code>string</code> | Will be set if the websocket connection is established. |
+| nano.[playerDivId].disconnected | <code>string</code> | Will be set if the websocket connection is closed. |
+| nano.[playerDivId].resuming | <code>string</code> | Will be set if the websocket connection is established and a play command will be send (keepConnection only). |
+| nano.[playerDivId].firstFragmentReceived | <code>string</code> | Will be set if the first fragment is received over the websocket connection. |
+| nano.[playerDivId].firstFrameRendered | <code>string</code> | Will be set if the first frame is received over the websocket connection. |
 
 <a name="NanoPlayer+capabilities"></a>
 
-### nanoPlayer.capabilities : <code>Array.&lt;string&gt;</code>
+## nanoPlayer.capabilities : <code>Array.&lt;string&gt;</code>
 The supported tech names of the player.
 
 **Kind**: instance constant of [<code>NanoPlayer</code>](#NanoPlayer)  
@@ -211,23 +184,15 @@ The supported tech names of the player.
 ## Functions
 <a name="NanoPlayer+setup"></a>
 
-### nanoPlayer.setup(config) ⇒ <code>Promise.&lt;(config\|error)&gt;</code>
+## nanoPlayer.setup(config) ⇒ <code>Promise.&lt;(config\|error)&gt;</code>
 Initializes the player with a given config object.
 
 **Kind**: instance method of [<code>NanoPlayer</code>](#NanoPlayer)  
 **See**: [config](#NanoPlayer..config)  
-<table>
-  <thead>
-    <tr>
-      <th>Param</th><th>Type</th><th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-<tr>
-    <td>config</td><td><code>config</code></td><td><p>The config object for the player including sources, events, styles.</p>
-</td>
-    </tr>  </tbody>
-</table>
+
+| Param | Type | Description |
+| --- | --- | --- |
+| config | <code>config</code> | The config object for the player including sources, events, styles. |
 
 **Example**  
 ```js
@@ -240,7 +205,7 @@ player.setup(config).then(function (config) {
 ```
 <a name="NanoPlayer+destroy"></a>
 
-### nanoPlayer.destroy()
+## nanoPlayer.destroy()
 Cleans up the player and removes all nested elements from the container div.
 
 **Kind**: instance method of [<code>NanoPlayer</code>](#NanoPlayer)  
@@ -252,7 +217,7 @@ player.setup(config);
 ```
 <a name="NanoPlayer+play"></a>
 
-### nanoPlayer.play()
+## nanoPlayer.play()
 Plays the player.
 
 **Kind**: instance method of [<code>NanoPlayer</code>](#NanoPlayer)  
@@ -263,7 +228,7 @@ player.play();
 ```
 <a name="NanoPlayer+pause"></a>
 
-### nanoPlayer.pause()
+## nanoPlayer.pause()
 Pauses the player.
 
 **Kind**: instance method of [<code>NanoPlayer</code>](#NanoPlayer)  
@@ -274,7 +239,7 @@ player.pause();
 ```
 <a name="NanoPlayer+mute"></a>
 
-### nanoPlayer.mute()
+## nanoPlayer.mute()
 Mutes the player.
 
 **Kind**: instance method of [<code>NanoPlayer</code>](#NanoPlayer)  
@@ -285,7 +250,7 @@ player.mute();
 ```
 <a name="NanoPlayer+unmute"></a>
 
-### nanoPlayer.unmute()
+## nanoPlayer.unmute()
 Unmutes the player.
 
 **Kind**: instance method of [<code>NanoPlayer</code>](#NanoPlayer)  
@@ -296,22 +261,14 @@ player.unmute();
 ```
 <a name="NanoPlayer+setVolume"></a>
 
-### nanoPlayer.setVolume(volume)
+## nanoPlayer.setVolume(volume)
 Sets the volume of the player.
 
 **Kind**: instance method of [<code>NanoPlayer</code>](#NanoPlayer)  
-<table>
-  <thead>
-    <tr>
-      <th>Param</th><th>Type</th><th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-<tr>
-    <td>volume</td><td><code>number</code></td><td><p>The volume to set in a range from 0.0 to 1.0.</p>
-</td>
-    </tr>  </tbody>
-</table>
+
+| Param | Type | Description |
+| --- | --- | --- |
+| volume | <code>number</code> | The volume to set in a range from 0.0 to 1.0. |
 
 **Example**  
 ```js
@@ -320,79 +277,33 @@ player.setVolume(0.3);
 ```
 <a name="NanoPlayer+updateSource"></a>
 
-### nanoPlayer.updateSource(source) ⇒ <code>Promise.&lt;(config\|error)&gt;</code>
+## nanoPlayer.updateSource(source) ⇒ <code>Promise.&lt;(config\|error)&gt;</code>
 Updates the source of the player.
 
 **Kind**: instance method of [<code>NanoPlayer</code>](#NanoPlayer)  
-<table>
-  <thead>
-    <tr>
-      <th>Param</th><th>Type</th><th>Default</th><th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-<tr>
-    <td>source</td><td><code>object</code></td><td></td><td><p>The object to configure the source to play, one of the following properties have to be set.</p>
-</td>
-    </tr><tr>
-    <td>[source.h5live]</td><td><code>object</code></td><td></td><td><p>The h5live object to configure the h5live connection.</p>
-</td>
-    </tr><tr>
-    <td>source.h5live.server</td><td><code>object</code></td><td></td><td><p>The h5live server object.</p>
-</td>
-    </tr><tr>
-    <td>[source.h5live.server.websocket]</td><td><code>string</code></td><td></td><td><p>The h5live websocket url.</p>
-</td>
-    </tr><tr>
-    <td>[source.h5live.server.progressive]</td><td><code>string</code></td><td></td><td><p>The h5live progressive download url.</p>
-</td>
-    </tr><tr>
-    <td>[source.h5live.server.hls]</td><td><code>string</code></td><td></td><td><p>The h5live hls url. Have to be set for playback on iOS 10 or higher. iOS 9 or lower is not supported.</p>
-</td>
-    </tr><tr>
-    <td>[source.h5live.token]</td><td><code>string</code></td><td></td><td><p>The h5live server token.</p>
-</td>
-    </tr><tr>
-    <td>[source.h5live.rtmp]</td><td><code>object</code></td><td></td><td><p>The rtmp playout object for h5live playback.</p>
-</td>
-    </tr><tr>
-    <td>source.h5live.rtmp.url</td><td><code>string</code></td><td></td><td><p>The rtmp playout url. Have to include the domain, port and application e.g. &#39;rtmp://example.com:80/live&#39;.</p>
-</td>
-    </tr><tr>
-    <td>source.h5live.rtmp.streamname</td><td><code>string</code></td><td></td><td><p>The rtmp streamname.</p>
-</td>
-    </tr><tr>
-    <td>[source.h5live.security]</td><td><code>object</code></td><td></td><td><p>The h5live security object for h5live playback.</p>
-</td>
-    </tr><tr>
-    <td>source.h5live.security.token</td><td><code>string</code></td><td></td><td><p>The security service token.</p>
-</td>
-    </tr><tr>
-    <td>source.h5live.security.expires</td><td><code>string</code></td><td></td><td><p>The time the token expires (system time).</p>
-</td>
-    </tr><tr>
-    <td>source.h5live.security.options</td><td><code>string</code></td><td></td><td><p>The security options.</p>
-</td>
-    </tr><tr>
-    <td>source.h5live.security.tag</td><td><code>string</code></td><td></td><td><p>The custom tag to decrypt the token.</p>
-</td>
-    </tr><tr>
-    <td>[source.h5live.params]</td><td><code>object</code></td><td></td><td><p>The params object to pass custom query parameters over the h5live server connection. Parameters can be passed as key/value pairs.</p>
-</td>
-    </tr><tr>
-    <td>[source.bintu]</td><td><code>object</code></td><td></td><td><p>An bintu object to get sources.</p>
-</td>
-    </tr><tr>
-    <td>source.bintu.streamid</td><td><code>string</code></td><td></td><td><p>The bintu stream id.</p>
-</td>
-    </tr><tr>
-    <td>[source.bintu.apiurl]</td><td><code>string</code></td><td><code>&quot;\&quot;https://bintu.nanocosmos.de\&quot;&quot;</code></td><td><p>The bintu api url.</p>
-</td>
-    </tr><tr>
-    <td>[source.hls]</td><td><code>string</code></td><td></td><td><p>An hls playout url as string.</p>
-</td>
-    </tr>  </tbody>
-</table>
+
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| source | <code>object</code> |  | The object to configure the source to play, one of the following properties have to be set. |
+| [source.h5live] | <code>object</code> |  | The h5live object to configure the h5live connection. |
+| source.h5live.server | <code>object</code> |  | The h5live server object. |
+| [source.h5live.server.websocket] | <code>string</code> |  | The h5live websocket url. |
+| [source.h5live.server.progressive] | <code>string</code> |  | The h5live progressive download url. |
+| [source.h5live.server.hls] | <code>string</code> |  | The h5live hls url. Have to be set for playback on iOS 10 or higher. iOS 9 or lower is not supported. |
+| [source.h5live.token] | <code>string</code> |  | The h5live server token. |
+| [source.h5live.rtmp] | <code>object</code> |  | The rtmp playout object for h5live playback. |
+| source.h5live.rtmp.url | <code>string</code> |  | The rtmp playout url. Have to include the domain, port and application e.g. 'rtmp://example.com:80/live'. |
+| source.h5live.rtmp.streamname | <code>string</code> |  | The rtmp streamname. |
+| [source.h5live.security] | <code>object</code> |  | The h5live security object for h5live playback. |
+| source.h5live.security.token | <code>string</code> |  | The security service token. |
+| source.h5live.security.expires | <code>string</code> |  | The time the token expires (system time). |
+| source.h5live.security.options | <code>string</code> |  | The security options. |
+| source.h5live.security.tag | <code>string</code> |  | The custom tag to decrypt the token. |
+| [source.h5live.params] | <code>object</code> |  | The params object to pass custom query parameters over the h5live server connection. Parameters can be passed as key/value pairs. |
+| [source.bintu] | <code>object</code> |  | An bintu object to get sources. |
+| source.bintu.streamid | <code>string</code> |  | The bintu stream id. |
+| [source.bintu.apiurl] | <code>string</code> | <code>&quot;\&quot;https://bintu.nanocosmos.de\&quot;&quot;</code> | The bintu api url. |
+| [source.hls] | <code>string</code> |  | An hls playout url as string. |
 
 **Example**  
 ```js
@@ -429,43 +340,22 @@ player.updateSource(source).then(function (config) {
 ## Events
 <a name="NanoPlayer..event_onReady"></a>
 
-### "onReady"
+## "onReady"
 The ready event to pass in the 'config.events' object at the setup call. Fires if the player is ready to play after successful setup.
 
 **Kind**: event emitted by [<code>NanoPlayer</code>](#NanoPlayer)  
 **See**: [config](#NanoPlayer..config)  
 **Properties**
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th><th>Type</th><th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-<tr>
-    <td>name</td><td><code>string</code></td><td><p>The event name.</p>
-</td>
-    </tr><tr>
-    <td>player</td><td><code>string</code></td><td><p>The player name (id of the playerDiv).</p>
-</td>
-    </tr><tr>
-    <td>id</td><td><code>string</code></td><td><p>The unique id of the player instance.</p>
-</td>
-    </tr><tr>
-    <td>version</td><td><code>string</code></td><td><p>The version of the player.</p>
-</td>
-    </tr><tr>
-    <td>data</td><td><code>object</code></td><td><p>The data object.</p>
-</td>
-    </tr><tr>
-    <td>data.config</td><td><code>config</code></td><td><p>The config object.</p>
-</td>
-    </tr><tr>
-    <td>state</td><td><code><a href="#NanoPlayer..state">state</a></code></td><td><p>The player state.</p>
-</td>
-    </tr>  </tbody>
-</table>
+| Name | Type | Description |
+| --- | --- | --- |
+| name | <code>string</code> | The event name. |
+| player | <code>string</code> | The player name (id of the playerDiv). |
+| id | <code>string</code> | The unique id of the player instance. |
+| version | <code>string</code> | The version of the player. |
+| data | <code>object</code> | The data object. |
+| data.config | <code>config</code> | The config object. |
+| state | [<code>state</code>](#NanoPlayer..state) | The player state. |
 
 **Example**  
 ```js
@@ -482,61 +372,28 @@ player.setup(config).then(function (config) {
 ```
 <a name="NanoPlayer..event_onPlay"></a>
 
-### "onPlay"
+## "onPlay"
 The play event to pass in the 'config.events' object at the setup call. Fires if playout is started.
 
 **Kind**: event emitted by [<code>NanoPlayer</code>](#NanoPlayer)  
 **See**: [config](#NanoPlayer..config)  
 **Properties**
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th><th>Type</th><th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-<tr>
-    <td>name</td><td><code>string</code></td><td><p>The event name.</p>
-</td>
-    </tr><tr>
-    <td>player</td><td><code>string</code></td><td><p>The player name (id of the playerDiv).</p>
-</td>
-    </tr><tr>
-    <td>id</td><td><code>string</code></td><td><p>The unique id of the player instance.</p>
-</td>
-    </tr><tr>
-    <td>version</td><td><code>string</code></td><td><p>The version of the player.</p>
-</td>
-    </tr><tr>
-    <td>data</td><td><code>object</code></td><td><p>The data object.</p>
-</td>
-    </tr><tr>
-    <td>data.stats</td><td><code>object</code></td><td><p>The startup stats object.</p>
-</td>
-    </tr><tr>
-    <td>data.stats.connecting</td><td><code>number</code></td><td><p>The time when &#39;player.play()&#39; is just called in ms (always zero).</p>
-</td>
-    </tr><tr>
-    <td>data.stats.connected</td><td><code>number</code></td><td><p>The time when the connection is established in ms (relative to &#39;connecting&#39;).</p>
-</td>
-    </tr><tr>
-    <td>data.stats.firstFragmentReceived</td><td><code>number</code></td><td><p>The time when the first fragment is received in ms (relative to &#39;connecting&#39;).</p>
-</td>
-    </tr><tr>
-    <td>data.stats.firstFrameRendered</td><td><code>number</code></td><td><p>The time when the first frame is rendered in ms (relative to &#39;connecting&#39;).</p>
-</td>
-    </tr><tr>
-    <td>data.stats.playable</td><td><code>number</code></td><td><p>The time when the buffer has enough data to start in ms (relative to &#39;connecting&#39;).</p>
-</td>
-    </tr><tr>
-    <td>data.stats.playing</td><td><code>number</code></td><td><p>The time when the playback is started in ms (relative to &#39;connecting&#39;). It&#39;s the total startup time.</p>
-</td>
-    </tr><tr>
-    <td>state</td><td><code><a href="#NanoPlayer..state">state</a></code></td><td><p>The player state.</p>
-</td>
-    </tr>  </tbody>
-</table>
+| Name | Type | Description |
+| --- | --- | --- |
+| name | <code>string</code> | The event name. |
+| player | <code>string</code> | The player name (id of the playerDiv). |
+| id | <code>string</code> | The unique id of the player instance. |
+| version | <code>string</code> | The version of the player. |
+| data | <code>object</code> | The data object. |
+| data.stats | <code>object</code> | The startup stats object. |
+| data.stats.connecting | <code>number</code> | The time when 'player.play()' is just called in ms (always zero). |
+| data.stats.connected | <code>number</code> | The time when the connection is established in ms (relative to 'connecting'). |
+| data.stats.firstFragmentReceived | <code>number</code> | The time when the first fragment is received in ms (relative to 'connecting'). |
+| data.stats.firstFrameRendered | <code>number</code> | The time when the first frame is rendered in ms (relative to 'connecting'). |
+| data.stats.playable | <code>number</code> | The time when the buffer has enough data to start in ms (relative to 'connecting'). |
+| data.stats.playing | <code>number</code> | The time when the playback is started in ms (relative to 'connecting'). It's the total startup time. |
+| state | [<code>state</code>](#NanoPlayer..state) | The player state. |
 
 **Example**  
 ```js
@@ -554,43 +411,22 @@ player.setup(config).then(function (config) {
 ```
 <a name="NanoPlayer..event_onPause"></a>
 
-### "onPause"
+## "onPause"
 The pause event to pass in the 'config.events' object at the setup call. Fires if playout is paused.
 
 **Kind**: event emitted by [<code>NanoPlayer</code>](#NanoPlayer)  
 **See**: [config](#NanoPlayer..config)  
 **Properties**
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th><th>Type</th><th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-<tr>
-    <td>name</td><td><code>string</code></td><td><p>The event name.</p>
-</td>
-    </tr><tr>
-    <td>player</td><td><code>string</code></td><td><p>The player name (id of the playerDiv).</p>
-</td>
-    </tr><tr>
-    <td>id</td><td><code>string</code></td><td><p>The unique id of the player instance.</p>
-</td>
-    </tr><tr>
-    <td>version</td><td><code>string</code></td><td><p>The version of the player.</p>
-</td>
-    </tr><tr>
-    <td>data</td><td><code>object</code></td><td><p>The data object.</p>
-</td>
-    </tr><tr>
-    <td>data.reason</td><td><code><a href="#NanoPlayer..pausereason">pausereason</a></code></td><td><p>The reason of pausing.</p>
-</td>
-    </tr><tr>
-    <td>state</td><td><code><a href="#NanoPlayer..state">state</a></code></td><td><p>The player state.</p>
-</td>
-    </tr>  </tbody>
-</table>
+| Name | Type | Description |
+| --- | --- | --- |
+| name | <code>string</code> | The event name. |
+| player | <code>string</code> | The player name (id of the playerDiv). |
+| id | <code>string</code> | The unique id of the player instance. |
+| version | <code>string</code> | The version of the player. |
+| data | <code>object</code> | The data object. |
+| data.reason | [<code>pausereason</code>](#NanoPlayer..pausereason) | The reason of pausing. |
+| state | [<code>state</code>](#NanoPlayer..state) | The player state. |
 
 **Example**  
 ```js
@@ -610,43 +446,22 @@ player.setup(config).then(function (config) {
 ```
 <a name="NanoPlayer..event_onLoading"></a>
 
-### "onLoading"
+## "onLoading"
 The load event to pass in the 'config.events' object at the setup call. Fires if playout was stopped or player is ready after setup and tries to play.
 
 **Kind**: event emitted by [<code>NanoPlayer</code>](#NanoPlayer)  
 **See**: [config](#NanoPlayer..config)  
 **Properties**
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th><th>Type</th><th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-<tr>
-    <td>name</td><td><code>string</code></td><td><p>The event name.</p>
-</td>
-    </tr><tr>
-    <td>player</td><td><code>string</code></td><td><p>The player name (id of the playerDiv).</p>
-</td>
-    </tr><tr>
-    <td>id</td><td><code>string</code></td><td><p>The unique id of the player instance.</p>
-</td>
-    </tr><tr>
-    <td>version</td><td><code>string</code></td><td><p>The version of the player.</p>
-</td>
-    </tr><tr>
-    <td>data</td><td><code>object</code></td><td><p>The data object.</p>
-</td>
-    </tr><tr>
-    <td>data.connectDelay</td><td><code>number</code></td><td><p>The time in milliseconds to wait for initializing the connection to the server to get the stream. Is zero if no reconnect is imminent.</p>
-</td>
-    </tr><tr>
-    <td>state</td><td><code><a href="#NanoPlayer..state">state</a></code></td><td><p>The player state.</p>
-</td>
-    </tr>  </tbody>
-</table>
+| Name | Type | Description |
+| --- | --- | --- |
+| name | <code>string</code> | The event name. |
+| player | <code>string</code> | The player name (id of the playerDiv). |
+| id | <code>string</code> | The unique id of the player instance. |
+| version | <code>string</code> | The version of the player. |
+| data | <code>object</code> | The data object. |
+| data.connectDelay | <code>number</code> | The time in milliseconds to wait for initializing the connection to the server to get the stream. Is zero if no reconnect is imminent. |
+| state | [<code>state</code>](#NanoPlayer..state) | The player state. |
 
 **Example**  
 ```js
@@ -663,40 +478,21 @@ player.setup(config).then(function (config) {
 ```
 <a name="NanoPlayer..event_onStartBuffering"></a>
 
-### "onStartBuffering"
+## "onStartBuffering"
 The start buffering event to pass in the 'config.events' object at the setup call. Fires if playout is started but no media is available.
 
 **Kind**: event emitted by [<code>NanoPlayer</code>](#NanoPlayer)  
 **See**: [config](#NanoPlayer..config)  
 **Properties**
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th><th>Type</th><th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-<tr>
-    <td>name</td><td><code>string</code></td><td><p>The event name.</p>
-</td>
-    </tr><tr>
-    <td>player</td><td><code>string</code></td><td><p>The player name (id of the playerDiv).</p>
-</td>
-    </tr><tr>
-    <td>id</td><td><code>string</code></td><td><p>The unique id of the player instance.</p>
-</td>
-    </tr><tr>
-    <td>version</td><td><code>string</code></td><td><p>The version of the player.</p>
-</td>
-    </tr><tr>
-    <td>data</td><td><code>object</code></td><td><p>The data object (empty).</p>
-</td>
-    </tr><tr>
-    <td>state</td><td><code><a href="#NanoPlayer..state">state</a></code></td><td><p>The player state.</p>
-</td>
-    </tr>  </tbody>
-</table>
+| Name | Type | Description |
+| --- | --- | --- |
+| name | <code>string</code> | The event name. |
+| player | <code>string</code> | The player name (id of the playerDiv). |
+| id | <code>string</code> | The unique id of the player instance. |
+| version | <code>string</code> | The version of the player. |
+| data | <code>object</code> | The data object (empty). |
+| state | [<code>state</code>](#NanoPlayer..state) | The player state. |
 
 **Example**  
 ```js
@@ -713,40 +509,21 @@ player.setup(config).then(function (config) {
 ```
 <a name="NanoPlayer..event_onStopBuffering"></a>
 
-### "onStopBuffering"
+## "onStopBuffering"
 The stop buffering event to pass in the 'config.events' object at the setup call. Fires if playout resumes after buffering.
 
 **Kind**: event emitted by [<code>NanoPlayer</code>](#NanoPlayer)  
 **See**: [config](#NanoPlayer..config)  
 **Properties**
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th><th>Type</th><th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-<tr>
-    <td>name</td><td><code>string</code></td><td><p>The event name.</p>
-</td>
-    </tr><tr>
-    <td>player</td><td><code>string</code></td><td><p>The player name (id of the playerDiv).</p>
-</td>
-    </tr><tr>
-    <td>id</td><td><code>string</code></td><td><p>The unique id of the player instance.</p>
-</td>
-    </tr><tr>
-    <td>version</td><td><code>string</code></td><td><p>The version of the player.</p>
-</td>
-    </tr><tr>
-    <td>data</td><td><code>object</code></td><td><p>The data object (empty).</p>
-</td>
-    </tr><tr>
-    <td>state</td><td><code><a href="#NanoPlayer..state">state</a></code></td><td><p>The player state.</p>
-</td>
-    </tr>  </tbody>
-</table>
+| Name | Type | Description |
+| --- | --- | --- |
+| name | <code>string</code> | The event name. |
+| player | <code>string</code> | The player name (id of the playerDiv). |
+| id | <code>string</code> | The unique id of the player instance. |
+| version | <code>string</code> | The version of the player. |
+| data | <code>object</code> | The data object (empty). |
+| state | [<code>state</code>](#NanoPlayer..state) | The player state. |
 
 **Example**  
 ```js
@@ -763,46 +540,23 @@ player.setup(config).then(function (config) {
 ```
 <a name="NanoPlayer..event_onError"></a>
 
-### "onError"
+## "onError"
 The error event to pass in the 'config.events' object at the setup call. Fires if any kind of error occures.
 
 **Kind**: event emitted by [<code>NanoPlayer</code>](#NanoPlayer)  
 **See**: [config](#NanoPlayer..config)  
 **Properties**
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th><th>Type</th><th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-<tr>
-    <td>name</td><td><code>string</code></td><td><p>The event name.</p>
-</td>
-    </tr><tr>
-    <td>player</td><td><code>string</code></td><td><p>The player name (id of the playerDiv).</p>
-</td>
-    </tr><tr>
-    <td>id</td><td><code>string</code></td><td><p>The unique id of the player instance.</p>
-</td>
-    </tr><tr>
-    <td>version</td><td><code>string</code></td><td><p>The version of the player.</p>
-</td>
-    </tr><tr>
-    <td>data</td><td><code>object</code></td><td><p>The data object.</p>
-</td>
-    </tr><tr>
-    <td>data.code</td><td><code><a href="#NanoPlayer..errorcode">errorcode</a></code></td><td><p>The error code.</p>
-</td>
-    </tr><tr>
-    <td>data.message</td><td><code>string</code></td><td><p>The error cause as human readable string.</p>
-</td>
-    </tr><tr>
-    <td>state</td><td><code><a href="#NanoPlayer..state">state</a></code></td><td><p>The player state.</p>
-</td>
-    </tr>  </tbody>
-</table>
+| Name | Type | Description |
+| --- | --- | --- |
+| name | <code>string</code> | The event name. |
+| player | <code>string</code> | The player name (id of the playerDiv). |
+| id | <code>string</code> | The unique id of the player instance. |
+| version | <code>string</code> | The version of the player. |
+| data | <code>object</code> | The data object. |
+| data.code | [<code>errorcode</code>](#NanoPlayer..errorcode) | The error code. |
+| data.message | <code>string</code> | The error cause as human readable string. |
+| state | [<code>state</code>](#NanoPlayer..state) | The player state. |
 
 **Example**  
 ```js
@@ -819,127 +573,50 @@ player.setup(config).then(function (config) {
 ```
 <a name="NanoPlayer..event_onStats"></a>
 
-### "onStats"
+## "onStats"
 The stats event to pass in the 'config.events' object at the setup call. Fires if the player has measured statistics.
 
 **Kind**: event emitted by [<code>NanoPlayer</code>](#NanoPlayer)  
 **See**: [config](#NanoPlayer..config)  
 **Properties**
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th><th>Type</th><th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-<tr>
-    <td>name</td><td><code>string</code></td><td><p>The event name.</p>
-</td>
-    </tr><tr>
-    <td>player</td><td><code>string</code></td><td><p>The player name (id of the playerDiv).</p>
-</td>
-    </tr><tr>
-    <td>id</td><td><code>string</code></td><td><p>The unique id of the player instance.</p>
-</td>
-    </tr><tr>
-    <td>version</td><td><code>string</code></td><td><p>The version of the player.</p>
-</td>
-    </tr><tr>
-    <td>data</td><td><code>object</code></td><td><p>The data object.</p>
-</td>
-    </tr><tr>
-    <td>data.stats</td><td><code>object</code></td><td><p>The stats object.</p>
-</td>
-    </tr><tr>
-    <td>data.stats.currentTime</td><td><code>number</code></td><td><p>The current time of the video.</p>
-</td>
-    </tr><tr>
-    <td>data.stats.playout</td><td><code>object</code></td><td><p>The playout object.</p>
-</td>
-    </tr><tr>
-    <td>data.stats.playout.start</td><td><code>number</code></td><td><p>The start play time of the video.</p>
-</td>
-    </tr><tr>
-    <td>data.stats.playout.end</td><td><code>number</code></td><td><p>The end play time of the video.</p>
-</td>
-    </tr><tr>
-    <td>data.stats.buffer</td><td><code>object</code></td><td><p>The buffer object.</p>
-</td>
-    </tr><tr>
-    <td>data.stats.buffer.start</td><td><code>number</code></td><td><p>The start buffer time of the video.</p>
-</td>
-    </tr><tr>
-    <td>data.stats.buffer.end</td><td><code>number</code></td><td><p>The end buffer time of the video.</p>
-</td>
-    </tr><tr>
-    <td>data.stats.buffer.delay</td><td><code>object</code></td><td><p>The delay buffer object.</p>
-</td>
-    </tr><tr>
-    <td>data.stats.buffer.delay.current</td><td><code>number</code></td><td><p>The current delay time.</p>
-</td>
-    </tr><tr>
-    <td>data.stats.buffer.delay.avg</td><td><code>number</code></td><td><p>The average delay time over the last second.</p>
-</td>
-    </tr><tr>
-    <td>data.stats.buffer.delay.min</td><td><code>number</code></td><td><p>The minimum delay time over the last second.</p>
-</td>
-    </tr><tr>
-    <td>data.stats.buffer.delay.max</td><td><code>number</code></td><td><p>The maximum delay time over the last second.</p>
-</td>
-    </tr><tr>
-    <td>data.stats.bitrate</td><td><code>object</code></td><td><p>The bitrate object.</p>
-</td>
-    </tr><tr>
-    <td>data.stats.bitrate.current</td><td><code>number</code></td><td><p>The current bitrate in Bit/s. Is &#39;0&#39; if not available. NOT AVAILABLE FOR IOS.</p>
-</td>
-    </tr><tr>
-    <td>data.stats.bitrate.avg</td><td><code>number</code></td><td><p>The average bitrate in Bit/s over the last 10 seconds. Is &#39;0&#39; if not available. NOT AVAILABLE FOR IOS.</p>
-</td>
-    </tr><tr>
-    <td>data.stats.bitrate.min</td><td><code>number</code></td><td><p>The minimum bitrate in Bit/s over the last 10 seconds. Is &#39;0&#39; if not available. NOT AVAILABLE FOR IOS.</p>
-</td>
-    </tr><tr>
-    <td>data.stats.bitrate.max</td><td><code>number</code></td><td><p>The maximum bitrate in Bit/s over the last 10 seconds. Is &#39;0&#39; if not available. NOT AVAILABLE FOR IOS.</p>
-</td>
-    </tr><tr>
-    <td>data.stats.framerate</td><td><code>object</code></td><td><p>The framerate object.</p>
-</td>
-    </tr><tr>
-    <td>data.stats.framerate.current</td><td><code>number</code></td><td><p>The current network framerate. Is &#39;0&#39; if not available. NOT AVAILABLE FOR IOS.</p>
-</td>
-    </tr><tr>
-    <td>data.stats.framerate.avg</td><td><code>number</code></td><td><p>The average network framerate over the last 10 seconds. Is &#39;0&#39; if not available. NOT AVAILABLE FOR IOS.</p>
-</td>
-    </tr><tr>
-    <td>data.stats.framerate.min</td><td><code>number</code></td><td><p>The minimum network framerate over the last 10 seconds. Is &#39;0&#39; if not available. NOT AVAILABLE FOR IOS.</p>
-</td>
-    </tr><tr>
-    <td>data.stats.framerate.max</td><td><code>number</code></td><td><p>The maximum network framerate over the last 10 seconds. Is &#39;0&#39; if not available. NOT AVAILABLE FOR IOS.</p>
-</td>
-    </tr><tr>
-    <td>data.stats.quality</td><td><code>object</code></td><td><p>The video playback quality object.</p>
-</td>
-    </tr><tr>
-    <td>data.stats.quality.corruptedVideoFrames</td><td><code>number</code></td><td><p>The total number of corrupted video frames. ONLY AVAILABLE FOR FIREFOX.</p>
-</td>
-    </tr><tr>
-    <td>data.stats.quality.corruptedVideoFramesCurrent</td><td><code>number</code></td><td><p>The number of corrupted video frames within the last second. ONLY AVAILABLE FOR FIREFOX.</p>
-</td>
-    </tr><tr>
-    <td>data.stats.quality.creationTime</td><td><code>number</code></td><td><p>The time in miliseconds since the start of the navigation and the creation of the video element. ONLY AVAILABLE FOR FIREFOX.</p>
-</td>
-    </tr><tr>
-    <td>data.stats.quality.droppedVideoFrames</td><td><code>number</code></td><td><p>The total number of dropped video frames. ONLY AVAILABLE FOR FIREFOX.</p>
-</td>
-    </tr><tr>
-    <td>data.stats.quality.droppedVideoFramesCurrent</td><td><code>number</code></td><td><p>The number of dropped video frames within the last second. ONLY AVAILABLE FOR FIREFOX.</p>
-</td>
-    </tr><tr>
-    <td>data.stats.quality.totalVideoFrames</td><td><code>number</code></td><td><p>The total number of created and dropped video frames since creation of the video element. ONLY AVAILABLE FOR FIREFOX.</p>
-</td>
-    </tr>  </tbody>
-</table>
+| Name | Type | Description |
+| --- | --- | --- |
+| name | <code>string</code> | The event name. |
+| player | <code>string</code> | The player name (id of the playerDiv). |
+| id | <code>string</code> | The unique id of the player instance. |
+| version | <code>string</code> | The version of the player. |
+| data | <code>object</code> | The data object. |
+| data.stats | <code>object</code> | The stats object. |
+| data.stats.currentTime | <code>number</code> | The current time of the video. |
+| data.stats.playout | <code>object</code> | The playout object. |
+| data.stats.playout.start | <code>number</code> | The start play time of the video. |
+| data.stats.playout.end | <code>number</code> | The end play time of the video. |
+| data.stats.buffer | <code>object</code> | The buffer object. |
+| data.stats.buffer.start | <code>number</code> | The start buffer time of the video. |
+| data.stats.buffer.end | <code>number</code> | The end buffer time of the video. |
+| data.stats.buffer.delay | <code>object</code> | The delay buffer object. |
+| data.stats.buffer.delay.current | <code>number</code> | The current delay time. |
+| data.stats.buffer.delay.avg | <code>number</code> | The average delay time over the last second. |
+| data.stats.buffer.delay.min | <code>number</code> | The minimum delay time over the last second. |
+| data.stats.buffer.delay.max | <code>number</code> | The maximum delay time over the last second. |
+| data.stats.bitrate | <code>object</code> | The bitrate object. |
+| data.stats.bitrate.current | <code>number</code> | The current bitrate in Bit/s. Is '0' if not available. NOT AVAILABLE FOR IOS. |
+| data.stats.bitrate.avg | <code>number</code> | The average bitrate in Bit/s over the last 10 seconds. Is '0' if not available. NOT AVAILABLE FOR IOS. |
+| data.stats.bitrate.min | <code>number</code> | The minimum bitrate in Bit/s over the last 10 seconds. Is '0' if not available. NOT AVAILABLE FOR IOS. |
+| data.stats.bitrate.max | <code>number</code> | The maximum bitrate in Bit/s over the last 10 seconds. Is '0' if not available. NOT AVAILABLE FOR IOS. |
+| data.stats.framerate | <code>object</code> | The framerate object. |
+| data.stats.framerate.current | <code>number</code> | The current network framerate. Is '0' if not available. NOT AVAILABLE FOR IOS. |
+| data.stats.framerate.avg | <code>number</code> | The average network framerate over the last 10 seconds. Is '0' if not available. NOT AVAILABLE FOR IOS. |
+| data.stats.framerate.min | <code>number</code> | The minimum network framerate over the last 10 seconds. Is '0' if not available. NOT AVAILABLE FOR IOS. |
+| data.stats.framerate.max | <code>number</code> | The maximum network framerate over the last 10 seconds. Is '0' if not available. NOT AVAILABLE FOR IOS. |
+| data.stats.quality | <code>object</code> | The video playback quality object. |
+| data.stats.quality.corruptedVideoFrames | <code>number</code> | The total number of corrupted video frames. ONLY AVAILABLE FOR FIREFOX. |
+| data.stats.quality.corruptedVideoFramesCurrent | <code>number</code> | The number of corrupted video frames within the last second. ONLY AVAILABLE FOR FIREFOX. |
+| data.stats.quality.creationTime | <code>number</code> | The time in miliseconds since the start of the navigation and the creation of the video element. ONLY AVAILABLE FOR FIREFOX. |
+| data.stats.quality.droppedVideoFrames | <code>number</code> | The total number of dropped video frames. ONLY AVAILABLE FOR FIREFOX. |
+| data.stats.quality.droppedVideoFramesCurrent | <code>number</code> | The number of dropped video frames within the last second. ONLY AVAILABLE FOR FIREFOX. |
+| data.stats.quality.totalVideoFrames | <code>number</code> | The total number of created and dropped video frames since creation of the video element. ONLY AVAILABLE FOR FIREFOX. |
 
 **Example**  
 ```js
@@ -956,46 +633,23 @@ player.setup(config).then(function (config) {
 ```
 <a name="NanoPlayer..event_onMetaData"></a>
 
-### "onMetaData"
+## "onMetaData"
 The metadata event to pass in the 'config.events' object at the setup call. The config param 'playback.metadata' have to be set to true. Fires if the player receives metadata.
 
 **Kind**: event emitted by [<code>NanoPlayer</code>](#NanoPlayer)  
 **See**: [config](#NanoPlayer..config)  
 **Properties**
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th><th>Type</th><th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-<tr>
-    <td>name</td><td><code>string</code></td><td><p>The event name.</p>
-</td>
-    </tr><tr>
-    <td>player</td><td><code>string</code></td><td><p>The player name (id of the playerDiv).</p>
-</td>
-    </tr><tr>
-    <td>id</td><td><code>string</code></td><td><p>The unique id of the player instance.</p>
-</td>
-    </tr><tr>
-    <td>version</td><td><code>string</code></td><td><p>The version of the player.</p>
-</td>
-    </tr><tr>
-    <td>data</td><td><code>object</code></td><td><p>The data object.</p>
-</td>
-    </tr><tr>
-    <td>data.handlerName</td><td><code>string</code></td><td><p>The name of the metadata handler.</p>
-</td>
-    </tr><tr>
-    <td>data.message</td><td><code>*</code></td><td><p>The metadata message.</p>
-</td>
-    </tr><tr>
-    <td>data.streamTime</td><td><code>number</code></td><td><p>The timestamp of the metadata in relation to currentTime.</p>
-</td>
-    </tr>  </tbody>
-</table>
+| Name | Type | Description |
+| --- | --- | --- |
+| name | <code>string</code> | The event name. |
+| player | <code>string</code> | The player name (id of the playerDiv). |
+| id | <code>string</code> | The unique id of the player instance. |
+| version | <code>string</code> | The version of the player. |
+| data | <code>object</code> | The data object. |
+| data.handlerName | <code>string</code> | The name of the metadata handler. |
+| data.message | <code>\*</code> | The metadata message. |
+| data.streamTime | <code>number</code> | The timestamp of the metadata in relation to currentTime. |
 
 **Example**  
 ```js
@@ -1012,40 +666,21 @@ player.setup(config).then(function (config) {
 ```
 <a name="NanoPlayer..event_onMute"></a>
 
-### "onMute"
+## "onMute"
 The mute event to pass in the 'config.events' object at the setup call. Fires if the player is muted.
 
 **Kind**: event emitted by [<code>NanoPlayer</code>](#NanoPlayer)  
 **See**: [config](#NanoPlayer..config)  
 **Properties**
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th><th>Type</th><th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-<tr>
-    <td>name</td><td><code>string</code></td><td><p>The event name.</p>
-</td>
-    </tr><tr>
-    <td>player</td><td><code>string</code></td><td><p>The player name (id of the playerDiv).</p>
-</td>
-    </tr><tr>
-    <td>id</td><td><code>string</code></td><td><p>The unique id of the player instance.</p>
-</td>
-    </tr><tr>
-    <td>version</td><td><code>string</code></td><td><p>The version of the player.</p>
-</td>
-    </tr><tr>
-    <td>data</td><td><code>object</code></td><td><p>The data object.</p>
-</td>
-    </tr><tr>
-    <td>data.volume</td><td><code>number</code></td><td><p>The current volume in a range from 0.0 to 1.0.</p>
-</td>
-    </tr>  </tbody>
-</table>
+| Name | Type | Description |
+| --- | --- | --- |
+| name | <code>string</code> | The event name. |
+| player | <code>string</code> | The player name (id of the playerDiv). |
+| id | <code>string</code> | The unique id of the player instance. |
+| version | <code>string</code> | The version of the player. |
+| data | <code>object</code> | The data object. |
+| data.volume | <code>number</code> | The current volume in a range from 0.0 to 1.0. |
 
 **Example**  
 ```js
@@ -1062,40 +697,21 @@ player.setup(config).then(function (config) {
 ```
 <a name="NanoPlayer..event_onUnmute"></a>
 
-### "onUnmute"
+## "onUnmute"
 The unmute event to pass in the 'config.events' object at the setup call. Fires if the player is unmuted.
 
 **Kind**: event emitted by [<code>NanoPlayer</code>](#NanoPlayer)  
 **See**: [config](#NanoPlayer..config)  
 **Properties**
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th><th>Type</th><th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-<tr>
-    <td>name</td><td><code>string</code></td><td><p>The event name.</p>
-</td>
-    </tr><tr>
-    <td>player</td><td><code>string</code></td><td><p>The player name (id of the playerDiv).</p>
-</td>
-    </tr><tr>
-    <td>id</td><td><code>string</code></td><td><p>The unique id of the player instance.</p>
-</td>
-    </tr><tr>
-    <td>version</td><td><code>string</code></td><td><p>The version of the player.</p>
-</td>
-    </tr><tr>
-    <td>data</td><td><code>object</code></td><td><p>The data object.</p>
-</td>
-    </tr><tr>
-    <td>data.volume</td><td><code>number</code></td><td><p>The current volume in a range from 0.0 to 1.0.</p>
-</td>
-    </tr>  </tbody>
-</table>
+| Name | Type | Description |
+| --- | --- | --- |
+| name | <code>string</code> | The event name. |
+| player | <code>string</code> | The player name (id of the playerDiv). |
+| id | <code>string</code> | The unique id of the player instance. |
+| version | <code>string</code> | The version of the player. |
+| data | <code>object</code> | The data object. |
+| data.volume | <code>number</code> | The current volume in a range from 0.0 to 1.0. |
 
 **Example**  
 ```js
@@ -1112,40 +728,21 @@ player.setup(config).then(function (config) {
 ```
 <a name="NanoPlayer..event_onVolumeChange"></a>
 
-### "onVolumeChange"
+## "onVolumeChange"
 The volume change event to pass in the 'config.events' object at the setup call. Fires if the player's volume has changed.
 
 **Kind**: event emitted by [<code>NanoPlayer</code>](#NanoPlayer)  
 **See**: [config](#NanoPlayer..config)  
 **Properties**
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th><th>Type</th><th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-<tr>
-    <td>name</td><td><code>string</code></td><td><p>The event name.</p>
-</td>
-    </tr><tr>
-    <td>player</td><td><code>string</code></td><td><p>The player name (id of the playerDiv).</p>
-</td>
-    </tr><tr>
-    <td>id</td><td><code>string</code></td><td><p>The unique id of the player instance.</p>
-</td>
-    </tr><tr>
-    <td>version</td><td><code>string</code></td><td><p>The version of the player.</p>
-</td>
-    </tr><tr>
-    <td>data</td><td><code>object</code></td><td><p>The data object.</p>
-</td>
-    </tr><tr>
-    <td>data.volume</td><td><code>number</code></td><td><p>The current volume in a range from 0.0 to 1.0.</p>
-</td>
-    </tr>  </tbody>
-</table>
+| Name | Type | Description |
+| --- | --- | --- |
+| name | <code>string</code> | The event name. |
+| player | <code>string</code> | The player name (id of the playerDiv). |
+| id | <code>string</code> | The unique id of the player instance. |
+| version | <code>string</code> | The version of the player. |
+| data | <code>object</code> | The data object. |
+| data.volume | <code>number</code> | The current volume in a range from 0.0 to 1.0. |
 
 **Example**  
 ```js
@@ -1162,73 +759,32 @@ player.setup(config).then(function (config) {
 ```
 <a name="NanoPlayer..event_onStreamInfo"></a>
 
-### "onStreamInfo"
+## "onStreamInfo"
 The stream info event to pass in the 'config.events' object at the setup call. Fires if informations about a stream is available right before playback starts.
 
 **Kind**: event emitted by [<code>NanoPlayer</code>](#NanoPlayer)  
 **See**: [config](#NanoPlayer..config)  
 **Properties**
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th><th>Type</th><th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-<tr>
-    <td>name</td><td><code>string</code></td><td><p>The event name.</p>
-</td>
-    </tr><tr>
-    <td>player</td><td><code>string</code></td><td><p>The player name (id of the playerDiv).</p>
-</td>
-    </tr><tr>
-    <td>id</td><td><code>string</code></td><td><p>The unique id of the player instance.</p>
-</td>
-    </tr><tr>
-    <td>version</td><td><code>string</code></td><td><p>The version of the player.</p>
-</td>
-    </tr><tr>
-    <td>data</td><td><code>object</code></td><td><p>The data object.</p>
-</td>
-    </tr><tr>
-    <td>data.streamInfo</td><td><code>object</code></td><td><p>The stream info object.</p>
-</td>
-    </tr><tr>
-    <td>data.streamInfo.url</td><td><code>string</code></td><td><p>The complete stream url with parameters.</p>
-</td>
-    </tr><tr>
-    <td>data.streamInfo.haveAudio</td><td><code>boolean</code></td><td><p>Indicates if the stream contains audio.</p>
-</td>
-    </tr><tr>
-    <td>data.streamInfo.haveVideo</td><td><code>boolean</code></td><td><p>Indicates if the stream contains video.</p>
-</td>
-    </tr><tr>
-    <td>data.streamInfo.audioInfo</td><td><code>object</code> | <code>null</code></td><td><p>The audio info object. Is &#39;null&#39; if the stream contains no audio.</p>
-</td>
-    </tr><tr>
-    <td>data.streamInfo.audioInfo.bitsPerSample</td><td><code>number</code> | <code>null</code></td><td><p>The bits per sample. Is &#39;null&#39; if not available. NOT AVAILABLE FOR IOS.</p>
-</td>
-    </tr><tr>
-    <td>data.streamInfo.audioInfo.sampleRate</td><td><code>number</code> | <code>null</code></td><td><p>The audio sample rate. Is &#39;null&#39; if not available. NOT AVAILABLE FOR IOS.</p>
-</td>
-    </tr><tr>
-    <td>data.streamInfo.audioInfo.channels</td><td><code>number</code> | <code>null</code></td><td><p>The number of audio channels. Is &#39;null&#39; if not available. NOT AVAILABLE FOR IOS.</p>
-</td>
-    </tr><tr>
-    <td>data.streamInfo.videoInfo</td><td><code>object</code> | <code>null</code></td><td><p>The stream info object. Is &#39;null&#39; if the stream contains no video.</p>
-</td>
-    </tr><tr>
-    <td>data.streamInfo.videoInfo.width</td><td><code>number</code> | <code>null</code></td><td><p>The width of the video. Is &#39;null&#39; if not available.</p>
-</td>
-    </tr><tr>
-    <td>data.streamInfo.videoInfo.height</td><td><code>number</code> | <code>null</code></td><td><p>The height of the video. Is &#39;null&#39; if not available.</p>
-</td>
-    </tr><tr>
-    <td>data.streamInfo.videoInfo.frameRate</td><td><code>number</code> | <code>null</code></td><td><p>The video frame rate. Is &#39;null&#39; if not available. NOT AVAILABLE FOR IOS.</p>
-</td>
-    </tr>  </tbody>
-</table>
+| Name | Type | Description |
+| --- | --- | --- |
+| name | <code>string</code> | The event name. |
+| player | <code>string</code> | The player name (id of the playerDiv). |
+| id | <code>string</code> | The unique id of the player instance. |
+| version | <code>string</code> | The version of the player. |
+| data | <code>object</code> | The data object. |
+| data.streamInfo | <code>object</code> | The stream info object. |
+| data.streamInfo.url | <code>string</code> | The complete stream url with parameters. |
+| data.streamInfo.haveAudio | <code>boolean</code> | Indicates if the stream contains audio. |
+| data.streamInfo.haveVideo | <code>boolean</code> | Indicates if the stream contains video. |
+| data.streamInfo.audioInfo | <code>object</code> \| <code>null</code> | The audio info object. Is 'null' if the stream contains no audio. |
+| data.streamInfo.audioInfo.bitsPerSample | <code>number</code> \| <code>null</code> | The bits per sample. Is 'null' if not available. NOT AVAILABLE FOR IOS. |
+| data.streamInfo.audioInfo.sampleRate | <code>number</code> \| <code>null</code> | The audio sample rate. Is 'null' if not available. NOT AVAILABLE FOR IOS. |
+| data.streamInfo.audioInfo.channels | <code>number</code> \| <code>null</code> | The number of audio channels. Is 'null' if not available. NOT AVAILABLE FOR IOS. |
+| data.streamInfo.videoInfo | <code>object</code> \| <code>null</code> | The stream info object. Is 'null' if the stream contains no video. |
+| data.streamInfo.videoInfo.width | <code>number</code> \| <code>null</code> | The width of the video. Is 'null' if not available. |
+| data.streamInfo.videoInfo.height | <code>number</code> \| <code>null</code> | The height of the video. Is 'null' if not available. |
+| data.streamInfo.videoInfo.frameRate | <code>number</code> \| <code>null</code> | The video frame rate. Is 'null' if not available. NOT AVAILABLE FOR IOS. |
 
 **Example**  
 ```js
@@ -1245,73 +801,32 @@ player.setup(config).then(function (config) {
 ```
 <a name="NanoPlayer..event_onStreamInfoUpdate"></a>
 
-### "onStreamInfoUpdate"
+## "onStreamInfoUpdate"
 The stream info event to pass in the 'config.events' object at the setup call. Fires if the stream format has changed during playback.
 
 **Kind**: event emitted by [<code>NanoPlayer</code>](#NanoPlayer)  
 **See**: [config](#NanoPlayer..config)  
 **Properties**
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th><th>Type</th><th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-<tr>
-    <td>name</td><td><code>string</code></td><td><p>The event name.</p>
-</td>
-    </tr><tr>
-    <td>player</td><td><code>string</code></td><td><p>The player name (id of the playerDiv).</p>
-</td>
-    </tr><tr>
-    <td>id</td><td><code>string</code></td><td><p>The unique id of the player instance.</p>
-</td>
-    </tr><tr>
-    <td>version</td><td><code>string</code></td><td><p>The version of the player.</p>
-</td>
-    </tr><tr>
-    <td>data</td><td><code>object</code></td><td><p>The data object.</p>
-</td>
-    </tr><tr>
-    <td>data.streamInfo</td><td><code>object</code></td><td><p>The stream info object.</p>
-</td>
-    </tr><tr>
-    <td>data.streamInfo.url</td><td><code>string</code></td><td><p>The complete stream url with parameters.</p>
-</td>
-    </tr><tr>
-    <td>data.streamInfo.haveAudio</td><td><code>boolean</code></td><td><p>Indicates if the stream contains audio.</p>
-</td>
-    </tr><tr>
-    <td>data.streamInfo.haveVideo</td><td><code>boolean</code></td><td><p>Indicates if the stream contains video.</p>
-</td>
-    </tr><tr>
-    <td>data.streamInfo.audioInfo</td><td><code>object</code> | <code>null</code></td><td><p>The audio info object. Is &#39;null&#39; if the stream contains no audio.</p>
-</td>
-    </tr><tr>
-    <td>data.streamInfo.audioInfo.bitsPerSample</td><td><code>number</code> | <code>null</code></td><td><p>The bits per sample. Is &#39;null&#39; if not available. NOT AVAILABLE FOR IOS.</p>
-</td>
-    </tr><tr>
-    <td>data.streamInfo.audioInfo.sampleRate</td><td><code>number</code> | <code>null</code></td><td><p>The audio sample rate. Is &#39;null&#39; if not available. NOT AVAILABLE FOR IOS.</p>
-</td>
-    </tr><tr>
-    <td>data.streamInfo.audioInfo.channels</td><td><code>number</code> | <code>null</code></td><td><p>The number of audio channels. Is &#39;null&#39; if not available. NOT AVAILABLE FOR IOS.</p>
-</td>
-    </tr><tr>
-    <td>data.streamInfo.videoInfo</td><td><code>object</code> | <code>null</code></td><td><p>The stream info object. Is &#39;null&#39; if the stream contains no video.</p>
-</td>
-    </tr><tr>
-    <td>data.streamInfo.videoInfo.width</td><td><code>number</code> | <code>null</code></td><td><p>The width of the video. Is &#39;null&#39; if not available.</p>
-</td>
-    </tr><tr>
-    <td>data.streamInfo.videoInfo.height</td><td><code>number</code> | <code>null</code></td><td><p>The height of the video. Is &#39;null&#39; if not available.</p>
-</td>
-    </tr><tr>
-    <td>data.streamInfo.videoInfo.frameRate</td><td><code>number</code> | <code>null</code></td><td><p>The video frame rate. Is &#39;null&#39; if not available. NOT AVAILABLE FOR IOS.</p>
-</td>
-    </tr>  </tbody>
-</table>
+| Name | Type | Description |
+| --- | --- | --- |
+| name | <code>string</code> | The event name. |
+| player | <code>string</code> | The player name (id of the playerDiv). |
+| id | <code>string</code> | The unique id of the player instance. |
+| version | <code>string</code> | The version of the player. |
+| data | <code>object</code> | The data object. |
+| data.streamInfo | <code>object</code> | The stream info object. |
+| data.streamInfo.url | <code>string</code> | The complete stream url with parameters. |
+| data.streamInfo.haveAudio | <code>boolean</code> | Indicates if the stream contains audio. |
+| data.streamInfo.haveVideo | <code>boolean</code> | Indicates if the stream contains video. |
+| data.streamInfo.audioInfo | <code>object</code> \| <code>null</code> | The audio info object. Is 'null' if the stream contains no audio. |
+| data.streamInfo.audioInfo.bitsPerSample | <code>number</code> \| <code>null</code> | The bits per sample. Is 'null' if not available. NOT AVAILABLE FOR IOS. |
+| data.streamInfo.audioInfo.sampleRate | <code>number</code> \| <code>null</code> | The audio sample rate. Is 'null' if not available. NOT AVAILABLE FOR IOS. |
+| data.streamInfo.audioInfo.channels | <code>number</code> \| <code>null</code> | The number of audio channels. Is 'null' if not available. NOT AVAILABLE FOR IOS. |
+| data.streamInfo.videoInfo | <code>object</code> \| <code>null</code> | The stream info object. Is 'null' if the stream contains no video. |
+| data.streamInfo.videoInfo.width | <code>number</code> \| <code>null</code> | The width of the video. Is 'null' if not available. |
+| data.streamInfo.videoInfo.height | <code>number</code> \| <code>null</code> | The height of the video. Is 'null' if not available. |
+| data.streamInfo.videoInfo.frameRate | <code>number</code> \| <code>null</code> | The video frame rate. Is 'null' if not available. NOT AVAILABLE FOR IOS. |
 
 **Example**  
 ```js
@@ -1328,43 +843,22 @@ player.setup(config).then(function (config) {
 ```
 <a name="NanoPlayer..event_onWarning"></a>
 
-### "onWarning"
+## "onWarning"
 The error event to pass in the 'config.events' object at the setup call. Fires if something is not as expected, but functionality works.
 
 **Kind**: event emitted by [<code>NanoPlayer</code>](#NanoPlayer)  
 **See**: [config](#NanoPlayer..config)  
 **Properties**
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th><th>Type</th><th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-<tr>
-    <td>name</td><td><code>string</code></td><td><p>The event name.</p>
-</td>
-    </tr><tr>
-    <td>player</td><td><code>string</code></td><td><p>The player name (id of the playerDiv).</p>
-</td>
-    </tr><tr>
-    <td>id</td><td><code>string</code></td><td><p>The unique id of the player instance.</p>
-</td>
-    </tr><tr>
-    <td>version</td><td><code>string</code></td><td><p>The version of the player.</p>
-</td>
-    </tr><tr>
-    <td>data</td><td><code>object</code></td><td><p>The data object.</p>
-</td>
-    </tr><tr>
-    <td>data.message</td><td><code>string</code></td><td><p>The warning as human readable string.</p>
-</td>
-    </tr><tr>
-    <td>state</td><td><code><a href="#NanoPlayer..state">state</a></code></td><td><p>The player state.</p>
-</td>
-    </tr>  </tbody>
-</table>
+| Name | Type | Description |
+| --- | --- | --- |
+| name | <code>string</code> | The event name. |
+| player | <code>string</code> | The player name (id of the playerDiv). |
+| id | <code>string</code> | The unique id of the player instance. |
+| version | <code>string</code> | The version of the player. |
+| data | <code>object</code> | The data object. |
+| data.message | <code>string</code> | The warning as human readable string. |
+| state | [<code>state</code>](#NanoPlayer..state) | The player state. |
 
 **Example**  
 ```js
@@ -1381,40 +875,21 @@ player.setup(config).then(function (config) {
 ```
 <a name="NanoPlayer..event_onDestroy"></a>
 
-### "onDestroy"
+## "onDestroy"
 The destroy event to pass in the 'config.events' object at the setup call. Fires if the player is destroyed.
 
 **Kind**: event emitted by [<code>NanoPlayer</code>](#NanoPlayer)  
 **See**: [config](#NanoPlayer..config)  
 **Properties**
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th><th>Type</th><th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-<tr>
-    <td>name</td><td><code>string</code></td><td><p>The event name.</p>
-</td>
-    </tr><tr>
-    <td>player</td><td><code>string</code></td><td><p>The player name (id of the playerDiv).</p>
-</td>
-    </tr><tr>
-    <td>id</td><td><code>string</code></td><td><p>The unique id of the player instance.</p>
-</td>
-    </tr><tr>
-    <td>version</td><td><code>string</code></td><td><p>The version of the player.</p>
-</td>
-    </tr><tr>
-    <td>data</td><td><code>object</code></td><td><p>The data object (empty).</p>
-</td>
-    </tr><tr>
-    <td>state</td><td><code><a href="#NanoPlayer..state">state</a></code></td><td><p>The player state.</p>
-</td>
-    </tr>  </tbody>
-</table>
+| Name | Type | Description |
+| --- | --- | --- |
+| name | <code>string</code> | The event name. |
+| player | <code>string</code> | The player name (id of the playerDiv). |
+| id | <code>string</code> | The unique id of the player instance. |
+| version | <code>string</code> | The version of the player. |
+| data | <code>object</code> | The data object (empty). |
+| state | [<code>state</code>](#NanoPlayer..state) | The player state. |
 
 **Example**  
 ```js
@@ -1435,283 +910,102 @@ player.setup(config).then(function (config) {
 ## Type Definitions
 <a name="NanoPlayer..config"></a>
 
-### NanoPlayer~config : <code>object</code>
+## NanoPlayer~config : <code>object</code>
 The config object to pass as param for the 'setup' call.
 
 **Kind**: inner typedef of [<code>NanoPlayer</code>](#NanoPlayer)  
 **See**: [NanoPlayer.setup](#NanoPlayer+setup)  
 **Properties**
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th><th>Type</th><th>Default</th><th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-<tr>
-    <td>source</td><td><code>object</code></td><td></td><td><p>The object to configure the source to play, one of the following properties have to be set.</p>
-</td>
-    </tr><tr>
-    <td>[source.h5live]</td><td><code>object</code></td><td></td><td><p>The h5live object to configure the h5live connection.</p>
-</td>
-    </tr><tr>
-    <td>source.h5live.server</td><td><code>object</code></td><td></td><td><p>The h5live server object.</p>
-</td>
-    </tr><tr>
-    <td>[source.h5live.server.websocket]</td><td><code>string</code></td><td></td><td><p>The h5live websocket url.</p>
-</td>
-    </tr><tr>
-    <td>[source.h5live.server.progressive]</td><td><code>string</code></td><td></td><td><p>The h5live progressive download url.</p>
-</td>
-    </tr><tr>
-    <td>[source.h5live.server.hls]</td><td><code>string</code></td><td></td><td><p>The h5live hls url. Have to be set for playback on iOS 10 or higher. iOS 9 or lower is not supported.</p>
-</td>
-    </tr><tr>
-    <td>[source.h5live.token]</td><td><code>string</code></td><td></td><td><p>The h5live server token.</p>
-</td>
-    </tr><tr>
-    <td>[source.h5live.rtmp]</td><td><code>object</code></td><td></td><td><p>The rtmp playout object for h5live playback.</p>
-</td>
-    </tr><tr>
-    <td>source.h5live.rtmp.url</td><td><code>string</code></td><td></td><td><p>The rtmp playout url. Have to include the domain, port and application e.g. &#39;rtmp://example.com:80/live&#39;.</p>
-</td>
-    </tr><tr>
-    <td>source.h5live.rtmp.streamname</td><td><code>string</code></td><td></td><td><p>The rtmp streamname.</p>
-</td>
-    </tr><tr>
-    <td>[source.h5live.security]</td><td><code>object</code></td><td></td><td><p>The h5live security object for h5live playback.</p>
-</td>
-    </tr><tr>
-    <td>source.h5live.security.token</td><td><code>string</code></td><td></td><td><p>The security service token.</p>
-</td>
-    </tr><tr>
-    <td>source.h5live.security.expires</td><td><code>string</code></td><td></td><td><p>The time the token expires (system time).</p>
-</td>
-    </tr><tr>
-    <td>source.h5live.security.options</td><td><code>string</code></td><td></td><td><p>The security options.</p>
-</td>
-    </tr><tr>
-    <td>source.h5live.security.tag</td><td><code>string</code></td><td></td><td><p>The custom tag to decrypt the token.</p>
-</td>
-    </tr><tr>
-    <td>[source.h5live.params]</td><td><code>object</code></td><td></td><td><p>The params object to pass custom query parameters over the h5live server connection. Parameters can be passed as key/value pairs.</p>
-</td>
-    </tr><tr>
-    <td>[source.bintu]</td><td><code>object</code></td><td></td><td><p>An bintu object to get sources.</p>
-</td>
-    </tr><tr>
-    <td>source.bintu.streamid</td><td><code>string</code></td><td></td><td><p>The bintu stream id.</p>
-</td>
-    </tr><tr>
-    <td>[source.bintu.apiurl]</td><td><code>string</code></td><td><code>&quot;\&quot;https://bintu.nanocosmos.de\&quot;&quot;</code></td><td><p>The bintu api url.</p>
-</td>
-    </tr><tr>
-    <td>[source.hls]</td><td><code>string</code></td><td></td><td><p>An hls playout url as string.</p>
-</td>
-    </tr><tr>
-    <td>[playback]</td><td><code>object</code></td><td></td><td><p>The object to configure the playback.</p>
-</td>
-    </tr><tr>
-    <td>[playback.autoplay]</td><td><code>boolean</code></td><td><code>true</code></td><td><p>Enable/disable autoplay (default: true). <br><b>IMPORTANT</b>: Browsers (mostly mobile) with stricter autoplay policy only allow autoplay with muted audio or within a user interaction (tap, click etc.). To allow autoplay in this case set the &#39;muted&#39; property to &#39;true&#39;. See our <a href="https://www.nanocosmos.de/blog/2018/03/autoplay-on-web-pages-with-h5live-player-for-ultra-low-latency-live-streams/"><b>nanocosmos-blog</b></a> for more informations.</p>
-</td>
-    </tr><tr>
-    <td>[playback.automute]</td><td><code>boolean</code></td><td><code>false</code></td><td><p>Enable/disable automute (default: false). <br><b>IMPORTANT</b>: Browsers (mostly mobile) with stricter autoplay policy only allow autoplay with muted audio or within a user interaction (tap, click etc.). With &#39;autoplay = true&#39; and this option enabled the player will be muted to allow autoplay in case the browsers policy restricted autoplay.</p>
-</td>
-    </tr><tr>
-    <td>[playback.muted]</td><td><code>boolean</code></td><td><code>false</code></td><td><p>Mute/unmute the player (default: false). <br><b>IMPORTANT</b>: Browsers (mostly mobile) with stricter autoplay policy only allow autoplay with muted audio. To allow autoplay set the &#39;muted&#39; property to &#39;true&#39;. See property &#39;autoplay&#39; for more informations.</p>
-</td>
-    </tr><tr>
-    <td>[playback.metadata]</td><td><code>boolean</code></td><td><code>false</code></td><td><p>Enable/disable metadata (default: false).</p>
-</td>
-    </tr><tr>
-    <td>[playback.forceTech]</td><td><code>string</code></td><td></td><td><p>Force the player to use this tech - possible values: &quot;h5live&quot;, &quot;flash&quot;, &quot;hls.native&quot;</p>
-</td>
-    </tr><tr>
-    <td>[playback.flashplayer]</td><td><code>string</code></td><td></td><td><p>A absolute or relative path to the &quot;nano.player.swf&quot;. If not set the player will be required from the base path.</p>
-</td>
-    </tr><tr>
-    <td>[playback.videoId]</td><td><code>string</code></td><td></td><td><p>An element id of a existing video tag that should be used for playback. No new element will be created and after destroy it will be kept.</p>
-</td>
-    </tr><tr>
-    <td>[playback.keepConnection]</td><td><code>boolean</code></td><td><code>false</code></td><td><p>If enabled the player will have always a connection to the h5live server.</p>
-</td>
-    </tr><tr>
-    <td>[playback.allowSafariHlsFallback]</td><td><code>boolean</code></td><td><code>false</code></td><td><p>If enabled the player will select the playback method in Safari Mac OS X and utilize H5Live low latency HLS if appropriate.</p>
-</td>
-    </tr><tr>
-    <td>[playback.reconnect]</td><td><code>object</code></td><td></td><td><p>The reconnect object to configure the reconnect settings. See <a href="#NanoPlayer..errorcode">errorcodes</a> for reconnect possibility.</p>
-</td>
-    </tr><tr>
-    <td>playback.reconnect.minDelay</td><td><code>number</code></td><td><code>2</code></td><td><p>The minimum time to reconnect in seconds. The lowest possible value is 1 sec.</p>
-</td>
-    </tr><tr>
-    <td>playback.reconnect.maxDelay</td><td><code>number</code></td><td><code>10</code></td><td><p>The maximum time to reconnect in seconds.</p>
-</td>
-    </tr><tr>
-    <td>playback.reconnect.delaySteps</td><td><code>number</code></td><td><code>10</code></td><td><p>This number of steps till the maximum delay should reached.</p>
-</td>
-    </tr><tr>
-    <td>playback.reconnect.maxRetries</td><td><code>number</code></td><td><code>10</code></td><td><p>The maximum count of reconnect tries. If set to zero no reconnect will be done.</p>
-</td>
-    </tr><tr>
-    <td>[playback.timeouts]</td><td><code>object</code></td><td></td><td><p>The timeouts object to configure the timeouts for playback.</p>
-</td>
-    </tr><tr>
-    <td>playback.timeouts.loading</td><td><code>number</code></td><td><code>20</code></td><td><p>The timeout for the loading state in seconds, range from 10 - 60 seconds. If reached the player will be stopped with reason &#39;streamnotfound&#39; and error 2001 will be thrown. Will be cleared if player goes to playing state.</p>
-</td>
-    </tr><tr>
-    <td>playback.timeouts.buffering</td><td><code>number</code></td><td><code>20</code></td><td><p>The timeout for the buffering state in seconds, range from 10 - 60 seconds. If reached the player will be stopped with reason &#39;buffer&#39; and error 2002 will be thrown. Will be cleared if player goes to playing state again.</p>
-</td>
-    </tr><tr>
-    <td>playback.timeouts.connecting</td><td><code>number</code></td><td><code>5</code></td><td><p>The timeout for establishing the websocket connection, range from 5 - 30 seconds. If reached the player will be stopped with reason &#39;connectionclose&#39; and error 4106 will be thrown. WEBSOCKET ONLY, FOR IOS ONLY IF METADATA IS ENABLED</p>
-</td>
-    </tr><tr>
-    <td>[style]</td><td><code>object</code></td><td></td><td><p>The object to configure the style of the player.</p>
-</td>
-    </tr><tr>
-    <td>[style.width]</td><td><code>string</code></td><td><code>&quot;&#x27;640px&#x27;&quot;</code></td><td><p>The width of the player in pixels (e.g 320px) or percentage (80%) (height or aspectratio have to be set too). Use &#39;auto&#39; to keep the parents size (height and aspectratio have no effect).</p>
-</td>
-    </tr><tr>
-    <td>[style.height]</td><td><code>string</code></td><td></td><td><p>The height of the player in pixels (e.g 240px) or percentage (45%)  (width or aspectratio have to be set too). Use &#39;auto&#39; to keep the parents size (width and aspectratio have no effect).</p>
-</td>
-    </tr><tr>
-    <td>[style.aspectratio]</td><td><code>string</code></td><td><code>&quot;&#x27;16/9&#x27;&quot;</code></td><td><p>The aspectratio of the player (e.g. 16/9) (width or height have to be set too).</p>
-</td>
-    </tr><tr>
-    <td>[style.controls]</td><td><code>boolean</code></td><td><code>true</code></td><td><p>Show/hide video controls.</p>
-</td>
-    </tr><tr>
-    <td>[style.interactive]</td><td><code>boolean</code></td><td><code>true</code></td><td><p>Enable/disable interactivity of the player on click/touch.</p>
-</td>
-    </tr><tr>
-    <td>[style.view]</td><td><code>boolean</code></td><td><code>true</code></td><td><p>Enable/disable view port handling/animations.</p>
-</td>
-    </tr><tr>
-    <td>[style.scaling]</td><td><code>string</code></td><td><code>&quot;&#x27;letterbox&#x27;&quot;</code></td><td><p>Set&#39;s the display mode for the video inside the player - possible values: &quot;letterbox&quot;, &quot;fill&quot;, &quot;crop&quot;, &quot;original&quot;, &quot;resize&quot;.</p>
-</td>
-    </tr><tr>
-    <td>[style.keepFrame]</td><td><code>boolean</code></td><td><code>false</code></td><td><p>If true the last played frame will be displayed after a pause.</p>
-</td>
-    </tr><tr>
-    <td>[style.displayAudioOnly]</td><td><code>boolean</code></td><td><code>true</code></td><td><p>If true a audio symbol will be shown in case of a stream with audio only.</p>
-</td>
-    </tr><tr>
-    <td>[style.audioPlayer]</td><td><code>boolean</code></td><td><code>false</code></td><td><p>If true a player will be created as an audio player without video functionality. Controls can be enabled/disabled. The size can be customized via &#39;width&#39; and &#39;height&#39;. Default is 640px * 51px.</p>
-</td>
-    </tr><tr>
-    <td>[style.displayMutedAutoplay]</td><td><code>boolean</code></td><td><code>true</code></td><td><p>If true a muted audio symbol will be shown in case of muted autoplay.</p>
-</td>
-    </tr><tr>
-    <td>[style.fullScreenControl]</td><td><code>boolean</code></td><td><code>true</code></td><td><p>If true shows fullscreen control symbol in player controls.</p>
-</td>
-    </tr><tr>
-    <td>[style.backgroundColor]</td><td><code>string</code></td><td><code>&quot;&#x27;black&#x27;&quot;</code></td><td><p>Sets the background color of the video element - possible values: html colors (&quot;red&quot;, &quot;blue&quot;, ...), hex color codes (&quot;#FACAFD&quot;, &quot;#FCEC66&quot;, ...) and rgba color values (&quot;rgba(255,0,0,1)&quot;, &quot;rgba(0,255,0,0.7)&quot;, ...).</p>
-</td>
-    </tr><tr>
-    <td>[events]</td><td><code>object</code></td><td></td><td><p>The object to set handlers to the player events.</p>
-</td>
-    </tr><tr>
-    <td>[events.onReady]</td><td><code>function</code></td><td></td><td><p>Fires if the player is ready to play after successful setup.</p>
-</td>
-    </tr><tr>
-    <td>[events.onPlay]</td><td><code>function</code></td><td></td><td><p>Fires if playout is started.</p>
-</td>
-    </tr><tr>
-    <td>[events.onPause]</td><td><code>function</code></td><td></td><td><p>Fires if playout is paused.</p>
-</td>
-    </tr><tr>
-    <td>[events.onLoading]</td><td><code>function</code></td><td></td><td><p>Fires if playout was stopped or player is ready after setup and tries to play.</p>
-</td>
-    </tr><tr>
-    <td>[events.onStartBuffering]</td><td><code>function</code></td><td></td><td><p>Fires if playout is started but no media is available.</p>
-</td>
-    </tr><tr>
-    <td>[events.onStopBuffering]</td><td><code>function</code></td><td></td><td><p>Fires if playout resumes after buffering.</p>
-</td>
-    </tr><tr>
-    <td>[events.onError]</td><td><code>function</code></td><td></td><td><p>Fires if any kind of error occures.</p>
-</td>
-    </tr><tr>
-    <td>[events.onStats]</td><td><code>function</code></td><td></td><td><p>Fires if the player has measured statistics.</p>
-</td>
-    </tr><tr>
-    <td>[events.onMetaData]</td><td><code>function</code></td><td></td><td><p>Fires if the player has received metadata.</p>
-</td>
-    </tr><tr>
-    <td>[events.onMute]</td><td><code>function</code></td><td></td><td><p>Fires if the player is muted.</p>
-</td>
-    </tr><tr>
-    <td>[events.onUnmute]</td><td><code>function</code></td><td></td><td><p>Fires if the player is unmuted.</p>
-</td>
-    </tr><tr>
-    <td>[events.onVolumeChange]</td><td><code>function</code></td><td></td><td><p>Fires if the player&#39;s volume has changed.</p>
-</td>
-    </tr><tr>
-    <td>[events.onStreamInfo]</td><td><code>function</code></td><td></td><td><p>Fires if stream info is available.</p>
-</td>
-    </tr><tr>
-    <td>[events.onWarning]</td><td><code>function</code></td><td></td><td><p>Fires if something is not as expected, but functionality works.</p>
-</td>
-    </tr><tr>
-    <td>[events.onDestroy]</td><td><code>function</code></td><td></td><td><p>Fires if the player is destroyed.</p>
-</td>
-    </tr><tr>
-    <td>[tweaks]</td><td><code>object</code></td><td></td><td><p>The object to tweak the player (only h5live).</p>
-</td>
-    </tr><tr>
-    <td>[tweaks.buffer]</td><td><code>object</code></td><td></td><td><p>The bufffer object.</p>
-</td>
-    </tr><tr>
-    <td>tweaks.buffer.min</td><td><code>number</code></td><td></td><td><p>The minimum time to buffer.</p>
-</td>
-    </tr><tr>
-    <td>tweaks.buffer.start</td><td><code>number</code></td><td></td><td><p>The buffer time when the playout starts.</p>
-</td>
-    </tr><tr>
-    <td>tweaks.buffer.target</td><td><code>number</code></td><td></td><td><p>The target buffer time.</p>
-</td>
-    </tr><tr>
-    <td>tweaks.buffer.limit</td><td><code>number</code></td><td></td><td><p>The buffer time limit before increase play speed.</p>
-</td>
-    </tr><tr>
-    <td>tweaks.buffer.max</td><td><code>number</code></td><td></td><td><p>The maximum time to buffer.</p>
-</td>
-    </tr><tr>
-    <td>[tweaks.bufferDynamic]</td><td><code>object</code></td><td></td><td><p>The bufffer dynamic object.</p>
-</td>
-    </tr><tr>
-    <td>tweaks.bufferDynamic.offsetThreshold</td><td><code>number</code></td><td></td><td><p>The threshold time between two bufferings in seconds. If the measured value is lower, the buffer will be increased by offsetStep.</p>
-</td>
-    </tr><tr>
-    <td>tweaks.bufferDynamic.offsetStep</td><td><code>number</code></td><td></td><td><p>The step to increase in seconds. Also the step to decrease in cooldown.</p>
-</td>
-    </tr><tr>
-    <td>tweaks.bufferDynamic.cooldownTime</td><td><code>number</code></td><td></td><td><p>The time to check stable playback. If stable playback is detected, the buffer values will be decreased till original buffer values are reached.</p>
-</td>
-    </tr><tr>
-    <td>[metrics]</td><td><code>object</code></td><td></td><td><p>The metrics object. <b>Only usable with valid account.</b> Configuring this object allows you to collect and analyse data via the &#39;nanoStream Cloud&#39;. If not set, metrics are disabled. See our <a href="https://www.nanocosmos.de/v4/documentation/nanoplayer-h5live#nanostream_cloud_analytics_and_player_metrics"><b>nanocosmos / nanoStream documentation</b></a> for more informations.</p>
-</td>
-    </tr><tr>
-    <td>metrics.accountId</td><td><code>string</code></td><td></td><td><p>The account id provided by nanocosmos to use with the metrics.</p>
-</td>
-    </tr><tr>
-    <td>metrics.accountKey</td><td><code>string</code></td><td></td><td><p>The account key provided by nanocosmos to use with the metrics.</p>
-</td>
-    </tr><tr>
-    <td>[metrics.userId]</td><td><code>string</code></td><td></td><td><p>Application user/viewer id. If your application includes a user name or user id, providing this information enables you to filter or aggregate data by this user.</p>
-</td>
-    </tr><tr>
-    <td>[metrics.eventId]</td><td><code>string</code></td><td></td><td><p>Application event id. If the stream is related to a certain event, e.g. webinar, auction or sports event, providing this information enables you to filter or aggregate data by this event.</p>
-</td>
-    </tr><tr>
-    <td>[metrics.statsInterval]</td><td><code>number</code></td><td><code>10</code></td><td><p>The interval how often the stats should be collected in seconds. The minimum is 1 second.</p>
-</td>
-    </tr><tr>
-    <td>[metrics.customField*]</td><td><code>string</code></td><td></td><td><p>Custom field. * can be replaced with 1 - 10 e.g. &#39;customField3&#39;. Possible from &#39;customField1&#39; to &#39;customField10&#39;.</p>
-</td>
-    </tr>  </tbody>
-</table>
+| Name | Type | Default | Description |
+| --- | --- | --- | --- |
+| source | <code>object</code> |  | The object to configure the source to play, one of the following properties have to be set. |
+| [source.h5live] | <code>object</code> |  | The h5live object to configure the h5live connection. |
+| source.h5live.server | <code>object</code> |  | The h5live server object. |
+| [source.h5live.server.websocket] | <code>string</code> |  | The h5live websocket url. |
+| [source.h5live.server.progressive] | <code>string</code> |  | The h5live progressive download url. |
+| [source.h5live.server.hls] | <code>string</code> |  | The h5live hls url. Have to be set for playback on iOS 10 or higher. iOS 9 or lower is not supported. |
+| [source.h5live.token] | <code>string</code> |  | The h5live server token. |
+| [source.h5live.rtmp] | <code>object</code> |  | The rtmp playout object for h5live playback. |
+| source.h5live.rtmp.url | <code>string</code> |  | The rtmp playout url. Have to include the domain, port and application e.g. 'rtmp://example.com:80/live'. |
+| source.h5live.rtmp.streamname | <code>string</code> |  | The rtmp streamname. |
+| [source.h5live.security] | <code>object</code> |  | The h5live security object for h5live playback. |
+| source.h5live.security.token | <code>string</code> |  | The security service token. |
+| source.h5live.security.expires | <code>string</code> |  | The time the token expires (system time). |
+| source.h5live.security.options | <code>string</code> |  | The security options. |
+| source.h5live.security.tag | <code>string</code> |  | The custom tag to decrypt the token. |
+| [source.h5live.params] | <code>object</code> |  | The params object to pass custom query parameters over the h5live server connection. Parameters can be passed as key/value pairs. |
+| [source.bintu] | <code>object</code> |  | An bintu object to get sources. |
+| source.bintu.streamid | <code>string</code> |  | The bintu stream id. |
+| [source.bintu.apiurl] | <code>string</code> | <code>&quot;\&quot;https://bintu.nanocosmos.de\&quot;&quot;</code> | The bintu api url. |
+| [source.hls] | <code>string</code> |  | An hls playout url as string. |
+| [playback] | <code>object</code> |  | The object to configure the playback. |
+| [playback.autoplay] | <code>boolean</code> | <code>true</code> | Enable/disable autoplay (default: true). <br><b>IMPORTANT</b>: Browsers (mostly mobile) with stricter autoplay policy only allow autoplay with muted audio or within a user interaction (tap, click etc.). To allow autoplay in this case set the 'muted' property to 'true'. See our [<b>nanocosmos-blog</b>](https://www.nanocosmos.de/blog/2018/03/autoplay-on-web-pages-with-h5live-player-for-ultra-low-latency-live-streams/) for more informations. |
+| [playback.automute] | <code>boolean</code> | <code>false</code> | Enable/disable automute (default: false). <br><b>IMPORTANT</b>: Browsers (mostly mobile) with stricter autoplay policy only allow autoplay with muted audio or within a user interaction (tap, click etc.). With 'autoplay = true' and this option enabled the player will be muted to allow autoplay in case the browsers policy restricted autoplay. |
+| [playback.muted] | <code>boolean</code> | <code>false</code> | Mute/unmute the player (default: false). <br><b>IMPORTANT</b>: Browsers (mostly mobile) with stricter autoplay policy only allow autoplay with muted audio. To allow autoplay set the 'muted' property to 'true'. See property 'autoplay' for more informations. |
+| [playback.metadata] | <code>boolean</code> | <code>false</code> | Enable/disable metadata (default: false). |
+| [playback.forceTech] | <code>string</code> |  | Force the player to use this tech - possible values: "h5live", "flash", "hls.native" |
+| [playback.flashplayer] | <code>string</code> |  | A absolute or relative path to the "nano.player.swf". If not set the player will be required from the base path. |
+| [playback.videoId] | <code>string</code> |  | An element id of a existing video tag that should be used for playback. No new element will be created and after destroy it will be kept. |
+| [playback.keepConnection] | <code>boolean</code> | <code>false</code> | If enabled the player will have always a connection to the h5live server. |
+| [playback.allowSafariHlsFallback] | <code>boolean</code> | <code>false</code> | If enabled the player will select the playback method in Safari Mac OS X and utilize H5Live low latency HLS if appropriate. |
+| [playback.reconnect] | <code>object</code> |  | The reconnect object to configure the reconnect settings. See [errorcodes](#NanoPlayer..errorcode) for reconnect possibility. |
+| playback.reconnect.minDelay | <code>number</code> | <code>2</code> | The minimum time to reconnect in seconds. The lowest possible value is 1 sec. |
+| playback.reconnect.maxDelay | <code>number</code> | <code>10</code> | The maximum time to reconnect in seconds. |
+| playback.reconnect.delaySteps | <code>number</code> | <code>10</code> | This number of steps till the maximum delay should reached. |
+| playback.reconnect.maxRetries | <code>number</code> | <code>10</code> | The maximum count of reconnect tries. If set to zero no reconnect will be done. |
+| [playback.timeouts] | <code>object</code> |  | The timeouts object to configure the timeouts for playback. |
+| playback.timeouts.loading | <code>number</code> | <code>20</code> | The timeout for the loading state in seconds, range from 10 - 60 seconds. If reached the player will be stopped with reason 'streamnotfound' and error 2001 will be thrown. Will be cleared if player goes to playing state. |
+| playback.timeouts.buffering | <code>number</code> | <code>20</code> | The timeout for the buffering state in seconds, range from 10 - 60 seconds. If reached the player will be stopped with reason 'buffer' and error 2002 will be thrown. Will be cleared if player goes to playing state again. |
+| playback.timeouts.connecting | <code>number</code> | <code>5</code> | The timeout for establishing the websocket connection, range from 5 - 30 seconds. If reached the player will be stopped with reason 'connectionclose' and error 4106 will be thrown. WEBSOCKET ONLY, FOR IOS ONLY IF METADATA IS ENABLED |
+| [style] | <code>object</code> |  | The object to configure the style of the player. |
+| [style.width] | <code>string</code> | <code>&quot;&#x27;640px&#x27;&quot;</code> | The width of the player in pixels (e.g 320px) or percentage (80%) (height or aspectratio have to be set too). Use 'auto' to keep the parents size (height and aspectratio have no effect). |
+| [style.height] | <code>string</code> |  | The height of the player in pixels (e.g 240px) or percentage (45%)  (width or aspectratio have to be set too). Use 'auto' to keep the parents size (width and aspectratio have no effect). |
+| [style.aspectratio] | <code>string</code> | <code>&quot;&#x27;16/9&#x27;&quot;</code> | The aspectratio of the player (e.g. 16/9) (width or height have to be set too). |
+| [style.controls] | <code>boolean</code> | <code>true</code> | Show/hide video controls. |
+| [style.interactive] | <code>boolean</code> | <code>true</code> | Enable/disable interactivity of the player on click/touch. |
+| [style.view] | <code>boolean</code> | <code>true</code> | Enable/disable view port handling/animations. |
+| [style.scaling] | <code>string</code> | <code>&quot;&#x27;letterbox&#x27;&quot;</code> | Set's the display mode for the video inside the player - possible values: "letterbox", "fill", "crop", "original", "resize". |
+| [style.keepFrame] | <code>boolean</code> | <code>false</code> | If true the last played frame will be displayed after a pause. |
+| [style.displayAudioOnly] | <code>boolean</code> | <code>true</code> | If true a audio symbol will be shown in case of a stream with audio only. |
+| [style.audioPlayer] | <code>boolean</code> | <code>false</code> | If true a player will be created as an audio player without video functionality. Controls can be enabled/disabled. The size can be customized via 'width' and 'height'. Default is 640px * 51px. |
+| [style.displayMutedAutoplay] | <code>boolean</code> | <code>true</code> | If true a muted audio symbol will be shown in case of muted autoplay. |
+| [style.fullScreenControl] | <code>boolean</code> | <code>true</code> | If true shows fullscreen control symbol in player controls. |
+| [style.backgroundColor] | <code>string</code> | <code>&quot;&#x27;black&#x27;&quot;</code> | Sets the background color of the video element - possible values: html colors ("red", "blue", ...), hex color codes ("#FACAFD", "#FCEC66", ...) and rgba color values ("rgba(255,0,0,1)", "rgba(0,255,0,0.7)", ...). |
+| [events] | <code>object</code> |  | The object to set handlers to the player events. |
+| [events.onReady] | <code>function</code> |  | Fires if the player is ready to play after successful setup. |
+| [events.onPlay] | <code>function</code> |  | Fires if playout is started. |
+| [events.onPause] | <code>function</code> |  | Fires if playout is paused. |
+| [events.onLoading] | <code>function</code> |  | Fires if playout was stopped or player is ready after setup and tries to play. |
+| [events.onStartBuffering] | <code>function</code> |  | Fires if playout is started but no media is available. |
+| [events.onStopBuffering] | <code>function</code> |  | Fires if playout resumes after buffering. |
+| [events.onError] | <code>function</code> |  | Fires if any kind of error occures. |
+| [events.onStats] | <code>function</code> |  | Fires if the player has measured statistics. |
+| [events.onMetaData] | <code>function</code> |  | Fires if the player has received metadata. |
+| [events.onMute] | <code>function</code> |  | Fires if the player is muted. |
+| [events.onUnmute] | <code>function</code> |  | Fires if the player is unmuted. |
+| [events.onVolumeChange] | <code>function</code> |  | Fires if the player's volume has changed. |
+| [events.onStreamInfo] | <code>function</code> |  | Fires if stream info is available. |
+| [events.onWarning] | <code>function</code> |  | Fires if something is not as expected, but functionality works. |
+| [events.onDestroy] | <code>function</code> |  | Fires if the player is destroyed. |
+| [tweaks] | <code>object</code> |  | The object to tweak the player (only h5live). |
+| [tweaks.buffer] | <code>object</code> |  | The bufffer object. |
+| tweaks.buffer.min | <code>number</code> |  | The minimum time to buffer. |
+| tweaks.buffer.start | <code>number</code> |  | The buffer time when the playout starts. |
+| tweaks.buffer.target | <code>number</code> |  | The target buffer time. |
+| tweaks.buffer.limit | <code>number</code> |  | The buffer time limit before increase play speed. |
+| tweaks.buffer.max | <code>number</code> |  | The maximum time to buffer. |
+| [tweaks.bufferDynamic] | <code>object</code> |  | The bufffer dynamic object. |
+| tweaks.bufferDynamic.offsetThreshold | <code>number</code> |  | The threshold time between two bufferings in seconds. If the measured value is lower, the buffer will be increased by offsetStep. |
+| tweaks.bufferDynamic.offsetStep | <code>number</code> |  | The step to increase in seconds. Also the step to decrease in cooldown. |
+| tweaks.bufferDynamic.cooldownTime | <code>number</code> |  | The time to check stable playback. If stable playback is detected, the buffer values will be decreased till original buffer values are reached. |
+| [metrics] | <code>object</code> |  | The metrics object. <b>Only usable with valid account.</b> Configuring this object allows you to collect and analyse data via the 'nanoStream Cloud'. If not set, metrics are disabled. See our [<b>nanocosmos / nanoStream documentation</b>](https://www.nanocosmos.de/v4/documentation/nanoplayer-h5live#nanostream_cloud_analytics_and_player_metrics) for more informations. |
+| metrics.accountId | <code>string</code> |  | The account id provided by nanocosmos to use with the metrics. |
+| metrics.accountKey | <code>string</code> |  | The account key provided by nanocosmos to use with the metrics. |
+| [metrics.userId] | <code>string</code> |  | Application user/viewer id. If your application includes a user name or user id, providing this information enables you to filter or aggregate data by this user. |
+| [metrics.eventId] | <code>string</code> |  | Application event id. If the stream is related to a certain event, e.g. webinar, auction or sports event, providing this information enables you to filter or aggregate data by this event. |
+| [metrics.statsInterval] | <code>number</code> | <code>10</code> | The interval how often the stats should be collected in seconds. The minimum is 1 second. |
+| [metrics.customField*] | <code>string</code> |  | Custom field. * can be replaced with 1 - 10 e.g. 'customField3'. Possible from 'customField1' to 'customField10'. |
 
 **Example**  
 ```js
@@ -1903,384 +1197,150 @@ var config = {
 ```
 <a name="NanoPlayer..errorcode"></a>
 
-### NanoPlayer~errorcode : <code>number</code>
+## NanoPlayer~errorcode : <code>number</code>
 The possible error codes in a onError event.
 
 **Kind**: inner typedef of [<code>NanoPlayer</code>](#NanoPlayer)  
 **See**: [onError](#NanoPlayer..event_onError)  
 **Properties**
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th><th>Type</th><th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-<tr>
-    <td>1000-1999</td><td><code>PlayerError</code></td><td></td>
-    </tr><tr>
-    <td>1000-1999.1001</td><td></td><td><p>No rtmp url set.</p>
-</td>
-    </tr><tr>
-    <td>1000-1999.1002</td><td></td><td><p>No server set.</p>
-</td>
-    </tr><tr>
-    <td>1000-1999.1003</td><td></td><td><p>Could not play because player has not been configured.</p>
-</td>
-    </tr><tr>
-    <td>1000-1999.1004</td><td></td><td><p>Could not pause because player was not in playing state before.</p>
-</td>
-    </tr><tr>
-    <td>1000-1999.1005</td><td></td><td><p>Playback must be initialized by user gesture.</p>
-</td>
-    </tr><tr>
-    <td>1000-1999.1006</td><td></td><td><p>Buffer config is invalid.</p>
-</td>
-    </tr><tr>
-    <td>1000-1999.1007</td><td></td><td><p>Playback suspended by external reason.</p>
-</td>
-    </tr><tr>
-    <td>1000-1999.1008</td><td></td><td><p>Playback error.</p>
-</td>
-    </tr><tr>
-    <td>1000-1999.1009</td><td></td><td><p>Playback failed because the player was in visibility state &#39;hidden&#39; at load start.</p>
-</td>
-    </tr><tr>
-    <td>2000-2999</td><td><code>StreamError</code></td><td></td>
-    </tr><tr>
-    <td>2000-2999.2001</td><td></td><td><p>The requested stream can not be found.</p>
-</td>
-    </tr><tr>
-    <td>2000-2999.2002</td><td></td><td><p>No media available.</p>
-</td>
-    </tr><tr>
-    <td>2000-2999.2003</td><td></td><td><p>Not enough media data received. The stream was already connected and the stream info event was fired.</p>
-</td>
-    </tr><tr>
-    <td>2000-2999.2004</td><td></td><td><p>The source stream has been stopped.</p>
-</td>
-    </tr><tr>
-    <td>2000-2999.2011</td><td></td><td><p>Received metadata with wrong index.</p>
-</td>
-    </tr><tr>
-    <td>2000-2999.2012</td><td></td><td><p>Received metadata with invalid json string.</p>
-</td>
-    </tr><tr>
-    <td>2000-2999.2013</td><td></td><td><p>Received metadata but no start index.</p>
-</td>
-    </tr><tr>
-    <td>2000-2999.2014</td><td></td><td><p>Received metadata with start index but currently process another.</p>
-</td>
-    </tr><tr>
-    <td>3000-3999</td><td><code>MediaError</code></td><td></td>
-    </tr><tr>
-    <td>3000-3999.3001</td><td></td><td><p>A fetching process of the media aborted by user.</p>
-</td>
-    </tr><tr>
-    <td>3000-3999.3002</td><td></td><td><p>An error occurred when downloading media.</p>
-</td>
-    </tr><tr>
-    <td>3000-3999.3003</td><td></td><td><p>An error occurred when decoding media.</p>
-</td>
-    </tr><tr>
-    <td>3000-3999.3004</td><td></td><td><p>The received audio/video is not supported.</p>
-</td>
-    </tr><tr>
-    <td>3000-3999.3100</td><td></td><td><p>The media source extension changed the state to &#39;ended&#39;. NOT AVAILABLE FOR IOS.</p>
-</td>
-    </tr><tr>
-    <td>4000-4999</td><td><code>NetworkError</code></td><td></td>
-    </tr><tr>
-    <td>4000-4999.4000-4099</td><td><code>General</code></td><td></td>
-    </tr><tr>
-    <td>4000-4999.4000-4099.4001</td><td></td><td><p>Could not establish connection. Maybe wrong protocol or path.</p>
-</td>
-    </tr><tr>
-    <td>4000-4999.4000-4099.4002</td><td></td><td><p>Connection error.</p>
-</td>
-    </tr><tr>
-    <td>4000-4999.4000-4099.4003</td><td></td><td><p>Maximum number of reconnection tries reached.</p>
-</td>
-    </tr><tr>
-    <td>4000-4999.4000-4099.4004</td><td></td><td><p>Reconnection configuration invalid.</p>
-</td>
-    </tr><tr>
-    <td>4000-4999.4100-4199</td><td><code>WebSocket</code></td><td></td>
-    </tr><tr>
-    <td>4000-4999.4100-4199.4101</td><td></td><td><p>An endpoint is &quot;going away&quot;, such as a server going down or a browser having navigated away from a page.</p>
-</td>
-    </tr><tr>
-    <td>4000-4999.4100-4199.4102</td><td></td><td><p>An endpoint is terminating the connection due to a protocol error. Reconnect possible.</p>
-</td>
-    </tr><tr>
-    <td>4000-4999.4100-4199.4103</td><td></td><td><p>An endpoint is terminating the connection because it has received a type of data it cannot accept (e.g., an endpoint that understands only text data MAY send this if it receives a binary message). Reconnect possible.</p>
-</td>
-    </tr><tr>
-    <td>4000-4999.4100-4199.4104</td><td></td><td><p>Reserved. The specific meaning might be defined in the future.</p>
-</td>
-    </tr><tr>
-    <td>4000-4999.4100-4199.4105</td><td></td><td><p>No status code was actually present. Reconnect possible.</p>
-</td>
-    </tr><tr>
-    <td>4000-4999.4100-4199.4106</td><td></td><td><p>Maybe no network, wrong url or server down. Reconnect possible.</p>
-</td>
-    </tr><tr>
-    <td>4000-4999.4100-4199.4107</td><td></td><td><p>An endpoint is terminating the connection because it has received data within a message that was not consistent with the type of the message (e.g., non-UTF-8 [<a href="http://tools.ietf.org/html/rfc3629]">http://tools.ietf.org/html/rfc3629]</a> data within a text message). Reconnect possible.</p>
-</td>
-    </tr><tr>
-    <td>4000-4999.4100-4199.4108</td><td></td><td><p>An endpoint is terminating the connection because it has received a message that &quot;violates its policy&quot;. This reason is given either if there is no other sutible reason, or if there is a need to hide specific details about the policy. Reconnect possible.</p>
-</td>
-    </tr><tr>
-    <td>4000-4999.4100-4199.4109</td><td></td><td><p>An endpoint is terminating the connection because it has received a message that is too big for it to process. Reconnect possible.</p>
-</td>
-    </tr><tr>
-    <td>4000-4999.4100-4199.4110</td><td></td><td><p>An endpoint (client) is terminating the connection because it has expected the server to negotiate one or more extension, but the server didn&#39;t return them in the response message of the WebSocket handshake.</p>
-</td>
-    </tr><tr>
-    <td>4000-4999.4100-4199.4111</td><td></td><td><p>A server is terminating the connection because it encountered an unexpected condition that prevented it from fulfilling the request. Reconnect possible.</p>
-</td>
-    </tr><tr>
-    <td>4000-4999.4100-4199.4115</td><td></td><td><p>The connection was closed due to a failure to perform a TLS handshake (e.g., the server certificate can&#39;t be verified). Reconnect possible.</p>
-</td>
-    </tr><tr>
-    <td>4000-4999.4400-4499</td><td><code>Http</code></td><td></td>
-    </tr><tr>
-    <td>4000-4999.4400-4499.4400</td><td></td><td><p>Bad request. Maybe stream parameters are missing or malformed.</p>
-</td>
-    </tr><tr>
-    <td>4000-4999.4400-4499.4403</td><td></td><td><p>Access denied. The authentication token is missing or invalid.</p>
-</td>
-    </tr><tr>
-    <td>4000-4999.4400-4499.4500</td><td></td><td><p>The connection has been rejected due an internal server error. Reconnect possible.</p>
-</td>
-    </tr><tr>
-    <td>4000-4999.4400-4499.4503</td><td></td><td><p>The requested service is currently unavailable. Reconnect possible.</p>
-</td>
-    </tr><tr>
-    <td>4000-4999.4900-4999</td><td><code>Security</code></td><td></td>
-    </tr><tr>
-    <td>4000-4999.4900-4999.4900</td><td></td><td><p>The security service has been rejected due an internal server error.</p>
-</td>
-    </tr><tr>
-    <td>4000-4999.4900-4999.4901</td><td></td><td><p>The security service denied access. The authentication token is invalid.</p>
-</td>
-    </tr><tr>
-    <td>4000-4999.4900-4999.4903</td><td></td><td><p>The security service denied access. The url is expired or a token parameter is missing (expires, token, or options).</p>
-</td>
-    </tr><tr>
-    <td>4000-4999.4900-4999.4904</td><td></td><td><p>The security service can not be found.</p>
-</td>
-    </tr><tr>
-    <td>5000-5999</td><td><code>SetupError</code></td><td></td>
-    </tr><tr>
-    <td>5000-5999.5000-5099</td><td><code>General</code></td><td></td>
-    </tr><tr>
-    <td>5000-5999.5000-5099.5001</td><td></td><td><p>An exception was thrown during setup.</p>
-</td>
-    </tr><tr>
-    <td>5000-5999.5000-5099.5002</td><td></td><td><p>A forced tech is not supported by your browser.</p>
-</td>
-    </tr><tr>
-    <td>5000-5999.5000-5099.5003</td><td></td><td><p>The players source configuration is malformed or missing.</p>
-</td>
-    </tr><tr>
-    <td>5000-5999.5000-5099.5004</td><td></td><td><p>This browser does not fully support HTML5 and H5Live. Supported are: Chrome &gt;=54 (Windows, MacOSX, Android), Firefox &gt;=48 (Windows, MacOSX, Android), Microsoft Edge (Windows), Microsoft Internet Explorer 11 (at least Windows 8), Safari (MacOSX &amp; at least iOS 10).</p>
-</td>
-    </tr><tr>
-    <td>5000-5999.5000-5099.5005</td><td></td><td><p>Configuration error. Could not create/update player, the rtmp configuration is missing or incomplete. Add an rtmp url and streamname to the configuration.</p>
-</td>
-    </tr><tr>
-    <td>5000-5999.5000-5099.5006</td><td></td><td><p>Configuration error. Could not create/update player, with this configuration an security token is required. Add an token to the configuration.</p>
-</td>
-    </tr><tr>
-    <td>5000-5999.5000-5099.5007</td><td></td><td><p>Configuration error. Could not create/update player, the websocket server configuration is missing.</p>
-</td>
-    </tr><tr>
-    <td>5000-5999.5000-5099.5008</td><td></td><td><p>Configuration error. Could not create/update player, the hls server configuration is missing.</p>
-</td>
-    </tr><tr>
-    <td>5000-5999.5000-5099.5009</td><td></td><td><p>Configuration error. Could not create/update player, the websocket server configuration for metadata is missing.</p>
-</td>
-    </tr><tr>
-    <td>5000-5999.5000-5099.5010</td><td></td><td><p>Could not embed player.</p>
-</td>
-    </tr><tr>
-    <td>5000-5999.5100-5199</td><td><code>Bintu</code></td><td></td>
-    </tr><tr>
-    <td>5000-5999.5100-5199.5101</td><td></td><td><p>Could not find bintu stream. The stream is not live.</p>
-</td>
-    </tr><tr>
-    <td>5000-5999.5100-5199.5102</td><td></td><td><p>No bintu stream id passed.</p>
-</td>
-    </tr><tr>
-    <td>5000-5999.5100-5199.5103</td><td></td><td><p>Bintu service rejected.</p>
-</td>
-    </tr><tr>
-    <td>5000-5999.5200-5299</td><td><code>Metrics</code></td><td></td>
-    </tr><tr>
-    <td>5000-5999.5200-5299.5201</td><td></td><td><p>Metrics configuration error. No metrics config object passed.</p>
-</td>
-    </tr><tr>
-    <td>5000-5999.5200-5299.5202</td><td></td><td><p>Metrics configuration error. Metrics config is not from type &#39;object&#39;.</p>
-</td>
-    </tr><tr>
-    <td>5000-5999.5200-5299.5203</td><td></td><td><p>Metrics configuration error. Metrics config is empty.</p>
-</td>
-    </tr><tr>
-    <td>5000-5999.5200-5299.5204</td><td></td><td><p>Metrics configuration error. A custom property has no valid index number, the range is 1 to 10 e.g.&#39;customField1&#39;.</p>
-</td>
-    </tr><tr>
-    <td>5000-5999.5200-5299.5205</td><td></td><td><p>Metrics configuration error. A custom property  is not indexed correctly, the range is 1 to 10 e.g.&#39;customField1&#39;.</p>
-</td>
-    </tr><tr>
-    <td>5000-5999.5200-5299.5206</td><td></td><td><p>Metrics configuration error. A custom property has an index out of range, the range is 1 to 10 e.g.&#39;customField1&#39;.</p>
-</td>
-    </tr><tr>
-    <td>5000-5999.5200-5299.5207</td><td></td><td><p>Metrics configuration error. A property is not valid.</p>
-</td>
-    </tr><tr>
-    <td>5000-5999.5200-5299.5208</td><td></td><td><p>Metrics configuration error. No credentials passed.</p>
-</td>
-    </tr>  </tbody>
-</table>
+| Name | Type | Description |
+| --- | --- | --- |
+| 1000-1999 | <code>PlayerError</code> |  |
+| 1000-1999.1001 |  | No rtmp url set. |
+| 1000-1999.1002 |  | No server set. |
+| 1000-1999.1003 |  | Could not play because player has not been configured. |
+| 1000-1999.1004 |  | Could not pause because player was not in playing state before. |
+| 1000-1999.1005 |  | Playback must be initialized by user gesture. |
+| 1000-1999.1006 |  | Buffer config is invalid. |
+| 1000-1999.1007 |  | Playback suspended by external reason. |
+| 1000-1999.1008 |  | Playback error. |
+| 1000-1999.1009 |  | Playback failed because the player was in visibility state 'hidden' at load start. |
+| 2000-2999 | <code>StreamError</code> |  |
+| 2000-2999.2001 |  | The requested stream can not be found. |
+| 2000-2999.2002 |  | No media available. |
+| 2000-2999.2003 |  | Not enough media data received. The stream was already connected and the stream info event was fired. |
+| 2000-2999.2004 |  | The source stream has been stopped. |
+| 2000-2999.2011 |  | Received metadata with wrong index. |
+| 2000-2999.2012 |  | Received metadata with invalid json string. |
+| 2000-2999.2013 |  | Received metadata but no start index. |
+| 2000-2999.2014 |  | Received metadata with start index but currently process another. |
+| 3000-3999 | <code>MediaError</code> |  |
+| 3000-3999.3001 |  | A fetching process of the media aborted by user. |
+| 3000-3999.3002 |  | An error occurred when downloading media. |
+| 3000-3999.3003 |  | An error occurred when decoding media. |
+| 3000-3999.3004 |  | The received audio/video is not supported. |
+| 3000-3999.3100 |  | The media source extension changed the state to 'ended'. NOT AVAILABLE FOR IOS. |
+| 4000-4999 | <code>NetworkError</code> |  |
+| 4000-4999.4000-4099 | <code>General</code> |  |
+| 4000-4999.4000-4099.4001 |  | Could not establish connection. Maybe wrong protocol or path. |
+| 4000-4999.4000-4099.4002 |  | Connection error. |
+| 4000-4999.4000-4099.4003 |  | Maximum number of reconnection tries reached. |
+| 4000-4999.4000-4099.4004 |  | Reconnection configuration invalid. |
+| 4000-4999.4100-4199 | <code>WebSocket</code> |  |
+| 4000-4999.4100-4199.4101 |  | An endpoint is "going away", such as a server going down or a browser having navigated away from a page. |
+| 4000-4999.4100-4199.4102 |  | An endpoint is terminating the connection due to a protocol error. Reconnect possible. |
+| 4000-4999.4100-4199.4103 |  | An endpoint is terminating the connection because it has received a type of data it cannot accept (e.g., an endpoint that understands only text data MAY send this if it receives a binary message). Reconnect possible. |
+| 4000-4999.4100-4199.4104 |  | Reserved. The specific meaning might be defined in the future. |
+| 4000-4999.4100-4199.4105 |  | No status code was actually present. Reconnect possible. |
+| 4000-4999.4100-4199.4106 |  | Maybe no network, wrong url or server down. Reconnect possible. |
+| 4000-4999.4100-4199.4107 |  | An endpoint is terminating the connection because it has received data within a message that was not consistent with the type of the message (e.g., non-UTF-8 [http://tools.ietf.org/html/rfc3629] data within a text message). Reconnect possible. |
+| 4000-4999.4100-4199.4108 |  | An endpoint is terminating the connection because it has received a message that "violates its policy". This reason is given either if there is no other sutible reason, or if there is a need to hide specific details about the policy. Reconnect possible. |
+| 4000-4999.4100-4199.4109 |  | An endpoint is terminating the connection because it has received a message that is too big for it to process. Reconnect possible. |
+| 4000-4999.4100-4199.4110 |  | An endpoint (client) is terminating the connection because it has expected the server to negotiate one or more extension, but the server didn't return them in the response message of the WebSocket handshake. |
+| 4000-4999.4100-4199.4111 |  | A server is terminating the connection because it encountered an unexpected condition that prevented it from fulfilling the request. Reconnect possible. |
+| 4000-4999.4100-4199.4115 |  | The connection was closed due to a failure to perform a TLS handshake (e.g., the server certificate can't be verified). Reconnect possible. |
+| 4000-4999.4400-4499 | <code>Http</code> |  |
+| 4000-4999.4400-4499.4400 |  | Bad request. Maybe stream parameters are missing or malformed. |
+| 4000-4999.4400-4499.4403 |  | Access denied. The authentication token is missing or invalid. |
+| 4000-4999.4400-4499.4500 |  | The connection has been rejected due an internal server error. Reconnect possible. |
+| 4000-4999.4400-4499.4503 |  | The requested service is currently unavailable. Reconnect possible. |
+| 4000-4999.4900-4999 | <code>Security</code> |  |
+| 4000-4999.4900-4999.4900 |  | The security service has been rejected due an internal server error. |
+| 4000-4999.4900-4999.4901 |  | The security service denied access. The authentication token is invalid. |
+| 4000-4999.4900-4999.4903 |  | The security service denied access. The url is expired or a token parameter is missing (expires, token, or options). |
+| 4000-4999.4900-4999.4904 |  | The security service can not be found. |
+| 5000-5999 | <code>SetupError</code> |  |
+| 5000-5999.5000-5099 | <code>General</code> |  |
+| 5000-5999.5000-5099.5001 |  | An exception was thrown during setup. |
+| 5000-5999.5000-5099.5002 |  | A forced tech is not supported by your browser. |
+| 5000-5999.5000-5099.5003 |  | The players source configuration is malformed or missing. |
+| 5000-5999.5000-5099.5004 |  | This browser does not fully support HTML5 and H5Live. Supported are: Chrome >=54 (Windows, MacOSX, Android), Firefox >=48 (Windows, MacOSX, Android), Microsoft Edge (Windows), Microsoft Internet Explorer 11 (at least Windows 8), Safari (MacOSX & at least iOS 10). |
+| 5000-5999.5000-5099.5005 |  | Configuration error. Could not create/update player, the rtmp configuration is missing or incomplete. Add an rtmp url and streamname to the configuration. |
+| 5000-5999.5000-5099.5006 |  | Configuration error. Could not create/update player, with this configuration an security token is required. Add an token to the configuration. |
+| 5000-5999.5000-5099.5007 |  | Configuration error. Could not create/update player, the websocket server configuration is missing. |
+| 5000-5999.5000-5099.5008 |  | Configuration error. Could not create/update player, the hls server configuration is missing. |
+| 5000-5999.5000-5099.5009 |  | Configuration error. Could not create/update player, the websocket server configuration for metadata is missing. |
+| 5000-5999.5000-5099.5010 |  | Could not embed player. |
+| 5000-5999.5100-5199 | <code>Bintu</code> |  |
+| 5000-5999.5100-5199.5101 |  | Could not find bintu stream. The stream is not live. |
+| 5000-5999.5100-5199.5102 |  | No bintu stream id passed. |
+| 5000-5999.5100-5199.5103 |  | Bintu service rejected. |
+| 5000-5999.5200-5299 | <code>Metrics</code> |  |
+| 5000-5999.5200-5299.5201 |  | Metrics configuration error. No metrics config object passed. |
+| 5000-5999.5200-5299.5202 |  | Metrics configuration error. Metrics config is not from type 'object'. |
+| 5000-5999.5200-5299.5203 |  | Metrics configuration error. Metrics config is empty. |
+| 5000-5999.5200-5299.5204 |  | Metrics configuration error. A custom property has no valid index number, the range is 1 to 10 e.g.'customField1'. |
+| 5000-5999.5200-5299.5205 |  | Metrics configuration error. A custom property  is not indexed correctly, the range is 1 to 10 e.g.'customField1'. |
+| 5000-5999.5200-5299.5206 |  | Metrics configuration error. A custom property has an index out of range, the range is 1 to 10 e.g.'customField1'. |
+| 5000-5999.5200-5299.5207 |  | Metrics configuration error. A property is not valid. |
+| 5000-5999.5200-5299.5208 |  | Metrics configuration error. No credentials passed. |
 
 <a name="NanoPlayer..state"></a>
 
-### NanoPlayer~state : <code>number</code>
+## NanoPlayer~state : <code>number</code>
 The state of the player.
 
 **Kind**: inner typedef of [<code>NanoPlayer</code>](#NanoPlayer)  
 **See**: [Events](#NanoPlayer..event_onError)  
 **Properties**
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th><th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-<tr>
-    <td>1</td><td><p>UNINITIALIZED</p>
-</td>
-    </tr><tr>
-    <td>2</td><td><p>IDLE</p>
-</td>
-    </tr><tr>
-    <td>3</td><td><p>READY</p>
-</td>
-    </tr><tr>
-    <td>4</td><td><p>LOADING</p>
-</td>
-    </tr><tr>
-    <td>5</td><td><p>PLAYING</p>
-</td>
-    </tr><tr>
-    <td>6</td><td><p>PAUSED</p>
-</td>
-    </tr><tr>
-    <td>7</td><td><p>BUFFERING</p>
-</td>
-    </tr><tr>
-    <td>8</td><td><p>UNKNOWN</p>
-</td>
-    </tr><tr>
-    <td>9</td><td><p>PLAYBACK_NOT_STARTED</p>
-</td>
-    </tr><tr>
-    <td>10</td><td><p>PLAYBACK_SUSPENDED</p>
-</td>
-    </tr><tr>
-    <td>11</td><td><p>PAUSING</p>
-</td>
-    </tr><tr>
-    <td>12</td><td><p>PLAYBACK_ERROR</p>
-</td>
-    </tr><tr>
-    <td>13</td><td><p>RECONNECTION_IMMINENT</p>
-</td>
-    </tr><tr>
-    <td>14</td><td><p>CONNECTION_ERROR</p>
-</td>
-    </tr><tr>
-    <td>15</td><td><p>DESTROYING</p>
-</td>
-    </tr><tr>
-    <td>16</td><td><p>PLAYBACK_RESTARTING</p>
-</td>
-    </tr><tr>
-    <td>17</td><td><p>VISIBILITY_HIDDEN</p>
-</td>
-    </tr><tr>
-    <td>18</td><td><p>NOT_ENOUGH_DATA</p>
-</td>
-    </tr><tr>
-    <td>19</td><td><p>SOURCE_STREAM_STOPPED</p>
-</td>
-    </tr>  </tbody>
-</table>
+| Name | Description |
+| --- | --- |
+| 1 | UNINITIALIZED |
+| 2 | IDLE |
+| 3 | READY |
+| 4 | LOADING |
+| 5 | PLAYING |
+| 6 | PAUSED |
+| 7 | BUFFERING |
+| 8 | UNKNOWN |
+| 9 | PLAYBACK_NOT_STARTED |
+| 10 | PLAYBACK_SUSPENDED |
+| 11 | PAUSING |
+| 12 | PLAYBACK_ERROR |
+| 13 | RECONNECTION_IMMINENT |
+| 14 | CONNECTION_ERROR |
+| 15 | DESTROYING |
+| 16 | PLAYBACK_RESTARTING |
+| 17 | VISIBILITY_HIDDEN |
+| 18 | NOT_ENOUGH_DATA |
+| 19 | SOURCE_STREAM_STOPPED |
 
 <a name="NanoPlayer..pausereason"></a>
 
-### NanoPlayer~pausereason : <code>string</code>
+## NanoPlayer~pausereason : <code>string</code>
 The possible pause reason in a onPause event.
 
 **Kind**: inner typedef of [<code>NanoPlayer</code>](#NanoPlayer)  
 **See**: [onPause](#NanoPlayer..event_onPause)  
 **Properties**
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th><th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-<tr>
-    <td>normal</td><td><p>Paused by user.</p>
-</td>
-    </tr><tr>
-    <td>buffer</td><td><p>Paused by buffer timeout. The stream was stopped or there was a buffer underrun.</p>
-</td>
-    </tr><tr>
-    <td>connectionclose</td><td><p>Paused by network connection close.</p>
-</td>
-    </tr><tr>
-    <td>servernotfound</td><td><p>Paused because of the h5live server was not found.</p>
-</td>
-    </tr><tr>
-    <td>streamnotfound</td><td><p>Paused by loading timeout. The stream could not found.</p>
-</td>
-    </tr><tr>
-    <td>interactionrequired</td><td><p>Paused because auto playback is denied. Can happen especially on mobile.</p>
-</td>
-    </tr><tr>
-    <td>playbacksuspended</td><td><p>Paused because the playback was suspended by an external reason.</p>
-</td>
-    </tr><tr>
-    <td>playbackerror</td><td><p>Paused because the playback had an error.</p>
-</td>
-    </tr><tr>
-    <td>reconnectionimminent</td><td><p>Paused because the connection was closed by an external reason and a reconnect will be prepared.</p>
-</td>
-    </tr><tr>
-    <td>destroy</td><td><p>Paused because the player will be destroyed.</p>
-</td>
-    </tr><tr>
-    <td>playbackrestart</td><td><p>Paused because the player was stopped for update source. The player will restart immediately.</p>
-</td>
-    </tr><tr>
-    <td>visibilityhidden</td><td><p>Paused because the player was not visible at load start.</p>
-</td>
-    </tr><tr>
-    <td>notenoughdata</td><td><p>Paused by loading timeout. The stream was alive and connected but not enough data was received to start playback.</p>
-</td>
-    </tr><tr>
-    <td>sourcestreamstopped</td><td><p>Paused because the source stream has been stopped.</p>
-</td>
-    </tr>  </tbody>
-</table>
-
+| Name | Description |
+| --- | --- |
+| normal | Paused by user. |
+| buffer | Paused by buffer timeout. The stream was stopped or there was a buffer underrun. |
+| connectionclose | Paused by network connection close. |
+| servernotfound | Paused because of the h5live server was not found. |
+| streamnotfound | Paused by loading timeout. The stream could not found. |
+| interactionrequired | Paused because auto playback is denied. Can happen especially on mobile. |
+| playbacksuspended | Paused because the playback was suspended by an external reason. |
+| playbackerror | Paused because the playback had an error. |
+| reconnectionimminent | Paused because the connection was closed by an external reason and a reconnect will be prepared. |
+| destroy | Paused because the player will be destroyed. |
+| playbackrestart | Paused because the player was stopped for update source. The player will restart immediately. |
+| visibilityhidden | Paused because the player was not visible at load start. |
+| notenoughdata | Paused by loading timeout. The stream was alive and connected but not enough data was received to start playback. |
+| sourcestreamstopped | Paused because the source stream has been stopped. |
 
 -----

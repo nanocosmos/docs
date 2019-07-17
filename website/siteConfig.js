@@ -1,4 +1,4 @@
-/**
+/*
  * Copyright (c) 2017-present, Facebook, Inc.
  *
  * This source code is licensed under the MIT license found in the
@@ -10,12 +10,13 @@
 
 const siteConfig = {
   tagline: 'nanoStream Cloud & H5Live Player - Around The World in 1 Second',
-  url: 'https://docs.nanocosmos.de', // Your website URL
+title: 'nanocosmos Documentation',  
+url: 'https://docs.nanocosmos.de', // Your website URL
   baseUrl: '/', // Base URL for your project */
   // For github.io type URLs, you would set the url and baseUrl like:
   //   url: 'https://facebook.github.io',
   //   baseUrl: '/test-site/',
-  cname: 'docs-gh.nanocosmos.de',
+  cname: 'http://nanocosmos.github.io/',
   
   // Used for publishing and more
   projectName: 'docs',
