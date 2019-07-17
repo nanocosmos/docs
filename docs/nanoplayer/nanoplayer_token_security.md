@@ -145,10 +145,10 @@ Playback url - you have to replace the highlighted parameter values with your sp
 <pre><code>https://demo.nanocosmos.de/nanoplayer/release/nanoplayer.html?h5live.server.websocket=wss://bintu-splay.nanocosmos.de/h5live/authstream&h5live.server.hls=https://bintu-splay.nanocosmos.de/h5live/authhttp/playlist.m3u8&h5live.rtmp.url=rtmp://bintu-splay.nanocosmos.de/splay&h5live.rtmp.streamname=<b>[your Bintu stream name]</b>&h5live.security.expires=<b>[expires from response]</b>&h5live.security.tag=<b>[tag from response]</b>&h5live.security.token=<b>[token from response]</b>&h5live.security.options=<b>[options from response]</b></pre></code>
 
 >**Explanation:**
-  * Step 2 (a): the URL hasn’t expired yet, so the playback works for a particular stream.
-  * Step 2 (b): the URL hasn’t expired yet, so the playback works for all the stream for a particular Bintu orga hash.
-  * Step 2 (c): the playback only works for a specified client ip.
-  * Step 2 (d): the referrer is demo.nanocosmos.de, so the playback works.
+> * Step 2 (a): the URL hasn’t expired yet, so the playback works for a particular stream.
+> * Step 2 (b): the URL hasn’t expired yet, so the playback works for all the stream for a particular Bintu orga hash.
+> * Step 2 (c): the playback only works for a specified client ip.
+> * Step 2 (d): the referrer is demo.nanocosmos.de, so the playback works.
 
 To verify that the playback doesn't work with an incorrect referrer, 
 copy the code snippet generated on the link above to an `.html` file on a different domain.
