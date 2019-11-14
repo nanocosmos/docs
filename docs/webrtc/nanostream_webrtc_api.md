@@ -7,10 +7,10 @@ sidebar_label: WebRTC API
 <a name="RtcUser"></a>
 
 ### RtcUser
-WebRTC Public API Class
+nanoStream Webcaster Public API Class
 
 **Kind**: global class  
-**Version**: 5.4.1  
+**Version**: 5.7.2  
 
 -----
 
@@ -18,7 +18,7 @@ WebRTC Public API Class
 <a name="new_RtcUser_new"></a>
 
 ### new RtcUser()
-RtcUser is the main class and entry point of the nanoStream WebRTC API.
+An RtcUser is the main class and entry point of the nanoStream Webcaster API.
 
 **Example**  
 ```js
@@ -31,7 +31,7 @@ var rtcUser = new RtcUser();
 <a name="RtcUser+checkSupport"></a>
 
 ### checkSupport() ⇒ <code>int</code>
-Checks if nanoStream WebRTC is supported by current browser.
+Checks if nanoStream Webcaster is supported by current browser.
 
 **Kind**: instance method of [<code>RtcUser</code>](#RtcUser)  
 **Example**  
@@ -45,7 +45,9 @@ var supportLevel = RtcUser.checkSupport();
 <a name="RtcUser+signIn"></a>
 
 ### signIn(options)
-Signs in.
+Signs in to the server.
+After signIn succeeded you will have a session with the WebRTC server until reloading the browser or calling [signOut](#RtcUser+signOut).
+Parameters in braces "[ ]" are optional.
 
 **Kind**: instance method of [<code>RtcUser</code>](#RtcUser)  
 **Emits**: [<code>SignInSuccess</code>](#RtcUser+event_SignInSuccess), [<code>SignInError</code>](#RtcUser+event_SignInError)  
@@ -60,25 +62,19 @@ Signs in.
     <td>options</td><td><code>object</code></td><td><p>The options object.</p>
 </td>
     </tr><tr>
-    <td>options.server</td><td><code>string</code></td><td><p>The url to the webrtc server.</p>
+    <td>options.server</td><td><code>string</code></td><td><p>The URL to the WebRTC server.</p>
 </td>
     </tr><tr>
-    <td>[options.userName]</td><td><code>string</code></td><td><p>The name of the RtcUser (no spaces) - Deprecated: will be removed in WebRTC-Client v.6.</p>
+    <td>[options.userName]</td><td><code>string</code></td><td><p>The name of the RtcUser (no spaces) - Deprecated: will be removed in nanoStream Webcaster v.6.</p>
 </td>
     </tr><tr>
-    <td>[options.room]</td><td><code>string</code></td><td><p>The room to join (no spaces) - Deprecated: will be removed in WebRTC-Client v.6.</p>
+    <td>[options.room]</td><td><code>string</code></td><td><p>The room to join (no spaces) - Deprecated: will be removed in nanoStream Webcaster v.6.</p>
 </td>
     </tr><tr>
-    <td>[options.token]</td><td><code>string</code></td><td><p>The security token for the server.</p>
+    <td>[options.token]</td><td><code>string</code></td><td><p>The access token for authentication.</p>
 </td>
     </tr><tr>
-    <td>[options.serverUserName]</td><td><code>string</code></td><td><p>The username credential for the server - Deprecated: will be removed in WebRTC-Client v.6.</p>
-</td>
-    </tr><tr>
-    <td>[options.serverPassword]</td><td><code>string</code></td><td><p>The password credential for the server - Deprecated: will be removed in WebRTC-Client v.6.</p>
-</td>
-    </tr><tr>
-    <td>[options.bintuApiKey]</td><td><code>string</code></td><td><p>The bintu apikey for authentication.</p>
+    <td>[options.bintuApiKey]</td><td><code>string</code></td><td><p>The bintu API key for authentication.</p>
 </td>
     </tr>  </tbody>
 </table>
@@ -89,8 +85,6 @@ Signs in.
 var options = {
     server : 'https://rtc-lb.nanocosmos.de/p/webrtcws',
     token : 'token-123',
-    serverUserName : 'username',
-    serverPassword : 'password',
     bintuApiKey : 'awdegfq3490puerg2w54zj2p0w4h46zphm694i0796'
 };
 rtcUser.signIn(options);
@@ -98,7 +92,7 @@ rtcUser.signIn(options);
 <a name="RtcUser+signOut"></a>
 
 ### signOut()
-Signs out.
+Signs out from the server. The current session and a broadcast (if running) will be stopped.
 
 **Kind**: instance method of [<code>RtcUser</code>](#RtcUser)  
 **Emits**: [<code>SignOutSuccess</code>](#RtcUser+event_SignOutSuccess), [<code>SignOutError</code>](#RtcUser+event_SignOutError)  
@@ -110,14 +104,13 @@ rtcUser.signOut();
 <a name="RtcUser+isSignedIn"></a>
 
 ### isSignedIn() ⇒ <code>boolean</code>
-Checks if the RtcUser is connected with the webrtc server and signed in.
+Checks if the RtcUser is connected with the WebRTC server and signed in (see [signIn](#RtcUser+signIn)).
 
 **Kind**: instance method of [<code>RtcUser</code>](#RtcUser)  
 **Example**  
 ```js
 // rtcUser instance of RtcUser
-var isSignedIn = rtcUser.isSignedIn();
-if (isSignedIn) {
+if (rtcUser.isSignedIn()) {
     console.log('signed in');
 } else {
     console.log('not signed in');
@@ -126,9 +119,12 @@ if (isSignedIn) {
 <a name="RtcUser+setConfig"></a>
 
 ### setConfig(config)
-Sets config for the RtcUser.
+Sets global configuration for the RtcUser instance.
+Please note that setting the audio transcoding bitrate is currently done in [startBroadcast](#RtcUser+startBroadcast).
+Parameters in braces "[ ]" are optional.
 
 **Kind**: instance method of [<code>RtcUser</code>](#RtcUser)  
+**Emits**: [<code>SetConfigError</code>](#RtcUser+event_SetConfigError)  
 <table>
   <thead>
     <tr>
@@ -140,31 +136,37 @@ Sets config for the RtcUser.
     <td>config</td><td><code>object</code></td><td></td><td><p>The config object.</p>
 </td>
     </tr><tr>
-    <td>[config.codecs]</td><td><code>object</code></td><td></td><td><p>The codec object.</p>
+    <td>[config.logLevel]</td><td><code>int</code></td><td></td><td><p>Verbosity of console logging. Allowed are values from 0-4, with 4 being the maximum verbosity.</p>
 </td>
     </tr><tr>
-    <td>[config.codecs.videoCodec]</td><td><code>string</code></td><td><code>&quot;&#x27;H264&#x27;&quot;</code></td><td><p>The video codec to use (possible values: &#39;VP8&#39;, &#39;VP9&#39;, &#39;H264&#39;).</p>
+    <td>[config.metrics]</td><td><code>object</code></td><td></td><td><p>The metrics configuration object.</p>
 </td>
     </tr><tr>
-    <td>[config.bitrates]</td><td><code>object</code></td><td></td><td><p>The codec object.</p>
+    <td>[config.metrics.accountId]</td><td><code>string</code></td><td></td><td><p>Account id provided to you.</p>
 </td>
     </tr><tr>
-    <td>[config.bitrates.videoSendInitialBitrate]</td><td><code>string</code></td><td><code>0</code></td><td><p>The webrtc initial bitrate.</p>
+    <td>[config.metrics.accountKey]</td><td><code>string</code></td><td></td><td><p>Account key provided to you.</p>
 </td>
     </tr><tr>
-    <td>[config.bitrates.videoSendBitrate]</td><td><code>string</code></td><td><code>0</code></td><td><p>The webrtc bitrate.</p>
+    <td>[config.metrics.eventId]</td><td><code>string</code></td><td></td><td><p>An id of an event a stream is related to.</p>
 </td>
     </tr><tr>
-    <td>[config.iceServers]</td><td><code>Array.&lt;object&gt;</code></td><td></td><td><p>The ice servers object.</p>
+    <td>[config.metrics.statsInterval]</td><td><code>int</code></td><td><code>10</code></td><td><p>The interval how often the stats should be collected in seconds; default value: 10 seconds. The minimum is 1 second, the maximum is 10 seconds.</p>
 </td>
     </tr><tr>
-    <td>[config.iceServers.urls]</td><td><code>Array.&lt;string&gt;</code></td><td></td><td><p>An array of urls.</p>
+    <td>[config.metrics.customField*]</td><td><code>string</code></td><td></td><td><p>A custom field. * can be replaced with 1 - 10 e.g. &#39;customField3&#39;. Possible from &#39;customField1&#39; to &#39;customField10&#39;.</p>
 </td>
     </tr><tr>
-    <td>[config.iceServers.username]</td><td><code>string</code></td><td></td><td><p>The username for the ice servers if required.</p>
+    <td>[config.bitrates]</td><td><code>object</code></td><td></td><td><p>The codec configuration object.</p>
 </td>
     </tr><tr>
-    <td>[config.iceServers.credential]</td><td><code>string</code></td><td></td><td><p>The password for the ice servers if required.</p>
+    <td>[config.bitrates.videoSendInitialBitrate]</td><td><code>string</code></td><td><code>0</code></td><td><p>The minimum video upstream bitrate in kbps (lower bound, does not work in Firefox).</p>
+</td>
+    </tr><tr>
+    <td>[config.bitrates.videoSendBitrate]</td><td><code>string</code></td><td><code>0</code></td><td><p>The maximum video upstream bitrate in kbps.</p>
+</td>
+    </tr><tr>
+    <td>[config.bitrates.audioSendBitrate]</td><td><code>string</code></td><td><code>0</code></td><td><p>The maximum audio upstream bitrate in kbps (does not work in Firefox).</p>
 </td>
     </tr>  </tbody>
 </table>
@@ -173,34 +175,18 @@ Sets config for the RtcUser.
 ```js
 // rtcUser instance of RtcUser
 var config = {
+    logLevel: 2,
+    metrics: {
+        accountId: 'YOUR_ACCOUNT_ID',
+        accountKey: 'YOUR_ACCOUNT_KEY'
+    },
     codecs: {
         videoCodec: 'H264'
     },
     bitrates: {
         videoSendInitialBitrate: 500,
         videoSendBitrate: 1000
-    },
-    iceServers: [
-        {
-            urls: [
-                'turn:turn.myTurnServer.net:80?transport=udp'
-            ],
-            username: 'username',
-            credential: 'password'
-        },
-        {
-            urls: [
-                'turn:turn.myTurnServer.net:80?transport=udp'
-            ],
-            username: 'username',
-            credential: 'password'
-        },
-        {
-            urls: [
-                'stun:stun.l.google.com:19302'
-            ]
-        }
-    ]
+    }
 };
 rtcUser.setConfig(config);
 ```
@@ -210,6 +196,7 @@ rtcUser.setConfig(config);
 ***Deprecated***
 
 Sets an array of turn/stun-servers for the peer-to-peer connection.
+Parameters in braces "[ ]" are optional.
 
 **Kind**: instance method of [<code>RtcUser</code>](#RtcUser)  
 <table>
@@ -223,7 +210,7 @@ Sets an array of turn/stun-servers for the peer-to-peer connection.
     <td>iceServers</td><td><code>Array.&lt;object&gt;</code></td><td><p>The ice servers object.</p>
 </td>
     </tr><tr>
-    <td>iceServers[].urls</td><td><code>Array.&lt;string&gt;</code></td><td><p>An array of urls.</p>
+    <td>iceServers[].urls</td><td><code>Array.&lt;string&gt;</code></td><td><p>An array of URLs.</p>
 </td>
     </tr><tr>
     <td>[iceServers[].username]</td><td><code>string</code></td><td><p>The username for the ice servers if required.</p>
@@ -263,7 +250,7 @@ rtcUser.setIceServers(iceServers);
 <a name="RtcUser+checkServer"></a>
 
 ### checkServer(server)
-Checks the state of a webrtc server.
+Checks the state of a WebRTC server.
 
 **Kind**: instance method of [<code>RtcUser</code>](#RtcUser)  
 **Emits**: [<code>ReceivedServerStats</code>](#RtcUser+event_ReceivedServerStats)  
@@ -275,7 +262,7 @@ Checks the state of a webrtc server.
   </thead>
   <tbody>
 <tr>
-    <td>server</td><td><code>string</code></td><td><p>The url of the server - Deprecated: will be removed in WebRTC-Client v.6; the function will check the webrtc server specified in the signIn() call.</p>
+    <td>server</td><td><code>string</code></td><td><p>The URL of the server - Deprecated: will be removed in nanoStream Webcaster v.6; the function will check the WebRTC server specified in the signIn() call.</p>
 </td>
     </tr>  </tbody>
 </table>
@@ -289,7 +276,8 @@ rtcUser.checkServer(server);
 <a name="RtcUser+enableStats"></a>
 
 ### enableStats([enable], [interval])
-Enables to receive webrtc stats in a given time interval.
+Enables to receive WebRTC stats in a given time interval.
+Parameters in braces "[ ]" are optional.
 
 **Kind**: instance method of [<code>RtcUser</code>](#RtcUser)  
 **Emits**: [<code>ReceivedWebRTCStats</code>](#RtcUser+event_ReceivedWebRTCStats)  
@@ -301,10 +289,10 @@ Enables to receive webrtc stats in a given time interval.
   </thead>
   <tbody>
 <tr>
-    <td>[enable]</td><td><code>boolean</code></td><td><code>true</code></td><td><p>A flag to enable webrtc stats.</p>
+    <td>[enable]</td><td><code>boolean</code></td><td><code>true</code></td><td><p>A flag to enable WebRTC stats.</p>
 </td>
     </tr><tr>
-    <td>[interval]</td><td><code>number</code></td><td><code>1000</code></td><td><p>The interval time in milli seconds.</p>
+    <td>[interval]</td><td><code>number</code></td><td><code>1000</code></td><td><p>The interval time in milliseconds.</p>
 </td>
     </tr>  </tbody>
 </table>
@@ -330,7 +318,9 @@ rtcUser.enableStats(enable, interval);
 <a name="RtcUser+startBroadcast"></a>
 
 ### startBroadcast(config)
-Starts a broadcast to an rtmp ingest with transcoding configs. Note: by default, only audio transcoding is enabled, video uses h264passthrough and same codec configuration as webrtc, in which case the videobitrate parameter is ignored.
+Starts a broadcast to an RTMP ingest URL. Note: by default, only audio will be transcoded on server side, H264 codec will be used for video upstream and passed through directly to RTMP.
+Therefore you will find the configuration for the video upstream bitrate here: [setConfig](#RtcUser+setConfig).
+Parameters in braces "[ ]" are optional.
 
 **Kind**: instance method of [<code>RtcUser</code>](#RtcUser)  
 **Emits**: [<code>StartBroadcastSuccess</code>](#RtcUser+event_StartBroadcastSuccess), [<code>StartBroadcastError</code>](#RtcUser+event_StartBroadcastError), [<code>BroadcastStatus</code>](#RtcUser+event_BroadcastStatus), [<code>BroadcastError</code>](#RtcUser+event_BroadcastError)  
@@ -348,31 +338,16 @@ Starts a broadcast to an rtmp ingest with transcoding configs. Note: by default,
     <td>config.transcodingTargets</td><td><code>object</code></td><td></td><td><p>The transcoding config object.</p>
 </td>
     </tr><tr>
-    <td>config.transcodingTargets.output</td><td><code>string</code></td><td></td><td><p>The rtmp ingest url for the first stream.</p>
+    <td>config.transcodingTargets.output</td><td><code>string</code></td><td></td><td><p>The RTMP ingest URL.</p>
 </td>
     </tr><tr>
-    <td>[config.transcodingTargets.streamname]</td><td><code>string</code></td><td><code>null</code></td><td><p>Optional streamname. Use if you want to pass output and streamname seperately.</p>
+    <td>config.transcodingTargets.streamname</td><td><code>string</code></td><td><code>null</code></td><td><p>The RTMP streamname.</p>
 </td>
     </tr><tr>
-    <td>[config.transcodingTargets.videobitrate]</td><td><code>number</code></td><td><code>0</code></td><td><p>The video bitrate for the transcode of the first stream.</p>
+    <td>[config.transcodingTargets.audiobitrate]</td><td><code>number</code></td><td><code>0</code></td><td><p>The RTMP audio transcoded bitrate in bps, eg 64000.</p>
 </td>
     </tr><tr>
-    <td>[config.transcodingTargets.audiobitrate]</td><td><code>number</code></td><td><code>0</code></td><td><p>The audio bitrate for the transcode of the first stream.</p>
-</td>
-    </tr><tr>
-    <td>[config.transcodingTargets.framerate]</td><td><code>number</code></td><td><code>0</code></td><td><p>The framerate for the transcode of the first stream.</p>
-</td>
-    </tr><tr>
-    <td>[config.transcodingTargets.dropframes]</td><td><code>string</code></td><td><code>null</code></td><td><p>A flag to enable frame dropping (possible values: &#39;0&#39;, &#39;1&#39;).</p>
-</td>
-    </tr><tr>
-    <td>[config.transcodingTargets.h264passthrough]</td><td><code>string</code></td><td><code>null</code></td><td><p>A flag to enable transmuxing without transcoding if video codec &#39;H264&#39; is used (possible values: &#39;0&#39;, &#39;1&#39;).</p>
-</td>
-    </tr><tr>
-    <td>[config.transcodingTargets.icecast_audio]</td><td><code>string</code></td><td><code>null</code></td><td><p>A flag to enable embedding of an icecast audio stream, normal audio will be ignored (possible values: &#39;0&#39;, &#39;1&#39;).</p>
-</td>
-    </tr><tr>
-    <td>[config.transcodingTargets.rtmpconnectinfo]</td><td><code>string</code></td><td><code>null</code></td><td><p>Data to be send with the rtmp streams &quot;onconnect&quot;. Pass flat object with key value pairs, hierarchies are not supported.</p>
+    <td>[config.transcodingTargets.rtmpconnectinfo]</td><td><code>string</code></td><td><code>null</code></td><td><p>Data to be send with the RTMP streams &quot;onconnect&quot;. Pass flat object with key value pairs, hierarchies are not supported.</p>
 </td>
     </tr>  </tbody>
 </table>
@@ -385,9 +360,6 @@ var config = {
         output: 'rtmp://myIngestServer.com:1935/live/webrtcBroadcast',
         videobitrate: 500000,
         audiobitrate: 64000,
-        framerate: 30,
-        dropframes: '0',
-        icecast_audio: '0',
         rtmpconnectinfo: {
             'key1': 'value1',
             'key2': 7.5,
@@ -400,7 +372,7 @@ rtcUser.startBroadcast(config);
 <a name="RtcUser+stopBroadcast"></a>
 
 ### stopBroadcast()
-Stop a running broadcast.
+Stops a running broadcast.
 
 **Kind**: instance method of [<code>RtcUser</code>](#RtcUser)  
 **Emits**: [<code>StopBroadcastSuccess</code>](#RtcUser+event_StopBroadcastSuccess), [<code>BroadcastError</code>](#RtcUser+event_BroadcastError)  
@@ -412,9 +384,10 @@ rtcUser.stopBroadcast();
 <a name="RtcUser+sendMetaData"></a>
 
 ### sendMetaData(handlerName, jsonValues)
-Add live meta data to a broadcast stream.
+Adds live meta data to a broadcast stream.
 
 **Kind**: instance method of [<code>RtcUser</code>](#RtcUser)  
+**Emits**: <code>RtcUser#event:Error</code>  
 <table>
   <thead>
     <tr>
@@ -426,7 +399,7 @@ Add live meta data to a broadcast stream.
     <td>handlerName</td><td><code>&#x27;onMetaData&#x27;</code> | <code>&#x27;onCuePoint&#x27;</code></td><td><p>Name of the meta data handler. Other types are not supported.</p>
 </td>
     </tr><tr>
-    <td>jsonValues</td><td><code>object</code></td><td><p>The data to be sent. Parameter can contain a maximum object depth of 6.</p>
+    <td>jsonValues</td><td><code>object</code></td><td><p>The data to be sent. The parameter can contain a maximum object depth of 6.</p>
 </td>
     </tr>  </tbody>
 </table>
@@ -497,6 +470,7 @@ rtcUser.getDevices();
 ***Deprecated***
 
 Sets the input video device with config.
+Parameters in braces "[ ]" are optional.
 
 **Kind**: instance method of [<code>RtcUser</code>](#RtcUser)  
 <table>
@@ -676,6 +650,7 @@ var device = rtcUser.getSelectedDevice(config);
 
 ### startPreview(config)
 Starts the preview.
+Parameters in braces "[ ]" are optional.
 
 **Kind**: instance method of [<code>RtcUser</code>](#RtcUser)  
 **Emits**: [<code>StartPreviewSuccess</code>](#RtcUser+event_StartPreviewSuccess), [<code>ReceivedDeviceList</code>](#RtcUser+event_ReceivedDeviceList), [<code>StartPreviewError</code>](#RtcUser+event_StartPreviewError)  
@@ -693,7 +668,7 @@ Starts the preview.
     <td>config.videoDeviceConfig</td><td><code>object</code></td><td></td><td><p>The video config object.</p>
 </td>
     </tr><tr>
-    <td>config.videoDeviceConfig.device</td><td><code>int</code></td><td></td><td><p>The device id to use.</p>
+    <td>config.videoDeviceConfig.device</td><td><code>int</code></td><td></td><td><p>The device id to use (possible values: 0...n - specific device, true - auto device, false - no video).</p>
 </td>
     </tr><tr>
     <td>[config.videoDeviceConfig.width]</td><td><code>int</code></td><td></td><td><p>The video width.</p>
@@ -712,7 +687,7 @@ valid parameters: &#39;camera&#39; | &#39;screen&#39;.</p>
     <td>config.audioDeviceConfig</td><td><code>object</code></td><td></td><td><p>The audio config object.</p>
 </td>
     </tr><tr>
-    <td>config.audioDeviceConfig.device</td><td><code>int</code></td><td></td><td><p>The device id to use.</p>
+    <td>config.audioDeviceConfig.device</td><td><code>int</code></td><td></td><td><p>The device id to use (possible values: 0...n - specific device, true - auto device, false - no audio).</p>
 </td>
     </tr><tr>
     <td>config.elementId</td><td><code>string</code></td><td></td><td><p>The id of a video element to pass in the requested stream directly.</p>
@@ -728,17 +703,51 @@ valid parameters: &#39;camera&#39; | &#39;screen&#39;.</p>
 // rtcUser instance of RtcUser
 var config = {
     videoDeviceConfig : {
-         device: 0,
+         device: 0, // video is enabled using specific device
          width: 640,
          height: 360,
          framerate: 30,
          source: 'camera'
     },
     audioDeviceConfig : {
-         device: 0
+         device: 0 // audio is enabled using specific device
     },
     elementId : 'video-local',
     useWebView : true
+};
+rtcUser.startPreview(config);
+```
+**Example**  
+```js
+// rtcUser instance of RtcUser
+var config = {
+    videoDeviceConfig : {
+         device: 0, // video is enabled using specific device
+         width: 640,
+         height: 360,
+         framerate: 30,
+         source: 'camera'
+    },
+    audioDeviceConfig : {
+         device: false // no audio; video-only preview
+    },
+    elementId : 'video-local',
+    useWebView : false
+};
+rtcUser.startPreview(config);
+```
+**Example**  
+```js
+// rtcUser instance of RtcUser
+var config = {
+    videoDeviceConfig : {
+         device: false // no video; audio-only preview
+    },
+    audioDeviceConfig : {
+         device: 0 // audio is enabled using specific device
+    },
+    elementId : 'video-local',
+    useWebView : false
 };
 rtcUser.startPreview(config);
 ```
@@ -896,14 +905,21 @@ SignInError event. The event is fired if sign in failed.
 <a name="RtcUser+event_SignOutSuccess"></a>
 
 ### "SignOutSuccess"
-SignOutSuccess event. The event is fired if sign out succeeded.
+SignOutSuccess event. The event is fired if sign out succeeded. Session is now destroyed.
 
 **Kind**: event emitted by [<code>RtcUser</code>](#RtcUser)  
 **Typeof**: [<code>SuccessEvent</code>](#SuccessEvent)  
 <a name="RtcUser+event_SignOutError"></a>
 
 ### "SignOutError"
-SignOutError event. The event is fired if sign out failed.
+SignOutError event. The event is fired if an error occured. Session is destroyed in any case.
+
+**Kind**: event emitted by [<code>RtcUser</code>](#RtcUser)  
+**Typeof**: [<code>ErrorEvent</code>](#ErrorEvent)  
+<a name="RtcUser+event_SetConfigError"></a>
+
+### "SetConfigError"
+SetConfigError event. The event is fired if config failed to be set.
 
 **Kind**: event emitted by [<code>RtcUser</code>](#RtcUser)  
 **Typeof**: [<code>ErrorEvent</code>](#ErrorEvent)  
@@ -1030,13 +1046,13 @@ MuteDeviceError event. The event is fired if a video/audio device mute/unmute fa
   </thead>
   <tbody>
 <tr>
-    <td>data</td><td><code>object</code></td><td><p>The data object - Deprecated: will be removed in WebRTC-Client v.6; please use the &quot;error&quot; object instead.</p>
+    <td>data</td><td><code>object</code></td><td><p>The data object - Deprecated: will be removed in nanoStream Webcaster v.6; please use the &quot;error&quot; object instead.</p>
 </td>
     </tr><tr>
     <td>error</td><td><code>object</code></td><td><p>The error object.</p>
 </td>
     </tr><tr>
-    <td>error.code</td><td><code>number</code></td><td><p>The code of the error.</p>
+    <td>error.code</td><td><code><a href="#ErrorCode">ErrorCode</a></code></td><td><p>The code of the error.</p>
 </td>
     </tr><tr>
     <td>error.message</td><td><code>string</code></td><td><p>Human readable message of the error.</p>
@@ -1045,7 +1061,7 @@ MuteDeviceError event. The event is fired if a video/audio device mute/unmute fa
     <td>error.name</td><td><code>string</code></td><td><p>The name of the error.</p>
 </td>
     </tr><tr>
-    <td>error.text</td><td><code>string</code></td><td><p>The text of the error - Deprecated: will be removed in WebRTC-Client v.6; please use the &quot;error.message&quot; parameter instead.</p>
+    <td>error.text</td><td><code>string</code></td><td><p>The text of the error - Deprecated: will be removed in nanoStream Webcaster v.6; please use the &quot;error.message&quot; property instead.</p>
 </td>
     </tr><tr>
     <td>error.type</td><td><code>string</code></td><td><p>The type of the error.</p>
@@ -1073,13 +1089,16 @@ MuteDeviceError event. The event is fired if a video/audio device mute/unmute fa
   </thead>
   <tbody>
 <tr>
-    <td>[data]</td><td><code>object</code></td><td><p>The data object. Note: the object is optional, therefore, its presence is not guaranteed.</p>
+    <td>[data]</td><td><code>object</code></td><td><p>The data object. Note: the property is optional, therefore, its presence is not guaranteed.</p>
 </td>
     </tr><tr>
-    <td>[data.streamname]</td><td><code>string</code></td><td><p>The rtmp ingest streamname. Note: the parameter is optional, therefore, its presence is not guaranteed.</p>
+    <td>[data.output]</td><td><code>string</code></td><td><p>The RTMP ingest URL. Note: the property is optional, therefore, its presence is not guaranteed.</p>
 </td>
     </tr><tr>
-    <td>[data.stream]</td><td><code>object</code></td><td><p>The stream object. Note: the parameter is optional, therefore, its presence is not guaranteed.</p>
+    <td>[data.streamname]</td><td><code>string</code></td><td><p>The RTMP ingest streamname. Note: the property is optional, therefore, its presence is not guaranteed.</p>
+</td>
+    </tr><tr>
+    <td>[data.stream]</td><td><code>object</code></td><td><p>The stream object. Note: the property is optional, therefore, its presence is not guaranteed.</p>
 </td>
     </tr>  </tbody>
 </table>
@@ -1104,25 +1123,25 @@ MuteDeviceError event. The event is fired if a video/audio device mute/unmute fa
     <td>data.message</td><td><code>string</code></td><td><p>The connection state message (possible values: &#39;signalling&#39;, &#39;connected&#39;, &#39;reconnecting&#39;, &#39;broadcasting&#39;).</p>
 </td>
     </tr><tr>
-    <td>[data.number]</td><td><code>object</code></td><td><p>Reserverd for internal developer&#39;s use - Deprecated: will be removed in WebRTC-Client v.6.</p>
+    <td>[data.number]</td><td><code>object</code></td><td><p>Reserverd for internal developer&#39;s use. Note: the property is optional, therefore, its presence is not guaranteed - Deprecated: will be removed in nanoStream Webcaster v.6.</p>
 </td>
     </tr><tr>
-    <td>[data.rtmp]</td><td><code>object</code></td><td><p>Reserved for internal developer&#39;s use - Deprecated: will be removed in WebRTC-Client v.6.</p>
+    <td>[data.rtmp]</td><td><code>object</code></td><td><p>Reserved for internal developer&#39;s use. Note: the property is optional, therefore, its presence is not guaranteed - Deprecated: will be removed in nanoStream Webcaster v.6.</p>
 </td>
     </tr><tr>
     <td>data.state</td><td><code>object</code></td><td><p>The connection state (possible values: 4 = &#39;signalling&#39;, 5 = &#39;connected&#39;, 7 = &#39;reconnecting&#39;, 6 = &#39;broadcasting&#39;).</p>
 </td>
     </tr><tr>
-    <td>data.streamname</td><td><code>object</code></td><td><p>The rtmp ingest streamname.</p>
+    <td>data.streamname</td><td><code>object</code></td><td><p>The RTMP ingest streamname.</p>
 </td>
     </tr><tr>
     <td>data.text</td><td><code>object</code></td><td><p>The connection state text (possible values: &#39;signalling&#39;, &#39;connected&#39;, &#39;reconnecting&#39;).</p>
 </td>
     </tr><tr>
-    <td>[name]</td><td><code>object</code></td><td><p>The name of the event.</p>
+    <td>[name]</td><td><code>object</code></td><td><p>The name of the event. Note: the property is optional, therefore, its presence is not guaranteed.</p>
 </td>
     </tr><tr>
-    <td>[target]</td><td><code>object</code></td><td><p>Reserved for internal developer&#39;s use - Deprecated: will be removed in WebRTC-Client v.6.</p>
+    <td>[target]</td><td><code>object</code></td><td><p>Reserved for internal developer&#39;s use. Note: the property is optional, therefore, its presence is not guaranteed - Deprecated: will be removed in nanoStream Webcaster v.6.</p>
 </td>
     </tr>  </tbody>
 </table>
@@ -1147,7 +1166,7 @@ MuteDeviceError event. The event is fired if a video/audio device mute/unmute fa
     <td>data.devices</td><td><code>object</code></td><td><p>The audio and video devices object.</p>
 </td>
     </tr><tr>
-    <td>[data.devices.audiodevices]</td><td><code>Array.&lt;object&gt;</code></td><td><p>An array of connected input audio devices.</p>
+    <td>[data.devices.audiodevices]</td><td><code>Array.&lt;object&gt;</code></td><td><p>An array of connected input audio devices. Note: the property is optional, therefore, its presence is not guaranteed.</p>
 </td>
     </tr><tr>
     <td>data.devices.audiodevices.id</td><td><code>string</code></td><td><p>The id of an audio device.</p>
@@ -1156,7 +1175,7 @@ MuteDeviceError event. The event is fired if a video/audio device mute/unmute fa
     <td>data.devices.audiodevices.index</td><td><code>number</code></td><td><p>The index of an audio device. Note: indices start from 0.</p>
 </td>
     </tr><tr>
-    <td>[data.devices.videodevices]</td><td><code>Array.&lt;object&gt;</code></td><td><p>An array of connected input video devices.</p>
+    <td>[data.devices.videodevices]</td><td><code>Array.&lt;object&gt;</code></td><td><p>An array of connected input video devices. Note: the property is optional, therefore, its presence is not guaranteed.</p>
 </td>
     </tr><tr>
     <td>data.devices.videodevices.id</td><td><code>string</code></td><td><p>The id of a video device.</p>
@@ -1165,7 +1184,7 @@ MuteDeviceError event. The event is fired if a video/audio device mute/unmute fa
     <td>data.devices.videodevices.index</td><td><code>number</code></td><td><p>The index of a video device. Note: indices start from 0.</p>
 </td>
     </tr><tr>
-    <td>data.updated</td><td><code>boolean</code></td><td><p>Reserved for internal developer&#39;s use - Deprecated: will be removed in WebRTC-Client v.6.</p>
+    <td>data.updated</td><td><code>boolean</code></td><td><p>Reserved for internal developer&#39;s use - Deprecated: will be removed in nanoStream Webcaster v.6.</p>
 </td>
     </tr>  </tbody>
 </table>
@@ -1190,28 +1209,28 @@ MuteDeviceError event. The event is fired if a video/audio device mute/unmute fa
     <td>data.constraints</td><td><code>object</code></td><td><p>The constraints object.</p>
 </td>
     </tr><tr>
-    <td>[data.constraints.audio]</td><td><code>object</code></td><td><p>The audio constraints object.</p>
+    <td>[data.constraints.audio]</td><td><code>object</code></td><td><p>The audio constraints object. Note: the property is optional, therefore, its presence is not guaranteed.</p>
 </td>
     </tr><tr>
     <td>data.constraints.audio.deviceId</td><td><code>object</code></td><td><p>The id of an audio device.</p>
 </td>
     </tr><tr>
-    <td>[data.constraints.video]</td><td><code>object</code></td><td><p>The video constraints object.</p>
+    <td>[data.constraints.video]</td><td><code>object</code></td><td><p>The video constraints object. Note: the property is optional, therefore, its presence is not guaranteed.</p>
 </td>
     </tr><tr>
     <td>data.constraints.video.deviceId</td><td><code>object</code></td><td><p>The id of a video device.</p>
 </td>
     </tr><tr>
-    <td>[data.constraints.video.framerate]</td><td><code>object</code></td><td><p>The video framerate.</p>
+    <td>[data.constraints.video.framerate]</td><td><code>object</code></td><td><p>The video framerate. Note: the property is optional, therefore, its presence is not guaranteed.</p>
 </td>
     </tr><tr>
-    <td>[data.constraints.video.height]</td><td><code>object</code></td><td><p>The video height.</p>
+    <td>[data.constraints.video.height]</td><td><code>object</code></td><td><p>The video height. Note: the property is optional, therefore, its presence is not guaranteed.</p>
 </td>
     </tr><tr>
     <td>data.constraints.video.source</td><td><code>string</code></td><td><p>The video source.</p>
 </td>
     </tr><tr>
-    <td>[data.constraints.video.width]</td><td><code>object</code></td><td><p>The video width.</p>
+    <td>[data.constraints.video.width]</td><td><code>object</code></td><td><p>The video width. Note: the property is optional, therefore, its presence is not guaranteed.</p>
 </td>
     </tr><tr>
     <td>data.metadata</td><td><code>object</code></td><td><p>The metadata object.</p>
@@ -1260,7 +1279,7 @@ MuteDeviceError event. The event is fired if a video/audio device mute/unmute fa
     <td>data</td><td><code>object</code></td><td><p>The data object.</p>
 </td>
     </tr><tr>
-    <td>data.server</td><td><code>string</code></td><td><p>The url of the WebRTC server</p>
+    <td>data.server</td><td><code>string</code></td><td><p>The URL of the WebRTC server</p>
 </td>
     </tr><tr>
     <td>data.userId</td><td><code>string</code></td><td><p>The user id of the WebRTC server.</p>
@@ -1342,7 +1361,7 @@ MuteDeviceError event. The event is fired if a video/audio device mute/unmute fa
     <td>name</td><td><code>string</code></td><td><p>The name of the event.</p>
 </td>
     </tr><tr>
-    <td>target</td><td><code>string</code></td><td><p>Reserved for internal developer&#39;s use - Deprecated: will be removed in WebRTC-Client v.6.</p>
+    <td>target</td><td><code>string</code></td><td><p>Reserved for internal developer&#39;s use - Deprecated: will be removed in nanoStream Webcaster v.6.</p>
 </td>
     </tr>  </tbody>
 </table>
@@ -1370,31 +1389,31 @@ MuteDeviceError event. The event is fired if a video/audio device mute/unmute fa
     <td>data.stats.results</td><td><code>object</code></td><td><p>The results object.</p>
 </td>
     </tr><tr>
-    <td>[data.stats.results.audio_bitrate]</td><td><code>string</code></td><td><p>The audio bitrate. Note: the value is optional, therefore, its presence is not guaranteed.</p>
+    <td>[data.stats.results.audioBitrate]</td><td><code>string</code></td><td><p>The audio bitrate in kbps. Note: the property is optional, therefore, its presence is not guaranteed.</p>
 </td>
     </tr><tr>
-    <td>[data.stats.results.audio_codec]</td><td><code>string</code></td><td><p>The audio codec. Note: the value is optional, therefore, its presence is not guaranteed.</p>
+    <td>[data.stats.results.audioCodec]</td><td><code>string</code></td><td><p>The audio codec. Note: the property is optional, therefore, its presence is not guaranteed.</p>
 </td>
     </tr><tr>
-    <td>[data.stats.results.codec]</td><td><code>string</code></td><td><p>The video codec. Note: the value is optional, therefore, its presence is not guaranteed.</p>
+    <td>[data.stats.results.frameHeight]</td><td><code>number</code></td><td><p>The video frame height. Note: the property is optional, therefore, its presence is not guaranteed.</p>
 </td>
     </tr><tr>
-    <td>[data.stats.results.frameHeight]</td><td><code>number</code></td><td><p>The video frame height. Note: the value is optional, therefore, its presence is not guaranteed.</p>
+    <td>[data.stats.results.frameWidth]</td><td><code>number</code></td><td><p>The video frame width. Note: the property is optional, therefore, its presence is not guaranteed.</p>
 </td>
     </tr><tr>
-    <td>[data.stats.results.frameWidth]</td><td><code>number</code></td><td><p>The video frame width. Note: the value is optional, therefore, its presence is not guaranteed.</p>
+    <td>[data.stats.results.framerate]</td><td><code>number</code></td><td><p>The video frame rate in fps. Note: the property is optional, therefore, its presence is not guaranteed.</p>
 </td>
     </tr><tr>
-    <td>[data.stats.results.framerate]</td><td><code>number</code></td><td><p>The video frame rate. Note: the value is optional, therefore, its presence is not guaranteed.</p>
+    <td>[data.stats.results.videoBitrate]</td><td><code>number</code></td><td><p>The video bitrate in kbps. Note: the property is optional, therefore, its presence is not guaranteed.</p>
 </td>
     </tr><tr>
-    <td>[data.stats.results.video_bitrate]</td><td><code>number</code></td><td><p>The video bitrate. Note: the value is optional, therefore, its presence is not guaranteed.</p>
+    <td>[data.stats.results.videoCodec]</td><td><code>string</code></td><td><p>The video codec. Note: the property is optional, therefore, its presence is not guaranteed.</p>
 </td>
     </tr><tr>
     <td>data.stats.state</td><td><code>number</code></td><td><p>The connection state (expected value: 6 = &#39;broadcasting&#39;).</p>
 </td>
     </tr><tr>
-    <td>data.stats.streamname</td><td><code>string</code></td><td><p>The rtmp ingest streamname.</p>
+    <td>data.stats.streamname</td><td><code>string</code></td><td><p>The RTMP ingest streamname.</p>
 </td>
     </tr><tr>
     <td>data.stats.text</td><td><code>string</code></td><td><p>The connection state text (expected value: &#39;broadcasting&#39;).</p>
@@ -1403,7 +1422,113 @@ MuteDeviceError event. The event is fired if a video/audio device mute/unmute fa
     <td>name</td><td><code>string</code></td><td><p>The name of the event.</p>
 </td>
     </tr><tr>
-    <td>target</td><td><code>string</code></td><td><p>Reserved for internal developer&#39;s use - Deprecated: will be removed in WebRTC-Client v.6.</p>
+    <td>target</td><td><code>string</code></td><td><p>Reserved for internal developer&#39;s use - Deprecated: will be removed in nanoStream Webcaster v.6.</p>
+</td>
+    </tr>  </tbody>
+</table>
+
+<a name="ErrorCode"></a>
+
+### ErrorCode : <code>number</code>
+The possible client error codes in an ErrorEvent event.
+
+**Kind**: global typedef  
+**See**: [ErrorEvent](#ErrorEvent)  
+**Properties**
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th><th>Type</th><th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+<tr>
+    <td>1000-1999</td><td><code>GeneralError</code></td><td></td>
+    </tr><tr>
+    <td>1000</td><td></td><td><p>A general error returned by any nanoStream Webcaster component (see the error message for more informaiton).</p>
+</td>
+    </tr><tr>
+    <td>1001</td><td></td><td><p>A type is not valid.</p>
+</td>
+    </tr><tr>
+    <td>1002</td><td></td><td><p>A value is not valid.</p>
+</td>
+    </tr><tr>
+    <td>1003</td><td></td><td><p>An enum value is not valid.</p>
+</td>
+    </tr><tr>
+    <td>1004</td><td></td><td><p>An object does not exist.</p>
+</td>
+    </tr><tr>
+    <td>1005</td><td></td><td><p>A functions is not defined.</p>
+</td>
+    </tr><tr>
+    <td>2000-2999</td><td><code>RequestError</code></td><td></td>
+    </tr><tr>
+    <td>2000</td><td></td><td><p>A general request error - Deprecated: will be removed in nanoStream Webcaster v.6.</p>
+</td>
+    </tr><tr>
+    <td>3000-3999</td><td><code>WebSocketError</code></td><td></td>
+    </tr><tr>
+    <td>3000</td><td></td><td><p>A general WebSocket error (see the error message for more information).</p>
+</td>
+    </tr><tr>
+    <td>3001</td><td></td><td><p>A WebSocket state is wrong (see an error message for more information).</p>
+</td>
+    </tr><tr>
+    <td>3002</td><td></td><td><p>An error occurred when creating a WebSocket.</p>
+</td>
+    </tr><tr>
+    <td>4000-4999</td><td><code>SessionError</code></td><td></td>
+    </tr><tr>
+    <td>4000</td><td></td><td><p>Sign in failed.</p>
+</td>
+    </tr><tr>
+    <td>4001</td><td></td><td><p>A session is not signed in.</p>
+</td>
+    </tr><tr>
+    <td>5000-5999</td><td><code>BroadcastError</code></td><td></td>
+    </tr><tr>
+    <td>5000</td><td></td><td><p>A broadcast failed to start.</p>
+</td>
+    </tr><tr>
+    <td>5001</td><td></td><td><p>A general broadcast error (see the error message for more information).</p>
+</td>
+    </tr><tr>
+    <td>5002</td><td></td><td><p>A broadcast failed to stop.</p>
+</td>
+    </tr><tr>
+    <td>6000-6999</td><td><code>WebRTCError</code></td><td></td>
+    </tr><tr>
+    <td>6000</td><td></td><td><p>A media stream was received, but no video/audio data is coming from a device. The device could be in use from another application.</p>
+</td>
+    </tr><tr>
+    <td>6001</td><td></td><td><p>A media stream was received, but it contains no tracks.</p>
+</td>
+    </tr><tr>
+    <td>6002</td><td></td><td><p>A media stream was not found.</p>
+</td>
+    </tr><tr>
+    <td>6003</td><td></td><td><p>A media stream was not removed.</p>
+</td>
+    </tr><tr>
+    <td>6004</td><td></td><td><p>No devices are available for &quot;getUserMedia&quot;.</p>
+</td>
+    </tr><tr>
+    <td>6005</td><td></td><td><p>A general &quot;getUserMedia&quot; error (may include: &#39;PermissionDenied&#39;, &#39;NotAllowedError&#39;, &#39;NotReadableError&#39;, &#39;NotFoundError&#39;, 
+&#39;OverconstrainedError&#39;, &#39;AbortError&#39;, &#39;GetMediaError&#39;, &#39;NoDeviceError&#39;, &#39;NoStreamError&#39;).</p>
+</td>
+    </tr><tr>
+    <td>6006</td><td></td><td><p>Devices failed to get enumerated.</p>
+</td>
+    </tr><tr>
+    <td>6008</td><td></td><td><p>A general &quot;getDisplayMedia&quot; error (may include: &#39;PermissionDenied&#39;, &#39;NotAllowedError&#39;).</p>
+</td>
+    </tr><tr>
+    <td>7000-7999</td><td><code>WebRTCError</code></td><td></td>
+    </tr><tr>
+    <td>7000</td><td></td><td><p>An error occurred on the server.</p>
 </td>
     </tr>  </tbody>
 </table>
