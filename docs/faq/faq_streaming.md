@@ -12,7 +12,7 @@ Yes, our nanoStream Cloud software and services support low latency live streami
 > - End-to-end latency is dependent on all components in the workflow: capture, live encoder, upstream, server/cloud, downstream, player.
 > - Latency is primarily based on stream buffers and streaming protocols used. Buffers can happen on all parts of a stream, encoder, streamer, server, CDN and player.
 > - The new [nanoStream H5Live player](http://nanocosmos.de/h5live) part of nanoStream Cloud can be used for plugin-free, browser-based low latency playback.
-> - The new [nanoStream WebRTC.live](http://nanocosmos.de/webrtc) broadcaster part of nanoStream Cloud can be used for plugin-free, browser-based low latency broadcast (live encoding).
+> - The new [nanoStream Webcaster](http://nanocosmos.de/webrtc) broadcaster part of nanoStream Cloud can be used for plugin-free, browser-based low latency broadcast (live encoding).
 
 See also [here](https://www.nanocosmos.de/v4/documentation/live_video_encoder_-_low_latency).
 
@@ -23,7 +23,7 @@ See also [here](https://www.nanocosmos.de/v4/documentation/live_video_encoder_-_
 nanoStream Apps and SDKs are available for different platforms:
 
 - nanoStream Apps/SDKs for Windows, MacOS, iOS, Android
-- nanoStream WebRTC.live broadcaster for all WebRTC-enabled browsers
+- nanoStream Webcaster broadcaster for all WebRTC-enabled browsers
 - nanoStream H5Live Player for all HTML5 browsers (desktop and mobile)
 
 </details>
@@ -35,7 +35,7 @@ nanoStream Apps and SDKs are available for different platforms:
 *** Ingest/Upstream from Live Sources:
 
 - RTMP with H264 Video and AAC Audio (nanoStream Apps/SDKs or 3rd party software/hardware)
-- WebRTC.live (browser based)
+- nanoStream Webcaster (browser based)
 - SRT 
 - Other formats upon request, e.g. RTSP, H265, VP9
 
@@ -316,7 +316,7 @@ nanoStream is compatible with the `RTMP streaming protocol`, which is independen
 <details><summary><strong>Do you offer WebM or Vp8 encoding?</strong></summary>
 
 Some nanoStream platforms also support `VP8`, `VP9` and other codecs.
-WebRTC.live supports `VP8`, `VP9` and `H.264`.
+nanoStream Webcaster supports `VP8`, `VP9` and `H.264`.
 
 Please contact us for details.
 

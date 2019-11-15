@@ -550,11 +550,11 @@
         "title": "sidebar"
       },
       "webrtc/nanostream_webrtc_api": {
-        "title": "nanoStream WebRTC API",
-        "sidebar_label": "WebRTC API"
+        "title": "nanoStream Webcaster API",
+        "sidebar_label": "Webcaster"
       },
       "webrtc/nanostream_webrtc_browser_api": {
-        "title": "nanoStream WebRTC Browser API",
+        "title": "nanoStream Webcaster Browser API",
         "sidebar_label": "Browser API"
       },
       "webrtc/nanostream_webrtc_demos": {
@@ -581,7 +581,7 @@
     "links": {
       "nanoStream Cloud": "nanoStream Cloud",
       "H5Live Player": "H5Live Player",
-      "WebRTC.live": "WebRTC.live",
+      "nanoStream Webcaster": "nanoStream Webcaster",
       "nanoStream Apps and SDKs": "nanoStream Apps and SDKs",
       "Samples": "Samples",
       "FAQ": "FAQ"
@@ -590,7 +590,7 @@
       "H5Live Player": "H5Live Player",
       "API": "API",
       "Other Information": "Other Information",
-      "WebRTC.live": "WebRTC.live",
+      "nanoStream Webcaster": "nanoStream Webcaster",
       "nanoStream Cloud": "nanoStream Cloud",
       "nanoStream SDKs/Apps": "nanoStream SDKs/Apps",
       "Android": "Android",

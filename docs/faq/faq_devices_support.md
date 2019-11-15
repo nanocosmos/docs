@@ -47,7 +47,7 @@ For Windows 7 / IE there is a Flash player fallback
 >Note: some builtin browsers, especially on Android, do not fully support HTML5. This might >affect builtin Samsung browsers. **We recommend using Chrome.**
 
 
-**nanoStream WebRTC.live Broadcaster**
+**nanoStream Webcaster Broadcaster**
 
 Most browsers supporting the latest HTML5 WebRTC standards should work. 
 Apple introduced WebRTC support end 2017 for iOS/Safari, and the WebRTC standard is not fully finalized yet, so there might be specific issues on specific devices. Please contact us for details.

@@ -1,7 +1,7 @@
 ---
 id: nanostream_webrtc_api
-title: nanoStream WebRTC API
-sidebar_label: WebRTC API
+title: nanoStream Webcaster API
+sidebar_label: Webcaster
 ---
 
 <a name="RtcUser"></a>

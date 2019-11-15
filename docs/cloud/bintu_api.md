@@ -13,7 +13,7 @@ bintu is the stream management dashboard and API for nanoStream Cloud and CDN. B
 You need a bintu account, based on our trial or a paid plan. 
 You also need a live encoder, currently based on RTMP/H264/AAC.
 Live playback will be supported by using our built-in H5Live Player.
-By using our WebRTC.live solution, you can directly start live streaming without any additional soft- or hardware, plugin-free in all browsers.
+By using our nanoStream Webcaster solution, you can directly start live streaming without any additional soft- or hardware, plugin-free in all browsers.
 
 * [Homepagee: Overview and Plans](https://www.nanocosmos.de/v6/cloud)
 * [Introduction](cloud_introduction)

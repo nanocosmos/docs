@@ -3,9 +3,9 @@ id: nanostream_webrtc_getting_started
 title: Getting started
 sidebar_label: Getting started
 ---
-## How to use WebRTC.live with nanoStream Cloud?
+## How to use nanoStream Webcaster with nanoStream Cloud?
 
-It is very simple to test and use nanoStream WebRTC.live as your live encoder to nanoStream Cloud with integrated nanoStream H5Live Player. You need a camera connected to your computer or built-in on your device, and a WebRTC-compatible browser. We recommend using Google Chrome.
+It is very simple to test and use nanoStream Webcaster as your live encoder to nanoStream Cloud with integrated nanoStream H5Live Player. You need a camera connected to your computer or built-in on your device, and a WebRTC-compatible browser. We recommend using Google Chrome.
 
 ### Create your own nanoStream Cloud account
 
@@ -17,9 +17,9 @@ To stream directly to nanoStream Cloud you will need to register at [bintu.live]
 
 -----
 
-## nanoStream WebRTC Browser API
+## nanoStream Webcaster Browser API
 
-The nanoStream WebRTC Browser API is based on a Javascript API connected to the nanoStream WebRTC Server. It can be used for creating your own live video broadcast web page for plugin-free live streaming with WebRTC.
+The nanoStream Webcaster Browser API is based on a Javascript API connected to the nanoStream WebRTC Server. It can be used for creating your own live video broadcast web page for plugin-free live streaming with WebRTC.
 
 
 
@@ -58,7 +58,7 @@ Within your HTML:
   <button id="btn-startbroadcast">broadcast</button>
   <button id="btn-stopbroadcast">stop broadcast</button>
 	
-  <!-- embed the nanoStream WebRTC.live library -->
+  <!-- embed the nanoStream Webcaster library -->
   <!-- replace "<version>" with the version contained in your package -->
   <script src="./js/api/webrtc/nano.webrtc.<version>.min.js"></script>
 </body>
@@ -205,7 +205,7 @@ user.startPreview(config);
 
 ## nanoStream Cloud End-To-End Workflow
 
-The following describes a plugin-free end to end streaming solution from the camera to the viewer, with nanostream WebRTC, nanoStream Cloud and nanoStream h5live player.
+The following describes a plugin-free end to end streaming solution from the camera to the viewer, with nanostream Webcaster, nanoStream Cloud and nanoStream h5live player.
 
 
 
@@ -217,7 +217,7 @@ To create a live stream to broadcast to your audience, you need to obtain an `RT
 
 ### Creating a stream for bintu.live with bintu.js
 
-If you don't already have a stream url you can create a new webrtc enabled stream with our bintu.js which is included in the nanoStream WebRTC Browser API.
+If you don't already have a stream url you can create a new webrtc enabled stream with our bintu.js which is included in the nanoStream Webcaster Browser API.
 
 ```javascript
 <script src="./js/api/bintu/nano.bintu.js"></script>

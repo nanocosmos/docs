@@ -30,7 +30,7 @@ const siteConfig = {
     {doc: 'cloud/cloud_introduction', label: 'nanoStream Cloud'},
     //{doc: 'cloud', label: 'Cloud'},
     {doc: 'nanoplayer/nanoplayer_introduction', label: 'H5Live Player'},
-    {doc: 'webrtc/nanostream_webrtc_introduction', label: 'WebRTC.live'},
+    {doc: 'webrtc/nanostream_webrtc_introduction', label: 'nanoStream Webcaster'},
     //{doc: 'webrtc', label: 'WebRTC'},
     {doc: 'nanostream/nanostream', label: 'nanoStream Apps and SDKs'},
     {doc: 'faq/faq_streaming', label: 'FAQ'},
