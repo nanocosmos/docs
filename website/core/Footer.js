@@ -38,7 +38,7 @@ class Footer extends React.Component {
             <h5>Products</h5>
             <a href="https://www.nanocosmos.de/cloud">Nanostream Cloud with Bintu.Live</a>
             <a href="https://www.nanocosmos.de/h5live">H5Live Low Latency HTML5-Player</a>
-            <a href="https://www.nanocosmos.de/webrtc">WebRTC.Live</a>
+            <a href="https://www.nanocosmos.de/webrtc">nanoStream Webcaster</a>
             <a href="https://www.nanocosmos.de/#nanostream">Nanostream Apps and SDK</a>
           </div>
           <div>

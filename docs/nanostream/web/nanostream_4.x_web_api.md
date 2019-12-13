@@ -12,7 +12,7 @@ Compatible to NPAPI, ActiveX and Chrome Extension
 (c) 2015 nanocosmos gmbh
 
 
-**Note: This API is deprecated! Please use WebRTC.live and H5Live!**
+**Note: This API is deprecated! Please use nanoStream Webcaster and H5Live!**
 
 # NANO.NanoStream
 

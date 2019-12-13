@@ -6,7 +6,7 @@ We recommend using nanoStream Cloud for the best end-to-end user experience for 
 
 - nanoStream Web Browser / Plugin-free software for all browsers is available for live encoding and playback
 
- 1.  nanoStream WebRTC.live for broadcasting from cameras and screens: https://nanocosmos.de/webrtc
+ 1.  nanoStream Webcaster for broadcasting from cameras and screens: https://nanocosmos.de/webrtc
  2.  nanoStream H5Live for live playback with ultra-low latency on all HTML5 devices: https://nanocosmos.de/h5live
 
 - nanoStream Desktop Applications 

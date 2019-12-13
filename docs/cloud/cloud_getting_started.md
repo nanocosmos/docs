@@ -35,7 +35,7 @@ Create your first live stream: In the top menu select `Stream`, then `create`
 
 ### Start a live stream broadcast
 
-To start a live stream broadcast, you need a live encoder software, either based on an `RTMP Live Encoder application`, or the browser-based [nanoStream WebRTC.live broadcaster](http://docs.nanocosmos.de/docs/webrtc/nanostream_webrtc_introduction).
+To start a live stream broadcast, you need a live encoder software, either based on an `RTMP Live Encoder application`, or the browser-based [nanoStream Webcaster broadcaster](http://docs.nanocosmos.de/docs/webrtc/nanostream_webrtc_introduction).
 
 You can use [nanoStream Apps](http://docs.nanocosmos.de/docs/nanostream/nanostream), or 3rd part software like [OBS (Open Broadcaster)](https://obsproject.com/) or professional Live Encoders like [Elemental Live](https://www.elemental.com/products/aws-elemental-live).
 

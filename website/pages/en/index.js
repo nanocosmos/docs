@@ -100,8 +100,8 @@ class Index extends React.Component {
           <h2 className="sectionHeader">Power your live streaming</h2>
           <div className="showcaseCta">
             <div>
-              <p><span>nanoStream WebRTC.live:</span> browser-based live encoder</p>
-              <Button className="button button_outline_inverted button_cta" href="/docs/webrtc/nanostream_webrtc_introduction">More about nanoStream WebRTC.live</Button>
+              <p><span>nanoStream Webcaster:</span> browser-based live encoder</p>
+              <Button className="button button_outline_inverted button_cta" href="/docs/webrtc/nanostream_webrtc_introduction">More about nanoStream Webcaster</Button>
             </div>
             <div>
               <p><span>nanoStream Apps and SDKs:</span> Windows, macos, iOS</p>

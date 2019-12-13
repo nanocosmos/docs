@@ -12,7 +12,7 @@
 - [Globals](nanoplayer/nanoplayer_api_global)
     
 # webrtc
-## WebRTC.live
+## nanoStream Webcaster
   [Intro](webrtc/nanostream_webrtc_introduction)
   [](webrtc/nanostream_webrtc_getting_started)
   [](webrtc/nanostream_webrtc_browser_api)

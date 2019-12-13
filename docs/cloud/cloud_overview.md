@@ -24,7 +24,7 @@ Live encoding/ingest is supported with:
 
 - ingest with your own **H264/AAC/RTMP Live Encoders** (e.g. OBS, Wirecast, Hardware Encoders)
 - ingest with our **nanoStream Apps/SDKs** (nanoStream Apps for Win/Mac/iOS/Android),
-- ingest with plugin-free web based **nanoStream WebRTC.live** broadcaster incl. screen sharing
+- ingest with plugin-free web based **nanoStream Webcaster** broadcaster incl. screen sharing
 
 
 

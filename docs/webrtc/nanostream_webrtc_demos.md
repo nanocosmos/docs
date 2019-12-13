@@ -6,11 +6,11 @@ sidebar_label: Browser Demos
 
 ## Easy and quick demo for simple tests
 
-1. Click [here](https://www.nanocosmos.de/v6/webrtc) to try the WebRTC.live demo. 
+1. Click [here](https://www.nanocosmos.de/v6/webrtc) to try the nanoStream Webcaster demo. 
 
 <br>
 
-2. On the right-hand side of the page you see the WebRTC.live broadcast from your camera.
+2. On the right-hand side of the page you see the nanoStream Webcaster broadcast from your camera.
 
 
 ![img](https://i2.wp.com/www.nanocosmos.de/blog/wp-content/uploads/2018/03/3.png?resize=360%2C361&ssl=1)
@@ -83,7 +83,7 @@ https://webrtc.nanocosmos.de/release/webcast.html?bintu.apikey=YOURAPIKEY
 
 7. Broadcast configuration
 
-The WebRTC.live broadcast configuration is automatically set to `H264 video` with `500 kbits/s`. Audio is sent with the `Opus audio codec` and will be transcoded automatically to `AAC` for live distribution with nanoStream Cloud.
+The nanoStream Webcaster broadcast configuration is automatically set to `H264 video` with `500 kbits/s`. Audio is sent with the `Opus audio codec` and will be transcoded automatically to `AAC` for live distribution with nanoStream Cloud.
 
 [![img](https://i0.wp.com/www.nanocosmos.de/blog/wp-content/uploads/2018/03/Screenshot-2018-03-28-11.20.21.png?resize=640%2C804&ssl=1)](https://i0.wp.com/www.nanocosmos.de/blog/wp-content/uploads/2018/03/Screenshot-2018-03-28-11.20.21.png?resize=640%2C804&ssl=1)
 
