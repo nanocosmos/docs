@@ -115,7 +115,25 @@ curl -X POST https://bintu-splay.nanocosmos.de/secure/token -H "Content-Type: ap
 #### (d). ...with a custom tag and a referer
 
 Test data (additional): 
-  * Referer: `demo.nanocosmos.de`
+  * Referer: <pre><code>demo.nanocosmos.de [<b>a valid referer is a domain name which meets the requirement below</b>]</pre></code>
+
+Referer requirements:
+- The full domain name may not exceed the length of 253 characters (including delimiting dots, but not a trailing dot) in its textual representation.
+- The domain name part may contain from 1 to 63 characters.
+- The domain name may contain: a-z | A-Z | 0-9, periods (.), and hyphens (-).
+- The domain name may have a trailing period (.), the root domain.
+- The domain name should not start or end with a hyphen (-).
+- The top-level domain (TDL) should not include digits only.
+
+Valid referers (examples):
+- nanocosmos.de
+- demo.nanocosmos.de
+- demo-nanocosmos123.de
+
+Invalid referers (examples):
+- https://demo.nanocosmos.de - Cannot include a protocol
+- nanocosmos.de/nanoplayer - Cannot include a resource ID (“/nanoplayer”)
+- nanocosmos - Must include a TDL
 
 *Request*:
 
