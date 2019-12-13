@@ -163,6 +163,10 @@
         "title": "Other Information",
         "sidebar_label": "Blog"
       },
+      "nanoplayer/nanoplayer_feature_stream_switching": {
+        "title": "Stream switching via updateSource",
+        "sidebar_label": "Stream switching"
+      },
       "nanoplayer/nanoplayer_getting_started": {
         "title": "Getting started",
         "sidebar_label": "Getting started"
@@ -543,8 +547,9 @@
       "nanostream/windows/windows_networkwriter": {
         "title": "nanostream/windows/windows_networkwriter"
       },
-      "samples/README": {
-        "title": "samples/README"
+      "samples/samples": {
+        "title": "nanoStream Samples",
+        "sidebar_label": "nanoStream Samples"
       },
       "sidebar": {
         "title": "sidebar"
@@ -588,6 +593,7 @@
     },
     "categories": {
       "H5Live Player": "H5Live Player",
+      "Features": "Features",
       "API": "API",
       "Other Information": "Other Information",
       "nanoStream Webcaster": "nanoStream Webcaster",
@@ -599,7 +605,8 @@
       "Windows": "Windows",
       "DirectShow": "DirectShow",
       "Live Streaming": "Live Streaming",
-      "Purchase and License": "Purchase and License"
+      "Purchase and License": "Purchase and License",
+      "Samples": "Samples"
     }
   },
   "pages-strings": {
