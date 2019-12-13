@@ -4,15 +4,22 @@ title: nanoStream SDK for iOS
 sidebar_label: SDK for iOS
 ---
 
+The documentation is updated for nanoStream SDK v.4.10.0.0 and Xcode 11.
+
 ## Purpose
 
 This documentation is about the nanoStream Live Video Streaming SDK for iOS and can be used by software developers to integrate nanoStream Live Video Encoding into custom apps.
 
 
+
 ## Requirements
 
-- Apple Mac with MacOS 10.9 with XCode 6 or higher
-- Apple iPhone with iOS 7 or later (min. iOS 8.1 recommended)
+* Recommended:
+    * Apple Mac with macOS 10.15 and Xcode 11
+	* Apple iPhone/iPad with iOS 13
+* Minimal:
+    * Apple Mac with OS X 10.9 or higher and Xcode 6 or higher
+    * Apple iPhone/iPad with iOS 8 or higher
 
 
 
@@ -20,20 +27,25 @@ This documentation is about the nanoStream Live Video Streaming SDK for iOS and 
 
 ### Preparation
 
-Add the library **`libnanostreamAVC.a`** as dependency (Link Binary With Libraries) to your project.
+Add the library **`libnanostreamAVC.a`** as a dependency (Link Binary With Libraries) to your project.
+
 Further required dependencies:
 
-*  `libc++.dylib`
-*  `libstdc++.dylib`
-*  `AVFoundation.framework`
-*  `Accelerate.framework`
-*  `CoreGraphics.framework`
-*  `CoreMedia.framework`
-*  `CoreVideo.framework`
-*  `Foundation.framework`
-*  `SystemConfiguration.framework`
-*  `VideoToolbox.framework` (link as Optional, not as Required)
-*  `AudioToolbox.framework`
+* `libc++.tbd`
+* `Accelerate.framework`
+* `SystemConfiguration.framework`
+* `VideoToolbox.framework` (link as Optional, not as Required)
+* `AudioToolbox.framework`
+
+The old nanoStream SDK and Xcode versions may additionaly require:
+
+* `libc++.dylib` (instead of `libc++.tbd`)
+* `libstdc++.dylib`
+* `AVFoundation.framework`
+* `CoreGraphics.framework`
+* `CoreMedia.framework`
+* `CoreVideo.framework`
+* `Foundation.framework`
 
 Include the header `libnanostreamAVC.h` in your source code.
 
@@ -43,52 +55,65 @@ Include the header `libnanostreamAVC.h` in your source code.
 
 ```objc
 int version = [nanostreamAVC getVersion];
-if(version!=NANOSTREAM_AVC_VERSION)
-{
+if (version != NANOSTREAM_AVC_VERSION) {
 	// Handle header and library version mismatch
 }
-
 ```
 
 
 
-### Initialize the library
+### Initialize the library for broadcasting
+
+For a complete running sample, see LiveEncoder and LiveStream apps included in the SDK package.
 
 Implement the interface ```nanostreamEventListener``` in your class:
 
 ```objc
 @interface SampleLiveViewController : UIViewController <nanostreamEventListener>
+
 ...
+
 @property (nonatomic, strong) nanostreamAVC *nAVC;
 @property (nonatomic, strong) IBOutlet UIView *previewView;
+
 ...
+
 @end
 
 @implementation SampleLiveViewController
+
 ...
--(void)nanostreamEventHandlerWithType:(nanostreamEvent)type andLevel:(int)level andDescription:(NSString *)description
-{
-	switch (type) {
-		case StreamStarted:
-			break;
-		case StreamStopped:
-			break;
-		case StreamError:
-			NSLog(@"nanostreamEventHandlerWithType: StreamError: %@", description);
-			break;
-		case StreamErrorConnect:
-			NSLog(@"nanostreamEventHandlerWithType: StreamErrorConnect: %@", description);
-			break;
-		case StreamConnectionStatus:
-			NSLog(@"nanostreamEventHandlerWithType: RtmpConnectionStatus %@", description);
-			break;
-		case GeneralError:
-			break;
-		default:
-			break;
-	}
+
+- (void)nanostreamEventHandlerWithType:(nanostreamEvent)type andLevel:(int)level andDescription:(NSString *)description {
+    switch (type) {
+		    case StreamStarted:
+			      break;
+		    case StreamStopped:
+			      break;
+		    case StreamError:
+			      NSLog(@"nanostreamEventHandlerWithType:StreamError: %@", description);
+			      break;
+		    case StreamErrorConnect:
+			      NSLog(@"nanostreamEventHandlerWithType:StreamErrorConnect: %@", description);
+			      break;
+		    case StreamConnectionStatus:
+			      NSLog(@"nanostreamEventHandlerWithType:RtmpConnectionStatus: %@", description);
+			      break;
+            case StreamSettingCropModeNotSupported:
+      	        NSLog(@"nanostreamEventHandlerWithType:StreamSettingCropModeNotSupported: %@", description);
+			          break;
+            case StreamSettingLocalRecordingCropModeNotSupported:
+      	        NSLog(@"nanostreamEventHandlerWithType:StreamSettingLocalRecordingCropModeNotSupported: %@", description);
+			          break;        
+		    case GeneralError:
+			      break;
+		    default:
+			      break;
+	  }
 }
+
 ...
+
 @end
 ```
 
@@ -97,35 +122,50 @@ Configure the settings object for the library:
 ```objc
 nanostreamAVCSettings *nAVCSettings = [[nanostreamAVCSettings alloc] init];
 
-// set the rtmp url, you want to stream to
-[nAVCSettings setUrl: @"rtmp://localhost/live"];
-[nAVCSettings setStreamId: @"myStream"];
+// Set the RTMP URL, you want to stream to
+[nAVCSettings setUrl:@"rtmp://localhost/live"];
+[nAVCSettings setStreamId:@"myStream"];
 
-// set the video settings
-[nAVCSettings setVideoResolution: Resolution640x480];
-[nAVCSettings setVideoBitrate: 512];
-[nAVCSettings setKeyFramerate: 60];
-[nAVCSettings setOrientation: AVCaptureVideoOrientationLandscapeRight];
-[nAVCSettings setCropMode: NoCrop];
-[nAVCSettings setFramerate: 30];
-[nAVCSettings setH264Level: Baseline30];
+// Set the video settings
+[nAVCSettings setVideoResolution:Resolution640x480];
+[nAVCSettings setVideoBitrate:512];
+[nAVCSettings setKeyFramerate:60];
+[nAVCSettings setOrientation:AVCaptureVideoOrientationLandscapeRight];
+[nAVCSettings setCropMode:NoCrop];
+[nAVCSettings setFramerate:30];
+[nAVCSettings setH264Level:Baseline30];
 
-// set the audio settings
-[nAVCSettings setInitialVolume: 1.0];
-[nAVCSettings setAudioMonoStereo: Stereo];
-[nAVCSettings setAudioSamplerate: 44100.0f];
+// Set the audio settings
+[nAVCSettings setInitialVolume:1.0];
+[nAVCSettings setAudioMonoStereo:Stereo];
+[nAVCSettings setAudioSamplerate:44100.0f];
 ```
 
 Then the library itself can be initialized:
 
 ```objc
-// nAVC and previewView are properties of the controller class in this example
-self.nAVC = [[nanostreamAVC alloc] initWithSettings: nAVCSettings
-                                          uiPreview: self.previewView
-                                      errorListener: self];
+// nAVC is a property of the controller class in this example
+self.nAVC = [[nanostreamAVC alloc] initWithSettings:nAVCSettings
+                                      eventListener:self];
 
-// set the license key (required for streaming)
-[self.nanostream setLicense: @"nlic:1.2:LiveEnc:1.1:LvApp=1.....288"];
+// Set the license key (required for streaming)
+[self.nAVC setLicense:@"nlic:1.2:LiveEnc:1.1:LvApp=1.....288"];
+
+// Implement the nanostreamEventListener protocol method 
+// to display a preview in the previewView
+- (void)didUpdatePreviewLayer:(CALayer*)layer {
+
+    // UI View is modified, main queue required
+    dispatch_async(dispatch_get_main_queue(), ^{
+        if (self.previewView.layer.sublayers.count > 0) {
+            self.previewView.layer.sublayers = nil;
+        }
+        layer.bounds = CGRectZero;
+        [layer setFrame:self.previewView.bounds];
+        [(AVCaptureVideoPreviewLayer*)layer setVideoGravity:AVLayerVideoGravityResizeAspectFill];
+        [self.previewView.layer addSublayer:layer];
+    });
+}
 ```
 
 
@@ -133,24 +173,16 @@ self.nAVC = [[nanostreamAVC alloc] initWithSettings: nAVCSettings
 ### Start a stream
 
 ```objc
-	// Start broadcast asynchronously with completion handler
-	[self.nAVC start:^(bool success)
-	{
-	  // use main queue to change UI related things
-	  dispatch_async(dispatch_get_main_queue(), ^
-	  {
-	    if (success)
-	    {
-	      // Handle succesful stream start
-	      ...
-	    }
-	    else
-	    {
-	      // Handle failure
-	      ...
-	    }
-	  }
-	}
+// Start broadcast asynchronously with completion handler
+[self.nAVC start:^(NSXError error) {
+    dispatch_async(dispatch_get_main_queue(), ^{
+        if (error == NSXErrorNone) {
+            // Handle succesful stream start
+        } else {
+            // Handle failure
+        }
+    });
+}];
 ```
 
 
@@ -162,14 +194,12 @@ If set to `NO`, the stream will stop immediately, discarding the remaining data.
 
 ```objc
 	// Stop broadcast asynchronously with completion handler
-	[self.nAVC stop:YES withCompletion:^
-	{
-	  // use main queue to change UI related things
-	  dispatch_async(dispatch_get_main_queue(), ^
-	  {
+	[self.nAVC stop:YES withCompletion:^{
+	  // Use the main queue to update UI
+	  dispatch_async(dispatch_get_main_queue(), ^{
 	    // Handle stream stop
 	  }
-	}
+	}];
 ```
 
 
@@ -177,19 +207,47 @@ If set to `NO`, the stream will stop immediately, discarding the remaining data.
 ## Live Playback
 
 nanoStream supports live playback from `RTMP` sources.
-For a complete running sample, see our SDK package including broadcasting and playback samples.
+For a complete running sample, see LivePlayer and LiveStream apps included in the SDK package.
 
 
 
 ### Initialize the library for playback
 
 ```objc
-    self.session = [[RtmpSourceCaptureSession alloc] initWithPreview:self.playerView andStatusListener:self andLogLevel:LogLevelMinimal];
+self.session = [[RtmpSourceCaptureSession alloc] initWithLogLevel:LogLevelMinimal];
+self.session.delegate = self;
     
-    [self.session setLicense: myLicenseKey];
+[self.session setLicense:myLicenseKey];
     
-    [self.session setUrl:self.rtmpServerURL];
-    [self.session setStreamId:self.rtmpStreamName];
+[self.session setUrl:self.rtmpServerURL];
+[self.session setStreamId:self.rtmpStreamName];
+
+...
+
+// Implement the RtmpSourceCaptureSessionStatusListener protocol method 
+// to display a playback in the playerView
+- (void)didUpdateDisplayLayer:(CALayer *)layer {
+
+    // UI View is modified, main queue required
+    dispatch_async(dispatch_get_main_queue(), ^{
+        if (self.playerView.layer.sublayers == nil) {
+            [self.playerView.layer addSublayer:layer];
+        } else {
+            // Replace a current display layer with the new one
+            for (CALayer* subLayer in [self.playerView.layer sublayers]) {
+                if ([subLayer isKindOfClass:AVSampleBufferDisplayLayer.class]) {
+                    [self.playerView.layer replaceSublayer:subLayer with:layer];
+                }
+            }
+        }
+
+        layer.bounds = CGRectZero;
+        [layer setFrame:self.playerView.bounds];
+        [(AVSampleBufferDisplayLayer *)layer setVideoGravity:AVLayerVideoGravityResizeAspect];
+
+        [self.session didUpdateDisplayLayerFinished];
+    });
+}
 ```
 
 
@@ -197,7 +255,9 @@ For a complete running sample, see our SDK package including broadcasting and pl
 ### Start playback
 
 ```objc
-[self.session start];
+[self.session start:^{
+    // Hanlde playback start
+}];
 ```
 
 
@@ -213,29 +273,26 @@ For a complete running sample, see our SDK package including broadcasting and pl
 
 <br>
 
-| Error                                   | Meaning                                                      |
-| --------------------------------------- | ------------------------------------------------------------ |
-| **`StreamSettingCropModeNotSupported`** | a larger input resolution is required for the crop mode      |
-| **`StreamErrorConnect`**                | the connection to the server could not be established, server might no be reachable or there are network problems |
-| **`StreamErrorConnectSSL`**             | the connection process failed when trying to setup SSL, maybe the server certificates could not be verified |
-| **`StreamError`**                       | an error occurred while initializing the stream, or during the stream, used license might be invalid or expired |
-| **`GeneralError`**                      | a general error                                              |
+| Error                                                 | Meaning                                                      |
+| ----------------------------------------------------- | ------------------------------------------------------------ |
+| **`StreamSettingCropModeNotSupported`**               | a larger input resolution is required for the crop mode      |
+| **`StreamSettingLocalRecordingCropModeNotSupported`** | a larger input resolution is required for the local recording crop mode      |
+| **`StreamErrorConnect`**                              | the connection to the server could not be established, server might no be reachable or there are network problems |
+| **`StreamErrorConnectSSL`**                           | the connection process failed when trying to setup SSL, maybe the server certificates could not be verified |
+| **`StreamError`**                                     | an error occurred while initializing the stream, or during the stream, used license might be invalid or expired |
+| **`GeneralError`**                                    | a general error                                              |
 
 
 
 ### Switch Camera
 
-The camera (front/back) can be switched during preview and broadcast, with the method
-
-`(bool) useFrontCamera: (bool) value;   // returns true if switch was successful`
-
-It is also possible to select the desired camera directly, when initializing the library, by using the property
+The camera (front/back) can be switched during preview and broadcast, with the method:
 
 ```objc
-@property (assign) BOOL frontCamera;
+- (bool)useFrontCamera:(bool)value;   // Returns true if switch was successful
 ```
 
-of the ```nanostreamAVCSettings``` object.
+It is also possible to select the desired camera directly, when initializing the library, by using the property `frontCamera` of the ```nanostreamAVCSettings``` object:
 
 
 
@@ -265,7 +322,7 @@ You can configure the mode with the property ```streamType``` of the settings ob
 
 ### Zoom
 
-Following Methods are available for zooming:
+The following properties and methods are available for zooming:
 
 ```objc
 /**
@@ -276,7 +333,7 @@ Following Methods are available for zooming:
  *
  *  @return Maximum Zoom factor that can be set on the current device
  */
--(CGFloat)maxZoomFactor;
+- (CGFloat)maxZoomFactor;
 ```
 
 ```objc
@@ -287,7 +344,7 @@ Following Methods are available for zooming:
  *
  *  @return Max Zoom factor that can be set without using upscaling.
  */
--(CGFloat)maxZoomFactorWithoutUpscaling;
+- (CGFloat)maxZoomFactorWithoutUpscaling;
 ```
 
 ```objc
@@ -302,18 +359,19 @@ Following Methods are available for zooming:
  *
  *  @return YES if zoom was set. NO if not.
  */
--(BOOL)setZoomFactor:(CGFloat)factor;
+- (BOOL)setZoomFactor:(CGFloat)factor;
 ```
 
-Zooming is also demonstrated in the sample project `BintuStream`, included in the SDK packet.
+Zooming is also demonstrated in the sample project `LiveStream`, included in the SDK package.
 
 
 
 ### Server Authentication
 
-In case authentication is required, the credentials can be set with the method 
+In case authentication is required, the credentials can be set with the method:
+
 ```objc
--(void) setAuthentication: (NSString*) user withPassword: (NSString*) password;
+- (void)setAuthentication:(NSString*)user withPassword:(NSString*)password;
 ```
 
 The method has to be invoked before a stream is started.
@@ -321,23 +379,15 @@ The method has to be invoked before a stream is started.
 For example:
 
 ```objc
-// set up nAVC object
+// Set up nAVC object
+
 ...
-[nAVC setAuthentication: @"MyUser" withPassword: @"MyPassword"];
+
+[nAVC setAuthentication:@"MyUser" withPassword:@"MyPassword"];
+
 ...
-// start the stream
-```
 
-
-
-### Cropping
-
-The stream can be transformed to a different format than the input from the camera.
-
-The following example shows how to crop the format to `16:9`.
-
-```objc
-[nAVCSettings setCropMode: CropTo16By9];
+// Start the stream
 ```
 
 
@@ -349,24 +399,42 @@ This is an extra feature and needs to be unlocked by the license - the license s
 
 ```objc
 NSString *homeDirectory = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents"];
-NSDateFormatter *dateFormatter=[[NSDateFormatter alloc] init];
+NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
 [dateFormatter setDateFormat:@"yyyy-MM-dd_HH-mm-ss"];
-NSString *locStr = [homeDirectory stringByAppendingPathComponent: [[dateFormatter stringFromDate:[NSDate date]] stringByAppendingString: @".mp4"]];
+NSString *locStr = [homeDirectory stringByAppendingPathComponent:[[dateFormatter stringFromDate:[NSDate date]] stringByAppendingString:@".mp4"]];
 
 [nAVCSettings setLocalRecordingMode:AVCRecordingModeDoubleAtLeastOneMbit];
 [nAVCSettings setLocalRecordingPath:locStr];
 ```
 
+The following recording modes are available:
 
-There are three modes available:
-
-- **`AVCRecordingModeStartBitrate`**: uses the video bitrate set with `nanostreamAVCSettings`
-- **`AVCRecordingModeDoubleAtLeastOneMbit`**: uses double the video bitrate, but at least `1Mbps`
-- **`AVCRecordingMode720p2Mbit`**: independent of the set video bitrate, always uses `2Mbps` and a resolution of `1280x720`
+* **`AVCRecordingModeStartBitrate`**: uses the video bitrate set with `nanostreamAVCSettings`
+* **`AVCRecordingModeDoubleAtLeastOneMbit`**: uses double the video bitrate, but at least `1Mbps`
+* **`AVCRecordingMode720p2Mbit`**: independent of the set video bitrate, always uses `2Mbps` and a resolution of `1280x720`
+* **`AVCRecordingMode720p4Mbit`**: independent of the set video bitrate, always uses `4Mbps` and a resolution of `1280x720`
+* **`AVCRecordingMode1080p4Mbit`**: independent of the set video bitrate, always uses `4Mbps` and a resolution of `1920x1080`
+* **`AVCRecordingMode1080p6Mbit`**: independent of the set video bitrate, always uses `6Mbps` and a resolution of `1920x1080`
+* **`AVCRecordingMode1080p8Mbit`**: independent of the set video bitrate, always uses `8Mbps` and a resolution of `1920x1080`
 
 The bitrate for the recording remains constant during a stream. The adaptive bitrate mechanism only influences the bitrate for the stream, but not the bitrate for the recording.
 
 The bitrate for the recording also depends on the video material. If there is a lot of movement in the video the bitrate will be higher than for recordings with little to no movement.
+
+
+### Cropping
+
+Both, the stream and the local recording can be transformed to a different format than the input from the camera.
+
+The following example shows how to crop the format to `16:9`.
+
+```objc
+// Set crop mode for the stream
+[nAVCSettings setCropMode:CropTo16By9];
+
+// Set crop mode for the local recording
+[nAVCSettings setLocalRecordingCropMode:CropTo16By9];
+```
 
 
 
@@ -383,14 +451,14 @@ There are two modes available:
 Make sure to set the ABC settings before a stream is started.
 
 ```objc
-	[self.nAVC setAdaptiveBitrateControlMode: AdaptiveBitrateControlModeQualityDegrade];
+[self.nAVC setAdaptiveBitrateControlMode:AdaptiveBitrateControlModeQualityDegrade];
 	    
-	AdaptiveBitrateControlSettings abr;
-	abr.minimumBitrate = 100000;  // 100kb
-	abr.minimumFramerate = 15;
-	abr.maxPercentBitrateChange = 50;  // if the bitrate drops to less than 50% of the previous bitrate, all buffered data will be discarded
+AdaptiveBitrateControlSettings abr;
+abr.minimumBitrate = 100000;  // 100kb
+abr.minimumFramerate = 15;
+abr.maxPercentBitrateChange = 50;  // If the bitrate drops to less than 50% of the previous bitrate, all buffered data will be discarded
 	
-	[self.nAVC setAdaptiveBitrateControlSettings: abr];
+[self.nAVC setAdaptiveBitrateControlSettings:abr];
 ```
 
 Possible properties:
@@ -406,15 +474,14 @@ Possible properties:
 
 ### Statistics during streaming
 
-You can track the current bandwidth with the delegate method
+You can track the current bandwidth with the delegate method:
 
 ```objc
-	-(void)nanoStreamStatisticsHandlerWithOutputBitrate:(long long)oBitrate
-	                                        andFillness:(double)fillness
-	                             andCurrentVideoBitrate:(long long)vBitrate
-	                           andCurrentVideoFramerate:(double)vFramerate
+- (void)nanoStreamStatisticsHandlerWithOutputBitrate:(long long)oBitrate
+	                                     andFillness:(double)fillness
+	                          andCurrentVideoBitrate:(long long)vBitrate
+	                        andCurrentVideoFramerate:(double)vFramerate
 ```
-
 
 This method will be invoked every second.
 
@@ -433,8 +500,6 @@ Meaning of the parameters:
 
 
 
-
-
 ### Measuring the available bandwidth
 
 For measuring the available bandwidth you can use the method `runBandwidthCheck`. After the check finished, the result can be used to set the bitrate for the `nanostreamAVC` object.
@@ -443,17 +508,20 @@ The check measures the bandwidth by running a test stream to the server.
 
 ```objc
 NSXBandwidthCheckSettings *bwSettings = [[NSXBandwidthCheckSettings alloc] init];
-// the URL settings are identical to the URL settings for the nanostreamAVCSettings
+
+// The URL settings are identical to the URL settings for the nanostreamAVCSettings
 // for testing the bandwidth it is advised to use the same server you want to stream to
-// you might want to use a stream id different from the stream id for the actual stream, to distinguish between a bandwidth check and a real stream
+// you might want to use a stream id different from the stream id for the actual stream, 
+// to distinguish between a bandwidth check and a real stream
 bwSettings.url = @"rtmp://localhost/live";
 bwSettings.streamId = @"bwcheck";
 
-// the maxium bitrate that should be tested - if this value is lower than the actual bandwidth, the result will be similar to the maximum bitrate
-bwSettings.maxBitrate = 5000000;  // 5Mb
+// The maxium bitrate that should be tested - if this value is lower than the actual bandwidth, 
+// the result will be similar to the maximum bitrate
+bwSettings.maxBitrate = 5000000; // 5Mb
 	
-[self.nAVC runBandwidthCheck: bwSettings withCompletionBlock:^(NSXBandwidthCheckResult* measuredBandwidth){
-	NSLog(@"measuredBandwidth: avg=%i, median=%i, min=%i, max=%i, runTimeMs=%i", 			(int)measuredBandwidth.avgBitrate, (int)measuredBandwidth.medianBitrate, (int)measuredBandwidth.minBitrate, (int)measuredBandwidth.maxBitrate, (int)measuredBandwidth.runTimeMs);
+[self.nAVC runBandwidthCheck:bwSettings withCompletionBlock:^(NSXBandwidthCheckResult *measuredBandwidth) {
+    NSLog(@"measuredBandwidth: avg=%i, median=%i, min=%i, max=%i, runTimeMs=%i", (int)measuredBandwidth.avgBitrate, (int)measuredBandwidth.medianBitrate, (int)measuredBandwidth.minBitrate, (int)measuredBandwidth.maxBitrate, (int)measuredBandwidth.runTimeMs);
 }];
 ```
 
@@ -461,9 +529,8 @@ The default run time is 10 seconds. The run time can be changed with the propert
 If the bandwidth check should be stopped before it finished on itself, the method `stopBandwidthCheck` can be used. This will force the bandwidth check to stop and return the result based on the collected information up to this point.
 
 ```objc
-[self.nAVC stopBandwidthCheck];    // stop bw check if still running
+[self.nAVC stopBandwidthCheck]; // Stop bandwidth check if still running
 ```
-
 
 The result of the bandwidth check can be used as bitrate setting for library object. At the moment it is not possible to change the video bitrate after the initialization of the library object, thus the object need to be re-initialized. (This will change in future releases.)
 
@@ -474,9 +541,9 @@ The result of the bandwidth check can be used as bitrate setting for library obj
 To get a snaphot (image) of the current preview/stream, the method `grabStillImageWithCompletionBlock` can be used.
 
 ```objc
-	[self.nAVC grabStillImageWithCompletionBlock:^(UIImage *image, NSError *error) {
-	  // do something with the image
-	}];
+[self.nAVC grabStillImageWithCompletionBlock:^(UIImage *image, NSError *error) {
+	  // Do something with the image
+}];
 ```
 
 
@@ -489,18 +556,18 @@ This is an extra feature and needs to be unlocked by the license - the license s
 The easiest way to use an overlay is to use the class `AVCFullImageOverlay`:
 
 ```objc
-	UIImage *overlayImg = [UIImage imageNamed:@"button"];  // uses an image from the bundle resources, named "button"
+UIImage *overlayImg = [UIImage imageNamed:@"button"];  // Uses an image from the bundle resources, named "button"
 	    
-	UIGraphicsBeginImageContextWithOptions(CGSizeMake(640, 480), NO, 1.0);  // assuming the video resolution is set to "Resolution640x480"
-	[overlayImg drawInRect:CGRectMake(200, 200, 240, 80) blendMode:kCGBlendModeNormal alpha:0.5];
-	UIFont *font = [UIFont boldSystemFontOfSize:20];
-	[[UIColor whiteColor] set];
-	NSString *text = @"Watermark";
-	[text drawInRect:CGRectMake(200, 300, 100, 50) withFont:font];
-	UIImage *finalOverlayImage = UIGraphicsGetImageFromCurrentImageContext();
-	UIGraphicsEndImageContext();
+UIGraphicsBeginImageContextWithOptions(CGSizeMake(640, 480), NO, 1.0);  // Assuming the video resolution is set to "Resolution640x480"
+[overlayImg drawInRect:CGRectMake(200, 200, 240, 80) blendMode:kCGBlendModeNormal alpha:0.5];
+UIFont *font = [UIFont boldSystemFontOfSize:20];
+[[UIColor whiteColor] set];
+NSString *text = @"Watermark";
+[text drawInRect:CGRectMake(200, 300, 100, 50) withFont:font];
+UIImage *finalOverlayImage = UIGraphicsGetImageFromCurrentImageContext();
+UIGraphicsEndImageContext();
 	    
-	[self.nAVC setOverlay: [[AVCFullImageOverlay alloc] initWithImage: finalOverlayImage]];
+[self.nAVC setOverlay:[[AVCFullImageOverlay alloc] initWithImage:finalOverlayImage]];
 ```
 
 
@@ -508,129 +575,123 @@ Notice that the final output resolution can be different, if an option like crop
 In this case it is better to implement your own overlay class, which is shown in the following example:
 
 ```objc
-	@interface NSXWatermark () : NSObject `<​AVCOverlay>`​
+@interface NSXWatermark () : NSObject `<​AVCOverlay>`​
 	
-	@property (assign) AVCOverlayRawBuffer buffer;
-	@property (strong) __attribute__((NSObject)) CFDataRef imageDataForBuffer;
+@property (assign) AVCOverlayRawBuffer buffer;
+@property (strong) __attribute__((NSObject)) CFDataRef imageDataForBuffer;
 	
-	@end
-	
-	
-	@implementation NSXWatermark
-	
-	@synthesize overlayBoundingRect;
-	@synthesize imageSize;
+@end
 	
 	
-	-(AVCOverlayRawBuffer)overlayImageWithStreamTime:(NSTimeInterval)time
-	{
-	    if (self.buffer.buffer == NULL) {
-	        UIImage *image = [self generateWatermarkWithSize:self.imageSize inBoundingRect:self.overlayBoundingRect];
-	        if (image) {
-	            [self setupBufferWithImage:image];
-	        }
-	    }
+@implementation NSXWatermark
+	
+@synthesize overlayBoundingRect;
+@synthesize imageSize;
+	
+	
+- (AVCOverlayRawBuffer)overlayImageWithStreamTime:(NSTimeInterval)time {
+	  if (self.buffer.buffer == NULL) {
+	      UIImage *image = [self generateWatermarkWithSize:self.imageSize inBoundingRect:self.overlayBoundingRect];
+	      if (image) {
+	          [self setupBufferWithImage:image];
+	      }
+	  }
 	    
-	    return self.buffer;
-	}
+	  return self.buffer;
+}
 	
-	-(UIImage *)generateWatermarkWithSize:(CGSize)size inBoundingRect:(CGRect)boundingRect {
+- (UIImage *)generateWatermarkWithSize:(CGSize)size inBoundingRect:(CGRect)boundingRect {
+	  UIImage *overlayImage;
+	  CGFloat padding = 10.0;
 	    
-	    UIImage *overlayImage;
-	    CGFloat padding = 10.0;
-	    
-	    // Permanent Overlay
-	    CGRect permRealRect;
-	    UIImage *permanentImage = self.permanentOverlayImage;
-	    if (permanentImage) {
-	        CGSize overlaySize = permanentImage.size;
+	  // Permanent Overlay
+	  CGRect permRealRect;
+	  UIImage *permanentImage = self.permanentOverlayImage;
+	  if (permanentImage) {
+	      CGSize overlaySize = permanentImage.size;
 	        
-	        CGFloat height = size.height / 3;
-	        if (overlaySize.height > height) {
-	            overlaySize.width = height;
-	            overlaySize.height = height;
-	        }
+	      CGFloat height = size.height / 3;
+	      if (overlaySize.height > height) {
+	          overlaySize.width = height;
+	          overlaySize.height = height;
+	      }
 	        
-	        CGFloat boundingMaxX = boundingRect.origin.x + boundingRect.size.width;
-	        CGFloat boundingMaxY = boundingRect.origin.y + boundingRect.size.height;
+	      CGFloat boundingMaxX = boundingRect.origin.x + boundingRect.size.width;
+	      CGFloat boundingMaxY = boundingRect.origin.y + boundingRect.size.height;
 	        
 	        
-	        CGRect permOverlayRect = CGRectMake(boundingMaxX - overlaySize.width/2, boundingMaxY - overlaySize.height/2, overlaySize.width/2, overlaySize.height/2);
+	      CGRect permOverlayRect = CGRectMake(boundingMaxX - overlaySize.width/2, boundingMaxY - overlaySize.height/2, overlaySize.width/2, overlaySize.height/2);
 	        
-	        permRealRect =  AVMakeRectWithAspectRatioInsideRect(permanentImage.size, permOverlayRect);
+	      permRealRect =  AVMakeRectWithAspectRatioInsideRect(permanentImage.size, permOverlayRect);
 	        
-	        permRealRect.origin.y -= padding;
-	        permRealRect.origin.x -= padding;
-	    }
+	      permRealRect.origin.y -= padding;
+	      permRealRect.origin.x -= padding;
+	  }
 	    
-	    UIGraphicsBeginImageContext(size);
+	  UIGraphicsBeginImageContext(size);
 	    
-	    if (permanentImage) {
-	        [permanentImage drawInRect:permRealRect];
-	    }
+	  if (permanentImage) {
+	      [permanentImage drawInRect:permRealRect];
+	  }
 	    
-	    overlayImage = UIGraphicsGetImageFromCurrentImageContext();
+	  overlayImage = UIGraphicsGetImageFromCurrentImageContext();
 	    
-	    UIGraphicsEndImageContext();
+	  UIGraphicsEndImageContext();
 	    
-	    return overlayImage;
-	}
+	  return overlayImage;
+}
 	
-	- (void)setupBufferWithImage:(UIImage *)image
-	{
-	    CGImageRef rawPic = [image CGImage];
-	    CFDataRef data = [NSXWatermark copyDataFromUIImage:rawPic];
-	    AVCOverlayRawBuffer buf = [NSXWatermark makeBufferFromData:data andImage:rawPic];
+- (void)setupBufferWithImage:(UIImage *)image {
+	  CGImageRef rawPic = [image CGImage];
+	  CFDataRef data = [NSXWatermark copyDataFromUIImage:rawPic];
+	  AVCOverlayRawBuffer buf = [NSXWatermark makeBufferFromData:data andImage:rawPic];
 	    
-	    self.buffer = buf;
-	    self.imageDataForBuffer = data;
+	  self.buffer = buf;
+	  self.imageDataForBuffer = data;
 	    
-	    CFRelease(data);
-	}
+	  CFRelease(data);
+}
 	
-	+(CFDataRef)copyDataFromUIImage:(CGImageRef)image
-	{
-	    CGDataProviderRef inProvider = CGImageGetDataProvider(image);
-	    CFDataRef inBitmapData = CGDataProviderCopyData(inProvider);
-	    return inBitmapData;
-	}
++ (CFDataRef)copyDataFromUIImage:(CGImageRef)image {
+	  CGDataProviderRef inProvider = CGImageGetDataProvider(image);
+	  CFDataRef inBitmapData = CGDataProviderCopyData(inProvider);
+	  return inBitmapData;
+}
 	
-	+(AVCOverlayRawBuffer)makeBufferFromData:(CFDataRef)inBitmapData andImage:(CGImageRef)rawPic
-	{
-	    AVCOverlayRawBuffer rawBuf;
++ (AVCOverlayRawBuffer)makeBufferFromData:(CFDataRef)inBitmapData andImage:(CGImageRef)rawPic {
+	  AVCOverlayRawBuffer rawBuf;
 	    
-	    size_t inBitmapDataBytesPerRow = CGImageGetBytesPerRow(rawPic);
+	  size_t inBitmapDataBytesPerRow = CGImageGetBytesPerRow(rawPic);
 	    
-	    UInt8 *buffer = (UInt8*)CFDataGetBytePtr(inBitmapData);
+	  UInt8 *buffer = (UInt8*)CFDataGetBytePtr(inBitmapData);
 	    
-	    rawBuf.buffer = buffer;
-	    rawBuf.bytesPerRow = (int)inBitmapDataBytesPerRow;
-	    rawBuf.bufferType = AVCOverlayBufferTypeBGRA;
-	    return rawBuf;
-	}
+	  rawBuf.buffer = buffer;
+	  rawBuf.bytesPerRow = (int)inBitmapDataBytesPerRow;
+	  rawBuf.bufferType = AVCOverlayBufferTypeBGRA;
+	    eturn rawBuf;
+}
 	
-	@end
+@end
 ```
-
 
 If you want to use a dynamic overlay, e.g. a scoreboard, you can modify the above class (`NSXWatermark`) like so:
 
 ```objc
 ...
-@property (strong) NSString *overlayURL;   // needs to be set
+
+@property (strong) NSString *overlayURL; // Needs to be set
 @property (nonatomic, strong) NSDate *date;
 @property (nonatomic, strong) UIImage *watermarkHttpImage;
 
 ...
--(AVCOverlayRawBuffer)overlayImageWithStreamTime:(NSTimeInterval)time
-{
+
+- (AVCOverlayRawBuffer)overlayImageWithStreamTime:(NSTimeInterval)time {
     if (!self.date) {
         self.date = [NSDate date];
     }
     NSTimeInterval timeInterval = time <= 0.6 ? 0.6 : time;
     NSTimeInterval passedTime = [[NSDate date] timeIntervalSinceDate:self.date];
     if (passedTime > timeInterval && self.overlayURL) {
-
         [self loadHTTPImageAsync];
         UIImage *image = [self generateWatermarkWithSize:self.imageSize inBoundingRect:self.overlayBoundingRect];
         if (image) {
@@ -648,10 +709,11 @@ If you want to use a dynamic overlay, e.g. a scoreboard, you can modify the abov
     return self.buffer;
 }
 
--(UIImage *)generateWatermarkWithSize:(CGSize)size inBoundingRect:(CGRect)boundingRect
-{
+- (UIImage *)generateWatermarkWithSize:(CGSize)size inBoundingRect:(CGRect)boundingRect {
+
     ...
-        // Dynamic Overlay
+
+    // Dynamic Overlay
     CGRect dynRealRect;
     UIImage *dynamicWatermarkImage = self.watermarkHttpImage;
     if (dynamicWatermarkImage) {
@@ -670,19 +732,22 @@ If you want to use a dynamic overlay, e.g. a scoreboard, you can modify the abov
         dynRealRect.origin.y = padding;
         dynRealRect.origin.x = padding;
     }
+
     ...
+
 }
 
--(void)loadHTTPImageAsync {
+- (void)loadHTTPImageAsync {
     dispatch_async(dispatch_get_global_queue(0,0), ^{
-        NSData * data = [[NSData alloc] initWithContentsOfURL: [NSURL URLWithString:self.overlayURL]];
+        NSData *data = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:self.overlayURL]];
         if ( data == nil )
             return;
         dispatch_async(dispatch_get_main_queue(), ^{
-            self.watermarkHttpImage = [UIImage imageWithData: data];
+            self.watermarkHttpImage = [UIImage imageWithData:data];
         });
     });
 }
+
 ...
 ```
 
@@ -703,79 +768,75 @@ An example for a custom capture session, which supplies `CVPixelBufferRef`'s to 
 @property (nonatomic, strong) AVCaptureAudioDataOutput* myAudioOutput;
 
 ...
+
 @end
 
 @implementation CustomCaptureSession
 
--(void) addOutput:(AVCaptureOutput *)output
-{
+- (void) addOutput:(AVCaptureOutput *)output {
     if ([output isKindOfClass:[AVCaptureVideoDataOutput class]]) {
         self.myVideoOutput = (AVCaptureVideoDataOutput*)output;
-    }else if([output isKindOfClass:[AVCaptureAudioDataOutput class]])
-    {
+    } else if([output isKindOfClass:[AVCaptureAudioDataOutput class]]) {
         *self.myAudioOutput = (AVCaptureAudioDataOutput*)output; * if you want to use a custom audio capture device
-        [super addOutput: output]; // uses the standard microphone of the iOS device
+        [super addOutput:output]; // Uses the standard microphone of the iOS device
     }
 }
 
--(void) addInput:(AVCaptureInput *)input
-{
-    [super addInput:input]; // this is required, because nanostreamAVC checks the available inputs
+- (void) addInput:(AVCaptureInput *)input {
+    [super addInput:input]; // This is required, because nanostreamAVC checks the available inputs
 }
 
--(void) startRunning
-{
+- (void) startRunning {
     [super startRunning];
 }
 
-// this method has to be called periodically - e.g. with CADisplayLink
--(void) supplyCMSampleBufferRef
-{
-    CVPixelBufferRef buffer = [self getCVPixelBufferRef]; // get the CVPixelBufferRef from somewhere
+// This method has to be called periodically - e.g. with CADisplayLink
+- (void) supplyCMSampleBufferRef {
+    CVPixelBufferRef buffer = [self getCVPixelBufferRef]; // Get the CVPixelBufferRef from somewhere
 
     CMSampleBufferRef newSampleBuffer = NULL;
     CMSampleTimingInfo timingInfo = kCMTimingInfoInvalid;
-    timingInfo.duration = CMTimeMake(33, 1000);    // assuming 30fps, change if otherwise
-    timingInfo.decodeTimeStamp = CMTimeMake(ts, 1000);    // timestamp information required
+    timingInfo.duration = CMTimeMake(33, 1000);    // Assuming 30fps, change if otherwise
+    timingInfo.decodeTimeStamp = CMTimeMake(ts, 1000);    // Timestamp information required
     timingInfo.presentationTimeStamp = timingInfo.decodeTimeStamp;
 
     CMVideoFormatDescriptionRef videoInfo = NULL;
     CMVideoFormatDescriptionCreateForImageBuffer(NULL, buffer, &videoInfo);
 
-    CMSampleBufferCreateForImageBuffer(kCFAllocatorDefault,buffer,true,NULL,NULL,videoInfo,&timingInfo,&newSampleBuffer);
+    CMSampleBufferCreateForImageBuffer(kCFAllocatorDefault, buffer, true, NULL, NULL, videoInfo, &timingInfo, &newSampleBuffer);
 
-    // the following line submits the new CMSampleBufferRef to the nanostreamAVC lib
+    // The following line submits the new CMSampleBufferRef to the nanostreamAVC lib
     [self.myVideoOutput.sampleBufferDelegate captureOutput:self.myVideoOutput didOutputSampleBuffer:newSampleBuffer fromConnection:nil];
 
     CFRelease(videoInfo);
     CFRelease(buffer);
     CFRelease(newSampleBuffer);
-
 }
 
 @end
 
-// you need to use initWithSession for nanostreamAVC to use your custom session
+// You need to use initWithSession for nanostreamAVC to use your custom session
+
 ...
+
 session = [[CustomCaptureSession alloc] init];
 
-// use microphone from iOS device as audio source
+// Use microphone from iOS device as audio source
 NSError *error;
-AVCaptureInput *audioInput = [AVCaptureDeviceInput deviceInputWithDevice: [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeAudio] error: &error];
+AVCaptureInput *audioInput = [AVCaptureDeviceInput deviceInputWithDevice:[AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeAudio] error:&error];
 
-if(audioInput != nil)
-{
-    [session addInput: audioInput]; // if the stream should be video only, don't add an audioInput
+if (audioInput != nil) {
+    [session addInput:audioInput]; // If the stream should be video only, don't add an audioInput
 }
 
 [session startRunning];
 
 ...
-self.stream = [[nanostreamAVC alloc] initWithSession: session settings: nAVCSettings errorListener: self];
+
+self.stream = [[nanostreamAVC alloc] initWithSession:session settings:nAVCSettings eventListener:self];
+
 ...
-
 ```
-
 
 
 
@@ -793,11 +854,15 @@ The following pseudo code shows how to use a GoPro camera as source:
 #import "nanostreamAVCExternals.h"
 
 @interface YourLiveViewController `<nanostreamEventListener, ExtendedCaptureSessionStatusListener>`
+
 ...
+
 @property (nonatomic, strong) nanostreamAVC *stream;
 @property (strong) AVCaptureSession *session;
 @property (nonatomic, strong) IBOutlet UIView *cameraView;
+
 ...
+
 @end
 
 @implementation YourLiveViewController
@@ -805,21 +870,22 @@ The following pseudo code shows how to use a GoPro camera as source:
 ...
 
 if (self.cameraSource == GoProHero3) {
-    self.session = [[HLSCaptureSession alloc] initWithPreview: cameraView andStatusListener: self andUDP: NO];
+    self.session = [[HLSCaptureSession alloc] initWithPreview:cameraView andStatusListener:self andUDP:NO];
 
 }
 else if (self.cameraSource == GoProHero4) {
-    self.session = [[HLSCaptureSession alloc] initWithPreview: cameraView andStatusListener: self andUDP: YES];
+    self.session = [[HLSCaptureSession alloc] initWithPreview:cameraView andStatusListener:self andUDP:YES];
 }
 
 [self.session startRunning];
 
-// set up settings for nanostreamAVC
+// Set up settings for nanostreamAVC
+
 ...
 
-self.stream = [[nanostreamAVC alloc] initWithSession: self.session
-                                            settings: nAVCSettings
-                                       errorListener: self];
+self.stream = [[nanostreamAVC alloc] initWithSession:self.session
+                                            settings:nAVCSettings
+                                       eventListener:self];
 
 ...
 
@@ -907,14 +973,14 @@ This way only `Objective-C exceptions` will be catched and `C++ exceptions` will
 If there are crashes occurring in your app that include above symbols in the stack trace and are otherwise not obvious, check to see if you added a subviews to the preview view. The `UIView` instance that is passed to 
 
 ```objc
--[RtmpSourceCaptureSession initWithPreview:andStatusListener:andLogLevel:]
+- [RtmpSourceCaptureSession initWithPreview:andStatusListener:andLogLevel:]
 ```
 
 
 and 
 
 ```objc
--[nanostreamAVC initWithSettings:uiPreview:errorListener:]
+- [nanostreamAVC initWithSettings:uiPreview:eventListener:]
 ```
 
 cannot contain any subviews (UIButtons or otherwise).
@@ -932,7 +998,7 @@ Please use the following steps to create the log files:
 * **for the encoder (nanostreamAVC)**: enable logging for the library with the method "SetLogLevel", use LogLevelCustomSupport (if not available use LogLevelVerbose): 
 
 ```objc
-[self.nAVC SetLogLevel: LogLevelCustomSupport];  // set the log level before the method "start" is invoked
+[self.nAVC SetLogLevel:LogLevelCustomSupport];  // set the log level before the method "start" is invoked
 ```
 
 * **for the player (RtmpSourceCaptureSession)**: the log level has to be set in the constructor: 
