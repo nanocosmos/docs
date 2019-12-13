@@ -8,9 +8,8 @@ This document describes recommended settings for Acoustic Echo Cancellation in a
 
 ### Requirements:
 
-  *nanoStream Live Video Encoder running on Windows Vista or Windows 7
-  *RTMP Server (Wowza recommended)
-  *Flash Media Player or other client
+  *nanoStream Live Video Encoder for Windows 
+  *RTMP Server / nanoStream Cloud
   *Microphone and Loudspeaker setup to let echo cancellation work (no headset)
 
 ###### NOTE:

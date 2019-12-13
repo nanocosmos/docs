@@ -1,4 +1,8 @@
-# nanoStream License Deployment Information
+---
+id: nanostream_ios_license_deployment
+title: License Deployment Information
+sidebar_label: License Deployment Information
+---
 
 For temporary license keys, you need to ensure your app will be updated early enough before expiration.
 To avoid in-app expiration, you may load the license key from your server over a secure https connection.

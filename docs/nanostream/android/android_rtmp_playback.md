@@ -1,7 +1,7 @@
 ## Introduction
 
 
-###Description <a name="rtmp_playback_description"></a>
+### Description 
 
 
 RTMP Playback Component enables application developers to add playback of RTMP live and on demand streams to their apps.
@@ -45,7 +45,7 @@ The playback component requires a special feature flag to be enabled in your nan
 
 ### Function Life Cycle
 
-| Instance Handling      | Initialization         | Capabilities    | Queries            | Playback Control | Supported by RTMP Player |
+| __Instance Handling__      | __Init__  | __Capabilities__ | __Queries__ | __Playback__ | __Supported by RTMP Player__ |
 |------------------------|------------------------|-----------------|--------------------|------------------|--------------------------|
 | createNanostreamPlayer |                        |                 |                    |                  |                          |
 |                        | setSettings            |                 |                    |                  | yes                      |

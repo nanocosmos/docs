@@ -234,7 +234,6 @@ nanoStreamSettings nss = new nanoStreamSettings();
 nss.setRecordMp4(true);
 nss.setMp4Path(mp4FilePath);
 ```
-
 {!docs/nanostream/android/android_bandwidth_control.md!}
 
 RTMP Quality Statistics

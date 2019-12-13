@@ -5,9 +5,16 @@ pages:
   - Web:
     - API Manual: 'nanostream/web/nanostream-4.x-web-api.md'
     - Javascript Integration: 'nanostream/web/nanostream_javascript_integration.md'
-  - iOS api: nanostream/ios/nanostream-ios-sdk.md
   - MacOS api: nanostream/macos/nanostream-macos-sdk.md
-  - Android:
+  - iOS api:
+    - 'Quick Start': nanostream/ios/ios-quick-start.md
+    - 'Developer Manual': nanostream/ios/ios-sdk-developer-manual.md
+    - iOS api: nanostream/ios/nanostream-ios-sdk.md
+  - MacOS api: nanostream/macos/nanostream-macos-sdk.md
+  - Android api:
+    - 'Getting Started': 'nanostream/android/getting-started.md'
+    - 'Advanced Settings/Usage': 'nanostream/android/android-advanced-settings.md'
+    - 'RTMP Playback': 'nanostream/android/rtmp-playback.md'
     - Streaming Developer Manual : 'nanostream/android/android_developer_manual_streaming.md'
     - Playback Developer Manual : 'nanostream/android/android_developer_manual_playback.md'
     - Sample Developer Manual : 'nanostream/android/android_developer_manual_sample.md'
@@ -62,6 +69,8 @@ pages:
 - bintu.live :
   - Android SDK: 'bintu/android/bintu-android-sdk.md'
   - iOS:
+    - 5 Minute Tutorial : 'bintu/ios/5min.md'
+    - Step by step Tutorial : 'bintu/ios/step-by-step.md'
     - SDK Documentation: 'bintu/ios/bintu_ios_sdk.md'
     - Sample Documentation: 'bintu/ios/bintu_ios_sample.md'
 - About: about.md

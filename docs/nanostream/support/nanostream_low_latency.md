@@ -1,4 +1,4 @@
-## Live Video Encoder - Low Latency Streaming
+## nanoStream - Low Latency Streaming
 
 ### Overview:
 
@@ -10,10 +10,9 @@ Buffers can happen on all parts of a stream, encoder, streamer, server, CDN and 
 
 ### Choosing the right stream protocol
 
-Lowest latency for client-server based streaming can be reached with RTMP.
+Lowest latency for client-server based streaming can be reached with RTMP ingest and H5Live Playback.
 With additional fine tuning, you can reach end-to-end-latency values below 1 second.
-For local area networks, UDP-TS has the lowest latency.
-HLS, HDS, Smooth Streaming and MPEG DASH have high buffers by default and are not suitable for low latency applications.
+HLS and MPEG DASH have high buffers by default and are not suitable for low latency applications.
 
 ### Encoder Configuration
 
@@ -99,6 +98,7 @@ For Windows, this can be configured for the plugin using the option "AudioLatenc
 ### Player Configuration
 
 The Player buffers have a high impact on latency.
+H5Live Player automatically adjusts the buffer settings for lowest possible latency.
 Flash Player net stream buffer should be set to a low value or 0:
 (e.g. jwplayer or others)
 
@@ -106,7 +106,8 @@ NetStream buffer = 0.1   or    0
 
 ### Wowza Server Configuration
 
-To improve delay, one server based config can be changed on Wowza:\\
+Wowza server can be used as a source for nanoStream Cloud ingest.
+To improve latency, one server based config can be changed on Wowza:
 changeing
 ```xml
 <StreamType>live</StreamType>
@@ -116,25 +117,13 @@ to
 <StreamType>live-lowlatency</StreamType>
 ```
 
-For low latency chat applications, it is best to use smaller socket buffer sizes (16000 bytes for read and write). The socket buffer sizes are configured in **[install-dir]/conf/VHost.xml:**
+For low latency applications, it is best to use smaller socket buffer sizes (16000 bytes for read and write). The socket buffer sizes are configured in **[install-dir]/conf/VHost.xml:**
 
 Code:
 ```xml
 <ReceiveBufferSize>16000</ReceiveBufferSize>
 <SendBufferSize>16000</SendBufferSize>
 ```
-
-Further information:
-
-
-[http://www.wowzamedia.com/forums_46][43f4fff2]
-
-[http://www.wowzamedia.com/forums_8][dbe68e6e]
-
-[43f4fff2]: http://www.wowzamedia.com/forums/content.php?46 "Wowzamedia How to do performance tuning"
-
-[dbe68e6e]: http://www.wowzamedia.com/forums/content.php?8 "Wowzamedia Live streaming and encoders"
-
 
 
 {!docs/nanostream/general/nanocosmos_contact.md!}

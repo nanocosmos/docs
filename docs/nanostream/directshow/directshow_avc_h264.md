@@ -1,19 +1,24 @@
+---
+id: directshow_avc_h264
+title: DirectShow AVC H264 Codec
+sidebar_label: directshow_avc_h264
+---
+
 ## AVC/H.264 Video Codec / SDK
 
 ### High Quality and High Performance Video Coding
 
-nanocosmos AVC/H.264 video codec is a high performance video codec for the latest generation MPEG-AVC / H.264 video coding standards. It may be licensed by Professional and OEM customers for integration into custom applications.
+nanocosmos AVC/H.264 video codec is a high performance video codec for the latest generation `MPEG-AVC / H.264` video coding standards. It may be licensed by Professional and OEM customers for integration into custom applications.
 
 #### Major Features
 
-  * Most advanced video coding standard H.264 (MPEG-AVC)
+  * Most advanced video coding standard `H.264 (MPEG-AVC)`
   * Highly optimized software coding with support for latest CPU generations (Multicore / Core i7)
   * Wide range of applications from Mobile Phones (3GP), Portable Devices (iPod etc.) up to HDTV
-  * Full HD 1080i and 1080p support
-  * X-HD support for Custom Applications (Dome Cinema, Projections), up to 2k/4k (4096 x 4096)
-  * Support for realtime Full HD 1080 encoding and decoding of dual channel video (stereo video / 3d)
+  * Full HD `1080i` and `1080p `support
+  * X-HD/4K support for Custom Applications (Dome Cinema, Projections), up to `2k/4k` (4096 x 4096)
+  * Support for realtime Full HD 1080 encoding and decoding of `dual channel video` (stereo video / 3d)
   * Baseline Profile, Main Profile and HDTV modes supported
-  * Compatible to ISO Mp4 and Flash Media Streaming Server and Wowza
 
 
 #### Architecture and Availability
@@ -33,13 +38,13 @@ The Codec is available for Windows platforms based on DirectShow filters. For Ma
 
 We offer several licensing models, dependent on customer requirements.
 
-  * Developer License (SDK)\\  With the Developer License, you will get a documented SDK including shared library objects (DLLs), interface specifications, header files and source code samples to develop video coding applications.
-  * Redistribution License (Royalties)\\  For redistributing video coding modules with your application, a per-item additional royalty license is needed. You may also get flat fees for high sales volumes. Please contact us for further information.
+  * Developer License (SDK):  With the Developer License, you will get a documented SDK including shared library objects (DLLs), interface specifications, header files and source code samples to develop video coding applications.
+  * Redistribution License (Royalties):  For redistributing video coding modules with your application, a per-item additional royalty license is needed. You may also get flat fees for high sales volumes. Please contact us for further information.
   * Customization and flat fees are possible
 
 #### H.264 / AVC Video Encoder
 
-The Video Encoder produces compatible streams according to ITU H.264 / ISO MPEG/AVC Reference Model JM9.2, as well as MP4 file format output.
+The Video Encoder produces compatible streams according to `ITU H.264 / ISO MPEG/AVC Reference `Model JM9.2`, as well as MP4 file format output.
 
 Dual channel encoding for stereo video is supported.
 
@@ -59,7 +64,7 @@ The encoder accepts the following parameters:
 
 #### H.264/AVC Video Decoder
 
-The decoder supports decoding of files created by JM9.2 compliant encoders or later, as well as MP4 file format input. The decoder supports baseline, main, extended and high profiles features, including HD, e.g. 1080i.
+The decoder supports decoding of files created by `JM9.2` compliant encoders or later, as well as MP4 file format input. The decoder supports baseline, main, extended and high profiles features, including HD, e.g. 1080i.
 
 #### Audio, Multiplexer and File Formats
 
@@ -69,4 +74,4 @@ The decoder supports decoding of files created by JM9.2 compliant encoders or la
 
 #### Other codec types 
 
-Ask for special configurations and custom codec development, e.g. for IMX, DVCPRO-HD XDCAM.
+Ask for special configurations and custom codec development, e.g. for `IMX`, `DVCPRO-HD XDCAM`.
