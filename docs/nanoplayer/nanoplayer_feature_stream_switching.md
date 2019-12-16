@@ -20,7 +20,7 @@ This is an important feature for <b>adaptive bitrate streaming (ABR)</b>, which 
 ## How to use the updateSource method
 > **Note:** 
 > To initialize a streamswitch you first need to set up your player via the `setup` method. 
-> <br>You can find more information on how to set up the player [here](nanoplayer_api/#nanoplayersetupconfig-code-promise-lt-config-error-gt-code).
+> <br>You can find more information on how to set up the player [here](../nanoplayer_api/#nanoplayersetupconfig-code-promise-lt-config-error-gt-code).
 
 <br> The updateSource method expects **2** parameters:
 <br>
@@ -78,7 +78,7 @@ var options = {
     - Possible values are **false** (default) and **true**
 - `timeout`: 
     - The maximal time to wait in **seconds** before running into a timeout
-    - If the time limit is reached the **error 4006** will be thrown inside the [`onUpdateSourceFail`](nanoplayer_api/NanoPlayer#~event:onUpdateSourceFail) event
+    - If the time limit is reached the **error 4006** will be thrown inside the [`onUpdateSourceFail`](../nanoplayer_api/NanoPlayer#~event:onUpdateSourceFail) event
     - The default value is **10** seconds and the possible range is between **5** and **30** seconds
 - `tag`: 
     - This custom field can be any **string** you like and will be returned in all of the updateSource completion events. (`onUpdateSourceSuccess`, `onUpdateSourceFail` and `onUpdateSourceAbort`)
@@ -86,7 +86,7 @@ var options = {
 <br>
 
 > **Note:** 
-> You can find more specific information on the possible options [here](nanoplayer_api/#nanoplayerupdatesourcesource-options-code-promise-lt-config-error-gt-code).
+> You can find more specific information on the possible options [here](../nanoplayer_api/#nanoplayerupdatesourcesource-options-code-promise-lt-config-error-gt-code).
 
 
 ## Initialize the switch!
@@ -133,19 +133,19 @@ With the release of the `updateSource` method there are also **4** new events yo
 
 ### start event
 
-- **[onUpdateSourceInit](nanoplayer_api/#onupdatesourceinit)**: This event signals an initialized update source request. This always **only** a start event! Another completion event will follow.
+- **[onUpdateSourceInit](../nanoplayer_api/#onupdatesourceinit)**: This event signals an initialized update source request. This always **only** a start event! Another completion event will follow.
 
 ### completion events
 
-- **[onUpdateSourceSuccess](nanoplayer_api/#onupdatesourcesuccess)**: This event signals a successful update source request and fires if the source is updated. 
-- **[onUpdateSourceFail](nanoplayer_api/#onupdatesourcefail)**: This event signals a failed update source request. Fired if an error occurs during the source update.
-- **[onUpdateSourceAbort](nanoplayer_api/#onupdatesourceabort)**: This event signals an aborted update source request. Possible reasons are an equal source (**'equalsource'**), a superseding (**'superseded'**) or the time difference between two following `updateSource` calls that is too small  (**'updatefrequency'**). 
+- **[onUpdateSourceSuccess](../nanoplayer_api/#onupdatesourcesuccess)**: This event signals a successful update source request and fires if the source is updated. 
+- **[onUpdateSourceFail](../nanoplayer_api/#onupdatesourcefail)**: This event signals a failed update source request. Fired if an error occurs during the source update.
+- **[onUpdateSourceAbort](../nanoplayer_api/#onupdatesourceabort)**: This event signals an aborted update source request. Possible reasons are an equal source (**'equalsource'**), a superseding (**'superseded'**) or the time difference between two following `updateSource` calls that is too small  (**'updatefrequency'**). 
 
 <br>
-**Also, keep in mind...** there will be an [`onStreamInfo`](nanoplayer_api/#onstreaminfo) event indicating that the first image of the new stream is getting played out.
+**Also, keep in mind...** there will be an [`onStreamInfo`](../nanoplayer_api/#onstreaminfo) event indicating that the first image of the new stream is getting played out.
 
 > **Note:** 
-> You can find more specific information on all player events [here](nanoplayer_api/#nanoplayerupdatesourcesource-options-code-promise-lt-config-error-gt-code).
+> You can find more specific information on all player events [here](../nanoplayer_api/#nanoplayerupdatesourcesource-options-code-promise-lt-config-error-gt-code).
 
 
 

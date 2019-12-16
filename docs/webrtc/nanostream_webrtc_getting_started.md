@@ -11,7 +11,7 @@ It is very simple to test and use nanoStream Webcaster as your live encoder to n
 
 To stream directly to nanoStream Cloud you will need to register at [bintu.live](https://bintu.nanocosmos.de/) . 
 
->Bintu.live is the rest API and stream management tool included in nanoStream Cloud. You can find the step-by-step guide to register by [clicking here.](../cloud/cloud_getting_started)
+>Bintu.live is the rest API and stream management tool included in nanoStream Cloud. You can find the step-by-step guide to register by [clicking here.](../../cloud/cloud_getting_started)
 >
 >Once registered, you can create new URLs by calling the bintu API with a valid API key.
 
@@ -241,7 +241,7 @@ If you don't already have a stream url you can create a new webrtc enabled strea
 </script>
 ```
 
-> You can find the bintu.js documentation [here](https://webrtc.nanocosmos.de/release/doc/bintu/Bintu.html)
+> You can find the bintu.js documentation [here](../../cloud/bintu_api)
 
 
 ## Live Stream Configuration
@@ -289,7 +289,7 @@ var broadcastConfig = {
 
 The bintu.live REST API or Dashboard can be used to generate and manage live streams.
 
-> More information can be found [here](../cloud/cloud_getting_started).
+> More information can be found [here](../../cloud/cloud_getting_started).
 
 
 
@@ -325,7 +325,7 @@ Example:
 
 ## Live Playback with H5Live Player and nanoStream Cloud
 
-You can play back from our servers with the [H5Live Player](../nanoplayer/nanoplayer_introduction)
+You can play back from our servers with the [H5Live Player](../../nanoplayer/nanoplayer_introduction)
 
 
 
