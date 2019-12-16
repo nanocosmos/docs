@@ -12,7 +12,7 @@ You can embed this code snippet to test the H5Live player on your page in no tim
 
 > **Note:** 
 >
-> If you don't know how to get your custom bintu.live `streamid` click [here](../cloud/cloud_getting_started) .
+> If you don't know how to get your custom bintu.live `streamid` click [here](../../cloud/cloud_getting_started) .
 
 ```html
 <div id="playerDiv"></div>

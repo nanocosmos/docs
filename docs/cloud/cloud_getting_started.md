@@ -35,9 +35,9 @@ Create your first live stream: In the top menu select `Stream`, then `create`
 
 ### Start a live stream broadcast
 
-To start a live stream broadcast, you need a live encoder software, either based on an `RTMP Live Encoder application`, or the browser-based [nanoStream Webcaster broadcaster](../webrtc/nanostream_webrtc_introduction).
+To start a live stream broadcast, you need a live encoder software, either based on an `RTMP Live Encoder application`, or the browser-based [nanoStream Webcaster broadcaster](../../webrtc/nanostream_webrtc_introduction).
 
-You can use [nanoStream Apps](../nanostream/nanostream), or 3rd part software like [OBS (Open Broadcaster)](https://obsproject.com/) or professional Live Encoders like [Elemental Live](https://www.elemental.com/products/aws-elemental-live).
+You can use [nanoStream Apps](../../nanostream/nanostream), or 3rd part software like [OBS (Open Broadcaster)](https://obsproject.com/) or professional Live Encoders like [Elemental Live](https://www.elemental.com/products/aws-elemental-live).
 
 > The primary ingest protocol is RTMP.
 
@@ -129,7 +129,7 @@ Every tag added to a stream is directly displayed in the Stream Info.
 
 *See more info about tagging and how it is used in our Bintu Encoder and Player sample apps on our* [*blog*](https://www.nanocosmos.de/blog/2016/06/new-bintu-live-grouping-and-tagging-feature-for-streams/)*.*
 
-The Bintu Encoder and Player sample apps are part of our [*mobile nanoStream SDKs*](../nanostream/android/nanostream-android-sdk) *for iOS and Android.*
+The Bintu Encoder and Player sample apps are part of our [*mobile nanoStream SDKs*](../../nanostream/android/nanostream-android-sdk) *for iOS and Android.*
 
 -----
 

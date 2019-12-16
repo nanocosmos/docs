@@ -15,7 +15,7 @@ You also need a live encoder, currently based on RTMP/H264/AAC.
 Live playback will be supported by using our built-in H5Live Player.
 By using our nanoStream Webcaster solution, you can directly start live streaming without any additional soft- or hardware, plugin-free in all browsers.
 
-* [Homepagee: Overview and Plans](https://www.nanocosmos.de/v6/cloud)
+* [Homepage: Overview and Plans](https://www.nanocosmos.de/v6/cloud)
 * [Introduction](cloud_introduction)
 * [Getting Started with bintu](cloud_getting_started)
 
