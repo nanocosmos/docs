@@ -179,7 +179,7 @@ Within your HTML:
 
 If you want to braodcast a stream that contains only audio or video you can do that by starting the preview accordingly:
 
-<code javascript>
+```javascript
 ...
 // we pass "false" for either the video device configuration or
 // for the audio device configuration
@@ -200,8 +200,7 @@ var config = {
  
 user.startPreview(config);
 ...
-
-</code>
+```
 
 ## nanoStream Cloud End-To-End Workflow
 
