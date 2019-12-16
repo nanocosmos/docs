@@ -78,7 +78,7 @@ var options = {
     - Possible values are **false** (default) and **true**
 - `timeout`: 
     - The maximal time to wait in **seconds** before running into a timeout
-    - If the time limit is reached the **error 4006** will be thrown inside the [`onUpdateSourceFail`](../nanoplayer_api/#onUpdateSourceFail) event
+    - If the time limit is reached the **error 4006** will be thrown inside the [`onUpdateSourceFail`](../nanoplayer_api/#onupdatesourcefail) event
     - The default value is **10** seconds and the possible range is between **5** and **30** seconds
 - `tag`: 
     - This custom field can be any **string** you like and will be returned in all of the updateSource completion events. (`onUpdateSourceSuccess`, `onUpdateSourceFail` and `onUpdateSourceAbort`)
