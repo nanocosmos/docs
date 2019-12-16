@@ -90,9 +90,9 @@ H5Live player works on any browser and operates in different modes:
 ## More Information
 [Product Overview and Live Demo](https://www.nanocosmos.de/h5live)
 
-[API Documentation](http://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_api_class)
+[API Documentation](nanoplayer_api)
 
-[H5Live FAQ](http://docs.nanocosmos.de/docs/faq/faq_streaming)
+[H5Live FAQ](../faq/faq_streaming)
 
 ## Questions? 
 please contact:
