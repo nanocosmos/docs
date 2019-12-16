@@ -87,7 +87,7 @@ From here on you would probably want to integrate the live streaming function in
 <br>
 ### New to bintu.live?
 
-If you don't have a bintu.live account yet click [here](http://docs.nanocosmos.de/docs/cloud/cloud_getting_started) to learn how to create one.
+If you don't have a bintu.live account yet click [here](../cloud/cloud_getting_started) to learn how to create one.
 
 <br>
 ### Getting help
