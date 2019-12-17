@@ -63,7 +63,7 @@ Yes, by passing over `style.width` and `style.height` the value `auto` and styli
 
 <details><summary><strong>Can I use a poster as placeholder for the video?</strong></summary>
 
-But you can use a workaround by passing the id of an existing video tag with poster through the config (`config.playback.videoId`). This video element would be used by the player instead of creating a new one. See [here](http://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_api_class).
+But you can use a workaround by passing the id of an existing video tag with poster through the config (`config.playback.videoId`). This video element would be used by the player instead of creating a new one. See [here](../../nanoplayer/nanoplayer_api).
 
 Another possibility can be that you grab the video element from the DOM after successful setup and then modify the poster attribute.
 

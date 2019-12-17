@@ -6,7 +6,7 @@ nanocosmos, Berlin-based, 20 years of video and audio expertise, enables worldwi
 
 nanoStream Cloud includes the unique nanoStream H5Live Player for ultra-low latency live video and audio playback on all HTML5 browsers and devices.
 
-Powerful Live Encoding can be added with our nanoStream Apps and SDKs and plugin-free in the browser with nanoStream WebRTC.live.
+Powerful Live Encoding can be added with our nanoStream Apps and SDKs and plugin-free in the browser with nanoStream Webcaster.
 
 nanoStream Cloud is a scalable solution for use cases where every second counts. You can use it completely end-to end or as low latency CDN to extend your existing live streaming workflows. Go live around the world in 1 second!
 
@@ -21,4 +21,4 @@ nanoStream Cloud is super flexible and is available on different setup options:
 
 Fresh start - use nanoStream Cloud as your end-to-end solution or;
 Integrate to your existing workflow - use nanoStream Cloud as your ultra-low latency CDN, and add nanoStream H5Live Player to your own web pages
-nanoStream Cloud also has great Add-ons to power your live stream. Use the nanoStream Live Encoder SDK’s for desktop and mobile platforms or the browser-based WebRTC.live for true end-to-end live streaming.
+nanoStream Cloud also has great Add-ons to power your live stream. Use the nanoStream Live Encoder SDK’s for desktop and mobile platforms or the browser-based nanoStream Webcaster for true end-to-end live streaming.

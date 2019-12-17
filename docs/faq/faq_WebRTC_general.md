@@ -37,7 +37,7 @@ You might also try the webrtc sample pages at https://webrtc.github.io/samples/ 
 <details><summary><strong>How to check browser support during runtime?</strong></summary>
 You can call the function `RtcUser.checkSupport()`. It will give you information about support regarding the currently used browser. 
 
-> You can find more information [here](http://docs.nanocosmos.de/docs/webrtc/nanostream_webrtc_api#rtcuserchecksupport) in the WebRTC Docs.
+> You can find more information [here](../../webrtc/nanostream_webrtc_api#rtcuserchecksupport) in the WebRTC Docs.
 
 </details>
 

@@ -3,9 +3,13 @@
     "H5Live Player": [
       "nanoplayer/nanoplayer_introduction",
       "nanoplayer/nanoplayer_getting_started",
-      "nanoplayer/nanoplayer_supported_browsers",
+      "nanoplayer/nanoplayer_supported_browsers"
+    ],
+    "Features" : [
       "nanoplayer/nanoplayer_autoplay",
-    	"nanoplayer/nanoplayer_token_security"
+      "nanoplayer/nanoplayer_token_security",
+      "nanoplayer/nanoplayer_feature_stream_switching"
+      
     ],
     "API" : [
       "nanoplayer/nanoplayer_api"
@@ -13,7 +17,7 @@
     "Other Information" : ["nanoplayer/nanoplayer_blogposts"] 
   },
   "webrtc": {
-    "WebRTC.live": [
+    "nanoStream Webcaster": [
       "webrtc/nanostream_webrtc_introduction",
       "webrtc/nanostream_webrtc_getting_started",
       "webrtc/nanostream_webrtc_demos",
@@ -84,7 +88,7 @@
       "faq/faq_h5live_player_metrics",
       "faq/faq_h5live_player_security"
     ],
-    "WebRTC.live": [
+    "nanoStream Webcaster": [
       "faq/faq_WebRTC_general",
       "faq/faq_WebRTC_devices",
       "faq/faq_WebRTC_broadcast"
@@ -99,5 +103,10 @@
       "faq/programming"
     ],
     "Purchase and License" : ["faq/faq_purchase_and_license"]
+  },
+  "samples": {
+    "Samples": [
+      "samples/samples"
+    ]
   }
 }

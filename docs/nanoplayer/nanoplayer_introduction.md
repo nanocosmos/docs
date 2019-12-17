@@ -75,7 +75,7 @@ Example playback URL with bintu.live:
 http://demo.nanocosmos.de/nanoplayer/release/nanoplayer.html?bintu.apiurl=https://bintu.nanocosmos.de&bintu.streamid=b95225dd-3dd1-4d23-8eb0-232909aadab5
 ```
 
->h5live can be used in combination with our nanoStream SDKs for Windows, Mac, iOS, Android or the plugin-free browser-based WebRTC.live solution to create plugin-free interactive live streaming applications.
+>h5live can be used in combination with our nanoStream SDKs for Windows, Mac, iOS, Android or the plugin-free browser-based nanoStream Webcaster solution to create plugin-free interactive live streaming applications.
 
 
 ## H5Live Operating Modes
@@ -90,9 +90,9 @@ H5Live player works on any browser and operates in different modes:
 ## More Information
 [Product Overview and Live Demo](https://www.nanocosmos.de/h5live)
 
-[API Documentation](http://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_api_class)
+[API Documentation](../nanoplayer_api)
 
-[H5Live FAQ](http://docs.nanocosmos.de/docs/faq/faq_streaming)
+[H5Live FAQ](../../faq/faq_streaming)
 
 ## Questions? 
 please contact:

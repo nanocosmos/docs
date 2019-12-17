@@ -163,6 +163,10 @@
         "title": "Other Information",
         "sidebar_label": "Blog"
       },
+      "nanoplayer/nanoplayer_feature_stream_switching": {
+        "title": "Stream switching via updateSource",
+        "sidebar_label": "Stream switching"
+      },
       "nanoplayer/nanoplayer_getting_started": {
         "title": "Getting started",
         "sidebar_label": "Getting started"
@@ -543,18 +547,19 @@
       "nanostream/windows/windows_networkwriter": {
         "title": "nanostream/windows/windows_networkwriter"
       },
-      "samples/README": {
-        "title": "samples/README"
+      "samples/samples": {
+        "title": "nanoStream Samples",
+        "sidebar_label": "nanoStream Samples"
       },
       "sidebar": {
         "title": "sidebar"
       },
       "webrtc/nanostream_webrtc_api": {
-        "title": "nanoStream WebRTC API",
-        "sidebar_label": "WebRTC API"
+        "title": "nanoStream Webcaster API",
+        "sidebar_label": "Webcaster"
       },
       "webrtc/nanostream_webrtc_browser_api": {
-        "title": "nanoStream WebRTC Browser API",
+        "title": "nanoStream Webcaster Browser API",
         "sidebar_label": "Browser API"
       },
       "webrtc/nanostream_webrtc_demos": {
@@ -581,16 +586,17 @@
     "links": {
       "nanoStream Cloud": "nanoStream Cloud",
       "H5Live Player": "H5Live Player",
-      "WebRTC.live": "WebRTC.live",
+      "nanoStream Webcaster": "nanoStream Webcaster",
       "nanoStream Apps and SDKs": "nanoStream Apps and SDKs",
       "Samples": "Samples",
       "FAQ": "FAQ"
     },
     "categories": {
       "H5Live Player": "H5Live Player",
+      "Features": "Features",
       "API": "API",
       "Other Information": "Other Information",
-      "WebRTC.live": "WebRTC.live",
+      "nanoStream Webcaster": "nanoStream Webcaster",
       "nanoStream Cloud": "nanoStream Cloud",
       "nanoStream SDKs/Apps": "nanoStream SDKs/Apps",
       "Android": "Android",
@@ -599,7 +605,8 @@
       "Windows": "Windows",
       "DirectShow": "DirectShow",
       "Live Streaming": "Live Streaming",
-      "Purchase and License": "Purchase and License"
+      "Purchase and License": "Purchase and License",
+      "Samples": "Samples"
     }
   },
   "pages-strings": {

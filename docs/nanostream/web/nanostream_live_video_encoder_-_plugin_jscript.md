@@ -4,7 +4,7 @@ title: Live Video Encoder - Plugin API
 sidebar_label: Live Video Encoder - Plugin API
 ---
 
-**Note: This API is deprecated! Please use WebRTC.live and H5Live!**
+**Note: This API is deprecated! Please use nanoStream Webcaster and H5Live!**
 
 > **NOTE**: 
 >

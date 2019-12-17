@@ -3,23 +3,23 @@ id: nanostream_webrtc_getting_started
 title: Getting started
 sidebar_label: Getting started
 ---
-## How to use WebRTC.live with nanoStream Cloud?
+## How to use nanoStream Webcaster with nanoStream Cloud?
 
-It is very simple to test and use nanoStream WebRTC.live as your live encoder to nanoStream Cloud with integrated nanoStream H5Live Player. You need a camera connected to your computer or built-in on your device, and a WebRTC-compatible browser. We recommend using Google Chrome.
+It is very simple to test and use nanoStream Webcaster as your live encoder to nanoStream Cloud with integrated nanoStream H5Live Player. You need a camera connected to your computer or built-in on your device, and a WebRTC-compatible browser. We recommend using Google Chrome.
 
 ### Create your own nanoStream Cloud account
 
 To stream directly to nanoStream Cloud you will need to register at [bintu.live](https://bintu.nanocosmos.de/) . 
 
->Bintu.live is the rest API and stream management tool included in nanoStream Cloud. You can find the step-by-step guide to register by [clicking here.](http://docs.nanocosmos.de/docs/cloud/cloud_getting_started)
+>Bintu.live is the rest API and stream management tool included in nanoStream Cloud. You can find the step-by-step guide to register by [clicking here.](../../cloud/cloud_getting_started)
 >
 >Once registered, you can create new URLs by calling the bintu API with a valid API key.
 
 -----
 
-## nanoStream WebRTC Browser API
+## nanoStream Webcaster Browser API
 
-The nanoStream WebRTC Browser API is based on a Javascript API connected to the nanoStream WebRTC Server. It can be used for creating your own live video broadcast web page for plugin-free live streaming with WebRTC.
+The nanoStream Webcaster Browser API is based on a Javascript API connected to the nanoStream WebRTC Server. It can be used for creating your own live video broadcast web page for plugin-free live streaming with WebRTC.
 
 
 
@@ -58,7 +58,7 @@ Within your HTML:
   <button id="btn-startbroadcast">broadcast</button>
   <button id="btn-stopbroadcast">stop broadcast</button>
 	
-  <!-- embed the nanoStream WebRTC.live library -->
+  <!-- embed the nanoStream Webcaster library -->
   <!-- replace "<version>" with the version contained in your package -->
   <script src="./js/api/webrtc/nano.webrtc.<version>.min.js"></script>
 </body>
@@ -179,7 +179,7 @@ Within your HTML:
 
 If you want to braodcast a stream that contains only audio or video you can do that by starting the preview accordingly:
 
-<code javascript>
+```javascript
 ...
 // we pass "false" for either the video device configuration or
 // for the audio device configuration
@@ -200,12 +200,11 @@ var config = {
  
 user.startPreview(config);
 ...
-
-</code>
+```
 
 ## nanoStream Cloud End-To-End Workflow
 
-The following describes a plugin-free end to end streaming solution from the camera to the viewer, with nanostream WebRTC, nanoStream Cloud and nanoStream h5live player.
+The following describes a plugin-free end to end streaming solution from the camera to the viewer, with nanostream Webcaster, nanoStream Cloud and nanoStream h5live player.
 
 
 
@@ -217,7 +216,7 @@ To create a live stream to broadcast to your audience, you need to obtain an `RT
 
 ### Creating a stream for bintu.live with bintu.js
 
-If you don't already have a stream url you can create a new webrtc enabled stream with our bintu.js which is included in the nanoStream WebRTC Browser API.
+If you don't already have a stream url you can create a new webrtc enabled stream with our bintu.js which is included in the nanoStream Webcaster Browser API.
 
 ```javascript
 <script src="./js/api/bintu/nano.bintu.js"></script>
@@ -241,7 +240,7 @@ If you don't already have a stream url you can create a new webrtc enabled strea
 </script>
 ```
 
-> You can find the bintu.js documentation [here](https://webrtc.nanocosmos.de/release/doc/bintu/Bintu.html)
+> You can find the bintu.js documentation [here](../../cloud/bintu_api)
 
 
 ## Live Stream Configuration
@@ -289,7 +288,7 @@ var broadcastConfig = {
 
 The bintu.live REST API or Dashboard can be used to generate and manage live streams.
 
-> More information can be found [here](http://docs.nanocosmos.de/docs/cloud/cloud_getting_started).
+> More information can be found [here](../../cloud/cloud_getting_started).
 
 
 
@@ -325,7 +324,7 @@ Example:
 
 ## Live Playback with H5Live Player and nanoStream Cloud
 
-You can play back from our servers with the [H5Live Player](http://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_introduction)
+You can play back from our servers with the [H5Live Player](../../nanoplayer/nanoplayer_introduction)
 
 
 

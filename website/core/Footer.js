@@ -29,16 +29,16 @@ class Footer extends React.Component {
         <section className="sitemap">
           <div>
             <h5>Contact</h5>
-            <a href="https://www.nanocosmos.de/">nanocosmos homepage</a>
+            <a href="https://www.nanocosmos.de/">Homepage</a>
             <a href="https://www.nanocosmos.de/contact">Contact</a>
             <a href="https://www.nanocosmos.de/support">Support</a>
-            <a href="https://www.nanocosmos.de/terma">Legal Terms</a>
+            <a href="https://www.nanocosmos.de/terms">Legal Terms</a>
           </div>
           <div>
             <h5>Products</h5>
             <a href="https://www.nanocosmos.de/cloud">Nanostream Cloud with Bintu.Live</a>
             <a href="https://www.nanocosmos.de/h5live">H5Live Low Latency HTML5-Player</a>
-            <a href="https://www.nanocosmos.de/webrtc">WebRTC.Live</a>
+            <a href="https://www.nanocosmos.de/webrtc">nanoStream Webcaster</a>
             <a href="https://www.nanocosmos.de/#nanostream">Nanostream Apps and SDK</a>
           </div>
           <div>

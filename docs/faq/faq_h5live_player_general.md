@@ -101,7 +101,7 @@ and AAC audio for playback.
 
 <details><summary><strong>Is there an API documentation available?</strong></summary>
 
-Yes, you can find it [here](http://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_api_class).
+Yes, you can find it [here](../../nanoplayer/nanoplayer_api).
 
 </details>
 

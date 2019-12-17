@@ -1,4 +1,8 @@
-# nanocosmos / nanoStream samples
+---
+id: samples
+title: nanoStream Samples
+sidebar_label: nanoStream Samples
+---
 
 ## Ready-to-use demos
 

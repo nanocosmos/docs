@@ -4,15 +4,17 @@
 - [Intro](nanoplayer/nanoplayer_introduction)
 - [Getting Started](nanoplayer/nanoplayer_getting_started)
 - [Supported Browsers](nanoplayer/nanoplayer_supported_browsers)
+## Features
 - [Autoplay](nanoplayer/nanoplayer_autoplay)
-- [Token Security](nanoplayer/nanoplayer_token_security)
+- [Secure playback with H5live](nanoplayer/nanoplayer_token_security)
+- [Stream switching](nanoplayer/nanoplayer_feature_stream_switching)
 ## API
 - [Classes](nanoplayer/nanoplayer_api_class)
 - [Events](nanoplayer/nanoplayer_api_events)
 - [Globals](nanoplayer/nanoplayer_api_global)
     
 # webrtc
-## WebRTC.live
+## nanoStream Webcaster
   [Intro](webrtc/nanostream_webrtc_introduction)
   [](webrtc/nanostream_webrtc_getting_started)
   [](webrtc/nanostream_webrtc_browser_api)
