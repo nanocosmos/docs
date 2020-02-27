@@ -6,10 +6,10 @@ sidebar_label: NanoPlayer
 <a name="NanoPlayer"></a>
 
 ## NanoPlayer
-NanoPlayer (H5Live) Public API Class 4.2.2
+NanoPlayer (H5Live) Public API Class 4.2.3
 
 **Kind**: global class  
-**Version**: 4.2.2  
+**Version**: 4.2.3  
 <a name="new_NanoPlayer_new"></a>
 
 ### new NanoPlayer(playerDivId)
@@ -287,107 +287,6 @@ player.setVolume(0.3);
 Updates the source of the player.
 
 **Kind**: instance method of <code>[NanoPlayer](#NanoPlayer)</code>  
-**Returns**: <code>Promise.&lt;(config\|error)&gt;</code> - var source = {
-    "entries": [
-            {
-                "index": 0,
-                "label": "high",
-                "tag": "this is a high quality stream",
-                "info": {
-                    "bitrate": 1200,
-                    "width": 1280,
-                    "height": 720,
-                    "framerate": 30
-                },
-                "hls": "",
-                "h5live": {
-                    "rtmp": {
-                        "url": "rtmp://bintu-play.nanocosmos.de/play",
-                        "streamname": "XXXXX-YYYY1"
-                    },
-                    "server": {
-                        "websocket": "wss://bintu-h5live.nanocosmos.de:443/h5live/stream.mp4",
-                        "hls": "https://bintu-h5live.nanocosmos.de:443/h5live/http/playlist.m3u8",
-                        "progressive": "https://bintu-h5live.nanocosmos.de:443/h5live/http/stream.mp4"
-                    },
-                    "token": "",
-                    "security": {}
-                },
-                "bintu": {}
-            },
-            {
-                "index": 1,
-                "label": "medium",
-                "tag": "this is a medium quality stream",
-                "info": {
-                    "bitrate": 800,
-                    "width": 864,
-                    "height": 480,
-                    "framerate": 30
-                },
-                "hls": "",
-                "h5live": {
-                    "rtmp": {
-                        "url": "rtmp://bintu-play.nanocosmos.de/play",
-                        "streamname": "XXXXX-YYYY2"
-                    },
-                    "server": {
-                        "websocket": "wss://bintu-h5live.nanocosmos.de:443/h5live/stream.mp4",
-                        "hls": "https://bintu-h5live.nanocosmos.de:443/h5live/http/playlist.m3u8",
-                        "progressive": "https://bintu-h5live.nanocosmos.de:443/h5live/http/stream.mp4"
-                    },
-                    "token": "",
-                    "security": {}
-                },
-                "bintu": {}
-            },
-            {
-                "index": 2,
-                "label": "low",
-                "tag": "this is a low quality stream",
-                "info": {
-                    "bitrate": 400,
-                    "width": 426,
-                    "height": 240,
-                    "framerate": 15
-                },
-                "hls": "",
-                "h5live": {
-                    "rtmp": {
-                        "url": "rtmp://bintu-play.nanocosmos.de/play",
-                        "streamname": "XXXXX-YYYY3"
-                    },
-                    "server": {
-                        "websocket": "wss://bintu-h5live.nanocosmos.de:443/h5live/stream.mp4",
-                        "hls": "https://bintu-h5live.nanocosmos.de:443/h5live/http/playlist.m3u8",
-                        "progressive": "https://bintu-h5live.nanocosmos.de:443/h5live/http/stream.mp4"
-                    },
-                    "token": "",
-                    "security": {}
-                },
-                "bintu": {}
-            }
-    ],
-    "options": {
-        "adaption": {
-            "rule": "deviationOfMean"
-        },
-        "switch": {
-            'method': 'server',
-            'pauseOnError': false,
-            'forcePlay': true,
-            'fastStart': false,
-            'timeout': 10,
-        }
-    },
-    "startIndex": 2 // lowest
-};
-// player instance of NanoPlayer
-player.updateSource(source).then(function (config) {
-    console.log('update source ok with config: ' + JSON.stringify(config));
-}, function (error) {
-    console.log(error);
-});  
 **See**: [config](#NanoPlayer..config)  
 <table>
   <thead>
@@ -495,6 +394,110 @@ player.updateSource(source).then(function (config) {
     </tr>  </tbody>
 </table>
 
+**Example**  
+```js
+var source = {
+    "entries": [
+            {
+                "index": 0,
+                "label": "high",
+                "tag": "this is a high quality stream",
+                "info": {
+                    "bitrate": 1200,
+                    "width": 1280,
+                    "height": 720,
+                    "framerate": 30
+                },
+                "hls": "",
+                "h5live": {
+                    "rtmp": {
+                        "url": "rtmp://bintu-play.nanocosmos.de/play",
+                        "streamname": "XXXXX-YYYY1"
+                    },
+                    "server": {
+                        "websocket": "wss://bintu-h5live.nanocosmos.de:443/h5live/stream.mp4",
+                        "hls": "https://bintu-h5live.nanocosmos.de:443/h5live/http/playlist.m3u8",
+                        "progressive": "https://bintu-h5live.nanocosmos.de:443/h5live/http/stream.mp4"
+                    },
+                    "token": "",
+                    "security": {}
+                },
+                "bintu": {}
+            },
+            {
+                "index": 1,
+                "label": "medium",
+                "tag": "this is a medium quality stream",
+                "info": {
+                    "bitrate": 800,
+                    "width": 864,
+                    "height": 480,
+                    "framerate": 30
+                },
+                "hls": "",
+                "h5live": {
+                    "rtmp": {
+                        "url": "rtmp://bintu-play.nanocosmos.de/play",
+                        "streamname": "XXXXX-YYYY2"
+                    },
+                    "server": {
+                        "websocket": "wss://bintu-h5live.nanocosmos.de:443/h5live/stream.mp4",
+                        "hls": "https://bintu-h5live.nanocosmos.de:443/h5live/http/playlist.m3u8",
+                        "progressive": "https://bintu-h5live.nanocosmos.de:443/h5live/http/stream.mp4"
+                    },
+                    "token": "",
+                    "security": {}
+                },
+                "bintu": {}
+            },
+            {
+                "index": 2,
+                "label": "low",
+                "tag": "this is a low quality stream",
+                "info": {
+                    "bitrate": 400,
+                    "width": 426,
+                    "height": 240,
+                    "framerate": 15
+                },
+                "hls": "",
+                "h5live": {
+                    "rtmp": {
+                        "url": "rtmp://bintu-play.nanocosmos.de/play",
+                        "streamname": "XXXXX-YYYY3"
+                    },
+                    "server": {
+                        "websocket": "wss://bintu-h5live.nanocosmos.de:443/h5live/stream.mp4",
+                        "hls": "https://bintu-h5live.nanocosmos.de:443/h5live/http/playlist.m3u8",
+                        "progressive": "https://bintu-h5live.nanocosmos.de:443/h5live/http/stream.mp4"
+                    },
+                    "token": "",
+                    "security": {}
+                },
+                "bintu": {}
+            }
+    ],
+    "options": {
+        "adaption": {
+            "rule": "deviationOfMean"
+        },
+        "switch": {
+            'method': 'server',
+            'pauseOnError': false,
+            'forcePlay': true,
+            'fastStart': false,
+            'timeout': 10,
+        }
+    },
+    "startIndex": 2 // lowest
+};
+// player instance of NanoPlayer
+player.updateSource(source).then(function (config) {
+    console.log('update source ok with config: ' + JSON.stringify(config));
+}, function (error) {
+    console.log(error);
+});
+```
 **Example**  
 ```js
 var source = {
@@ -3412,4 +3415,3 @@ The possible pause reason in a onPause event.
 </td>
     </tr>  </tbody>
 </table>
-

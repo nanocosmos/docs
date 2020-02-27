@@ -23,9 +23,9 @@ Wether you want to configure a [single stream](#single-stream-configuration) or 
 > **Note:** You can find more information on how to configure the player in our [API documentation](../nanoplayer_api/#nanoplayerconfig--codeobjectcode).
 
 ### Single Stream configuration
-The [old pattern](#example-old-single-stream-configuration-depricated) to configure a single stream is **deprecated** with this version! Please follow this [new example](#example-new-single-stream-configuration) to configure a single stream.
+The [old pattern](#example-old-single-stream-configuration-deprecated) to configure a single stream is **deprecated** with this version! Please follow this [new example](#example-new-single-stream-configuration) to configure a single stream.
 
-#### Example OLD single stream configuration (DEPRICATED)
+#### Example OLD single stream configuration (DEPRECATED)
 ```javascript
 var config = {
     "source" : {
