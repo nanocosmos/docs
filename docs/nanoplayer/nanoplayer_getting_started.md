@@ -16,7 +16,7 @@ You can embed this code snippet to test the H5Live player on your page in no tim
 
 ```html
 <div id="playerDiv"></div>
-<script src="https://demo.nanocosmos.de/nanoplayer/api/release/nanoplayer.3.min.js?20190313"></script>
+<script src="https://demo.nanocosmos.de/nanoplayer/api/release/nanoplayer.4.min.js?20200227"></script>
 <script>
 var player;
 var config = {
@@ -59,10 +59,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
 Embedding the H5LivePlayer in your Vue.js project is simple: 
 
-1. Include the provided `nanoplayer.3.min.js` script within your `index.html` in your `root` directory
+1. Include the provided `nanoplayer.4.min.js` script within your `index.html` in your `root` directory
 
 ```html
-<script src="https://demo.nanocosmos.de/nanoplayer/api/release/nanoplayer.3.min.js?20190226"></script>
+<script src="https://demo.nanocosmos.de/nanoplayer/api/release/nanoplayer.4.min.js?20200227"></script>
 ```
 
 <br>
@@ -76,7 +76,7 @@ Example `index.html`
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>h5-live-player</title>
-    <script src="https://demo.nanocosmos.de/nanoplayer/api/release/nanoplayer.3.min.js?20190226"></script>
+    <script src="https://demo.nanocosmos.de/nanoplayer/api/release/nanoplayer.4.min.js?20200227"></script>
   </head>
   <body>
     <div id="app"></div>
