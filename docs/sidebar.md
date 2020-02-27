@@ -7,7 +7,7 @@
 ## Features
 - [Autoplay](nanoplayer/nanoplayer_autoplay)
 - [Secure playback with H5live](nanoplayer/nanoplayer_token_security)
-- [Stream switching](nanoplayer/nanoplayer_feature_stream_switching)
+- [Stream switching and ABR](nanoplayer/nanoplayer_feature_stream_switching)
 ## API
 - [Classes](nanoplayer/nanoplayer_api_class)
 - [Events](nanoplayer/nanoplayer_api_events)
