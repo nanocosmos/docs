@@ -1,7 +1,7 @@
 ---
 id: nanoplayer_feature_stream_switching
-title: Stream switching
-sidebar_label: Stream switching
+title: Stream switching and ABR
+sidebar_label: Stream switching and ABR
 ---
 
 ## Multi stream configuration, integrated ABR and stream switching features 
