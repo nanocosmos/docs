@@ -6,10 +6,10 @@ sidebar_label: NanoPlayer
 <a name="NanoPlayer"></a>
 
 ## NanoPlayer
-NanoPlayer (H5Live) Public API Class 4.2.2
+NanoPlayer (H5Live) Public API Class 4.2.3
 
 **Kind**: global class  
-**Version**: 4.2.2  
+**Version**: 4.2.3  
 <a name="new_NanoPlayer_new"></a>
 
 ### new NanoPlayer(playerDivId)
@@ -287,7 +287,11 @@ player.setVolume(0.3);
 Updates the source of the player.
 
 **Kind**: instance method of <code>[NanoPlayer](#NanoPlayer)</code>  
-**Returns**: <code>Promise.&lt;(config\|error)&gt;</code> - var source = {
+**Returns**: <code>Promise.&lt;(config\|error)&gt;</code> 
+
+**Example** 
+```js
+var source = {
     "entries": [
             {
                 "index": 0,
@@ -387,7 +391,9 @@ player.updateSource(source).then(function (config) {
     console.log('update source ok with config: ' + JSON.stringify(config));
 }, function (error) {
     console.log(error);
-});  
+});
+```
+
 **See**: [config](#NanoPlayer..config)  
 <table>
   <thead>
@@ -3412,4 +3418,3 @@ The possible pause reason in a onPause event.
 </td>
     </tr>  </tbody>
 </table>
-
