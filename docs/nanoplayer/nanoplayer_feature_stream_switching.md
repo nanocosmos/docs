@@ -18,7 +18,7 @@ One potential combined use case is a video quality selection offering options au
 ## Configuration changes
 
 ### Stream configuration
-Wether you want to configure a [single stream](#single-stream-configuration) or [multiple streams](#multi-stream-configuration) you need to configure them inside the `config.source.entries` object during the initial `setup` call. 
+Whether you want to configure a [single stream](#single-stream-configuration) or [multiple streams](#multi-stream-configuration) you need to configure them inside the `config.source.entries` object during the initial `setup` call. 
 
 > **Note:** You can find more information on how to configure the player in our [API documentation](../nanoplayer_api/#nanoplayerconfig--codeobjectcode).
 
