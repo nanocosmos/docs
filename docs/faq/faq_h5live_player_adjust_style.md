@@ -31,9 +31,13 @@ config.style.controls = false;
 
 </details>
 
-<details><summary><strong>Can I use a raw player without any styles?</strong></summary>
+<details><summary><strong>Can I use a raw player without built-in controls, animations and styles?</strong></summary>
 
-Yes, by passing the config property `style.view = false` all styles will be disabled.
+Yes, by passing the config property `style.view = false`. 
+
+The view is the top level UI layer containing all built-in controls, animations and styles including automatic video scaling. 
+Disabling the view will disable these features as well. 
+Therefore this is recommended for experienced users only. 
 
 </details>
 
@@ -122,18 +126,25 @@ document.addEventListener('DOMContentLoaded', function () {
 
 <details><summary><strong>Is there a simple code snippet available?</strong></summary>
 
-Yes! 
+Yes. Please check out the 'Getting started' topic in the documentation. 
+https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_getting_started/
 
 </details>
 
 <details><summary><strong>Can I use the player within a mobile webview?</strong></summary>
 
-Yes! 
+Yes. Some mobile webviews require configuration flags to be set on the app level 
+to allow, e.g. inline playback or playback without user interaction (autoplay). 
+Examples
+iOS: allowsInlineMediaPlayback, mediaTypesRequiringUserActionForPlayback 
+Android: setMediaPlaybackRequiresUserGesture
+
+Please check the documentation of the webview component. 
 
 </details>
 
 <details><summary><strong>Can I have multiple player instances in one page?</strong></summary>
 
-Yes!
+Yes. Please check out the nanoplayer-multi sample in the player package. 
 
 </details>
