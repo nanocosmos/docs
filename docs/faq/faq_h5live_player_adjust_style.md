@@ -51,7 +51,7 @@ Yes, by executing the player’s function `updateSource` with an updated `config
 
 <details><summary><strong>Is a fullscreen functionality available?</strong></summary>
 
-Yes, over the native player controls.
+Yes, via the bottom right fullscreen button on the built-in H5live player control bar.
 
 </details>
 
