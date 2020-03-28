@@ -36,8 +36,12 @@ or managed by our Javascript API.
 Stream Management is done with our bintu dashboard and API. 
 You will obtain and manage geo-loadbalanced URLs to enable global scale.
 
+## New: Adaptive Bitrate Playback (ABR) and Live Transcoding
+Adaptive Bitrate enables live distribution and playback with different quality levels,
+based on the viewer's network conditions. The player decides automatically which quality level to use.
+
 ## New: Metrics and Analytics
-To get full insight about your quality of service, we created a metrics and analytics system. Ask for details.
+To get full insight about your quality of service, we created a metrics and analytics system. See separate documentation.
 
 Optional Add-ons
 
