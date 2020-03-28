@@ -5,10 +5,24 @@ sidebar_label: Getting started
 ---
 ## Using the bintu.live dashboard
 
+### What you need
 
-### Creating your bintu.live account
+To create and broadcast a live stream, you need a live source.
+This can be either a webcam, external camera, streaming device, or even your PC screen.
+To send a live stream to nanoStream Cloud, you need a streaming software or hardware,
+or just your browser which directly can be used to send a live stream to your audience.
 
-Click [here](https://bintu.nanocosmos.de/signup) to sign up and create a new user account
+See our introduction videos and tutorials for step-by-step instructions!
+
+- [Videos](https://www.nanocosmos.de/blog/videos)
+
+- [Getting started with the OBS Software](https://www.nanocosmos.de/blog/2020/01/how-to-use-obs-as-a-live-encoder-for-your-nanostream/)
+
+- [Getting started with nanoStream Webcaster from the browser](https://www.nanocosmos.de/blog/2019/09/how-to-create-a-livestream-with-our-nanostream-webrtc-application-demo-version/)
+
+### Create a nanoStream Cloud account (bintu.live)
+
+Click [bintu.nanocosmos.de](https://bintu.nanocosmos.de/signup) to sign up and create a new user account
 
 ![Screen Shot 2016-07-19 at 13.45.00](https://i2.wp.com/www.nanocosmos.de/blog/wp-content/uploads/Screen-Shot-2016-07-19-at-13.45.00.png?resize=600%2C448&ssl=1)
 <br>

@@ -4,9 +4,9 @@ title: nanoStream Cloud Product and Services Overview
 sidebar_label: Overview
 ---
 
-nanoStream Cloud is a unique **ultra-low-latency live streaming platform** for your live video/audio content. 
+nanoStream Cloud is a unique **ultra-low-latency live streaming platform** for your live video/audio content. Ultra-low-latency means 1 second from the camera to the video, glass-to-glass. nanoStream Playback runs on all devices and browsers.
 
-nanoStream software and services can be completely **white-labeled to run under your own brand**.
+nanoStream software and services can be completely **white-labeled to run under your own brand** for instant live streaming around the world in 1 second.
 
 ## What makes nanoStream Cloud different?
 
@@ -25,7 +25,6 @@ Live encoding/ingest is supported with:
 - ingest with your own **H264/AAC/RTMP Live Encoders** (e.g. OBS, Wirecast, Hardware Encoders)
 - ingest with our **nanoStream Apps/SDKs** (nanoStream Apps for Win/Mac/iOS/Android),
 - ingest with plugin-free web based **nanoStream Webcaster** broadcaster incl. screen sharing
-
 
 
 ## Live Playback with H5Live

@@ -6,7 +6,9 @@ sidebar_label: bintu api
 
 # What is bintu?
 
-bintu is the stream management dashboard and API for nanoStream Cloud and CDN. By using bintu, you can create and manage your live streams, to enable ultra-low-latency live streaming at a global scale.  
+bintu is the stream management dashboard and API for nanoStream Cloud and CDN. By using bintu, you can create and manage your live streams, to enable ultra-low-latency live streaming at a global scale.
+
+The dashboard and API can be reached at https://bintu.nanocosmos.de . 
 
 # What do I need?
 
