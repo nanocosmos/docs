@@ -42,11 +42,16 @@
         "title": "nanoStream Cloud Product and Services Overview",
         "sidebar_label": "Overview"
       },
+      "cloud/live_encoding": {
+        "title": "Live Encoding",
+        "sidebar_label": "Live Encoding"
+      },
       "cloud/network-diagnostics-mtr": {
         "title": "cloud/network-diagnostics-mtr"
       },
       "cloud/network-diagnostics": {
-        "title": "cloud/network-diagnostics"
+        "title": "Network Diagnostics",
+        "sidebar_label": "Network Diagnostics"
       },
       "faq/faq_3d_stereo_vr": {
         "title": "3D / Stereo / VR / 360",
@@ -164,8 +169,8 @@
         "sidebar_label": "Blog"
       },
       "nanoplayer/nanoplayer_feature_stream_switching": {
-        "title": "Stream switching via updateSource",
-        "sidebar_label": "Stream switching"
+        "title": "Stream switching and ABR",
+        "sidebar_label": "Stream switching and ABR"
       },
       "nanoplayer/nanoplayer_getting_started": {
         "title": "Getting started",
@@ -189,6 +194,10 @@
       "nanoplayer/nanoplayer_token_security": {
         "title": "Secure playback with H5Live",
         "sidebar_label": "Secure playback with H5Live"
+      },
+      "nanoplayer/nanoplayer_update_source": {
+        "title": "update source",
+        "sidebar_label": "update source"
       },
       "nanostream/adobe/nanostream_ane_api": {
         "title": "nanostream/adobe/nanostream_ane_api"
@@ -423,6 +432,9 @@
         "title": "Tutorial / Getting started with nanoStream and bintu.live",
         "sidebar_label": "Getting started"
       },
+      "nanostream/macos/nanostream_macos_sdk": {
+        "title": "nanostream/macos/nanostream_macos_sdk"
+      },
       "nanostream/nanostream": {
         "title": "Introduction",
         "sidebar_label": "Introduction"
@@ -475,6 +487,19 @@
       "nanostream/support/rtmp/nanostream_rtmp_statistics": {
         "title": "nanostream/support/rtmp/nanostream_rtmp_statistics"
       },
+      "nanostream/web/live_video_encoder_-_plugin_jscript": {
+        "title": "nanostream/web/live_video_encoder_-_plugin_jscript"
+      },
+      "nanostream/web/nanostream_4.x_web_api": {
+        "title": "nanostream/web/nanostream_4.x_web_api"
+      },
+      "nanostream/web/nanostream_live_video_encoder_-_plugin_jscript": {
+        "title": "Live Video Encoder - Plugin API",
+        "sidebar_label": "Live Video Encoder - Plugin API"
+      },
+      "nanostream/web/nanostream-4.x-web-api": {
+        "title": "nanostream/web/nanostream-4.x-web-api"
+      },
       "nanostream/windows/language_integration/nanostream_activex_visualcpp_mfc": {
         "title": "nanostream/windows/language_integration/nanostream_activex_visualcpp_mfc"
       },
@@ -486,6 +511,9 @@
       },
       "nanostream/windows/language_integration/nanostream_csharp_integration": {
         "title": "nanostream/windows/language_integration/nanostream_csharp_integration"
+      },
+      "nanostream/windows/language_integration/nanostream_delphi_integration": {
+        "title": "nanostream/windows/language_integration/nanostream_delphi_integration"
       },
       "nanostream/windows/nanostream_encoder_plugin_api": {
         "title": "Encoder Plugin API",

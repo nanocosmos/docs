@@ -12,9 +12,13 @@ nanoStream Webcaster enables live video streaming directly from your browser, ei
 
 Webcasting can be used for instant presentations without any download, for e-learning or webcasting of events like live auctions.
 
+The idea is not point-to-point communication like in a video conference, but 1-to-many, or many-to-many.
+
 nanoStream Webcaster is available as a simple demo web page, but also as an API which can be easily embedded into custom web pages (white label, run under your own brand).
 
 nanoStream Webcaster is a powerful live encoding tool for browser-based interactive live streaming. Combining it with the unique nanoStream Cloud with integrated nanoStream H5Live Player creates an end-to-end workflow for scalable ultra-low-latency live streams worldwide.
+
+nanoStream Webcaster is formerly knows as WebRTC.live, based on the WebRTC technology. The former name WebRTC.live was removed to avoid confusion with the underlying technologies. Playback with H5Live is not based on WebRTC.
 
 ![img](https://i1.wp.com/www.nanocosmos.de/blog/wp-content/uploads/2018/03/1.png?resize=800%2C230&ssl=1)
 

@@ -33,10 +33,11 @@
       "cloud/cloud_overview",
       "cloud/cloud_introduction",
       "cloud/cloud_getting_started",
+      "cloud/live_encoding",
       "cloud/bintu_api",
       "cloud/bintu_custom_webhooks",
       "cloud/bintu_stream_tags",
-      "cloud/network_diagnostics"
+      "cloud/network-diagnostics"
     ]
   },
   "nanostream": {
