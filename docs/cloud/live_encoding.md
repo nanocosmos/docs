@@ -109,6 +109,14 @@ Also see the recommendations by Apple, Youtube, Vimeo and Adobe:
 - http://vimeo.com/help/compression
 - http://www.adobe.com/devnet/adobe-media-server/articles/dynstream_live/popup.html
 
+## Stream Configuration
+
+The default stream format for sending a live stream to nanoStream Cloud
+is the RTMP Format.
+Most Live Encoders support RTMP.
+With nanoStream Cloud, you get a rtmp ingest URL from the bintu dashboard or API.
+This ingest URL needs to be put to the Live Encoder.
+
 ## Data Traffic
 
 Data traffic usage is dependent on the overall bitrate sent from the encoder, plus the bitrate received for every viewer.
