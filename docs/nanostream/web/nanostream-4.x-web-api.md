@@ -1,3 +1,9 @@
+---
+id: nanostream_4.x_web_api
+title: nanoStream Web API 4.x
+sidebar_label: nanoStream Web API 4.x
+---
+
 nanoStream Live Video Encoder
 ============================
 Webcaster / Browser based Live Encoder
@@ -6,7 +12,7 @@ Compatible to NPAPI, ActiveX and Chrome Extension
 (c) 2015 nanocosmos gmbh
 
 
-**Work in Progress**
+**Note: This API is deprecated! Please use nanoStream Webcaster and H5Live!**
 
 # NANO.NanoStream
 
