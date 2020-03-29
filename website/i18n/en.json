@@ -493,9 +493,6 @@
         "title": "Live Video Encoder - Plugin API",
         "sidebar_label": "Live Video Encoder - Plugin API"
       },
-      "nanostream/web/nanostream-4.x-web-api": {
-        "title": "nanostream/web/nanostream-4.x-web-api"
-      },
       "nanostream/windows/language_integration/nanostream_activex_visualcpp_mfc": {
         "title": "nanostream/windows/language_integration/nanostream_activex_visualcpp_mfc"
       },
