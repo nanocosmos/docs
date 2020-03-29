@@ -6,7 +6,7 @@ sidebar_label: Browser Demos
 
 ## Easy and quick demo for simple tests
 
-1. Click [here](https://www.nanocosmos.de/v6/webrtc) to try the nanoStream Webcaster demo. 
+1. Click [here](https://www.nanocosmos.de/webcaster) to try the nanoStream Webcaster demo. 
 
 <br>
 
