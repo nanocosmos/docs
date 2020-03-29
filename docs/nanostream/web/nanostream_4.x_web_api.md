@@ -1,16 +1,12 @@
----
-id: nanostream_4.x_web_api
-title: nanoStream Web API 4.x
-sidebar_label: nanoStream Web API 4.x
----
 
-nanoStream Live Video Encoder
-============================
-Webcaster / Browser based Live Encoder
+> **Note: This API is deprecated! Please use nanoStream Webcaster and H5Live!**
+
+nanoStream Live Video Encoder Plugin
+====================================
+Browser based Live Encoder Plugin
 Version 4.0
 Compatible to NPAPI, ActiveX and Chrome Extension
 (c) 2015 nanocosmos gmbh
-
 
 **Note: This API is deprecated! Please use nanoStream Webcaster and H5Live!**
 
@@ -29,12 +25,50 @@ Compatible to NPAPI, ActiveX and Chrome Extension
 * Availability
     * Since nanoStream 4.0
 
+## NanoStream Summary
+
+* [API Methods (async with callbacks)](#api_methods_async_with_callbacks)
+    * [GetAudioDeviceConfig](#getaudiodeviceconfig)
+    * [GetAudioDevices](#getaudiodevices)
+    * [GetAudioLevels](#getaudiolevels)
+    * [GetConfig](#getconfig)
+    * [GetInputs](#getinputs)
+    * [GetOutputs](#getoutputs)
+    * [GetVideoDeviceConfig](#getvideodeviceconfig)
+    * [GetVideoDevices](#getvideodevices)
+    * [GetWindows](#getwindows)
+    * [SaveXmlProfile](#savexmlprofile)
+    * [SetAudioVolume](#setaudiovolume)
+    * [SetConfigs](#setconfigs)
+    * [SetInputs](#setinputs)
+    * [SetOutputs](#setoutputs)
+    * [SetPictureInPictureSize](#setpictureinpicturesize)
+    * [SetVideoMixingMode](#setvideomixingmode)
+    * [SetXmlProfile](#setxmlprofile)
+    * [StartBroadcast](#startbroadcast)
+    * [StartPreview](#startpreview)
+    * [StopBroadcast](#stopbroadcast)
+    * [StopPreview](#stoppreview)
+    * [Init](#init)
+
+* [Helper Methods (sync)](#helper_methods_sync)
+    * [DetectBrowser](#detectbrowser)
+    * [InstallExtensionInline](#installextensioninline)
+    * [InstallExtensionWebstore](#installextensionwebstore)
+    * [FireEvent](#fireevent)
+
+* [Events](#events)
+    * [onError](#onerror)
+    * [onNotifyEvent](#onnotifyevent)
+    * [onStopEvent](#onstopevent)
+    * [onSupported](#onsupported)
+    * [onUnsupported](#onunsupported)
 
 ## API Methods (async with callbacks)
 
 ### GetAudioDeviceConfig
 
-
+[up to summary](#nanostream_summary)
 
 _object_ NANO.NanoStream.GetAudioDeviceConfig(_integer_ index, _function_ successCallback, _function_ errorCallback)
 
@@ -163,13 +197,13 @@ _object_ NANO.NanoStream.GetAudioDeviceConfig(_integer_ index, _function_ succes
     console.log("Call: " + JSON.stringify(message));
 ```
 
-
+[up](#getaudiodeviceconfig)
 
 ---
 
 ### GetAudioDevices
 
-
+[up to summary](#nanostream_summary)
 
 _object_ NANO.NanoStream.GetAudioDevices(_function_ successCallback, _function_ errorCallback)
 
@@ -289,13 +323,13 @@ _object_ NANO.NanoStream.GetAudioDevices(_function_ successCallback, _function_ 
     console.log("Call: " + JSON.stringify(message));
 ```
 
-
+[up](#getaudiodevices)
 
 ---
 
 ### GetAudioLevels
 
-
+[up to summary](#nanostream_summary)
 
 _object_ NANO.NanoStream.GetAudioLevels(_function_ successCallback, _function_ errorCallback)
 
@@ -389,13 +423,13 @@ _object_ NANO.NanoStream.GetAudioLevels(_function_ successCallback, _function_ e
     }, null);
 ```
 
-
+[up](#getaudiolevels)
 
 ---
 
 ### GetConfig
 
-
+[up to summary](#nanostream_summary)
 
 _object_ NANO.NanoStream.GetConfig(_string_ key, _function_ successCallback, _function_ errorCallback)
 
@@ -492,7 +526,7 @@ _object_ NANO.NanoStream.GetConfig(_string_ key, _function_ successCallback, _fu
     console.log("Call: " + JSON.stringify(message));
 ```
 
-
+[up](#getconfig)
 
 ---
 
@@ -502,7 +536,7 @@ _object_ NANO.NanoStream.GetConfig(_string_ key, _function_ successCallback, _fu
 
 ### GetVideoDeviceConfig
 
-
+[up to summary](#nanostream_summary)
 
 _object_ NANO.NanoStream.GetVideoDeviceConfig(_integer_ index, _function_ successCallback, _function_ errorCallback)
 
@@ -707,13 +741,13 @@ _object_ NANO.NanoStream.GetVideoDeviceConfig(_integer_ index, _function_ succes
     console.log("Call: " + JSON.stringify(message));
 ```
 
-
+[up](#getvideodeviceconfig)
 
 ---
 
 ### GetVideoDevices
 
-
+[up to summary](#nanostream_summary)
 
 _object_ NANO.NanoStream.GetVideoDevices(_function_ successCallback, _function_ errorCallback)
 
@@ -833,7 +867,7 @@ _object_ NANO.NanoStream.GetVideoDevices(_function_ successCallback, _function_ 
     console.log("Call: " + JSON.stringify(message));
 ```
 
-
+[up](#getvideodevices)
 
 ---
 
@@ -841,7 +875,7 @@ _object_ NANO.NanoStream.GetVideoDevices(_function_ successCallback, _function_ 
 
 ### SaveXmlProfile
 
-
+[up to summary](#nanostream_summary)
 
 _object_ NANO.NanoStream.SaveXmlProfile(_string_ path, _function_ successCallback, _function_ errorCallback)
 
@@ -934,13 +968,13 @@ _object_ NANO.NanoStream.SaveXmlProfile(_string_ path, _function_ successCallbac
     console.log("Call: " + JSON.stringify(message));
 ```
 
-
+[up](#savexmlprofile)
 
 ---
 
 ### SetAudioVolume
 
-
+[up to summary](#nanostream_summary)
 
 _object_ NANO.NanoStream.SetAudioVolume(_integer_ volume, _function_ successCallback, _function_ errorCallback)
 
@@ -1035,13 +1069,13 @@ _object_ NANO.NanoStream.SetAudioVolume(_integer_ volume, _function_ successCall
     console.log("Call: " + JSON.stringify(message));
 ```
 
-
+[up](#setaudiovolume)
 
 ---
 
 ### SetConfigs
 
-
+[up to summary](#nanostream_summary)
 
 _object_ NANO.NanoStream.SetConfigs(_object_ [nanoConfigObject](#nano_config), _function_ successCallback, _function_ errorCallback)
 
@@ -1146,7 +1180,7 @@ _object_ NANO.NanoStream.SetConfigs(_object_ [nanoConfigObject](#nano_config), _
     console.log("Call: " + JSON.stringify(message));
 ```
 
-
+[up](#setconfig)
 
 ---
 
@@ -1157,7 +1191,7 @@ _object_ NANO.NanoStream.SetConfigs(_object_ [nanoConfigObject](#nano_config), _
 
 ### SetPictureInPictureSize
 
-
+[up to summary](#nanostream_summary)
 
 _object_ NANO.NanoStream.SetPictureInPictureSize(_integer_ size, _function_ successCallback, _function_ errorCallback)
 
@@ -1252,13 +1286,13 @@ _object_ NANO.NanoStream.SetPictureInPictureSize(_integer_ size, _function_ succ
     console.log("Call: " + JSON.stringify(message));
 ```
 
-
+[up](#setpictureinpicturesize)
 
 ---
 
 ### SetVideoMixingMode
 
-
+[up to summary](#nanostream_summary)
 
 _object_ NANO.NanoStream.SetVideoMixingMode(_integer_ mode, _function_ successCallback, _function_ errorCallback)
 
@@ -1353,13 +1387,13 @@ _object_ NANO.NanoStream.SetVideoMixingMode(_integer_ mode, _function_ successCa
     console.log("Call: " + JSON.stringify(message));
 ```
 
-
+[up](#setvideomixingmode)
 
 ---
 
 ### SetXmlProfile
 
-
+[up to summary](#nanostream_summary)
 
 _object_ NANO.NanoStream.SetXmlProfile(_string_ path, _function_ successCallback, _function_ errorCallback)
 
@@ -1452,13 +1486,13 @@ _object_ NANO.NanoStream.SetXmlProfile(_string_ path, _function_ successCallback
     console.log("Call: " + JSON.stringify(message));
 ```
 
-
+[up](#setxmlprofile)
 
 ---
 
 ### StartBroadcast
 
-
+[up to summary](#nanostream_summary)
 
 _object_ NANO.NanoStream.StartBroadcast(_function_ successCallback, _function_ errorCallback)
 
@@ -1552,13 +1586,13 @@ _object_ NANO.NanoStream.StartBroadcast(_function_ successCallback, _function_ e
     console.log("Call: " + JSON.stringify(message));
 ```
 
-
+[up](#startbroadcast)
 
 ---
 
 ### StartPreview
 
-
+[up to summary](#nanostream_summary)
 
 _object_ NANO.NanoStream.StartPreview(_function_ successCallback, _function_ errorCallback)
 
@@ -1652,13 +1686,13 @@ _object_ NANO.NanoStream.StartPreview(_function_ successCallback, _function_ err
     console.log("Call: " + JSON.stringify(message));
 ```
 
-
+[up](#startpreview)
 
 ---
 
 ### StopBroadcast
 
-
+[up to summary](#nanostream_summary)
 
 _object_ NANO.NanoStream.StopBroadcast(_function_ successCallback, _function_ errorCallback)
 
@@ -1748,13 +1782,13 @@ _object_ NANO.NanoStream.StopBroadcast(_function_ successCallback, _function_ er
     console.log("Call: " + JSON.stringify(message));
 ```
 
-
+[up](#stopbroadcast)
 
 ---
 
 ### StopPreview
 
-
+[up to summary](#nanostream_summary)
 
 _object_ NANO.NanoStream.StopPreview(_function_ successCallback, _function_ errorCallback)
 
@@ -1844,13 +1878,13 @@ _object_ NANO.NanoStream.StopPreview(_function_ successCallback, _function_ erro
     console.log("Call: " + JSON.stringify(message));
 ```
 
-
+[up](#stoppreview)
 
 ---
 
 ### Init
 
-
+[up to summary](#nanostream_summary)
 
 _object_ NANO.NanoStream.Init(_string_ elementId, _string_ license, _function_ successCallback, _function_ errorCallback)
 
@@ -1987,7 +2021,7 @@ _object_ NANO.NanoStream.Init(_string_ elementId, _string_ license, _function_ s
     console.log("Call: " + JSON.stringify(message));
 ```
 
-
+[up](#init)
 
 ---
 

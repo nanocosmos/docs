@@ -1,12 +1,14 @@
-nanoStream Live Video Encoder
-============================
-Webcaster / Browser based Live Encoder
+
+> **Note: This API is deprecated! Please use nanoStream Webcaster and H5Live!**
+
+nanoStream Live Video Encoder Plugin
+====================================
+Browser based Live Encoder Plugin
 Version 4.0
 Compatible to NPAPI, ActiveX and Chrome Extension
 (c) 2015 nanocosmos gmbh
 
-
-**Work in Progress**
+**Note: This API is deprecated! Please use nanoStream Webcaster and H5Live!**
 
 # NANO.NanoStream
 

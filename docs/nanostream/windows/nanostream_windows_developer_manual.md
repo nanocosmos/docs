@@ -9,11 +9,7 @@ sidebar_label: Developer Manual
 > Not all modules are contained in all configurations. Please ask for availability and prices.
 
 ## Live Video Capture Active-X Control (`npvidcap.ax`)
-Active-X-Control compatible with Internet Explorer and other `ActiveX` technologies
-API compatible to `Javascript`, `C/C++`, `NET/C#`, `VisualBasic`, `Delphi`, and others
-
-## Live Video Capture NP Plugin (`np_vidcap.dll`)
-Plugin for Mozilla/Netscape based browsers, `Javascript` interface (Firefox, Safari)
+Active-X-Control compatible with `ActiveX` technologies for Windows `C/C++`, `NET/C#`
 
 ## nanocosmos H.264 video encoder (Filename: `nh264enc.ax`)
 `DirectShow` video encoder filter for encoding live video to `H.264`

@@ -10,7 +10,7 @@ Welcome to the nanocosmos Developer Documentation for nanoStream products and se
 ## Bintu Documentation
 
 ### [Android](bintu/android/bintu-android-sdk.md)
-A how to on the basic usage of the bintu.live sdk for android and its functionality.
+A how to on the basic usage of the nanoStream Cloud / bintu.live sdk for android and its functionality.
 
 ### [iOS](bintu/ios/bintu_ios_sdk.md)
 A how to on the basic usage of the bintu.live sdk for iOS and its functionality including [the provided samples](bintu/ios/bintu_ios_sample.md).

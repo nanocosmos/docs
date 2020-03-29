@@ -5,10 +5,26 @@ sidebar_label: Getting started
 ---
 ## Using the bintu.live dashboard
 
+bintu.live is the dashboard and API for nanoStream Cloud.
 
-### Creating your bintu.live account
+### What you need
 
-Click [here](https://bintu.nanocosmos.de/signup) to sign up and create a new user account
+To create and broadcast a live stream, you need a live source.
+This can be either a webcam, external camera, streaming device, or even your PC screen.
+To send a live stream to nanoStream Cloud, you need a streaming software or hardware,
+or just your browser which directly can be used to send a live stream to your audience.
+
+See our introduction videos and tutorials for step-by-step instructions!
+
+- [Videos](https://www.nanocosmos.de/blog/videos)
+
+- [Getting started with the OBS Software](https://www.nanocosmos.de/blog/2020/01/how-to-use-obs-as-a-live-encoder-for-your-nanostream/)
+
+- [Getting started with nanoStream Webcaster from the browser](https://www.nanocosmos.de/blog/2019/09/how-to-create-a-livestream-with-our-nanostream-webrtc-application-demo-version/)
+
+### Create a nanoStream Cloud account (bintu.live)
+
+Click [bintu.nanocosmos.de](https://bintu.nanocosmos.de/signup) to sign up and create a new user account
 
 ![Screen Shot 2016-07-19 at 13.45.00](https://i2.wp.com/www.nanocosmos.de/blog/wp-content/uploads/Screen-Shot-2016-07-19-at-13.45.00.png?resize=600%2C448&ssl=1)
 <br>
@@ -149,6 +165,14 @@ By selecting `Organisation` from the top menu, you can see your Organisation ID,
 Under `Keys` you will find your account’s API Key and Player Key to manage live streams within your own application.
 
 ![img](https://i0.wp.com/www.nanocosmos.de/blog/wp-content/uploads/keys.png?resize=768%2C194&ssl=1)
+
+-----
+
+
+### Secure Streaming
+
+Secure streaming can be done on the ingest side based on rtmps or WebRTC.
+For secure playback you need to have your account enabled for playback security. See the h5live secure playback documentation.
 
 -----
 

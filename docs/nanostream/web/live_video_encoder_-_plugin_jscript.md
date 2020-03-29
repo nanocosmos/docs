@@ -1,17 +1,12 @@
+
+> **Note: This API is deprecated! Please use nanoStream Webcaster and H5Live!**
+
 ## Live Video Encoder - Plugin API
-
-**NOTE: This is the Plugin API for NPAPI and ActiveX.
-For using Chrome Browsers, see our [nanoStream Web API 4.x][5092bc08]
-**
-
-
 
 ### Browser based usage with HTML and Javascript
 
 The Live Video Encoder core components are available as plugins for several browsers:\\
-Internet Explorer (IE), based on ActiveX, and NP-Plugin based browsers (Firefox, Safari, Chrome).\\
-The same API is valid for integration into other languages, C++, .NET, Delphi, etc.\\
-See the sample web page for functionality or contact us for further help.\\
+Internet Explorer (IE), based on ActiveX, and NP-Plugin based browsers (Firefox, Safari, Chrome).
 
 ### How to embed the encoder plugin into HTML
 

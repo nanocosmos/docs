@@ -1,3 +1,9 @@
+---
+id: network-diagnostics
+title: Network Diagnostics
+sidebar_label: Network Diagnostics
+---
+
 ## Network Diagnostics
 
 In this section, we'll review some basic commands that will help you assess and diagnose network problems. 
