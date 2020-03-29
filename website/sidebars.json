@@ -34,6 +34,7 @@
       "cloud/cloud_introduction",
       "cloud/cloud_getting_started",
       "cloud/live_encoding",
+      "cloud/live-recording-vod",
       "cloud/bintu_api",
       "cloud/bintu_custom_webhooks",
       "cloud/bintu_stream_tags",

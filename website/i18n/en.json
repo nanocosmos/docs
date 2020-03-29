@@ -46,6 +46,10 @@
         "title": "Live Encoding",
         "sidebar_label": "Live Encoding"
       },
+      "cloud/live-recording-vod": {
+        "title": "Live Recording and VOD",
+        "sidebar_label": "Live Recording and VOD"
+      },
       "cloud/network-diagnostics-mtr": {
         "title": "cloud/network-diagnostics-mtr"
       },
