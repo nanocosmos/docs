@@ -80,6 +80,13 @@ H5Live player works on any browser and operates in different modes:
 
 You do not need to worry about these modes, they are automatically selected by the player.
 
+
+
+### Secure Streaming
+
+For secure playback you need to have your account enabled for playback security. See the h5live secure playback documentation.
+
+
 ## More Information
 [Product Overview and Live Demo](https://www.nanocosmos.de/h5live)
 

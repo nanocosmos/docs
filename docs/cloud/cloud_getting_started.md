@@ -5,6 +5,8 @@ sidebar_label: Getting started
 ---
 ## Using the bintu.live dashboard
 
+bintu.live is the dashboard and API for nanoStream Cloud.
+
 ### What you need
 
 To create and broadcast a live stream, you need a live source.
@@ -163,6 +165,14 @@ By selecting `Organisation` from the top menu, you can see your Organisation ID,
 Under `Keys` you will find your account’s API Key and Player Key to manage live streams within your own application.
 
 ![img](https://i0.wp.com/www.nanocosmos.de/blog/wp-content/uploads/keys.png?resize=768%2C194&ssl=1)
+
+-----
+
+
+### Secure Streaming
+
+Secure streaming can be done on the ingest side based on rtmps or WebRTC.
+For secure playback you need to have your account enabled for playback security. See the h5live secure playback documentation.
 
 -----
 
