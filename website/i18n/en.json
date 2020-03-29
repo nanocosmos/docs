@@ -482,19 +482,6 @@
       "nanostream/support/rtmp/nanostream_rtmp_statistics": {
         "title": "nanostream/support/rtmp/nanostream_rtmp_statistics"
       },
-      "nanostream/web/live_video_encoder_-_plugin_jscript": {
-        "title": "nanostream/web/live_video_encoder_-_plugin_jscript"
-      },
-      "nanostream/web/nanostream_4.x_web_api": {
-        "title": "nanostream/web/nanostream_4.x_web_api"
-      },
-      "nanostream/web/nanostream_live_video_encoder_-_plugin_jscript": {
-        "title": "Live Video Encoder - Plugin API",
-        "sidebar_label": "Live Video Encoder - Plugin API"
-      },
-      "nanostream/web/nanostream-4.x-web-api": {
-        "title": "nanostream/web/nanostream-4.x-web-api"
-      },
       "nanostream/windows/language_integration/nanostream_activex_visualcpp_mfc": {
         "title": "nanostream/windows/language_integration/nanostream_activex_visualcpp_mfc"
       },
@@ -506,9 +493,6 @@
       },
       "nanostream/windows/language_integration/nanostream_csharp_integration": {
         "title": "nanostream/windows/language_integration/nanostream_csharp_integration"
-      },
-      "nanostream/windows/language_integration/nanostream_delphi_integration": {
-        "title": "nanostream/windows/language_integration/nanostream_delphi_integration"
       },
       "nanostream/windows/nanostream_encoder_plugin_api": {
         "title": "Encoder Plugin API",
