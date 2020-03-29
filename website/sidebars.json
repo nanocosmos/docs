@@ -57,7 +57,6 @@
       "nanostream/ios/bintu_ios_sample",
       "nanostream/ios/nanostream_ios_license_deployment"
     ],
-    "MacOSX" : ["nanostream/macos/nanostream_macos_sdk"],
     "Windows" : [
       "nanostream/windows/nanostream_windows_binaries",
       "nanostream/windows/nanostream_windows_developer_manual",
@@ -74,10 +73,7 @@
       "nanostream/directshow/directshow_rtmp_writer",
       "nanostream/directshow/nanostream_directshow_rtsp",
       "nanostream/directshow/nanostream_directshow_udp_streaming",
-      "nanostream/directshow/nanostream_directshow_video_filter",
-      "nanostream/directshow/nanostream_directshow_audio_volume",
-      "nanostream/directshow/nanostream_directshow_mpeg",
-      "nanostream/directshow/nanostream_directshow_quicktime"
+      "nanostream/directshow/nanostream_directshow_video_filter"
     ]
   },
   "faq" : {
@@ -97,7 +93,6 @@
       "faq/faq_streaming",
       "faq/faq_devices_support",
       "faq/faq_adv_codec_config",
-      "faq/faq_3d_stereo_vr",
       "faq/programming_sdk_api",
       "faq/faq_nanostream_sdk_win",
       "faq/programming"
