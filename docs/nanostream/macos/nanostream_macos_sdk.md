@@ -1,8 +1,5 @@
----
-id: nanostream_macos_sdk
-title: MacOSX API
-sidebar_label: MacOSX API
----
+
+> **Note: This API is deprecated! Please use nanoStream Webcaster and H5Live!**
 
 ## Intro
 

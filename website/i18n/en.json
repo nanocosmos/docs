@@ -423,13 +423,6 @@
         "title": "Tutorial / Getting started with nanoStream and bintu.live",
         "sidebar_label": "Getting started"
       },
-      "nanostream/macos/nanostream_macos_sdk": {
-        "title": "MacOSX API",
-        "sidebar_label": "MacOSX API"
-      },
-      "nanostream/macos/nanostream-macos-sdk": {
-        "title": "nanostream/macos/nanostream-macos-sdk"
-      },
       "nanostream/nanostream": {
         "title": "Introduction",
         "sidebar_label": "Introduction"
