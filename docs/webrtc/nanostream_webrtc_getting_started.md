@@ -198,49 +198,51 @@ user.startPreview(config);
 ...
 ```
 
+## Live Stream Configuration
 
-## nanoStream Cloud End-To-End Workflow
+For configuring the encoding settings of a stream, see the sections below. 
 
-The following describes a plugin-free end to end streaming solution from the camera to the viewer, with nanostream Webcaster, nanoStream Cloud and nanoStream h5live player.
+Please refer to the [API documentation](./nanostream_webrtc_api), particularly [setConfig](nanostream_webrtc_api#setconfigconfig) and [startBroadcast](nanostream_webrtc_api#startbroadcastconfig), for details.
 
+### Quality settings
 
-
-## Creating a live stream for broadcasting
-
-To create a live stream to broadcast to your audience, you need to obtain an `RTMP` ingest URL from either nanoStream Cloud / bintu.live or your own `RTMP` server.
-
-
-
-### Creating a stream for bintu.live with bintu.js
-
-If you don't already have a stream url you can create a new webrtc enabled stream with our bintu.js which is included in the nanoStream Webcaster Browser API.
+The upstream quality can be changed by configuring different stream encoding properties:
+ 
+ - Resolution
+ - Bitrate
+ - Frame rate 
 
 ```javascript
-<script src="./js/api/bintu/nano.bintu.js"></script>
+var config = {
+  bitrates: {
 
-<script type="text/javascript">
-    var bintu = new Bintu(BintuApiKey, "https://bintu.nanocosmos.de", true, true);
+  }
+};
 
-    var bintuTags = ['newTag, test, webrtc']; // optionally add tags to the stream
-    
-    bintu.createStream(bintuTags, function success(request) {
-      var response = JSON.parse(request.responseText);
-      var ingest = response.ingest;
-      var rtmp = ingest.rtmp;
-      var url = rtmp.url;
-      var streamname = rtmp.streamname;
-      var ingestUrl = url + '/' + streamname;
-    }, function onerror(error) {
-      console.log(error);
-    });
+user.setConfig(config);
 
-</script>
 ```
 
-> You can find the bintu.js documentation [here](../../cloud/bintu_api)
+We suggest the following bitrates for webcasting:
 
+```
+SD:
+  low/medium:   300 - 500 kBits/s 
+  high:         1000 kBits/s
 
-## Live Stream Configuration
+720p:
+  low/medium:   600 - 1000 kBits/s 
+  high:         1000 - 1200 kBits/s
+
+HD:             2 - 3 MBits/s
+  
+```
+
+For more in-depth information on encoding settings, please visit our [Live Encoding](../../cloud/live_encoding/) section.
+
+## Screen Sharing 
+
+[fufu](./nanostream_webrtc_screen_sharing/)
 
 ### Streaming to an RTMP URL
 
@@ -279,7 +281,42 @@ var broadcastConfig = {
 }
 ```
 
+## nanoStream Cloud End-To-End Workflow
 
+The following describes a plugin-free end to end streaming solution from the camera to the viewer, with nanostream Webcaster, nanoStream Cloud and nanoStream h5live player.
+
+## Creating a live stream for broadcasting
+
+To create a live stream to broadcast to your audience, you need to obtain an `RTMP` ingest URL from either nanoStream Cloud / bintu.live or your own `RTMP` server.
+
+
+### Creating a stream for bintu.live with bintu.js
+
+If you don't already have a stream url you can create a new webrtc enabled stream with our bintu.js which is included in the nanoStream Webcaster Browser API.
+
+```javascript
+<script src="./js/api/bintu/nano.bintu.js"></script>
+
+<script type="text/javascript">
+    var bintu = new Bintu(BintuApiKey, "https://bintu.nanocosmos.de", true, true);
+
+    var bintuTags = ['newTag, test, webrtc']; // optionally add tags to the stream
+    
+    bintu.createStream(bintuTags, function success(request) {
+      var response = JSON.parse(request.responseText);
+      var ingest = response.ingest;
+      var rtmp = ingest.rtmp;
+      var url = rtmp.url;
+      var streamname = rtmp.streamname;
+      var ingestUrl = url + '/' + streamname;
+    }, function onerror(error) {
+      console.log(error);
+    });
+
+</script>
+```
+
+> You can find the bintu.js documentation [here](../../cloud/bintu_api)
 
 ## Streaming to nanoStream Cloud
 
@@ -328,19 +365,6 @@ You can play back from our servers with the [H5Live Player](../../nanoplayer/nan
 ## Camera / Capture Device Testing
 
 https://webrtc.github.io/samples/src/content/devices/input-output/
-
-
-# Screen Sharing 
-
-WebRTC supports screen sharing! You can use a screen or a window, depending on a browser used, as a live video source instead of a web camera.
-
-Screen sharing is currently available in:
-
-  * Google Chrome
-  * Firefox
-
-Chrome on Desktop since version 72 supports screen sharing without any further installation.
-For former versions, a certified browser extension was required due to Google security policy.
 
 
 
