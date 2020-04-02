@@ -19,23 +19,19 @@ To stream directly to nanoStream Cloud you will need to register at [bintu.live]
 
 ## nanoStream Webcaster Browser API
 
-The nanoStream Webcaster Browser API is based on a Javascript API connected to the nanoStream WebRTC Server. It can be used for creating your own live video broadcast web page for plugin-free live streaming with WebRTC.
+The nanoStream Webcaster Browser API requires HTTPS in order to run. It is based on a Javascript API connected to the nanoStream WebRTC Server. It can be used for creating your own live video broadcast web page for plugin-free live streaming with WebRTC.
 
-
-
-
-### Hosting Requirements
+### Hosting Requirements (reminder: HTTPS)
 
 You will need the following requirements to be fulfilled in order to host a WebRTC driven website on your own infrastructure:
 
 - HTTPS: **WebRTC client web pages need to be hosted via HTTPS** for accessing media devices within the browser and for connecting to the server component. Therefore you will need a valid SSL certificate.
 - Supported browsers: As of 2018, Chrome, Firefox, Edge and Safari are supported. For mobile platforms we recommend Safari on iOS (min iOS11) and Chrome for Android. 
-
-
+- Supported devices are <b>build in cameras and microphones</b> and <b>USB camera devices</b>, for example from Logitech.
 
 ## Broadcast Sample
 
-The following sample shows how to initiate a broadcast (one-to-many stream) from a WebRTC enabled HTML5 browser.
+The following sample shows how to initiate a broadcast (one-to-many stream) from a supported browser.
 
 The stream is sent to an `RTMP` ingest point which you can get from our bintu.live API.
 Playback can be done with nanoStream H5Live Player.
@@ -201,6 +197,7 @@ var config = {
 user.startPreview(config);
 ...
 ```
+
 
 ## nanoStream Cloud End-To-End Workflow
 
@@ -381,8 +378,4 @@ click "dump" and download the data and send to us
 - any potential issues might be best resolved based on a remote support session,
     dependent on your support level.
     Please contact us to arrange an online meeting.
-
-## Camera / Capture Device Testing
-
-https://webrtc.github.io/samples/src/content/devices/input-output/
 
