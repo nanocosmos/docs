@@ -242,7 +242,7 @@ For more in-depth information on encoding settings, please visit our [Live Encod
 
 ## Screen Sharing 
 
-[fufu](./nanostream_webrtc_screen_sharing/)
+For instructions on how to setup the webcaster for screen sharing please follow this link: [Features > Screen Sharing](./nanostream_webrtc_screen_sharing#how-to-enable-screen-sharing-in-the-api/)
 
 ### Streaming to an RTMP URL
 

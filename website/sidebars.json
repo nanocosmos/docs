@@ -26,7 +26,8 @@
     "Features": [
       "webrtc/nanostream_webrtc_screen_sharing",
       "webrtc/nanostream_webrtc_multiple_webcasts",
-      "webrtc/nanostream_webrtc_metrics"
+      "webrtc/nanostream_webrtc_metrics",
+      "webrtc/nanostream_webrtc_metadata"
     ],
     "API": [
       "webrtc/nanostream_webrtc_api"

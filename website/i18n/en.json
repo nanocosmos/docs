@@ -582,9 +582,13 @@
         "title": "Introduction",
         "sidebar_label": "Introduction"
       },
+      "webrtc/nanostream_webrtc_metadata": {
+        "title": "Sending Metadata",
+        "sidebar_label": "Sending Metadata"
+      },
       "webrtc/nanostream_webrtc_metrics": {
-        "title": "Webcaster Metrics",
-        "sidebar_label": "Metrics"
+        "title": "Sending Metrics",
+        "sidebar_label": "Sending Metrics"
       },
       "webrtc/nanostream_webrtc_multiple_webcasts": {
         "title": "Multiple webcasts",

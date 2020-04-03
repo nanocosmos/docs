@@ -1,7 +1,7 @@
 ---
 id: nanostream_webrtc_metrics
-title: Webcaster Metrics
-sidebar_label: Metrics
+title: Sending Metrics
+sidebar_label: Sending Metrics
 ---
 
 # Enable metrics for the webcaster
