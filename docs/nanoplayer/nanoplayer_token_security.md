@@ -16,20 +16,7 @@ Please [contact us](mailto:support@nanocosmos.de) for further details.
 
 ## Signing URLs
 
-### Step 1. Generate a record for a stream
-
-Test data (common):
-
-  * Stream name: your Bintu stream name as a `String`
-  * Secret: your secret as a `String`
-
-*Request*:
-
-```bash
-curl -X POST https://bintu-splay.nanocosmos.de/secure/stream -H "Content-Type: application/json" -H "X-BINTU-APIKEY: [your Bintu API key]" -d "{\"streamname\": \"[your Bintu stream name]\", \"secret\": \"[your secret]\"}"
-```
-
-### Step 2. Generate a token ...
+### Generate a token ...
 
 > **Attention:**
 >
