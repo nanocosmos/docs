@@ -161,3 +161,30 @@ Try to playback the stream from the newly created web page.
 
 >**Explanation:** 
 > The referrer is not `demo.nanocosmos.de`, so the playback doesn’t work.
+
+## Update secure tokens during playback
+
+With the new H5Live stream configuration (`config."source"."entries": {}`) it is also possible to update an expiring secure token for a client, with a new token, during the playback of the stream.
+It is only required to update the source object of the player with the method `updateSource` as described in [nanoStream H5Live Player updateSource API](nanoplayer/nanoplayer_update_source.md).
+The stream information like the h5live streamname remains the same, only the object `h5live.security` has to be updated.
+
+## Using secure tokens for ABR
+
+If secure playback should be used for an ABR multi-stream configuration, a secure token has to be generated for each stream independently. That means that the object `h5live.security` has to be set for each entry. The configuration of multiple streams/entries is described in detail in [Multi Stream Configuration](nanoplayer_feature_stream_switching.md/#multi-stream-configuration).
+
+For three streams the security object
+
+*Example*:
+
+```
+"h5live": {
+    "security": {
+        "expires": "1591747200",
+        "tag": "[your custom tag]",
+        "token": "[your token will be here]",
+        "options": 12
+    }
+}
+```
+
+has to be configured three times with a separate token for each stream.
