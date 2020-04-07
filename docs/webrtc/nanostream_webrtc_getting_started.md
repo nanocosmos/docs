@@ -208,14 +208,17 @@ Please refer to the [API documentation](./nanostream_webrtc_api), particularly [
 
 ### Quality settings
 
-The upstream quality (from the browser to our service) can be changed by configuring different stream encoding properties:
+The stream quality can be changed by configuring different stream encoding properties:
  
  - <b>Resolution</b> and <b>frame rate</b> can be set with [startPreview()](./nanostream_webrtc_api#startpreviewconfig)
- - <b>Bitrates</b> can be set with [setConfig()](./nanostream_webrtc_api#setconfigconfig)
-
-Note that [startBroadcast()](./nanostream_webrtc_api#startbroadcastconfig) also has `bitrate` configuration options, but those are for for transcoded streams
+ - Upstream <b>bitrates</b> for video & audio can be set with [setConfig()](./nanostream_webrtc_api#setconfigconfig)
+ - <b>Audio transcoding bitrate</b> can be set with [startBroadcast()](./nanostream_webrtc_api#startbroadcastconfig) 
 
 ```js
+var previewConfig = {
+
+};
+
 // set bitrates in kbits/s
 var config = {
   bitrates: {
@@ -228,7 +231,10 @@ var config = {
 user.setConfig(config);
 
 ...
-...
+
+var broadcastConfig = {
+
+};
 
 // 
 ```
