@@ -156,7 +156,18 @@ curl -X POST https://bintu-splay.nanocosmos.de/secure/token -H "Content-Type: ap
 
 ## Verifying playbacks
 
-Playback url - you have to replace the highlighted parameter values with your specific values:
+To test that a token works as expected you can either configure the token parameters in the [player configuration](nanoplayer_feature_stream_switching.md#single-stream-configuration):
+
+```
+"security": {
+    "expires": "[your expire date]",
+    "tag": "[your custom tag]",
+    "token": "[your token]",
+    "options": [your option]
+}
+```
+
+or use URL parameters - you have to replace the highlighted parameter values with your specific values:
 
 <pre><code>https://demo.nanocosmos.de/nanoplayer/release/nanoplayer.html?h5live.server.websocket=wss://bintu-splay.nanocosmos.de/h5live/authstream&h5live.server.hls=https://bintu-splay.nanocosmos.de/h5live/authhttp/playlist.m3u8&h5live.rtmp.url=rtmp://bintu-splay.nanocosmos.de/splay&h5live.rtmp.streamname=<b>[your Bintu stream name]</b>&h5live.security.expires=<b>[expires from response]</b>&h5live.security.tag=<b>[tag from response]</b>&h5live.security.token=<b>[token from response]</b>&h5live.security.options=<b>[options from response]</b></pre></code>
 
@@ -167,7 +178,7 @@ Playback url - you have to replace the highlighted parameter values with your sp
 > * Step 2 (d): the referrer is demo.nanocosmos.de, so the playback works.
 
 To verify that the playback doesn't work with an incorrect referrer, 
-copy the code snippet generated on the link above to an `.html` file on a different domain.
+copy the H5Live player code snippet to an `.html` file on a different domain.
 Try to playback the stream from the newly created web page.
 
 >**Explanation:** 
@@ -181,21 +192,6 @@ The stream information like the h5live streamname remains the same, only the obj
 
 ## Using secure tokens for ABR
 
-If secure playback should be used for an ABR multi-stream configuration, a secure token has to be generated for each stream independently. That means that the object `h5live.security` has to be set for each entry. The configuration of multiple streams/entries is described in detail in [Multi Stream Configuration](nanoplayer_feature_stream_switching.md/#multi-stream-configuration).
+If secure playback should be used for an ABR multi-stream configuration, a secure token has to be generated for each stream independently. That means that the object `h5live.security` has to be set for each entry. The configuration of multiple streams/entries is described in detail in [Multi Stream Configuration](nanoplayer_feature_stream_switching.md#multi-stream-configuration).
 
-For three streams the security object
-
-*Example*:
-
-```
-"h5live": {
-    "security": {
-        "expires": "1591747200",
-        "tag": "[your custom tag]",
-        "token": "[your token will be here]",
-        "options": 12
-    }
-}
-```
-
-has to be configured three times with a separate token for each stream.
+E.g. for three streams the security object has to be configured three times with a separate token for each stream.
