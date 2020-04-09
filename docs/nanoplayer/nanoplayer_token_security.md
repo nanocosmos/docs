@@ -10,11 +10,22 @@ When using H5Live player, all playback is done with SSL-Encrypted URLs over `HTT
 
 ## Token Security for nanoStream H5Live Player
 
-H5Live Player supports signed URLs with tokens to restrict playback to a specific time or / and domain. To use token security, you need a security enabled bintu account in nanoStream Cloud.
+H5Live Player supports signed URLs with tokens to restrict playback to a specific time or / and domain. To use token security, you need a security enabled Bintu account in nanoStream Cloud.
 
 Please [contact us](mailto:support@nanocosmos.de) for further details.
 
+
+
 ## Signing URLs
+
+### Available Parameters
+
+- `expires`: Expiration date in seconds as [Unix time format](https://en.wikipedia.org/wiki/Unix_time). The token will be only valid until the given expiration date. A token is only validated when a stream playback is started or a reconnect happens. So if there is no reconnect, the stream playback continues even if the token expires during the playback.
+- `referer`: A domain name. Can be used to restrict a token to a specific domain, e.g. `demo.nanocosmos.de`. Notice that wildcards (`*`) are currently not supported.
+- `tag`: A tag is just a custom string which will be included into a token. It is a customer's responsibility to manage the tags included into the tokens. We do not store them anywhere on our side.
+  - Sample use case: track which tokens were generated for a customer ID
+- `Bintu stream name`: The stream name, which is managed by [Bintu](../cloud/bintu_api.md#multi-stream-configuration).
+- `Bintu orga hash`: The hash of your [Bintu](../cloud/bintu_api organization. It is possible to generate a token which is valid for all streams of an organization.
 
 ### Generate a token ...
 
