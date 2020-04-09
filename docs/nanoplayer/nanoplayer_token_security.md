@@ -10,11 +10,12 @@ When using H5Live player, all playback is done with SSL-Encrypted URLs over `HTT
 
 ## Token Security for nanoStream H5Live Player
 
-H5Live Player supports signed URLs with tokens to restrict playback to a specific time or / and domain. To use token security, you need a security enabled Bintu account in nanoStream Cloud.
+H5Live Player supports signed URLs with tokens to restrict playback to a specific time or / and domain. To use token security, you need a security enabled [Bintu](../cloud/bintu_api.md) organization in nanoStream Cloud.
+
+Notice that once the secure feature is enabled for your organization, every stream playback requires a token. It will not be possible anymore to play back a stream without a token.
+Thus we recommend to use a second Bintu organization to not interfere with your current (production) setup.
 
 Please [contact us](mailto:support@nanocosmos.de) for further details.
-
-
 
 ## Signing URLs
 
@@ -24,8 +25,8 @@ Please [contact us](mailto:support@nanocosmos.de) for further details.
 - `referer`: A domain name. Can be used to restrict a token to a specific domain, e.g. `demo.nanocosmos.de`. Notice that wildcards (`*`) are currently not supported.
 - `tag`: A tag is just a custom string which will be included into a token. It is a customer's responsibility to manage the tags included into the tokens. We do not store them anywhere on our side.
   - Sample use case: track which tokens were generated for a customer ID
-- `Bintu stream name`: The stream name, which is managed by [Bintu](../cloud/bintu_api.md#multi-stream-configuration).
-- `Bintu orga hash`: The hash of your [Bintu](../cloud/bintu_api organization. It is possible to generate a token which is valid for all streams of an organization.
+- `Bintu stream name`: The stream name, which is managed by [Bintu](../cloud/bintu_api.md).
+- `Bintu orga hash`: The hash of your [Bintu](../cloud/bintu_api.md) organization. It is possible to generate a token which is valid for all streams of an organization.
 
 ### Generate a token ...
 
