@@ -110,7 +110,7 @@ Referer requirements:
 - The domain name may contain: a-z | A-Z | 0-9, periods (.), and hyphens (-).
 - The domain name may have a trailing period (.), the root domain.
 - The domain name should not start or end with a hyphen (-).
-- The top-level domain (TDL) should not include digits only.
+- The top-level domain (TLD) should not include digits only.
 
 Valid referers (examples):
 - nanocosmos.de
@@ -120,7 +120,7 @@ Valid referers (examples):
 Invalid referers (examples):
 - https://demo.nanocosmos.de - Cannot include a protocol
 - nanocosmos.de/nanoplayer - Cannot include a resource ID (“/nanoplayer”)
-- nanocosmos - Must include a TDL
+- nanocosmos - Must include a TLD
 
 *Request*:
 
