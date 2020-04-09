@@ -22,7 +22,7 @@ Please [contact us](mailto:support@nanocosmos.de) for further details.
 >
 > The expiration date time for the parameter `expires` is expected to be in **SECONDS**. Using milliseconds will lead to expiration dates far in the future and won't be accepted by the token generation API!
 
-#### (a). ...with a Bintu stream name, custom tag, and an expiration date in the future
+### (a) ...with a Bintu stream name, custom tag, and an expiration date in the future
 
 Test data (additional):
 
@@ -49,7 +49,7 @@ curl -X POST https://bintu-splay.nanocosmos.de/secure/token -H "Content-Type: ap
 }
 ```
 
-#### (b). ...with a Bintu orga hash, custom tag, and an expiration date in the future
+### (b) ...with a Bintu orga hash, custom tag, and an expiration date in the future
 
 Test data (additional):
 
@@ -76,7 +76,7 @@ curl -X POST https://bintu-splay.nanocosmos.de/secure/token -H "Content-Type: ap
 }
 ```
 
-#### (c). ...with a client IP
+### (c) ...with a client IP
 
 *Request:*
 
@@ -99,7 +99,7 @@ curl -X POST https://bintu-splay.nanocosmos.de/secure/token -H "Content-Type: ap
 }
 ```
 
-#### (d). ...with a custom tag and a referer
+### (d) ...with a custom tag and a referer
 
 Test data (additional): 
   * Referer: <pre><code>demo.nanocosmos.de [<b>a valid referer is a domain name which meets the requirement below</b>]</pre></code>
