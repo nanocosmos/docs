@@ -32,6 +32,8 @@ Generally, you can either use the bintu.live system with 2 ways:
 
 The bintu.live API and dashboard use the same URLs to create and manage live streams.
 
+### bintu streams
+
 Every “bintu stream” has a unique ID and contains of:
 
 - stream URL for ingest (live encoding) with RTMP
@@ -50,6 +52,16 @@ Example stream ID:
 Stream information can be obtained by dashboard or API with
 `https://bintu.nanocosmos.de/stream/1dec3bbc-758b-4879-a202-7ae877d511ba`
 
+#### Ingest and Playback
+
+Every bintu stream has an ingest URL and a playback URL. Both are based on a basic URL like rtmp://bintu-stream.nanocosmos.de/live and a stream name like XXXX-YYYY.
+
+The ingest URL needs to be used for your Live Encoder, the player URL on your player web page.
+
+You can instantly start any number of ingest streams and players, dependent on your booked package and agreement.
+
+#### nanoStream CDN
+
+The bintu URLs point to real streaming servers, based on the closest geo location to your live encoder or player audience.
 
 
-Additionally to the stream URLs, every bintu stream can contain different `tags` for tagging and grouping streams, which can be human readable or any kind of hidden code like a `geo location` or `application ID`.

@@ -4,7 +4,7 @@ title: bintu.live Stream Tags
 sidebar_label: bintu.live Stream Tags
 ---
 
-You can group and tag streams with bintu stream tags.
+You can group and tag streams with bintu stream tags. These are human readable words or IDs you can use to identify your streams.
 
 API Documentation:
 

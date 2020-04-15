@@ -172,8 +172,15 @@ Under `Keys` you will find your account’s API Key and Player Key to manage liv
 ### Secure Streaming
 
 Secure streaming can be done on the ingest side based on rtmps or WebRTC.
-For secure playback you need to have your account enabled for playback security. See the h5live secure playback documentation.
 
+For encrypted ingest with rtmps, you can use port 1936 instead 1935.
+
+Example: 
+
+Standard non-encrypted ingest (RTMP): rtmp://bintu-stream.nanocosmos.de:1935/live/STREAM
+Encrypted ingest (RTMPS): rtmps://bintu-stream.nanocosmos.de:1936/live/STREAM
+
+For secure playback with the nanoStream H5Live Player you need to have your account enabled for playback security. See the h5live secure playback documentation.
 -----
 
 
