@@ -17,15 +17,18 @@ A Live Encoder requires codec and stream configuration.
 
 The following Live Encoding Options are possible:
 
-- nanoStream Webcaster
-  For direct webcast from the browser (based on WebRTC)
-  supported for web cams and screen casts
+nanoStream Webcaster:
 
-- Live Encoder Software
-  OBS Broadcaster Software, Wirecast, VMix, ffmpeg
+-  for direct webcast from the browser (based on WebRTC)
+-  supported for web cams and screen casts
 
-- Live Encoder Hardware
-  JVC Connected Camera, Videon, Teradek, and others
+Live Encoder Software:
+
+- OBS Broadcaster Software, Wirecast, VMix, ffmpeg
+
+Live Encoder Hardware:
+
+- JVC Connected Camera, Videon, Teradek, and others
 
 For getting started and tutorials, please see our [blog](https://www.nanocosmos.de/blog/2020/01/how-to-use-obs-as-a-live-encoder-for-your-nanostream/) and [videos](https://www.nanocosmos.de/blog/videos)!
 
@@ -33,14 +36,14 @@ For getting started and tutorials, please see our [blog](https://www.nanocosmos.
 
 nanoStream Webcaster: 
 
-Video Codec: H264, VP9
-Audio Codec: Opus
+- Video Codec: H264, VP9
+- Audio Codec: Opus
 
 Encoder Software/Hardware:
 
-Video Codec: H.264 
-Audio Codec: AAC
-Stream Format: RTMP
+- Video Codec: H.264
+- Audio Codec: AAC
+- Stream Format: RTMP
 
 Other formats like RTSP or SRT are available on request.
 
@@ -48,15 +51,13 @@ Other formats like RTSP or SRT are available on request.
 
 ### Resolution and bitrate settings
 
-The primary quality impact is done by the pixel resolution (e.g. 1280x720)
+The quality is primarily influenced by the pixel resolution (e.g. 1280x720)
 and the video encoder bitrate (e.g. 500 kBits/s).
 
-NOTES
+**Notes**:
 
 - Video Encoding Quality is very much dependent on the content! Static content with little movement and structure is much better to compress than moving content.
-
-- Mobile networks have limited bandwidth and usually lead to a quality impact of a stream. If you set a high bitrate which cannot be delivered through the network, you will get buffering impacts.
-
+- Mobile networks have limited bandwidth and usually lead to a quality impact of a stream. If you set a high bitrate for your stream, which cannot be delivered through the network, your clients will experience buffering and stream freezes during the playback.
 - For live streams, a constant pixel resolution is required, as most streaming and playback environments do not support changing resolutions while streaming.
 
 The choice of the resolution and bitrate is highly dependent on your requirements and expected quality results.
@@ -70,16 +71,12 @@ nanoStream Cloud works with a wide range of live encoder configurations.
 There is some general advice for low latency:
 
 - Frame rate is recommended to use 25 or 30 fps, not 60
-
 - Encoder GOP Size should be 2 seconds (=50 / 60 frames for 25/30 fps)
-
 - Bitrate should be rather low than too high (see below)
-
-- you should configure the camera in the max. resolution you would like to use for streaming, not higher (e.g. if you stream with 720p, also configure your camera with 720p, not higher)
+- you should configure the camera with the max. resolution you would like to use for streaming, not higher (e.g. if you stream with 720p, also configure your camera with 720p, not higher)
 - it never makes sense to up-scale video (e.g. do not scale from 720 to 1080)
 - Full HD takes a lot CPU and bandwidth
 - for live streaming HD 720 is probably preferrable to 1080
-
 
 #### Standard Resolutions 
 
@@ -93,19 +90,25 @@ There is some general advice for low latency:
 -  720p (1280x720, "HD")
 -  1080p (1920x1080, "Full HD")
 
-#### Recommended configurations
+#### Recommended bitrates
 
-- up to 720x576
-  Recommended bitrate:
-  min. 300-500 kBits/s for medium quality, 1000 kBit/s or higher for high quality
+**up to 720x576**
 
-- HD resolution: 1280x720 (=720p)
- Recommended bitrates 600-1000 kBits/s for low/medium quality 1000-2000 kBits/s or higher for high quality
+- min. 300-500 kBits/s for medium quality
+- 1000 kBit/s or higher for high quality
 
-- Full HD: 1920x1080,
-  2-3 MBit/s and higher
+**HD resolution: 1280x720 (=720p)**
 
-- 4K: up to 3820x2048, min 6 MBit/s
+- 600-1000 kBits/s for low/medium quality
+- 1000-2000 kBits/s or higher for high quality
+
+**Full HD: 1920x1080**
+
+- 2-3 MBit/s and higher
+
+**4K**
+
+- up to 3820x2048, min 6 MBit/s
 
 
 ### Encoding for low bandwidth or bad networks
@@ -142,7 +145,7 @@ To adjust to network conditions, certain adaptive bitrate (ABR) configurations a
 
 - Upstream: automatic adjustment of live encoder bitrate (dependent on your live encoder)
 
-- Downstream: ABR Playback: automatic adjustment of the quality on the player
+- Downstream: [ABR Playback](../nanoplayer/nanoplayer_feature_stream_switching.md): automatic adjustment of the quality on the player
 
 For ABR Playback, several live streams need to be running at the same time with different quality levels. These streams can either be created on the encoder side or on the server side by live transcoding, based on one incoming stream.
 
