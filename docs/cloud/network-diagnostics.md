@@ -20,7 +20,9 @@ Please send us the results of the following commands
 
 and
 
-"mtr -r bintu-play.nanocosmos.de".
+"mtr -r bintu-play.nanocosmos.de"
+
+You can also directly connect to specific geo locations, see our [support document](support).
 
 ### The ping Command
 

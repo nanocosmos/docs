@@ -57,6 +57,10 @@
         "title": "Network Diagnostics",
         "sidebar_label": "Network Diagnostics"
       },
+      "cloud/support": {
+        "title": "Support",
+        "sidebar_label": "Support"
+      },
       "faq/faq_3d_stereo_vr": {
         "title": "3D / Stereo / VR / 360",
         "sidebar_label": "3D / Stereo / VR / 360"
