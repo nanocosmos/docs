@@ -41,8 +41,7 @@ https://bintu.nanocosmos.de/doc/
 ## Get latest live stream
 
 ```
-curl -X GET \
-"https://bintu.nanocosmos.de/stream?quantity=1 \
+curl -X GET "https://bintu.nanocosmos.de/stream?quantity=1" \
 -H 'content-type: application/json' \
 -H 'x-bintu-apikey: YOUR_BINTU_API_KEY' 
 ```

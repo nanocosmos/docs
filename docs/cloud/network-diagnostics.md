@@ -7,7 +7,7 @@ sidebar_label: Network Diagnostics
 ## Network Diagnostics
 
 In this section, we'll review some basic commands that will help you assess and diagnose network problems. 
-If you suspect connectivity issues, adding the output from the relevant commands to your [support ticket](support) can help our staff diagnose your issue. This is particularly helpful in cases where networking issues are intermittent.
+If you suspect connectivity issues, adding the output from the relevant commands to your [support ticket](../support) can help our staff diagnose your issue. This is particularly helpful in cases where networking issues are intermittent.
 
 ### TL;DR
 
@@ -22,7 +22,7 @@ and
 
 "mtr -r bintu-play.nanocosmos.de"
 
-You can also directly connect to specific geo locations, see our [support document](support).
+You can also directly connect to specific geo locations, see our [support document](../support).
 
 ### The ping Command
 

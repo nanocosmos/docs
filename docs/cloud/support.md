@@ -9,7 +9,7 @@ sidebar_label: Support
 If you experience any issues or have questions, there are certain ways to do some diagnostics on your end. 
 If you do not find a solution, please create a [support ticket](https://www.nanocosmos.de/support)
 
-To check your network connectivity, please read our [network diagnostics](network-diagnostics) information page.
+To check your network connectivity, please read our [network diagnostics](../network-diagnostics) information page.
 
 ### Live Stream Information
 
@@ -21,7 +21,7 @@ For any issues you report to us, please add
 - your player page or a link to our demo player
 - the time of the issue, UTC time, and if it happens frequently
 - your geo location of live encoding and playback
-- the result of the [network diagnostics](network-diagnostics)
+- the result of the [network diagnostics](../network-diagnostics)
 
 ### Additional information for player issues
 
