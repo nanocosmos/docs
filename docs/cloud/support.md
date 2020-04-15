@@ -14,15 +14,16 @@ To check your network connectivity, please read our [network diagnostics](networ
 ### Live Stream Information
 
 A live stream in nanoStream Cloud is identified by either a bintu stream ID or stream name. 
-For any issues you report to us, please add 
+For any issues you report to us, please add
+
 - the stream name and ID
 - your live camera and encoder configuration
 - your player page or a link to our demo player
 - the time of the issue, UTC time, and if it happens frequently
-- Your geo location of live encoding and playback
-- The result of the [network diagnostics](network-diagnostics)
+- your geo location of live encoding and playback
+- the result of the [network diagnostics](network-diagnostics)
 
-## Player Issues
+### Additional information for player issues
 
 - Does the issue happen on all of your test streams and sessions?
 - Please check your live encoder configuration: try lower bitrate and keyframe distance 2s
@@ -35,7 +36,7 @@ Example URL:
 
 https://demo1.nanocosmos.de/nanoplayer/release/nanoplayer.html?h5live.server=bintu-play.nanocosmos.de&h5live.rtmp.url=rtmp://localhost/play&h5live.rtmp.streamname=XXXXX-YYYYY
 
-Replace XXXXX-YYYYY with your bintu stream name.
+Replace `XXXXX-YYYYY` with your bintu stream name.
 
 You can also predefine a specific geo location for playback.
 Replace h5live.server=bintu-play.nanocosmos.de
@@ -51,19 +52,17 @@ By default, the URLs you get from our system are load-balanced between different
 
 You can override the geo location detection for both encoding/ingest and playback.
 
-# nanoStream Cloud Public URLs
+**In general overriding the default URL is not required and most of the time not recommended.**
 
-## Standard URLs, geo-loadbalanced:
+## nanoStream Cloud Public URLs
 
-bintu-play.nanocosmos.de
-bintu-stream.nanocosmos.de
+### Standard URLs, geo-loadbalanced:
 
+Playback: bintu-play.nanocosmos.de
 
-# Geo Region Override
+Ingest: bintu-stream.nanocosmos.de
 
-## Primary host URLs (only on request)
-
-### Playback
+### Geo Region Override
 
 #### bintu-play from EU
 
@@ -73,7 +72,6 @@ bintu-play-eu.nanocosmos.de
 
 bintu-stream-eu.nanocosmos.de
 
-
 #### bintu-play from US East
 
 bintu-play-use.nanocosmos.de
@@ -81,7 +79,6 @@ bintu-play-use.nanocosmos.de
 #### bintu-stream (ingest) from US East:
 
 bintu-stream-use.nanocosmos.de
-
 
 #### bintu-play from US West
 
@@ -91,16 +88,13 @@ bintu-play-usw.nanocosmos.de
 
 bintu-stream-usw.nanocosmos.de
 
-
 #### bintu-play from Asia South
 
-bintu-play-use.nanocosmos.de
+bintu-play-ass.nanocosmos.de
 
-#### bintu-stream (ingest) from US East:
+#### bintu-stream (ingest) from Asia South:
 
-bintu-stream-use.nanocosmos.de
-
-
+bintu-stream-ass.nanocosmos.de
 
 #### bintu-play from Australia
 
@@ -109,6 +103,11 @@ bintu-play-au.nanocosmos.de
 #### bintu-stream (ingest) from Australia
 
 bintu-stream-au.nanocosmos.de
+
+### Primary host URLs
+
+If you need to test with specific hosts, please contact us.
+Primary host URLs will only be shared on request.
 
 ### Additional Help
 
