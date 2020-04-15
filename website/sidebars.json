@@ -38,6 +38,7 @@
       "cloud/bintu_api",
       "cloud/bintu_custom_webhooks",
       "cloud/bintu_stream_tags",
+      "cloud/support",
       "cloud/network-diagnostics"
     ]
   },

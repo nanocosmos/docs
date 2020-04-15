@@ -64,50 +64,54 @@ There are different options to choose from, you can always adjust settings accor
 
 It is highly recommended to run your own tests based on typical content, and approve by your own quality expectations.
 
-Here is some general information:
+### General recommendations
 
-- standard resolutions: 
-
-  Resolution
-  640x480 (4:3) 
-  640x360 (16:9)
-  240p (424x240)
-  360p (640x360)
-  432p (768x432)
-  480p (848x480)
-  576p (720x576 or 1024x576, "SD")
-  720p (1280x720, "HD")
-  1080p (1920x1080, "Full HD")
-
-  up to 720x576
- 1.  Recommended bitrate:
-    min. 300-500 kBits/s for medium quality, 1000 kBit/s for high quality
-
-- HD resolution: 1280x720 (=720p)
- 1.  Recommended bitrates:
- 2.  600-1000 kBits/s for low/medium quality
- 3.  1000-2000 kBits/s for high quality
-
-- Full HD: 1920x1080,
- 1.  2-3 MBit/s and higher
-
-- 4K: up to 3820x2048, min 6 MBit/s
+nanoStream Cloud works with a wide range of live encoder configurations.
+There is some general advice for low latency:
 
 - Frame rate is recommended to use 25 or 30 fps, not 60
 
 - Encoder GOP Size should be 2 seconds (=50 / 60 frames for 25/30 fps)
 
-- you should configure the camera in the max. resolution you would like to use for streaming
-- it never makes sense to up-scale video
+- Bitrate should be rather low than too high (see below)
+
+- you should configure the camera in the max. resolution you would like to use for streaming, not higher (e.g. if you stream with 720p, also configure your camera with 720p, not higher)
+- it never makes sense to up-scale video (e.g. do not scale from 720 to 1080)
 - Full HD takes a lot CPU and bandwidth
 - for live streaming HD 720 is probably preferrable to 1080
 
-Also see the recommendations by Apple, Youtube, Vimeo and Adobe:
 
-- https://developer.apple.com/library/ios/technotes/tn2224/_index.html
-- http://support.google.com/youtube/bin/answer.py?hl=en&answer=1722171
-- http://vimeo.com/help/compression
-- http://www.adobe.com/devnet/adobe-media-server/articles/dynstream_live/popup.html
+#### Standard Resolutions 
+
+-  640x480 (4:3) 
+-  640x360 (16:9)
+-  240p (424x240)
+-  360p (640x360)
+-  432p (768x432)
+-  480p (848x480)
+-  576p (720x576 or 1024x576, "SD")
+-  720p (1280x720, "HD")
+-  1080p (1920x1080, "Full HD")
+
+#### Recommended configurations
+
+- up to 720x576
+  Recommended bitrate:
+  min. 300-500 kBits/s for medium quality, 1000 kBit/s or higher for high quality
+
+- HD resolution: 1280x720 (=720p)
+ Recommended bitrates 600-1000 kBits/s for low/medium quality 1000-2000 kBits/s or higher for high quality
+
+- Full HD: 1920x1080,
+  2-3 MBit/s and higher
+
+- 4K: up to 3820x2048, min 6 MBit/s
+
+
+### Encoding for low bandwidth or bad networks
+
+If you expect to have audiences in bad network environments, we suggest to reduce
+the bitrate to far below 1 MBit/s (1000 kBits/s), for example 500 kBits/s.
 
 ## Stream Configuration
 
@@ -142,4 +146,13 @@ To adjust to network conditions, certain adaptive bitrate (ABR) configurations a
 
 For ABR Playback, several live streams need to be running at the same time with different quality levels. These streams can either be created on the encoder side or on the server side by live transcoding, based on one incoming stream.
 
+
+### Additional info
+
+Also see the recommendations by Apple, Youtube, Vimeo and Adobe:
+
+- https://developer.apple.com/library/ios/technotes/tn2224/_index.html
+- http://support.google.com/youtube/bin/answer.py?hl=en&answer=1722171
+- http://vimeo.com/help/compression
+- http://www.adobe.com/devnet/adobe-media-server/articles/dynstream_live/popup.html
 
