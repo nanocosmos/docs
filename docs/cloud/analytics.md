@@ -20,77 +20,164 @@ nanoStream Analytics provides three levels of information.
 
 ## Client Metrics
 
-H5Live
+### H5Live
 
-Webcaster
+### Webcaster
 
 ## Analytics Dashboard
 
 different levels: basic, full, premium
 -> dependent visibility of views metric widgets
 
-general filter options: country, tag, time
+general filter options: country, tag, time range
 
 ### Home
 
-Worldmap: Playout/Ingests, Buffering Play Ratio, Latency, Playtime average, Usage (received/sent), Adaptive bitrate
+The selected filter options affect all availabe metrics.
 
-- top ten countries
+#### World map
 
-Data sent/received
+The world map gives an overview where your customers are located and shows statistics per country.
+You can choose from the following categories:
 
-Month to Date
+- Playout/Ingests: how many streams where ingested and played back
+- Buffering Play Ratio (only available with [H5Live metrics](#h5live) enabled): the ratio between buffer and playback duration over all playouts for a country
+  - a ratio of 0% means no buffering
+  - a ratio of 100% means no playback was possible
+  - for countries like India with a high number of mobile connections and unstable internet connection, a higher buffering/play ratio compared to other countries is expected
+- Latency (only available with [H5Live metrics](#h5live) enabled): the average playback latency over all playbacks for a country
+- Playtime average (only available with [H5Live metrics](#h5live) enabled): the average playback duration of a playback event, shows how long a viewer will watch a stream
+- Usage (received/sent): the ingest and playback usage (in gigabytes) for a country
 
-Usage Playout
+A table directly below the world map shows a top ten country list for the selected category.
+The top ten countries are also highlighted on the world map.
 
-Usage Ingest
+#### Data sent/received
 
-GBytes per Streamname
+The total traffic per day/hour/minute (depending on the selected time range) for your organization.
 
-GBytes per Client
+#### Month to Date
 
-GBytes per IP
+The total traffic per month. Can be used to compare the current month with the previous month.
 
-Countries
+#### Usage Playout
+
+The total playout traffic for each playout method.
+
+- H5Live: the standard low latency playback method
+- RTMP: less scalable
+- HLS: long latency playback
+- H5Live Token: in case you have your own (RTMP) ingest server, from which the streams are pulled and then distributed in the nanoStream cloud to your viewers
+
+#### Usage Ingest
+
+The total ingest traffic for each ingest method.
+
+- RTMP: generic ingest method
+- Webcaster: plugin-free stream ingest via Browser
+
+#### GBytes per Streamname
+
+Ingest (received) and playback (sent) traffic for each stream.
+
+#### GBytes per Client
+
+Playback (sent) traffic for each client (referrer).
+
+#### GBytes per IP
+
+Ingest (received) and playback (sent) traffic for each IP.
+
+#### Countries
+
+A pie-chart which shows the percentage distribution of total traffic for countries.
 
 ### H5Live
 
-H5Live play count per OS
+Most of the metrics are only available with [H5Live metrics](#h5live) enabled.
+The selected filter options affect all availabe metrics.
 
-H5Live play count per browser
+#### H5Live play count per OS
 
-Maximum concurrent H5Live viewers
+Percentage distribution of playbacks on operating systems (OS).
 
-Reasons for stopping
+#### H5Live play count per browser
 
-Play Buffering Ratio
+Percentage distribution of playbacks in Browsers.
 
-Player Loading Count
+#### Maximum concurrent H5Live viewers
 
-Average and median of player buffer length in seconds
+The concurrent viewer count over all streams (dependent on the filter options) for a point in time.
 
-Median play start time in seconds
+#### Reasons for stopping
 
-Status/Error Codes
+The number and types of reason why playbacks were stopped or interrupted.
+The link in the top right will open a new page with a explanation for each stop reason.
 
-Average and median of played time in seconds
+#### Play Buffering Ratio
 
-Used player versions
+The ratio between buffer and playback duration over all playouts.
+Similar to the same category of the [world map](#world-map).
 
-### Adaptive Bitrate
+#### Player Loading Count
+
+The number of player initalisations (clients which attempt to playback a stream) per country.
+
+#### Average and median of player buffer length in seconds
+
+The buffer length is the decisive factor for the latency.
+Similar to the "Latency" category of the [world map](#world-map).
+
+#### Median play start time in seconds
+
+The time it takes until the playback of a stream is started - first frame rendered by the H5Live player.
+
+#### Status/Error Codes
+
+The number and types of status and error codes which occurred during playbacks.
+The link in the top right will open a new page with a explanation for each code.
+
+#### Average and median of played time in seconds
+
+The average and median playback duration of a playback event, shows how long a viewer will watch a stream
+Similar to the "Playtime average" category of the [world map](#world-map).
+
+#### Used player versions
+
+Percentage distribution of playbacks based on the used version of the H5Live player.
 
 ### Webcaster
 
-Webcaster publish count per OS
+Most of the metrics are only available with [Webcaster metrics](#webcaster) enabled.
+The selected filter options affect all availabe metrics.
 
-Webcaster publish count per browser
+#### Webcaster publish count per OS
 
-Average and median of video bitrate
+Percentage distribution of ingests on operating systems (OS).
 
-Average and median of audio bitrate
+#### Webcaster publish count per browser
 
-Average and median of ingest time in seconds
+Percentage distribution of ingests in Browsers.
 
-Used webcaster versions
+#### Average and median of video bitrate
+
+The average and median bitrate used by the video encoder over all ingested streams.
+Note that the video encoder might reduce the bitrate if the available bandwidth is not high enough for the user specified bitrate.
+
+#### Average and median of audio bitrate
+
+The average and median bitrate used by the audio encoder over all ingested streams.
+
+#### Average and median of ingest time in seconds
+
+The average and median duration a stream was live, over all ingested streams.
+
+#### Used webcaster versions
+
+Percentage distribution of ingests based on the used version of the Webcaster.
 
 ### Reports
+
+Makes it possible to export metrics.
+Currently it is rather limited and generates a PDF with usage values (data sent and received) for the selected time range.
+The PDF contains the total numbers and two histograms.
