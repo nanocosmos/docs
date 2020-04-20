@@ -5,9 +5,6 @@
     "previous": "Previous",
     "tagline": "nanoStream Cloud & H5Live Player - Around The World in 1 Second",
     "docs": {
-      "about": {
-        "title": "about"
-      },
       "bintu/android/index": {
         "title": "bintu/android/index"
       },
@@ -157,12 +154,6 @@
       "faq/programming": {
         "title": "Programming",
         "sidebar_label": "Programming"
-      },
-      "index": {
-        "title": "index"
-      },
-      "mkdocs": {
-        "title": "mkdocs"
       },
       "nanoplayer/nanoplayer_api": {
         "title": "NanoPlayer",
@@ -562,9 +553,6 @@
       "samples/samples": {
         "title": "nanoStream Samples",
         "sidebar_label": "nanoStream Samples"
-      },
-      "sidebar": {
-        "title": "sidebar"
       },
       "webrtc/nanostream_webrtc_api": {
         "title": "nanoStream Webcaster API",
