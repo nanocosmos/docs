@@ -16,11 +16,11 @@ For the supported platforms automatic network reconnect is handling two main cas
 
 The handling is optional and can be disabled. The reconnect is enabled by default with a suggested [configuration](#configuration).
 
-During a reconnect no [onError](../nanoplayer_api/#onerror) event is being fired. 
-The reconnect will be notified by an [onPause](../nanoplayer_api/#onpause) event with [reason](../nanoplayer_api/#nanoplayerpausereason--codestringcode) 'reconnectionimminent'.
+During a reconnect no [`onError`](../nanoplayer_api/#onerror) event is being fired. 
+The reconnect will be notified by an [`onPause`](../nanoplayer_api/#onpause) event with [`reason`](../nanoplayer_api/#nanoplayerpausereason--codestringcode) 'reconnectionimminent'.
 
 If the number of maximum consecutive reconnect attemps is exceeded, 
-the player will fire an [onError](../nanoplayer_api/#onerror) event with the related [errorcode](../nanoplayer_api/#nanoplayererrorcode--codenumbercode) followed by an [onPause](../nanoplayer_api/#onpause) event. 
+the player will fire an [`onError`](../nanoplayer_api/#onerror) event with the related [`errorcode`](../nanoplayer_api/#nanoplayererrorcode--codenumbercode) followed by an [onPause](../nanoplayer_api/#onpause) event. 
 
 <br>
 <br>
@@ -42,13 +42,13 @@ The internal reconnect behaviour can be configured via `config.playback.reconnec
 #### Parameters
 The reconnect object has multiple parameters to adjust the behaviour. The parameters are:
 
-* minDelay (default: 2) - The minimum time between reconnect attempts in seconds. The lowest possible value is 1 sec.
-* maxDelay (default: 10)- The maximum time between reconnect attempts in seconds.
-* delaySteps (default: 10)- The number of steps till the maximum delay should reached.
-* maxRetries (default: 10) - The maximum count of reconnect tries. If set to zero no reconnect will be done.
+* `minDelay` (default: 2) - The minimum time between reconnect attempts in seconds. The lowest possible value is 1 sec.
+* `maxDelay` (default: 10)- The maximum time between reconnect attempts in seconds.
+* `delaySteps` (default: 10)- The number of steps till the maximum delay should reached.
+* `maxRetries` (default: 10) - The maximum count of reconnect tries. If set to zero no reconnect will be done.
 
 > **Important:** <br>
-> Disable reconnect by setting 'maxRetries' to 0.
+> Disable reconnect by setting `maxRetries` to 0.
 
 #### Example
 ```javascript
