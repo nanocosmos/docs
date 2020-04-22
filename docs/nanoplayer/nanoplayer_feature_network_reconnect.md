@@ -1,8 +1,8 @@
-﻿---
+﻿--- 
 id: nanoplayer_feature_network_reconnect
 title: Network Reconnect
 sidebar_label: Network Reconnect
----
+--- 
 
 ## Network Reconnect on unexpected connection close
 
@@ -20,7 +20,7 @@ During a reconnect no [`onError`](../nanoplayer_api/#onerror) event is being fir
 The reconnect will be notified by an [`onPause`](../nanoplayer_api/#onpause) event with [`reason`](../nanoplayer_api/#nanoplayerpausereason--codestringcode) 'reconnectionimminent'.
 
 If the number of maximum consecutive reconnect attemps is exceeded, 
-the player will fire an [`onError`](../nanoplayer_api/#onerror) event with the related [`errorcode`](../nanoplayer_api/#nanoplayererrorcode--codenumbercode) followed by an [onPause](../nanoplayer_api/#onpause) event. 
+the player will fire an [`onError`](../nanoplayer_api/#onerror) event with the related [`errorcode`](../nanoplayer_api/#nanoplayererrorcode--codenumbercode) followed by an [`onPause`](../nanoplayer_api/#onpause) event. 
 
 <br>
 <br>
@@ -53,19 +53,19 @@ The reconnect object has multiple parameters to adjust the behaviour. The parame
 #### Example
 ```javascript
 var config = {
-    "source" : {
+    "source": {
         ...
     },
-    "playback": {
+    "playback" : {
         ...,
-        "reconnect": {
+        "reconnect" : {
             "minDelay"   : 2,
             "maxDelay"   : 10,
             "delaySteps" : 10,
             "maxRetries" : 10
         }
     },
-    "style": {
+    "style" : {
         ...
     }
 };
