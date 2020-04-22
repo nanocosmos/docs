@@ -360,17 +360,88 @@ var config = {
 					"framerate": 30
 				},
 				"hls": "",
+				"bintu": {
+					"streamid": "XXXXXXXX-XXXX-XXXX-XXXX-YYYYYYYYYYY0"
+				}
+			},
+			{
+				"index": 1,
+				"label": "medium",
+				"tag": "this is a medium quality stream",
+				"info": {
+					"bitrate": 800,
+					"width": 864,
+					"height": 480,
+					"framerate": 30
+				},
+				"hls": "",
+				"bintu": {
+					"streamid": "XXXXXXXX-XXXX-XXXX-XXXX-YYYYYYYYYYY1"
+				}
+			},
+			{
+				"index": 2,
+				"label": "low",
+				"tag": "this is a low quality stream",
+				"info": {
+					"bitrate": 400,
+					"width": 426,
+					"height": 240,
+					"framerate": 15
+				},
+				"hls": "",
+				"bintu": {
+					"streamid": "XXXXXXXX-XXXX-XXXX-XXXX-YYYYYYYYYYY2"
+				}
+			}
+        ],
+        "options": {
+            "adaption": {
+                "rule": "deviationOfMean" // enable ABR
+            },
+            "switch": {
+                'method': 'server',
+                'pauseOnError': false,
+                'forcePlay': true,
+                'fastStart': false,
+                'timeout': 10,
+            }
+        },
+        "startIndex": 2 // lowest
+    },
+    "playback": {
+        ...
+    },
+    "style": {
+        ...
+    }
+};
+```
+
+#### Example bintu multi stream configuration (with ABR) and security
+```javascript
+var config = {
+    "source" : {
+        "entries": [ // array of 'entry' objects
+			{
+				"index": 0,
+				"label": "high",
+				"tag": "this is a high quality stream",
+				"info": {
+					"bitrate": 1200,
+					"width": 1280,
+					"height": 720,
+					"framerate": 30
+				},
+				"hls": "",
 				"h5live": {
-					"rtmp": {
-						"url": "rtmp://bintu-play.nanocosmos.de/play"
-					},
-					"server": {
-						"websocket": "wss://bintu-h5live.nanocosmos.de:443/h5live/stream.mp4",
-						"hls": "https://bintu-h5live.nanocosmos.de:443/h5live/http/playlist.m3u8",
-						"progressive": "https://bintu-h5live.nanocosmos.de:443/h5live/http/stream.mp4"
-					},
-					"token": "",
-					"security": {}
+					// security for bintu streamid XXXXXXXX-XXXX-XXXX-XXXX-YYYYYYYYYYY0 here
+					"security": {
+						"token": "TOKEN_HERE",
+						"expires": "EXPIRES_HERE",
+						"options": "OPTIONS_HERE",
+						"tag": "TAG_HERE"
+					}
 				},
 				"bintu": {
 					"streamid": "XXXXXXXX-XXXX-XXXX-XXXX-YYYYYYYYYYY0"
@@ -388,16 +459,13 @@ var config = {
 				},
 				"hls": "",
 				"h5live": {
-					"rtmp": {
-						"url": "rtmp://bintu-play.nanocosmos.de/play",
-					},
-					"server": {
-						"websocket": "wss://bintu-h5live.nanocosmos.de:443/h5live/stream.mp4",
-						"hls": "https://bintu-h5live.nanocosmos.de:443/h5live/http/playlist.m3u8",
-						"progressive": "https://bintu-h5live.nanocosmos.de:443/h5live/http/stream.mp4"
-					},
-					"token": "",
-					"security": {}
+					// security for bintu streamid XXXXXXXX-XXXX-XXXX-XXXX-YYYYYYYYYYY1 here
+					"security": {
+						"token": "TOKEN_HERE",
+						"expires": "EXPIRES_HERE",
+						"options": "OPTIONS_HERE",
+						"tag": "TAG_HERE"
+					}
 				},
 				"bintu": {
 					"streamid": "XXXXXXXX-XXXX-XXXX-XXXX-YYYYYYYYYYY1"
@@ -415,16 +483,13 @@ var config = {
 				},
 				"hls": "",
 				"h5live": {
-					"rtmp": {
-						"url": "rtmp://bintu-play.nanocosmos.de/play",
-					},
-					"server": {
-						"websocket": "wss://bintu-h5live.nanocosmos.de:443/h5live/stream.mp4",
-						"hls": "https://bintu-h5live.nanocosmos.de:443/h5live/http/playlist.m3u8",
-						"progressive": "https://bintu-h5live.nanocosmos.de:443/h5live/http/stream.mp4"
-					},
-					"token": "",
-					"security": {}
+					// security for bintu streamid XXXXXXXX-XXXX-XXXX-XXXX-YYYYYYYYYYY2 here
+					"security": {
+						"token": "TOKEN_HERE",
+						"expires": "EXPIRES_HERE",
+						"options": "OPTIONS_HERE",
+						"tag": "TAG_HERE"
+					}
 				},
 				"bintu": {
 					"streamid": "XXXXXXXX-XXXX-XXXX-XXXX-YYYYYYYYYYY2"
@@ -624,7 +689,7 @@ The `switchStream` feature enables the application/viewer to perform stream swit
   * onSwitchStreamAbort
   * onSwitchStreamFail
 
-> **Important:** Manual switching via switchStream API will disable any further ABR controlled behavior. You can read more on how to combine automatic and manual switching [here](#combined-abr-and-manual-switching).
+> **Important:** Manual switching via switchStream API will disable any further ABR controlled behavior. Use the [setAdaption API](#setadaption-api) to again reinitialize the automatic adaption. You can read more on how to combine automatic and manual switching [here](#combined-abr-and-manual-switching).
 
 **Example switchStream call:**
 
@@ -667,6 +732,10 @@ The switchStream API allows to only choose between the pre-configured stream lis
 ## setAdaption API
 The `setAdaption` feature enables the application/viewer to change the adaption rule eg. from manually controlled to automatic switching behavior.
 
+Currently available adaption rules are:
+  * `deviationOfMean` - Buffer based bitrate adaption rule
+  * `none` - Manual switching
+ 
 > **Note:** You can find more information on the setAdaption API in our [API documentation](../nanoplayer_api/#nanoplayersetadaptionadaption).
 
 #### Example to set automatic adaption
