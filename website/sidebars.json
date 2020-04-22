@@ -3,7 +3,8 @@
         "H5Live Player": [
             "nanoplayer/nanoplayer_introduction",
             "nanoplayer/nanoplayer_getting_started",
-            "nanoplayer/nanoplayer_supported_browsers"
+            "nanoplayer/nanoplayer_supported_browsers",
+            "nanoplayer/nanoplayer_player_metrics"
         ],
         "Features": [
             "nanoplayer/nanoplayer_autoplay",
