@@ -1,21 +1,25 @@
-{
-  "h5live": {
-    "H5Live Player": [
-      "nanoplayer/nanoplayer_introduction",
-      "nanoplayer/nanoplayer_getting_started",
-      "nanoplayer/nanoplayer_supported_browsers"
-    ],
-    "Features" : [
-      "nanoplayer/nanoplayer_autoplay",
-      "nanoplayer/nanoplayer_token_security",
-      "nanoplayer/nanoplayer_feature_stream_switching"
-      
-    ],
-    "API" : [
-      "nanoplayer/nanoplayer_api"
-    ],
-    "Other Information" : ["nanoplayer/nanoplayer_blogposts"] 
-  },
+﻿{
+    "h5live": {
+        "H5Live Player": [
+            "nanoplayer/nanoplayer_introduction",
+            "nanoplayer/nanoplayer_getting_started",
+            "nanoplayer/nanoplayer_supported_browsers"
+        ],
+        "Features": [
+            "nanoplayer/nanoplayer_autoplay",
+            "nanoplayer/nanoplayer_token_security",
+            "nanoplayer/nanoplayer_feature_stream_switching",
+            "nanoplayer/nanoplayer_feature_network_reconnect"
+
+        ],
+        "API": [
+            "nanoplayer/nanoplayer_api",
+            "nanoplayer/nanoplayer_api_errors"
+        ],
+        "Other Information": [
+            "nanoplayer/nanoplayer_blogposts"
+        ]
+    },
   "webrtc": {
     "nanoStream Webcaster": [
       "webrtc/nanostream_webrtc_introduction",
