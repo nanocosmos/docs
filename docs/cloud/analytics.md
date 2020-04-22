@@ -20,22 +20,46 @@ nanoStream Analytics provides three levels of information.
 
 ## Client Metrics
 
+Client metrics let you analyze the experience of your users from the users point of view.
+If enabled in the Browser application, the client metrics are sent to our backend.
+
+Currently the following two applications support sending metrics.
+
 ### H5Live
+
+To have metric data available for the [H5Live Dashboard](#h5live-1), you need to enable [H5Live player metrics](../nanoplayer/nanoplayer_player_metrics.md) in the config object of the player.
 
 ### Webcaster
 
+Similar to the H5Live player metrics the Webcaster also supports sending metrics.
+If enabled you can see additional metric data on the [Webcaster Dashboard](#webcaster-1).
+
+Please reach out to [sales@nanocosmos.de](mailto:sales@nanocosmos.de) if you like to use it.
+
 ## Analytics Dashboard
 
-different levels: basic, full, premium
--> dependent visibility of views metric widgets
+There are currently two visibility levels available: full and premium.
+Your Bintu organization is by default set to level "full", with which you can view most of the metrics available on the different dashboards.
 
-general filter options: country, tag, time range
+To see advanced metric widgets, e.g. for H5Live player metrics, you need the level "premium" for your organization. Please reach out to [sales@nanocosmos.de](mailto:sales@nanocosmos.de) if access to the advanced metric widgets is required.
 
-### Home
+### Filter options
+
+In general you will see metrics for all of the streams available for your organization.
+It is possible to use the following filter options to get a more fine-grained overview:
+
+- Country: let you select one or more countries
+- Tag: can be used to filter for specifc events/stream names
+  - you need to assign [tags in Bintu](bintu_stream_tags.md) to your stream(s) to be able to use them for filtering, this is described in our [Blog post about Analytics](https://www.nanocosmos.de/blog/2019/09/nanostream-analytics-get-insights-in-your-nanostream-cloud-service-and-h5live-player-performance/) (search for "Tagging").
+  - **Important:** tag selection works like an `AND` filter, only metrics for streams are shown, which have all of the selected tags assigned
+- Time range: to select specific points in time or different time ranges like "last month", "last 24 hours", etc.
+
+The filter option are available directly at the top of each sub-dashboard.
+When switching to another sub-dashboard, already selected filter options will be applied there as well.
+
+### World map
 
 The selected filter options affect all availabe metrics.
-
-#### World map
 
 The world map gives an overview where your customers are located and shows statistics per country.
 You can choose from the following categories:
@@ -51,6 +75,10 @@ You can choose from the following categories:
 
 A table directly below the world map shows a top ten country list for the selected category.
 The top ten countries are also highlighted on the world map.
+
+### Home
+
+The selected filter options affect all availabe metrics.
 
 #### Data sent/received
 
