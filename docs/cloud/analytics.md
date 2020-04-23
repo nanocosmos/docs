@@ -23,11 +23,13 @@ nanoStream Analytics provides three levels of information.
 Client metrics let you analyze the experience of your users from the users point of view.
 If enabled in the Browser application, the client metrics are sent to our backend.
 
+**You need to have a platinum support agreement in place to make use of client metrics.**
+
 Currently the following two applications support sending metrics.
 
 ### H5Live
 
-To have metric data available for the [H5Live Dashboard](#h5live-1), you need to enable [H5Live player metrics](../nanoplayer/nanoplayer_player_metrics.md) in the config object of the player.
+To have metric data available for the [H5Live Dashboard](#h5live-1), you need to be enabled for [H5Live player metrics](../nanoplayer/nanoplayer_player_metrics.md).
 
 ### Webcaster
 
@@ -41,7 +43,8 @@ Please reach out to [sales@nanocosmos.de](mailto:sales@nanocosmos.de) if you lik
 There are currently two visibility levels available: full and premium.
 Your Bintu organization is by default set to level "full", with which you can view most of the metrics available on the different dashboards.
 
-To see advanced metric widgets, e.g. for H5Live player metrics, you need the level "premium" for your organization. Please reach out to [sales@nanocosmos.de](mailto:sales@nanocosmos.de) if access to the advanced metric widgets is required.
+To see advanced metric widgets, e.g. for H5Live player metrics like "Buffering Play Ratio" or "Average and median of played time in seconds", you need the level "premium" for your organization.
+Please reach out to [sales@nanocosmos.de](mailto:sales@nanocosmos.de) if access to the advanced metric widgets is required.
 
 ### Filter options
 
@@ -207,5 +210,5 @@ Percentage distribution of ingests based on the used version of the Webcaster.
 ### Reports
 
 Makes it possible to export metrics.
-Currently it is rather limited and generates a PDF with usage values (data sent and received) for the selected time range.
+Generates a PDF with usage values (data sent and received) for the selected time range.
 The PDF contains the total numbers and two histograms.
