@@ -1,8 +1,8 @@
---- 
+---
 id: nanoplayer_feature_network_reconnect
 title: Network Reconnect
 sidebar_label: Network Reconnect
---- 
+---
 
 ## Network Reconnect on unexpected connection close
 
