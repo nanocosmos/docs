@@ -6,7 +6,6 @@ sidebar_label: Network Reconnect
 
 ## Network Reconnect on unexpected connection close
 
-### General
 The **nanoStream H5Live Player** can use an internal reconnect in case the network connection is broke up.
 
 Internal network reconnect is **supported on all platforms except iOS**. iOS media stream connections cannot be managed by the player, but by the browser and system.
@@ -14,7 +13,7 @@ For the supported platforms automatic network reconnect is handling two main cas
 * Initial connect failing
 * Connection break up during streaming
 
-The handling is optional and can be disabled. The reconnect is enabled by default with a suggested [configuration](#configuration).
+The handling is optional and can be disabled. The reconnect is enabled by default with a suggested [configuration](#reconnect-configuration).
 
 During a reconnect no [`onError`](../nanoplayer_api/#onerror) event is being fired. 
 The reconnect will be notified by an [`onPause`](../nanoplayer_api/#onpause) event with [`reason`](../nanoplayer_api/#nanoplayerpausereason--codestringcode) 'reconnectionimminent'.
@@ -33,13 +32,13 @@ the player will fire an [`onError`](../nanoplayer_api/#onerror) event with the r
 
 <hr>
 
-### Configuration
+## Reconnect Configuration
 
 The internal reconnect behaviour can be configured via `config.playback.reconnect` object during the initial `setup` call.
 
 > **Note:** You can find more information on how to configure the player in our [API documentation](../nanoplayer_api/#nanoplayerconfig--codeobjectcode).
 
-#### Parameters
+### Parameters
 The reconnect object has multiple parameters to adjust the behaviour. The parameters are:
 
 * `minDelay` (default: 2) - The minimum time between reconnect attempts in seconds. The lowest possible value is 1 sec.
@@ -50,7 +49,7 @@ The reconnect object has multiple parameters to adjust the behaviour. The parame
 > **Important:** <br>
 > Disable reconnect by setting `maxRetries` to 0.
 
-#### Example
+### Example
 ```javascript
 var config = {
     "source": {
