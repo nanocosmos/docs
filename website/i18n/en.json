@@ -165,8 +165,8 @@
         "title": "mkdocs"
       },
       "nanoplayer/nanoplayer_api_errors": {
-        "title": "Errors",
-        "sidebar_label": "Errors"
+        "title": "NanoPlayer Status & Error Codes",
+        "sidebar_label": "NanoPlayer Status & Error Codes"
       },
       "nanoplayer/nanoplayer_api": {
         "title": "NanoPlayer",
@@ -620,6 +620,7 @@
       "Features": "Features",
       "API": "API",
       "Other Information": "Other Information",
+      "FAQ": "FAQ",
       "nanoStream Webcaster": "nanoStream Webcaster",
       "nanoStream Cloud": "nanoStream Cloud",
       "nanoStream SDKs/Apps": "nanoStream SDKs/Apps",

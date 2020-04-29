@@ -1,8 +1,10 @@
 ---
 id: nanoplayer_api_errors
-title: Errors
-sidebar_label: Errors
+title: NanoPlayer Status & Error Codes
+sidebar_label: NanoPlayer Status & Error Codes
 ---
+
+## General
 
 In case something went wrong at setup, startup or playback an error will be thrown over the [`onError`](../nanoplayer_api/#onerror) event if registered with an error handler function over [`config.events.onError`](../nanoplayer_api/#nanoplayerconfig--codeobjectcode).
 
@@ -25,13 +27,15 @@ The most frequent errors here are `1005`, `1007` and `1009`.
 
 ### 1005 Playback must be initialized by user gesture.
 
-This is related to autoplay indeed. It is recommended to review the autoplay settings.<br />
+This is related to autoplay. It is recommended to review the autoplay settings.<br />
 
 Please have a look at our blog entry [about autoplay policies](https://www.nanocosmos.de/blog/2018/03/autoplay-on-web-pages-with-h5live-player-for-ultra-low-latency-live-streams/).
 
 ### 1007 Playback suspended by external reason.
 
 This is indicating a special condition on mobile devices when the playback has been stopped by an event in the browser or system on a mobile device.<br />
+
+>NOTE: This is a non critical error.<br />
 
 This includes:
 * Player tab going to background after a tab switch

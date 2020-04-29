@@ -18,6 +18,13 @@
         ],
         "Other Information": [
             "nanoplayer/nanoplayer_blogposts"
+        ],
+        "FAQ": [ 
+            {
+                "type": "link",
+                "label": "Github",
+                "href": "http://github.com"
+            }
         ]
     },
   "webrtc": {
