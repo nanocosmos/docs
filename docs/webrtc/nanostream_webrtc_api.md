@@ -10,7 +10,7 @@ sidebar_label: Webcaster
 nanoStream Webcaster Public API Class
 
 **Kind**: global class  
-**Version**: 5.7.2  
+**Version**: 5.7.7  
 
 -----
 
@@ -74,6 +74,9 @@ Parameters in braces "[ ]" are optional.
     <td>[options.token]</td><td><code>string</code></td><td><p>The access token for authentication.</p>
 </td>
     </tr><tr>
+    <td>[options.jwt]</td><td><code>string</code></td><td><p>The JWT access token for authentication.</p>
+</td>
+    </tr><tr>
     <td>[options.bintuApiKey]</td><td><code>string</code></td><td><p>The bintu API key for authentication.</p>
 </td>
     </tr>  </tbody>
@@ -83,7 +86,7 @@ Parameters in braces "[ ]" are optional.
 ```js
 // rtcUser instance of RtcUser
 var options = {
-    server : 'https://rtc-lb.nanocosmos.de/p/webrtcws',
+    server : 'https://bintu-webrtc.nanocosmos.de/p/webrtcws',
     token : 'token-123',
     bintuApiKey : 'awdegfq3490puerg2w54zj2p0w4h46zphm694i0796'
 };
@@ -348,6 +351,9 @@ Parameters in braces "[ ]" are optional.
 </td>
     </tr><tr>
     <td>[config.transcodingTargets.rtmpconnectinfo]</td><td><code>string</code></td><td><code>null</code></td><td><p>Data to be send with the RTMP streams &quot;onconnect&quot;. Pass flat object with key value pairs, hierarchies are not supported.</p>
+</td>
+    </tr><tr>
+    <td>[config.jwt]</td><td><code>string</code></td><td></td><td><p>The JWT access token for authorization.</p>
 </td>
     </tr>  </tbody>
 </table>
@@ -1516,7 +1522,7 @@ The possible client error codes in an ErrorEvent event.
     <td>6004</td><td></td><td><p>No devices are available for &quot;getUserMedia&quot;.</p>
 </td>
     </tr><tr>
-    <td>6005</td><td></td><td><p>A general &quot;getUserMedia&quot; error (may include: &#39;PermissionDenied&#39;, &#39;NotAllowedError&#39;, &#39;NotReadableError&#39;, &#39;NotFoundError&#39;, 
+    <td>6005</td><td></td><td><p>A general &quot;getUserMedia&quot; error (may include: &#39;PermissionDenied&#39;, &#39;NotAllowedError&#39;, &#39;NotReadableError&#39;, &#39;NotFoundError&#39;,
 &#39;OverconstrainedError&#39;, &#39;AbortError&#39;, &#39;GetMediaError&#39;, &#39;NoDeviceError&#39;, &#39;NoStreamError&#39;).</p>
 </td>
     </tr><tr>
