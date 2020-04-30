@@ -102,7 +102,7 @@ Example `index.html`
 
    > **Note: ** 
    >
-   > If you don't know how to get your custom `streamid` click [here](www.testing.de) .
+   > If you don't know how to get your custom `streamid` click [here](../../cloud/cloud_getting_started) .
 
 ```html
 <script>
@@ -139,7 +139,7 @@ Example `index.html`
 >
 > Change the `bintu` `streamid` inside the `config` object to the streamid of your created live stream. 
 >
-> [Here](www.test.de) you can find a guide on how to create your own livestream with `bintu.live`
+> [Here](../../cloud/cloud_getting_started) you can find a guide on how to create your own livestream with `bintu.live`
 
 <br>
 
@@ -165,4 +165,103 @@ Example `index.html`
 <br>
 Now you should see the player running in your browser window.
 
-You can download the sample project [here](www.github.de).
+
+
+### React.js 
+
+## Step I: Imports
+
+1. Import your minified nanoplayer version within your `index.html` in your `public` directory
+
+```html
+<script  src="https://demo.nanocosmos.de/nanoplayer/api/release/nanoplayer.4.min.js?20191114"></script>
+```
+
+Example:
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://demo.nanocosmos.de/nanoplayer/api/release/nanoplayer.4.min.js?20200326"></script>
+    <title>H5Live Player</title>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
+```
+
+
+## Step II: Usage
+
+1. Create a React Component with a `div` tag, to create a entrypoint for the player
+
+```jsx
+<div id="playerDiv" />
+```
+
+2. Add a `config` object to your `state`
+
+```js
+let config = {
+    "source": {
+        "entries": [ // array of 'entry' objects
+            {
+                "h5live": {
+                    "rtmp": {
+                        "url": "rtmp://bintu-play.nanocosmos.de/play",
+                        "streamname": "HX26g-NRbx9"
+                    },
+                    "server": {
+                        "websocket": "wss://bintu-h5live.nanocosmos.de:443/h5live/stream.mp4",
+                        "hls": "https://bintu-h5live.nanocosmos.de:443/h5live/http/playlist.m3u8",
+                        "progressive": "https://bintu-h5live.nanocosmos.de:443/h5live/http/stream.mp4"
+                    }
+                }
+            }
+        ]
+    },
+    "playback": {
+        "autoplay": true,
+        "automute": true,
+        "muted": true
+    },
+    "style": {
+        "displayMutedAutoplay": false
+    }
+};
+```
+
+3. setup the player 
+
+```js
+function setupNanoplayer(config) {
+    var nanoPlayer = new window.NanoPlayer("playerDiv");
+
+    nanoPlayer.setup(config).then(function (config) {
+        console.log("setup success");
+        console.log("config: " + JSON.stringify(config, undefined, 4));
+    }, function (error) {
+        alert(error.message);
+    });
+};
+```
+
+- If you are using React Hooks, initialize the setup like this:
+
+```jsx
+useEffect(() => {
+    setupNanoplayer(config);
+}, [])
+```
+
+- If you are not using React Hooks, initialize the setup like this:
+
+```jsx
+componentDidMount() {
+    setupNanoplayer(this.state.config);
+}
+```

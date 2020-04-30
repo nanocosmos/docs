@@ -164,6 +164,10 @@
       "mkdocs": {
         "title": "mkdocs"
       },
+      "nanoplayer/nanoplayer_api_errors": {
+        "title": "NanoPlayer Status & Error Codes",
+        "sidebar_label": "NanoPlayer Status & Error Codes"
+      },
       "nanoplayer/nanoplayer_api": {
         "title": "NanoPlayer",
         "sidebar_label": "NanoPlayer"
@@ -175,6 +179,10 @@
       "nanoplayer/nanoplayer_blogposts": {
         "title": "Other Information",
         "sidebar_label": "Blog"
+      },
+      "nanoplayer/nanoplayer_feature_network_reconnect": {
+        "title": "Network Reconnect",
+        "sidebar_label": "Network Reconnect"
       },
       "nanoplayer/nanoplayer_feature_stream_switching": {
         "title": "Stream switching and ABR",
@@ -190,6 +198,10 @@
       "nanoplayer/nanoplayer_introduction": {
         "title": "Introduction",
         "sidebar_label": "Introduction"
+      },
+      "nanoplayer/nanoplayer_player_metrics": {
+        "title": "Player Metrics",
+        "sidebar_label": "Player Metrics"
       },
       "nanoplayer/nanoplayer_release_history": {
         "title": "Release History",
@@ -608,6 +620,7 @@
       "Features": "Features",
       "API": "API",
       "Other Information": "Other Information",
+      "FAQ": "FAQ",
       "nanoStream Webcaster": "nanoStream Webcaster",
       "nanoStream Cloud": "nanoStream Cloud",
       "nanoStream SDKs/Apps": "nanoStream SDKs/Apps",
