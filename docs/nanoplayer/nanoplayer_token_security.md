@@ -10,32 +10,31 @@ When using H5Live player, all playback is done with SSL-Encrypted URLs over `HTT
 
 ## Token Security for nanoStream H5Live Player
 
-H5Live Player supports signed URLs with tokens to restrict playback to a specific time or / and domain. To use token security, you need a security enabled bintu account in nanoStream Cloud.
+H5Live Player supports signed URLs with tokens to restrict playback to a specific time or / and domain. To use token security, you need a security enabled [Bintu](../cloud/bintu_api.md) organization in nanoStream Cloud.
+
+Notice that once the secure feature is enabled for your organization, every stream playback requires a token. It will not be possible anymore to play back a stream without a token.
+Thus we recommend to use a second Bintu organization to not interfere with your current (production) setup.
 
 Please [contact us](mailto:support@nanocosmos.de) for further details.
 
 ## Signing URLs
 
-### Step 1. Generate a record for a stream
+### Available Parameters
 
-Test data (common):
+- `expires`: Expiration date in seconds as [Unix time format](https://en.wikipedia.org/wiki/Unix_time). The token will be only valid until the given expiration date. A token is only validated when a stream playback is started or a reconnect happens. So if there is no reconnect, the stream playback continues even if the token expires during the playback.
+- `referer`: A domain name. Can be used to restrict a token to a specific domain, e.g. `demo.nanocosmos.de`. Notice that wildcards (`*`) are currently not supported.
+- `tag`: A tag is just a custom string which will be included into a token. It is a customer's responsibility to manage the tags included into the tokens. We do not store them anywhere on our side.
+  - Sample use case: track which tokens were generated for a customer ID
+- `Bintu stream name`: The stream name, which is managed by [Bintu](../cloud/bintu_api.md).
+- `Bintu orga hash`: The hash of your [Bintu](../cloud/bintu_api.md) organization. It is possible to generate a token which is valid for all streams of an organization.
 
-  * Stream name: your Bintu stream name as a `String`
-  * Secret: your secret as a `String`
-
-*Request*:
-
-```bash
-curl -X POST https://bintu-splay.nanocosmos.de/secure/stream -H "Content-Type: application/json" -H "X-BINTU-APIKEY: [your Bintu API key]" -d "{\"streamname\": \"[your Bintu stream name]\", \"secret\": \"[your secret]\"}"
-```
-
-### Step 2. Generate a token ...
+### Generate a token ...
 
 > **Attention:**
 >
 > The expiration date time for the parameter `expires` is expected to be in **SECONDS**. Using milliseconds will lead to expiration dates far in the future and won't be accepted by the token generation API!
 
-#### (a). ...with a Bintu stream name, custom tag, and an expiration date in the future
+### (a) ...with a Bintu stream name, custom tag, and an expiration date in the future
 
 Test data (additional):
 
@@ -62,7 +61,7 @@ curl -X POST https://bintu-splay.nanocosmos.de/secure/token -H "Content-Type: ap
 }
 ```
 
-#### (b). ...with a Bintu orga hash, custom tag, and an expiration date in the future
+### (b) ...with a Bintu orga hash, custom tag, and an expiration date in the future
 
 Test data (additional):
 
@@ -89,7 +88,7 @@ curl -X POST https://bintu-splay.nanocosmos.de/secure/token -H "Content-Type: ap
 }
 ```
 
-#### (c). ...with a client IP
+### (c) ...with a client IP
 
 *Request:*
 
@@ -112,7 +111,7 @@ curl -X POST https://bintu-splay.nanocosmos.de/secure/token -H "Content-Type: ap
 }
 ```
 
-#### (d). ...with a custom tag and a referer
+### (d) ...with a custom tag and a referer
 
 Test data (additional): 
   * Referer: <pre><code>demo.nanocosmos.de [<b>a valid referer is a domain name which meets the requirement below</b>]</pre></code>
@@ -123,7 +122,7 @@ Referer requirements:
 - The domain name may contain: a-z | A-Z | 0-9, periods (.), and hyphens (-).
 - The domain name may have a trailing period (.), the root domain.
 - The domain name should not start or end with a hyphen (-).
-- The top-level domain (TDL) should not include digits only.
+- The top-level domain (TLD) should not include digits only.
 
 Valid referers (examples):
 - nanocosmos.de
@@ -133,7 +132,7 @@ Valid referers (examples):
 Invalid referers (examples):
 - https://demo.nanocosmos.de - Cannot include a protocol
 - nanocosmos.de/nanoplayer - Cannot include a resource ID (“/nanoplayer”)
-- nanocosmos - Must include a TDL
+- nanocosmos - Must include a TLD
 
 *Request*:
 
@@ -158,7 +157,18 @@ curl -X POST https://bintu-splay.nanocosmos.de/secure/token -H "Content-Type: ap
 
 ## Verifying playbacks
 
-Playback url - you have to replace the highlighted parameter values with your specific values:
+To test that a token works as expected you can either configure the token parameters in the [player configuration](nanoplayer_feature_stream_switching.md#single-stream-configuration):
+
+```
+"security": {
+    "expires": "[your expire date]",
+    "tag": "[your custom tag]",
+    "token": "[your token]",
+    "options": [your option]
+}
+```
+
+or use URL parameters - you have to replace the highlighted parameter values with your specific values:
 
 <pre><code>https://demo.nanocosmos.de/nanoplayer/release/nanoplayer.html?h5live.server.websocket=wss://bintu-splay.nanocosmos.de/h5live/authstream&h5live.server.hls=https://bintu-splay.nanocosmos.de/h5live/authhttp/playlist.m3u8&h5live.rtmp.url=rtmp://bintu-splay.nanocosmos.de/splay&h5live.rtmp.streamname=<b>[your Bintu stream name]</b>&h5live.security.expires=<b>[expires from response]</b>&h5live.security.tag=<b>[tag from response]</b>&h5live.security.token=<b>[token from response]</b>&h5live.security.options=<b>[options from response]</b></pre></code>
 
@@ -169,8 +179,20 @@ Playback url - you have to replace the highlighted parameter values with your sp
 > * Step 2 (d): the referrer is demo.nanocosmos.de, so the playback works.
 
 To verify that the playback doesn't work with an incorrect referrer, 
-copy the code snippet generated on the link above to an `.html` file on a different domain.
+copy the H5Live player code snippet to an `.html` file on a different domain.
 Try to playback the stream from the newly created web page.
 
 >**Explanation:** 
 > The referrer is not `demo.nanocosmos.de`, so the playback doesn’t work.
+
+## Update secure tokens during playback
+
+With the new H5Live stream configuration (`config."source"."entries": {}`) it is also possible to update an expiring secure token for a client, with a new token, during the playback of the stream.
+It is only required to update the source object of the player with the method `updateSource` as described in [nanoStream H5Live Player updateSource API](nanoplayer/nanoplayer_update_source.md).
+The stream information like the h5live streamname remains the same, only the object `h5live.security` has to be updated.
+
+## Using secure tokens for ABR
+
+If secure playback should be used for an ABR multi-stream configuration, a secure token has to be generated for each stream independently. That means that the object `h5live.security` has to be set for each entry. The configuration of multiple streams/entries is described in detail in [Multi Stream Configuration](nanoplayer_feature_stream_switching.md#multi-stream-configuration).
+
+E.g. for three streams the security object has to be configured three times with a separate token for each stream.

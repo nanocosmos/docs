@@ -98,14 +98,19 @@ class Index extends React.Component {
       return (
         <div className="showcaseSection">
           <h2 className="sectionHeader">Power your live streaming</h2>
+          <h3> Unique Platform for Ultra-Low-Latency Live Streaming (ULL) for Your Brand</h3>
           <div className="showcaseCta">
             <div>
-              <p><span>nanoStream Webcaster:</span> browser-based live encoder</p>
-              <Button className="button button_outline_inverted button_cta" href="/docs/webrtc/nanostream_webrtc_introduction">More about nanoStream Webcaster</Button>
+              <p><span>nanoStream Cloud:</span> worldwide ULL live streaming</p>
+              <Button className="button button_outline_inverted button_cta" href="docs/cloud/cloud_overview/">Learn More...</Button>
             </div>
             <div>
-              <p><span>nanoStream Apps and SDKs:</span> Windows, macos, iOS</p>
-              <Button className="button button_outline_inverted button_cta" href="/docs/nanostream/nanostream">More about nanoStream Apps and SDKs</Button>
+              <p><span>nanoStream Webcaster:</span> browser-based live encoder</p>
+              <Button className="button button_outline_inverted button_cta" href="docs/webrtc/nanostream_webrtc_introduction">Learn More...</Button>
+            </div>
+            <div>
+              <p><span>nanoStream H5Live Player:</span> Ultra-Low-Latency Playback on All Browsers</p>
+              <Button className="button button_outline_inverted button_cta" href="docs/nanoplayer/nanoplayer_introduction">Learn More...</Button>
             </div>
           </div>
           <div>
