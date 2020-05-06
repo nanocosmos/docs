@@ -4,6 +4,8 @@ title: nanoStream Cloud Analytics
 sidebar_label: Analytics
 ---
 
+![Screenshot](/img/cloud/analytics/analytics.png)
+
 nanoStream Cloud Analytics offers a great way to monitor and analyze the performance and quality of service of your live streams.
 
 > nanoStream Cloud and the unique nanoStream H5Live Player have been designed as an easy to use ultra-low-latency and light-weight live streaming platform. nanoStream Analytics follows the same philosophy. Easy to use, lightweight and focused on delivering our partners the information that makes their business more successful.
@@ -67,6 +69,8 @@ When switching to another sub-dashboard, already selected filter options will be
 
 ### World map
 
+![Screenshot](/img/cloud/analytics/analytics-worldmap.png)
+
 The selected filter options affect all availabe metrics.
 
 The world map gives an overview where your customers are located and shows statistics per country.
@@ -85,6 +89,8 @@ A table directly below the world map shows a top ten country list for the select
 The top ten countries are also highlighted on the world map.
 
 ### Home
+
+![Screenshot](/img/cloud/analytics/analytics-home.png)
 
 The selected filter options affect all availabe metrics.
 
@@ -129,6 +135,8 @@ Ingest (received) and playback (sent) traffic for each IP.
 A pie-chart which shows the percentage distribution of total traffic for countries.
 
 ### H5Live
+
+![Screenshot](/img/cloud/analytics/analytics-h5live.png)
 
 Most of the metrics are only available with [H5Live metrics](#h5live) enabled.
 The selected filter options affect all availabe metrics.
@@ -183,6 +191,8 @@ Similar to the "Playtime average" category of the [world map](#world-map).
 Percentage distribution of playbacks based on the used version of the H5Live player.
 
 ### Webcaster
+
+![Screenshot](/img/cloud/analytics/analytics-webcaster.png)
 
 Most of the metrics are only available with [Webcaster metrics](#webcaster) enabled.
 The selected filter options affect all availabe metrics.
