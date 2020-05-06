@@ -18,6 +18,10 @@ nanoStream Analytics provides three levels of information.
 
 > In addition to improving your technical capabilities, nanoStream Analytics enables also a big advantage to your business intelligence, providing valuable data to your Management and to your Marketing and Sales teams to understand where they should strengthen your service and decide on the next steps to be taken.
 
+## Server and Service Metrics
+
+The server and service metrics give you an overview of the total streaming volume of your live streams, where your clients are located, which streams are used most and a lot of other information.
+
 ## Client Metrics
 
 Client metrics let you analyze the experience of your users from the users point of view.
@@ -40,8 +44,9 @@ Please reach out to [sales@nanocosmos.de](mailto:sales@nanocosmos.de) if you lik
 
 ## Analytics Dashboard
 
-There are currently two visibility levels available: full and premium.
-Your Bintu organization is by default set to level "full", with which you can view most of the metrics available on the different dashboards.
+Analytics and metrics is available in several levels, dependent on your business agreement, support level and subscription plan. Please get in touch for any questions.
+
+The default level allows you to access most of the metrics available on the different dashboards.
 
 To see advanced metric widgets, e.g. for H5Live player metrics like "Buffering Play Ratio" or "Average and median of played time in seconds", you need the level "premium" for your organization.
 Please reach out to [sales@nanocosmos.de](mailto:sales@nanocosmos.de) if access to the advanced metric widgets is required.
