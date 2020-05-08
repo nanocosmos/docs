@@ -14,6 +14,10 @@
       "bintu/index": {
         "title": "bintu/index"
       },
+      "cloud/analytics": {
+        "title": "nanoStream Cloud Analytics",
+        "sidebar_label": "Analytics"
+      },
       "cloud/bintu_api": {
         "title": "nanoStream Cloud - bintu",
         "sidebar_label": "bintu api"
@@ -619,7 +623,6 @@
       "H5Live Player": "H5Live Player",
       "Features": "Features",
       "API": "API",
-      "Other Information": "Other Information",
       "FAQ": "FAQ",
       "nanoStream Webcaster": "nanoStream Webcaster",
       "nanoStream Cloud": "nanoStream Cloud",
