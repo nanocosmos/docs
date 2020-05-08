@@ -13,12 +13,9 @@
           "nanoplayer/nanoplayer_feature_network_reconnect"
       ],
       "API": [
-          "API": ["nanoplayer/nanoplayer_api"],
-          "nanoplayer/nanoplayer_api_errors"
-          "Other Information": ["nanoplayer/nanoplayer_blogposts"]
-      ],
-      "Other Information": [
-          "nanoplayer/nanoplayer_blogposts"
+           "nanoplayer/nanoplayer_api",
+           "nanoplayer/nanoplayer_api_errors",
+	   "nanoplayer/nanoplayer_blogposts"
       ],
       "FAQ": [ 
           {
