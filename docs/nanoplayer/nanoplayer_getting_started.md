@@ -69,7 +69,7 @@ Embedding the H5LivePlayer in your Vue.js project is simple:
 
 Example `index.html`
 
-```
+```html
 <!DOCTYPE html>
 <html>
   <head>
@@ -169,8 +169,6 @@ Now you should see the player running in your browser window.
 
 ### React.js 
 
-## Step I: Imports
-
 1. Import your minified nanoplayer version within your `index.html` in your `public` directory
 
 ```html
@@ -194,9 +192,6 @@ Example:
 </html>
 ```
 
-
-## Step II: Usage
-
 1. Create a React Component with a `div` tag, to create a entrypoint for the player
 
 ```jsx
@@ -207,30 +202,21 @@ Example:
 
 ```js
 let config = {
-    "source": {
-        "entries": [ // array of 'entry' objects
-            {
-                "h5live": {
-                    "rtmp": {
-                        "url": "rtmp://bintu-play.nanocosmos.de/play",
-                        "streamname": "HX26g-NRbx9"
-                    },
-                    "server": {
-                        "websocket": "wss://bintu-h5live.nanocosmos.de:443/h5live/stream.mp4",
-                        "hls": "https://bintu-h5live.nanocosmos.de:443/h5live/http/playlist.m3u8",
-                        "progressive": "https://bintu-h5live.nanocosmos.de:443/h5live/http/stream.mp4"
-                    }
-                }
-            }
-        ]
+    source: {
+        bintu: {
+            "apiurl": "https://bintu.nanocosmos.de",
+            "streamid": "CUSTOM-STREAMID"
+        }
     },
-    "playback": {
+    playback: {
         "autoplay": true,
         "automute": true,
-        "muted": true
+        "muted": false,
+        "forceTech": "h5live",
+        "flashplayer": "//demo.nanocosmos.de/nanoplayer/nano.player.swf"
     },
-    "style": {
-        "displayMutedAutoplay": false
+    style: {
+        "controls": true
     }
 };
 ```
@@ -264,4 +250,75 @@ useEffect(() => {
 componentDidMount() {
     setupNanoplayer(this.state.config);
 }
+```
+
+
+## Wordpress
+
+1. Add a block and choose Custom HTML
+
+2. Embed the Player
+
+- It is important to add a wrapper around the `playerDiv` Element, otherwise you wont see the nanoStream H5Live Player
+
+```html
+<script src="https://demo.nanocosmos.de/nanoplayer/api/release/nanoplayer.4.min.js?20200302"></script>
+<div style="width: 480px; height: 360px; overflow: hidden; position: absolute; margin: 0; padding: 0;>
+<div id="playerDiv"></div>
+</div>
+
+<script>
+        var player;
+        var config = {
+            source: {
+                entries: [
+                    {
+                        index: 0,
+                        label: "stream 1",
+                        tag: "",
+                        info: {
+                            bitrate: 1500,
+                            width: 1280,
+                            height: 720,
+                            framerate: 30
+                        },
+                        hls: "",
+                        h5live: {
+                            rtmp: {
+                                // YOUR STREAMNAME HERE
+                                url: "rtmp://bintu-play.nanocosmos.de/play",
+                                streamname: "HX26g-NRbx9"
+                            },
+                            server: {
+                                websocket: "wss://bintu-play.nanocosmos.de:443/h5live/stream.mp4",
+                                hls: "https://bintu-play.nanocosmos.de:443/h5live/http/playlist.m3u8",
+                                progressive: "https://bintu-play.nanocosmos.de:443/h5live/http/stream.mp4"
+                            },
+                            token: "",
+                            security: {}
+                        },
+                        bintu: {}
+                    },
+                ],
+            },
+            playback: {
+                autoplay: true,
+                automute: true,
+                muted: true,
+                flashplayer: "https://demo.nanocosmos.de/nanoplayer/nano.player.swf"
+            },
+            style: {
+                displayMutedAutoplay: false,
+                width: "100%",
+                height: "100%"
+            }
+        };
+        player = new NanoPlayer("playerDiv");
+        player.setup(config).then(function (config) {
+            console.log("setup success");
+            console.log("config: " + JSON.stringify(config, undefined, 4));
+        }, function (error) {
+            alert(error.message);
+        });
+</script>
 ```
