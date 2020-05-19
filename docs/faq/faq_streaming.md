@@ -205,8 +205,6 @@ This feature depends on the platform. On Windows, if the option “UseInternalRe
 <details><summary><strong>Does the software automatically adjust the Bitrate - Adaptive Bitrate?</strong></summary>
 
 The nanoStream Live Encoder Software has this feature for streams to adjust the bitrate to the existing bandwidth for the rtmp upstream.
-The nanoStream Live Encoder Software has this feature for streams to adjust the bitrate to the existing bandwidth for the rtmp upstream.
-
 
 See [general information here](https://www.nanocosmos.de/v4/documentation/live_video_encoder_-_adaptive_bitrate) and [plugin information here](https://www.nanocosmos.de/v4/documentation/live_video_encoder_-_plugin_integration_api) for how to enable the adaptive bitrate on the application and nanoStream API level.
 
