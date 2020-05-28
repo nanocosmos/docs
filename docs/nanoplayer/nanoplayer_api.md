@@ -6,10 +6,10 @@ sidebar_label: NanoPlayer
 <a name="NanoPlayer"></a>
 
 ## NanoPlayer
-NanoPlayer (H5Live) Public API Class 4.3.2
+NanoPlayer (H5Live) Public API Class 4.5.1
 
 **Kind**: global class  
-**Version**: 4.3.2  
+**Version**: 4.5.1  
 <a name="new_NanoPlayer_new"></a>
 
 ### new NanoPlayer(playerDivId)
@@ -76,6 +76,8 @@ The constructor. The source can be loaded via script tag, AMD (requirejs) or Com
 <!-- Example: load player with existing html video element -->
 <div id="playerDiv">
     <video id="myPlayer"></video>
+    <!-- iOS ONLY uses 2 video elements for playback if more than one stream is configured, required for seamless stream switching -->
+    <video id="myPlayer2"></video>
 </div>
 <script>
     var player;
@@ -99,7 +101,7 @@ The constructor. The source can be loaded via script tag, AMD (requirejs) or Com
             ]
         },
         "playback": {
-            "videoId": "myPlayer"
+            "videoId": ["myPlayer", "myPlayer2"]
         }
     };
     function initPlayer() {
@@ -323,7 +325,7 @@ Updates the source of the player.
     <td>[source.options.switch.fastStart]</td><td><code>boolean</code></td><td><code>false</code></td><td><p>Only if method is &#39;server&#39;. Tries to accelerate the startup time of the new source. Default is false.</p>
 </td>
     </tr><tr>
-    <td>[source.options.switch.timeout]</td><td><code>number</code></td><td><code>10</code></td><td><p>The timeout for the update source request in seconds. If reached the error 4006 will thrown in the <a href="#NanoPlayer..event_onUpdateSourceFail">&#39;onUpdateSourceFail&#39;</a> event. Default is 10 seconds, valid range is between 5 and 30.</p>
+    <td>[source.options.switch.timeout]</td><td><code>number</code></td><td><code>20</code></td><td><p>The timeout for the update source request in seconds. If reached the error 4006 will thrown in the <a href="NanoPlayer#~event:onUpdateSourceFail">&#39;onUpdateSourceFail&#39;</a> event. Default is 10 seconds, valid range is between 5 and 30.</p>
 </td>
     </tr><tr>
     <td>[source.options.switch.tag]</td><td><code>string</code></td><td></td><td><p>A custom field that can be any string like &#39;stream-800k&#39; or &#39;720p&#39;. This tag will be returned in any completion event of the &#39;updateSource&#39; request like &#39;onUpdateSourceSuccess&#39;, &#39;onUpdateSourceFail&#39; and &#39;onUpdateSourceAbort&#39;.* @param {object} [playback] - The object to configure the playback.</p>
@@ -332,7 +334,7 @@ Updates the source of the player.
     <td>[source.options.adaption]</td><td><code>object</code></td><td></td><td><p>The object to set an adaption for switching.</p>
 </td>
     </tr><tr>
-    <td>[source.options.adaption.rule]</td><td><code>string</code></td><td><code>&quot;none&quot;</code></td><td><p>The switch rule if multiple entries are defined. Possible values are &#39;deviationOfMean&#39; (ABR automatic) and&#39;none&#39; (default, means only manual stream switch via &#39;switchStream&#39; possible).</p>
+    <td>[source.options.adaption.rule]</td><td><code>string</code></td><td><code>&quot;none&quot;</code></td><td><p>The switch rule if multiple entries are defined. Possible values are &#39;deviationOfMean&#39; (ABR automatic), &#39;deviationOfMean2&#39; (ABR automatic) and &#39;none&#39; (default, means only manual stream switch via &#39;switchStream&#39; possible).</p>
 </td>
     </tr><tr>
     <td>[source.h5live]</td><td><code>object</code></td><td></td><td><p>DEPRECATED. PLEASE USE ENTRIES!!! WILL BE OVERWRITTEN IN CASE AT LEAST ONE &#39;ENTRY&#39; IS DEFINED IN &#39;ENTRIES&#39; ARRAY. The h5live object to configure the h5live connection.</p>
@@ -486,7 +488,7 @@ var source = {
             'pauseOnError': false,
             'forcePlay': true,
             'fastStart': false,
-            'timeout': 10,
+            'timeout': 20
         }
     },
     "startIndex": 2 // lowest
@@ -1659,13 +1661,13 @@ The event to signal that the update source request is initialized. This is alway
     <td>data.tag</td><td><code>string</code></td><td><p>The custom tag string given in the options object of the <a href="#NanoPlayer+updateSource">&#39;updateSource&#39;</a> call. Is an empty string if not set.</p>
 </td>
     </tr><tr>
-    <td>data.count</td><td><code>number</code></td><td><p>The count of the update source request to identify the paired start and completion event. The start event is <a href="#NanoPlayer..event_onUpdateSourceInit">&#39;onUpdateSourceInit&#39;</a> and completion events are <a href="#NanoPlayer..event_onUpdateSourceSuccess">&#39;onUpdateSourceSuccess&#39;</a>, <a href="#NanoPlayer..event_onUpdateSourceFail">&#39;onUpdateSourceFail&#39;</a> and <a href="#NanoPlayer..event_onUpdateSourceAbort">&#39;onUpdateSourceAbort&#39;</a></p>
+    <td>data.count</td><td><code>number</code></td><td><p>The count of the update source request to identify the paired start and completion event. The start event is <a href="#NanoPlayer..event_onUpdateSourceInit">&#39;onUpdateSourceInit&#39;</a> and completion events are <a href="NanoPlayer~events:onUpdateSourceSuccess">&#39;onUpdateSourceSuccess&#39;</a>, <a href="NanoPlayer#~events:onUpdateSourceFail">&#39;onUpdateSourceFail&#39;</a> and <a href="NanoPlayer#~events:onUpdateSourceAbort">&#39;onUpdateSourceAbort&#39;</a></p>
 </td>
     </tr><tr>
     <td>data.type</td><td><code>string</code></td><td><p>The switch type. Here always &#39;update&#39;.</p>
 </td>
     </tr><tr>
-    <td>data.id</td><td><code>number</code></td><td><p>The id of the update source request to identify the paired start and completion event. The start event is <a href="#NanoPlayer..event_onUpdateSourceInit">&#39;onUpdateSourceInit&#39;</a> and completion events are <a href="#NanoPlayer..event_onUpdateSourceSuccess">&#39;onUpdateSourceSuccess&#39;</a>, <a href="#NanoPlayer..event_onUpdateSourceFail">&#39;onUpdateSourceFail&#39;</a> and <a href="#NanoPlayer..event_onUpdateSourceAbort">&#39;onUpdateSourceAbort&#39;</a></p>
+    <td>data.id</td><td><code>number</code></td><td><p>The id of the update source request to identify the paired start and completion event. The start event is <a href="#NanoPlayer..event_onUpdateSourceInit">&#39;onUpdateSourceInit&#39;</a> and completion events are <a href="NanoPlayer~events:onUpdateSourceSuccess">&#39;onUpdateSourceSuccess&#39;</a>, <a href="NanoPlayer#~events:onUpdateSourceFail">&#39;onUpdateSourceFail&#39;</a> and <a href="NanoPlayer#~events:onUpdateSourceAbort">&#39;onUpdateSourceAbort&#39;</a></p>
 </td>
     </tr><tr>
     <td>state</td><td><code><a href="#NanoPlayer..state">state</a></code></td><td><p>The player state.</p>
@@ -1732,13 +1734,13 @@ The event to signal that the update source request is succeeded. Fires if the so
     <td>data.tag</td><td><code>string</code></td><td><p>The custom tag string given in the options object of the <a href="#NanoPlayer+updateSource">&#39;updateSource&#39;</a> call. Is an empty string if not set.</p>
 </td>
     </tr><tr>
-    <td>data.count</td><td><code>number</code></td><td><p>The count of the update source request to identify the paired start and completion event. The start event is <a href="#NanoPlayer..event_onUpdateSourceInit">&#39;onUpdateSourceInit&#39;</a> and completion events are <a href="#NanoPlayer..event_onUpdateSourceSuccess">&#39;onUpdateSourceSuccess&#39;</a>, <a href="#NanoPlayer..event_onUpdateSourceFail">&#39;onUpdateSourceFail&#39;</a> and <a href="#NanoPlayer..event_onUpdateSourceAbort">&#39;onUpdateSourceAbort&#39;</a></p>
+    <td>data.count</td><td><code>number</code></td><td><p>The count of the update source request to identify the paired start and completion event. The start event is <a href="#NanoPlayer..event_onUpdateSourceInit">&#39;onUpdateSourceInit&#39;</a> and completion events are <a href="NanoPlayer~events:onUpdateSourceSuccess">&#39;onUpdateSourceSuccess&#39;</a>, <a href="NanoPlayer#~events:onUpdateSourceFail">&#39;onUpdateSourceFail&#39;</a> and <a href="NanoPlayer#~events:onUpdateSourceAbort">&#39;onUpdateSourceAbort&#39;</a></p>
 </td>
     </tr><tr>
     <td>data.type</td><td><code>string</code></td><td><p>The switch type. Here always &#39;update&#39;.</p>
 </td>
     </tr><tr>
-    <td>data.id</td><td><code>number</code></td><td><p>The id of the update source request to identify the paired start and completion event. The start event is <a href="#NanoPlayer..event_onUpdateSourceInit">&#39;onUpdateSourceInit&#39;</a> and completion events are <a href="#NanoPlayer..event_onUpdateSourceSuccess">&#39;onUpdateSourceSuccess&#39;</a>, <a href="#NanoPlayer..event_onUpdateSourceFail">&#39;onUpdateSourceFail&#39;</a> and <a href="#NanoPlayer..event_onUpdateSourceAbort">&#39;onUpdateSourceAbort&#39;</a></p>
+    <td>data.id</td><td><code>number</code></td><td><p>The id of the update source request to identify the paired start and completion event. The start event is <a href="#NanoPlayer..event_onUpdateSourceInit">&#39;onUpdateSourceInit&#39;</a> and completion events are <a href="NanoPlayer~events:onUpdateSourceSuccess">&#39;onUpdateSourceSuccess&#39;</a>, <a href="NanoPlayer#~events:onUpdateSourceFail">&#39;onUpdateSourceFail&#39;</a> and <a href="NanoPlayer#~events:onUpdateSourceAbort">&#39;onUpdateSourceAbort&#39;</a></p>
 </td>
     </tr><tr>
     <td>state</td><td><code><a href="#NanoPlayer..state">state</a></code></td><td><p>The player state.</p>
@@ -1806,13 +1808,13 @@ The event to signal that the update source request is failed. Fired if an error 
     <td>data.tag</td><td><code>string</code></td><td><p>The custom tag string given in the options object of the <a href="#NanoPlayer+updateSource">&#39;updateSource&#39;</a> call. Is an empty string if not set.</p>
 </td>
     </tr><tr>
-    <td>data.count</td><td><code>number</code></td><td><p>The count of the update source request to identify the paired start and completion event. The start event is <a href="#NanoPlayer..event_onUpdateSourceInit">&#39;onUpdateSourceInit&#39;</a> and completion events are <a href="#NanoPlayer..event_onUpdateSourceSuccess">&#39;onUpdateSourceSuccess&#39;</a>, <a href="#NanoPlayer..event_onUpdateSourceFail">&#39;onUpdateSourceFail&#39;</a> and <a href="#NanoPlayer..event_onUpdateSourceAbort">&#39;onUpdateSourceAbort&#39;</a></p>
+    <td>data.count</td><td><code>number</code></td><td><p>The count of the update source request to identify the paired start and completion event. The start event is <a href="#NanoPlayer..event_onUpdateSourceInit">&#39;onUpdateSourceInit&#39;</a> and completion events are <a href="NanoPlayer~events:onUpdateSourceSuccess">&#39;onUpdateSourceSuccess&#39;</a>, <a href="NanoPlayer#~events:onUpdateSourceFail">&#39;onUpdateSourceFail&#39;</a> and <a href="NanoPlayer#~events:onUpdateSourceAbort">&#39;onUpdateSourceAbort&#39;</a></p>
 </td>
     </tr><tr>
     <td>data.type</td><td><code>string</code></td><td><p>The switch type. Here always &#39;update&#39;.</p>
 </td>
     </tr><tr>
-    <td>data.id</td><td><code>number</code></td><td><p>The id of the update source request to identify the paired start and completion event. The start event is <a href="#NanoPlayer..event_onUpdateSourceInit">&#39;onUpdateSourceInit&#39;</a> and completion events are <a href="#NanoPlayer..event_onUpdateSourceSuccess">&#39;onUpdateSourceSuccess&#39;</a>, <a href="#NanoPlayer..event_onUpdateSourceFail">&#39;onUpdateSourceFail&#39;</a> and <a href="#NanoPlayer..event_onUpdateSourceAbort">&#39;onUpdateSourceAbort&#39;</a></p>
+    <td>data.id</td><td><code>number</code></td><td><p>The id of the update source request to identify the paired start and completion event. The start event is <a href="#NanoPlayer..event_onUpdateSourceInit">&#39;onUpdateSourceInit&#39;</a> and completion events are <a href="NanoPlayer~events:onUpdateSourceSuccess">&#39;onUpdateSourceSuccess&#39;</a>, <a href="NanoPlayer#~events:onUpdateSourceFail">&#39;onUpdateSourceFail&#39;</a> and <a href="NanoPlayer#~events:onUpdateSourceAbort">&#39;onUpdateSourceAbort&#39;</a></p>
 </td>
     </tr><tr>
     <td>state</td><td><code><a href="#NanoPlayer..state">state</a></code></td><td><p>The player state.</p>
@@ -1882,13 +1884,13 @@ The event to signal that the update source request is aborted. Reasons can be an
     <td>data.tag</td><td><code>string</code></td><td><p>The custom tag string given in the options object of the <a href="#NanoPlayer+updateSource">&#39;updateSource&#39;</a> call. Is an empty string if not set.</p>
 </td>
     </tr><tr>
-    <td>data.count</td><td><code>number</code></td><td><p>The count of the update source request to identify the paired start and completion event. The start event is <a href="#NanoPlayer..event_onUpdateSourceInit">&#39;onUpdateSourceInit&#39;</a>  and completion events are <a href="#NanoPlayer..event_onUpdateSourceSuccess">&#39;onUpdateSourceSuccess&#39;</a>, <a href="#NanoPlayer..event_onUpdateSourceFail">&#39;onUpdateSourceFail&#39;</a> and <a href="#NanoPlayer..event_onUpdateSourceAbort">&#39;onUpdateSourceAbort&#39;</a></p>
+    <td>data.count</td><td><code>number</code></td><td><p>The count of the update source request to identify the paired start and completion event. The start event is <a href="NanoPlayer#~events:onUpdateSourceInit">&#39;onUpdateSourceInit&#39;</a>  and completion events are <a href="NanoPlayer#~events:onUpdateSourceSuccess">&#39;onUpdateSourceSuccess&#39;</a>, <a href="NanoPlayer#~events:onUpdateSourceFail">&#39;onUpdateSourceFail&#39;</a> and <a href="NanoPlayer#~events:onUpdateSourceAbort">&#39;onUpdateSourceAbort&#39;</a></p>
 </td>
     </tr><tr>
     <td>data.type</td><td><code>string</code></td><td><p>The switch type. Here always &#39;update&#39;.</p>
 </td>
     </tr><tr>
-    <td>data.id</td><td><code>number</code></td><td><p>The id of the update source request to identify the paired start and completion event. The start event is <a href="#NanoPlayer..event_onUpdateSourceInit">&#39;onUpdateSourceInit&#39;</a> and completion events are <a href="#NanoPlayer..event_onUpdateSourceSuccess">&#39;onUpdateSourceSuccess&#39;</a>, <a href="#NanoPlayer..event_onUpdateSourceFail">&#39;onUpdateSourceFail&#39;</a> and <a href="#NanoPlayer..event_onUpdateSourceAbort">&#39;onUpdateSourceAbort&#39;</a></p>
+    <td>data.id</td><td><code>number</code></td><td><p>The id of the update source request to identify the paired start and completion event. The start event is <a href="#NanoPlayer..event_onUpdateSourceInit">&#39;onUpdateSourceInit&#39;</a> and completion events are <a href="NanoPlayer~events:onUpdateSourceSuccess">&#39;onUpdateSourceSuccess&#39;</a>, <a href="NanoPlayer#~events:onUpdateSourceFail">&#39;onUpdateSourceFail&#39;</a> and <a href="NanoPlayer#~events:onUpdateSourceAbort">&#39;onUpdateSourceAbort&#39;</a></p>
 </td>
     </tr><tr>
     <td>state</td><td><code><a href="#NanoPlayer..state">state</a></code></td><td><p>The player state.</p>
@@ -1958,13 +1960,13 @@ The event to signal that an stream switch request is initialized. Can be trigger
     <td>data.tag</td><td><code>string</code></td><td><p>A static string in format: {data.entry.h5live.rtmp.streamname} + &#39; streamSwitch &#39; + {data.id}.</p>
 </td>
     </tr><tr>
-    <td>data.count</td><td><code>number</code></td><td><p>The count of the switch stream request to identify the paired start and completion event. The start event is <a href="#NanoPlayer..event_onSwitchStreamInit">&#39;onSwitchStreamInit&#39;</a> and completion events are <a href="#NanoPlayer..event_onSwitchStreamSuccess">&#39;onSwitchStreamSuccess&#39;</a>, <a href="#NanoPlayer..event_onSwitchStreamFail">&#39;onSwitchStreamFail&#39;</a> and <a href="#NanoPlayer..event_onSwitchStreamAbort">&#39;onSwitchStreamAbort&#39;</a></p>
+    <td>data.count</td><td><code>number</code></td><td><p>The count of the switch stream request to identify the paired start and completion event. The start event is <a href="#NanoPlayer..event_onSwitchStreamInit">&#39;onSwitchStreamInit&#39;</a> and completion events are <a href="NanoPlayer~events:onSwitchStreamSuccess">&#39;onSwitchStreamSuccess&#39;</a>, <a href="NanoPlayer#~events:onSwitchStreamFail">&#39;onSwitchStreamFail&#39;</a> and <a href="NanoPlayer#~events:onSwitchStreamAbort">&#39;onSwitchStreamAbort&#39;</a></p>
 </td>
     </tr><tr>
     <td>data.type</td><td><code>string</code></td><td><p>The switch type. Possible values are &#39;up&#39;, &#39;down&#39; (in case of adaptive stream switch) and &#39;direct&#39; (switch via <a href="#NanoPlayer+switchStream">&#39;switchStream&#39;</a>).</p>
 </td>
     </tr><tr>
-    <td>data.id</td><td><code>number</code></td><td><p>The id of the switch stream request to identify the paired start and completion event. The start event is <a href="#NanoPlayer..event_onSwitchStreamInit">&#39;onSwitchStreamInit&#39;</a> and completion events are <a href="#NanoPlayer..event_onSwitchStreamSuccess">&#39;onSwitchStreamSuccess&#39;</a>, <a href="#NanoPlayer..event_onSwitchStreamFail">&#39;onSwitchStreamFail&#39;</a> and <a href="#NanoPlayer..event_onSwitchStreamAbort">&#39;onSwitchStreamAbort&#39;</a></p>
+    <td>data.id</td><td><code>number</code></td><td><p>The id of the switch stream request to identify the paired start and completion event. The start event is <a href="#NanoPlayer..event_onSwitchStreamInit">&#39;onSwitchStreamInit&#39;</a> and completion events are <a href="NanoPlayer~events:onSwitchStreamSuccess">&#39;onSwitchStreamSuccess&#39;</a>, <a href="NanoPlayer#~events:onSwitchStreamFail">&#39;onSwitchStreamFail&#39;</a> and <a href="NanoPlayer#~events:onSwitchStreamAbort">&#39;onSwitchStreamAbort&#39;</a></p>
 </td>
     </tr><tr>
     <td>state</td><td><code><a href="#NanoPlayer..state">state</a></code></td><td><p>The player state.</p>
@@ -2031,13 +2033,13 @@ The event to signal that the switch stream request is succeeded. Fires if the so
     <td>data.tag</td><td><code>string</code></td><td><p>A static string in format: {data.entry.h5live.rtmp.streamname} + &#39; streamSwitch &#39; + {data.id}.</p>
 </td>
     </tr><tr>
-    <td>data.count</td><td><code>number</code></td><td><p>The count of the switch stream request to identify the paired start and completion event. The start event is <a href="#NanoPlayer..event_onSwitchStreamInit">&#39;onSwitchStreamInit&#39;</a> and completion events are <a href="#NanoPlayer..event_onSwitchStreamSuccess">&#39;onSwitchStreamSuccess&#39;</a>, <a href="#NanoPlayer..event_onSwitchStreamFail">&#39;onSwitchStreamFail&#39;</a> and <a href="#NanoPlayer..event_onSwitchStreamAbort">&#39;onSwitchStreamAbort&#39;</a></p>
+    <td>data.count</td><td><code>number</code></td><td><p>The count of the switch stream request to identify the paired start and completion event. The start event is <a href="#NanoPlayer..event_onSwitchStreamInit">&#39;onSwitchStreamInit&#39;</a> and completion events are <a href="NanoPlayer~events:onSwitchStreamSuccess">&#39;onSwitchStreamSuccess&#39;</a>, <a href="NanoPlayer#~events:onSwitchStreamFail">&#39;onSwitchStreamFail&#39;</a> and <a href="NanoPlayer#~events:onSwitchStreamAbort">&#39;onSwitchStreamAbort&#39;</a></p>
 </td>
     </tr><tr>
     <td>data.type</td><td><code>string</code></td><td><p>The switch type. Possible values are &#39;up&#39;, &#39;down&#39; (in case of adaptive stream switch) and &#39;direct&#39; (switch via <a href="#NanoPlayer+switchStream">&#39;switchStream&#39;</a>).</p>
 </td>
     </tr><tr>
-    <td>data.id</td><td><code>number</code></td><td><p>The id of the switch stream request to identify the paired start and completion event. The start event is <a href="#NanoPlayer..event_onSwitchStreamInit">&#39;onSwitchStreamInit&#39;</a> and completion events are <a href="#NanoPlayer..event_onSwitchStreamSuccess">&#39;onSwitchStreamSuccess&#39;</a>, <a href="#NanoPlayer..event_onSwitchStreamFail">&#39;onSwitchStreamFail&#39;</a> and <a href="#NanoPlayer..event_onSwitchStreamAbort">&#39;onSwitchStreamAbort&#39;</a></p>
+    <td>data.id</td><td><code>number</code></td><td><p>The id of the switch stream request to identify the paired start and completion event. The start event is <a href="#NanoPlayer..event_onSwitchStreamInit">&#39;onSwitchStreamInit&#39;</a> and completion events are <a href="NanoPlayer~events:onSwitchStreamSuccess">&#39;onSwitchStreamSuccess&#39;</a>, <a href="NanoPlayer#~events:onSwitchStreamFail">&#39;onSwitchStreamFail&#39;</a> and <a href="NanoPlayer#~events:onSwitchStreamAbort">&#39;onSwitchStreamAbort&#39;</a></p>
 </td>
     </tr><tr>
     <td>state</td><td><code><a href="#NanoPlayer..state">state</a></code></td><td><p>The player state.</p>
@@ -2105,13 +2107,13 @@ The event to signal that the switch stream request is failed. Fired if an error 
     <td>data.tag</td><td><code>string</code></td><td><p>A static string in format: {data.entry.h5live.rtmp.streamname} + &#39; streamSwitch &#39; + {data.id}.</p>
 </td>
     </tr><tr>
-    <td>data.count</td><td><code>number</code></td><td><p>The count of the switch stream request to identify the paired start and completion event. The start event is <a href="#NanoPlayer..event_onSwitchStreamInit">&#39;onSwitchStreamInit&#39;</a> and completion events are <a href="#NanoPlayer..event_onSwitchStreamSuccess">&#39;onSwitchStreamSuccess&#39;</a>, <a href="#NanoPlayer..event_onSwitchStreamFail">&#39;onSwitchStreamFail&#39;</a> and <a href="#NanoPlayer..event_onSwitchStreamAbort">&#39;onSwitchStreamAbort&#39;</a></p>
+    <td>data.count</td><td><code>number</code></td><td><p>The count of the switch stream request to identify the paired start and completion event. The start event is <a href="#NanoPlayer..event_onSwitchStreamInit">&#39;onSwitchStreamInit&#39;</a> and completion events are <a href="NanoPlayer~events:onSwitchStreamSuccess">&#39;onSwitchStreamSuccess&#39;</a>, <a href="NanoPlayer#~events:onSwitchStreamFail">&#39;onSwitchStreamFail&#39;</a> and <a href="NanoPlayer#~events:onSwitchStreamAbort">&#39;onSwitchStreamAbort&#39;</a></p>
 </td>
     </tr><tr>
     <td>data.type</td><td><code>string</code></td><td><p>The switch type. Possible values are &#39;up&#39;, &#39;down&#39; (in case of adaptive stream switch) and &#39;direct&#39; (switch via <a href="#NanoPlayer+switchStream">&#39;switchStream&#39;</a>).</p>
 </td>
     </tr><tr>
-    <td>data.id</td><td><code>number</code></td><td><p>The id of the switch stream request to identify the paired start and completion event. The start event is <a href="#NanoPlayer..event_onSwitchStreamInit">&#39;onSwitchStreamInit&#39;</a> and completion events are <a href="#NanoPlayer..event_onSwitchStreamSuccess">&#39;onSwitchStreamSuccess&#39;</a>, <a href="#NanoPlayer..event_onSwitchStreamFail">&#39;onSwitchStreamFail&#39;</a> and <a href="#NanoPlayer..event_onSwitchStreamAbort">&#39;onSwitchStreamAbort&#39;</a></p>
+    <td>data.id</td><td><code>number</code></td><td><p>The id of the switch stream request to identify the paired start and completion event. The start event is <a href="#NanoPlayer..event_onSwitchStreamInit">&#39;onSwitchStreamInit&#39;</a> and completion events are <a href="NanoPlayer~events:onSwitchStreamSuccess">&#39;onSwitchStreamSuccess&#39;</a>, <a href="NanoPlayer#~events:onSwitchStreamFail">&#39;onSwitchStreamFail&#39;</a> and <a href="NanoPlayer#~events:onSwitchStreamAbort">&#39;onSwitchStreamAbort&#39;</a></p>
 </td>
     </tr><tr>
     <td>state</td><td><code><a href="#NanoPlayer..state">state</a></code></td><td><p>The player state.</p>
@@ -2181,13 +2183,13 @@ The event to signal that the switch stream request is aborted. Reasons can be an
     <td>data.tag</td><td><code>string</code></td><td><p>A static string in format: {data.entry.h5live.rtmp.streamname} + &#39; streamSwitch &#39; + {data.id}.</p>
 </td>
     </tr><tr>
-    <td>data.count</td><td><code>number</code></td><td><p>The count of the switch stream request to identify the paired start and completion event. The start event is <a href="#NanoPlayer..event_onSwitchStreamInit">&#39;onSwitchStreamInit&#39;</a>  and completion events are <a href="#NanoPlayer..event_onSwitchStreamSuccess">&#39;onSwitchStreamSuccess&#39;</a>, <a href="#NanoPlayer..event_onSwitchStreamFail">&#39;onSwitchStreamFail&#39;</a> and <a href="#NanoPlayer..event_onSwitchStreamAbort">&#39;onSwitchStreamAbort&#39;</a></p>
+    <td>data.count</td><td><code>number</code></td><td><p>The count of the switch stream request to identify the paired start and completion event. The start event is <a href="NanoPlayer#~events:onSwitchStreamInit">&#39;onSwitchStreamInit&#39;</a>  and completion events are <a href="NanoPlayer#~events:onSwitchStreamSuccess">&#39;onSwitchStreamSuccess&#39;</a>, <a href="NanoPlayer#~events:onSwitchStreamFail">&#39;onSwitchStreamFail&#39;</a> and <a href="NanoPlayer#~events:onSwitchStreamAbort">&#39;onSwitchStreamAbort&#39;</a></p>
 </td>
     </tr><tr>
     <td>data.type</td><td><code>string</code></td><td><p>The switch type. Possible values are &#39;up&#39;, &#39;down&#39; (in case of adaptive stream switch) and &#39;direct&#39; (switch via <a href="#NanoPlayer+switchStream">&#39;switchStream&#39;</a>).</p>
 </td>
     </tr><tr>
-    <td>data.id</td><td><code>number</code></td><td><p>The id of the switch stream request to identify the paired start and completion event. The start event is <a href="#NanoPlayer..event_onSwitchStreamInit">&#39;onSwitchStreamInit&#39;</a> and completion events are <a href="#NanoPlayer..event_onSwitchStreamSuccess">&#39;onSwitchStreamSuccess&#39;</a>, <a href="#NanoPlayer..event_onSwitchStreamFail">&#39;onSwitchStreamFail&#39;</a> and <a href="#NanoPlayer..event_onSwitchStreamAbort">&#39;onSwitchStreamAbort&#39;</a></p>
+    <td>data.id</td><td><code>number</code></td><td><p>The id of the switch stream request to identify the paired start and completion event. The start event is <a href="#NanoPlayer..event_onSwitchStreamInit">&#39;onSwitchStreamInit&#39;</a> and completion events are <a href="NanoPlayer~events:onSwitchStreamSuccess">&#39;onSwitchStreamSuccess&#39;</a>, <a href="NanoPlayer#~events:onSwitchStreamFail">&#39;onSwitchStreamFail&#39;</a> and <a href="NanoPlayer#~events:onSwitchStreamAbort">&#39;onSwitchStreamAbort&#39;</a></p>
 </td>
     </tr><tr>
     <td>state</td><td><code><a href="#NanoPlayer..state">state</a></code></td><td><p>The player state.</p>
@@ -2254,7 +2256,7 @@ The config object to pass as param for the 'setup' call.
     <td>source.options.switch.fastStart</td><td><code>boolean</code></td><td><code>false</code></td><td><p>Only if method is &#39;server&#39;. Tries to accelerate the startup time of the new source. Default is false.</p>
 </td>
     </tr><tr>
-    <td>source.options.switch.timeout</td><td><code>number</code></td><td><code>10</code></td><td><p>The timeout for the update source request in seconds. If reached the error 4006 will thrown in the <a href="#NanoPlayer..event_onUpdateSourceFail">&#39;onUpdateSourceFail&#39;</a> and the <a href="#NanoPlayer..event_onSwitchStreamFail">&#39;onSwitchStreamFail&#39;</a> event. Default is 10 seconds, valid range is between 5 and 30.</p>
+    <td>source.options.switch.timeout</td><td><code>number</code></td><td><code>20</code></td><td><p>The timeout for the update source request in seconds. If reached the error 4006 will thrown in the <a href="NanoPlayer#~event:onUpdateSourceFail">&#39;onUpdateSourceFail&#39;</a> and the <a href="NanoPlayer#~event:onSwitchStreamFail">&#39;onSwitchStreamFail&#39;</a> event. Default is 10 seconds, valid range is between 5 and 30.</p>
 </td>
     </tr><tr>
     <td>source.options.switch.tag</td><td><code>string</code></td><td></td><td><p>A custom field that can be any string like &#39;stream-800k&#39; or &#39;720p&#39;. This tag will be returned in any completion event of the &#39;updateSource&#39; request like &#39;onUpdateSourceSuccess&#39;, &#39;onUpdateSourceFail&#39; and &#39;onUpdateSourceAbort&#39;.* @property {object} [playback] - The object to configure the playback.</p>
@@ -2263,7 +2265,7 @@ The config object to pass as param for the 'setup' call.
     <td>source.options.adaption</td><td><code>object</code></td><td></td><td><p>The object to set an adaption for switching.</p>
 </td>
     </tr><tr>
-    <td>source.options.adaption.rule</td><td><code>string</code></td><td><code>&quot;none&quot;</code></td><td><p>The switch rule if multiple entries are defined. Possible values are &#39;deviationOfMean&#39; (ABR automatic) and &#39;none&#39; (default, means only manual stream switch via &#39;switchStream&#39; possible).</p>
+    <td>source.options.adaption.rule</td><td><code>string</code></td><td><code>&quot;none&quot;</code></td><td><p>The switch rule if multiple entries are defined. Possible values are &#39;deviationOfMean&#39; (ABR automatic), &#39;deviationOfMean2&#39; (ABR automatic) and &#39;none&#39; (default, means only manual stream switch via &#39;switchStream&#39; possible).</p>
 </td>
     </tr><tr>
     <td>source.h5live</td><td><code>object</code></td><td></td><td><p>DEPRECATED. PLEASE USE ENTRIES!!! WILL BE OVERWRITTEN IN CASE AT LEAST ONE &#39;ENTRY&#39; IS DEFINED IN &#39;ENTRIES&#39; ARRAY. The h5live object to configure the h5live connection.</p>
@@ -2344,7 +2346,7 @@ The config object to pass as param for the 'setup' call.
     <td>playback.flashplayer</td><td><code>string</code></td><td></td><td><p>A absolute or relative path to the &quot;nano.player.swf&quot;. If not set the player will be required from the base path.</p>
 </td>
     </tr><tr>
-    <td>playback.videoId</td><td><code>string</code></td><td></td><td><p>An element id of a existing video tag that should be used for playback. No new element will be created and after destroy it will be kept.</p>
+    <td>playback.videoId</td><td><code>string</code> | <code>Array.string</code></td><td></td><td><p>One or two element ids of existing video tags that should be used for playback. No new element(s) will be created and after destroy it/they will be kept. Can be a string (old, only one element) or a string array with one or two (iOS ONLY!) element ids. Two video elements are required only for stream switching on iOS, MSE playback uses only one video tag. If only one element id is given on iOS the second video tag will be created by the player.</p>
 </td>
     </tr><tr>
     <td>playback.keepConnection</td><td><code>boolean</code></td><td><code>false</code></td><td><p>If enabled the player will have always a connection to the h5live server.</p>
@@ -2383,13 +2385,13 @@ The config object to pass as param for the 'setup' call.
     <td>style</td><td><code>object</code></td><td></td><td><p>The object to configure the style of the player.</p>
 </td>
     </tr><tr>
-    <td>style.width</td><td><code>string</code></td><td><code>&quot;&#x27;640px&#x27;&quot;</code></td><td><p>The width of the player in pixels (e.g 320px) or percentage (80%) (height or aspectratio have to be set too). Use &#39;auto&#39; to keep the parents size (height and aspectratio have no effect).</p>
+    <td>style.width</td><td><code>string</code></td><td><code>&quot;640px&quot;</code></td><td><p>The width of the player in pixels (e.g 320px) or percentage (80%) (height or aspectratio have to be set too). Use &#39;auto&#39; to keep the parents size (height and aspectratio have no effect).</p>
 </td>
     </tr><tr>
     <td>style.height</td><td><code>string</code></td><td></td><td><p>The height of the player in pixels (e.g 240px) or percentage (45%)  (width or aspectratio have to be set too). Use &#39;auto&#39; to keep the parents size (width and aspectratio have no effect).</p>
 </td>
     </tr><tr>
-    <td>style.aspectratio</td><td><code>string</code></td><td><code>&quot;&#x27;16/9&#x27;&quot;</code></td><td><p>The aspectratio of the player (e.g. 16/9) (width or height have to be set too).</p>
+    <td>style.aspectratio</td><td><code>string</code></td><td><code>&quot;16/9&quot;</code></td><td><p>The aspectratio of the player (e.g. 16/9) (width or height have to be set too).</p>
 </td>
     </tr><tr>
     <td>style.controls</td><td><code>boolean</code></td><td><code>true</code></td><td><p>Show/hide video controls.</p>
@@ -2401,7 +2403,7 @@ The config object to pass as param for the 'setup' call.
     <td>style.view</td><td><code>boolean</code></td><td><code>true</code></td><td><p>Enable/disable view port handling/animations.</p>
 </td>
     </tr><tr>
-    <td>style.scaling</td><td><code>string</code></td><td><code>&quot;&#x27;letterbox&#x27;&quot;</code></td><td><p>Set&#39;s the display mode for the video inside the player - possible values: &quot;letterbox&quot;, &quot;fill&quot;, &quot;crop&quot;, &quot;original&quot;, &quot;resize&quot;.</p>
+    <td>style.scaling</td><td><code>string</code></td><td><code>&quot;letterbox&quot;</code></td><td><p>Set&#39;s the display mode for the video inside the player - possible values: &quot;letterbox&quot;, &quot;fill&quot;, &quot;crop&quot;, &quot;original&quot;, &quot;resize&quot;.</p>
 </td>
     </tr><tr>
     <td>style.keepFrame</td><td><code>boolean</code></td><td><code>false</code></td><td><p>If true the last played frame will be displayed after a pause.</p>
@@ -2419,7 +2421,7 @@ The config object to pass as param for the 'setup' call.
     <td>style.fullScreenControl</td><td><code>boolean</code></td><td><code>true</code></td><td><p>If true shows fullscreen control symbol in player controls.</p>
 </td>
     </tr><tr>
-    <td>style.backgroundColor</td><td><code>string</code></td><td><code>&quot;&#x27;black&#x27;&quot;</code></td><td><p>Sets the background color of the video element - possible values: html colors (&quot;red&quot;, &quot;blue&quot;, ...), hex color codes (&quot;#FACAFD&quot;, &quot;#FCEC66&quot;, ...) and rgba color values (&quot;rgba(255,0,0,1)&quot;, &quot;rgba(0,255,0,0.7)&quot;, ...).</p>
+    <td>style.backgroundColor</td><td><code>string</code></td><td><code>&quot;black&quot;</code></td><td><p>Sets the background color of the video element - possible values: html colors (&quot;red&quot;, &quot;blue&quot;, ...), hex color codes (&quot;#FACAFD&quot;, &quot;#FCEC66&quot;, ...) and rgba color values (&quot;rgba(255,0,0,1)&quot;, &quot;rgba(0,255,0,0.7)&quot;, ...).</p>
 </td>
     </tr><tr>
     <td>events</td><td><code>object</code></td><td></td><td><p>The object to set handlers to the player events.</p>
@@ -2642,7 +2644,7 @@ var config = {
                 'pauseOnError': false,
                 'forcePlay': true,
                 'fastStart': false,
-                'timeout': 10,
+                'timeout': 20
             }
         },
         "startIndex": 2 // lowest
@@ -2716,7 +2718,7 @@ var config = {
     },
     "playback": {
         "autoplay": false,
-        "videoId": 'myVideoTagId'
+        "videoId": ['myVideoTagId', 'myVideoTagId']
     },
     "events": {
         "onStats": function (e) {
@@ -3017,7 +3019,7 @@ var source = {
             'pauseOnError': false,
             'forcePlay': true,
             'fastStart': false,
-            'timeout': 10,
+            'timeout': 20
         }
     },
     "startIndex": 2 // lowest
@@ -3449,4 +3451,3 @@ The possible pause reason in a onPause event.
 </td>
     </tr>  </tbody>
 </table>
-
