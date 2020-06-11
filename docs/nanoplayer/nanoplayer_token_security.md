@@ -55,7 +55,7 @@ curl -X POST https://bintu-splay.nanocosmos.de/secure/token -H "Content-Type: ap
             "expires": "1591747200",
             "tag": "[your custom tag]",
             "token": "[your token will be here]",
-            "options": 9
+            "options": "9"
         }
     }
 }
@@ -82,7 +82,7 @@ curl -X POST https://bintu-splay.nanocosmos.de/secure/token -H "Content-Type: ap
             "expires": "1591747200",
             "tag": "[your custom tag]",
             "token": "[your token will be here]",
-            "options": 25
+            "options": "25"
         }
     }
 }
@@ -105,7 +105,7 @@ curl -X POST https://bintu-splay.nanocosmos.de/secure/token -H "Content-Type: ap
             "expires": "",
             "tag": "",
             "token": "[your token will be here]",
-            "options": 2
+            "options": "2"
         }
     }
 }
@@ -149,7 +149,7 @@ curl -X POST https://bintu-splay.nanocosmos.de/secure/token -H "Content-Type: ap
             "expires": "",
             "tag": "[your custom tag]",
             "token": "[your token will be here]",
-            "options": 12
+            "options": "12"
         }
     }
 }
@@ -164,7 +164,7 @@ To test that a token works as expected you can either configure the token parame
     "expires": "[your expire date]",
     "tag": "[your custom tag]",
     "token": "[your token]",
-    "options": [your option]
+    "options": "[your option]"
 }
 ```
 
