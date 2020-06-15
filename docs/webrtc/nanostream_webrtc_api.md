@@ -10,7 +10,7 @@ sidebar_label: Webcaster
 nanoStream Webcaster Public API Class
 
 **Kind**: global class  
-**Version**: 5.7.7  
+**Version**: 5.7.9  
 
 -----
 
