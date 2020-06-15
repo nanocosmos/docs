@@ -114,7 +114,7 @@ Yes, by passing the `id` attribute of an existing html5 video element through th
 > - if 0 Ids are provided 2 video elements will be created internally
 > - if 1 Id is provided the other video element will be created internally
 > 
-> You can find more information regarding the `playback.video` config property in our [API docs](../../nanoplayer/nanoplayer_api#nanoplayerconfig--codeobjectcode).
+> You can find more information regarding the `playback.videoId` and other config properties in our [API docs](../../nanoplayer/nanoplayer_api#nanoplayerconfig--codeobjectcode).
 
 </details>
 
