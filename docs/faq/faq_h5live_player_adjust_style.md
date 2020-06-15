@@ -107,7 +107,14 @@ Yes.
 
 <details><summary><strong>Can I use an own external video element?</strong></summary>
 
-Yes, by passing the `id` attribute of an existing html5 video element through the config property `playback.videoId`. The video will be inserted into the players container and existing styles will be overwritten and restored after a destroy.
+Yes, by passing the `id` attribute of an existing html5 video element through the config property `playback.videoId`. The video will be inserted into the players container and existing styles will be overwritten and restored after a destroy. 
+
+> **Important:**
+> Since introducing player version **4.4** with seamless stream switching on iOS & iPadOS, **2** video elements are needed internally. So for special use cases where existing video tags need to be used for playback an `array` of maximal two element Ids can be provided via the `playback.videoId` config property (**NOT mandatory**)
+> - if 0 Ids are provided 2 video elements will be created internally
+> - if 1 Id is provided the other video element will be created internally
+> 
+> You can find more information regarding the `playback.video` config property in our [API docs](../../nanoplayer/nanoplayer_api#nanoplayerconfig--codeobjectcode).
 
 </details>
 
