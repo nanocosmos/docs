@@ -14,15 +14,11 @@
       ],
       "API": [
            "nanoplayer/nanoplayer_api",
-           "nanoplayer/nanoplayer_api_errors",
-	   "nanoplayer/nanoplayer_blogposts"
+           "nanoplayer/nanoplayer_api_errors"
       ],
-      "FAQ": [ 
-          {
-              "type": "link",
-              "label": "Github",
-              "href": "http://github.com"
-          }
+      "Other": [ 
+            "nanoplayer/nanoplayer_faq",
+            "nanoplayer/nanoplayer_blogposts"
       ]
   },
   "webrtc": {

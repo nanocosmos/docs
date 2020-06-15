@@ -4,6 +4,90 @@ title: Adjust/Style
 sidebar_label: Adjust/Style
 ---
 
+<details><summary><strong>How to make the player responsive and preserve the aspect ratio?</strong></summary>
+<br>The following example is for a **16:9 ratio**, which can be changed to work for all other aspect ratios.
+
+### 1. Player configuration
+Set the `style.width` and `style.height` properties inside the player config to `auto` to  keep the size of the parent container.
+
+```
+    // player config 
+    var config = {
+        "style": {
+            "width": "auto",
+            "height": "auto"
+        },
+        ...
+    }
+```
+
+### 2. Player DIV CSS
+Set a percentage value for `padding-bottom` to maintain the aspect ratio of the players `<div>` element.
+<br>For a 16:9 aspect ratio: **(9 / 16 = 0.5625) = 56.25%**
+
+``` 
+    <body>
+        <div id="playerDiv" style="padding-bottom: 56.25%"></div>
+    </body>
+```
+
+### Other aspect ratios
+
+| Aspect ratio | padding-bottom |
+| ------------ | -------------- |
+| 1:1          | 100%           |
+| 16:9         | 56.25%         |
+| 4:3          | 75%            |
+
+
+</details>
+
+<details>
+<summary><strong>How to embed the player into an iframe element?</strong></summary>
+For most use cases the implementation of the player directly into the page is the best option. We recommend embedding the player within an iframe element only when the use case requires it.
+
+### 1. Creating the embedded page including the player on your side
+
+Please find information and examples on how to add the player to a webpage [here](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_getting_started/).
+
+### 2. Embedding the player page in an iframe on a second page on the distribution side
+
+**Important:** The `allowfullscreen` attribute is required if the page wants to support fullscreen video.
+
+```
+    <iframe id="ifvideo" width="640" height="480" scrolling="no" frameborder="0" allowfullscreen=""
+    src="//yourdomain.com/playerpage.html">
+    </iframe>
+```
+
+</details>
+
+<details><summary><strong>Can I use a raw player without built-in controls, animations and styles?</strong></summary>
+
+Yes, by passing the config property `style.view = false`. 
+
+The view is the top level UI layer containing all built-in controls, animations and styles including automatic video scaling. 
+Disabling the view will disable these features as well. 
+Therefore this is recommended for experienced users only. 
+
+> **Important:**
+> If you create custom controls or other overlay elements make sure to set the `z-index` value > 1 to ensure they are positioned on top of the video layer.
+
+</details>
+
+<details><summary><strong>Can I customize the inline controls?</strong></summary>
+
+No, but you can disable them by passing.
+
+```
+config.style.controls = false;
+```
+
+> **Important:**
+> If you create custom controls or other overlay elements make sure to set the `z-index` value > 1 to ensure they are positioned on top of the video layer.
+
+</details>
+
 <details><summary><strong>Can I style the player as audio player?</strong></summary>
 
 Yes, you can style the player as audio player by passing
@@ -18,26 +102,6 @@ config.style.audioPlayer = true;
 
 Yes.
 
-
-</details>
-
-<details><summary><strong>Can I customize the inline controls?</strong></summary>
-
-No, but you can disable them by passing.
-
-```
-config.style.controls = false;
-```
-
-</details>
-
-<details><summary><strong>Can I use a raw player without built-in controls, animations and styles?</strong></summary>
-
-Yes, by passing the config property `style.view = false`. 
-
-The view is the top level UI layer containing all built-in controls, animations and styles including automatic video scaling. 
-Disabling the view will disable these features as well. 
-Therefore this is recommended for experienced users only. 
 
 </details>
 
@@ -56,12 +120,6 @@ Yes, by executing the player’s function `updateSource` with an updated `config
 <details><summary><strong>Is a fullscreen functionality available?</strong></summary>
 
 Yes, via the bottom right fullscreen button on the built-in H5live player control bar.
-
-</details>
-
-<details><summary><strong>Can I set the players size responsively?</strong></summary>
-
-Yes, by passing over `style.width` and `style.height` the value `auto` and styling the players div.
 
 </details>
 
