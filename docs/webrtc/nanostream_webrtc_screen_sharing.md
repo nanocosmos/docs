@@ -4,15 +4,17 @@ title: Screen Sharing
 sidebar_label: Screen Sharing
 ---
 
-## Screen Sharing 
+The `nanoStream Webcaster` supports screen sharing.
 
-`WebRTC` supports screen sharing! You can use a screen or a window, depending on a browser used, as a live video source instead of a web camera.
+Instead of a web camera you can use a screen or a window as a live video source, depending on the browser used.
 
-Screen sharing is currently available in:
+## Supported Browsers
+
+Screen sharing is currently available for desktop browsers:
 
   * Google Chrome
   * Firefox
-
+  * Safari
 
 
 ## Screen sharing with Google Chrome

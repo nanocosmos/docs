@@ -243,7 +243,7 @@ If you don't already have a stream url you can create a new webrtc enabled strea
 > You can find the bintu.js documentation [here](../../cloud/bintu_api)
 
 
-## Live Stream Configuration
+For instructions on how to setup the webcaster for screen sharing please follow this link: [Features > Screen Sharing](./nanostream_webrtc_screen_sharing#how-to-enable-screen-sharing-in-the-api/)
 
 ### Streaming to an RTMP URL
 
