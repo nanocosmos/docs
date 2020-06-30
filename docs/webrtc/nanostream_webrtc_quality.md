@@ -10,11 +10,11 @@ Webcasting quality can be configured by setting different stream encoding proper
 In the nanoStream Webcaster this is basically performed in three steps:
 
 1) Previewing a stream. Certain stream properties can be set when starting the preview: <br>
-[Video and audio preview](./nanostream_webrtc_quality#video-and-audio-preview) 
+[Video and audio preview](../webrtc/nanostream_webrtc_quality#video-and-audio-preview) 
 2) Encoding the stream in the browser. Upstream bitrates can be configured: <br>
-[Encoding bitrates](./nanostream_webrtc_quality#encoding-bitrates)
+[Encoding bitrates](../webrtc/nanostream_webrtc_quality#encoding-bitrates)
 3) Sending the stream to the nanoStream Cloud. Audio is converted again on server side: <br>
-[Audio conversion on the server](./nanostream_webrtc_quality#audio-conversion-on-the-server)
+[Audio conversion on the server](../webrtc/nanostream_webrtc_quality#audio-conversion-on-the-server)
 
  
  ## Video and audio preview 
