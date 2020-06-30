@@ -31,11 +31,11 @@ The corresponding API call is [startPreview()](./nanostream_webrtc_api#startprev
 
 ```js
 var videoDeviceConfig = {
-    device: 0, // use first video device
-    source: 'camera', // or 'screen'
-    width: 1280,
-    height: 720,
-    framerate: 30
+  device: 0, // use first video device
+  source: 'camera', // or 'screen'
+  width: 1280,
+  height: 720,
+  framerate: 30
 };
 
 var audioDeviceConfig = {
@@ -45,9 +45,9 @@ var audioDeviceConfig = {
 var videoElement = 'video-local'; // preview stream in <video id="video-local"> tag
 
 var config = {
-    videoDeviceConfig: videoDeviceConfig,
-    audioDeviceConfig: audioDeviceConfig,
-    elementId: videoElement
+  videoDeviceConfig: videoDeviceConfig,
+  audioDeviceConfig: audioDeviceConfig,
+  elementId: videoElement
 };
 
 // Start the camera
