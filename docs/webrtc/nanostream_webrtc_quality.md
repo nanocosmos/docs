@@ -6,15 +6,15 @@ sidebar_label: Quality Settings
 
 # Configuring stream quality
 
-Webcasting quality can be configured by setting different stream encoding and transcoding properties.
+Webcasting quality can be configured by setting different stream encoding properties.
 In the nanoStream Webcaster this is basically performed in three steps:
 
 1) Previewing a stream. Certain stream properties can be set when starting the preview: <br>
 [Video and audio preview](./nanostream_webrtc_quality#video-and-audio-preview) 
 2) Encoding the stream in the browser. Upstream bitrates can be configured: <br>
 [Encoding bitrates](./nanostream_webrtc_quality#encoding-bitrates)
-3) Sending the stream to the nanoStream Cloud. Audio transcoding is done on server side: <br>
-[Transcoding on the server](./nanostream_webrtc_quality#transcoding-on-the-server)
+3) Sending the stream to the nanoStream Cloud. Audio is converted again on server side: <br>
+[Audio conversion on the server](./nanostream_webrtc_quality#audio-conversion-on-the-server)
 
  
  ## Video and audio preview 
@@ -27,7 +27,7 @@ Those are:
 - video framerate
 - audio source
 
-The corresponding API call is [startPreview( config )](../webrtc/nanostream_webrtc_api#startpreviewconfig)
+The corresponding API call is [startPreview(previewConfig)](../webrtc/nanostream_webrtc_api#startpreviewconfig)
 
 ```js
 var videoDeviceConfig = {
@@ -44,7 +44,7 @@ var audioDeviceConfig = {
 
 var videoElement = 'video-local'; // preview stream in <video id="video-local"> tag
 
-var config = {
+var previewConfig = {
   videoDeviceConfig: videoDeviceConfig,
   audioDeviceConfig: audioDeviceConfig,
   elementId: videoElement
@@ -52,7 +52,7 @@ var config = {
 
 // Start the camera
 // (Note: some browsers will show a popup asking for permission)
-rtcuser.startPreview(config);
+rtcuser.startPreview(previewConfig);
 
 ```
 
@@ -60,7 +60,7 @@ rtcuser.startPreview(config);
 
 After the preview has been started and before the stream gets send to the nanoStream Cloud, it will be encoded in the browser.
 You can set audio and video target encoding bitrates. <br>
-This is done with [setConfig( config )](../webrtc/nanostream_webrtc_api#setconfigconfig)
+This is done with [setConfig(config)](../webrtc/nanostream_webrtc_api#setconfigconfig)
 
 ```js
 // set bitrates in kbits/s
@@ -77,10 +77,10 @@ rtcuser.setConfig(config);
 
 Note that those are target bitrates, "videoSendBitrate" is the maximum bitrate. For example: if there is no movement in front of the camera or the image is dark, the video bitrate will be lower than configured.
 
-## Transcoding on the server
+## Audio conversion on the server
 
-Video bitrate of the resulting RTMP stream will be similar to the bitrate encoded by the browsers. Audio is transcoded on server side.<br>
-<b>Audio transcoding bitrate</b> can be set with [startBroadcast( broadcastConfig )](../webrtc/nanostream_webrtc_api#startbroadcastconfig) 
+Video bitrate of the resulting RTMP stream will be similar to the bitrate encoded by the browsers. Audio is converted on server side.<br>
+<b>RTMP audio bitrate</b> can be set with [startBroadcast(broadcastConfig)](../webrtc/nanostream_webrtc_api#startbroadcastconfig) 
 
 ```js
 // set audio transcoding bitrate in bits/s
