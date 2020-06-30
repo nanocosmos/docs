@@ -27,7 +27,7 @@ Those are:
 - video framerate
 - audio source
 
-The corresponding API call is [startPreview()](./nanostream_webrtc_api#startpreviewconfig)
+The corresponding API call is [startPreview( config )](../webrtc/nanostream_webrtc_api#startpreviewconfig)
 
 ```js
 var videoDeviceConfig = {
@@ -60,7 +60,7 @@ rtcuser.startPreview(config);
 
 After the preview has been started and before the stream gets send to the nanoStream Cloud, it will be encoded in the browser.
 You can set audio and video target encoding bitrates. <br>
-This is done with [setConfig()](./nanostream_webrtc_api#setconfigconfig)
+This is done with [setConfig( config )](../webrtc/nanostream_webrtc_api#setconfigconfig)
 
 ```js
 // set bitrates in kbits/s
@@ -80,7 +80,7 @@ Note that those are target bitrates, "videoSendBitrate" is the maximum bitrate. 
 ## Transcoding on the server
 
 Video bitrate of the resulting RTMP stream will be similar to the bitrate encoded by the browsers. Audio is transcoded on server side.<br>
-<b>Audio transcoding bitrate</b> can be set with [startBroadcast()](./nanostream_webrtc_api#startbroadcastconfig) 
+<b>Audio transcoding bitrate</b> can be set with [startBroadcast( broadcastConfig )](../webrtc/nanostream_webrtc_api#startbroadcastconfig) 
 
 ```js
 // set audio transcoding bitrate in bits/s
