@@ -60,7 +60,7 @@ rtcuser.startPreview(previewConfig);
 
 After the preview has been started and before the stream gets send to the nanoStream Cloud, it will be encoded in the browser.
 You can set audio and video target encoding bitrates. <br>
-This is done with [setConfig(config)](../nanostream_webrtc_api/nanostream_webrtc_api#setconfigconfig)
+This is done with [setConfig(config)](../nanostream_webrtc_api/#setconfigconfig)
 
 ```js
 // set bitrates in kbits/s
@@ -80,7 +80,7 @@ Note that those are target bitrates, "videoSendBitrate" is the maximum bitrate. 
 ## Audio conversion on the server
 
 Video bitrate of the resulting RTMP stream will be similar to the bitrate encoded by the browsers. Audio is converted on server side.<br>
-<b>RTMP audio bitrate</b> can be set with [startBroadcast(broadcastConfig)](../nanostream_webrtc_api/nanostream_webrtc_api#startbroadcastconfig) 
+<b>RTMP audio bitrate</b> can be set with [startBroadcast(broadcastConfig)](../nanostream_webrtc_api/#startbroadcastconfig) 
 
 ```js
 // set audio transcoding bitrate in bits/s
