@@ -18,8 +18,8 @@ Live playback will be supported by using our built-in H5Live Player.
 By using our nanoStream Webcaster solution, you can directly start live streaming without any additional soft- or hardware, plugin-free in all browsers.
 
 * [Homepage: Overview and Plans](https://www.nanocosmos.de/v6/cloud)
-* [Introduction](cloud_introduction)
-* [Getting Started with bintu](cloud_getting_started)
+* [Introduction](../cloud_introduction)
+* [Getting Started with bintu](../cloud_getting_started)
 
 
 # bintu dashboard / main api entry point

@@ -16,10 +16,6 @@ Screen sharing is currently available for desktop browsers:
   * Firefox
   * Safari
 
+Screen sharing is directly built-in. For early versions, a certified browser extension was required due to Google security policy. This is not required anymore.
 
-## Screen sharing with Google Chrome
-
-Chrome on Desktop since version 72 supports screen sharing without any further installation.
-For former versions, a certified browser extension was required due to Google security policy.
-
-You find the nanoStream branded screen capture extension [here](https://chrome.google.com/webstore/detail/nanostream-screen-capture/jfjljfmoopheadghnkjbonkmgbkjhjdo)
+The Webcaster API is "videoDeviceConfig.source", see the API description.
