@@ -18,7 +18,7 @@ That’s when nanoStream Webcaster comes on board. Once connected to nanoStream 
 
 ### Using nanoStream Webcaster with nanoStream Cloud
 
-nanoStream Webcaster will work as a powerful live encoder from the broadcaster/publisher side, ingesting directly into nanoStream Cloud. On the player side, nanoStream Cloud includes [nanoStream H5Live Player](../nanoplayer/nanoplayer_introduction), an unique playback tool that works with no plugins on all HTML5 browsers, incl. Safari on iOS.
+nanoStream Webcaster will work as a powerful live encoder from the broadcaster/publisher side, ingesting directly into nanoStream Cloud. On the player side, nanoStream Cloud includes [nanoStream H5Live Player](../nanoplayer/nanoplayer_introduction), an unique playback tool that works with no plugins on all HTML5 browsers, including Safari on iOS.
 
 ### Integration with existing live streaming environments
 

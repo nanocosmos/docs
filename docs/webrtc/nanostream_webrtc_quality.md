@@ -7,13 +7,13 @@ sidebar_label: Quality Settings
 # Configuring stream quality
 
 Webcasting quality can be configured by setting different stream encoding and transcoding properties.
-In the nanostream Webcaster this is basically performed in three steps:
+In the nanoStream Webcaster this is basically performed in three steps:
 
 1) Previewing a stream. Certain stream properties can be set when starting the preview: <br>
 [Video and audio preview](./nanostream_webrtc_quality#video-and-audio-preview) 
 2) Encoding the stream in the browser. Upstream bitrates can be configured: <br>
 [Encoding bitrates](./nanostream_webrtc_quality#encoding-bitrates)
-3) Sending the stream to the nanostream cloud. Audio transcoding is done on server side: <br>
+3) Sending the stream to the nanoStream cloud. Audio transcoding is done on server side: <br>
 [Transcoding on the server](./nanostream_webrtc_quality#transcoding-on-the-server)
 
  
@@ -58,7 +58,7 @@ rtcuser.startPreview(config);
 
 ## Encoding bitrates
 
-After the preview has been started and before the stream gets send to the nanostream cloud, it will be encoded in the browser.
+After the preview has been started and before the stream gets send to the nanoStream cloud, it will be encoded in the browser.
 You can set audio and video target encoding bitrates. <br>
 This is done with [setConfig()](./nanostream_webrtc_api#setconfigconfig)
 
