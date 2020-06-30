@@ -39,7 +39,7 @@ var videoDeviceConfig = {
 };
 
 var audioDeviceConfig = {
-    device: 0 // use first audio device
+  device: 0 // use first audio device
 };
 
 var videoElement = 'video-local'; // preview stream in <video id="video-local"> tag
