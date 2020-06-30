@@ -10,11 +10,11 @@ Webcasting quality can be configured by setting different stream encoding proper
 In the nanoStream Webcaster this is basically performed in three steps:
 
 1) Previewing a stream. Certain stream properties can be set when starting the preview: <br>
-[Video and audio preview](../webrtc/nanostream_webrtc_quality#video-and-audio-preview) 
+[Video and audio preview](#video-and-audio-preview) 
 2) Encoding the stream in the browser. Upstream bitrates can be configured: <br>
-[Encoding bitrates](../webrtc/nanostream_webrtc_quality#encoding-bitrates)
+[Encoding bitrates](#encoding-bitrates)
 3) Sending the stream to the nanoStream Cloud. Audio is converted again on server side: <br>
-[Audio conversion on the server](../webrtc/nanostream_webrtc_quality#audio-conversion-on-the-server)
+[Audio conversion on the server](#audio-conversion-on-the-server)
 
  
  ## Video and audio preview 
@@ -27,7 +27,7 @@ Those are:
 - video framerate
 - audio source
 
-The corresponding API call is [startPreview(previewConfig)](../webrtc/nanostream_webrtc_api#startpreviewconfig)
+The corresponding API call is [startPreview(previewConfig)](../nanostream_webrtc_api/#startpreviewconfig)
 
 ```js
 var videoDeviceConfig = {
@@ -60,7 +60,7 @@ rtcuser.startPreview(previewConfig);
 
 After the preview has been started and before the stream gets send to the nanoStream Cloud, it will be encoded in the browser.
 You can set audio and video target encoding bitrates. <br>
-This is done with [setConfig(config)](../webrtc/nanostream_webrtc_api#setconfigconfig)
+This is done with [setConfig(config)](../nanostream_webrtc_api/nanostream_webrtc_api#setconfigconfig)
 
 ```js
 // set bitrates in kbits/s
@@ -80,7 +80,7 @@ Note that those are target bitrates, "videoSendBitrate" is the maximum bitrate. 
 ## Audio conversion on the server
 
 Video bitrate of the resulting RTMP stream will be similar to the bitrate encoded by the browsers. Audio is converted on server side.<br>
-<b>RTMP audio bitrate</b> can be set with [startBroadcast(broadcastConfig)](../webrtc/nanostream_webrtc_api#startbroadcastconfig) 
+<b>RTMP audio bitrate</b> can be set with [startBroadcast(broadcastConfig)](../nanostream_webrtc_api/nanostream_webrtc_api#startbroadcastconfig) 
 
 ```js
 // set audio transcoding bitrate in bits/s
