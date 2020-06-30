@@ -27,7 +27,7 @@ Those are:
 - video framerate
 - audio source
 
-The regarding API call is [startPreview()](./nanostream_webrtc_api#startpreviewconfig)
+The corresponding API call is [startPreview()](./nanostream_webrtc_api#startpreviewconfig)
 
 ```js
 var videoDeviceConfig = {
