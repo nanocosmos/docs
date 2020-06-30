@@ -4,7 +4,7 @@ title: Screen Sharing
 sidebar_label: Screen Sharing
 ---
 
-The `nanoStream Webcaster` supports screen sharing.
+The nanoStream Webcaster supports screen sharing.
 
 Instead of a web camera you can use a screen or a window as a live video source, depending on the browser used.
 

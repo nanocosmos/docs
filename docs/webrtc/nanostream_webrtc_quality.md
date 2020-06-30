@@ -85,11 +85,11 @@ Video bitrate of the resulting RTMP stream will be similar to the bitrate encode
 ```js
 // set audio transcoding bitrate in bits/s
 var broadcastConfig = {
-    transcodingTargets: {
-        output: url,
-        streamname: streamname,
-        audiobitrate: 64000 // value is in bits/s!
-    }
+  transcodingTargets: {
+    output: url,
+    streamname: streamname,
+    audiobitrate: 64000 // value is in bits/s!
+  }
 };
 
 rtcuser.startBroadcast(broadcastConfig);
