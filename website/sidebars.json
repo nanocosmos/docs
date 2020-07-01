@@ -29,7 +29,15 @@
       "webrtc/nanostream_webrtc_screen_sharing",
       "webrtc/nanostream_webrtc_support"
     ],
-    "API": ["webrtc/nanostream_webrtc_api"]
+    "Features": [
+      "webrtc/nanostream_webrtc_screen_sharing",
+      "webrtc/nanostream_webrtc_multiple_webcasts",
+      "webrtc/nanostream_webrtc_metrics",
+      "webrtc/nanostream_webrtc_quality"
+    ],
+    "API": [
+      "webrtc/nanostream_webrtc_api"
+    ]
   },
   "cloud": {
     "nanoStream Cloud": [

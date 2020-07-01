@@ -4,39 +4,34 @@ title: Introduction
 sidebar_label: Introduction
 ---
 
-## End-to-end live streaming workflow
+## How to build a browser-based live streaming workflow with nanoStream Webcaster and nanoStream Cloud?
 
-### What is nanoStream Webcaster?
+We are entering a new live streaming era where <b>browser-based, plugin-free</b> and <b>ultra-low latency on any device</b> are the key drivers for interactive customer engagement. What’s needed? nanoStream Webcaster (formerly known as WebRTC.live) in combination with nanoStream Cloud!
 
-nanoStream Webcaster enables live video streaming directly from your browser, either from desktop PCs or mobile phones. You can connect a webcam, use the built-in camera or even send your desktop screen contents as a live source to your audience.
+### Live streaming to large audiences with nanoStream Webcaster
 
-Webcasting can be used for instant presentations without any download, for e-learning or webcasting of events like live auctions.
+Scalability for large audiences is probably the greatest challenge for new audio/video-based interactive use cases. Scaling your live streaming means to have the capability of handling different amounts of work or, in other words, dealing with a large number of viewers that might change on a short period of time. 
 
-The idea is not point-to-point communication like in a video conference, but 1-to-many, or many-to-many.
+Doing this completely relying on WebRTC-based workflows is challenging. WebRTC is not designed for live streaming, but rather for peer-to-peer collaboration. For live streaming to larger audiences, you need a service (SaaS, PaaS) to connect your WebRTC client to.
 
-nanoStream Webcaster is available as a simple demo web page, but also as an API which can be easily embedded into custom web pages (white label, run under your own brand).
+That’s when nanoStream Webcaster comes on board. Once connected to nanoStream Cloud, it becomes an end-to-end live streaming solution that easily scales to large audiences around the world, and the best: with ultra-low latency!
 
-nanoStream Webcaster is a powerful live encoding tool for browser-based interactive live streaming. Combining it with the unique nanoStream Cloud with integrated nanoStream H5Live Player creates an end-to-end workflow for scalable ultra-low-latency live streams worldwide.
+### Using nanoStream Webcaster with nanoStream Cloud
 
-nanoStream Webcaster is formerly knows as WebRTC.live, based on the WebRTC technology. The former name WebRTC.live was removed to avoid confusion with the underlying technologies. Playback with H5Live is not based on WebRTC.
+nanoStream Webcaster will work as a powerful live encoder from the broadcaster/publisher side, ingesting directly into nanoStream Cloud. On the player side, nanoStream Cloud includes [nanoStream H5Live Player](../nanoplayer/nanoplayer_introduction), an unique playback tool that works with no plugins on all HTML5 browsers, including Safari on iOS.
 
-![img](https://i1.wp.com/www.nanocosmos.de/blog/wp-content/uploads/2018/03/1.png?resize=800%2C230&ssl=1)
+### Integration with existing live streaming environments
 
+WebRTC.live can be used completely end-to-end with nanoStream Cloud but also integrates well with existing live streaming environments based on RTMP and HLS.
 
+### nanoStream Cloud as a low-latency CDN
 
-## What is H5Live?
+You can use nanoStream Cloud as a low-latency CDN to distribute your live streams with low latency to audiences worldwide. We handle the transport for you across our own origin/edge server network.
 
-nanoStream H5Live is a unique delivery and playback technology working on all HTML5 browsers. It is a unique development by nanocosmos based on existing HTML5 / streaming technologies like `HLS`, `fMP4`, and `Websockets` (not WebRTC); dependent on the target device and browser, the stream format is automatically chosen. In combination with nanoStream Webcaster ingest and nanoStream Cloud for delivery, the H5Live solution creates a scalable solution for large audiences.
+### Advantages of connecting to nanoStream Cloud
 
-H5Live is connected to the delivery/playback parts of nanoStream Cloud, as nanoStream Webcaster is connected to the ingest/encoding part.
+nanoStream Cloud including nanoStream H5Live Player is the perfect solution to deliver and playback live streams in a scalable way. It brings together the easiness of a cloud solution with the ability of delivery and playback in ultra-low latency on any device and HTML5 browser, including Safari on iOS. Hence, together with nanoStream Webcaster for live encoding, they set an entire browser-based live streaming workflow.
 
-![img](https://i0.wp.com/www.nanocosmos.de/blog/wp-content/uploads/2018/03/2.png?resize=800%2C451&ssl=1)
+![DirectShow UDP/TS Playback](https://www.nanocosmos.de/blog/wp-content/uploads/2018/02/webrtc-workflow-1024x358.png)
 
-
-## nanoStream Cloud
-
-nanoStream Cloud contains all software and services for interactive live streaming worldwide. It includes a global CDN (content delivery network) of ingest and edge servers which is designed for ultra-low-latency worldwide for global audiences. nanoStream Webcaster and H5Live web clients are seemlessly integrated into this architecture and automatically choose the closest server locations available to the user.
-
-
-
-![img](https://i1.wp.com/www.nanocosmos.de/blog/wp-content/uploads/2018/03/Screen-Shot-2018-03-27-at-10.19.46.png?resize=800%2C311&ssl=1)
+nanoStream Cloud works out of the box; your presenters can instantly go live and share their live stream with anyone in the world, completely plugin-free within the browser.

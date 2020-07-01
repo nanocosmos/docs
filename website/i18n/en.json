@@ -5,12 +5,6 @@
     "previous": "Previous",
     "tagline": "nanoStream Cloud & H5Live Player - Around The World in 1 Second",
     "docs": {
-      "bintu/android/index": {
-        "title": "bintu/android/index"
-      },
-      "bintu/index": {
-        "title": "bintu/index"
-      },
       "cloud/analytics": {
         "title": "nanoStream Cloud Analytics",
         "sidebar_label": "Analytics"
@@ -118,9 +112,6 @@
         "title": "General",
         "sidebar_label": "General"
       },
-      "faq/faq": {
-        "title": "faq/faq"
-      },
       "faq/H5Live/h5live-supported-browsers": {
         "title": "faq/H5Live/h5live-supported-browsers"
       },
@@ -155,16 +146,6 @@
         "title": "Programming / SDK / API",
         "sidebar_label": "Programming / SDK / API"
       },
-      "faq/programming": {
-        "title": "Programming",
-        "sidebar_label": "Programming"
-      },
-      "index": {
-        "title": "index"
-      },
-      "mkdocs": {
-        "title": "mkdocs"
-      },
       "nanoplayer/nanoplayer_api_errors": {
         "title": "NanoPlayer Status & Error Codes",
         "sidebar_label": "NanoPlayer Status & Error Codes"
@@ -180,6 +161,10 @@
       "nanoplayer/nanoplayer_blogposts": {
         "title": "Other Information",
         "sidebar_label": "Blog"
+      },
+      "nanoplayer/nanoplayer_faq": {
+        "title": "FAQ",
+        "sidebar_label": "FAQ"
       },
       "nanoplayer/nanoplayer_feature_network_reconnect": {
         "title": "Network Reconnect",
@@ -596,6 +581,10 @@
         "title": "Introduction",
         "sidebar_label": "Introduction"
       },
+      "webrtc/nanostream_webrtc_quality": {
+        "title": "Quality Settings",
+        "sidebar_label": "Quality Settings"
+      },
       "webrtc/nanostream_webrtc_screen_sharing": {
         "title": "Screen Sharing",
         "sidebar_label": "Screen Sharing"
@@ -617,7 +606,7 @@
       "H5Live Player": "H5Live Player",
       "Features": "Features",
       "API": "API",
-      "FAQ": "FAQ",
+      "Other": "Other",
       "nanoStream Webcaster": "nanoStream Webcaster",
       "nanoStream Cloud": "nanoStream Cloud",
       "nanoStream SDKs/Apps": "nanoStream SDKs/Apps",
