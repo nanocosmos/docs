@@ -16,9 +16,14 @@ the Webcaster API in your code.
 
 ### Example: Camera & Screen Share
 
+What we will do in this example:
+- register needed event handlers
+- start 2 previews, one for camera, one for screen share
+- start a webcast, once a preview has succeeded
+
 #### 1) Create API instances
 
-We will create two instances of the API, one for camera, one for screen share.
+Create two instances of the API, one for camera, one for screen share.
 
 ```js
 // we will broadcast a camera with the first instance
@@ -92,11 +97,11 @@ screenUser.on('ReceivedDeviceList', function(event) {
 We will now:
 - sign in to the server
 - request the device lists for both instances
-- start the webcasts once we have a preview
+- start the webcasts once we have a preview (prepared in last step)
 
 After we signed in successfully, we can call [getDevices()](./nanostream_webrtc_api#getdevices),<br>
 this will emit the [ReceivedDeviceList()](./nanostream_webrtc_api/#RtcUser+event_ReceivedDeviceList) event when succeeding.<br>
-In this example we simply start the broadcasts immediately once the previews have succeeded.
+In this example we simply start the broadcasts immediately once the [StartPreviewSuccess()](./nanostream_webrtc_api/#RtcUser+event_StartPreviewSuccess) events have been fired.
 
 ```js
 camUser.on('SignInSuccess', function(event) {
