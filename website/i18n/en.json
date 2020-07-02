@@ -581,6 +581,10 @@
         "title": "Introduction",
         "sidebar_label": "Introduction"
       },
+      "webrtc/nanostream_webrtc_multiple_webcasts": {
+        "title": "Multiple Webcasts",
+        "sidebar_label": "Multiple Webcasts"
+      },
       "webrtc/nanostream_webrtc_quality": {
         "title": "Quality Settings",
         "sidebar_label": "Quality Settings"
