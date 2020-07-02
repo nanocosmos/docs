@@ -33,7 +33,8 @@
       "webrtc/nanostream_webrtc_screen_sharing",
       "webrtc/nanostream_webrtc_multiple_webcasts",
       "webrtc/nanostream_webrtc_metrics",
-      "webrtc/nanostream_webrtc_quality"
+      "webrtc/nanostream_webrtc_quality",
+      "webrtc/nanostream_webrtc_audio_video_only"
     ],
     "API": [
       "webrtc/nanostream_webrtc_api"

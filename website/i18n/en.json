@@ -565,6 +565,10 @@
         "title": "nanoStream Webcaster API",
         "sidebar_label": "Webcaster"
       },
+      "webrtc/nanostream_webrtc_audio_video_only": {
+        "title": "Audio- / Video-Only",
+        "sidebar_label": "Audio- / Video-Only"
+      },
       "webrtc/nanostream_webrtc_browser_api": {
         "title": "nanoStream Webcaster Browser API",
         "sidebar_label": "Browser API"
@@ -580,6 +584,10 @@
       "webrtc/nanostream_webrtc_introduction": {
         "title": "Introduction",
         "sidebar_label": "Introduction"
+      },
+      "webrtc/nanostream_webrtc_multiple_webcasts": {
+        "title": "Multiple Webcasts",
+        "sidebar_label": "Multiple Webcasts"
       },
       "webrtc/nanostream_webrtc_quality": {
         "title": "Quality Settings",
