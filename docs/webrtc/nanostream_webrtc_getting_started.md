@@ -177,30 +177,7 @@ Within your HTML:
 
 ## Streaming only audio or video
 
-If you want to braodcast a stream that contains only audio or video you can do that by starting the preview accordingly:
-
-```javascript
-...
-// we pass "false" for either the video device configuration or
-// for the audio device configuration
- var videoDeviceConfig = {
-  device: false // set "device: false" for "audio only" streaming
- };
- 
- // we choose the first audio device:
- var audioDeviceConfig = {
-  device: false // set "device: false" for "video only" streaming
- };
-
-var config = {
-  videoDeviceConfig: videoDeviceConfig,
-  audioDeviceConfig: audioDeviceConfig,
-  elementId: videoElement
-};
- 
-user.startPreview(config);
-...
-```
+[Features > Audio- / Video-Only](./nanostream_webrtc_audio_video_only#how-to-enable-screen-sharing-in-the-api/)
 
 ## nanoStream Cloud End-To-End Workflow
 

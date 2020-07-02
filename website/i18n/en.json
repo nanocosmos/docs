@@ -565,6 +565,10 @@
         "title": "nanoStream Webcaster API",
         "sidebar_label": "Webcaster"
       },
+      "webrtc/nanostream_webrtc_audio_video_only": {
+        "title": "Audio- / Video-Only",
+        "sidebar_label": "Audio- / Video-Only"
+      },
       "webrtc/nanostream_webrtc_browser_api": {
         "title": "nanoStream Webcaster Browser API",
         "sidebar_label": "Browser API"
