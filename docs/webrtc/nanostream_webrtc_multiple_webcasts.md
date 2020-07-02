@@ -21,7 +21,7 @@ you will set up those instances differently.
 What we will do in this example:
 - create two instances of the API
 - register required event handlers
-- start 2 previews, one for camera, one for screen share
+- start two previews, one for camera, one for screen share
 - start each Webcast, once the regarding preview has succeeded
 
 #### 1) Create API instances
