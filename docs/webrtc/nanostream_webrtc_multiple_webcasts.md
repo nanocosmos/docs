@@ -8,18 +8,21 @@ Multiple Webcasts can be started from a single browser tab.<br>
 Use cases can be:
 - broadcast multiple camera (and/or microphone) streams at once
 - broadcast a camera and a screen share stream
+- broadcast multiple audio streams
 
 ## Setup Multiple Webcasts
 
 In order to set up multiple Webcasts you will have to create multiple instances of
-the Webcaster API in your code.
+the Webcaster API in your code. Depending on what sources you want to use for streaming,
+you will set up those instances differently.
 
 ### Example: Camera & Screen Share
 
 What we will do in this example:
+- create two instances of the API
 - register needed event handlers
 - start 2 previews, one for camera, one for screen share
-- start a webcast, once a preview has succeeded
+- start each Webcast, once the regarding preview has succeeded
 
 #### 1) Create API instances
 
@@ -36,7 +39,8 @@ var screenUser = new window.nanowebrtc.user();
 #### 2) Starting the previews
 
 We have to start the previews after the device lists have been emitted.<br>
-Therefore we start the previews within [ReceivedDeviceList()](./nanostream_webrtc_api/#RtcUser+event_ReceivedDeviceList) event listeners for both API instances.
+Therefore we start the previews within [ReceivedDeviceList()](./nanostream_webrtc_api/#RtcUser+event_ReceivedDeviceList) event listeners for both API instances.<br>
+Requesting devices will be done in the next step.
 
 ```js
 
@@ -114,14 +118,20 @@ screenUser.on('SignInSuccess', function(event) {
 
 camUser.on('StartPreviewSuccess', function(event) {
   camUser.startBroadcast({
-    TODO
-  });
+      transcodingTargets: {
+        output: streamUrl1,
+        streamname: streamName1,
+      }
+    }
 });
 
 screenUser.on('StartPreviewSuccess', function(event) {
   screenUser.startBroadcast({
-    TODO
-  });
+      transcodingTargets: {
+        output: streamUrl2,
+        streamname: streamName2,
+      }
+    }
 });
 
 var signInConfig = {
