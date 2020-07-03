@@ -177,7 +177,7 @@ Within your HTML:
 
 ## Streaming only audio or video
 
-[Features > Audio- / Video-Only](./nanostream_webrtc_audio_video_only#how-to-enable-screen-sharing-in-the-api/)
+[Features > Audio- / Video-Only](../nanostream_webrtc_audio_video_only/)
 
 ## nanoStream Cloud End-To-End Workflow
 
@@ -220,7 +220,7 @@ If you don't already have a stream url you can create a new webrtc enabled strea
 > You can find the bintu.js documentation [here](../../cloud/bintu_api)
 
 
-For instructions on how to setup the Webcaster for screen sharing please follow this link: [Features > Screen Sharing](./nanostream_webrtc_screen_sharing#how-to-enable-screen-sharing-in-the-api/)
+For instructions on how to setup the Webcaster for screen sharing please follow this link: [Features > Screen Sharing](../nanostream_webrtc_screen_sharing/)
 
 ### Streaming to an RTMP URL
 
@@ -312,16 +312,7 @@ https://webrtc.github.io/samples/src/content/devices/input-output/
 
 # Screen Sharing 
 
-WebRTC supports screen sharing! You can use a screen or a window, depending on a browser used, as a live video source instead of a web camera.
-
-Screen sharing is currently available in:
-
-  * Google Chrome
-  * Firefox
-
-Chrome on Desktop since version 72 supports screen sharing without any further installation.
-For former versions, a certified browser extension was required due to Google security policy.
-
+[Features > Screen Sharing](../nanostream_webrtc_screen_sharing/)
 
 
 # Reporting bugs or issues 
