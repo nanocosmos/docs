@@ -6,9 +6,9 @@ sidebar_label: Audio- / Video-Only
 
 In addition to regular streaming, with the nanoStream Webcaster you can stream Audio-Only and Video-Only.<br>
 
-Audio-Only or Video-Only streaming is enabled by setting video or audio device to "false" in the configuration object passed to [startPreview(config)](../nanostream_webrtc_api/#startpreviewconfig).<br>
+Audio-Only or Video-Only streaming is enabled by setting video or audio device to `false` in the configuration object passed to [startPreview(config)](../nanostream_webrtc_api/#startpreviewconfig).<br>
 
-### Audio-Only Streaming
+## Audio-Only Streaming
 
 ```javascript
 // to start Audio-Only streaming, we pass "false" to the video device configuration
@@ -30,7 +30,7 @@ var config = {
 user.startPreview(config);
 ```
 
-### Video-Only Streaming
+## Video-Only Streaming
 
 ```javascript
 // to start Video-Only streaming, we pass "false" to the audio device configuration

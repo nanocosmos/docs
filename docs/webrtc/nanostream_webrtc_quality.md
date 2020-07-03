@@ -4,7 +4,7 @@ title: Quality Settings
 sidebar_label: Quality Settings
 ---
 
-# Configuring stream quality
+## Configuring stream quality
 
 Webcasting quality can be configured by setting different stream encoding properties.
 In the nanoStream Webcaster this is basically performed in three steps:
@@ -17,7 +17,7 @@ In the nanoStream Webcaster this is basically performed in three steps:
 [Audio conversion on the server](#audio-conversion-on-the-server)
 
  
- ## Video and audio preview 
+ ### Video and audio preview 
 
 Streams have different properties that can be set when starting a preview.<br>
 Those are:
@@ -56,7 +56,7 @@ rtcuser.startPreview(previewConfig);
 
 ```
 
-## Encoding bitrates
+### Encoding bitrates
 
 After the preview has been started and before the stream gets send to the nanoStream Cloud, it will be encoded in the browser.
 You can set audio and video target encoding bitrates. <br>
@@ -75,9 +75,9 @@ var config = {
 rtcuser.setConfig(config);
 ```
 
-Note that those are target bitrates, "videoSendBitrate" is the maximum bitrate. For example: if there is no movement in front of the camera or the image is dark, the video bitrate will be lower than configured.
+Note that those are target bitrates, `videoSendBitrate` is the maximum bitrate. For example: if there is no movement in front of the camera or the image is dark, the video bitrate will be lower than configured.
 
-## Audio conversion on the server
+### Audio conversion on the server
 
 Video bitrate of the resulting RTMP stream will be similar to the bitrate encoded by the browsers. Audio is converted on server side.<br>
 <b>RTMP audio bitrate</b> can be set with [startBroadcast(broadcastConfig)](../nanostream_webrtc_api/#startbroadcastconfig) 
