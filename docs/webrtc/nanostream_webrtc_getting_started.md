@@ -302,7 +302,7 @@ You can play back from our servers with the [H5Live Player](../../nanoplayer/nan
 
 ## Reporting bugs or issues 
 
-[nanoStream Webcaster > Support](./nanostream_webrtc_support/)
+[nanoStream Webcaster > Support](../nanostream_webrtc_support/)
 
 
 ## Camera / Capture Device Testing
