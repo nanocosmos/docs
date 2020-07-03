@@ -577,13 +577,13 @@
         "title": "Browser demos",
         "sidebar_label": "Browser Demos"
       },
-      "webrtc/nanostream_webrtc_faq": {
-        "title": "FAQ",
-        "sidebar_label": "FAQ"
-      },
       "webrtc/nanostream_webrtc_device_selection": {
         "title": "Device Selection",
         "sidebar_label": "Device Selection"
+      },
+      "webrtc/nanostream_webrtc_faq": {
+        "title": "FAQ",
+        "sidebar_label": "FAQ"
       },
       "webrtc/nanostream_webrtc_getting_started": {
         "title": "Getting started",
