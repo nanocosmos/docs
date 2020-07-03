@@ -577,6 +577,10 @@
         "title": "Browser demos",
         "sidebar_label": "Browser Demos"
       },
+      "webrtc/nanostream_webrtc_faq": {
+        "title": "FAQ",
+        "sidebar_label": "FAQ"
+      },
       "webrtc/nanostream_webrtc_getting_started": {
         "title": "Getting started",
         "sidebar_label": "Getting started"

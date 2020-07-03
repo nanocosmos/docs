@@ -38,7 +38,10 @@
     ],
     "API": [
       "webrtc/nanostream_webrtc_api"
-    ]
+    ],
+    "Other": [ 
+      "webrtc/nanostream_webrtc_faq"
+]
   },
   "cloud": {
     "nanoStream Cloud": [
