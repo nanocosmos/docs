@@ -10,7 +10,7 @@ You will receive the list of devices in the [ReceivedDeviceList](../nanostream_w
 
 ## Preparation
 
-We will need two `<select>` tags in our HTML document, in order to display the attached audio & video devices in your HTML document. Also we will add a button to trigger the [startPreview(previewConfig)](../nanostream_webrtc_api/#startpreviewconfig) call after we made our device selection in th UI and a video element to show the preview in.
+We will need two `<select>` tags in our HTML document, in order to display the attached audio & video devices in your HTML document. Also we will add a button to trigger the [startPreview(previewConfig)](../nanostream_webrtc_api/#startpreviewconfig) call after we made our device selection in the UI and a video element to show the preview in.
 
 ```js
 // in your html body
@@ -66,15 +66,15 @@ user.getDevices();
 Once a user has selected audio and video devices from the lists, the preview can be started.
 
 ```js
-// we will trigger the breview once the 'start-preview-button' has been clicked.
+// we will trigger the preview once the 'start-preview-button' has been clicked.
 document.getElementById('start-preview-button').addEventListener('click', function() {
 
   // get the index of the selected audio device
-  var audioDeviceList = document.getElementById("audio-device-list");
+  var audioDeviceList = document.getElementById('audio-device-list');
   var audioDeviceIndex = audioDeviceList.options[audioDeviceList.selectedIndex].value;
 
   // get the index of the selected video device
-  var videoDeviceList = document.getElementById("video-device-list");
+  var videoDeviceList = document.getElementById('video-device-list');
   var videoDeviceIndex = videoDeviceList.options[videoDeviceList.selectedIndex].value;
 
   var previewConfig = {
