@@ -605,6 +605,10 @@
         "title": "Screen Sharing",
         "sidebar_label": "Screen Sharing"
       },
+      "webrtc/nanostream_webrtc_speech_music": {
+        "title": "Speech / Music Streaming",
+        "sidebar_label": "Speech / Music Streaming"
+      },
       "webrtc/nanostream_webrtc_support": {
         "title": "Support",
         "sidebar_label": "Support"
