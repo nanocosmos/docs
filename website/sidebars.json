@@ -34,6 +34,7 @@
       "webrtc/nanostream_webrtc_multiple_webcasts",
       "webrtc/nanostream_webrtc_metrics",
       "webrtc/nanostream_webrtc_quality",
+      "webrtc/nanostream_webrtc_device_selection",
       "webrtc/nanostream_webrtc_audio_video_only"
     ],
     "API": [
