@@ -64,7 +64,7 @@ It is possible to use the following filter options to get a more fine-grained ov
    -  **Important:** tag selection works like an `AND` filter, only metrics for streams are shown, which have all of the selected tags assigned
 -  Time range: to select specific points in time or different time ranges like "last month", "last 24 hours", etc.
 -  Event (only available for H5Live): let you filter for events you have labeled your streams with
-   -  you need to configure the 'eventId' at the H5Live Player to be able to use that filter (see [H5Live Player doc](https://demo.nanocosmos.de/nanoplayer/docs/nanoplayer/NanoPlayer.html), use browser text search to find information for 'eventId')
+   -  you need to configure the 'eventId' at the H5Live Player to be able to use that filter (see [Player Metrics doc](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_player_metrics/))
 
 The filter option are available directly at the top of each sub-dashboard.
 When switching to another sub-dashboard, already selected filter options will be applied there as well.
