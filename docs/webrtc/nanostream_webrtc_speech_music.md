@@ -18,7 +18,7 @@ In general there are two different types of audio content:
 - Audio containing <b>speech</b>
 - Audio containing <b>music</b>
 
-We recommend setting all of the above filters to "true" for speech/voice streams and all of them to "false" for music streaming.
+We recommend setting all of the above filters to `true` for speech/voice streams and all of them to `false` for music streaming.
 On most systems these filters will be on by default.
 
 ## Speech audio
@@ -33,8 +33,8 @@ var videoDeviceConfig = {
 var audioDeviceConfig = {
   device: 0, // use first audio device
   echoCancellation: true,
-	autoGainControl: true,
-	noiseSuppression: true
+  autoGainControl: true,
+  noiseSuppression: true
 };
 
 var videoElement = 'video-local'; // preview stream in <video id="video-local"> tag
@@ -62,8 +62,8 @@ var videoDeviceConfig = {
 var audioDeviceConfig = {
   device: 0, // use first audio device
   echoCancellation: false,
-	autoGainControl: false,
-	noiseSuppression: false
+  autoGainControl: false,
+  noiseSuppression: false
 };
 
 var videoElement = 'video-local'; // preview stream in <video id="video-local"> tag
@@ -74,7 +74,7 @@ var previewConfig = {
   elementId: videoElement
 };
 
-// Start the preview
+// start the preview
 rtcuser.startPreview(previewConfig);
 
 ```
