@@ -34,11 +34,16 @@
       "webrtc/nanostream_webrtc_multiple_webcasts",
       "webrtc/nanostream_webrtc_metrics",
       "webrtc/nanostream_webrtc_quality",
-      "webrtc/nanostream_webrtc_audio_video_only"
+      "webrtc/nanostream_webrtc_device_selection",
+      "webrtc/nanostream_webrtc_audio_video_only",
+      "webrtc/nanostream_webrtc_speech_music"
     ],
     "API": [
       "webrtc/nanostream_webrtc_api"
-    ]
+    ],
+    "Other": [ 
+      "webrtc/nanostream_webrtc_faq"
+]
   },
   "cloud": {
     "nanoStream Cloud": [

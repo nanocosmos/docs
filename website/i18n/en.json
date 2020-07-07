@@ -577,6 +577,14 @@
         "title": "Browser demos",
         "sidebar_label": "Browser Demos"
       },
+      "webrtc/nanostream_webrtc_device_selection": {
+        "title": "Device Selection",
+        "sidebar_label": "Device Selection"
+      },
+      "webrtc/nanostream_webrtc_faq": {
+        "title": "FAQ",
+        "sidebar_label": "FAQ"
+      },
       "webrtc/nanostream_webrtc_getting_started": {
         "title": "Getting started",
         "sidebar_label": "Getting started"
@@ -596,6 +604,10 @@
       "webrtc/nanostream_webrtc_screen_sharing": {
         "title": "Screen Sharing",
         "sidebar_label": "Screen Sharing"
+      },
+      "webrtc/nanostream_webrtc_speech_music": {
+        "title": "Speech / Music Streaming",
+        "sidebar_label": "Speech / Music Streaming"
       },
       "webrtc/nanostream_webrtc_support": {
         "title": "Support",

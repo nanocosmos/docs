@@ -10,7 +10,7 @@ sidebar_label: Webcaster
 nanoStream Webcaster Public API Class
 
 **Kind**: global class  
-**Version**: 5.7.9  
+**Version**: 5.8.0  
 
 -----
 
@@ -696,6 +696,15 @@ valid parameters: &#39;camera&#39; | &#39;screen&#39;.</p>
     <td>config.audioDeviceConfig.device</td><td><code>int</code></td><td></td><td><p>The device id to use (possible values: 0...n - specific device, true - auto device, false - no audio).</p>
 </td>
     </tr><tr>
+    <td>[config.audioDeviceConfig.autoGainControl]</td><td><code>boolean</code></td><td></td><td><p>Automatic gain control attempts to automatically maintain a steady overall volume level.</p>
+</td>
+    </tr><tr>
+    <td>[config.audioDeviceConfig.echoCancellation]</td><td><code>boolean</code></td><td></td><td><p>Echo cancellation attempts to prevent echo effects.</p>
+</td>
+    </tr><tr>
+    <td>[config.audioDeviceConfig.noiseSuppression]</td><td><code>boolean</code></td><td></td><td><p>Noise suppression automatically filters the audio to remove background noise.</p>
+</td>
+    </tr><tr>
     <td>config.elementId</td><td><code>string</code></td><td></td><td><p>The id of a video element to pass in the requested stream directly.</p>
 </td>
     </tr><tr>
@@ -704,56 +713,74 @@ valid parameters: &#39;camera&#39; | &#39;screen&#39;.</p>
     </tr>  </tbody>
 </table>
 
-**Example**  
+**Example** *(Audio &amp; video.)*  
 ```js
 // rtcUser instance of RtcUser
 var config = {
-    videoDeviceConfig : {
+    videoDeviceConfig: {
          device: 0, // video is enabled using specific device
          width: 640,
          height: 360,
          framerate: 30,
          source: 'camera'
     },
-    audioDeviceConfig : {
+    audioDeviceConfig: {
          device: 0 // audio is enabled using specific device
     },
-    elementId : 'video-local',
-    useWebView : true
+    elementId: 'video-local',
+    useWebView: true
 };
 rtcUser.startPreview(config);
 ```
-**Example**  
+**Example** *(Video only.)*  
 ```js
 // rtcUser instance of RtcUser
 var config = {
-    videoDeviceConfig : {
+    videoDeviceConfig: {
          device: 0, // video is enabled using specific device
          width: 640,
          height: 360,
          framerate: 30,
          source: 'camera'
     },
-    audioDeviceConfig : {
+    audioDeviceConfig: {
          device: false // no audio; video-only preview
     },
-    elementId : 'video-local',
-    useWebView : false
+    elementId: 'video-local',
+    useWebView: false
 };
 rtcUser.startPreview(config);
 ```
-**Example**  
+**Example** *(Audio only.)*  
 ```js
 // rtcUser instance of RtcUser
 var config = {
-    videoDeviceConfig : {
+    videoDeviceConfig: {
          device: false // no video; audio-only preview
     },
-    audioDeviceConfig : {
+    audioDeviceConfig: {
          device: 0 // audio is enabled using specific device
     },
-    elementId : 'video-local',
-    useWebView : false
+    elementId: 'video-local',
+    useWebView: false
+};
+rtcUser.startPreview(config);
+```
+**Example** *(Audio only with all preprocessing disabled.)*  
+```js
+// rtcUser instance of RtcUser
+var config = {
+    videoDeviceConfig: {
+         device: false // no video; audio-only preview
+    },
+    audioDeviceConfig: {
+         device: 0, // audio is enabled using specific device
+         autoGainControl: false,
+         echoCancellation: false,
+         noiseSuppression: false
+    },
+    elementId: 'video-local',
+    useWebView: false
 };
 rtcUser.startPreview(config);
 ```

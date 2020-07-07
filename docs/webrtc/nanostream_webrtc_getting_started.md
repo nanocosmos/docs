@@ -3,9 +3,11 @@ id: nanostream_webrtc_getting_started
 title: Getting started
 sidebar_label: Getting started
 ---
+
 ## How to use nanoStream Webcaster with nanoStream Cloud?
 
 It is very simple to test and use nanoStream Webcaster as your live encoder to nanoStream Cloud with integrated nanoStream H5Live Player. You need a camera connected to your computer or built-in on your device, and a WebRTC-compatible browser. We recommend using Google Chrome.
+
 
 ### Create your own nanoStream Cloud account
 
@@ -17,11 +19,10 @@ To stream directly to nanoStream Cloud you will need to register at [bintu.live]
 
 -----
 
+
 ## nanoStream Webcaster Browser API
 
 The nanoStream Webcaster Browser API is based on a Javascript API connected to the nanoStream WebRTC Server. It can be used for creating your own live video broadcast web page for plugin-free live streaming with WebRTC.
-
-
 
 
 ### Hosting Requirements
@@ -30,7 +31,6 @@ You will need the following requirements to be fulfilled in order to host a WebR
 
 - HTTPS: **WebRTC client web pages need to be hosted via HTTPS** for accessing media devices within the browser and for connecting to the server component. Therefore you will need a valid SSL certificate.
 - Supported browsers: As of 2018, Chrome, Firefox, Edge and Safari are supported. For mobile platforms we recommend Safari on iOS (min iOS11) and Chrome for Android. 
-
 
 
 ## Broadcast Sample
@@ -42,8 +42,7 @@ Playback can be done with nanoStream H5Live Player.
 
 Be sure to attach a video device (webcam) to your computer.
 
-You also find a full running [sample at codepen](https://codepen.io/nanocosmos-ol/pen/Xybadx)
-
+You also find a full running [sample at codepen](https://codepen.io/nanocosmos-ol/pen/Xybadx).
 
 
 ###  Setup The User Interface & Embed The Library 
@@ -65,133 +64,136 @@ Within your HTML:
 ```
 
 
-
 ### Minimal Broadcast Sample
 
 ```javascript
 <script type="text/javascript">
-    // entry point
+  // entry point
+  
+  // create user object
+  var user = new window.nanowebrtc.user();
+  
+  // sign into the cloud
+  user.signIn({
+    server: 'wss://bintu-webrtc.nanocosmos.de/p/webrtcws',
+    // token or bintu API key for authentication
+    token: 'myToken',
+    bintuApiKey: 'myBintuApiKey'
+  });
     
-    // create user object
-    var user = new window.nanowebrtc.user();
-    
-    // sign into the cloud
-    user.signIn({
-      server: "wss://bintu-webrtc.nanocosmos.de/p/webrtcws",
-      // token or bintu API key for authentication
-      token: "myToken",
-      bintuApiKey: "myBintuApiKey"
-    });
-    
-    // set bitrate config, 0=default
-    user.setConfig({
-         bitrates: {
-           videoSendInitialBitrate: 500, // initial webrtc bitrate 500 kbits/s
-           videoSendBitrate: 1500 // target webrtc bitrate 1500 kbits/s
-         }
-    );
+  // set bitrate config, 0=default
+  user.setConfig({
+    bitrates: {
+      videoSendInitialBitrate: 500, // initial webrtc bitrate 500 kbits/s
+      videoSendBitrate: 1500 // target webrtc bitrate 1500 kbits/s
+    }
+  );
 
-    // example bintu rtmp url
-    // you should use the bintu api to obtain a valid ingest URL (see below)
-    var myOutputStreamUrl = "rtmp://bintu-stream.nanocosmos.de/live";
-    var myOutputStreamName = "P4gSV-12345";
+  // example bintu rtmp url
+  // you should use the bintu api to obtain a valid ingest URL (see below)
+  var myOutputStreamUrl = 'rtmp://bintu-stream.nanocosmos.de/live';
+  var myOutputStreamName = 'P4gSV-12345';
         
-    // get connected devices
-    user.getDevices();
+  // get connected devices
+  user.getDevices();
         
-    // devices have been gathered
-    user.on("ReceivedDeviceList", function(event) {
+  // devices have been gathered
+  user.on('ReceivedDeviceList', function(event) {
     
-      // available devices will be listed in "event.data":
-      var audioDevices = event.data.devices.audiodevices;
-      var videoDevices = event.data.devices.videodevices;
+    // available devices will be listed in "event.data":
+    var audioDevices = event.data.devices.audiodevices;
+    var videoDevices = event.data.devices.videodevices;
     
-      // SELECT A/V DEVICES TO PREVIEW 
-      // select a device by index from audioDevices/videoDevices,
-      // for simplicity of this sample we select the first device
-      // for audio and video (index = 0) in the next step.
-      // you might need to change this for multiple cams/mics 
+    // SELECT A/V DEVICES TO PREVIEW 
+    // select a device by index from audioDevices/videoDevices,
+    // for simplicity of this sample we select the first device
+    // for audio and video (index = 0) in the next step.
+    // you might need to change this for multiple cams/mics 
  
-      // we choose the first video device:
-      var videoDeviceConfig = {
-        device: 0 // first camera
-      };
+    // we choose the first video device:
+    var videoDeviceConfig = {
+      device: 0 // first camera
+    };
           
-      // we choose the first audio device:
-      var audioDeviceConfig = {
-        device: 0 // first microphone
-      };
+    // we choose the first audio device:
+    var audioDeviceConfig = {
+      device: 0 // first microphone
+    };
     
-      // we start the preview in this html <video> element:
-      var videoElement = "video-local"; 
+    // we start the preview in this html <video> element:
+    var videoElement = 'video-local'; 
       
-      var config = {
-        videoDeviceConfig: videoDeviceConfig,
-        audioDeviceConfig: audioDeviceConfig,
-        elementId: videoElement
-      };
+    var config = {
+      videoDeviceConfig: videoDeviceConfig,
+      audioDeviceConfig: audioDeviceConfig,
+      elementId: videoElement
+    };
           
-      // start camera preview
-      user.startPreview(config);
-      
-    });
+    // start camera preview
+    user.startPreview(config);
+  });
 
-    // start/stop button handlers
+  // start/stop button handlers
     
-    document.getElementById("btn-startbroadcast").addEventListener("click", function() {      
-      var broadcastConfig = {
-        transcodingTargets: {
-          output: myOutputStreamUrl,
-          streamname: myOutputStreamName
-        }
-      };
+  document.getElementById('btn-startbroadcast').addEventListener('click', function() {      
+    var broadcastConfig = {
+      transcodingTargets: {
+        output: myOutputStreamUrl,
+        streamname: myOutputStreamName
+      }
+    };
           
-      // start the broadcast
-      user.startBroadcast(broadcastConfig);
-    });
+    // start the broadcast
+    user.startBroadcast(broadcastConfig);
+  });
     
-    document.getElementById("btn-stopbroadcast").addEventListener("click", function() {
-      // stop the broadcast
-      user.stopBroadcast();
-    });
+  document.getElementById('btn-stopbroadcast').addEventListener('click', function() {
+    // stop the broadcast
+    user.stopBroadcast();
+  });
 
-    // event/error handlers
+  // event/error handlers
  
-    user.on("StartPreviewSuccess", function(event) {  
-      console.log("preview succeeded");
-    });
+  user.on('StartPreviewSuccess', function(event) {  
+    console.log('preview succeeded');
+  });
  
-    user.on("StartPreviewError", function(event) {
-      console.log('Error starting preview: ' + event.data.error);
-    });
+  user.on('StartPreviewError', function(event) {
+    console.log('Error starting preview: ' + event.data.error);
+  });
 
-    user.on("StartBroadcastSuccess", function(event) {
-      // broadcast has started
-    });
+  user.on('StartBroadcastSuccess', function(event) {
+    // broadcast has started
+  });
         
-    user.on("StartBroadcastError", function(event) {
-      // handle error
-    });
+  user.on('StartBroadcastError', function(event) {
+    // handle error
+  });
 </script>
 ```
 
+
+## Screen Sharing 
+
+[Features > Screen Sharing](../nanostream_webrtc_screen_sharing/)
+
+
 ## Streaming only audio or video
 
-[Features > Audio- / Video-Only](./nanostream_webrtc_audio_video_only#how-to-enable-screen-sharing-in-the-api/)
+[Features > Audio- / Video-Only](../nanostream_webrtc_audio_video_only/)
+
 
 ## nanoStream Cloud End-To-End Workflow
 
 The following describes a plugin-free end to end streaming solution from the camera to the viewer, with nanostream Webcaster, nanoStream Cloud and nanoStream h5live player.
 
 
-
-## Creating a live stream for broadcasting
+### Creating a live stream for broadcasting
 
 To create a live stream to broadcast to your audience, you need to obtain an `RTMP` ingest URL from either nanoStream Cloud / bintu.live or your own `RTMP` server.
 
 
-
-### Creating a stream for bintu.live with bintu.js
+#### Creating a stream for bintu.live with bintu.js
 
 If you don't already have a stream url you can create a new webrtc enabled stream with our bintu.js which is included in the nanoStream Webcaster Browser API.
 
@@ -199,7 +201,7 @@ If you don't already have a stream url you can create a new webrtc enabled strea
 <script src="./js/api/bintu/nano.bintu.js"></script>
 
 <script type="text/javascript">
-    var bintu = new Bintu(BintuApiKey, "https://bintu.nanocosmos.de", true, true);
+    var bintu = new Bintu(BintuApiKey, 'https://bintu.nanocosmos.de', true, true);
 
     var bintuTags = ['newTag, test, webrtc']; // optionally add tags to the stream
     
@@ -219,18 +221,18 @@ If you don't already have a stream url you can create a new webrtc enabled strea
 
 > You can find the bintu.js documentation [here](../../cloud/bintu_api)
 
+For instructions on how to setup the Webcaster for screen sharing please follow this link: [Features > Screen Sharing](../nanostream_webrtc_screen_sharing/)
 
-For instructions on how to setup the Webcaster for screen sharing please follow this link: [Features > Screen Sharing](./nanostream_webrtc_screen_sharing#how-to-enable-screen-sharing-in-the-api/)
 
-### Streaming to an RTMP URL
+#### Streaming to an RTMP URL
 
 If you have a valid `RTMP` URL, you can use this to create a live broadcast: (see the example above):
 
 ```javascript
    // example bintu rtmp url
    // you should use the bintu api to obtain a valid ingest URL
-   var myOutputStreamUrl = "rtmp://bintu-stream.nanocosmos.de/live/";
-   var myOutputStreamName = "P4gSV-12345";
+   var myOutputStreamUrl = 'rtmp://bintu-stream.nanocosmos.de/live/';
+   var myOutputStreamName = 'P4gSV-12345';
  
    var broadcastConfig = {
        transcodingTargets: {
@@ -242,8 +244,6 @@ If you have a valid `RTMP` URL, you can use this to create a live broadcast: (se
     // start the broadcast
     user.startBroadcast(broadcastConfig);
 ```
-
-
 
 ```javascript
 var broadcastConfig = {
@@ -260,16 +260,14 @@ var broadcastConfig = {
 ```
 
 
-
-## Streaming to nanoStream Cloud
+### Streaming to nanoStream Cloud
 
 The bintu.live REST API or Dashboard can be used to generate and manage live streams.
 
 > More information can be found [here](../../cloud/cloud_getting_started).
 
 
-
-## Stream Status
+### Stream Status
 
 The call to
 ```
@@ -278,8 +276,6 @@ The call to
 should give you all the info. The `state` value should be `live` when your broadcast is running.
 
 > You can find the full bintu.live documentation [here](https://bintu.nanocosmos.de/doc/#stream-stream-info).
-
-
 
 Example:
 
@@ -299,65 +295,15 @@ Example:
 ```
 
 
-## Live Playback with H5Live Player and nanoStream Cloud
+### Live Playback with H5Live Player and nanoStream Cloud
 
 You can play back from our servers with the [H5Live Player](../../nanoplayer/nanoplayer_introduction)
 
 
+## Reporting bugs or issues 
 
-## Camera / Capture Device Testing
+[nanoStream Webcaster > Support](../nanostream_webrtc_support/)
 
-https://webrtc.github.io/samples/src/content/devices/input-output/
-
-
-# Screen Sharing 
-
-WebRTC supports screen sharing! You can use a screen or a window, depending on a browser used, as a live video source instead of a web camera.
-
-Screen sharing is currently available in:
-
-  * Google Chrome
-  * Firefox
-
-Chrome on Desktop since version 72 supports screen sharing without any further installation.
-For former versions, a certified browser extension was required due to Google security policy.
-
-
-
-# Reporting bugs or issues 
-
-To report any bugs or issues, please send a complete issue report including the following:
-
-- a description of the issue and expected results
-- the configuration you are using for webrtc, bintu.live and h5live
-- potential stream IDs which show the issue
-- how to replicate the issue
-
-### Log information
-
-#### browser console log
-
-press Ctrl+Shift+J or F12 (Windows / Linux) or Cmd+Opt+J (Mac)
-copy/paste the result of the console
-
-
-#### use debug-log information 
-
-enhanced logging can be enabled by adding "&debug=3" to the web page URL
-
-
-#### Chrome webrtc-internals 
-
-open a separate browser tab and open the URL 
-    chrome://webrtc-internals
-click "dump" and download the data and send to us
-
-
-### Remote Support 
-
-- any potential issues might be best resolved based on a remote support session,
-    dependent on your support level.
-    Please contact us to arrange an online meeting.
 
 ## Camera / Capture Device Testing
 
