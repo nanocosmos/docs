@@ -717,18 +717,18 @@ valid parameters: &#39;camera&#39; | &#39;screen&#39;.</p>
 ```js
 // rtcUser instance of RtcUser
 var config = {
-    videoDeviceConfig : {
+    videoDeviceConfig: {
          device: 0, // video is enabled using specific device
          width: 640,
          height: 360,
          framerate: 30,
          source: 'camera'
     },
-    audioDeviceConfig : {
+    audioDeviceConfig: {
          device: 0 // audio is enabled using specific device
     },
-    elementId : 'video-local',
-    useWebView : true
+    elementId: 'video-local',
+    useWebView: true
 };
 rtcUser.startPreview(config);
 ```
@@ -736,18 +736,18 @@ rtcUser.startPreview(config);
 ```js
 // rtcUser instance of RtcUser
 var config = {
-    videoDeviceConfig : {
+    videoDeviceConfig: {
          device: 0, // video is enabled using specific device
          width: 640,
          height: 360,
          framerate: 30,
          source: 'camera'
     },
-    audioDeviceConfig : {
+    audioDeviceConfig: {
          device: false // no audio; video-only preview
     },
-    elementId : 'video-local',
-    useWebView : false
+    elementId: 'video-local',
+    useWebView: false
 };
 rtcUser.startPreview(config);
 ```
@@ -755,14 +755,14 @@ rtcUser.startPreview(config);
 ```js
 // rtcUser instance of RtcUser
 var config = {
-    videoDeviceConfig : {
+    videoDeviceConfig: {
          device: false // no video; audio-only preview
     },
-    audioDeviceConfig : {
+    audioDeviceConfig: {
          device: 0 // audio is enabled using specific device
     },
-    elementId : 'video-local',
-    useWebView : false
+    elementId: 'video-local',
+    useWebView: false
 };
 rtcUser.startPreview(config);
 ```
@@ -770,17 +770,17 @@ rtcUser.startPreview(config);
 ```js
 // rtcUser instance of RtcUser
 var config = {
-    videoDeviceConfig : {
+    videoDeviceConfig: {
          device: false // no video; audio-only preview
     },
-    audioDeviceConfig : {
+    audioDeviceConfig: {
          device: 0, // audio is enabled using specific device
          autoGainControl: false,
          echoCancellation: false,
          noiseSuppression: false
     },
-    elementId : 'video-local',
-    useWebView : false
+    elementId: 'video-local',
+    useWebView: false
 };
 rtcUser.startPreview(config);
 ```
