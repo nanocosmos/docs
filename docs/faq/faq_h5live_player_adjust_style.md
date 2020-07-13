@@ -88,6 +88,22 @@ config.style.controls = false;
 
 </details>
 
+<details><summary><strong>How to adjust the playout orientation when the broadcast on an iOS device get's rotated?</strong></summary>
+
+> **Note:** 
+> The iPhone and iPad send the stream with the initial orientation of the device. Meaning, if you rotate the device the stream is rotated which is a technical restriction that we can not change.
+
+In order to have live rotation on the player side, we send rotation **metadata** to the player to adjust the playback to the rotation.
+To receive metadata on the player side simply enable it within your player config:
+
+```
+    "playback": {
+        "metadata": true
+    },
+```
+
+</details>
+
 <details><summary><strong>Can I style the player as audio player?</strong></summary>
 
 Yes, you can style the player as audio player by passing
