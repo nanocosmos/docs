@@ -64,11 +64,24 @@ Please find information and examples on how to add the player to a webpage [here
 
 <details><summary><strong>Can I use a raw player without built-in controls, animations and styles?</strong></summary>
 
-Yes, by passing the config property `style.view = false`. 
+Yes, by passing the config property `config.style.view = false`. 
 
 The view is the top level UI layer containing all built-in controls, animations and styles including automatic video scaling. 
-Disabling the view will disable these features as well. 
-Therefore this is recommended for experienced users only. 
+Disabling the view will disable these features as well which is why this is recommended for experienced users only. 
+
+If you want to disable certain parts of the view (eg. controls) keep the `config.style.view` enabled and disable the specific property
+
+Example to disable inline controls: 
+
+```
+    "style": {
+        "view": true // default,
+        "controls": false
+    },
+```
+
+You can find more information regarding config properties in our API docs [here](../../nanoplayer/nanoplayer_api/#nanoplayerconfig--codeobjectcode).
+
 
 > **Important:**
 > If you create custom controls or other overlay elements make sure to set the `z-index` value > 1 to ensure they are positioned on top of the video layer.
@@ -77,7 +90,7 @@ Therefore this is recommended for experienced users only.
 
 <details><summary><strong>Can I customize the inline controls?</strong></summary>
 
-No, but you can disable them by passing.
+No, but you can disable them by passing:
 
 ```
 config.style.controls = false;
