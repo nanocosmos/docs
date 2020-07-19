@@ -98,7 +98,7 @@ Like the `ping` command, `mtr` tracks the speed of the connection in real time u
 
     mtr --report google.com
 
-Be aware that `mtr` will pause for a few moments while generating output. For more information regarding `mtr` consider our [diagnosing network issues with mtr](network-diagnostics-mtr) guide.
+Be aware that `mtr` will pause for a few moments while generating output. For more information regarding `mtr` consider our [diagnosing network issues with mtr](../network-diagnostics-mtr) guide.
 
 ### The dig command
 
