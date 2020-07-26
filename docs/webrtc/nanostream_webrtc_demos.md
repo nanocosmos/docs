@@ -6,9 +6,9 @@ sidebar_label: Browser Demos
 
 # Webcaster Demos Overview
 
-1. Easy and quick demo for simple tests: nanocosmos.de/webcaster 
+1. Easy and quick demo for simple tests: https://www.nanocosmos.de/webcaster 
 2. Complete webcaster application: https://webcaster.nanocosmos.de
-3. New Webcaster-Berlin: https://webcaster-berlin.nancosmos.de
+3. New Webcaster-Berlin: https://webcaster-berlin.nanocosmos.de
 4. Developer Samples, see documentation "getting started"
 
 Find further info below.
