@@ -8,14 +8,14 @@ Live Recording and VOD can be enabled for your account.
 
 If enabled, by default all incoming streams will be recorded for later 
 playback (video on demand, VOD).
-You can choose to either record the stream or
+You can choose to either record the live stream or
 do a live stream without recording:
 
 Ingest URL without recording, live only - default, if VOD is not enabled for your account:
 
 - rtmp://bintu-stream.nanocosmos.de/live/STREAM
 
-Ingest URL with recording:
+Ingest URL with live streaming and recording the incoming upstream for later playback:
 
 - rtmp://bintu-stream.nanocosmos.de/rec/STREAM
 
