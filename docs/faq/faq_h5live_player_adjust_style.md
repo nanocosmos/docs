@@ -64,11 +64,24 @@ Please find information and examples on how to add the player to a webpage [here
 
 <details><summary><strong>Can I use a raw player without built-in controls, animations and styles?</strong></summary>
 
-Yes, by passing the config property `style.view = false`. 
+Yes, by passing the config property `config.style.view = false`. 
 
 The view is the top level UI layer containing all built-in controls, animations and styles including automatic video scaling. 
-Disabling the view will disable these features as well. 
-Therefore this is recommended for experienced users only. 
+Disabling the view will disable these features as well which is why this is recommended for experienced users only. 
+
+If you want to disable certain parts of the view (eg. controls) keep the `config.style.view` enabled and disable the specific property
+
+Example to disable inline controls: 
+
+```
+    "style": {
+        "view": true // default,
+        "controls": false
+    },
+```
+
+You can find more information regarding config properties in our API docs [here](../../nanoplayer/nanoplayer_api/#nanoplayerconfig--codeobjectcode).
+
 
 > **Important:**
 > If you create custom controls or other overlay elements make sure to set the `z-index` value > 1 to ensure they are positioned on top of the video layer.
@@ -77,7 +90,7 @@ Therefore this is recommended for experienced users only.
 
 <details><summary><strong>Can I customize the inline controls?</strong></summary>
 
-No, but you can disable them by passing.
+No, but you can disable them by passing:
 
 ```
 config.style.controls = false;
@@ -85,6 +98,22 @@ config.style.controls = false;
 
 > **Important:**
 > If you create custom controls or other overlay elements make sure to set the `z-index` value > 1 to ensure they are positioned on top of the video layer.
+
+</details>
+
+<details><summary><strong>How to adjust the playout orientation when the broadcast on an iOS device get's rotated?</strong></summary>
+
+> **Note:** 
+> The iPhone and iPad send the stream with the initial orientation of the device. Meaning, if you rotate the device the stream is rotated which is a technical restriction that we can not change.
+
+In order to have live rotation on the player side, we send rotation **metadata** to the player to adjust the playback to the rotation.
+To receive metadata on the player side simply enable it within your player config:
+
+```
+    "playback": {
+        "metadata": true
+    },
+```
 
 </details>
 
