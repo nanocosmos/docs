@@ -36,7 +36,11 @@ Adding `ping`, `mtr` or `traceroute` output to [support](/docs/platform/billing-
 
 ### The ping Command
 
-The `ping` command tests the connection between the local machine and a remote address or machine. The following commands "ping" `google.com` :
+The `ping` command tests the connection between the local machine and a remote address or machine. 
+The ping program is installed by default on just about every operating system, Linux, MacOS, and Windows, so you do not need to install it.
+It runs from the command line.
+
+The following commands "ping" `google.com` :
 
     ping google.com
     
@@ -49,7 +53,7 @@ These commands send a small amount of data (an ICMP packet) to the remote host a
     64 bytes from 216.58.217.110: icmp_seq=1 ttl=54 time=16.6 ms
     64 bytes from 216.58.217.110: icmp_seq=2 ttl=54 time=16.5 ms
 
-The `time` field specifies in milliseconds the duration of the round trip for an individual packet. When you've gathered the amount of information you need, use **Control+C** to interrupt the process. You'll be presented with some statistics once the process is stopped. This will resemble:
+The `time` field specifies in milliseconds the duration of the round trip for an individual packet. You can use **Control+C** to interrupt the process. You'll be presented with some statistics once the process is stopped. This will resemble:
 
     --- google.com ping statistics ---
     4 packets transmitted, 4 received, 0% packet loss, time 3007ms
@@ -64,7 +68,10 @@ The ping command is useful as an informal diagnostic tool to measure point-to-po
 
 ### The traceroute Command
 
-The `traceroute` command expands on the functionality of the [ping](#the-ping-command) command. It provides a report on the path that the packets take to get from the local machine to the remote machine. Each step (intermediate server) in the path is called a *hop*. Route information is useful when troubleshooting a networking issue: if there is packet loss in one of the first few hops the problem is often related to the user's local area network (LAN) or Internet service provider (ISP). By contrast, if there is packet loss near the end of the route, the problem may be caused by an issue with the server's connection.
+The `traceroute` command expands on the functionality of the [ping](#the-ping-command) command. 
+It is also part of every operating system, Linux, MacOS, and Windows (where it is called tracert).
+
+It provides a report on the path that the packets take to get from the local machine to the remote machine. Each step (intermediate server) in the path is called a *hop*. This information is useful when troubleshooting a networking issue: if there is packet loss in one of the first few hops the problem is often related to the user's local area network (LAN) or Internet service provider (ISP). By contrast, if there is packet loss near the end of the route, the problem may be caused by an issue with the server's connection.
 
 Here is an example of output from a `traceroute` command:
 
@@ -82,7 +89,7 @@ Often the hostnames and IP addresses on either side of a failed jump are useful 
 
 ### The mtr Command
 
-The `mtr` command, like the [traceroute](#the-traceroute-command) tool, provides information about the route that internet traffic takes between the local system and a remote host. However, `mtr` provides additional information about the round trip time for the packet. In a way, you can think of `mtr` as a combination of traceroute and ping.
+The `mtr` command, like the [traceroute](#the-traceroute-command) tool, provides information about the route that internet traffic takes between the local system and a remote host. However, `mtr` provides additional information about the round trip time for the packet. In a way, you can think of `mtr` as a combination of traceroute and ping. Usually mtr is not installed by default on all operating systems, so you might need to download and install it first.
 
 Here is an example of output from an `mtr` command:
 
@@ -98,7 +105,9 @@ Like the `ping` command, `mtr` tracks the speed of the connection in real time u
 
     mtr --report google.com
 
-Be aware that `mtr` will pause for a few moments while generating output. For more information regarding `mtr` consider our [diagnosing network issues with mtr](../network-diagnostics-mtr) guide.
+Be aware that `mtr` will pause for a few moments while generating output. 
+
+For more information regarding `mtr` consider our [diagnosing network issues with mtr](../network-diagnostics-mtr) guide.
 
 ### The dig command
 
@@ -123,3 +132,8 @@ Example result:
 
     ;; Query time: 12 msec
     ;; SERVER: 192.168.178.1#53(192.168.178.1)
+    
+### Sharing results
+
+You may send results by email in a support ticket or paste it into a hosting service like https://paste.ubuntu.com or https://gist.github.com/
+
