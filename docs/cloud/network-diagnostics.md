@@ -34,6 +34,13 @@ You can also directly connect to specific geo locations, see our [support docume
 
 Adding `ping`, `mtr` or `traceroute` output to [support](/docs/platform/billing-and-support/support/) tickets is sometimes useful when trying to diagnose network issues. You may also want to forward `traceroute` information to your Internet Service Provider (ISP) if you suspect that the connectivity issue is with your ISP's network. Recording `traceroute` information is particularly useful if you are experiencing an intermittent issue.
 
+### IP Addresses
+
+- What is your public IP address? 
+  You can use http://whatismyip.akamai.com/ to find out, if you're unsure.
+
+- Who is the ISP?
+
 ### The ping Command
 
 The `ping` command tests the connection between the local machine and a remote address or machine. 
