@@ -10,7 +10,6 @@ NanoPlayer (H5Live) Public API Class 4.6.1
 
 **Kind**: global class  
 **Version**: 4.6.1  
-
 <a name="new_NanoPlayer_new"></a>
 
 ### new NanoPlayer(playerDivId)
