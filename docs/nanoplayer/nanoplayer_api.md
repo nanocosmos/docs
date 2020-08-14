@@ -3,7 +3,6 @@ id: nanoplayer_api
 title: NanoPlayer
 sidebar_label: NanoPlayer
 ---
-
 <a name="NanoPlayer"></a>
 
 ## NanoPlayer
