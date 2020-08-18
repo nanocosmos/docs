@@ -85,7 +85,7 @@ var onFullscreenChange = function (event) {
 };
 config.events.onFullscreenChange = onFullscreenChange;
 player.setup(config).then(function (config) {
-    console.log('setup ok with config: ' + JSON.stringify(config)));
+    console.log('setup ok with config: ' + JSON.stringify(config));
 }, function (error) {
     console.log(error);
 });
