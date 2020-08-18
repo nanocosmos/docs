@@ -2363,62 +2363,6 @@ player.setup(config).then(function (config) {
     console.log(error);
 });
 ```
-<a name="NanoPlayer..event_onFullscreenChange"></a>
-
-### "onFullscreenChange"
-The fullscreen change event to pass in the 'config.events' object at the setup call. Fires if the fullscreen mode of the player has changed.
-
-**Kind**: event emitted by [<code>NanoPlayer</code>](#NanoPlayer)  
-**See**: [config](#NanoPlayer..config)  
-**Properties**
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th><th>Type</th><th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-<tr>
-    <td>name</td><td><code>string</code></td><td><p>The event name.</p>
-</td>
-    </tr><tr>
-    <td>player</td><td><code>string</code></td><td><p>The player name (id of the playerDiv).</p>
-</td>
-    </tr><tr>
-    <td>id</td><td><code>string</code></td><td><p>The unique id of the player instance.</p>
-</td>
-    </tr><tr>
-    <td>version</td><td><code>string</code></td><td><p>The version of the player.</p>
-</td>
-    </tr><tr>
-    <td>data</td><td><code>object</code></td><td><p>The data object.</p>
-</td>
-    </tr><tr>
-    <td>data.entered</td><td><code>boolean</code></td><td><p>Indicates if the player has entered fullscreen mode.</p>
-</td>
-    </tr><tr>
-    <td>state</td><td><code><a href="#NanoPlayer..state">state</a></code></td><td><p>The player state.</p>
-</td>
-    </tr>  </tbody>
-</table>
-
-**Example**  
-```js
-// player instance of NanoPlayer
-var onFullscreenChange = function (event) {
-    console.log('FullscreenChange');
-    if (event.data.entered === true) {
-         console.log('Fullscreen Mode Entered');
-    }
-};
-config.events.onFullscreenChange = onFullscreenChange;
-player.setup(config).then(function (config) {
-    console.log('setup ok with config: ' + JSON.stringify(config));
-}, function (error) {
-    console.log(error);
-});
-```
 <a name="NanoPlayer..config"></a>
 
 ### NanoPlayer~config : <code>object</code>
