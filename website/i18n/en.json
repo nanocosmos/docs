@@ -171,6 +171,10 @@
         "sidebar_label": "Network Reconnect"
       },
       "nanoplayer/nanoplayer_feature_stream_switching": {
+        "title": "Fullscreen API",
+        "sidebar_label": "Fullscreen API"
+      },
+      "nanoplayer/nanoplayer_feature_fullscreen_api": {
         "title": "Stream switching and ABR",
         "sidebar_label": "Stream switching and ABR"
       },
