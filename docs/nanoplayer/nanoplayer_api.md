@@ -2575,6 +2575,9 @@ The config object to pass as param for the 'setup' call.
     <td>[style.backgroundColor]</td><td><code>string</code></td><td><code>&quot;black&quot;</code></td><td><p>Sets the background color of the video element - possible values: html colors (&quot;red&quot;, &quot;blue&quot;, ...), hex color codes (&quot;#FACAFD&quot;, &quot;#FCEC66&quot;, ...) and rgba color values (&quot;rgba(255,0,0,1)&quot;, &quot;rgba(0,255,0,0.7)&quot;, ...).</p>
 </td>
     </tr><tr>
+    <td>[style.centerView]</td><td><code>boolean</code></td><td><code>true</code></td><td><p>Enable/disable the animations and icons in the center of the player&#39;s view.</p>
+</td>
+    </tr><tr>
     <td>[events]</td><td><code>object</code></td><td></td><td><p>The object to set handlers to the player events.</p>
 </td>
     </tr><tr>
