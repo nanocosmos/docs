@@ -155,7 +155,7 @@ Yes, by executing the player’s function `updateSource` with an updated `config
 
 <details><summary><strong>Is a fullscreen functionality available?</strong></summary>
 
-Yes, via the bottom right fullscreen button on the built-in H5live player control bar.
+Yes. Fullscreen is available over the public [fullscreen API](../../nanoplayer/nanoplayer_feature_fullscreen_api) or over the bottom right fullscreen button in the built-in H5live player control bar.
 
 </details>
 
