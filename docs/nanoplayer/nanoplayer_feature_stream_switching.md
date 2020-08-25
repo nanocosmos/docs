@@ -219,7 +219,7 @@ var config = {
 
 > **Note:** The player will set the default adaption rule none if no adaption rule is passed. You can still switch between your pre-configured entries manually with the switchStream API.
 
-#### Example multi stream configuration (with ABR) and security
+#### Example multi stream configuration (with ABR) and playback security
 ```javascript
 var config = {
     "source" : {
@@ -237,13 +237,13 @@ var config = {
 				"hls": "",
 				"h5live": {
 					"rtmp": {
-						"url": "rtmp://bintu-play.nanocosmos.de/play",
+						"url": "rtmp://bintu-splay.nanocosmos.de/splay",
 						"streamname": "XXXXX-YYYY0"
 					},
 					"server": {
-						"websocket": "wss://bintu-h5live.nanocosmos.de:443/h5live/stream.mp4",
-						"hls": "https://bintu-h5live.nanocosmos.de:443/h5live/http/playlist.m3u8",
-						"progressive": "https://bintu-h5live.nanocosmos.de:443/h5live/http/stream.mp4"
+						"websocket": "wss://bintu-h5live-secure.nanocosmos.de:443/h5live/authstream/stream.mp4",
+						"hls": "https://bintu-h5live-secure.nanocosmos.de:443/h5live/authhttp/playlist.m3u8",
+						"progressive": "https://bintu-h5live-secure.nanocosmos.de:443/h5live/authhttp/stream.mp4"
 					},
 					"token": "",
 					// security for streamname XXXXX-YYYY0 here
@@ -269,13 +269,13 @@ var config = {
 				"hls": "",
 				"h5live": {
 					"rtmp": {
-						"url": "rtmp://bintu-play.nanocosmos.de/play",
+						"url": "rtmp://bintu-splay.nanocosmos.de/splay",
 						"streamname": "XXXXX-YYYY1"
 					},
 					"server": {
-						"websocket": "wss://bintu-h5live.nanocosmos.de:443/h5live/stream.mp4",
-						"hls": "https://bintu-h5live.nanocosmos.de:443/h5live/http/playlist.m3u8",
-						"progressive": "https://bintu-h5live.nanocosmos.de:443/h5live/http/stream.mp4"
+						"websocket": "wss://bintu-h5live-secure.nanocosmos.de:443/h5live/authstream/stream.mp4",
+						"hls": "https://bintu-h5live-secure.nanocosmos.de:443/h5live/authhttp/playlist.m3u8",
+						"progressive": "https://bintu-h5live-secure.nanocosmos.de:443/h5live/authhttp/stream.mp4"
 					},
 					"token": "",
 					// security for streamname XXXXX-YYYY1 here
@@ -301,13 +301,13 @@ var config = {
 				"hls": "",
 				"h5live": {
 					"rtmp": {
-						"url": "rtmp://bintu-play.nanocosmos.de/play",
+						"url": "rtmp://bintu-splay.nanocosmos.de/splay",
 						"streamname": "XXXXX-YYYY2"
 					},
 					"server": {
-						"websocket": "wss://bintu-h5live.nanocosmos.de:443/h5live/stream.mp4",
-						"hls": "https://bintu-h5live.nanocosmos.de:443/h5live/http/playlist.m3u8",
-						"progressive": "https://bintu-h5live.nanocosmos.de:443/h5live/http/stream.mp4"
+						"websocket": "wss://bintu-h5live-secure.nanocosmos.de:443/h5live/authstream/stream.mp4",
+						"hls": "https://bintu-h5live-secure.nanocosmos.de:443/h5live/authhttp/playlist.m3u8",
+						"progressive": "https://bintu-h5live-secure.nanocosmos.de:443/h5live/authhttp/stream.mp4"
 					},
 					"token": "",
 					// security for streamname XXXXX-YYYY2 here
@@ -418,7 +418,7 @@ var config = {
 };
 ```
 
-#### Example bintu multi stream configuration (with ABR) and security
+#### Example bintu multi stream configuration (with ABR) and playback security
 ```javascript
 var config = {
     "source" : {
