@@ -45,7 +45,7 @@ To install MTR with MacPorts, run:
 
 Because MTR provides an image of the route traffic takes from one host to another, it is essentially a directional tool. The route taken between two points on the Internet can vary a great deal based on location and the routers that are located upstream. For this reason it is a good idea to collect MTR reports in both directions for all hosts that are experiencing connectivity issues.
 
-Linode Customer Support will often request MTR reports both **to** and **from** your Linode if you are experiencing networking issues. This is because, from time to time, MTR reports will not detect errors from one direction when there is still packet loss from the opposite direction.
+Customer Support will often request MTR reports both **to** and **from** your host if you are experiencing networking issues. This is because, from time to time, MTR reports will not detect errors from one direction when there is still packet loss from the opposite direction.
 
 When referring to MTR reports, this document refers to the host running `mtr` as the **source host** and the host targeted by the query as the **destination host**.
 
@@ -59,11 +59,11 @@ For example, to test the route and connection quality of traffic to the destinat
 
     mtr -rw example.com
 
-An MTR report to your Linode can be run from your local computer. Replace `192.0.2.0` with the IP address of your Linode:
+An MTR report can be run from your local computer. Replace `google.com` with the internet host name you would like to check:
 
-    mtr -rw 192.0.2.0
+    mtr -rw google.com
 
-SSH into your Linode and collect an MTR report from your Linode to your home network. Replace `198.51.100.0` with the IP address of your home network.
+If you have a way to login to a remote computer, you can also check the reverse connection to the IP address of your home network.
 
     mtr -rw 198.51.100.0
 
@@ -71,11 +71,11 @@ SSH into your Linode and collect an MTR report from your Linode to your home net
 
 If no packet loss is detected, a support technician may ask you to run a faster interval:
 
-    mtr -rwc 50 -i 0.2 -rw 198.51.100.0
+    mtr -rwc 50 -i 0.2 -rw google.com
 
 On some systems, using this flag may require administrative privileges:
 
-    sudo mtr -rwc 50 -i 0.2 -rw 198.51.100.0
+    sudo mtr -rwc 50 -i 0.2 -rw google.com
 
 {{< note >}}
 The `r` option flag generates the report (short for `--report`).
@@ -89,7 +89,7 @@ The `i` option flag runs the report at a faster rate to reveal packet loss that 
 
 ### Use MTR on Windows Systems
 
-Running MTR on Windows uses a GUI. Open WinMTR, type the destination host in the box as prompted, and select the start option to begin generating report data. You'll need to use the Linux version of MTR as shown above to generate the MTR report from your Linode.
+Running MTR on Windows uses a GUI. Open WinMTR, type the destination host in the box as prompted, and select the start option to begin generating report data. 
 
 ## Read MTR Reports
 
@@ -100,15 +100,12 @@ Because MTR reports contain a great deal of information, they can be difficult t
       1. inner-cake                    0.0%    10    2.8   2.1   1.9   2.8   0.3
       2. outer-cake                    0.0%    10    3.2   2.6   2.4   3.2   0.3
       3. 68.85.118.13                  0.0%    10    9.8  12.2   8.7  18.2   3.0
-      4. po-20-ar01.absecon.nj.panjde  0.0%    10   10.2  10.4   8.9  14.2   1.6
-      5. be-30-crs01.audubon.nj.panjd  0.0%    10   10.8  12.2  10.1  16.6   1.7
-      6. pos-0-12-0-0-ar01.plainfield  0.0%    10   13.4  14.6  12.6  21.6   2.6
-      7. pos-0-6-0-0-cr01.newyork.ny.  0.0%    10   15.2  15.3  13.9  18.2   1.3
-      8. pos-0-4-0-0-pe01.111eighthav  0.0%    10   16.5  16.2  14.5  19.3   1.3
-      9. as15169-3.111eighthave.ny.ib  0.0%    10   16.0  17.1  14.2  27.7   3.9
-     10. 72.14.238.232                 0.0%    10   19.1  22.0  13.9  43.3  11.1
-     11. 209.85.241.148                0.0%    10   15.1  16.2  14.8  20.2   1.6
-     12. lga15s02-in-f104.1e100.net    0.0%    10   15.6  16.9  15.2  20.6   1.7
+      4. be-30-crs01.audubon.nj.panjd  0.0%    10   10.8  12.2  10.1  16.6   1.7
+      5. pos-0-12-0-0-ar01.plainfield  0.0%    10   13.4  14.6  12.6  21.6   2.6
+      6. pos-0-4-0-0-pe01.111eighthav  0.0%    10   16.5  16.2  14.5  19.3   1.3
+      7. as15169-3.111eighthave.ny.ib  0.0%    10   16.0  17.1  14.2  27.7   3.9
+      8. 72.14.238.232                 0.0%    10   19.1  22.0  13.9  43.3  11.1
+      9. lga15s02-in-f104.1e100.net    0.0%    10   15.6  16.9  15.2  20.6   1.7
 
 The report was generated with `mtr --report google.com`. This uses the `report` option, which sends 10 packets to the host `google.com` and generates a report. Without the `--report` option, `mtr` will run continuously in an interactive environment. The interactive mode reflects current round trip times to each host. In most cases, the `--report` mode provides sufficient data in a useful format.
 
@@ -120,13 +117,10 @@ Each numbered line in the report represents a **hop**. Hops are the Internet nod
       2. 68.85.118.13                  0.0%    10    8.6  11.0   8.4  17.8   3.0
       3. 68.86.210.126                 0.0%    10    9.1  12.1   8.5  24.3   5.2
       4. 68.86.208.22                  0.0%    10   12.2  15.1  11.7  23.4   4.4
-      5. 68.85.192.86                  0.0%    10   17.2  14.8  13.2  17.2   1.3
-      6. 68.86.90.25                   0.0%    10   14.2  16.4  14.2  20.3   1.9
-      7. 68.86.86.194                  0.0%    10   17.6  16.8  15.5  18.1   0.9
-      8. 75.149.230.194                0.0%    10   15.0  20.1  15.0  33.8   5.6
-      9. 72.14.238.232                 0.0%    10   15.6  18.7  14.1  32.8   5.9
-     10. 209.85.241.148                0.0%    10   16.3  16.9  14.7  21.2   2.2
-     11. 66.249.91.104                 0.0%    10   22.2  18.6  14.2  36.0   6.5
+      5. 75.149.230.194                0.0%    10   15.0  20.1  15.0  33.8   5.6
+      6. 72.14.238.232                 0.0%    10   15.6  18.7  14.1  32.8   5.9
+      7. 209.85.241.148                0.0%    10   16.3  16.9  14.7  21.2   2.2
+      8. 66.249.91.104                 0.0%    10   22.2  18.6  14.2  36.0   6.5
 
 Beyond simply seeing the path between servers that packets take to reach their host, MTR provides valuable statistics regarding the durability of that connection in the seven columns that follow. The `Loss%` column shows the percentage of packet loss at each hop. The `Snt` column counts the number of packets sent. The `--report` option will send 10 packets unless specified with `--report-cycles=[number-of-packets]`, where `[number-of-packets]` represents the total number of packets that you want to send to the remote host.
 
@@ -136,7 +130,7 @@ The final column, `StDev`, provides the standard deviation of the latencies to e
 
 In most circumstances, you may think of the MTR output in three major sections. Depending on configurations, the first 2 or 3 hops often represent the source host's ISP, while the last 2 or 3 hops represent the destination host's ISP. The hops in between are the routers the packet traverses to reach its destination.
 
-For example, if MTR is run from your home PC to your Linode, the first 2 or 3 hops belong to your ISP. The last 3 hops belong to the data center where your Linode resides. Any hops in the middle are intermediate hops. When running MTR locally, if you see an abnormality in the first few hops near the source, contact your local service provider or investigate your local networking configuration. Conversely, if you see abnormalities near the destination you may want to contact the operator of the destination server or network support for that machine. Unfortunately, in cases where there are problems on the intermediate hops, both service providers will have limited ability to address the issue.
+For example, if MTR is run from your home PC, the first 2 or 3 hops belong to your ISP. The last 3 hops belong to the data center where the service resides. Any hops in the middle are intermediate hops. When running MTR locally, if you see an abnormality in the first few hops near the source, contact your local service provider or investigate your local networking configuration. Conversely, if you see abnormalities near the destination you may want to contact the operator of the destination server or network support for that machine. Unfortunately, in cases where there are problems on the intermediate hops, both service providers will have limited ability to address the issue.
 
 ## Analyze MTR Reports
 
@@ -246,12 +240,10 @@ Residential gateways sometimes cause misleading reports:
       3. 68.86.210.126                 0.0%    10    9.1  12.1   8.5  24.3   5.2
       4. 68.86.208.22                  0.0%    10   12.2  15.1  11.7  23.4   4.4
       5. 68.85.192.86                  0.0%    10   17.2  14.8  13.2  17.2   1.3
-      6. 68.86.90.25                   0.0%    10   14.2  16.4  14.2  20.3   1.9
-      7. 68.86.86.194                  0.0%    10   17.6  16.8  15.5  18.1   0.9
-      8. 75.149.230.194                0.0%    10   15.0  20.1  15.0  33.8   5.6
-      9. 72.14.238.232                 0.0%    10   15.6  18.7  14.1  32.8   5.9
-     10. 209.85.241.148                0.0%    10   16.3  16.9  14.7  21.2   2.2
-     11. 66.249.91.104                 0.0%    10   22.2  18.6  14.2  36.0   6.5
+      6. 75.149.230.194                0.0%    10   15.0  20.1  15.0  33.8   5.6
+      7. 72.14.238.232                 0.0%    10   15.6  18.7  14.1  32.8   5.9
+      8. 209.85.241.148                0.0%    10   16.3  16.9  14.7  21.2   2.2
+      9. 66.249.91.104                 0.0%    10   22.2  18.6  14.2  36.0   6.5
 
 The 100% loss reported at the second hop does not indicate that there is a problem. You can see that there is no loss on subsequent hops.
 
@@ -269,8 +261,6 @@ Sometimes a router on the route your packet takes is incorrectly configured and 
       6. ???                           0.0%    10    0.0   0.0   0.0   0.0   0.0
       7. ???                           0.0%    10    0.0   0.0   0.0   0.0   0.0
       8. ???                           0.0%    10    0.0   0.0   0.0   0.0   0.0
-      9. ???                           0.0%    10    0.0   0.0   0.0   0.0   0.0
-     10. ???                           0.0%    10    0.0   0.0   0.0   0.0   0.0
 
 The question marks appear when there is no additional route information. Sometimes, a poorly configured router will send packets in a loop. You can see that in the following example:
 
@@ -280,16 +270,11 @@ The question marks appear when there is no additional route information. Sometim
       2. 63.247.64.157                 0.0%    10    0.4   1.0   0.4   6.1   1.8
       3. 209.51.130.213                0.0%    10    0.8   2.7   0.8  19.0   5.7
       4. aix.pr1.atl.google.com        0.0%    10    6.7   6.8   6.7   6.9   0.1
-      5. 12.34.56.79                   0.0%    10    0.0   0.0   0.0   0.0   0.0
+      5. 12.34.56.78                   0.0%    10    0.0   0.0   0.0   0.0   0.0
       6. 12.34.56.78                   0.0%    10    0.0   0.0   0.0   0.0   0.0
       7. 12.34.56.79                   0.0%    10    0.0   0.0   0.0   0.0   0.0
-      8. 12.34.56.78                   0.0%    10    0.0   0.0   0.0   0.0   0.0
-      9. 12.34.56.79                   0.0%    10    0.0   0.0   0.0   0.0   0.0
-     10. 12.34.56.78                   0.0%    10    0.0   0.0   0.0   0.0   0.0
-     11. 12.34.56.79                   0.0%    10    0.0   0.0   0.0   0.0   0.0
-     12. ???                           0.0%    10    0.0   0.0   0.0   0.0   0.0
-     13. ???                           0.0%    10    0.0   0.0   0.0   0.0   0.0
-     14. ???                           0.0%    10    0.0   0.0   0.0   0.0   0.0
+      8. ???                           0.0%    10    0.0   0.0   0.0   0.0   0.0
+      9. ???                           0.0%    10    0.0   0.0   0.0   0.0   0.0
 
 These reports show that the router at hop 4 is not properly configured. When these situations occur, the only way to resolve the issue is to contact the network administrator's team of operators at the source host.
 
