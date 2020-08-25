@@ -53,12 +53,17 @@
       "cloud/cloud_getting_started",
       "cloud/live_encoding",
       "cloud/live-recording-vod",
+      "cloud/security",
+      "cloud/analytics"
+    ],
+    "bintu api": [
       "cloud/bintu_api",
       "cloud/bintu_custom_webhooks",
-      "cloud/bintu_stream_tags",
-      "cloud/support",
+      "cloud/bintu_stream_tags"
+    ],
+    "Support": [
       "cloud/network-diagnostics",
-      "cloud/analytics"
+      "cloud/support"
     ]
   },
   "nanostream": {
