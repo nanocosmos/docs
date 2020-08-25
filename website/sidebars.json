@@ -10,6 +10,7 @@
           "nanoplayer/nanoplayer_autoplay",
           "nanoplayer/nanoplayer_token_security",
           "nanoplayer/nanoplayer_feature_stream_switching",
+          "nanoplayer/nanoplayer_feature_fullscreen_api",
           "nanoplayer/nanoplayer_feature_network_reconnect"
       ],
       "API": [

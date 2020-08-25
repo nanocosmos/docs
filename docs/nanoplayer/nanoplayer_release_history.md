@@ -338,7 +338,7 @@ This version brings a new feature. Now it's possible to change the source withou
 
 ~~~~
       player.updateSource(source).then(function (config) {
-          console.log('update source ok with config: ' + JSON.stringify(config)));
+          console.log('update source ok with config: ' + JSON.stringify(config));
       }, function (error) {
           console.log(error);
       });

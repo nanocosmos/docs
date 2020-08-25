@@ -52,6 +52,10 @@
         "title": "Network Diagnostics",
         "sidebar_label": "Network Diagnostics"
       },
+      "cloud/security": {
+        "title": "nanoStream Cloud Security",
+        "sidebar_label": "Security"
+      },
       "cloud/support": {
         "title": "Support",
         "sidebar_label": "Support"
@@ -165,6 +169,10 @@
       "nanoplayer/nanoplayer_faq": {
         "title": "FAQ",
         "sidebar_label": "FAQ"
+      },
+      "nanoplayer/nanoplayer_feature_fullscreen_api": {
+        "title": "Fullscreen API",
+        "sidebar_label": "Fullscreen API"
       },
       "nanoplayer/nanoplayer_feature_network_reconnect": {
         "title": "Network Reconnect",
