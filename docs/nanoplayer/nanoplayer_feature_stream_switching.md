@@ -219,7 +219,7 @@ var config = {
 
 > **Note:** The player will set the default adaption rule none if no adaption rule is passed. You can still switch between your pre-configured entries manually with the switchStream API.
 
-#### Example multi stream configuration (with ABR) with playback security
+#### Example multi stream configuration (with ABR) and playback security
 ```javascript
 var config = {
     "source" : {
@@ -418,7 +418,7 @@ var config = {
 };
 ```
 
-#### Example bintu multi stream configuration (with ABR) and security
+#### Example bintu multi stream configuration (with ABR) and playback security
 ```javascript
 var config = {
     "source" : {
