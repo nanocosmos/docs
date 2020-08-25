@@ -20,10 +20,26 @@ To stream directly to nanoStream Cloud you will need to register at [bintu.live]
 -----
 
 
+## Live Encoding / Webcast with nanoStream Webcaster
+
+You can start a Live Encoding/Webcast directly from the browser, plugin-free!
+
+This demo page can be used for instant live broadcast from a browser.
+
+https://webcaster.nanocosmos.de/release/webcast.html?bintu.apikey=YOURAPIKEY
+
+The pages automatically create a bintu.live stream for RTMP ingest into nanoStream Cloud.
+
+You find your bintu API key here: https://bintu.nanocosmos.de/keys
+
+
 ## nanoStream Webcaster Browser API
 
 The nanoStream Webcaster Browser API is based on a Javascript API connected to the nanoStream WebRTC Server. It can be used for creating your own live video broadcast web page for plugin-free live streaming with WebRTC.
 
+The sample "webcast_minimal.html" is a good starting point for developers.
+
+https://webcaster.nanocosmos.de/release/webcast_minimal.html?bintu.apikey=YOURAPIKEY
 
 ### Hosting Requirements
 
