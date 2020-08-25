@@ -139,16 +139,18 @@ Examples
 1000 * 3600 / 8 = 450 MB / hour
 
 
-## Adaptive Bitrate
+## Adaptive Bitrate / Multi-Bitrate Live Streaming
 
 To adjust to network conditions, certain adaptive bitrate (ABR) configurations are available.
 
-- Upstream: automatic adjustment of live encoder bitrate (dependent on your live encoder)
+- Dynamic Upstream (single bitrate): automatic adjustment of live encoder bitrate (dependent on your live encoder)
+
+- Multiple Bitrates (MBR)
+  To support multiple video quality levels, you can send multiple streams in multiple bitrates. Example: 1 HD 2 Mbits/s, 1 Lowres 500 kBits/s. You can send your own MBR stream or use our live transcoding service.
 
 - Downstream: [ABR Playback](../nanoplayer/nanoplayer_feature_stream_switching.md): automatic adjustment of the quality on the player
 
 For ABR Playback, several live streams need to be running at the same time with different quality levels. These streams can either be created on the encoder side or on the server side by live transcoding, based on one incoming stream.
-
 
 ### Additional info
 
