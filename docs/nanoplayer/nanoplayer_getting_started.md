@@ -14,24 +14,69 @@ You can embed this code snippet to test the H5Live player on your page in no tim
 >
 > If you don't know how to get your custom bintu.live `streamid` click [here](../../cloud/cloud_getting_started) .
 
+You find a code sample on the demo player on the bintu dashboard. 
+Here is an recommended example configuration and code which runs on any web page:
+
+```html
+<div id="playerDiv"></div>
+<script src="https://demo.nanocosmos.de/nanoplayer/api/release/nanoplayer.4.min.js?20200806"></script>
+<script>
+var player;
+var streamName = "XXXXX-YYYYY"; // your bintu stream name (not the stream ID)
+var config = {
+    "source": {
+        "h5live": {
+            "rtmp": {
+                "url": "rtmp://bintu-play.nanocosmos.de:80/play",
+                "streamname": streamName
+            },
+            "server": {
+                "websocket": "wss://bintu-h5live.nanocosmos.de:443/h5live/stream/stream.mp4",
+                "hls": "https://bintu-h5live.nanocosmos.de:443/h5live/http/playlist.m3u8",
+                "progressive": "https://bintu-h5live.nanocosmos.de:443/h5live/http/stream.mp4"
+            }
+        }
+    },
+    "playback": {
+        "autoplay": true,
+        "automute": true,
+        "muted": true
+    },
+    "style": {
+        "displayMutedAutoplay": true
+    }
+};
+document.addEventListener('DOMContentLoaded', function () {
+    player = new NanoPlayer("playerDiv");
+    player.setup(config).then(function (config) {
+        console.log("setup success");
+        console.log("config: " + JSON.stringify(config, undefined, 4));
+    }, function (error) {
+        alert(error.message);
+    });
+});
+```
+
+### Alternative configuration with bintu stream id 
+
 ```html
 <div id="playerDiv"></div>
 <script src="https://demo.nanocosmos.de/nanoplayer/api/release/nanoplayer.4.min.js?20200227"></script>
 <script>
 var player;
+var streamId = "1111-2222-3333-4444-5555"; // your bintu stream ID (not the stream name)
 var config = {
     "source": {
         "bintu": {
             "apiurl": "https://bintu.nanocosmos.de",
-            "streamid": "CUSTOM-STREAMID"
+            "streamid": streamId
         }
     },
     "playback": {
         "autoplay": true,
         "automute": true,
         "muted": false,
-        "forceTech": "h5live",
-        "flashplayer": "//demo.nanocosmos.de/nanoplayer/nano.player.swf"
+        "forceTech": "h5live"
     },
     "style": {
         "controls": true
