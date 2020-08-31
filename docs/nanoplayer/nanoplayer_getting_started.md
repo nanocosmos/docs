@@ -25,17 +25,21 @@ var player;
 var streamName = "XXXXX-YYYYY"; // your bintu stream name (not the stream ID)
 var config = {
     "source": {
-        "h5live": {
-            "rtmp": {
-                "url": "rtmp://bintu-play.nanocosmos.de:80/play",
-                "streamname": streamName
-            },
-            "server": {
-                "websocket": "wss://bintu-h5live.nanocosmos.de:443/h5live/stream/stream.mp4",
-                "hls": "https://bintu-h5live.nanocosmos.de:443/h5live/http/playlist.m3u8",
-                "progressive": "https://bintu-h5live.nanocosmos.de:443/h5live/http/stream.mp4"
+        "entries": [
+            {
+                "h5live": {
+                    "rtmp": {
+                        "url": "rtmp://bintu-play.nanocosmos.de:80/play",
+                        "streamname": streamName
+                    },
+                    "server": {
+                        "websocket": "wss://bintu-h5live.nanocosmos.de:443/h5live/stream/stream.mp4",
+                        "hls": "https://bintu-h5live.nanocosmos.de:443/h5live/http/playlist.m3u8",
+                        "progressive": "https://bintu-h5live.nanocosmos.de:443/h5live/http/stream.mp4"
+                    }
+                }
             }
-        }
+        ]
     },
     "playback": {
         "autoplay": true,
@@ -67,16 +71,19 @@ var player;
 var streamId = "1111-2222-3333-4444-5555"; // your bintu stream ID (not the stream name)
 var config = {
     "source": {
-        "bintu": {
-            "apiurl": "https://bintu.nanocosmos.de",
-            "streamid": streamId
-        }
+        "entries": [
+            {
+                "bintu": {
+                    "apiurl": "https://bintu.nanocosmos.de",
+                    "streamid": streamId
+                }
+            }
+        ]
     },
     "playback": {
         "autoplay": true,
         "automute": true,
-        "muted": false,
-        "forceTech": "h5live"
+        "muted": false
     },
     "style": {
         "controls": true
@@ -156,10 +163,14 @@ Example `index.html`
         return {
           config: {
             source: {
-              bintu: {
-                  "apiurl": "https://bintu.nanocosmos.de",
-                  "streamid": "CUSTOM-STREAMID"
-              }
+              entries: [
+                {
+                  bintu: {
+                      "apiurl": "https://bintu.nanocosmos.de",
+                      "streamid": "CUSTOM-STREAMID"
+                  }
+                }
+              ]
             },
             playback: {
                 "autoplay": true,
@@ -248,10 +259,14 @@ Example:
 ```js
 let config = {
     source: {
-        bintu: {
-            "apiurl": "https://bintu.nanocosmos.de",
-            "streamid": "CUSTOM-STREAMID"
-        }
+        entries: [
+            {
+                bintu: {
+                    "apiurl": "https://bintu.nanocosmos.de",
+                    "streamid": "CUSTOM-STREAMID"
+                }
+            }
+        ]
     },
     playback: {
         "autoplay": true,
