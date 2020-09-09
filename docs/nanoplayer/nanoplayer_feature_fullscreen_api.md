@@ -11,6 +11,11 @@ The **nanoStream H5Live Player Version 4.7** is introducing the new fullscreen A
 > **Important:** <br>
 > To start using the fullscreen API feature make sure you're using the minimum required nanoStream H5Live Player version **4.7** !
 
+<br>
+
+> **Important:** <br>
+> Due to limitations of browser policies the fullscreen request can be rejected if not being executed in a user interaction context ! A user interaction context can be e.g. a 'click' or 'touch' event within the page.
+
 <hr>
 
 ## Methods
