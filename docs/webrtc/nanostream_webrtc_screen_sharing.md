@@ -26,8 +26,7 @@ Screen sharing is enabled by setting video source to `screen` in the configurati
 // to enable Screen Sharing, we pass "screen" as a source to the video device configuration
 
 var videoDeviceConfig = {
-  source: 'screen',
-  device: 0 // for screen sharing, simply set the video device ID to 0
+  source: 'screen'
 };
 
 var audioDeviceConfig = {
