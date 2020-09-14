@@ -56,6 +56,8 @@ rtcuser.startPreview(previewConfig);
 
 ```
 
+Note that the `width`, `height`, and `framerate` parameters provided to the `startPreview` are "ideal" values. In the end, it is up to a browser to decide what resolution and frame rate are the most optimal ones in a particular case.
+
 ### Encoding bitrates
 
 After the preview has been started and before the stream gets send to the nanoStream Cloud, it will be encoded in the browser.
