@@ -10,7 +10,7 @@ sidebar_label: Webcaster
 nanoStream Webcaster Public API Class
 
 **Kind**: global class  
-**Version**: 5.8.0  
+**Version**: 5.9.2  
 
 -----
 
@@ -139,22 +139,22 @@ Parameters in braces "[ ]" are optional.
     <td>config</td><td><code>object</code></td><td></td><td><p>The config object.</p>
 </td>
     </tr><tr>
-    <td>[config.logLevel]</td><td><code>int</code></td><td></td><td><p>Verbosity of console logging. Allowed are values from 0-4, with 4 being the maximum verbosity.</p>
+    <td>[config.logLevel]</td><td><code>0</code> | <code>1</code> | <code>2</code> | <code>3</code> | <code>4</code></td><td></td><td><p>Verbosity of console logging. Allowed values: 0 (minimum verbosity) - 4 (maximum verbosity).</p>
 </td>
     </tr><tr>
     <td>[config.metrics]</td><td><code>object</code></td><td></td><td><p>The metrics configuration object.</p>
 </td>
     </tr><tr>
-    <td>[config.metrics.accountId]</td><td><code>string</code></td><td></td><td><p>Account id provided to you.</p>
+    <td>[config.metrics.accountId]</td><td><code>string</code></td><td></td><td><p>An account id provided to you.</p>
 </td>
     </tr><tr>
-    <td>[config.metrics.accountKey]</td><td><code>string</code></td><td></td><td><p>Account key provided to you.</p>
+    <td>[config.metrics.accountKey]</td><td><code>string</code></td><td></td><td><p>An account key provided to you.</p>
 </td>
     </tr><tr>
     <td>[config.metrics.eventId]</td><td><code>string</code></td><td></td><td><p>An id of an event a stream is related to.</p>
 </td>
     </tr><tr>
-    <td>[config.metrics.statsInterval]</td><td><code>int</code></td><td><code>10</code></td><td><p>The interval how often the stats should be collected in seconds; default value: 10 seconds. The minimum is 1 second, the maximum is 10 seconds.</p>
+    <td>[config.metrics.statsInterval]</td><td><code>number</code></td><td><code>10</code></td><td><p>The interval how often the stats should be collected in seconds. Allowed values: 1 - 10 second(s).</p>
 </td>
     </tr><tr>
     <td>[config.metrics.customField*]</td><td><code>string</code></td><td></td><td><p>A custom field. * can be replaced with 1 - 10 e.g. &#39;customField3&#39;. Possible from &#39;customField1&#39; to &#39;customField10&#39;.</p>
@@ -163,13 +163,13 @@ Parameters in braces "[ ]" are optional.
     <td>[config.bitrates]</td><td><code>object</code></td><td></td><td><p>The codec configuration object.</p>
 </td>
     </tr><tr>
-    <td>[config.bitrates.videoSendInitialBitrate]</td><td><code>string</code></td><td><code>0</code></td><td><p>The minimum video upstream bitrate in kbps (lower bound, does not work in Firefox).</p>
+    <td>[config.bitrates.videoSendInitialBitrate]</td><td><code>number</code></td><td><code>0</code></td><td><p>The minimum video upstream bitrate in kbps (lower bound, does not work in Firefox). Allowed values: 0 - 34000 kbps.</p>
 </td>
     </tr><tr>
-    <td>[config.bitrates.videoSendBitrate]</td><td><code>string</code></td><td><code>0</code></td><td><p>The maximum video upstream bitrate in kbps.</p>
+    <td>[config.bitrates.videoSendBitrate]</td><td><code>number</code></td><td><code>0</code></td><td><p>The maximum video upstream bitrate in kbps. Allowed values: 0 - 34000 kbps.</p>
 </td>
     </tr><tr>
-    <td>[config.bitrates.audioSendBitrate]</td><td><code>string</code></td><td><code>0</code></td><td><p>The maximum audio upstream bitrate in kbps (does not work in Firefox).</p>
+    <td>[config.bitrates.audioSendBitrate]</td><td><code>number</code></td><td><code>0</code></td><td><p>The maximum audio upstream bitrate in kbps (does not work in Firefox). Allowed values: 0 - 510 kbps.</p>
 </td>
     </tr>  </tbody>
 </table>
@@ -295,7 +295,7 @@ Parameters in braces "[ ]" are optional.
     <td>[enable]</td><td><code>boolean</code></td><td><code>true</code></td><td><p>A flag to enable WebRTC stats.</p>
 </td>
     </tr><tr>
-    <td>[interval]</td><td><code>number</code></td><td><code>1000</code></td><td><p>The interval time in milliseconds.</p>
+    <td>[interval]</td><td><code>number</code></td><td><code>1000</code></td><td><p>The interval time in milliseconds. The minimum value: 1 second.</p>
 </td>
     </tr>  </tbody>
 </table>
@@ -353,6 +353,12 @@ Parameters in braces "[ ]" are optional.
     <td>[config.transcodingTargets.rtmpconnectinfo]</td><td><code>string</code></td><td><code>null</code></td><td><p>Data to be send with the RTMP streams &quot;onconnect&quot;. Pass flat object with key value pairs, hierarchies are not supported.</p>
 </td>
     </tr><tr>
+    <td>[config.encoding]</td><td><code>string</code></td><td></td><td><p>The encoding config object.</p>
+</td>
+    </tr><tr>
+    <td>[config.encoding.h264Profile]</td><td><code>&#x27;cbp&#x27;</code></td><td></td><td><p>The H264 profile. Note: the H264 profile should only be set to &#39;cbp&#39; in desktop Chrome (Windows).</p>
+</td>
+    </tr><tr>
     <td>[config.jwt]</td><td><code>string</code></td><td></td><td><p>The JWT access token for authorization.</p>
 </td>
     </tr>  </tbody>
@@ -364,7 +370,6 @@ Parameters in braces "[ ]" are optional.
 var config = {
     transcodingTargets: {
         output: 'rtmp://myIngestServer.com:1935/live/webrtcBroadcast',
-        videobitrate: 500000,
         audiobitrate: 64000,
         rtmpconnectinfo: {
             'key1': 'value1',
@@ -464,7 +469,7 @@ setTimeout(function() {
 Gets all connected input video and audio devices.
 
 **Kind**: instance method of [<code>RtcUser</code>](#RtcUser)  
-**Emits**: [<code>ReceivedDeviceList</code>](#RtcUser+event_ReceivedDeviceList)  
+**Emits**: [<code>ReceivedDeviceList</code>](#RtcUser+event_ReceivedDeviceList), [<code>GetDevicesError</code>](#RtcUser+event_GetDevicesError)  
 **Example**  
 ```js
 // rtcUser instance of RtcUser
@@ -639,7 +644,7 @@ Gets the current input video/audio device.
     <td>config</td><td><code>object</code></td><td><p>The config object.</p>
 </td>
     </tr><tr>
-    <td>config.kind</td><td><code>string</code></td><td><p>The device kind (possible values: &#39;videoinput&#39;, &#39;audioinput&#39;).</p>
+    <td>config.kind</td><td><code>&#x27;videoinput&#x27;</code> | <code>&#x27;audioinput&#x27;</code></td><td><p>The device kind.</p>
 </td>
     </tr>  </tbody>
 </table>
@@ -674,26 +679,25 @@ Parameters in braces "[ ]" are optional.
     <td>config.videoDeviceConfig</td><td><code>object</code></td><td></td><td><p>The video config object.</p>
 </td>
     </tr><tr>
-    <td>config.videoDeviceConfig.device</td><td><code>int</code></td><td></td><td><p>The device id to use (possible values: 0...n - specific device, true - auto device, false - no video).</p>
+    <td>config.videoDeviceConfig.device</td><td><code>boolean</code> | <code>number</code></td><td></td><td><p>The device id to use. Allowed values: 0...n - specific device, true - auto device, false - no video.</p>
 </td>
     </tr><tr>
-    <td>[config.videoDeviceConfig.width]</td><td><code>int</code></td><td></td><td><p>The video width.</p>
+    <td>[config.videoDeviceConfig.width]</td><td><code>number</code></td><td></td><td><p>The video width. Allowed values: 320 - 3840(4K).</p>
 </td>
     </tr><tr>
-    <td>[config.videoDeviceConfig.height]</td><td><code>int</code></td><td></td><td><p>The video height.</p>
+    <td>[config.videoDeviceConfig.height]</td><td><code>number</code></td><td></td><td><p>The video height. Allowed values: 240 - 2160(4K).</p>
 </td>
     </tr><tr>
-    <td>[config.videoDeviceConfig.framerate]</td><td><code>int</code></td><td></td><td><p>The video framerate.</p>
+    <td>[config.videoDeviceConfig.framerate]</td><td><code>number</code></td><td></td><td><p>The video framerate. Allowed values: 0 - 60 fps.</p>
 </td>
     </tr><tr>
-    <td>videoDeviceConfig.source</td><td><code>String</code></td><td></td><td><p>The video source to be requested
-valid parameters: &#39;camera&#39; | &#39;screen&#39;.</p>
+    <td>videoDeviceConfig.source</td><td><code>&#x27;camera&#x27;</code> | <code>&#x27;screen&#x27;</code></td><td></td><td><p>The video source to be requested.</p>
 </td>
     </tr><tr>
     <td>config.audioDeviceConfig</td><td><code>object</code></td><td></td><td><p>The audio config object.</p>
 </td>
     </tr><tr>
-    <td>config.audioDeviceConfig.device</td><td><code>int</code></td><td></td><td><p>The device id to use (possible values: 0...n - specific device, true - auto device, false - no audio).</p>
+    <td>config.audioDeviceConfig.device</td><td><code>boolean</code> | <code>number</code></td><td></td><td><p>The device id to use. Allowed values: 0...n - specific device, true - auto device, false - no audio.</p>
 </td>
     </tr><tr>
     <td>[config.audioDeviceConfig.autoGainControl]</td><td><code>boolean</code></td><td></td><td><p>Automatic gain control attempts to automatically maintain a steady overall volume level.</p>
@@ -708,7 +712,7 @@ valid parameters: &#39;camera&#39; | &#39;screen&#39;.</p>
     <td>config.elementId</td><td><code>string</code></td><td></td><td><p>The id of a video element to pass in the requested stream directly.</p>
 </td>
     </tr><tr>
-    <td>[config.useWebView]</td><td><code>boolean</code></td><td><code>false</code></td><td><p>A flag to indicate that a WebView is used; default value: false.</p>
+    <td>[config.useWebView]</td><td><code>boolean</code></td><td><code>false</code></td><td><p>A flag to indicate that a WebView is used.</p>
 </td>
     </tr>  </tbody>
 </table>
@@ -717,18 +721,36 @@ valid parameters: &#39;camera&#39; | &#39;screen&#39;.</p>
 ```js
 // rtcUser instance of RtcUser
 var config = {
-    videoDeviceConfig: {
+    videoDeviceConfig : {
          device: 0, // video is enabled using specific device
          width: 640,
          height: 360,
          framerate: 30,
          source: 'camera'
     },
-    audioDeviceConfig: {
+    audioDeviceConfig : {
          device: 0 // audio is enabled using specific device
     },
-    elementId: 'video-local',
-    useWebView: true
+    elementId : 'video-local',
+    useWebView : true
+};
+rtcUser.startPreview(config);
+```
+**Example** *(Audio &amp; screen capture.)*  
+```js
+// rtcUser instance of RtcUser
+var config = {
+    videoDeviceConfig : {
+         width: 640,
+         height: 360,
+         framerate: 30,
+         source: 'screen'
+    },
+    audioDeviceConfig : {
+         device: 0 // audio is enabled using specific device
+    },
+    elementId : 'video-local',
+    useWebView : true
 };
 rtcUser.startPreview(config);
 ```
@@ -736,18 +758,18 @@ rtcUser.startPreview(config);
 ```js
 // rtcUser instance of RtcUser
 var config = {
-    videoDeviceConfig: {
+    videoDeviceConfig : {
          device: 0, // video is enabled using specific device
          width: 640,
          height: 360,
          framerate: 30,
          source: 'camera'
     },
-    audioDeviceConfig: {
+    audioDeviceConfig : {
          device: false // no audio; video-only preview
     },
-    elementId: 'video-local',
-    useWebView: false
+    elementId : 'video-local',
+    useWebView : false
 };
 rtcUser.startPreview(config);
 ```
@@ -755,14 +777,14 @@ rtcUser.startPreview(config);
 ```js
 // rtcUser instance of RtcUser
 var config = {
-    videoDeviceConfig: {
+    videoDeviceConfig : {
          device: false // no video; audio-only preview
     },
-    audioDeviceConfig: {
+    audioDeviceConfig : {
          device: 0 // audio is enabled using specific device
     },
-    elementId: 'video-local',
-    useWebView: false
+    elementId : 'video-local',
+    useWebView : false
 };
 rtcUser.startPreview(config);
 ```
@@ -770,17 +792,17 @@ rtcUser.startPreview(config);
 ```js
 // rtcUser instance of RtcUser
 var config = {
-    videoDeviceConfig: {
+    videoDeviceConfig : {
          device: false // no video; audio-only preview
     },
-    audioDeviceConfig: {
+    audioDeviceConfig : {
          device: 0, // audio is enabled using specific device
          autoGainControl: false,
          echoCancellation: false,
          noiseSuppression: false
     },
-    elementId: 'video-local',
-    useWebView: false
+    elementId : 'video-local',
+    useWebView : false
 };
 rtcUser.startPreview(config);
 ```
@@ -868,10 +890,10 @@ Mutes/unmutes a video/audio device.
     <td>config</td><td><code>object</code></td><td><p>The config object.</p>
 </td>
     </tr><tr>
-    <td>config.kind</td><td><code>string</code></td><td><p>The device kind to mute (possible values: &#39;videoinput&#39;, &#39;audioinput&#39;).</p>
+    <td>config.kind</td><td><code>&#x27;videoinput&#x27;</code> | <code>&#x27;audioinput&#x27;</code></td><td><p>The device kind to mute.</p>
 </td>
     </tr><tr>
-    <td>config.mute</td><td><code>boolean</code></td><td><p>Mute/unmute.</p>
+    <td>config.mute</td><td><code>boolean</code></td><td><p>A flag to mute/unmute the device.</p>
 </td>
     </tr>  </tbody>
 </table>
@@ -1019,6 +1041,13 @@ ReceivedDeviceList event. The event is fired if a list of connected input video 
 
 **Kind**: event emitted by [<code>RtcUser</code>](#RtcUser)  
 **Typeof**: [<code>DevicesReceivedEvent</code>](#DevicesReceivedEvent)  
+<a name="RtcUser+event_GetDevicesError"></a>
+
+## "GetDevicesError"
+GetDevicesError event. The event is fired if an error occured while getting connected input video and audio devices.
+
+**Kind**: event emitted by [<code>RtcUser</code>](#RtcUser)  
+**Typeof**: [<code>ErrorEvent</code>](#ErrorEvent)  
 <a name="RtcUser+event_GetSelectedDeviceError"></a>
 
 ### "GetSelectedDeviceError"
@@ -1153,7 +1182,7 @@ MuteDeviceError event. The event is fired if a video/audio device mute/unmute fa
     <td>data</td><td><code>object</code></td><td><p>The data object.</p>
 </td>
     </tr><tr>
-    <td>data.message</td><td><code>string</code></td><td><p>The connection state message (possible values: &#39;signalling&#39;, &#39;connected&#39;, &#39;reconnecting&#39;, &#39;broadcasting&#39;).</p>
+    <td>data.message</td><td><code>&#x27;signalling&#x27;</code> | <code>&#x27;connected&#x27;</code> | <code>&#x27;reconnecting&#x27;</code> | <code>&#x27;broadcasting&#x27;</code></td><td><p>The connection state message.</p>
 </td>
     </tr><tr>
     <td>[data.number]</td><td><code>object</code></td><td><p>Reserverd for internal developer&#39;s use. Note: the property is optional, therefore, its presence is not guaranteed - Deprecated: will be removed in nanoStream Webcaster v.6.</p>
@@ -1162,13 +1191,13 @@ MuteDeviceError event. The event is fired if a video/audio device mute/unmute fa
     <td>[data.rtmp]</td><td><code>object</code></td><td><p>Reserved for internal developer&#39;s use. Note: the property is optional, therefore, its presence is not guaranteed - Deprecated: will be removed in nanoStream Webcaster v.6.</p>
 </td>
     </tr><tr>
-    <td>data.state</td><td><code>object</code></td><td><p>The connection state (possible values: 4 = &#39;signalling&#39;, 5 = &#39;connected&#39;, 7 = &#39;reconnecting&#39;, 6 = &#39;broadcasting&#39;).</p>
+    <td>data.state</td><td><code>4</code> | <code>5</code> | <code>6</code> | <code>7</code></td><td><p>The connection state. Possible values: 4 = &#39;signalling&#39;, 5 = &#39;connected&#39;, 6 = &#39;broadcasting&#39;, 7 = &#39;reconnecting&#39;.</p>
 </td>
     </tr><tr>
     <td>data.streamname</td><td><code>object</code></td><td><p>The RTMP ingest streamname.</p>
 </td>
     </tr><tr>
-    <td>data.text</td><td><code>object</code></td><td><p>The connection state text (possible values: &#39;signalling&#39;, &#39;connected&#39;, &#39;reconnecting&#39;).</p>
+    <td>data.text</td><td><code>&#x27;signalling&#x27;</code> | <code>&#x27;connected&#x27;</code> | <code>&#x27;reconnecting&#x27;</code></td><td><p>The connection state text.</p>
 </td>
     </tr><tr>
     <td>[name]</td><td><code>object</code></td><td><p>The name of the event. Note: the property is optional, therefore, its presence is not guaranteed.</p>
@@ -1443,13 +1472,13 @@ MuteDeviceError event. The event is fired if a video/audio device mute/unmute fa
     <td>[data.stats.results.videoCodec]</td><td><code>string</code></td><td><p>The video codec. Note: the property is optional, therefore, its presence is not guaranteed.</p>
 </td>
     </tr><tr>
-    <td>data.stats.state</td><td><code>number</code></td><td><p>The connection state (expected value: 6 = &#39;broadcasting&#39;).</p>
+    <td>data.stats.state</td><td><code>number</code></td><td><p>The connection state. The expected value: 6 = &#39;broadcasting&#39;.</p>
 </td>
     </tr><tr>
     <td>data.stats.streamname</td><td><code>string</code></td><td><p>The RTMP ingest streamname.</p>
 </td>
     </tr><tr>
-    <td>data.stats.text</td><td><code>string</code></td><td><p>The connection state text (expected value: &#39;broadcasting&#39;).</p>
+    <td>data.stats.text</td><td><code>string</code></td><td><p>The connection state text. The expected value: &#39;broadcasting&#39;.</p>
 </td>
     </tr><tr>
     <td>name</td><td><code>string</code></td><td><p>The name of the event.</p>
