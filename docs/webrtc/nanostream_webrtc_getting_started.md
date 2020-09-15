@@ -217,20 +217,20 @@ If you don't already have a stream url you can create a new webrtc enabled strea
 <script src="./js/api/bintu/nano.bintu.js"></script>
 
 <script type="text/javascript">
-    var bintu = new Bintu(BintuApiKey, 'https://bintu.nanocosmos.de', true, true);
+  var bintu = new Bintu(BintuApiKey, 'https://bintu.nanocosmos.de', true, true);
 
-    var bintuTags = ['newTag, test, webrtc']; // optionally add tags to the stream
+  var bintuTags = ['newTag, test, webrtc']; // optionally add tags to the stream
     
-    bintu.createStream(bintuTags, function success(request) {
-      var response = JSON.parse(request.responseText);
-      var ingest = response.ingest;
-      var rtmp = ingest.rtmp;
-      var url = rtmp.url;
-      var streamname = rtmp.streamname;
-      var ingestUrl = url + '/' + streamname;
-    }, function onerror(error) {
-      console.log(error);
-    });
+  bintu.createStream(bintuTags, function success(request) {
+    var response = JSON.parse(request.responseText);
+    var ingest = response.ingest;
+    var rtmp = ingest.rtmp;
+    var url = rtmp.url;
+    var streamname = rtmp.streamname;
+    var ingestUrl = url + '/' + streamname;
+  }, function onerror(error) {
+    console.log(error);
+  });
 
 </script>
 ```
@@ -245,34 +245,27 @@ For instructions on how to setup the Webcaster for screen sharing please follow 
 If you have a valid `RTMP` URL, you can use this to create a live broadcast: (see the example above):
 
 ```javascript
-   // example bintu rtmp url
-   // you should use the bintu api to obtain a valid ingest URL
-   var myOutputStreamUrl = 'rtmp://bintu-stream.nanocosmos.de/live/';
-   var myOutputStreamName = 'P4gSV-12345';
- 
-   var broadcastConfig = {
-       transcodingTargets: {
-           output: myOutputStreamUrl,
-           streamname: myOutputStreamName
-       }
-   };
- 
-    // start the broadcast
-    user.startBroadcast(broadcastConfig);
-```
+// example bintu rtmp url
+// you should use the bintu api to obtain a valid ingest URL
+var myOutputStreamUrl = 'rtmp://bintu-stream.nanocosmos.de/live/';
+var myOutputStreamName = 'P4gSV-12345';
 
-```javascript
+// you can also set an rtmp/aac audio bitrate
+var audioBitrate = 64000 // value is in bits/s!
+
+// for more information on possible additional parameters,
+// check API -> nanoStream Webcaster API
+
 var broadcastConfig = {
-	transcodingTargets: {
-        output: myOutputStreamUrl,  // rtmp://...
-        streamname: myOutputStreamName
-        videobitrate: entries.videoBitrate,   	// rtmp/h264 video bitrate
-        audiobitrate: entries.audioBitrate,   	// rtmp/aac audio bitrate
-        framerate: entries.framerate,         	// rtmp/h264 video framerate
-        dropframes: this.dropframes,          	// rtmp/h264 allow dropframes
-        h264passthrough: this.h264passthrough, 	// rtmp/h264 passthrough streaming
-    }
-}
+  transcodingTargets: {
+    output: myOutputStreamUrl,
+    streamname: myOutputStreamName,
+    audiobitrate: audioBitrate
+  }
+};
+ 
+// start the broadcast
+user.startBroadcast(broadcastConfig);
 ```
 
 
@@ -297,16 +290,16 @@ Example:
 
 ```json
 {
-   "id":"123456-e7a1-46a6-9572-1037beff926c",
-   "state":"live",
-   "type":"low-latency",
-   "created_at":"2018-10-02T08:53:50.377Z",
-   "webrtc":true,
-   "transcoding":false,
-   "webrtc_server":"https://rtc1.nanocosmos.de/prod",
-   "tags":[
-      "myTag"
-   ],
+  "id":"123456-e7a1-46a6-9572-1037beff926c",
+  "state":"live",
+  "type":"low-latency",
+  "created_at":"2018-10-02T08:53:50.377Z",
+  "webrtc":true,
+  "transcoding":false,
+  "webrtc_server":"https://rtc1.nanocosmos.de/prod",
+  "tags":[
+    "myTag"
+  ],
 }
 ```
 
