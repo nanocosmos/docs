@@ -58,6 +58,8 @@ rtcuser.startPreview(previewConfig);
 
 Note that the `width`, `height`, and `framerate` parameters provided to the `startPreview` are "ideal" values. In the end, it is up to a browser to decide what resolution and frame rate are the most optimal ones in a particular case.
 
+Also note that due to non spec-compliant behaviour of some Android devices, it might be required to restart a stream after resolution has changed. Not doing so, can result in a corrupted playback. Resolution change can be detected in the Webcaster stats that is enabled by [enableStats([enable], [interval])](../nanostream_webrtc_api/#enablestatsenable-interval).
+
 ### Encoding bitrates
 
 After the preview has been started and before the stream gets send to the nanoStream Cloud, it will be encoded in the browser.
