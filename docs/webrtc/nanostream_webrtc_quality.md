@@ -79,6 +79,8 @@ rtcuser.setConfig(config);
 
 Note that those are target bitrates, `videoSendBitrate` is the maximum bitrate. For example: if there is no movement in front of the camera or the image is dark, the video bitrate will be lower than configured.
 
+Also note that due to non spec-compliant behaviour of some Android devices, it might be required to restart a stream after resolution has changed. Not doing so, can result in a corrupted playback. Resolution change can be detected in the Webcaster stats that is enabled by [enableStats([enable], [interval])](../nanostream_webrtc_api/#enablestatsenable-interval).
+
 ### Audio conversion on the server
 
 Video bitrate of the resulting RTMP stream will be similar to the bitrate encoded by the browsers. Audio is converted on server side.<br>
