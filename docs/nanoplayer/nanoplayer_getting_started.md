@@ -323,7 +323,7 @@ componentDidMount() {
 
 ```html
 <script src="https://demo.nanocosmos.de/nanoplayer/api/release/nanoplayer.4.min.js?20200302"></script>
-<div style="width: 480px; height: 360px; overflow: hidden; position: absolute; margin: 0; padding: 0;>
+<div style="width: 480px; height: 360px; overflow: hidden; position: absolute; margin: 0; padding: 0;">
 <div id="playerDiv"></div>
 </div>
 
@@ -350,9 +350,9 @@ componentDidMount() {
                                 streamname: "HX26g-NRbx9"
                             },
                             server: {
-                                websocket: "wss://bintu-play.nanocosmos.de:443/h5live/stream.mp4",
-                                hls: "https://bintu-play.nanocosmos.de:443/h5live/http/playlist.m3u8",
-                                progressive: "https://bintu-play.nanocosmos.de:443/h5live/http/stream.mp4"
+                                websocket: "wss://bintu-h5live.nanocosmos.de:443/h5live/stream.mp4",
+                                hls: "https://bintu-h5live.nanocosmos.de:443/h5live/http/playlist.m3u8",
+                                progressive: "https://bintu-h5live.nanocosmos.de:443/h5live/http/stream.mp4"
                             },
                             token: "",
                             security: {}
