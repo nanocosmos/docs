@@ -323,7 +323,7 @@ componentDidMount() {
 
 ```html
 <script src="https://demo.nanocosmos.de/nanoplayer/api/release/nanoplayer.4.min.js?20200302"></script>
-<div style="width: 480px; height: 360px; overflow: hidden; position: absolute; margin: 0; padding: 0;>
+<div style="width: 480px; height: 360px; overflow: hidden; position: absolute; margin: 0; padding: 0;">
 <div id="playerDiv"></div>
 </div>
 
