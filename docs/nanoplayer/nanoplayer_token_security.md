@@ -390,24 +390,24 @@ let config = {
 
 ## Update secure tokens during playback
 
-It is also possible to update an expiring secure token for a client, with a new token, during the playback of the stream via the [updateSource](nanoplayer/nanoplayer_update_source/) method.
+It is also possible to update an expiring secure token for a client, with a new token, during the playback of the stream via the [updateSource](nanoplayer/nanoplayer_update_source.md/) method.
 The `updateSource` method always expects a new source object as a parameter. As you may notice this object is similar to the structure of the config object you are using to set up the player.
 
 If you are using the: 
 - [new single / multi stream configuration notation](nanoplayer/nanoplayer_feature_stream_switching.md/#example-new-single-stream-configuration):
     only change the `security` object inside the desired `entry` object (e.g. for the first entry: `config.source.entries[0].h5live.security = { YOUR CHANGED SECURITY DETAILS FOR FIRST ENTRY }`) 
-- [old single configuration notation](nanoplayer/nanoplayer_feature_stream_switching/#example-old-single-stream-configuration-deprecated): only change the `security` object inside the `h5live` object (`config.source.h5live.security = { YOUR CHANGED SECURITY DETAILS }`) 
+- [old single configuration notation](nanoplayer/nanoplayer_feature_stream_switching.md/#example-old-single-stream-configuration-deprecated): only change the `security` object inside the `h5live` object (`config.source.h5live.security = { YOUR CHANGED SECURITY DETAILS }`) 
 
 You can leave the rest of the stream information unchanged. After updating the local config object you need to call the `updateSource` method with the new source (`config.source`) as a parameter to replace the existing source inside the player.
 <br>
 
-More detailed information can be found in the [nanoPlayer API](nanoplayer/nanoplayer_api/#nanoplayerupdatesourcesource-⇒-codepromiseltconfigerrorgtcode) or in the [updateSource feature description](nanoplayer/nanoplayer_update_source/).
+More detailed information can be found in the [nanoPlayer API](nanoplayer/nanoplayer_api.md/#nanoplayerupdatesourcesource-⇒-codepromiseltconfigerrorgtcode) or in the [updateSource feature description](nanoplayer/nanoplayer_update_source.md/).
 
 <br>
 
 ## Using secure tokens for ABR
 
-If secure playback should be used for an ABR multi-stream configuration, a secure token has to be generated for **each stream independently**. That means that the `security` object has to be set for each entry (e.g. for the first entry: `config.source.entries[0].h5live.security = { SECURITY DETAILS FOR FIRST ENTRY }`). The configuration of multiple streams/entries with ABR and secure tokens is described [here](nanoplayer/nanoplayer_feature_stream_switching/#example-multi-stream-configuration-with-abr-and-playback-security).
+If secure playback should be used for an ABR multi-stream configuration, a secure token has to be generated for **each stream independently**. That means that the `security` object has to be set for each entry (e.g. for the first entry: `config.source.entries[0].h5live.security = { SECURITY DETAILS FOR FIRST ENTRY }`). The configuration of multiple streams/entries with ABR and secure tokens is described [here](nanoplayer/nanoplayer_feature_stream_switching.md/#example-multi-stream-configuration-with-abr-and-playback-security).
 
 > **Important:** 
 >
