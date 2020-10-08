@@ -59,6 +59,7 @@ document.addEventListener('DOMContentLoaded', function () {
         alert(error.message);
     });
 });
+</script>
 ```
 
 ### Alternative configuration with bintu stream id 
@@ -347,7 +348,7 @@ componentDidMount() {
                             rtmp: {
                                 // YOUR STREAMNAME HERE
                                 url: "rtmp://bintu-play.nanocosmos.de/play",
-                                streamname: "HX26g-NRbx9"
+                                streamname: "XXXXX-YYYYY"; // your bintu stream name (not the stream ID)
                             },
                             server: {
                                 websocket: "wss://bintu-h5live.nanocosmos.de:443/h5live/stream.mp4",
