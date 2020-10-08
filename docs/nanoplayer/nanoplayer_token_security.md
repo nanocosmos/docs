@@ -48,7 +48,7 @@ curl -X POST https://bintu-splay.nanocosmos.de/secure/token -H "Content-Type: ap
 
 *Response:*
 
-```
+```json
 {
     "h5live": {
         "security": {
@@ -75,7 +75,7 @@ curl -X POST https://bintu-splay.nanocosmos.de/secure/token -H "Content-Type: ap
 
 *Response:*
 
-```
+```json
 {
     "h5live": {
         "security": {
@@ -98,7 +98,7 @@ curl -X POST https://bintu-splay.nanocosmos.de/secure/token -H "Content-Type: ap
 
 *Response:*
 
-```
+```json
 {
     "h5live": {
         "security": {
@@ -142,7 +142,7 @@ curl -X POST https://bintu-splay.nanocosmos.de/secure/token -H "Content-Type: ap
 
 *Response*:
 
-```
+```json
 {
     "h5live": {
         "security": {
@@ -159,7 +159,7 @@ curl -X POST https://bintu-splay.nanocosmos.de/secure/token -H "Content-Type: ap
 
 To test that a token works as expected you can either configure the token parameters in the [player configuration](nanoplayer_feature_stream_switching.md#single-stream-configuration):
 
-```
+```js
 "security": {
     "expires": "[your expire date]",
     "tag": "[your custom tag]",
@@ -200,7 +200,7 @@ Here are example code snippets to test the H5Live player with secure tokens.
 <script src="https://demo.nanocosmos.de/nanoplayer/api/release/nanoplayer.4.min.js?20200806"></script>
 <script>
 var player;
-var streamName = "XXXXX-YYYYY"; // your bintu stream name (not the stream ID)
+var streamName = "XXXXX-YYYYY"; // your stream name (NOT the bintu stream ID)
 var config = {
     "source": {
         "entries": [
@@ -255,13 +255,13 @@ document.addEventListener('DOMContentLoaded', function () {
       data() {
         return {
           config: {
-            source: {
-                entries: [
+            "source": {
+                "entries": [
                     {
                         "h5live": {
                             "rtmp": {
                                 "url": "rtmp://bintu-splay.nanocosmos.de/splay",
-                                "streamname": "XXXXX-YYYYY"; // your bintu stream name (not the stream ID)
+                                "streamname": "XXXXX-YYYYY"; // your stream name (NOT the bintu stream ID)
                             },
                             "server": {
                                 "websocket": "wss://bintu-h5live-secure.nanocosmos.de/h5live/authstream",
@@ -277,14 +277,14 @@ document.addEventListener('DOMContentLoaded', function () {
                     }
                 ]
             },
-            playback: {
+            "playback": {
                 "autoplay": true,
                 "automute": true,
                 "muted": false,
                 "forceTech": "h5live",
                 "flashplayer": "//demo.nanocosmos.de/nanoplayer/nano.player.swf"
             },
-            style: {
+            "style": {
                 "controls": true
             }
           }
@@ -298,13 +298,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
 ```js
 let config = {
-    source: {
-        entries: [
+    "source": {
+        "entries": [
             {
                 "h5live": {
                     "rtmp": {
                         "url": "rtmp://bintu-splay.nanocosmos.de/splay",
-                        "streamname": "XXXXX-YYYYY"; // your bintu stream name (not the stream ID)
+                        "streamname": "XXXXX-YYYYY"; // your stream name (NOT the bintu stream ID)
                     },
                     "server": {
                         "websocket": "wss://bintu-h5live-secure.nanocosmos.de/h5live/authstream",
@@ -320,14 +320,14 @@ let config = {
             }
         ]
     },
-    playback: {
+    "playback": {
         "autoplay": true,
         "automute": true,
         "muted": false,
         "forceTech": "h5live",
         "flashplayer": "//demo.nanocosmos.de/nanoplayer/nano.player.swf"
     },
-    style: {
+    "style": {
         "controls": true
     }
 };
@@ -344,13 +344,13 @@ let config = {
 <script>
     var player;
     var config = {
-        source: {
-            entries: [
+        "source": {
+            "entries": [
                 {
                     "h5live": {
                         "rtmp": {
                             "url": "rtmp://bintu-splay.nanocosmos.de/splay",
-                            "streamname": "XXXXX-YYYYY"; // your bintu stream name (not the stream ID)
+                            "streamname": "XXXXX-YYYYY"; // your stream name (NOT the bintu stream ID)
                         },
                         "server": {
                             "websocket": "wss://bintu-h5live-secure.nanocosmos.de/h5live/authstream",
@@ -366,16 +366,16 @@ let config = {
                 }
             ]
         },
-        playback: {
-            autoplay: true,
-            automute: true,
-            muted: true,
-            flashplayer: "https://demo.nanocosmos.de/nanoplayer/nano.player.swf"
+        "playback": {
+            "autoplay": true,
+            "automute": true,
+            "muted": true,
+            "flashplayer": "https://demo.nanocosmos.de/nanoplayer/nano.player.swf"
         },
-        style: {
-            displayMutedAutoplay: false,
-            width: "100%",
-            height: "100%"
+        "style": {
+            "displayMutedAutoplay": false,
+            "width": "100%",
+            "height": "100%"
         }
     };
     player = new NanoPlayer("playerDiv");
@@ -390,12 +390,25 @@ let config = {
 
 ## Update secure tokens during playback
 
-With the new H5Live stream configuration (`config."source"."entries": {}`) it is also possible to update an expiring secure token for a client, with a new token, during the playback of the stream.
-It is only required to update the source object of the player with the method `updateSource` as described in [nanoStream H5Live Player updateSource API](nanoplayer/nanoplayer_update_source.md).
-The stream information like the h5live streamname remains the same, only the object `h5live.security` has to be updated.
+It is also possible to update an expiring secure token for a client, with a new token, during the playback of the stream via the [updateSource](nanoplayer/nanoplayer_update_source/) method.
+The `updateSource` method always expects a new source object as a parameter. As you may notice this object is similar to the structure of the config object you are using to set up the player.
+
+If you are using the: 
+- [new single / multi stream configuration notation](nanoplayer/nanoplayer_feature_stream_switching.md/#example-new-single-stream-configuration):
+    only change the `security` object inside the desired `entry` object (e.g. for the first entry: `config.source.entries[0].h5live.security = { YOUR CHANGED SECURITY DETAILS FOR FIRST ENTRY }`) 
+- [old single configuration notation](nanoplayer/nanoplayer_feature_stream_switching/#example-old-single-stream-configuration-deprecated): only change the `security` object inside the `h5live` object (`config.source.h5live.security = { YOUR CHANGED SECURITY DETAILS }`) 
+
+You can leave the rest of the stream information unchanged. After updating the local config object you need to call the `updateSource` method with the new source (`config.source`) as a parameter to replace the existing source inside the player.
+<br>
+
+More detailed information can be found in the [nanoPlayer API](nanoplayer/nanoplayer_api/#nanoplayerupdatesourcesource-⇒-codepromiseltconfigerrorgtcode) or in the [updateSource feature description](nanoplayer/nanoplayer_update_source/).
+
+<br>
 
 ## Using secure tokens for ABR
 
-If secure playback should be used for an ABR multi-stream configuration, a secure token has to be generated for each stream independently. That means that the object `h5live.security` has to be set for each entry. The configuration of multiple streams/entries is described in detail in [Multi Stream Configuration](nanoplayer_feature_stream_switching.md#multi-stream-configuration).
+If secure playback should be used for an ABR multi-stream configuration, a secure token has to be generated for **each stream independently**. That means that the `security` object has to be set for each entry (e.g. for the first entry: `config.source.entries[0].h5live.security = { SECURITY DETAILS FOR FIRST ENTRY }`). The configuration of multiple streams/entries with ABR and secure tokens is described [here](nanoplayer/nanoplayer_feature_stream_switching/#example-multi-stream-configuration-with-abr-and-playback-security).
 
-E.g. for three streams the security object has to be configured three times with a separate token for each stream.
+> **Important:** 
+>
+> E.g. for **three streams** the security object has to be configured **three times** with a **separate token for each stream**.
