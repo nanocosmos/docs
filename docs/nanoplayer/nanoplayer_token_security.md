@@ -185,6 +185,209 @@ Try to playback the stream from the newly created web page.
 >**Explanation:** 
 > The referrer is not `demo.nanocosmos.de`, so the playback doesn’t work.
 
+## Embedding H5Live player with playback security
+
+Here are example code snippets to test the H5Live player with secure tokens.
+
+> **Note:** 
+>
+> Refer to the detailed example code in [Embedding H5Live player on your own web page](nanoplayer/nanoplayer_getting_started.md) and modify the relevant sections to include playback security.
+
+### On a web page
+
+```html
+<div id="playerDiv"></div>
+<script src="https://demo.nanocosmos.de/nanoplayer/api/release/nanoplayer.4.min.js?20200806"></script>
+<script>
+var player;
+var streamName = "XXXXX-YYYYY"; // your bintu stream name (not the stream ID)
+var config = {
+    "source": {
+        "entries": [
+            {
+                "h5live": {
+                    "rtmp": {
+                        "url": "rtmp://bintu-splay.nanocosmos.de/splay",
+                        "streamname": streamName
+                    },
+                    "server": {
+                        "websocket": "wss://bintu-h5live-secure.nanocosmos.de/h5live/authstream",
+                        "hls": "https://bintu-h5live-secure.nanocosmos.de/h5live/authhttp/playlist.m3u8"
+                    },
+                    "security": {
+                        "expires": "[your expiry date]",
+                        "tag": "[your custom tag]",
+                        "token": "[your token]",
+                        "options": "[your option]"             
+                    }                    
+                }                
+            }
+        ]
+    },
+    "playback": {
+        "autoplay": true,
+        "automute": true,
+        "muted": true
+    },
+    "style": {
+        "displayMutedAutoplay": true
+    }
+};
+document.addEventListener('DOMContentLoaded', function () {
+    player = new NanoPlayer("playerDiv");
+    player.setup(config).then(function (config) {
+        console.log("setup success");
+        console.log("config: " + JSON.stringify(config, undefined, 4));
+    }, function (error) {
+        alert(error.message);
+    });
+});
+</script>
+```
+
+### Frameworks
+
+#### Vue.js 
+
+```html
+<script>
+    export default {
+      data() {
+        return {
+          config: {
+            source: {
+                entries: [
+                    {
+                        "h5live": {
+                            "rtmp": {
+                                "url": "rtmp://bintu-splay.nanocosmos.de/splay",
+                                "streamname": "XXXXX-YYYYY"; // your bintu stream name (not the stream ID)
+                            },
+                            "server": {
+                                "websocket": "wss://bintu-h5live-secure.nanocosmos.de/h5live/authstream",
+                                "hls": "https://bintu-h5live-secure.nanocosmos.de/h5live/authhttp/playlist.m3u8"
+                            },
+                            "security": {
+                                "expires": "[your expiry date]",
+                                "tag": "[your custom tag]",
+                                "token": "[your token]",
+                                "options": "[your option]"             
+                            }                    
+                        }                
+                    }
+                ]
+            },
+            playback: {
+                "autoplay": true,
+                "automute": true,
+                "muted": false,
+                "forceTech": "h5live",
+                "flashplayer": "//demo.nanocosmos.de/nanoplayer/nano.player.swf"
+            },
+            style: {
+                "controls": true
+            }
+          }
+        }
+      }
+    }
+</script>
+```
+
+#### React.js
+
+```js
+let config = {
+    source: {
+        entries: [
+            {
+                "h5live": {
+                    "rtmp": {
+                        "url": "rtmp://bintu-splay.nanocosmos.de/splay",
+                        "streamname": "XXXXX-YYYYY"; // your bintu stream name (not the stream ID)
+                    },
+                    "server": {
+                        "websocket": "wss://bintu-h5live-secure.nanocosmos.de/h5live/authstream",
+                        "hls": "https://bintu-h5live-secure.nanocosmos.de/h5live/authhttp/playlist.m3u8"
+                    },
+                    "security": {
+                        "expires": "[your expiry date]",
+                        "tag": "[your custom tag]",
+                        "token": "[your token]",
+                        "options": "[your option]"             
+                    }                    
+                }                
+            }
+        ]
+    },
+    playback: {
+        "autoplay": true,
+        "automute": true,
+        "muted": false,
+        "forceTech": "h5live",
+        "flashplayer": "//demo.nanocosmos.de/nanoplayer/nano.player.swf"
+    },
+    style: {
+        "controls": true
+    }
+};
+```
+
+#### Wordpress
+
+```html
+<script src="https://demo.nanocosmos.de/nanoplayer/api/release/nanoplayer.4.min.js?20200302"></script>
+<div style="width: 480px; height: 360px; overflow: hidden; position: absolute; margin: 0; padding: 0;">
+<div id="playerDiv"></div>
+</div>
+
+<script>
+    var player;
+    var config = {
+        source: {
+            entries: [
+                {
+                    "h5live": {
+                        "rtmp": {
+                            "url": "rtmp://bintu-splay.nanocosmos.de/splay",
+                            "streamname": "XXXXX-YYYYY"; // your bintu stream name (not the stream ID)
+                        },
+                        "server": {
+                            "websocket": "wss://bintu-h5live-secure.nanocosmos.de/h5live/authstream",
+                            "hls": "https://bintu-h5live-secure.nanocosmos.de/h5live/authhttp/playlist.m3u8"
+                        },
+                        "security": {
+                            "expires": "[your expiry date]",
+                            "tag": "[your custom tag]",
+                            "token": "[your token]",
+                            "options": "[your option]"             
+                        }                    
+                    }                
+                }
+            ]
+        },
+        playback: {
+            autoplay: true,
+            automute: true,
+            muted: true,
+            flashplayer: "https://demo.nanocosmos.de/nanoplayer/nano.player.swf"
+        },
+        style: {
+            displayMutedAutoplay: false,
+            width: "100%",
+            height: "100%"
+        }
+    };
+    player = new NanoPlayer("playerDiv");
+    player.setup(config).then(function (config) {
+        console.log("setup success");
+        console.log("config: " + JSON.stringify(config, undefined, 4));
+    }, function (error) {
+        alert(error.message);
+    });
+</script>
+```
+
 ## Update secure tokens during playback
 
 With the new H5Live stream configuration (`config."source"."entries": {}`) it is also possible to update an expiring secure token for a client, with a new token, during the playback of the stream.
