@@ -59,6 +59,7 @@ document.addEventListener('DOMContentLoaded', function () {
         alert(error.message);
     });
 });
+</script>
 ```
 
 ### Alternative configuration with bintu stream id 
@@ -162,24 +163,24 @@ Example `index.html`
       data() {
         return {
           config: {
-            source: {
-              entries: [
+            "source": {
+              "entries": [
                 {
-                  bintu: {
+                  "bintu": {
                       "apiurl": "https://bintu.nanocosmos.de",
                       "streamid": "CUSTOM-STREAMID"
                   }
                 }
               ]
             },
-            playback: {
+            "playback": {
                 "autoplay": true,
                 "automute": true,
                 "muted": false,
                 "forceTech": "h5live",
                 "flashplayer": "//demo.nanocosmos.de/nanoplayer/nano.player.swf"
             },
-            style: {
+            "style": {
                 "controls": true
             }
           }
@@ -258,24 +259,24 @@ Example:
 
 ```js
 let config = {
-    source: {
-        entries: [
+    "source": {
+        "entries": [
             {
-                bintu: {
+                "bintu": {
                     "apiurl": "https://bintu.nanocosmos.de",
                     "streamid": "CUSTOM-STREAMID"
                 }
             }
         ]
     },
-    playback: {
+    "playback": {
         "autoplay": true,
         "automute": true,
         "muted": false,
         "forceTech": "h5live",
         "flashplayer": "//demo.nanocosmos.de/nanoplayer/nano.player.swf"
     },
-    style: {
+    "style": {
         "controls": true
     }
 };
@@ -329,48 +330,32 @@ componentDidMount() {
 
 <script>
         var player;
+        var streamName = "XXXXX-YYYYY"; // your bintu stream name (not the stream ID)
         var config = {
-            source: {
-                entries: [
+            "source": {
+                "entries": [
                     {
-                        index: 0,
-                        label: "stream 1",
-                        tag: "",
-                        info: {
-                            bitrate: 1500,
-                            width: 1280,
-                            height: 720,
-                            framerate: 30
-                        },
-                        hls: "",
-                        h5live: {
-                            rtmp: {
-                                // YOUR STREAMNAME HERE
-                                url: "rtmp://bintu-play.nanocosmos.de/play",
-                                streamname: "HX26g-NRbx9"
+                        "h5live": {
+                            "rtmp": {
+                                "url": "rtmp://bintu-play.nanocosmos.de:80/play",
+                                "streamname": streamName
                             },
-                            server: {
-                                websocket: "wss://bintu-h5live.nanocosmos.de:443/h5live/stream.mp4",
-                                hls: "https://bintu-h5live.nanocosmos.de:443/h5live/http/playlist.m3u8",
-                                progressive: "https://bintu-h5live.nanocosmos.de:443/h5live/http/stream.mp4"
-                            },
-                            token: "",
-                            security: {}
-                        },
-                        bintu: {}
-                    },
-                ],
+                            "server": {
+                                "websocket": "wss://bintu-h5live.nanocosmos.de:443/h5live/stream/stream.mp4",
+                                "hls": "https://bintu-h5live.nanocosmos.de:443/h5live/http/playlist.m3u8",
+                                "progressive": "https://bintu-h5live.nanocosmos.de:443/h5live/http/stream.mp4"
+                            }
+                        }
+                    }
+                ]
             },
-            playback: {
-                autoplay: true,
-                automute: true,
-                muted: true,
-                flashplayer: "https://demo.nanocosmos.de/nanoplayer/nano.player.swf"
+            "playback": {
+                "autoplay": true,
+                "automute": true,
+                "muted": true
             },
-            style: {
-                displayMutedAutoplay: false,
-                width: "100%",
-                height: "100%"
+            "style": {
+                "displayMutedAutoplay": true
             }
         };
         player = new NanoPlayer("playerDiv");
