@@ -554,8 +554,10 @@ The following steps are required to setup the nanoStream H5Live Player with auto
 * The order is determined by the `index` property, **not** by the position in the list
 * Selecting the initial stream/rendition by assigning the index to `config.source.startIndex` 
 * Assigning an adaption rule other than `none` to `config.source.options.adaption.rule` 
-* Currently available adaption rules 
+* Currently available adaption rules are:
+  * `none` - Manual switching
   * `deviationOfMean` - Buffer based bitrate adaption rule
+  * `deviationOfMean2` - Enhanced buffer based bitrate adaption rule (added in v4.5)
 
 To choose the right quality to start with highly depends on the available qualities and the use case. <br> A very common way is to not start with the highest (eg. medium/low) quality. Therefore there is an **intial switch up** mechanism that switches to a higher quality until the matching quality for the present bandwidth is found. 
 
@@ -733,8 +735,10 @@ The switchStream API allows to only choose between the pre-configured stream lis
 The `setAdaption` feature enables the application/viewer to change the adaption rule eg. from manually controlled to automatic switching behavior.
 
 Currently available adaption rules are:
-  * `deviationOfMean` - Buffer based bitrate adaption rule
   * `none` - Manual switching
+  * `deviationOfMean` - Buffer based bitrate adaption rule
+  * `deviationOfMean2` - Enhanced buffer based bitrate adaption rule (added in v4.5)
+
  
 > **Note:** You can find more information on the setAdaption API in our [API documentation](../nanoplayer_api/#nanoplayersetadaptionadaption).
 
