@@ -47,21 +47,20 @@ Example `index.html`
     export default {
       data() {
         return {
-          config: {
-            source: {
-              bintu: {
+          "config": {
+            "source": {
+              "bintu": {
                   "apiurl": "https://bintu.nanocosmos.de",
                   "streamid": "45f8c052-7285-4965-9fbe-36eaeeb9387d"
               }
             },
-            playback: {
+            "playback": {
                 "autoplay": true,
                 "automute": true,
                 "muted": false,
-                "forceTech": "h5live",
                 "flashplayer": "//demo.nanocosmos.de/nanoplayer/nano.player.swf"
             },
-            style: {
+            "style": {
                 "controls": true
             }
           }
@@ -154,21 +153,20 @@ Example `index.html`
     export default {
       data() {
         return {
-          config: {
-            source: {
-              bintu: {
+          "config": {
+            "source": {
+              "bintu": {
                   "apiurl": "https://bintu.nanocosmos.de",
                   "streamid": "45f8c052-7285-4965-9fbe-36eaeeb9387d"
               }
             },
-            playback: {
+            "playback": {
                 "autoplay": true,
                 "automute": true,
                 "muted": false,
-                "forceTech": "h5live",
                 "flashplayer": "//demo.nanocosmos.de/nanoplayer/nano.player.swf"
             },
-            style: {
+            "style": {
                 "controls": true
             }
           }
@@ -262,21 +260,20 @@ Example `index.html`
     export default {
       data() {
         return {
-          config: {
-            source: {
-              bintu: {
+          "config": {
+            "source": {
+              "bintu": {
                   "apiurl": "https://bintu.nanocosmos.de",
                   "streamid": "45f8c052-7285-4965-9fbe-36eaeeb9387d"
               }
             },
-            playback: {
+            "playback": {
                 "autoplay": true,
                 "automute": true,
                 "muted": false,
-                "forceTech": "h5live",
                 "flashplayer": "//demo.nanocosmos.de/nanoplayer/nano.player.swf"
             },
-            style: {
+            "style": {
                 "controls": true
             }
           }
