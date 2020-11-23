@@ -254,7 +254,7 @@ document.addEventListener('DOMContentLoaded', function () {
     export default {
       data() {
         return {
-          config: {
+          "config": {
             "source": {
                 "entries": [
                     {
@@ -271,18 +271,16 @@ document.addEventListener('DOMContentLoaded', function () {
                                 "expires": "[your expiry date]",
                                 "tag": "[your custom tag]",
                                 "token": "[your token]",
-                                "options": "[your option]"             
-                            }                    
-                        }                
+                                "options": "[your option]"
+                            }
+                        }
                     }
                 ]
             },
             "playback": {
                 "autoplay": true,
                 "automute": true,
-                "muted": false,
-                "forceTech": "h5live",
-                "flashplayer": "//demo.nanocosmos.de/nanoplayer/nano.player.swf"
+                "muted": false
             },
             "style": {
                 "controls": true
@@ -323,9 +321,7 @@ let config = {
     "playback": {
         "autoplay": true,
         "automute": true,
-        "muted": false,
-        "forceTech": "h5live",
-        "flashplayer": "//demo.nanocosmos.de/nanoplayer/nano.player.swf"
+        "muted": false
     },
     "style": {
         "controls": true

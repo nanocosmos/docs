@@ -162,7 +162,7 @@ Example `index.html`
     export default {
       data() {
         return {
-          config: {
+          "config": {
             "source": {
               "entries": [
                 {
@@ -177,7 +177,6 @@ Example `index.html`
                 "autoplay": true,
                 "automute": true,
                 "muted": false,
-                "forceTech": "h5live",
                 "flashplayer": "//demo.nanocosmos.de/nanoplayer/nano.player.swf"
             },
             "style": {
@@ -273,7 +272,6 @@ let config = {
         "autoplay": true,
         "automute": true,
         "muted": false,
-        "forceTech": "h5live",
         "flashplayer": "//demo.nanocosmos.de/nanoplayer/nano.player.swf"
     },
     "style": {
