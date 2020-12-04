@@ -102,31 +102,39 @@ player.setup(config).then(function (config) {
 
 For this example there will be two additional UI elements to request and exit the fullscreen mode:
 1) button (`#buttonFullscreenRequest`) that will call the `requestFullscreen` method
-2) div (`#fullscreenOverlay`) that will be positioned on top of the video element. The overlay will only be visible when the player entered the fullscreen mode. A click on it's nested button (`#buttonFullscreenExit`) will call the `exitFullscreen` method
+2) div (`#fullscreenOverlay`) that will be positioned on top of the video element. The overlay will only be visible when the player entered the fullscreen mode. This is just an example to show the `exitFullscreen` API functionality by using a custom button. 
+The provided example is for testing purposes and it is not a player element. 
 
+To try the `exitFullscreen` method with a custom button, uncomment these lines in the code example below:
+```html
+<!-- FULLSCREEN OVERLAY with exitFullscreen button -->
+<div id="fullscreenOverlay" style="display: none;position: absolute; top: 25%; margin-left: 50%; margin-right: 50%; z-index: 3">
+    <button id="buttonFullscreenExit" onclick="exitFullscreenPlayer();" style="cursor: pointer;height: 50px; width: 200px; margin-left: -50%; background-color: #f14e4e; font-size: 12px; color: #fff">Click this custom button to test exitFullscreen API!</button>
+</div>
+```
 
 > **Important**
 > As the default z-index of the video layer on iOS devices was set to 1 make sure to set the `z-index` of the `fullscreenOverlay` > 1.  
 
 
 Make sure to replace:
-1) `script src` (**LINK_TO_nanoplayer.4.7.0.min.js**)
+1) `script src` (**LINK_TO_nanoplayer.4.7.1.min.js**)
 2) `<YOUR CONFIG HERE>` with your nanoplayer config
 
 #### Code Example
 ```html
 <body>
 	<div id="playerDiv" class="player">
-		<!-- FULLSCREEN OVERLAY -->
-        <div id="fullscreenOverlay" style="display: none;position: absolute; top: 50px; left: 50px;z-index: 3">
-            <!-- exitFullscreen BUTTON -->
-            <button id="buttonFullscreenExit" onclick="exitFullscreenPlayer();" style="cursor: pointer;height: 100px; width: 100px; font-size: 50px;">&times;</button>
+        <!-- FULLSCREEN OVERLAY with exitFullscreen button -->
+        <!-- uncomment to enable custom overlay with exitFullscreen button
+        <div id="fullscreenOverlay" style="display: none;position: absolute; top: 25%; margin-left: 50%; margin-right: 50%; z-index: 3">
+            <button id="buttonFullscreenExit" onclick="exitFullscreenPlayer();" style="cursor: pointer;height: 50px; width: 200px; margin-left: -50%; background-color: #f14e4e; font-size: 12px; color: #fff">Click this custom button to test exitFullscreen API!</button>
         </div>
-		<video id="h5live" playsinline style="display:none;width:100%;height:100%"></video>
+        -->
 	</div>
 	<!-- requestFullscreen BUTTON -->
     <button id="buttonFullscreenRequest" onclick="requestFullscreenPlayer();">requestFullscreen</button>
-    <script src="LINK_TO_nanoplayer.4.7.0.min.js"></script>
+    <script src="LINK_TO_nanoplayer.4.7.1.min.js"></script>
     <script>
         var player;
         var config = {
