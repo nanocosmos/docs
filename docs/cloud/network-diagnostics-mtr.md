@@ -2,11 +2,8 @@
 
 [MTR](http://www.bitwizard.nl/mtr/) is a powerful tool which enables administrators to diagnose and isolate networking errors and provide reports of network status to upstream providers. MTR represents an evolution of the `traceroute` command by providing a greater data sample, as if augmenting `traceroute` with `ping` output. This document provides an in depth overview of MTR, the data it generates, and how to interpret and draw conclusions based on the data provided by it.
 
-For a basic overview of network diagnostic techniques, see our introduction to [network diagnostics](/docs/using-linux/administration-basics/#network-diagnostics). If you are having general issues with your system, read our overview of general [system diagnostics](/docs/using-linux/administration-basics/#system-diagnostics).
-
 ## Network Diagnostics Background
 
-For a simple overview, check [this document about network diagnostics](network-diagnostics).
 Networking diagnostic tools including `ping`, `traceroute`, and `mtr` use Internet Control Message Protocol (ICMP) packets to test contention and traffic between two points on the Internet. When a user pings a host on the Internet, a series of ICMP packets are sent to the host, which responds by sending packets in return. The user's client is then able to compute the round trip time between two points on the Internet.
 
 In contrast, tools such as traceroute and MTR send ICMP packets with incrementally increasing TTLs in order to view the route or series of hops that the packet makes between the origin and its destination. The TTL, or time to live, controls how many hops a packet will make before "dying" and returning to the host. By sending a series of packets and causing them to return after one hop, then two, then three, MTR is able to assemble the route that traffic takes between hosts on the Internet.
