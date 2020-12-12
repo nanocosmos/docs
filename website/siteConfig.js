@@ -17,7 +17,7 @@ url: 'https://docs.nanocosmos.de', // Your website URL
   // For github.io type URLs, you would set the url and baseUrl like:
   //   url: 'https://facebook.github.io',
   //   baseUrl: '/test-site/',
-  cname: 'http://nanocosmos.github.io/',
+  cname: 'nanocosmos.github.io',
   
   // Used for publishing and more
   projectName: 'docs',
