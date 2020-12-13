@@ -17,8 +17,8 @@ const siteConfig = {
   baseUrl: '/', // Base URL for your project - should be absolute */
   
   // For github.io type URLs, you would set the url and baseUrl like:
-  //url: 'https://nanocosmos.github.io', // Your website URL
-  //baseUrl: 'docs/docs/', // Base URL for your project */
+  url: 'https://nanocosmos.github.io', // Your website URL
+  baseUrl: '/docs/', // Base URL for your project */
 
   //   url: 'https://facebook.github.io',
   //   baseUrl: '/test-site/',
