@@ -2,9 +2,10 @@ image: node:14.13.1
 pages:
     stage: deploy
     script:
+      - cd website
       - yarn install
       - yarn run build
-      - mv build public
+      - mv build ../public
     artifacts:
         paths:
           - public
