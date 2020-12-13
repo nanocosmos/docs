@@ -1,0 +1,298 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Playback · nanocosmos Documentation</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="## RTMP Playback"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Playback · nanocosmos Documentation"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.nanocosmos.de/"/><meta property="og:description" content="## RTMP Playback"/><meta property="og:image" content="https://docs.nanocosmos.de/img/docusaurus.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://docs.nanocosmos.de/img/docusaurus.png"/><link rel="shortcut icon" href="/img/favicon_nano.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script>
+              (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+              (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+              m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+              })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+              ga('create', 'UA-552140-1', 'auto');
+              ga('send', 'pageview');
+            </script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="/js/search.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/nanocosmos_header_logo.png" alt="nanocosmos Documentation"/><h2 class="headerTitleWithLogo">nanocosmos Documentation</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/docs/cloud/cloud_overview" target="_self">nanoStream Cloud</a></li><li class=""><a href="/docs/nanoplayer/nanoplayer_introduction" target="_self">H5Live Player</a></li><li class=""><a href="/docs/webrtc/nanostream_webrtc_introduction" target="_self">nanoStream Webcaster</a></li><li class="siteNavGroupActive"><a href="/docs/nanostream/nanostream" target="_self">nanoStream Apps and SDKs</a></li><li class=""><a href="/docs/samples/samples" target="_self">Samples</a></li><li class=""><a href="/docs/faq/faq_streaming" target="_self">FAQ</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Android</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">nanoStream SDKs/Apps</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/nanostream/nanostream">Introduction</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Android</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/nanostream/android/nanostream_android_getting_started">Getting started</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/nanostream/android/nanostream_android_developer_manual_playback">Playback</a></li><li class="navListItem"><a class="navItem" href="/docs/nanostream/android/nanostream_android_developer_manual_streaming">Streaming Media</a></li><li class="navListItem"><a class="navItem" href="/docs/nanostream/android/nanostream_android_developer_manual_sample">Sample</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">iOS</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/nanostream/ios/nanostream_ios_quick_start">Developer Quickstart</a></li><li class="navListItem"><a class="navItem" href="/docs/nanostream/ios/nanostream-ios-step-by-step">Getting started</a></li><li class="navListItem"><a class="navItem" href="/docs/nanostream/ios/nanostream_ios_sdk">SDK for iOS</a></li><li class="navListItem"><a class="navItem" href="/docs/nanostream/ios/bintu_ios_sdk">bintu.live client SDK</a></li><li class="navListItem"><a class="navItem" href="/docs/nanostream/ios/bintu_ios_sample">iOS Streaming App in 5 Minutes</a></li><li class="navListItem"><a class="navItem" href="/docs/nanostream/ios/nanostream_ios_license_deployment">License Deployment Information</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Windows</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/nanostream/windows/nanostream_windows_binaries">Binary Modules for Windows</a></li><li class="navListItem"><a class="navItem" href="/docs/nanostream/windows/nanostream_windows_developer_manual">Developer Manual</a></li><li class="navListItem"><a class="navItem" href="/docs/nanostream/windows/nanostream_windows_language_integration">nanoStream Windows Language Integration</a></li><li class="navListItem"><a class="navItem" href="/docs/nanostream/windows/nanostream_windows_license_help">Setting the license</a></li><li class="navListItem"><a class="navItem" href="/docs/nanostream/windows/nanostream_windows_networkwriter">RTMP Network Renderer &amp; Writer</a></li><li class="navListItem"><a class="navItem" href="/docs/nanostream/windows/nanostream_encoder_plugin_api">Encoder Plugin API</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">DirectShow</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/nanostream/directshow/">Overview</a></li><li class="navListItem"><a class="navItem" href="/docs/nanostream/directshow/nanostream_directshow_h264">H264</a></li><li class="navListItem"><a class="navItem" href="/docs/nanostream/directshow/nanostream_directshow_rtmp">RTMP</a></li><li class="navListItem"><a class="navItem" href="/docs/nanostream/directshow/directshow_rtmp_writer">RTMP Writer</a></li><li class="navListItem"><a class="navItem" href="/docs/nanostream/directshow/nanostream_directshow_rtsp">RTSP</a></li><li class="navListItem"><a class="navItem" href="/docs/nanostream/directshow/nanostream_directshow_udp_streaming">UDP/TS Streaming</a></li><li class="navListItem"><a class="navItem" href="/docs/nanostream/directshow/nanostream_directshow_video_filter">Video Filter</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/nanocosmos/docs/tree/master/docs/nanostream/android/nanostream_android_developer_manual_playback.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 id="__docusaurus" class="postHeaderTitle">Playback</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="rtmp-playback"></a><a href="#rtmp-playback" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>RTMP Playback</h2>
+<h3><a class="anchor" aria-hidden="true" id="description-and-features"></a><a href="#description-and-features" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Description and Features</h3>
+<p><code>RTMP</code> Playback Component enables application developers to add playback of RTMP live and on demand streams to their apps.</p>
+<p>Supported codecs are <code>H.264</code> Video, <code>AAC</code> and <code>MP3</code> Audio.</p>
+<p>Video streams are decoded and rendered on a Surface that is hold by the application, usually connected to a <code>SurfaceView</code>.</p>
+<p>Audio streams are decoded and rendered to system audio using the Android AudioSession/AudioTrack API.</p>
+<p>The interface and usage are similar to the Android MediaPlayer. The Android MediaPlayerControl interface is implemented to enable control through an <code>android.widget.MediaController</code> instance.</p>
+<h3><a class="anchor" aria-hidden="true" id="license"></a><a href="#license" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>License</h3>
+<p>The playback component requires a special feature flag to be enabled in your nanoStream license key. It not necessarily included in nanoStream Android SDK licenses.</p>
+<h3><a class="anchor" aria-hidden="true" id="interface"></a><a href="#interface" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Interface</h3>
+<h4><a class="anchor" aria-hidden="true" id="package-name"></a><a href="#package-name" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Package name</h4>
+<p><code>net.nanocosmos.nanoStream.streamer</code></p>
+<h4><a class="anchor" aria-hidden="true" id="declaration"></a><a href="#declaration" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Declaration</h4>
+<p><code>public abstract class NanostreamPlayer implements MediaPlayercontrol, Surfaceholder.Callback</code></p>
+<h4><a class="anchor" aria-hidden="true" id="function-life-cycle"></a><a href="#function-life-cycle" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Function Life Cycle</h4>
+<table>
+<thead>
+<tr><th>Instance Handling</th><th>Initialization</th><th>Capabilities</th><th>Queries</th><th>Playback Control</th><th>Supported by RTMP Player</th></tr>
+</thead>
+<tbody>
+<tr><td>createNanostreamPlayer</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td>setSettings</td><td></td><td></td><td></td><td>yes</td></tr>
+<tr><td></td><td>setPlayerEventListener</td><td></td><td></td><td></td><td>yes</td></tr>
+<tr><td></td><td></td><td>canPrepare</td><td></td><td></td><td>yes</td></tr>
+<tr><td></td><td></td><td>canPrepareAsync</td><td></td><td></td><td>yes</td></tr>
+<tr><td></td><td></td><td>canPause</td><td></td><td></td><td>yes</td></tr>
+<tr><td></td><td></td><td>canSeekBackward</td><td></td><td></td><td>yes</td></tr>
+<tr><td></td><td></td><td>canSeekForward</td><td></td><td></td><td>yes</td></tr>
+<tr><td></td><td></td><td></td><td>getState</td><td></td><td>yes</td></tr>
+<tr><td></td><td></td><td></td><td>isPlaying</td><td></td><td>yes</td></tr>
+<tr><td></td><td></td><td></td><td>getCurrentPosition</td><td></td><td>no</td></tr>
+<tr><td></td><td></td><td></td><td>getDuration</td><td></td><td>no</td></tr>
+<tr><td></td><td></td><td></td><td></td><td>prepare</td><td>no</td></tr>
+<tr><td></td><td></td><td></td><td></td><td>prepareAsync</td><td>no</td></tr>
+<tr><td></td><td></td><td></td><td></td><td>start</td><td>yes</td></tr>
+<tr><td></td><td></td><td></td><td></td><td>pause</td><td>yes</td></tr>
+<tr><td></td><td></td><td></td><td></td><td>seekTo</td><td>yes</td></tr>
+<tr><td></td><td></td><td></td><td></td><td>stop</td><td>yes</td></tr>
+<tr><td></td><td></td><td></td><td></td><td>start</td><td>yes</td></tr>
+<tr><td></td><td></td><td></td><td></td><td>stop</td><td>yes</td></tr>
+<tr><td></td><td>close</td><td></td><td></td><td></td><td>no</td></tr>
+<tr><td></td><td>release</td><td></td><td></td><td></td><td>yes</td></tr>
+</tbody>
+</table>
+<h3><a class="anchor" aria-hidden="true" id="creating-an-instance"></a><a href="#creating-an-instance" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Creating an Instance</h3>
+<p><code>NanostreamPlayer</code> instances can be created through the static factory function <code>createNanostreamPlayer</code> at the top level <code>nanoStream class</code>. NanostreamPlayer is designed to support multiple player instances. The number of parallel instances can be limited by system resources such as codec,surfaces,memory, network connections and bandwidth.</p>
+<h3><a class="anchor" aria-hidden="true" id="configuration-and-settings"></a><a href="#configuration-and-settings" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Configuration and Settings</h3>
+<p>Initial player settings are wrapped by the <code>NanostreamPlayer.PlayerSettings</code> class. The settings can be applied by calling <code>NanostreamPlayer.setSettings</code>.</p>
+<h3><a class="anchor" aria-hidden="true" id="playersettings"></a><a href="#playersettings" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>PlayerSettings:</h3>
+<table>
+<thead>
+<tr><th>Setting</th><th>Functions</th><th>Description</th><th>Type</th><th>Default Values</th></tr>
+</thead>
+<tbody>
+<tr><td>License</td><td>getLicense/setLicense</td><td>nanoStream license key</td><td>String</td><td>empty</td></tr>
+<tr><td>Url</td><td>getUrl/setUrl</td><td>RTMP url</td><td>String</td><td>empty</td></tr>
+<tr><td>Stream Name</td><td>getStreamname/setStreamname</td><td>RTMP stream name</td><td>String</td><td>empty</td></tr>
+<tr><td>User Name</td><td>getUsername/setUsername</td><td>User name if RTMP authentication is required</td><td>String</td><td>empty</td></tr>
+<tr><td>Password</td><td>getPassword/setPassword Password if RTMP authentication is required</td><td>String</td><td>empty</td><td></td></tr>
+<tr><td>Buffer Time</td><td>getBufferTimeMs/setBufferTimeMs</td><td>Length of the stream buffer in milliseconds</td><td>Integer</td><td>2000ms/2s</td></tr>
+<tr><td>Frame Dropping Mode</td><td>getFrameDroppingMode/setFrameDroppingMode</td><td>Configuration of the dropping mode regarding different droppable frame types</td><td>FrameDroppingMode</td><td>DROP_NO_FRAMES</td></tr>
+<tr><td>Stream Playback</td><td>getVideoPlayback/getAudioPlayback/setStreamPlayback</td><td>Enable stream types to be decoded and played</td><td>boolean</td><td>video:true, audio:true</td></tr>
+<tr><td>TrackTimout</td><td>getTrackTimeout/setTrackTimeout</td><td>Timeout to waiting for Track info</td><td>long</td><td>10000</td></tr>
+<tr><td>EndlessMode</td><td>getEndlessMode/setEndlessMode</td><td>Reopen the stream until stop call</td><td>boolean</td><td>false</td></tr>
+</tbody>
+</table>
+<h3><a class="anchor" aria-hidden="true" id="player-state"></a><a href="#player-state" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Player State</h3>
+<p>The player stat can be queried through the <code>getState()</code> function</p>
+<pre><code class="hljs css language-java"><span class="hljs-comment">/**
+*
+* The different states of the player instance.
+*
+*/</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">enum</span> PlayerState
+{
+    IDLE, INITIALIZED, PREPARED, STARTED, PAUSED, SEEKING, BUFFERING, RECONNECTING, PLAYBACKCOMPLETED, STOPPING, STOPPED;
+}
+</code></pre>
+<table>
+<thead>
+<tr><th>State</th><th>Description</th><th>Supported by RTMP Player</th></tr>
+</thead>
+<tbody>
+<tr><td>PlayerState.IDLE</td><td>Initial state. Player has not yet been initialized or has been closed.</td><td>yes</td></tr>
+<tr><td>PlayerState.INITIALIZED</td><td>Player has been initialized with license and settings.</td><td>yes</td></tr>
+<tr><td>PlayerState.PREPARED</td><td>Player has been prepared and is ready to start.</td><td>no</td></tr>
+<tr><td>PlayerState.STARTED</td><td>Playback has been started.</td><td>yes</td></tr>
+<tr><td>PlayerState.PAUSED</td><td>Playback has been paused.</td><td>yes</td></tr>
+<tr><td>PlayerState.SEEKING</td><td>Player is Seeking</td><td>yes</td></tr>
+<tr><td>PlayerState.BUFFERING</td><td>Player is buffering stream data.</td><td>yes</td></tr>
+<tr><td>PlayerState.RECONNECTING</td><td>Player is performing a reconnect</td><td>no</td></tr>
+<tr><td>PlayerState.PLAYBACKCOMPLETED</td><td>Playback has ended due to end of stream.</td><td>yes</td></tr>
+<tr><td>PlayerState.STOPPING</td><td>Player is stopping</td><td>yes</td></tr>
+<tr><td>PlayerState.STOPPED</td><td>Player is stopped</td><td>yes</td></tr>
+</tbody>
+</table>
+<h3><a class="anchor" aria-hidden="true" id="event-notification"></a><a href="#event-notification" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Event Notification</h3>
+<p>Event notifications can be received through the <code>NanostreamPlayer.PlayerEventListener</code> interface. Derive your listener from this interface and add it to the player by calling <code>setPlayerEventListener()</code>.</p>
+<h3><a class="anchor" aria-hidden="true" id="status-events"></a><a href="#status-events" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Status Events</h3>
+<p>Event Type : <code>TYPE_RTMP_STATUS</code></p>
+<table>
+<thead>
+<tr><th>Event Code</th><th>Description</th><th>Corresponding State</th></tr>
+</thead>
+<tbody>
+<tr><td>NanostreamEvent.CODE_STREAM_STARTED</td><td>Playback has been started.</td><td>PlayerState.STARTED</td></tr>
+<tr><td>NanostreamEvent.CODE_STREAM_STOPPING</td><td>Playback will stop.</td><td>PlayerState.STOPPING</td></tr>
+<tr><td>NanostreamEvent.CODE_STREAM_STOPPED</td><td>Playback has been stopped.</td><td>PlayerState.STOPPED</td></tr>
+<tr><td>NanostreamEvent.CODE_STREAM_ERROR_CONNECT</td><td>The connect to the stream url failed.</td><td>PlayerState.STOPPED</td></tr>
+<tr><td>NanostreamEvent.CODE_STREAM_BUFFERING</td><td>Player is buffering stream data</td><td>PlayerState.BUFFERING</td></tr>
+<tr><td>NanostreamEvent.CODE_STREAM_PLAYBACKCOMPLETED</td><td>Playback has ended due to end of stream.</td><td>PlayerState.PLAYBACKCOMPLETED</td></tr>
+<tr><td>NanostreamEvent.CODE_STREAM_NOT_FOUND</td><td>The specified stream could not be found.</td><td>PlayerState.STOPPED</td></tr>
+<tr><td>NanostreamEvent.CODE_STREAM_SEEKING</td><td>The Stream is seeking.</td><td>PlayerState.SEEKING</td></tr>
+<tr><td>NanostreamEvent.CODE_STREAM_PAUSED</td><td>The Stream is paused</td><td>PlayerState.PAUSED</td></tr>
+<tr><td>NanostreamEvent.CODE_STREAM_VIDEO_FORMAT_AVAILABLE</td><td>The Stream has a MediaFormat for the Video Track</td><td></td></tr>
+<tr><td>NanostreamEvent.CODE_STREAM_AUDIO_FORMAT_AVAILABLE</td><td>The Stream has a MediaFormat for the Audio Track</td><td></td></tr>
+</tbody>
+</table>
+<h3><a class="anchor" aria-hidden="true" id="results-and-error-events"></a><a href="#results-and-error-events" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Results and Error Events</h3>
+<p>Event Type : <code>TYPENANORESULTS</code> Event Codes : Values of type nanoResults</p>
+<table>
+<thead>
+<tr><th>Event Code</th><th>Description</th><th>Corresponding State</th></tr>
+</thead>
+<tbody>
+<tr><td>nanoResults.N_NOT_INITIALIZED</td><td>The RTMP library has not been initialized properly.</td><td>PlayerState.STOPPED</td></tr>
+<tr><td>nanoResults.N_ALLOCATEDATA_FAILED_RTMP_SRC</td><td>Memory allocation failed.</td><td>PlayerState.STOPPED</td></tr>
+<tr><td>nanoResults.N_LICENSE_INVALID</td><td>License check failed - License invalid.</td><td>PlayerState.STOPPED</td></tr>
+<tr><td>nanoResults.N_LICENSE_INVALID_RTMP_SRC</td><td>License check failed - RTMP playback is not included.</td><td>PlayerState.STOPPED</td></tr>
+<tr><td>nanoResults.N_LICENSE_EXPIRED</td><td>License check failed - The license period has ended.</td><td>PlayerState.STOPPED</td></tr>
+<tr><td>nanoResults.N_TCP_CONNECT_FAILED</td><td>TCP connect failed.</td><td>PlayerState.STOPPED</td></tr>
+<tr><td>nanoResults.N_RTMP_HANDSHAKE_FAILED</td><td>RTMP handshake failed.</td><td>PlayerState.STOPPED</td></tr>
+<tr><td>nanoResults.N_RTMP_CONNECT_FAILED</td><td>RTMP connect failed.</td><td>PlayerState.STOPPED</td></tr>
+<tr><td>nanoResults.N_RTMP_AUTH_FAILED</td><td>RTMP authentication is required and failed.</td><td>PlayerState.STOPPED</td></tr>
+<tr><td>nanoResults.N_RTMP_APP_INVALID</td><td>The application part of the url is invalid and has been rejected.</td><td>PlayerState.STOPPED</td></tr>
+<tr><td>nanoResults.N_RTMP_STATUS_PLAY_STREAM_NOT_FOUND</td><td>The stream name could not be found.</td><td>PlayerState.STOPPED</td></tr>
+<tr><td>nanoResults.N_RTMP_STATUS_PLAY_STREAM_SEEK</td><td>The player is seeking.</td><td>PlayerState.SEEKING</td></tr>
+<tr><td>nanoResults.N_RTMP_SEEK_NOT_AVAILABLE</td><td>The stream can not seek.</td><td></td></tr>
+<tr><td>nanoResults.N_RTMP_SEEK_FAILED</td><td>The stream can not seek.</td><td></td></tr>
+</tbody>
+</table>
+<h3><a class="anchor" aria-hidden="true" id="audio--video-format"></a><a href="#audio--video-format" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Audio / Video Format</h3>
+<p>After the <code>NanostreamEvent.CODE_STREAM_AUDIO/VIDEO_FORMAT_AVAILABLE</code> event, you can get the MediaFormat Object with the <code>getAudio/VideoFormat()</code>[^(2)] function call.
+We added two custom Fields for the Video MediaFormat:
+    <code>NanostreamPlayer.KEY_ASPECT_RATIO_WIDTH</code>
+    <code>NanostreamPlayer.KEY_ASPECT_RATIO_HEIGHT</code>
+With these custom fields you can get the aspect ratio width and height.</p>
+<pre><code class="hljs css language-java">MediaFormat videoFormat = mPlayer.getVideoFormat();
+
+<span class="hljs-keyword">int</span> aspectRatioWidth = videoFormat.getInteger(NanostreamPlayer.KEY_ASPECT_RATIO_WIDTH);
+<span class="hljs-keyword">int</span> aspectRatioHeight = videoFormat.getInteger(NanostreamPlayer.KEY_ASPECT_RATIO_HEIGHT);
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="implementation-example"></a><a href="#implementation-example" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Implementation Example</h3>
+<pre><code class="hljs css language-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">PlayerActivity</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Activity</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">PlayerEventListener</span>, <span class="hljs-title">SurfaceHolder</span>.<span class="hljs-title">Callback</span> </span>{
+    ...
+    <span class="hljs-keyword">private</span> NanostreamPlayer mPlayer = <span class="hljs-keyword">null</span>;
+    <span class="hljs-keyword">private</span> String license = <span class="hljs-string">"YOUR LICENSE CODE"</span>;
+
+    <span class="hljs-keyword">private</span> String strStreamUrl = <span class="hljs-string">"rtmp://192.168.1.100/vod"</span>;
+    <span class="hljs-keyword">private</span> String strStreamname = <span class="hljs-string">"mp4:file.mp4"</span>;
+
+    <span class="hljs-keyword">private</span> LinearLayout root;
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onCreate</span><span class="hljs-params">(Bundle savedInstanceState)</span> </span>{
+        <span class="hljs-keyword">super</span>.onCreate(savedInstanceState);
+        root = <span class="hljs-keyword">new</span> LinearLayout(<span class="hljs-keyword">this</span>);
+        root.setOrientation(LinearLayout.VERTICAL);
+        root.setLayoutParams(containerParams);
+        root.setBackgroundColor(Color.BLACK);
+
+        ...
+
+        mPlayer = nanoStream.createNanostreamPlayer();
+
+        PlayerSettings settings = mPlayer.<span class="hljs-keyword">new</span> PlayerSettings();
+
+        settings.setLicense(license);
+        settings.setUrl(strStreamUrl);
+        settings.setStreamname(strStreamname);
+        settings.setAuthUsername(<span class="hljs-string">""</span>);
+        settings.setAuthPassword(<span class="hljs-string">""</span>);
+        settings.setBufferTimeMs(<span class="hljs-number">2000</span>);
+
+        mPlayer.setSettings(settings);
+        mPlayer.setPlayerEventListener(<span class="hljs-keyword">this</span>);
+
+        ...
+        <span class="hljs-comment">// we need a surface Callback for the application</span>
+        LinearLayout.LayoutParams surfaceParams = <span class="hljs-keyword">new</span> LinearLayout.LayoutParams(ViewGroup.LayoutParams.FILL_PARENT, ViewGroup.LayoutParams.FILL_PARENT, <span class="hljs-number">0.5F</span>);
+        surfaceParams.gravity = Gravity.CENTER;
+        surfaceParams.weight = <span class="hljs-number">0.5f</span>;
+
+        SurfaceView surfaceView = <span class="hljs-keyword">new</span> SurfaceView(<span class="hljs-keyword">this</span>);
+        surfaceView.setLayoutParams(surfaceParams);
+        surfaceView.getHolder.addCallback(<span class="hljs-keyword">this</span>);
+
+        root.addView(surfaceView);
+        setContentView(root);
+    }
+
+    ...
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onPlayerEvent</span><span class="hljs-params">(NanostreamEvent event, NanostreamPlayer instance)</span> </span>{
+        <span class="hljs-keyword">final</span> String msg = event.GetDescription();
+        Log.d(<span class="hljs-keyword">this</span>.getClass().getName(), event.GetDescription());
+    }
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">surfaceCreated</span><span class="hljs-params">(SurfaceHolder holder)</span> </span>{
+        mPlayer.surfaceCreated(holder);
+
+        <span class="hljs-keyword">try</span> {
+            <span class="hljs-keyword">if</span> (!mPlayer.getState().equals(PlayerState.STARTED)) {
+                mPlayer.start();
+            }
+        } <span class="hljs-keyword">catch</span> (IllegalStateException e) {
+            e.printStackTrace();
+        }
+    }
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">surfaceChanged</span><span class="hljs-params">(SurfaceHolder holder, <span class="hljs-keyword">int</span> format, <span class="hljs-keyword">int</span> width, <span class="hljs-keyword">int</span> height)</span> </span>{
+        mPlayer.surfaceChanged(holder, format, width, height);
+    }
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">surfaceDestroyed</span><span class="hljs-params">(SurfaceHolder holder)</span> </span>{
+        mPlayer.surfaceDestroyed(holder);
+    }
+}
+</code></pre>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 12/13/2020</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/nanostream/android/nanostream_android_getting_started"><span class="arrow-prev">← </span><span>Getting started</span></a><a class="docs-next button" href="/docs/nanostream/android/nanostream_android_developer_manual_streaming"><span>Streaming Media</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#rtmp-playback">RTMP Playback</a><ul class="toc-headings"><li><a href="#description-and-features">Description and Features</a></li><li><a href="#license">License</a></li><li><a href="#interface">Interface</a></li><li><a href="#creating-an-instance">Creating an Instance</a></li><li><a href="#configuration-and-settings">Configuration and Settings</a></li><li><a href="#playersettings">PlayerSettings:</a></li><li><a href="#player-state">Player State</a></li><li><a href="#event-notification">Event Notification</a></li><li><a href="#status-events">Status Events</a></li><li><a href="#results-and-error-events">Results and Error Events</a></li><li><a href="#audio--video-format">Audio / Video Format</a></li><li><a href="#implementation-example">Implementation Example</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><div><h5>Contact</h5><a href="https://www.nanocosmos.de/">Homepage</a><a href="https://www.nanocosmos.de/contact">Contact</a><a href="https://www.nanocosmos.de/support">Support</a><a href="https://www.nanocosmos.de/terms">Legal Terms</a></div><div><h5>Products</h5><a href="https://www.nanocosmos.de/cloud">Nanostream Cloud with Bintu.Live</a><a href="https://www.nanocosmos.de/h5live">H5Live Low Latency HTML5-Player</a><a href="https://www.nanocosmos.de/webrtc">nanoStream Webcaster</a><a href="https://www.nanocosmos.de/#nanostream">Nanostream Apps and SDK</a></div><div><h5>More</h5><a href="https://www.nanocosmos.de/blog/">Blog</a><a href="https://twitter.com/nanovideo">Twitter</a><a href="https://www.facebook.com/nanocosmos.net/">Facebook</a><a href="https://www.linkedin.com/company/nanocosmos-gmbh">LinkedIn</a><a href="https://github.com/nanocosmos/docs">GitHub</a><a class="github-button" href="https://github.com/nanocosmos/docs" data-icon="octicon-star" data-count-href="/nanocosmos/docs/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://nanocosmos.de/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/footer_logo.png" alt="nanocosmos GmbH" width="170" height="45"/></a><section class="copyright">Copyright © 2020 nanocosmos GmbH</section></footer></div></body></html>

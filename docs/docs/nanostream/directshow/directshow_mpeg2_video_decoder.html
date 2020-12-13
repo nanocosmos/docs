@@ -1,0 +1,176 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>nanostream/directshow/directshow_mpeg2_video_decoder · nanocosmos Documentation</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="## nanocosmos MPEG-2 HD/SD Video Decoder Filter"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="nanostream/directshow/directshow_mpeg2_video_decoder · nanocosmos Documentation"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.nanocosmos.de/"/><meta property="og:description" content="## nanocosmos MPEG-2 HD/SD Video Decoder Filter"/><meta property="og:image" content="https://docs.nanocosmos.de/img/docusaurus.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://docs.nanocosmos.de/img/docusaurus.png"/><link rel="shortcut icon" href="/img/favicon_nano.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script>
+              (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+              (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+              m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+              })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+              ga('create', 'UA-552140-1', 'auto');
+              ga('send', 'pageview');
+            </script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="/js/search.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/nanocosmos_header_logo.png" alt="nanocosmos Documentation"/><h2 class="headerTitleWithLogo">nanocosmos Documentation</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/docs/cloud/cloud_overview" target="_self">nanoStream Cloud</a></li><li class=""><a href="/docs/nanoplayer/nanoplayer_introduction" target="_self">H5Live Player</a></li><li class=""><a href="/docs/webrtc/nanostream_webrtc_introduction" target="_self">nanoStream Webcaster</a></li><li class=""><a href="/docs/nanostream/nanostream" target="_self">nanoStream Apps and SDKs</a></li><li class=""><a href="/docs/samples/samples" target="_self">Samples</a></li><li class=""><a href="/docs/faq/faq_streaming" target="_self">FAQ</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/nanocosmos/docs/tree/master/docs/nanostream/directshow/directshow_mpeg2_video_decoder.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 id="__docusaurus" class="postHeaderTitle">nanostream/directshow/directshow_mpeg2_video_decoder</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="nanocosmos-mpeg-2-hdsd-video-decoder-filter"></a><a href="#nanocosmos-mpeg-2-hdsd-video-decoder-filter" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>nanocosmos MPEG-2 HD/SD Video Decoder Filter</h2>
+<h3><a class="anchor" aria-hidden="true" id="directshow-filter--module"></a><a href="#directshow-filter--module" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>DirectShow Filter / Module</h3>
+<p>nanocosmos MPEG-2 HD/SD Video Decoder\
+Module Name: <code>nmpeg2dec.ax</code></p>
+<h3><a class="anchor" aria-hidden="true" id="connectivity"></a><a href="#connectivity" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Connectivity</h3>
+<p>The input is accepting connections to splitter filters or combined source/splitter filters matching the following media types:</p>
+<p>Major types:</p>
+<ul>
+<li>MEDIATYPE_Video</li>
+</ul>
+<p>Subtypes:</p>
+<ul>
+<li>MEDIASUBTYPE_MPEG2</li>
+</ul>
+<p>Formats:</p>
+<ul>
+<li>FORMAT_VideoInfo,</li>
+<li>FORMAT_VideoInfo2,</li>
+<li>FORMAT_MPEG2_VIDEO</li>
+</ul>
+<p>The output supports these media types:</p>
+<p>Major types:</p>
+<ul>
+<li>MEDIATYPE_Video</li>
+</ul>
+<p>Subtypes:</p>
+<ul>
+<li>MEDIASUBTYPE_YV12,</li>
+<li>MEDIASUBTYPE_I420,</li>
+<li>MEDIASUBTYPE_IYUV,</li>
+<li>MEDIASUBTYPE_YUY2,</li>
+<li>MEDIASUBTYPE_RGB24,</li>
+<li>MEDIASUBTYPE_RGB32,</li>
+<li>MEDIASUBTYPE_ARGB32,</li>
+<li>MEDIASUBTYPE_RGB565,</li>
+</ul>
+<p>Formats:</p>
+<ul>
+<li>FORMAT_VideoInfo</li>
+<li>FORMAT_VideoInfo2</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="filter-guids"></a><a href="#filter-guids" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Filter GUIDs</h3>
+<pre><code class="hljs css language-cpp"><span class="hljs-comment">// Filter GUID</span>
+<span class="hljs-comment">// {223784F1-4D9F-45a5-8281-8F9AFCABD904}</span>
+DEFINE_GUID(CLSID_NANO_MPEG2_DECODER, <span class="hljs-number">0x223784f1</span>, <span class="hljs-number">0x4d9f</span>, <span class="hljs-number">0x45a5</span>, <span class="hljs-number">0x82</span>, <span class="hljs-number">0x81</span>, <span class="hljs-number">0x8f</span>, <span class="hljs-number">0x9a</span>, <span class="hljs-number">0xfc</span>, <span class="hljs-number">0xab</span>, <span class="hljs-number">0xd9</span>, <span class="hljs-number">0x4</span>);
+
+<span class="hljs-comment">// Configuration interface ICodecProp</span>
+<span class="hljs-comment">// {0F817204-82C8-4c12-884A-F45FB2F33A6E}</span>
+DEFINE_GUID(IID_ICodecProp, <span class="hljs-number">0xf817204</span>, <span class="hljs-number">0x82c8</span>, <span class="hljs-number">0x4c12</span>, <span class="hljs-number">0x88</span>, <span class="hljs-number">0x4a</span>, <span class="hljs-number">0xf4</span>, <span class="hljs-number">0x5f</span>, <span class="hljs-number">0xb2</span>, <span class="hljs-number">0xf3</span>, <span class="hljs-number">0x3a</span>, <span class="hljs-number">0x6e</span>);
+
+<span class="hljs-comment">// ICodecProp: IID_nanoPeg_LicenseString</span>
+<span class="hljs-comment">// type: BSTR / Unicode string</span>
+<span class="hljs-comment">// Set license string to unlock filter</span>
+<span class="hljs-comment">// {1788F0B0-5985-4a19-B7FE-8AAC1BFC14B3}</span>
+DEFINE_GUID(IID_nanoPeg_LicenseString, <span class="hljs-number">0x1788f0b0</span>, <span class="hljs-number">0x5985</span>, <span class="hljs-number">0x4a19</span>, <span class="hljs-number">0xb7</span>, <span class="hljs-number">0xfe</span>, <span class="hljs-number">0x8a</span>, <span class="hljs-number">0xac</span>, <span class="hljs-number">0x1b</span>, <span class="hljs-number">0xfc</span>, <span class="hljs-number">0x14</span>, <span class="hljs-number">0xb3</span>);
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="setting-the-license-to-unlock-filter"></a><a href="#setting-the-license-to-unlock-filter" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Setting the license to unlock filter</h3>
+<p>The filter can be unlocked either through a license key entry in the windows registry or
+by setting the license key through COM interface ICodecProp::SetProperty with the
+property <strong>IID_nanoPeg_LicenseString</strong> as first parameter. The second license parameter
+has to be a wide/unicode string!</p>
+<h3><a class="anchor" aria-hidden="true" id="decoder-configuration-registry-settings"></a><a href="#decoder-configuration-registry-settings" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Decoder Configuration Registry Settings</h3>
+<p>Key:</p>
+<pre><code class="hljs">HKEY_CURRENT_USER<span class="hljs-symbol">\S</span>oftware<span class="hljs-symbol">\n</span>anocosmos<span class="hljs-symbol">\n</span>mpeg2dec
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="frame-dropping--skipping-mode"></a><a href="#frame-dropping--skipping-mode" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Frame dropping / skipping mode</h4>
+<p>Determines the behaviour in the case of timing / performance problems.</p>
+<ul>
+<li>Value name:     DroppingMode</li>
+<li>Value type:     REG_DWORD</li>
+<li>Valid values:
+<ul>
+<li><code>0</code> - <code>disabled</code></li>
+<li><code>1</code> - <code>enabled</code>, <code>__default value__</code></li>
+</ul></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="output-color-space-selection"></a><a href="#output-color-space-selection" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Output color space selection</h4>
+<p>Forces the filter to use a desired output color format. If no or no valid value is set, the output color format will be negotiated with the downstream renderer filter (usually YV12).</p>
+<ul>
+<li>Value name:     ForceOutputFourCC</li>
+<li>Value type:             <code>REG_SZ / String</code></li>
+<li>Valid values:
+<ul>
+<li><code>YV12</code>,</li>
+<li><code>I420</code>,</li>
+<li><code>IYUV</code>,</li>
+<li><code>YUY2</code>,</li>
+<li><code>RGB32</code>,</li>
+<li><code>RGB24</code>,</li>
+<li><code>RGB565</code>,</li>
+<li><code>ARGB32</code></li>
+</ul></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="deinterlacing-mode"></a><a href="#deinterlacing-mode" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Deinterlacing Mode</h4>
+<p>Determines the deinterlacing behaviour.</p>
+<ul>
+<li>Value name: DeinterlacingMode</li>
+<li>Value type:   REG_DWORD</li>
+<li>Valid values:
+<ul>
+<li><code>0</code> - disabled</li>
+<li><code>1</code> - duplicate, <strong>default value</strong></li>
+<li><code>2</code> - blend</li>
+<li><code>3</code> - median</li>
+<li><code>4</code> - edge detection</li>
+<li><code>5</code> - median threshold</li>
+<li><code>6</code> - content adaptive vertical temporal</li>
+</ul></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="directshow-editing-services-des-return-mode"></a><a href="#directshow-editing-services-des-return-mode" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>DirectShow Editing Services (DES) Return Mode</h4>
+<p>Receive returns HRESULT error values if Deliver fails.
+Needs to be enabled for DES.</p>
+<ul>
+<li>Value name: <code>DESReturnMode</code></li>
+<li>Value type: <code>REG_DWORD</code></li>
+<li>Valid values:
+<ul>
+<li><code>0</code> - disabled, <strong>default value</strong></li>
+<li><code>1</code> - enabled</li>
+</ul></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="threading-mode"></a><a href="#threading-mode" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Threading Mode</h4>
+<p>Determines the threading behaviour.
+Auto detection or number of decoding threads.</p>
+<ul>
+<li>Value name: <code>DESReturnMode</code></li>
+<li>Value type: <code>REG_DWORD</code></li>
+<li>Valid values:
+<ul>
+<li><code>0</code> - auto detect number of cpus, <strong>default value</strong></li>
+<li><code>1-8</code> - set number of decoding threads</li>
+</ul></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="output-resolution-alignment"></a><a href="#output-resolution-alignment" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Output resolution alignment</h4>
+<p>Determines the alignment of the output resolution,
+to adjust it to multiples of this value.</p>
+<ul>
+<li>Value name: <code>OutputAlignment</code></li>
+<li>Value type: <code>REG_DWORD</code></li>
+<li>Valid values:
+<ul>
+<li><code>1-16</code>, <strong>default value:</strong> 4</li>
+</ul></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="debug-log-configuration-registry-settings"></a><a href="#debug-log-configuration-registry-settings" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Debug-Log Configuration Registry Settings</h3>
+<p>Key:</p>
+<pre><code class="hljs">HKEY_CURRENT_USER<span class="hljs-symbol">\S</span>oftware<span class="hljs-symbol">\D</span>ebugNano<span class="hljs-symbol">\n</span>mpeg2dec.ax
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="file-name"></a><a href="#file-name" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>File name</h4>
+<p>Sets the output file name. The folder must already exist.</p>
+<ul>
+<li>Value name:     <code>LogToFile</code></li>
+<li>Value type:             <code>REG_SZ</code> / <code>String</code></li>
+<li>Valid values:   a valid output file name to enable file logging or an empty string</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="logging-level"></a><a href="#logging-level" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Logging level</h3>
+<p>A higher value increases the amount of logging messages sent, and messages get more detailed.</p>
+<ul>
+<li>Value name:     <code>TRACE</code></li>
+<li>Value type:             <code>REG_DWORD</code></li>
+<li>Valid values:
+<ul>
+<li><code>0</code> - minimal logging</li>
+<li>…</li>
+<li><code>9</code> - maximal logging</li>
+</ul></li>
+</ul>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 12/13/2020</em></div><div class="docs-prevnext"></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#nanocosmos-mpeg-2-hdsd-video-decoder-filter">nanocosmos MPEG-2 HD/SD Video Decoder Filter</a><ul class="toc-headings"><li><a href="#directshow-filter--module">DirectShow Filter / Module</a></li><li><a href="#connectivity">Connectivity</a></li><li><a href="#filter-guids">Filter GUIDs</a></li><li><a href="#setting-the-license-to-unlock-filter">Setting the license to unlock filter</a></li><li><a href="#decoder-configuration-registry-settings">Decoder Configuration Registry Settings</a></li><li><a href="#debug-log-configuration-registry-settings">Debug-Log Configuration Registry Settings</a></li><li><a href="#logging-level">Logging level</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><div><h5>Contact</h5><a href="https://www.nanocosmos.de/">Homepage</a><a href="https://www.nanocosmos.de/contact">Contact</a><a href="https://www.nanocosmos.de/support">Support</a><a href="https://www.nanocosmos.de/terms">Legal Terms</a></div><div><h5>Products</h5><a href="https://www.nanocosmos.de/cloud">Nanostream Cloud with Bintu.Live</a><a href="https://www.nanocosmos.de/h5live">H5Live Low Latency HTML5-Player</a><a href="https://www.nanocosmos.de/webrtc">nanoStream Webcaster</a><a href="https://www.nanocosmos.de/#nanostream">Nanostream Apps and SDK</a></div><div><h5>More</h5><a href="https://www.nanocosmos.de/blog/">Blog</a><a href="https://twitter.com/nanovideo">Twitter</a><a href="https://www.facebook.com/nanocosmos.net/">Facebook</a><a href="https://www.linkedin.com/company/nanocosmos-gmbh">LinkedIn</a><a href="https://github.com/nanocosmos/docs">GitHub</a><a class="github-button" href="https://github.com/nanocosmos/docs" data-icon="octicon-star" data-count-href="/nanocosmos/docs/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://nanocosmos.de/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/footer_logo.png" alt="nanocosmos GmbH" width="170" height="45"/></a><section class="copyright">Copyright © 2020 nanocosmos GmbH</section></footer></div></body></html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>NanoPlayer Status &amp; Error Codes · nanocosmos Documentation</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="## General"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="NanoPlayer Status &amp; Error Codes · nanocosmos Documentation"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.nanocosmos.de/"/><meta property="og:description" content="## General"/><meta property="og:image" content="https://docs.nanocosmos.de/img/docusaurus.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://docs.nanocosmos.de/img/docusaurus.png"/><link rel="shortcut icon" href="/img/favicon_nano.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script>
+              (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+              (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+              m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+              })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+              ga('create', 'UA-552140-1', 'auto');
+              ga('send', 'pageview');
+            </script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="/js/search.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/nanocosmos_header_logo.png" alt="nanocosmos Documentation"/><h2 class="headerTitleWithLogo">nanocosmos Documentation</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/docs/cloud/cloud_overview" target="_self">nanoStream Cloud</a></li><li class="siteNavGroupActive"><a href="/docs/nanoplayer/nanoplayer_introduction" target="_self">H5Live Player</a></li><li class=""><a href="/docs/webrtc/nanostream_webrtc_introduction" target="_self">nanoStream Webcaster</a></li><li class=""><a href="/docs/nanostream/nanostream" target="_self">nanoStream Apps and SDKs</a></li><li class=""><a href="/docs/samples/samples" target="_self">Samples</a></li><li class=""><a href="/docs/faq/faq_streaming" target="_self">FAQ</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>API</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">H5Live Player</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/nanoplayer/nanoplayer_introduction">Introduction</a></li><li class="navListItem"><a class="navItem" href="/docs/nanoplayer/nanoplayer_getting_started">Getting started</a></li><li class="navListItem"><a class="navItem" href="/docs/nanoplayer/nanoplayer_supported_browsers">Supported Browsers</a></li><li class="navListItem"><a class="navItem" href="/docs/nanoplayer/nanoplayer_player_metrics">Player Metrics</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Features</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/nanoplayer/nanoplayer_autoplay">Autoplay</a></li><li class="navListItem"><a class="navItem" href="/docs/nanoplayer/nanoplayer_token_security">Secure playback with H5Live</a></li><li class="navListItem"><a class="navItem" href="/docs/nanoplayer/nanoplayer_feature_stream_switching">Stream switching and ABR</a></li><li class="navListItem"><a class="navItem" href="/docs/nanoplayer/nanoplayer_feature_fullscreen_api">Fullscreen API</a></li><li class="navListItem"><a class="navItem" href="/docs/nanoplayer/nanoplayer_feature_network_reconnect">Network Reconnect</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">API</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/nanoplayer/nanoplayer_api">NanoPlayer</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/nanoplayer/nanoplayer_api_errors">NanoPlayer Status &amp; Error Codes</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Other</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/nanoplayer/nanoplayer_faq">FAQ</a></li><li class="navListItem"><a class="navItem" href="/docs/nanoplayer/nanoplayer_blogposts">Blog</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/nanocosmos/docs/tree/master/docs/nanoplayer/nanoplayer_api_errors.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 id="__docusaurus" class="postHeaderTitle">NanoPlayer Status &amp; Error Codes</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="general"></a><a href="#general" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>General</h2>
+<p>In case something went wrong at setup, startup or playback an error will be thrown over the <a href="../nanoplayer_api/#onerror"><code>onError</code></a> event if registered with an error handler function over <a href="../nanoplayer_api/#nanoplayerconfig--codeobjectcode"><code>config.events.onError</code></a>.</p>
+<p>There are five error groups:</p>
+<ul>
+<li><a href="#player-errors"><strong>general player errors</strong></a> <code>1000-1999</code></li>
+<li><a href="#stream-errors"><strong>stream errors</strong></a> <code>2000-2999</code></li>
+<li><a href="#media-errors"><strong>media element errors</strong></a> <code>3000-3999</code></li>
+<li><a href="#network-errors"><strong>network connection errors</strong></a> <code>4000-4999</code></li>
+<li><a href="#setup-errors"><strong>setup errors</strong></a> <code>5000-5999</code></li>
+</ul>
+<p>Following some of the most frequent errors will be described.<br /> To see all errors please have a look at the possible <a href="../nanoplayer_api/#nanoplayererrorcode--codenumbercode"><code>errorcodes</code></a>.</p>
+<h2><a class="anchor" aria-hidden="true" id="player-errors"></a><a href="#player-errors" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Player Errors</h2>
+<blockquote>
+<p>These errors have codes in a <strong>range from 1000 to 1999</strong>.<br /></p>
+</blockquote>
+<p>1xxx codes represent general errors of the player on startup or playback.<br />
+The most frequent errors here are <code>1005</code>, <code>1007</code> and <code>1009</code>.</p>
+<h3><a class="anchor" aria-hidden="true" id="1005-playback-must-be-initialized-by-user-gesture"></a><a href="#1005-playback-must-be-initialized-by-user-gesture" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>1005 Playback must be initialized by user gesture.</h3>
+<p>This is related to autoplay. It is recommended to review the autoplay settings.<br /></p>
+<p>Please have a look at our blog entry <a href="https://www.nanocosmos.de/blog/2018/03/autoplay-on-web-pages-with-h5live-player-for-ultra-low-latency-live-streams/">about autoplay policies</a>.</p>
+<h3><a class="anchor" aria-hidden="true" id="1007-playback-suspended-by-external-reason"></a><a href="#1007-playback-suspended-by-external-reason" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>1007 Playback suspended by external reason.</h3>
+<p>This is indicating a special condition on mobile devices when the playback has been stopped by an event in the browser or system on a mobile device.<br /></p>
+<blockquote>
+<p>NOTE: This is a non critical error.<br /></p>
+</blockquote>
+<p>This includes:</p>
+<ul>
+<li>Player tab going to background after a tab switch</li>
+<li>Browser application being minimized or closed</li>
+<li>Browser application being interrupted by the system, e.g. in case of an incoming call or device being locked</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="1009-playback-failed-because-the-player-was-in-visibility-state-hidden-at-load-start"></a><a href="#1009-playback-failed-because-the-player-was-in-visibility-state-hidden-at-load-start" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>1009 Playback failed because the player was in visibility state 'hidden' at load start.</h3>
+<p>This is related to a policy in some browsers, e.g. Chrome, Chromium based and Safari preventing media playback start in a background tab, a tab that did not have focus/visibility yet.</p>
+<h2><a class="anchor" aria-hidden="true" id="stream-errors"></a><a href="#stream-errors" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Stream Errors</h2>
+<blockquote>
+<p>These errors have codes in a <strong>range from 2000 to 2999</strong>.<br /></p>
+</blockquote>
+<p>2xxx codes are related to fetching the media stream on the player side and the occurrence
+of timeouts during loading or playback. It is about the availability of the stream on the player side,
+which can be connected to the general availabilty of the stream, but as well to bad network conditions
+on the player side.<br />
+The most frequent errors here are <code>2001</code>, <code>2002</code>, <code>2003</code> and <code>2004</code>.</p>
+<h3><a class="anchor" aria-hidden="true" id="2001-the-requested-stream-can-not-be-found"></a><a href="#2001-the-requested-stream-can-not-be-found" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>2001 The requested stream can not be found.</h3>
+<p>No stream info and media data received.</p>
+<h3><a class="anchor" aria-hidden="true" id="2002-no-media-available"></a><a href="#2002-no-media-available" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>2002 No media available.</h3>
+<p>The stream was already playing, but media data stopped receiving.</p>
+<h3><a class="anchor" aria-hidden="true" id="2003-not-enough-media-data-received"></a><a href="#2003-not-enough-media-data-received" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>2003 Not enough media data received.</h3>
+<p>Stream info is received, but no media data was fetched.</p>
+<h3><a class="anchor" aria-hidden="true" id="2004-the-source-stream-has-been-stopped"></a><a href="#2004-the-source-stream-has-been-stopped" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>2004 The source stream has been stopped.</h3>
+<p>The stream was already playing, but the stream was unpublished.</p>
+<h2><a class="anchor" aria-hidden="true" id="media-errors"></a><a href="#media-errors" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Media Errors</h2>
+<blockquote>
+<p>These errors have codes in a <strong>range from 3000 to 3999</strong>.<br /></p>
+</blockquote>
+<p>3xxx codes are related to media playback errors in the system/browser playback components,
+MediaElement and/or Media Source Extensions.<br />
+The most present errors here are <code>3003</code> and <code>3100</code>.</p>
+<h3><a class="anchor" aria-hidden="true" id="3003-an-error-occurred-when-decoding-media"></a><a href="#3003-an-error-occurred-when-decoding-media" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>3003 An error occurred when decoding media.</h3>
+<p>An receiving media data chunk couldn't be decoded.</p>
+<h3><a class="anchor" aria-hidden="true" id="3100-the-media-source-extension-changed-the-state-to-ended"></a><a href="#3100-the-media-source-extension-changed-the-state-to-ended" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>3100 The media source extension changed the state to 'ended'.</h3>
+<p>The MSE stopped working.</p>
+<h2><a class="anchor" aria-hidden="true" id="network-errors"></a><a href="#network-errors" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Network Errors</h2>
+<blockquote>
+<p>These errors have codes in a <strong>range from 4000 to 4999</strong>.<br /></p>
+</blockquote>
+<p>4xxx codes are related to network errors of the media stream connections.
+Connect failures can be caused by bad network conditions, firewall issues
+and in rare cases by overreacting ad blockers.</p>
+<h3><a class="anchor" aria-hidden="true" id="4001-could-not-open-connection-timeout-reached"></a><a href="#4001-could-not-open-connection-timeout-reached" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>4001 Could not open connection. Timeout reached.</h3>
+<p>The websocket server is not available or not present, a timeout for establishing the connection is reached.</p>
+<h3><a class="anchor" aria-hidden="true" id="4006-the-source-request-was-aborted-by-timeout"></a><a href="#4006-the-source-request-was-aborted-by-timeout" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>4006 The source request was aborted by timeout.</h3>
+<p>An <a href="../nanoplayer_api/#nanoplayerupdatesourcesource"><code>updateSource</code></a> or a <a href="../nanoplayer_api/#nanoplayerswitchstreamindex"><code>switchStream</code></a> request was run into a timeout.</p>
+<h2><a class="anchor" aria-hidden="true" id="setup-errors"></a><a href="#setup-errors" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Setup Errors</h2>
+<blockquote>
+<p>These errors have codes in a <strong>range from 5000 to 5999</strong>.<br /></p>
+</blockquote>
+<p>5xxx are related to errors during the setup/configuration stage, mainly configuration errors and insufficient browser capabilities.
+In most cases it makes sense to check the configuration that has been used.</p>
+<h3><a class="anchor" aria-hidden="true" id="5001-javascript-error"></a><a href="#5001-javascript-error" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>5001 &quot;?javascript error?&quot;</h3>
+<p>A javascript error occured during setup promise execution. Most often the is reason an 'undefined' error within the setup promise resolve or triggered events (e.g. <a href="../nanoplayer_api/#onready"><code>onReady</code></a>, <a href="../nanoplayer_api/#onmute"><code>onMute</code></a> or <a href="../nanoplayer_api/#onvolumechange"><code>onVolumeChange</code></a>) during setup.<br /></p>
+<p>Example:</p>
+<ul>
+<li>&quot;undefined is not an object&quot;</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="5002-this-browser-does-not-fully-support-html5-and-h5live"></a><a href="#5002-this-browser-does-not-fully-support-html5-and-h5live" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>5002 This browser does not fully support HTML5 and H5Live.</h3>
+<p>The used browser does not fully support HTML5 and H5Live.<br /></p>
+<p>Supported browsers are:</p>
+<ul>
+<li>Chrome &gt;=54 (Windows, MacOSX, Android)</li>
+<li>Firefox &gt;=48 (Windows, MacOSX, Android)</li>
+<li>Microsoft Edge (Windows)</li>
+<li>Microsoft Internet Explorer 11 (at least Windows 8)</li>
+<li>Safari (MacOSX &amp; at least iOS 10)</li>
+</ul>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 12/13/2020</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/nanoplayer/nanoplayer_api"><span class="arrow-prev">← </span><span class="function-name-prevnext">NanoPlayer</span></a><a class="docs-next button" href="/docs/nanoplayer/nanoplayer_faq"><span>FAQ</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#general">General</a></li><li><a href="#player-errors">Player Errors</a><ul class="toc-headings"><li><a href="#1005-playback-must-be-initialized-by-user-gesture">1005 Playback must be initialized by user gesture.</a></li><li><a href="#1007-playback-suspended-by-external-reason">1007 Playback suspended by external reason.</a></li><li><a href="#1009-playback-failed-because-the-player-was-in-visibility-state-hidden-at-load-start">1009 Playback failed because the player was in visibility state 'hidden' at load start.</a></li></ul></li><li><a href="#stream-errors">Stream Errors</a><ul class="toc-headings"><li><a href="#2001-the-requested-stream-can-not-be-found">2001 The requested stream can not be found.</a></li><li><a href="#2002-no-media-available">2002 No media available.</a></li><li><a href="#2003-not-enough-media-data-received">2003 Not enough media data received.</a></li><li><a href="#2004-the-source-stream-has-been-stopped">2004 The source stream has been stopped.</a></li></ul></li><li><a href="#media-errors">Media Errors</a><ul class="toc-headings"><li><a href="#3003-an-error-occurred-when-decoding-media">3003 An error occurred when decoding media.</a></li><li><a href="#3100-the-media-source-extension-changed-the-state-to-ended">3100 The media source extension changed the state to 'ended'.</a></li></ul></li><li><a href="#network-errors">Network Errors</a><ul class="toc-headings"><li><a href="#4001-could-not-open-connection-timeout-reached">4001 Could not open connection. Timeout reached.</a></li><li><a href="#4006-the-source-request-was-aborted-by-timeout">4006 The source request was aborted by timeout.</a></li></ul></li><li><a href="#setup-errors">Setup Errors</a><ul class="toc-headings"><li><a href="#5001-javascript-error">5001 &quot;?javascript error?&quot;</a></li><li><a href="#5002-this-browser-does-not-fully-support-html5-and-h5live">5002 This browser does not fully support HTML5 and H5Live.</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><div><h5>Contact</h5><a href="https://www.nanocosmos.de/">Homepage</a><a href="https://www.nanocosmos.de/contact">Contact</a><a href="https://www.nanocosmos.de/support">Support</a><a href="https://www.nanocosmos.de/terms">Legal Terms</a></div><div><h5>Products</h5><a href="https://www.nanocosmos.de/cloud">Nanostream Cloud with Bintu.Live</a><a href="https://www.nanocosmos.de/h5live">H5Live Low Latency HTML5-Player</a><a href="https://www.nanocosmos.de/webrtc">nanoStream Webcaster</a><a href="https://www.nanocosmos.de/#nanostream">Nanostream Apps and SDK</a></div><div><h5>More</h5><a href="https://www.nanocosmos.de/blog/">Blog</a><a href="https://twitter.com/nanovideo">Twitter</a><a href="https://www.facebook.com/nanocosmos.net/">Facebook</a><a href="https://www.linkedin.com/company/nanocosmos-gmbh">LinkedIn</a><a href="https://github.com/nanocosmos/docs">GitHub</a><a class="github-button" href="https://github.com/nanocosmos/docs" data-icon="octicon-star" data-count-href="/nanocosmos/docs/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://nanocosmos.de/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/footer_logo.png" alt="nanocosmos GmbH" width="170" height="45"/></a><section class="copyright">Copyright © 2020 nanocosmos GmbH</section></footer></div></body></html>

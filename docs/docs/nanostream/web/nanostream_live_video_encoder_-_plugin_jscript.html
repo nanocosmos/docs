@@ -1,0 +1,225 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Live Video Encoder - Plugin API · nanocosmos Documentation</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="**Note: This API is deprecated! Please use nanoStream Webcaster and H5Live!**"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Live Video Encoder - Plugin API · nanocosmos Documentation"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.nanocosmos.de/"/><meta property="og:description" content="**Note: This API is deprecated! Please use nanoStream Webcaster and H5Live!**"/><meta property="og:image" content="https://docs.nanocosmos.de/img/docusaurus.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://docs.nanocosmos.de/img/docusaurus.png"/><link rel="shortcut icon" href="/img/favicon_nano.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script>
+              (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+              (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+              m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+              })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+              ga('create', 'UA-552140-1', 'auto');
+              ga('send', 'pageview');
+            </script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="/js/search.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/nanocosmos_header_logo.png" alt="nanocosmos Documentation"/><h2 class="headerTitleWithLogo">nanocosmos Documentation</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/docs/cloud/cloud_overview" target="_self">nanoStream Cloud</a></li><li class=""><a href="/docs/nanoplayer/nanoplayer_introduction" target="_self">H5Live Player</a></li><li class=""><a href="/docs/webrtc/nanostream_webrtc_introduction" target="_self">nanoStream Webcaster</a></li><li class=""><a href="/docs/nanostream/nanostream" target="_self">nanoStream Apps and SDKs</a></li><li class=""><a href="/docs/samples/samples" target="_self">Samples</a></li><li class=""><a href="/docs/faq/faq_streaming" target="_self">FAQ</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/nanocosmos/docs/tree/master/docs/nanostream/web/nanostream_live_video_encoder_-_plugin_jscript.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 id="__docusaurus" class="postHeaderTitle">Live Video Encoder - Plugin API</h1></header><article><div><span><p><strong>Note: This API is deprecated! Please use nanoStream Webcaster and H5Live!</strong></p>
+<blockquote>
+<p><strong>NOTE</strong>:</p>
+<p>This is the Plugin API for NPAPI and ActiveX. For using Chrome Browsers, see our <a href="/docs/nanostream/web/nanostream-4.x-web-api">nanoStream Web API 4.x</a></p>
+</blockquote>
+<h2><a class="anchor" aria-hidden="true" id="browser-based-usage-with-html-and-javascript"></a><a href="#browser-based-usage-with-html-and-javascript" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Browser based usage with HTML and Javascript</h2>
+<p>The Live Video Encoder core components are available as plugins for several browsers:
+Internet Explorer (IE), based on <code>ActiveX</code>, and NP-Plugin based browsers (Firefox, Safari, Chrome). The same API is valid for integration into other languages, <code>C++</code>, <code>.NET</code>, <code>Delphi</code>, etc. See the sample web page for functionality or contact us for further help.</p>
+<h2><a class="anchor" aria-hidden="true" id="how-to-embed-the-encoder-plugin-into-html"></a><a href="#how-to-embed-the-encoder-plugin-into-html" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>How to embed the encoder plugin into HTML</h2>
+<h3><a class="anchor" aria-hidden="true" id="active-x-control"></a><a href="#active-x-control" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Active-X Control</h3>
+<p>The Active-X Control is compatible with Microsoft Internet Explorer only. It is loaded by specifying the classid for the plugin. The plugin then may be accessed by Javascript via the ID specified, here <code>nanovid1</code>.</p>
+<p><strong>Simple Version without auto-install:</strong></p>
+<pre><code class="hljs css language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">object</span> <span class="hljs-attr">ID</span>=<span class="hljs-string">"nanovid1"</span> <span class="hljs-attr">classid</span>=<span class="hljs-string">"clsid:E6F9EDB5-797B-4bc3-95E2-B7EA0886273B"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">object</span>&gt;</span>
+</code></pre>
+<p><strong>Advanced Version with auto-install from CAB file:</strong></p>
+<pre><code class="hljs css language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">object</span> <span class="hljs-attr">ID</span>=<span class="hljs-string">"nanovid1"</span>
+  <span class="hljs-attr">classid</span>=<span class="hljs-string">"clsid:E6F9EDB5-797B-4bc3-95E2-B7EA0886273B"</span>
+  <span class="hljs-attr">width</span>=<span class="hljs-string">"480"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"360"</span>
+  <span class="hljs-attr">codebase</span>=<span class="hljs-string">"../packages/nanostream-1.5.0.6.cab#version=1,5,0,6"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">object</span>&gt;</span>
+</code></pre>
+<blockquote>
+<p><strong>Note</strong>: replace the codebase path and version with the cab file you received for installation.</p>
+</blockquote>
+<h3><a class="anchor" aria-hidden="true" id="npapi-plugin"></a><a href="#npapi-plugin" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>NPAPI Plugin</h3>
+<p>The NPAPI plugin is compatible with Mozilla Firefox, Apple Safari and Google Chrome.</p>
+<pre><code class="hljs css language-xml">    <span class="hljs-tag">&lt;<span class="hljs-name">embed</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"nanovid1"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"application/x-nanocosmos-LiveVideoEncoder"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">480</span> <span class="hljs-attr">height</span>=<span class="hljs-string">360</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">noembed</span>&gt;</span>
+      Can't embed plugin.
+    <span class="hljs-tag">&lt;/<span class="hljs-name">noembed</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">embed</span>&gt;</span>
+</code></pre>
+<p>It may be used with an <code>&lt;object&gt;</code> tag as well.</p>
+<h3><a class="anchor" aria-hidden="true" id="browser-independent-plugin-loading"></a><a href="#browser-independent-plugin-loading" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Browser independent plugin loading</h3>
+<p>The object tags may be nested to support all browser types:</p>
+<pre><code class="hljs css language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">object</span> <span class="hljs-attr">ID</span>=<span class="hljs-string">"nanovid1"</span>
+  <span class="hljs-attr">classid</span>=<span class="hljs-string">"clsid:E6F9EDB5-797B-4bc3-95E2-B7EA0886273B"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"480"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"360"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">comment</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">embed</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"nanovid1"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"application/x-nanocosmos-LiveVideoEncoder"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">480</span> <span class="hljs-attr">height</span>=<span class="hljs-string">360</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">noembed</span>&gt;</span>Can't embed plugin.<span class="hljs-tag">&lt;/<span class="hljs-name">noembed</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">embed</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">comment</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">object</span>&gt;</span>
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="license-and-other-custom-settings"></a><a href="#license-and-other-custom-settings" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>License and other custom settings</h3>
+<p>The License key is a string which needs to be placed into the <code>nanoLicense.js</code> file.\
+The <code>nanoLicense.js</code> also contains the mime type and path to the Mozilla based plugin (XPI). The default path is <code>../packages/nanostream.xpi</code>:</p>
+<h4><a class="anchor" aria-hidden="true" id="contents-of-nanolicensejs"></a><a href="#contents-of-nanolicensejs" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Contents of nanoLicense.js</h4>
+<pre><code class="hljs css language-javascript"><span class="hljs-comment">// nanoStream License Code and custom settings</span>
+<span class="hljs-comment">// replace the "nlic" string with your custom license</span>
+g_nanoLicense = <span class="hljs-string">"nlic:1.0:nanoLiveEncDemo:……… "</span>;
+
+<span class="hljs-comment">//url to xpi installer package</span>
+<span class="hljs-keyword">var</span> nano_xpi_source = <span class="hljs-string">"../packages/nanostream.xpi"</span>;
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="dynamic-dom-loading-of-the-plugin"></a><a href="#dynamic-dom-loading-of-the-plugin" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Dynamic DOM Loading of the Plugin</h3>
+<p>The plugin may be loaded into the HTML Document (DOM) by dynamically creating it with Javascript:</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">createNanoVideoObject</span>(<span class="hljs-params"></span>)
+</span>{
+    <span class="hljs-keyword">var</span> nanovid = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">"object"</span>);
+    <span class="hljs-keyword">if</span>(isIE)
+        nanovid.setAttribute(<span class="hljs-string">"classid"</span>,<span class="hljs-string">"clsid:E6F9EDB5-797B-4bc3-95E2-B7EA0886273B"</span>);
+    <span class="hljs-keyword">else</span>
+          nanovid.setAttribute(<span class="hljs-string">"type"</span>,<span class="hljs-string">"application/x-nanocosmos-LiveVideoEncoder"</span>);
+    <span class="hljs-keyword">return</span> nanovid;
+}
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="accessing-the-plugin"></a><a href="#accessing-the-plugin" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Accessing the plugin</h2>
+<p>nanoStream is then available as a <code>DOM object</code> with the id <code>nanovid1</code>. The member functions and variables can be accessed as other Javascript objects, e.g. <code>nanovid1.StartPreview()</code>.</p>
+<h2><a class="anchor" aria-hidden="true" id="plugin-interface"></a><a href="#plugin-interface" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Plugin Interface</h2>
+<p>The nanoStream Plugin may be controlled from almost any language which is able to load the plugin.\
+The plugin exposes methods and properties to set options, start preview and encoding.</p>
+<h3><a class="anchor" aria-hidden="true" id="list-of-propertiesfunctions-with-example-settings"></a><a href="#list-of-propertiesfunctions-with-example-settings" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>List of Properties/Functions with example settings:</h3>
+<pre><code class="hljs css language-javascript">destination URL (RTMP Server, or local file)
+nanovid1.DestinationURL = <span class="hljs-string">"rtmp://localhost/live+myStream"</span>;
+nanovid1.DestinationURL = <span class="hljs-string">"c:\temp\h264.mp4"</span>;
+nanovid1.VideoSource = <span class="hljs-number">0</span>;              <span class="hljs-comment">// Video Capture Device ID</span>
+nanovid1.AudioSource = <span class="hljs-number">0</span>;                <span class="hljs-comment">// Audio Capture Device ID</span>
+nanovid1.VideoBitrate = <span class="hljs-number">400000</span>;      <span class="hljs-comment">// Video Bitrate (bits/s)</span>
+nanovid1.AudioBitrate = <span class="hljs-number">32000</span>;       <span class="hljs-comment">// Audio Bitrate (bits/s)</span>
+nanovid1.VideoWidth = <span class="hljs-number">352</span>;             <span class="hljs-comment">// Video Pixel Width</span>
+nanovid1.VideoHeight = <span class="hljs-number">288</span>;            <span class="hljs-comment">// Video Pixel Height</span>
+nanovid1.VideoFrameRate = <span class="hljs-number">15</span>;          <span class="hljs-comment">// Video FPS</span>
+
+<span class="hljs-comment">//start the preview from the current camera</span>
+nanovid1.StartPreview();
+
+<span class="hljs-comment">//Start Encoding/Broadcast</span>
+nanovid1.StartBroadcast();
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="javascript-helper-functions"></a><a href="#javascript-helper-functions" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Javascript Helper Functions</h3>
+<p>For simple usage, a set of Javascript functions is provided (<code>nanoEncoder.js</code>).</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-comment">// setup a live stream to RTMP server</span>
+SetEncodingUrl(<span class="hljs-string">"rtmp://myServer.com/live/myStream"</span>);
+SetVideoBitrate(<span class="hljs-number">400000</span>);     <span class="hljs-comment">// sets the bitrate to 400 kbps</span>
+OnStartPreview();              <span class="hljs-comment">// calls nanovid1.StartPreview()</span>
+OnStartBroadcast();          <span class="hljs-comment">// calls nanovid1.StartBroadcast()</span>
+</code></pre>
+<p>Additional Configuration can be set with <strong>nanoSetConfig();</strong></p>
+<p>Example:</p>
+<pre><code class="hljs css language-javascript">nanoSetConfig(<span class="hljs-string">"H264Profile"</span>,<span class="hljs-string">"Baseline"</span>);
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="javascript-api-nanoencoderjs"></a><a href="#javascript-api-nanoencoderjs" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Javascript API (<code>nanoEncoder.js</code>)</h3>
+<pre><code class="hljs css language-javascript">// SetEncodingUrl()
+// call this to set custom encoding URL here
+function SetEncodingUrl(url)
+
+// get current internal encoding url
+function GetEncodingUrl()
+
+// SetVideoBitrate()
+// sets encoder bitrate (bits/s)
+function SetVideoBitrate(bitrate)
+
+function GetVideoBitrate()
+
+// SetVideoResolution()
+// sets video capture resolution (x/y)
+// warning: resolutions are hardware/driver dependent!
+function SetVideoResolution(x,y)
+
+// SetVideoFrameRate()
+// sets video capture frames/sec (e.g. 15, 25)
+function SetVideoFrameRate(fps)
+
+// Start/Stop Video Capture Preview
+function OnStartPreview(doCheckFormat)
+function OnStopPreview()
+
+// OnStartBroadcast()
+// starts encoding / network broadcast
+function OnStartBroadcast()
+function OnStopBroadcast()
+
+// SetAudioSource()
+// sets audio source device id (0...)
+function SetAudioSource(audioSource) {
+
+// SetVideoSource()
+// sets video  source device id (0...)
+function SetVideoSource(source) {
+
+// event_OnStop
+// called by plugin on stop events
+function event_OnStop(e)
+
+// set basic encoding options to init plugin
+function nanoSetOptions()
+
+// Set license string to unlock the API
+function nanoSetLicense(license) // call this before Init
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="new-functions-for-version-15"></a><a href="#new-functions-for-version-15" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>New functions for Version 1.5</h2>
+<p>Special configuration data can be sent with the <code>SetConfig</code> method:</p>
+<pre><code class="hljs css language-javascript">nanovid1.SetConfig(property,value);
+</code></pre>
+<p>For some functions wrapper functions are available.</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-comment">// H264 Encoding Profile ("Baseline" or "Main")</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">nanoSetH264Profile</span>(<span class="hljs-params">p</span>) </span>{
+    nanoSetConfig(<span class="hljs-string">"H264Profile"</span>,p);
+}
+
+<span class="hljs-comment">// H.264 I-Frame Distance</span>
+nanoSetH264IFrameDistance(<span class="hljs-number">50</span>);          <span class="hljs-comment">// Default=50</span>
+
+<span class="hljs-comment">// special h264 settings</span>
+nanoSetH264Profile(<span class="hljs-number">0</span>);          <span class="hljs-comment">// 0 or "Baseline", 1 or "Main"</span>
+nanoSetH264VlcMode(<span class="hljs-number">1</span>);        <span class="hljs-comment">// VLC mode: 0=auto, 1=cavlc, 2=cabac</span>
+
+<span class="hljs-comment">// Constant/Variable Bit Rate</span>
+nanoSetConfig(<span class="hljs-string">"RateControl"</span>,<span class="hljs-number">0</span>);     <span class="hljs-comment">// 0=auto, 1=cbr, 2=vbr</span>
+
+<span class="hljs-comment">// set server authentication </span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">nanoSetServerAuth</span>(<span class="hljs-params">user,pass</span>) </span>{
+    nanoSetConfig(<span class="hljs-string">"Auth"</span>,user+pass);
+}
+
+
+<span class="hljs-comment">// SetVideoResolution()</span>
+<span class="hljs-comment">// sets video capture resolution (x/y)</span>
+<span class="hljs-comment">// warning: resolutions are hardware/driver dependent!</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">SetVideoResolution</span>(<span class="hljs-params">x,y</span>) </span>{
+    nlog(<span class="hljs-string">"SetVideoResolution "</span>+x+<span class="hljs-string">"x"</span>+y);
+    nanovid1.VideoWidth = x;
+    nanovid1.VideoHeight = y;
+}
+
+<span class="hljs-comment">// SetVideoResize()</span>
+<span class="hljs-comment">// sets video resize resolution (x/y) (output of encoder)</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">SetVideoResize</span>(<span class="hljs-params">x,y,enableResize</span>) </span>{
+    <span class="hljs-keyword">if</span>(enableResize) {
+        nlog(<span class="hljs-string">"SetVideoResize "</span>+x+<span class="hljs-string">"x"</span>+y);
+        nanovid1.VideoResizeWidth = resizeWidth;
+        nanovid1.VideoResizeHeight = resizeHeight;
+        nanovid1.EnableResize = <span class="hljs-number">1</span>;
+    }
+}
+
+<span class="hljs-comment">// set deinterlacing mode</span>
+nanoSetConfig(<span class="hljs-string">"DeinterlacingMode"</span>, m);      <span class="hljs-comment">// 0=off, 1=auto, 2=always</span>
+nanoSetConfig(<span class="hljs-string">"DeinterlacingMethod"</span>, m);    <span class="hljs-comment">// 0=bob/weave, 1=blend, 2=filter, 3=edge</span>
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="new-javascript-functions-for-version-20"></a><a href="#new-javascript-functions-for-version-20" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>New Javascript functions for Version 2.0</h2>
+<p>Beginning with nanoStream API 2.0, the Javascript code has been restructured with a surrounding object <code>nanoStream.api</code>.</p>
+<p><strong>Simple example:</strong></p>
+<p>In <code>nanoEncoder.js</code>:</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-comment">// set one global liveObj</span>
+<span class="hljs-keyword">var</span> liveObj = nanoStream.api;
+</code></pre>
+<p>HTML usage:
+Button with &quot;StartBroadcast&quot; event handler:</p>
+<pre><code class="hljs css language-html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"Start BroadCasting"</span> <span class="hljs-attr">onclick</span>=<span class="hljs-string">'liveObj.StartBroadcast()'</span>&gt;</span>
+</code></pre>
+<p>See <code>nanoStream.html</code> for an example implementation.</p>
+<p>For 2.0, there are a number of additional API functions available which are documented in the separate documentation LiveVideoEncoder-Plugin-API.</p>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 12/13/2020</em></div><div class="docs-prevnext"></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#browser-based-usage-with-html-and-javascript">Browser based usage with HTML and Javascript</a></li><li><a href="#how-to-embed-the-encoder-plugin-into-html">How to embed the encoder plugin into HTML</a><ul class="toc-headings"><li><a href="#active-x-control">Active-X Control</a></li><li><a href="#npapi-plugin">NPAPI Plugin</a></li><li><a href="#browser-independent-plugin-loading">Browser independent plugin loading</a></li><li><a href="#license-and-other-custom-settings">License and other custom settings</a></li><li><a href="#dynamic-dom-loading-of-the-plugin">Dynamic DOM Loading of the Plugin</a></li></ul></li><li><a href="#accessing-the-plugin">Accessing the plugin</a></li><li><a href="#plugin-interface">Plugin Interface</a><ul class="toc-headings"><li><a href="#list-of-propertiesfunctions-with-example-settings">List of Properties/Functions with example settings:</a></li><li><a href="#javascript-helper-functions">Javascript Helper Functions</a></li><li><a href="#javascript-api-nanoencoderjs">Javascript API (<code>nanoEncoder.js</code>)</a></li></ul></li><li><a href="#new-functions-for-version-15">New functions for Version 1.5</a></li><li><a href="#new-javascript-functions-for-version-20">New Javascript functions for Version 2.0</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><div><h5>Contact</h5><a href="https://www.nanocosmos.de/">Homepage</a><a href="https://www.nanocosmos.de/contact">Contact</a><a href="https://www.nanocosmos.de/support">Support</a><a href="https://www.nanocosmos.de/terms">Legal Terms</a></div><div><h5>Products</h5><a href="https://www.nanocosmos.de/cloud">Nanostream Cloud with Bintu.Live</a><a href="https://www.nanocosmos.de/h5live">H5Live Low Latency HTML5-Player</a><a href="https://www.nanocosmos.de/webrtc">nanoStream Webcaster</a><a href="https://www.nanocosmos.de/#nanostream">Nanostream Apps and SDK</a></div><div><h5>More</h5><a href="https://www.nanocosmos.de/blog/">Blog</a><a href="https://twitter.com/nanovideo">Twitter</a><a href="https://www.facebook.com/nanocosmos.net/">Facebook</a><a href="https://www.linkedin.com/company/nanocosmos-gmbh">LinkedIn</a><a href="https://github.com/nanocosmos/docs">GitHub</a><a class="github-button" href="https://github.com/nanocosmos/docs" data-icon="octicon-star" data-count-href="/nanocosmos/docs/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://nanocosmos.de/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/footer_logo.png" alt="nanocosmos GmbH" width="170" height="45"/></a><section class="copyright">Copyright © 2020 nanocosmos GmbH</section></footer></div></body></html>

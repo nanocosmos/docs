@@ -1,0 +1,144 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Quality Settings · nanocosmos Documentation</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="## Configuring stream quality"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Quality Settings · nanocosmos Documentation"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.nanocosmos.de/"/><meta property="og:description" content="## Configuring stream quality"/><meta property="og:image" content="https://docs.nanocosmos.de/img/docusaurus.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://docs.nanocosmos.de/img/docusaurus.png"/><link rel="shortcut icon" href="/img/favicon_nano.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script>
+              (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+              (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+              m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+              })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+              ga('create', 'UA-552140-1', 'auto');
+              ga('send', 'pageview');
+            </script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="/js/search.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/nanocosmos_header_logo.png" alt="nanocosmos Documentation"/><h2 class="headerTitleWithLogo">nanocosmos Documentation</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/docs/cloud/cloud_overview" target="_self">nanoStream Cloud</a></li><li class=""><a href="/docs/nanoplayer/nanoplayer_introduction" target="_self">H5Live Player</a></li><li class="siteNavGroupActive"><a href="/docs/webrtc/nanostream_webrtc_introduction" target="_self">nanoStream Webcaster</a></li><li class=""><a href="/docs/nanostream/nanostream" target="_self">nanoStream Apps and SDKs</a></li><li class=""><a href="/docs/samples/samples" target="_self">Samples</a></li><li class=""><a href="/docs/faq/faq_streaming" target="_self">FAQ</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Features</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">nanoStream Webcaster</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/webrtc/nanostream_webrtc_introduction">Introduction</a></li><li class="navListItem"><a class="navItem" href="/docs/webrtc/nanostream_webrtc_getting_started">Getting started</a></li><li class="navListItem"><a class="navItem" href="/docs/webrtc/nanostream_webrtc_demos">Browser Demos</a></li><li class="navListItem"><a class="navItem" href="/docs/webrtc/nanostream_webrtc_support">Support</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Features</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/webrtc/nanostream_webrtc_screen_sharing">Screen Sharing</a></li><li class="navListItem"><a class="navItem" href="/docs/webrtc/nanostream_webrtc_multiple_webcasts">Multiple Webcasts</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/webrtc/nanostream_webrtc_quality">Quality Settings</a></li><li class="navListItem"><a class="navItem" href="/docs/webrtc/nanostream_webrtc_device_selection">Device Selection</a></li><li class="navListItem"><a class="navItem" href="/docs/webrtc/nanostream_webrtc_audio_video_only">Audio- / Video-Only</a></li><li class="navListItem"><a class="navItem" href="/docs/webrtc/nanostream_webrtc_speech_music">Speech / Music Streaming</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">API</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/webrtc/nanostream_webrtc_api">Webcaster</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Other</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/webrtc/nanostream_webrtc_faq">FAQ</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/nanocosmos/docs/tree/master/docs/webrtc/nanostream_webrtc_quality.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 id="__docusaurus" class="postHeaderTitle">Quality Settings</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="configuring-stream-quality"></a><a href="#configuring-stream-quality" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Configuring stream quality</h2>
+<p>Webcasting quality can be configured by setting different stream encoding properties.
+In the nanoStream Webcaster this is basically performed in three steps:</p>
+<ol>
+<li>Previewing a stream. Certain stream properties can be set when starting the preview: <br>
+<a href="#video-and-audio-preview">Video and audio preview</a></li>
+<li>Encoding the stream in the browser. Upstream bitrates can be configured: <br>
+<a href="#encoding-bitrates">Encoding bitrates</a></li>
+<li>Sending the stream to the nanoStream Cloud. Audio is converted again on server side: <br>
+<a href="#audio-conversion-on-the-server">Audio conversion on the server</a></li>
+</ol>
+<h3><a class="anchor" aria-hidden="true" id="video-and-audio-preview"></a><a href="#video-and-audio-preview" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Video and audio preview</h3>
+<p>Streams have different properties that can be set when starting a preview.<br>
+Those are:</p>
+<ul>
+<li>video source (camera or screen share)</li>
+<li>video resolution</li>
+<li>video framerate</li>
+<li>audio source</li>
+</ul>
+<p>The corresponding API call is <a href="../nanostream_webrtc_api/#startpreviewconfig">startPreview(previewConfig)</a></p>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">var</span> videoDeviceConfig = {
+  <span class="hljs-attr">device</span>: <span class="hljs-number">0</span>, <span class="hljs-comment">// use first video device</span>
+  <span class="hljs-attr">source</span>: <span class="hljs-string">'camera'</span>, <span class="hljs-comment">// or 'screen'</span>
+  <span class="hljs-attr">width</span>: <span class="hljs-number">1280</span>,
+  <span class="hljs-attr">height</span>: <span class="hljs-number">720</span>,
+  <span class="hljs-attr">framerate</span>: <span class="hljs-number">30</span>
+};
+
+<span class="hljs-keyword">var</span> audioDeviceConfig = {
+  <span class="hljs-attr">device</span>: <span class="hljs-number">0</span> <span class="hljs-comment">// use first audio device</span>
+};
+
+<span class="hljs-keyword">var</span> videoElement = <span class="hljs-string">'video-local'</span>; <span class="hljs-comment">// preview stream in &lt;video id="video-local"&gt; tag</span>
+
+<span class="hljs-keyword">var</span> previewConfig = {
+  <span class="hljs-attr">videoDeviceConfig</span>: videoDeviceConfig,
+  <span class="hljs-attr">audioDeviceConfig</span>: audioDeviceConfig,
+  <span class="hljs-attr">elementId</span>: videoElement
+};
+
+<span class="hljs-comment">// Start the camera</span>
+<span class="hljs-comment">// (Note: some browsers will show a popup asking for permission)</span>
+rtcuser.startPreview(previewConfig);
+
+</code></pre>
+<p>Note that the <code>width</code>, <code>height</code>, and <code>framerate</code> parameters provided to the <code>startPreview</code> are &quot;ideal&quot; values. In the end, it is up to a browser to decide what resolution and frame rate are the most optimal ones in a particular case.</p>
+<h3><a class="anchor" aria-hidden="true" id="encoding-bitrates"></a><a href="#encoding-bitrates" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Encoding bitrates</h3>
+<p>After the preview has been started and before the stream gets send to the nanoStream Cloud, it will be encoded in the browser.
+You can set audio and video target encoding bitrates. <br>
+This is done with <a href="../nanostream_webrtc_api/#setconfigconfig">setConfig(config)</a></p>
+<pre><code class="hljs css language-js"><span class="hljs-comment">// set bitrates in kbits/s</span>
+<span class="hljs-keyword">var</span> config = {
+  <span class="hljs-attr">bitrates</span>: {
+    <span class="hljs-attr">videoSendInitialBitrate</span>: <span class="hljs-number">1000</span>, <span class="hljs-comment">// min bitrate (chrome only!)</span>
+    <span class="hljs-attr">videoSendBitrate</span>: <span class="hljs-number">1500</span>, <span class="hljs-comment">// max video bitrate</span>
+    <span class="hljs-attr">audioSendBitrate</span>: <span class="hljs-number">64</span> <span class="hljs-comment">// max audio bitrate</span>
+  }
+};
+
+rtcuser.setConfig(config);
+</code></pre>
+<p>Note that those are target bitrates, <code>videoSendBitrate</code> is the maximum bitrate. The Webcaster will only go up to the configured bitrate when the image is complex (e.g., when much movement is visible in the image). This usually means that the mean bitrate will be lower than the
+configured maximum bitrate. For example: if there is no movement in front of the camera or the image is dark, the video bitrate will be lower than configured.</p>
+<p>Also note that due to non spec-compliant behaviour of some Android devices, it might be required to restart a stream after resolution has changed. Not doing so, can result in a corrupted playback. Resolution change can be detected in the Webcaster stats that is enabled by <a href="../nanostream_webrtc_api/#enablestatsenable-interval">enableStats([enable], [interval])</a>.</p>
+<h3><a class="anchor" aria-hidden="true" id="audio-conversion-on-the-server"></a><a href="#audio-conversion-on-the-server" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Audio conversion on the server</h3>
+<p>Video bitrate of the resulting RTMP stream will be similar to the bitrate encoded by the browsers. Audio is converted on server side.<br>
+<b>RTMP audio bitrate</b> can be set with <a href="../nanostream_webrtc_api/#startbroadcastconfig">startBroadcast(broadcastConfig)</a></p>
+<pre><code class="hljs css language-js"><span class="hljs-comment">// set audio transcoding bitrate in bits/s</span>
+<span class="hljs-keyword">var</span> broadcastConfig = {
+  <span class="hljs-attr">transcodingTargets</span>: {
+    <span class="hljs-attr">output</span>: url,
+    <span class="hljs-attr">streamname</span>: streamname,
+    <span class="hljs-attr">audiobitrate</span>: <span class="hljs-number">64000</span> <span class="hljs-comment">// value is in bits/s!</span>
+  }
+};
+
+rtcuser.startBroadcast(broadcastConfig);
+</code></pre>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 12/13/2020</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/webrtc/nanostream_webrtc_metrics"><span class="arrow-prev">← </span><span>Previous</span></a><a class="docs-next button" href="/docs/webrtc/nanostream_webrtc_device_selection"><span>Device Selection</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#configuring-stream-quality">Configuring stream quality</a><ul class="toc-headings"><li><a href="#video-and-audio-preview">Video and audio preview</a></li><li><a href="#encoding-bitrates">Encoding bitrates</a></li><li><a href="#audio-conversion-on-the-server">Audio conversion on the server</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><div><h5>Contact</h5><a href="https://www.nanocosmos.de/">Homepage</a><a href="https://www.nanocosmos.de/contact">Contact</a><a href="https://www.nanocosmos.de/support">Support</a><a href="https://www.nanocosmos.de/terms">Legal Terms</a></div><div><h5>Products</h5><a href="https://www.nanocosmos.de/cloud">Nanostream Cloud with Bintu.Live</a><a href="https://www.nanocosmos.de/h5live">H5Live Low Latency HTML5-Player</a><a href="https://www.nanocosmos.de/webrtc">nanoStream Webcaster</a><a href="https://www.nanocosmos.de/#nanostream">Nanostream Apps and SDK</a></div><div><h5>More</h5><a href="https://www.nanocosmos.de/blog/">Blog</a><a href="https://twitter.com/nanovideo">Twitter</a><a href="https://www.facebook.com/nanocosmos.net/">Facebook</a><a href="https://www.linkedin.com/company/nanocosmos-gmbh">LinkedIn</a><a href="https://github.com/nanocosmos/docs">GitHub</a><a class="github-button" href="https://github.com/nanocosmos/docs" data-icon="octicon-star" data-count-href="/nanocosmos/docs/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://nanocosmos.de/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/footer_logo.png" alt="nanocosmos GmbH" width="170" height="45"/></a><section class="copyright">Copyright © 2020 nanocosmos GmbH</section></footer></div></body></html>

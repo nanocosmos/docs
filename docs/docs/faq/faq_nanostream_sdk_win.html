@@ -1,0 +1,384 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>nanoStream SDK for Windows · nanocosmos Documentation</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;details&gt;&lt;summary&gt;&lt;strong&gt;How do I enable logging for the plugin?&lt;/strong&gt;&lt;/summary&gt;"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="nanoStream SDK for Windows · nanocosmos Documentation"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.nanocosmos.de/"/><meta property="og:description" content="&lt;details&gt;&lt;summary&gt;&lt;strong&gt;How do I enable logging for the plugin?&lt;/strong&gt;&lt;/summary&gt;"/><meta property="og:image" content="https://docs.nanocosmos.de/img/docusaurus.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://docs.nanocosmos.de/img/docusaurus.png"/><link rel="shortcut icon" href="/img/favicon_nano.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script>
+              (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+              (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+              m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+              })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+              ga('create', 'UA-552140-1', 'auto');
+              ga('send', 'pageview');
+            </script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="/js/search.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/nanocosmos_header_logo.png" alt="nanocosmos Documentation"/><h2 class="headerTitleWithLogo">nanocosmos Documentation</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/docs/cloud/cloud_overview" target="_self">nanoStream Cloud</a></li><li class=""><a href="/docs/nanoplayer/nanoplayer_introduction" target="_self">H5Live Player</a></li><li class=""><a href="/docs/webrtc/nanostream_webrtc_introduction" target="_self">nanoStream Webcaster</a></li><li class=""><a href="/docs/nanostream/nanostream" target="_self">nanoStream Apps and SDKs</a></li><li class=""><a href="/docs/samples/samples" target="_self">Samples</a></li><li class="siteNavGroupActive"><a href="/docs/faq/faq_streaming" target="_self">FAQ</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Live Streaming</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">H5Live Player</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/faq/faq_h5live_player_general">General</a></li><li class="navListItem"><a class="navItem" href="/docs/faq/faq_h5live_player_bintu">bintu</a></li><li class="navListItem"><a class="navItem" href="/docs/faq/faq_h5live_player_adjust_style">Adjust/Style</a></li><li class="navListItem"><a class="navItem" href="/docs/faq/faq_h5live_player_metrics">Metrics</a></li><li class="navListItem"><a class="navItem" href="/docs/faq/faq_h5live_player_security">Security</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">nanoStream Webcaster</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/faq/faq_WebRTC_general">General</a></li><li class="navListItem"><a class="navItem" href="/docs/faq/faq_WebRTC_devices">Devices</a></li><li class="navListItem"><a class="navItem" href="/docs/faq/faq_WebRTC_broadcast">Broadcast</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Live Streaming</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/faq/faq_streaming">Live Streaming</a></li><li class="navListItem"><a class="navItem" href="/docs/faq/faq_devices_support">Capture Devices and Camera Support</a></li><li class="navListItem"><a class="navItem" href="/docs/faq/faq_adv_codec_config">Advanced Codec Configuration</a></li><li class="navListItem"><a class="navItem" href="/docs/faq/programming_sdk_api">Programming / SDK / API</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/faq/faq_nanostream_sdk_win">nanoStream SDK for Windows</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Purchase and License</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/faq/faq_purchase_and_license">Purchase and License</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/nanocosmos/docs/tree/master/docs/faq/faq_nanostream_sdk_win.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 id="__docusaurus" class="postHeaderTitle">nanoStream SDK for Windows</h1></header><article><div><span><p><details><summary><strong>How do I enable logging for the plugin?</strong></summary></p>
+<h4><a class="anchor" aria-hidden="true" id="windows"></a><a href="#windows" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Windows</h4>
+<p>You can enable logging/create a logfile for the plugin following these steps:</p>
+<ul>
+<li>in explorer create a folder - e.g.</li>
+</ul>
+<pre><code class="hljs"><span class="hljs-symbol">C:</span>\temp
+</code></pre>
+<ul>
+<li><p>open the registry editor (<code>regedit.exe</code>)</p></li>
+<li><p>go to the right registry key:</p>
+<ul>
+<li>for the browser plugin for firefox or chrome go to</li>
+</ul>
+<pre><code class="hljs">HKEYCURRENTUSER<span class="hljs-symbol">\S</span>oftware<span class="hljs-symbol">\D</span>ebugNano<span class="hljs-symbol">\n</span>pnanoStream.dll
+</code></pre>
+<ul>
+<li>for the browser plugin for internet explorer or the <code>ActiveX</code> based desktop apps go to</li>
+</ul>
+<pre><code class="hljs">HKEYCURRENT_USER<span class="hljs-symbol">\S</span>oftware<span class="hljs-symbol">\D</span>ebugNano<span class="hljs-symbol">\n</span>anoStream.ax
+</code></pre></li>
+<li><p>double click on <code>“LogToFile”</code> and specifiy a filename <strong>including</strong> the folder path - make sure the folder exists! - e.g.:</p>
+<pre><code class="hljs">“C:\<span class="hljs-keyword">temp</span>\nanostream.<span class="hljs-keyword">log</span>”
+</code></pre>
+<p>and press OK</p></li>
+<li><p>double click on <code>“TRACE”</code> and insert the value <code>“9”</code>, press OK</p></li>
+<li><p>you have to <strong>restart the browser (or the app)</strong> before the log settings take effect</p></li>
+</ul>
+<p>Disabling the logging again, is simple:</p>
+<ul>
+<li>set <code>“TRACE”</code> to <code>“0”</code></li>
+</ul>
+<blockquote>
+<p>For a Long version see <a href="https://www.nanocosmos.de/v4/documentation/live_video_encoder_-_event_logging">here</a></p>
+</blockquote>
+<h4><a class="anchor" aria-hidden="true" id="macos"></a><a href="#macos" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>MacOS</h4>
+<blockquote>
+<p>The logfile is usually located in the home directory of the user and
+is called <code>“LiveEncoderPlugin.log”</code>.</p>
+</blockquote>
+<p>The settings for the loglevels can be changed in the file</p>
+<pre><code class="hljs">“~/Library/Preferences/<span class="hljs-keyword">de</span>.nanocosmos.<span class="hljs-keyword">log</span>.prefs”
+</code></pre>
+<p>To enable the logging the value for <code>“LOG_TRACE”</code> has to be changed to <code>“9”</code>.</p>
+<p>You have to <strong>restart the browser</strong> before the log settings take effect.</p>
+<blockquote>
+<p>To disable the logging change the value for <code>“LOG_TRACE”</code> back to <code>“0”</code>.</p>
+</blockquote>
+<p></details></p>
+<p><details><summary><strong>How do I enable logging for a specific module?</strong></summary></p>
+<h4><a class="anchor" aria-hidden="true" id="enable-the-logging"></a><a href="#enable-the-logging" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Enable the logging</h4>
+<p>You can enable logging/create a logfile for a module following these steps (<strong>replace $moduleName</strong> with the module you would like to enable logging for):</p>
+<ul>
+<li>in explorer create a folder - e.g.</li>
+</ul>
+<pre><code class="hljs"><span class="hljs-symbol">C:</span>\temp
+</code></pre>
+<ul>
+<li><p>open the registry editor (<code>regedit.exe</code>)</p></li>
+<li><p>go to this reg key:</p></li>
+</ul>
+<pre><code class="hljs">  HKEYCURRENT*USER<span class="hljs-symbol">\S</span>oftware<span class="hljs-symbol">\D</span>ebugNano<span class="hljs-symbol">\$</span>moduleName.ax
+</code></pre>
+<ul>
+<li><p>double click on <code>“LogToFile”</code> and specifiy a filename</p></li>
+<li><p>double click on <code>“TRACE”</code> and insert the a value between <code>1 and 9</code>, <code>press OK</code></p></li>
+</ul>
+<blockquote>
+<p>Note: the log file needs to be a full path- make sure the folder exists! - e.g.:</p>
+<pre><code class="hljs">“C:\<span class="hljs-keyword">temp</span>\logfile.<span class="hljs-keyword">log</span>”
+</code></pre>
+</blockquote>
+<blockquote>
+<p><strong>you have to restart the app before the log settings take effect</strong></p>
+</blockquote>
+<h4><a class="anchor" aria-hidden="true" id="disabling-the-logging"></a><a href="#disabling-the-logging" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Disabling the logging</h4>
+<ul>
+<li>set <code>“TRACE”</code> to <code>“0”</code></li>
+<li>clear <code>“LogToFile”</code> (double click and the delete every character)</li>
+</ul>
+<blockquote>
+<p><strong>you have to restart the app before the log settings take effect</strong></p>
+</blockquote>
+<h4><a class="anchor" aria-hidden="true" id="module-list"></a><a href="#module-list" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Module List</h4>
+<p><strong>Replacing $moduleName</strong></p>
+<table>
+<thead>
+<tr><th><strong>Module</strong></th><th><strong>moduleName</strong></th></tr>
+</thead>
+<tbody>
+<tr><td>nanocosmos ActiveX Plugin</td><td>nanoStream</td></tr>
+<tr><td>nanocosmos Firefox or Chrome Plugin</td><td>np_nanoStream</td></tr>
+<tr><td>nanocosmos AAC Audio Decoder</td><td>naacdec</td></tr>
+<tr><td>nanocosmos AAC Audio Encoder</td><td>naacenc</td></tr>
+<tr><td>nanocosmos Audio Volume</td><td>nAudioVolume</td></tr>
+<tr><td>nanocosmos Color Space Converter</td><td>ncolconv</td></tr>
+<tr><td>nanocosmos DVD Source</td><td>ndvdsrc</td></tr>
+<tr><td>nanocosmos Dump</td><td>nanoDump</td></tr>
+<tr><td>nanocosmos H.264 Video Decoder</td><td>nh264dec</td></tr>
+<tr><td>nanocosmos H.264 Video Encoder</td><td>nh264enc</td></tr>
+<tr><td>nanocosmos H.264 Video Encoder QS</td><td>nh264enc_qs</td></tr>
+<tr><td>nanocosmos Live Audio Capture</td><td>naudiocap</td></tr>
+<tr><td>nanocosmos Live Screen Capture</td><td>nscreencap</td></tr>
+<tr><td>nanocosmos MP4 Muxer</td><td>nmp4mux</td></tr>
+<tr><td>nanocosmos MP4 Splitter</td><td>nmp4splitter</td></tr>
+<tr><td>nanocosmos MPEG Audio Encoder</td><td>nmpaenc</td></tr>
+<tr><td>nanocosmos MPEG PS Writer</td><td>nPSWriter</td></tr>
+<tr><td>nanocosmos MPEG Splitter</td><td>nmpegsplitter</td></tr>
+<tr><td>nanocosmos MPEG TS Multiplexer</td><td>nanoTsMux</td></tr>
+<tr><td>nanocosmos MPEG TS Writer</td><td>nanoTsWriter</td></tr>
+<tr><td>nanocosmos MPEG-2 HD/SD Video Decoder</td><td>nmpeg2dec</td></tr>
+<tr><td>nanocosmos MPEG-2 Video Encoder</td><td>nmpeg2enc</td></tr>
+<tr><td>nanocosmos MXF Reader</td><td>nMXFReader</td></tr>
+<tr><td>nanocosmos MXF Writer</td><td>nMXFSink</td></tr>
+<tr><td>nanocosmos Net Source</td><td>nanoNetSource</td></tr>
+<tr><td>nanocosmos QT IMX Source</td><td>nqtsource</td></tr>
+<tr><td>nanocosmos Quicktime Writer (MPEG2/Broadcast)</td><td>nmp4mux</td></tr>
+<tr><td>nanocosmos RTMP Network Writer</td><td>nRtmpRenderer</td></tr>
+<tr><td>nanocosmos RTMP Source</td><td>nRTMPSource</td></tr>
+<tr><td>nanocosmos RTSP Network Writer</td><td>nRTSPSink</td></tr>
+<tr><td>nanocosmos RTSP Source</td><td>nRTSPSource</td></tr>
+<tr><td>nanocosmos Source Bridge</td><td>nMediaBridge</td></tr>
+<tr><td>nanocosmos Subtitle encoder</td><td>nSubtitleEncoder</td></tr>
+<tr><td>nanocosmos Text Overlay</td><td>nVideoOverlay</td></tr>
+<tr><td>nanocosmos UDP Network Writer</td><td>nanoNetSink</td></tr>
+<tr><td>nanocosmos Video Mixer 2</td><td>nVideoMixer2</td></tr>
+<tr><td>nanocosmos Video Remixer 3D</td><td>nremixer3d</td></tr>
+<tr><td>nanocosmos Video Resizer 2</td><td>nresizer2</td></tr>
+<tr><td>nanocosmos VideoMixer</td><td>nVideoMixer</td></tr>
+<tr><td>nanocosmos Virtual Cam</td><td>nVirtualCam</td></tr>
+<tr><td>nanocosmos WAV Writer</td><td>nWavWriter</td></tr>
+</tbody>
+</table>
+<h4><a class="anchor" aria-hidden="true" id="example"></a><a href="#example" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h4>
+<p>Typical example is <code>nRtmpRenderer</code>, which sends the <code>RTMP Live Stream</code> to the server.</p>
+<ul>
+<li>create a log folder</li>
+</ul>
+<pre><code class="hljs"><span class="hljs-symbol">C:</span>\TEMP
+</code></pre>
+<ul>
+<li>open <code>regedit.exe</code></li>
+<li>open this key:</li>
+</ul>
+<pre><code class="hljs">HKEY CURRENT USER<span class="hljs-symbol">\S</span>oftware<span class="hljs-symbol">\D</span>ebugNano<span class="hljs-symbol">\n</span>RtmpRenderer.ax
+</code></pre>
+<ul>
+<li>double click on <code>“LogToFile”</code> and add</li>
+</ul>
+<pre><code class="hljs">“C:\<span class="hljs-keyword">temp</span>\nRtmpRenderer.<span class="hljs-keyword">log</span>”
+</code></pre>
+<ul>
+<li><p>press OK</p></li>
+<li><p>double click on <code>“TRACE”</code> and insert the value <code>“6”</code>, press OK</p></li>
+</ul>
+<blockquote>
+<p>Note: The log file can be very large for <code>values &gt; 1</code>, be aware to
+disable logging again</p>
+</blockquote>
+<p></details></p>
+<p><details><summary><strong>Which settings affect the performance of the H264 Encoder?</strong></summary></p>
+<p>Most performance relevant settings are :</p>
+<ul>
+<li>Resolution, lower</li>
+<li>Framerate, lower</li>
+<li>Quality/Speed ratio, should be <code>1</code></li>
+<li>H.264 Profile, Baseline or Main</li>
+<li>I-frame distance, not too low, <code>recommended 50-100</code></li>
+<li>P-frame distance, lower, should be <code>1</code>,<code>no B-fames coded</code></li>
+<li>Entropy coding mode, <code>CAVLC</code> is less complex and faster than <code>CABAC</code></li>
+<li>Deinterlacing Mode, <code>off or auto</code>,  if the video input is not interlaced or is not getting scaled in the encoder</li>
+</ul>
+<p></details></p>
+<p><details><summary><strong>After installation the program says - License not valid - what do I do?</strong></summary></p>
+<p>You should have received a valid license from us. There are two ways to apply your license:</p>
+<ul>
+<li>If you installed the complete sdk, there was also a program installed letting you manage your license(s): <code>License Tool</code>. It is located in the start menu under</li>
+</ul>
+<pre><code class="hljs">nanocosmos → LiveVideoEncoder → Tools → License<span class="hljs-built_in"> Tool
+</span></code></pre>
+<p>If you opened it, you can choose your product and supply your license.</p>
+<ul>
+<li>You can set the license manually with regedit application from windows:</li>
+</ul>
+<ol>
+<li>open regedit.exe - go to one of the following keys:</li>
+</ol>
+<pre><code class="hljs">“HKEYCURRENTUSER<span class="hljs-symbol">\S</span>OFTWARE<span class="hljs-symbol">\n</span>anocosmos”
+</code></pre>
+<p>or</p>
+<pre><code class="hljs">“HKEYLOCALMACHINE<span class="hljs-symbol">\S</span>OFTWARE<span class="hljs-symbol">\n</span>anocosmos”
+</code></pre>
+<p>or</p>
+<pre><code class="hljs">“HKEYLOCALMACHINE<span class="hljs-symbol">\S</span>OFTWARE<span class="hljs-symbol">\W</span>ow6432Node<span class="hljs-symbol">\n</span>anocosmos” (64bit windows)
+</code></pre>
+<ol start="2">
+<li>open the right subkey (e.g. <code>“LiveVideoEncoder”</code> for the desktop app nanocosmos Live Video Encoder) - edit or create the string value <code>“License”</code> and insert you license key</li>
+</ol>
+<blockquote>
+<p>Regardless which way you choose, always enter the <strong>whole</strong> license key we have send you. A license key will look similar to the following sample key:</p>
+</blockquote>
+<pre><code class="hljs">nlic:<span class="hljs-number">1.0</span>:LiveEnc:<span class="hljs-number">1.1</span>:LvApp=<span class="hljs-number">1</span>,...:win:<span class="hljs-number">20120101</span>,<span class="hljs-number">20120202</span>::<span class="hljs-number">0</span>:<span class="hljs-number">0</span>:id:nchp:<span class="hljs-number">1234567890</span>a1234567890b1234567890
+</code></pre>
+<p></details></p>
+<p><details><summary><strong>How do I report bugs, crashes or other issues?</strong></summary></p>
+<p><a href="https://www.nanocosmos.de/v4/documentation/live_video_encoder_-_event_logging">Enable the logging</a> for the nanoStream plugin, application or module, restart the program and repeat the same steps which lead to the program crashing. Send a mail to our support with the logfile attached and a - short description of the problem.</p>
+<p></details></p>
+<p><details><summary><strong>Can i create my own installer?</strong></summary></p>
+<p>You can create your own custom installer with a SDK or white-label rebranding license. Contact us for further info.</p>
+<p></details></p>
+<p><details><summary><strong>License error with x64 filter</strong></summary></p>
+<p>If you used the nanoStream license tool (<code>x86</code>) to store the license, it will not be visible to <code>x64</code> applications.</p>
+<p>Please check with registry editor <code>x64</code> if the license key exists at:</p>
+<pre><code class="hljs">HKEYCURRENTUSER<span class="hljs-symbol">\S</span>OFTWARE<span class="hljs-symbol">\n</span>anocosmos<span class="hljs-symbol">\&lt;</span>License Name&gt;<span class="hljs-symbol">\L</span>icense
+</code></pre>
+<p>or</p>
+<pre><code class="hljs">HKEY_LOCAL_MACHINE<span class="hljs-symbol">\S</span>OFTWARE<span class="hljs-symbol">\n</span>anocosmos<span class="hljs-symbol">\&lt;</span>License Name&gt;<span class="hljs-symbol">\L</span>icense
+</code></pre>
+<p></details></p>
+<p><details><summary><strong>How do I set default settings for H.264 Encoder?</strong></summary></p>
+<p>There are several ways to configure the default encoder settings.</p>
+<ol>
+<li>Use the Encoder Application</li>
+<li>Use the <code>API</code></li>
+<li>Adjusting the serialized registry settings directly. Heres is a sample registry file, that shows the registry key and values available:</li>
+<li>Instantiating the <code>H.264</code> encoder filter in a <code>DirectShow</code> application like GraphEdit or GraphStudio. Open the property page and adjust the settings. When the property page is applied and closed the settings are serialized to the windows registry and will be the default settings for the next instantiation.</li>
+</ol>
+<pre><code class="hljs">Windows Registry Editor Version <span class="hljs-number">5.00</span>
+
+[HKEY_CURRENT_USER\Software\Nanocosmos\nh264enc]
+<span class="hljs-string">"profile"</span>=<span class="hljs-string">dword:</span><span class="hljs-number">00000001</span>
+<span class="hljs-string">"level"</span>=<span class="hljs-string">dword:</span><span class="hljs-number">00000000</span>
+<span class="hljs-string">"codingWidth"</span>=<span class="hljs-string">dword:</span><span class="hljs-number">00000000</span>
+<span class="hljs-string">"codingHeight"</span>=<span class="hljs-string">dword:</span><span class="hljs-number">00000000</span>
+<span class="hljs-string">"aspectWidth"</span>=<span class="hljs-string">dword:</span><span class="hljs-number">00000001</span>
+<span class="hljs-string">"aspectHeight"</span>=<span class="hljs-string">dword:</span><span class="hljs-number">00000001</span>
+<span class="hljs-string">"rateMode"</span>=<span class="hljs-string">dword:</span><span class="hljs-number">00000002</span>
+<span class="hljs-string">"bitrate"</span>=<span class="hljs-string">dword:</span><span class="hljs-number">000</span>f4240
+<span class="hljs-string">"distanceIDR"</span>=<span class="hljs-string">dword:</span><span class="hljs-number">00000001</span>
+<span class="hljs-string">"distanceI"</span>=<span class="hljs-string">dword:</span><span class="hljs-number">00000032</span>
+<span class="hljs-string">"distanceP"</span>=<span class="hljs-string">dword:</span><span class="hljs-number">00000001</span>
+<span class="hljs-string">"quantizer"</span>=<span class="hljs-string">dword:</span><span class="hljs-number">00000014</span>
+<span class="hljs-string">"quality"</span>=<span class="hljs-string">dword:</span><span class="hljs-number">00000001</span>
+<span class="hljs-string">"numRefFrames"</span>=<span class="hljs-string">dword:</span><span class="hljs-number">00000001</span>
+<span class="hljs-string">"deinterlacingMode"</span>=<span class="hljs-string">dword:</span><span class="hljs-number">00000001</span>
+<span class="hljs-string">"deinterlacingMethod"</span>=<span class="hljs-string">dword:</span><span class="hljs-number">00000000</span>
+<span class="hljs-string">"threadingMode"</span>=<span class="hljs-string">dword:</span><span class="hljs-number">00000000</span>
+<span class="hljs-string">"directPredictionMode"</span>=<span class="hljs-string">dword:</span><span class="hljs-number">00000002</span>
+</code></pre>
+<p></details></p>
+<p><details><summary><strong>Error installing the setup for Windows Server 2008</strong></summary></p>
+<p><strong>Error:</strong>  The file <code>nanoStream.ax</code> cannot be registered and fails with error <code>0x3</code>.</p>
+<p>Solution: <code>nanoStream.ax</code> requires the feature “Desktop Experience” to be installed. This feature can be installed with the Server Manager.
+</details></p>
+<p><details><summary><strong>Is there a quiet install mode for the installer? </strong></summary></p>
+<p>Yes, you can use the following command line parameters:</p>
+<pre><code class="hljs"><span class="hljs-string">/SILENT</span>
+</code></pre>
+<p>or</p>
+<pre><code class="hljs"><span class="hljs-string">/VERYSILENT</span>
+</code></pre>
+<p></details></p>
+<p><details><summary><strong>Plugin cannot be installed on MacOS</strong></summary></p>
+<p>When you try to install the plugin for MacOSX and an error pops up “nanostream-plugins.pkg can't be opened because it is from an unidentified developer”, like in the following screenshot:<img src="https://www.nanocosmos.de/v4/documentation/_media/mac_error.png" alt="img"></p>
+<h2><a class="anchor" aria-hidden="true" id="solution"></a><a href="#solution" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Solution</h2>
+<p>There are two workarounds: 1. Right-click the package in the Downloads folder,click Open and proceed to install the package. 2. Changing the security settings to allow packages downloaded from anywhere in System Preferences/Security &amp; Privacy/General</p>
+<p>To change the security settings go to:</p>
+<p><code>Apple menu &gt; System Preferences… &gt; Security &amp; Privacy &gt; General</code> tab, then change the setting as highlighted in the screenshot:<img src="https://www.nanocosmos.de/v4/documentation/_media/mac_security.png" alt="img"></p>
+<p><em>Further Information:</em>
+<a href="http://support.apple.com/kb/HT5290">Apple-Support 1</a>
+<a href="http://support.apple.com/kb/PH11437">Apple-Support 2</a>
+</details></p>
+<p><details><summary><strong>How can I use the Audio Volume Meter?</strong></summary></p>
+<p>The Audio Volume of the audio capture device (Microphone/Camera) can be checked with the <code>GetAudioLevel() API</code>
+.
+Here is a code snipped to show how to create a level meter from this:</p>
+<pre><code class="hljs css language-c++">:::cpp
+
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">double</span> REFERENCE = <span class="hljs-number">32768</span>;
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">double</span> MIN_DB = <span class="hljs-number">20</span> * <span class="hljs-built_in">log10</span>( <span class="hljs-number">1.0</span> / REFERENCE ) + <span class="hljs-number">40</span>;
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">double</span> MAX_DB = <span class="hljs-number">0</span>;
+
+<span class="hljs-comment">// 2 channel audio level meter</span>
+<span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> ch = <span class="hljs-number">0</span>; ch &lt; <span class="hljs-number">2</span>; ch++)
+{
+
+    <span class="hljs-keyword">int</span> avgAudioValue = nanoStream.GetAudioLevel(ch);
+
+    WPARAM wParam = <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">double</span> db = <span class="hljs-number">-1000000</span>;
+    <span class="hljs-keyword">if</span> (avgAudioValue &gt; <span class="hljs-number">0</span>)
+        db = <span class="hljs-built_in">log10</span>((<span class="hljs-keyword">double</span>)avgAudioValue / REFERENCE) * <span class="hljs-number">20.0</span>;
+    <span class="hljs-keyword">if</span>(db &lt; <span class="hljs-number">-50.0</span>)
+        db = <span class="hljs-number">-50.0</span>;
+
+    wParam = (<span class="hljs-keyword">long</span>) ((db - MIN_DB) * <span class="hljs-number">100</span> / (MAX_DB - MIN_DB));
+
+    <span class="hljs-comment">// simple progress bars for audio volume level</span>
+    SendDlgItemMessage(AUDIO_VOLUME_LEVEL[ch], PBM_SETPOS, wParam, <span class="hljs-number">0</span>);
+}
+</code></pre>
+<p></details></p>
+<p><details><summary><strong>Can I add overlays to the live stream?</strong></summary></p>
+<p>Yes, see <a href="https://www.nanocosmos.de/v4/documentation/live_video_encoder_-_overlay_mixing">here</a> and <a href="https://www.nanocosmos.de/v4/documentation/nanocosmos_-_directshow_overlay_mixing">here</a> for detailed explanations.
+</details></p>
+<p><details><summary><strong>Runnning a sample project or solution fails with COMException &quot;Class not registered&quot; </strong></summary></p>
+<p>When starting/debugging a sample project, the <code>COMException</code> Class not registered (<code>REGDB_E_CLASSNOTREG</code>) is thrown by Visual Studio, althought the <code>ActiveX</code> plugin (<code>nanoStream.ax</code>) was registered properly with <code>regsvr32.exe</code>.</p>
+<p>This error occurs most likely due to a wrong setting in the configuration properties for the project.</p>
+<p>Make sure the platform is set to either <code>x86</code> or <code>win32</code>, as the <code>ActiveX</code> plugin is not available for <code>x64</code> at the moment. Open the Configuration Manager of Visual Studio to <a href="http://msdn.microsoft.com/en-us/library/t1hy4dhz%28v=vs.100%29.aspx">change this setting</a>.
+</details></p>
+<p><details><summary><strong>Which formats do your MXF filters support?</strong></summary></p>
+<p>nanocosmos supports <code>MPEG-2</code> video and <code>PCM/AES</code> audio in <code>MXF</code> containers.
+Supported sub formats are <code>XDCAM-HD422</code>, <code>IMX</code> and others.
+Our components have been verified to work and interoperate with professional studio equipment from other vendors.
+</details></p>
+<p><details><summary><strong>How to remove a Quicktime Codec</strong></summary></p>
+<p>If the codec is not uninstalled by the setup automatically you need to manually delete the file from <code>C:\ProgramFiles\QuickTime\QTComponents</code>. The files are called <code>nano.qtx</code> and <code>nano.qtr</code> or similar.
+In any case, if a codec does not work as expected, please contact our support team - we might be able to suggest a solution.</p>
+<p></details></p>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 12/13/2020</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/faq/programming_sdk_api"><span class="arrow-prev">← </span><span>Programming / SDK / API</span></a><a class="docs-next button" href="/docs/faq/programming"><span>Next</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#solution">Solution</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><div><h5>Contact</h5><a href="https://www.nanocosmos.de/">Homepage</a><a href="https://www.nanocosmos.de/contact">Contact</a><a href="https://www.nanocosmos.de/support">Support</a><a href="https://www.nanocosmos.de/terms">Legal Terms</a></div><div><h5>Products</h5><a href="https://www.nanocosmos.de/cloud">Nanostream Cloud with Bintu.Live</a><a href="https://www.nanocosmos.de/h5live">H5Live Low Latency HTML5-Player</a><a href="https://www.nanocosmos.de/webrtc">nanoStream Webcaster</a><a href="https://www.nanocosmos.de/#nanostream">Nanostream Apps and SDK</a></div><div><h5>More</h5><a href="https://www.nanocosmos.de/blog/">Blog</a><a href="https://twitter.com/nanovideo">Twitter</a><a href="https://www.facebook.com/nanocosmos.net/">Facebook</a><a href="https://www.linkedin.com/company/nanocosmos-gmbh">LinkedIn</a><a href="https://github.com/nanocosmos/docs">GitHub</a><a class="github-button" href="https://github.com/nanocosmos/docs" data-icon="octicon-star" data-count-href="/nanocosmos/docs/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://nanocosmos.de/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/footer_logo.png" alt="nanocosmos GmbH" width="170" height="45"/></a><section class="copyright">Copyright © 2020 nanocosmos GmbH</section></footer></div></body></html>

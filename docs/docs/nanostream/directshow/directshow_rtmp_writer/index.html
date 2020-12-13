@@ -1,0 +1,188 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>RTMP Writer · nanocosmos Documentation</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="# DirectShow RTMP Network Renderer &amp; Writer"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="RTMP Writer · nanocosmos Documentation"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.nanocosmos.de/"/><meta property="og:description" content="# DirectShow RTMP Network Renderer &amp; Writer"/><meta property="og:image" content="https://docs.nanocosmos.de/img/docusaurus.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://docs.nanocosmos.de/img/docusaurus.png"/><link rel="shortcut icon" href="/img/favicon_nano.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script>
+              (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+              (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+              m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+              })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+              ga('create', 'UA-552140-1', 'auto');
+              ga('send', 'pageview');
+            </script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="/js/search.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/nanocosmos_header_logo.png" alt="nanocosmos Documentation"/><h2 class="headerTitleWithLogo">nanocosmos Documentation</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/docs/cloud/cloud_overview" target="_self">nanoStream Cloud</a></li><li class=""><a href="/docs/nanoplayer/nanoplayer_introduction" target="_self">H5Live Player</a></li><li class=""><a href="/docs/webrtc/nanostream_webrtc_introduction" target="_self">nanoStream Webcaster</a></li><li class="siteNavGroupActive"><a href="/docs/nanostream/nanostream" target="_self">nanoStream Apps and SDKs</a></li><li class=""><a href="/docs/samples/samples" target="_self">Samples</a></li><li class=""><a href="/docs/faq/faq_streaming" target="_self">FAQ</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>DirectShow</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">nanoStream SDKs/Apps</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/nanostream/nanostream">Introduction</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Android</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/nanostream/android/nanostream_android_getting_started">Getting started</a></li><li class="navListItem"><a class="navItem" href="/docs/nanostream/android/nanostream_android_developer_manual_playback">Playback</a></li><li class="navListItem"><a class="navItem" href="/docs/nanostream/android/nanostream_android_developer_manual_streaming">Streaming Media</a></li><li class="navListItem"><a class="navItem" href="/docs/nanostream/android/nanostream_android_developer_manual_sample">Sample</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">iOS</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/nanostream/ios/nanostream_ios_quick_start">Developer Quickstart</a></li><li class="navListItem"><a class="navItem" href="/docs/nanostream/ios/nanostream-ios-step-by-step">Getting started</a></li><li class="navListItem"><a class="navItem" href="/docs/nanostream/ios/nanostream_ios_sdk">SDK for iOS</a></li><li class="navListItem"><a class="navItem" href="/docs/nanostream/ios/bintu_ios_sdk">bintu.live client SDK</a></li><li class="navListItem"><a class="navItem" href="/docs/nanostream/ios/bintu_ios_sample">iOS Streaming App in 5 Minutes</a></li><li class="navListItem"><a class="navItem" href="/docs/nanostream/ios/nanostream_ios_license_deployment">License Deployment Information</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Windows</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/nanostream/windows/nanostream_windows_binaries">Binary Modules for Windows</a></li><li class="navListItem"><a class="navItem" href="/docs/nanostream/windows/nanostream_windows_developer_manual">Developer Manual</a></li><li class="navListItem"><a class="navItem" href="/docs/nanostream/windows/nanostream_windows_language_integration">nanoStream Windows Language Integration</a></li><li class="navListItem"><a class="navItem" href="/docs/nanostream/windows/nanostream_windows_license_help">Setting the license</a></li><li class="navListItem"><a class="navItem" href="/docs/nanostream/windows/nanostream_windows_networkwriter">RTMP Network Renderer &amp; Writer</a></li><li class="navListItem"><a class="navItem" href="/docs/nanostream/windows/nanostream_encoder_plugin_api">Encoder Plugin API</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">DirectShow</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/nanostream/directshow/">Overview</a></li><li class="navListItem"><a class="navItem" href="/docs/nanostream/directshow/nanostream_directshow_h264">H264</a></li><li class="navListItem"><a class="navItem" href="/docs/nanostream/directshow/nanostream_directshow_rtmp">RTMP</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/nanostream/directshow/directshow_rtmp_writer">RTMP Writer</a></li><li class="navListItem"><a class="navItem" href="/docs/nanostream/directshow/nanostream_directshow_rtsp">RTSP</a></li><li class="navListItem"><a class="navItem" href="/docs/nanostream/directshow/nanostream_directshow_udp_streaming">UDP/TS Streaming</a></li><li class="navListItem"><a class="navItem" href="/docs/nanostream/directshow/nanostream_directshow_video_filter">Video Filter</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/nanocosmos/docs/tree/master/docs/nanostream/directshow/directshow_rtmp_writer.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 id="__docusaurus" class="postHeaderTitle">RTMP Writer</h1></header><article><div><span><h1><a class="anchor" aria-hidden="true" id="directshow-rtmp-network-renderer--writer"></a><a href="#directshow-rtmp-network-renderer--writer" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>DirectShow RTMP Network Renderer &amp; Writer</h1>
+<h2><a class="anchor" aria-hidden="true" id="purpose"></a><a href="#purpose" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Purpose</h2>
+<p>Writing <code>RTMP</code> compatible video/audio streams over a network connection</p>
+<ul>
+<li>Supported Architectures: Microsoft DirectShow, Windows</li>
+<li>Supported Formats: H.264 Video + AAC Audio</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="module--version"></a><a href="#module--version" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Module / Version</h2>
+<p>nanocosmos RTMP Network Writer
+<code>nRtmpRenderer.ax</code> Version 3.0.3.1</p>
+<h2><a class="anchor" aria-hidden="true" id="directshow-connectivity"></a><a href="#directshow-connectivity" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>DirectShow Connectivity</h2>
+<p>The RTMP Writer is implemented as a “Renderer Filter”, which means it only has 2 input pins for compressed video and audio and no output pin.
+The input is accepting connections matching the following media types:</p>
+<ol>
+<li>Pin 1 Media Types:</li>
+</ol>
+<ul>
+<li>MEDIATYPE_Video
+Pin 1 Media Subtypes:
+FourCCs: <code>H264</code>, <code>h264</code></li>
+</ul>
+<ul>
+<li><p>Pin 1 Formats:</p>
+<p><code>FORMAT_MPEG2_VIDEO</code>, <code>FORMAT_NONE</code></p></li>
+</ul>
+<ul>
+<li><p>Pin 2 Major Media Types:</p>
+<p><code>MEDIATYPE_Audio</code></p></li>
+</ul>
+<ul>
+<li><p>Pin 2 Media Subtypes:</p>
+<p><code>MEDIASUBTYPE_AAC</code>, <code>FourCC: 0x000000FF</code></p></li>
+</ul>
+<ul>
+<li>Pin 2 Formats:</li>
+</ul>
+<p><code>FORMAT_WaveFormatEx</code>,  <code>FORMAT_NONE</code></p>
+<p><img src="img/windows_networkwriter_properties.png" alt="rtmp_writer_prop"></p>
+<p>The filter's property page offers a subset of encoding parameters, containing the most important options.
+URL formatting:<code>rtmp: [hostname / IP address]/[application]+[stream name]</code>  for  example:</p>
+<p><code>rtmp:127.0.0.1/live+myStream</code> with:<code>IP address: 127.0.0.1</code>
+Application name: <code>live</code>, Stream name: <code>myStream</code></p>
+<h3><a class="anchor" aria-hidden="true" id="configuration"></a><a href="#configuration" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Configuration</h3>
+<p>The configuration may be set by using either the property page or the COM-Interface IRTMPOptions as declared in header file RTMPWriterOptions.h.</p>
+<pre><code class="hljs css language-c"><span class="hljs-comment">// Filter Guids</span>
+<span class="hljs-comment">// {B4FB59C5-983B-4d96-9204-F8B0E46704EE}</span>
+DEFINE_GUID(CLSID_NANO_RTMP_WRITER,  <span class="hljs-number">0xb4fb59c5</span>, <span class="hljs-number">0x983b</span>, <span class="hljs-number">0x4d96</span>, <span class="hljs-number">0x92</span>, <span class="hljs-number">0x4</span>, <span class="hljs-number">0xf8</span>, <span class="hljs-number">0xb0</span>, <span class="hljs-number">0xe4</span>, <span class="hljs-number">0x67</span>, <span class="hljs-number">0x4</span>, <span class="hljs-number">0xee</span>);
+
+<span class="hljs-comment">// Property Page GUID</span>
+<span class="hljs-comment">// {EFC673DE-E20E-4699-8331-9522C5DF7A6D}</span>
+DEFINE_GUID(CLSID_NANO_RTMP_WRITER_PROPPAGE, <span class="hljs-number">0xefc673de</span>, <span class="hljs-number">0xe20e</span>, <span class="hljs-number">0x4699</span>, <span class="hljs-number">0x83</span>, <span class="hljs-number">0x31</span>, <span class="hljs-number">0x95</span>, <span class="hljs-number">0x22</span>, <span class="hljs-number">0xc5</span>, <span class="hljs-number">0xdf</span>, <span class="hljs-number">0x7a</span>, <span class="hljs-number">0x6d</span>);
+
+<span class="hljs-comment">// Configuration Interface GUID</span>
+<span class="hljs-comment">// IID_IRTMPOptions interface</span>
+<span class="hljs-comment">// {B8AF4593-BE31-449c-8485-3E6D65CBC1FE}</span>
+DEFINE_GUID(IID_IRTMPOptions, <span class="hljs-number">0xb8af4593</span>, <span class="hljs-number">0xbe31</span>, <span class="hljs-number">0x449c</span>, <span class="hljs-number">0x84</span>, <span class="hljs-number">0x85</span>, <span class="hljs-number">0x3e</span>, <span class="hljs-number">0x6d</span>, <span class="hljs-number">0x65</span>, <span class="hljs-number">0xcb</span>, <span class="hljs-number">0xc1</span>, <span class="hljs-number">0xfe</span>)
+</code></pre>
+<p>The streaming url can be set by using standard DirectShow interface IFileSinkFilter .</p>
+<h3><a class="anchor" aria-hidden="true" id="configuration-with-directshow-filter-property-page"></a><a href="#configuration-with-directshow-filter-property-page" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Configuration with DirectShow filter property page</h3>
+<p><img src="/img/nanostream/directshow/directshow_rtmp_writer_properties.png" alt="RTMP Writer Properties"></p>
+<p>The filter's property page offers a subset of encoding parameters, containing the most important options.</p>
+<p>URL formatting:</p>
+<p><code>rtmp:// [hostname / IP address]/[application]+[stream name]</code></p>
+<p>for example:
+<code>rtmp://127.0.0.1/live+myStream</code></p>
+<p>with:
+IP address: 127.0.0.1
+Application name: live,   Stream name: myStream</p>
+<h2><a class="anchor" aria-hidden="true" id="connection-test"></a><a href="#connection-test" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Connection Test</h2>
+<p>Connect/Disconnect buttons. Allows to connect before starting the graph and disconnect during the streaming (this stops the running graph).</p>
+<h2><a class="anchor" aria-hidden="true" id="rtmp-authentication"></a><a href="#rtmp-authentication" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>RTMP Authentication</h2>
+<p>RTMP Authentication expects a user name and a password for unlocking access to the Media Server. RTMP Authentication is an outdated functionality not available with nanoStream Cloud.</p>
+<h2><a class="anchor" aria-hidden="true" id="automatic-reconnection"></a><a href="#automatic-reconnection" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Automatic Reconnection:</h2>
+<p><code>Attempts</code> to restore network connection after n seconds to the server in case of network interrupts. During the reconnect attempts the graph still playing. 0 means no attempts to reconnect to server.</p>
+<h2><a class="anchor" aria-hidden="true" id="advanced-configuration-options"></a><a href="#advanced-configuration-options" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Advanced Configuration Options</h2>
+<p>The advanced options should be handled carefully. They can severely affect network and streaming performance. Contact support if you want to fine tune any settings.
+<em>Buffering:</em>
+Data Flow: RTMP multiplexed data → application buffer → socket buffer → network.
+There are 2 buffer types:</p>
+<ol>
+<li>Socket level buffer: Size of the network socket buffer, much dependent on the underlying network architecture</li>
+<li>Application level buffer (Output Buffer Size, Output packet size), 0=no buffer Affects bandwidth utilization, prevents bitrate changes and puts the sending process to a separate thread.</li>
+</ol>
+<h2><a class="anchor" aria-hidden="true" id="advanced-settings"></a><a href="#advanced-settings" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Advanced Settings</h2>
+<ul>
+<li>Live Mode: Turns on/off blocking of input pins. (should be off by default)</li>
+<li>TCP No Delay: Activates the <code>TCP_NODELAY</code> option for TCP transmission (&quot;Nagle Algorithm&quot;)</li>
+<li>Timecode Options: Sends Time Code in RTMP Meta Data</li>
+<li>Allow B Frames: should be on, it reduces the buffer/delay in <code>H.264 Main Profile</code> without B Frames. No effect in Baseline Mode.</li>
+<li>Timecode Options: send Time Code in RTMP Meta Data</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="connection-status-notification"></a><a href="#connection-status-notification" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Connection Status Notification</h2>
+<p>There are two possibilities to get the status of the connection to the server:</p>
+<ul>
+<li>Event messages are sent via IMediaEventSink with the event code EC_NANO_RTMP_WRITER_STATUS declared in <code>RTMPWriterOptions.h</code> (<code>#define EC_NANO_RTMP_WRITER_STATUS EC_USER+181</code>). A message is sent when the connection state changes. The different states are represented by (also declared in <code>RTMPWriterOptions.h</code>):</li>
+<li><code>RTMPWriterConnected=0</code></li>
+<li><code>RTMPWriterDisconnected=1</code></li>
+<li><code>RTMPWriterReconnecting=2</code></li>
+<li>Using a callback function, which is called when the connection state changes:
+<ul>
+<li>Query for the interface <code>IRTMPStatusNotify</code></li>
+<li>Set the callback function via <code>SetStatusNotifyHandler()</code></li>
+</ul></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="rtmp-writer-filter-crashes-when-using-setstatusnotifyhandler"></a><a href="#rtmp-writer-filter-crashes-when-using-setstatusnotifyhandler" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Rtmp Writer Filter crashes when using <code>SetStatusNotifyHandler()</code></h2>
+<p>This problem is probably caused by calling a function declared with one calling convention with a function pointer declared with a different calling convention. Here is a good explanation of the problem:
+<a href="http://stackoverflow.com/questions/301655/c-visual-studio-runtime-error">Visual Studio Runtime Error</a></p>
+<p><a href="http://stackoverflow.com/questions/10079625/c-run-time-check-failure-0-the-value-of-esp-was-not-properly-saved-across-a">Run Time Check Failure</a></p>
+<p><strong>Conclusion</strong>: Make sure you use <code>stdcall</code> in your declaration</p>
+<h2><a class="anchor" aria-hidden="true" id="log--debug-configuration-registry-settings"></a><a href="#log--debug-configuration-registry-settings" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Log / Debug Configuration Registry Settings</h2>
+<p><code>Key: HKEYCURRENTUSER\Software\DebugNano\ nRtmpRenderer.ax</code></p>
+<h3><a class="anchor" aria-hidden="true" id="file-name"></a><a href="#file-name" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>File name</h3>
+<p>Sets the output file name. The folder must exist.
+Value name: <code>LogToFile</code>
+Value type: <code>REG_SZ / String</code>
+Valid values: a valid output file name to enable file logging or an empty string</p>
+<h3><a class="anchor" aria-hidden="true" id="logging-level"></a><a href="#logging-level" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Logging level</h3>
+<ul>
+<li>A higher value increases the amount of logging messages sent, and messages get more detailed.</li>
+<li>Value name: <code>TRACE</code></li>
+<li>Value type: <code>REG_DWORD</code></li>
+<li>Valid values: 0 (minimal logging) - 9 (maximal logging)</li>
+</ul>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 12/13/2020</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/nanostream/directshow/directshow_rtmp_source"><span class="arrow-prev">← </span><span>Previous</span></a><a class="docs-next button" href="/docs/nanostream/directshow/nanostream_directshow_rtsp"><span>RTSP</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#purpose">Purpose</a></li><li><a href="#module--version">Module / Version</a></li><li><a href="#directshow-connectivity">DirectShow Connectivity</a><ul class="toc-headings"><li><a href="#configuration">Configuration</a></li><li><a href="#configuration-with-directshow-filter-property-page">Configuration with DirectShow filter property page</a></li></ul></li><li><a href="#connection-test">Connection Test</a></li><li><a href="#rtmp-authentication">RTMP Authentication</a></li><li><a href="#automatic-reconnection">Automatic Reconnection:</a></li><li><a href="#advanced-configuration-options">Advanced Configuration Options</a></li><li><a href="#advanced-settings">Advanced Settings</a></li><li><a href="#connection-status-notification">Connection Status Notification</a></li><li><a href="#rtmp-writer-filter-crashes-when-using-setstatusnotifyhandler">Rtmp Writer Filter crashes when using <code>SetStatusNotifyHandler()</code></a></li><li><a href="#log--debug-configuration-registry-settings">Log / Debug Configuration Registry Settings</a><ul class="toc-headings"><li><a href="#file-name">File name</a></li><li><a href="#logging-level">Logging level</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><div><h5>Contact</h5><a href="https://www.nanocosmos.de/">Homepage</a><a href="https://www.nanocosmos.de/contact">Contact</a><a href="https://www.nanocosmos.de/support">Support</a><a href="https://www.nanocosmos.de/terms">Legal Terms</a></div><div><h5>Products</h5><a href="https://www.nanocosmos.de/cloud">Nanostream Cloud with Bintu.Live</a><a href="https://www.nanocosmos.de/h5live">H5Live Low Latency HTML5-Player</a><a href="https://www.nanocosmos.de/webrtc">nanoStream Webcaster</a><a href="https://www.nanocosmos.de/#nanostream">Nanostream Apps and SDK</a></div><div><h5>More</h5><a href="https://www.nanocosmos.de/blog/">Blog</a><a href="https://twitter.com/nanovideo">Twitter</a><a href="https://www.facebook.com/nanocosmos.net/">Facebook</a><a href="https://www.linkedin.com/company/nanocosmos-gmbh">LinkedIn</a><a href="https://github.com/nanocosmos/docs">GitHub</a><a class="github-button" href="https://github.com/nanocosmos/docs" data-icon="octicon-star" data-count-href="/nanocosmos/docs/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://nanocosmos.de/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/footer_logo.png" alt="nanocosmos GmbH" width="170" height="45"/></a><section class="copyright">Copyright © 2020 nanocosmos GmbH</section></footer></div></body></html>

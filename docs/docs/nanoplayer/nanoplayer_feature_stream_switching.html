@@ -1,0 +1,814 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Stream switching and ABR · nanocosmos Documentation</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="## Multi stream configuration, integrated ABR and stream switching features "/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Stream switching and ABR · nanocosmos Documentation"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.nanocosmos.de/"/><meta property="og:description" content="## Multi stream configuration, integrated ABR and stream switching features "/><meta property="og:image" content="https://docs.nanocosmos.de/img/docusaurus.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://docs.nanocosmos.de/img/docusaurus.png"/><link rel="shortcut icon" href="/img/favicon_nano.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script>
+              (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+              (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+              m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+              })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+              ga('create', 'UA-552140-1', 'auto');
+              ga('send', 'pageview');
+            </script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="/js/search.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/nanocosmos_header_logo.png" alt="nanocosmos Documentation"/><h2 class="headerTitleWithLogo">nanocosmos Documentation</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/docs/cloud/cloud_overview" target="_self">nanoStream Cloud</a></li><li class="siteNavGroupActive"><a href="/docs/nanoplayer/nanoplayer_introduction" target="_self">H5Live Player</a></li><li class=""><a href="/docs/webrtc/nanostream_webrtc_introduction" target="_self">nanoStream Webcaster</a></li><li class=""><a href="/docs/nanostream/nanostream" target="_self">nanoStream Apps and SDKs</a></li><li class=""><a href="/docs/samples/samples" target="_self">Samples</a></li><li class=""><a href="/docs/faq/faq_streaming" target="_self">FAQ</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Features</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">H5Live Player</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/nanoplayer/nanoplayer_introduction">Introduction</a></li><li class="navListItem"><a class="navItem" href="/docs/nanoplayer/nanoplayer_getting_started">Getting started</a></li><li class="navListItem"><a class="navItem" href="/docs/nanoplayer/nanoplayer_supported_browsers">Supported Browsers</a></li><li class="navListItem"><a class="navItem" href="/docs/nanoplayer/nanoplayer_player_metrics">Player Metrics</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Features</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/nanoplayer/nanoplayer_autoplay">Autoplay</a></li><li class="navListItem"><a class="navItem" href="/docs/nanoplayer/nanoplayer_token_security">Secure playback with H5Live</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/nanoplayer/nanoplayer_feature_stream_switching">Stream switching and ABR</a></li><li class="navListItem"><a class="navItem" href="/docs/nanoplayer/nanoplayer_feature_fullscreen_api">Fullscreen API</a></li><li class="navListItem"><a class="navItem" href="/docs/nanoplayer/nanoplayer_feature_network_reconnect">Network Reconnect</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">API</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/nanoplayer/nanoplayer_api">NanoPlayer</a></li><li class="navListItem"><a class="navItem" href="/docs/nanoplayer/nanoplayer_api_errors">NanoPlayer Status &amp; Error Codes</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Other</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/nanoplayer/nanoplayer_faq">FAQ</a></li><li class="navListItem"><a class="navItem" href="/docs/nanoplayer/nanoplayer_blogposts">Blog</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/nanocosmos/docs/tree/master/docs/nanoplayer/nanoplayer_feature_stream_switching.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 id="__docusaurus" class="postHeaderTitle">Stream switching and ABR</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="multi-stream-configuration-integrated-abr-and-stream-switching-features"></a><a href="#multi-stream-configuration-integrated-abr-and-stream-switching-features" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Multi stream configuration, integrated ABR and stream switching features</h2>
+<p>The <strong>nanoStream H5Live Player Version 4.3</strong> is introducing new features related to stream switching and integrated adaptive bitrate playback enabling automatic and application/viewer controlled stream switching either separately or in combination.
+One potential combined use case is a video quality selection offering options auto, high, medium, low to the viewer.
+<br>
+<br></p>
+<blockquote>
+<p><strong>Important:</strong> <br>
+To start using the stream switching feature make sure you're using the minimum required nanoStream H5Live Player version <strong>4.3</strong> !</p>
+</blockquote>
+<hr>
+<h2><a class="anchor" aria-hidden="true" id="configuration-changes"></a><a href="#configuration-changes" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Configuration changes</h2>
+<h3><a class="anchor" aria-hidden="true" id="stream-configuration"></a><a href="#stream-configuration" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Stream configuration</h3>
+<p>Whether you want to configure a <a href="#single-stream-configuration">single stream</a> or <a href="#multi-stream-configuration">multiple streams</a> you need to configure them inside the <code>config.source.entries</code> object during the initial <code>setup</code> call.</p>
+<blockquote>
+<p><strong>Note:</strong> You can find more information on how to configure the player in our <a href="../nanoplayer_api/#nanoplayerconfig--codeobjectcode">API documentation</a>.</p>
+</blockquote>
+<h3><a class="anchor" aria-hidden="true" id="single-stream-configuration"></a><a href="#single-stream-configuration" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Single Stream configuration</h3>
+<p>The <a href="#example-old-single-stream-configuration-deprecated">old pattern</a> to configure a single stream is <strong>deprecated</strong> with this version! Please follow this <a href="#example-new-single-stream-configuration">new example</a> to configure a single stream.</p>
+<h4><a class="anchor" aria-hidden="true" id="example-old-single-stream-configuration-deprecated"></a><a href="#example-old-single-stream-configuration-deprecated" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example OLD single stream configuration (DEPRECATED)</h4>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">var</span> config = {
+    <span class="hljs-string">"source"</span> : {
+        <span class="hljs-string">"h5live"</span>: {
+            <span class="hljs-string">"rtmp"</span>: {
+                <span class="hljs-string">"url"</span>: <span class="hljs-string">"rtmp://bintu-play.nanocosmos.de/play"</span>,
+                <span class="hljs-string">"streamname"</span>: <span class="hljs-string">"XXXXX-YYYYY"</span>
+            },
+            <span class="hljs-string">"server"</span>: {
+                <span class="hljs-string">"websocket"</span>: <span class="hljs-string">"wss://bintu-h5live.nanocosmos.de:443/h5live/stream.mp4"</span>,
+                <span class="hljs-string">"hls"</span>: <span class="hljs-string">"https://bintu-h5live.nanocosmos.de:443/h5live/http/playlist.m3u8"</span>,
+                <span class="hljs-string">"progressive"</span>: <span class="hljs-string">"https://bintu-h5live.nanocosmos.de:443/h5live/http/stream.mp4"</span>
+            },
+            <span class="hljs-string">"token"</span>: <span class="hljs-string">""</span>,
+            <span class="hljs-string">"security"</span>: {}
+        }
+    },
+    <span class="hljs-string">"playback"</span>: {
+        ...
+    },
+    <span class="hljs-string">"style"</span>: {
+        ...
+    }
+};
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="example-new-single-stream-configuration"></a><a href="#example-new-single-stream-configuration" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example NEW single stream configuration</h4>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">var</span> config = {
+    <span class="hljs-string">"source"</span> : {
+        <span class="hljs-string">"entries"</span>: [
+            {
+                <span class="hljs-string">"index"</span>: <span class="hljs-number">0</span>,
+                <span class="hljs-string">"label"</span>: <span class="hljs-string">"high"</span>,
+                <span class="hljs-string">"tag"</span>: <span class="hljs-string">"this is a high quality stream"</span>,
+                <span class="hljs-string">"info"</span>: {
+                    <span class="hljs-string">"bitrate"</span>: <span class="hljs-number">1200</span>,
+                    <span class="hljs-string">"width"</span>: <span class="hljs-number">1280</span>,
+                    <span class="hljs-string">"height"</span>: <span class="hljs-number">720</span>,
+                    <span class="hljs-string">"framerate"</span>: <span class="hljs-number">30</span>
+                },
+                <span class="hljs-string">"hls"</span>: <span class="hljs-string">""</span>,
+                <span class="hljs-string">"h5live"</span>: {
+                    <span class="hljs-string">"rtmp"</span>: {
+                        <span class="hljs-string">"url"</span>: <span class="hljs-string">"rtmp://bintu-play.nanocosmos.de/play"</span>,
+                        <span class="hljs-string">"streamname"</span>: <span class="hljs-string">"XXXXX-YYYYY"</span>
+                    },
+                    <span class="hljs-string">"server"</span>: {
+                        <span class="hljs-string">"websocket"</span>: <span class="hljs-string">"wss://bintu-h5live.nanocosmos.de:443/h5live/stream.mp4"</span>,
+                        <span class="hljs-string">"hls"</span>: <span class="hljs-string">"https://bintu-h5live.nanocosmos.de:443/h5live/http/playlist.m3u8"</span>,
+                        <span class="hljs-string">"progressive"</span>: <span class="hljs-string">"https://bintu-h5live.nanocosmos.de:443/h5live/http/stream.mp4"</span>
+                    },
+                    <span class="hljs-string">"token"</span>: <span class="hljs-string">""</span>,
+                    <span class="hljs-string">"security"</span>: {}
+                },
+                <span class="hljs-string">"bintu"</span>: {}
+            }
+        ]
+    },
+    <span class="hljs-string">"playback"</span>: {
+        ...
+    },
+    <span class="hljs-string">"style"</span>: {
+        ...
+    }
+};
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="multi-stream-configuration"></a><a href="#multi-stream-configuration" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Multi stream configuration</h3>
+<p>You can configure a list of multiple streams inside the <code>config.source.entries</code> object.
+Depending on the intended use case these can be:</p>
+<ul>
+<li><p>multi-bitrate renditions of the same content</p></li>
+<li><p>multiple streams of different content.</p></li>
+</ul>
+<blockquote>
+<p><strong>Note:</strong> The nanoStream transcoding service allows a single stream to be delivered in different multi-bitrate qualities eg. high (original) transcoded in medium and low quality.</p>
+</blockquote>
+<p><br>
+The entries need to be ordered by bitrate with <strong>index zero</strong> holding the <strong>highest bitrate</strong>. Each entry has an <code>index</code> property that determinds the overall order of the entries, <strong>not</strong> the position in the <code>config.source.entries</code> list.
+The initial stream/rendition can be selected by assigning <code>config.source.startIndex</code> to the index of an entry.</p>
+<blockquote>
+<p><strong>Important</strong>: Multi stream configuration is <strong>required</strong> for both the integrated <strong>ABR</strong> and also the <strong>switchStream</strong> feature!</p>
+</blockquote>
+<h4><a class="anchor" aria-hidden="true" id="example-multi-stream-configuration-with-abr"></a><a href="#example-multi-stream-configuration-with-abr" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example multi stream configuration (with ABR)</h4>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">var</span> config = {
+    <span class="hljs-string">"source"</span> : {
+        <span class="hljs-string">"entries"</span>: [ <span class="hljs-comment">// array of 'entry' objects</span>
+            {
+                <span class="hljs-string">"index"</span>: <span class="hljs-number">0</span>,
+                <span class="hljs-string">"label"</span>: <span class="hljs-string">"high"</span>,
+                <span class="hljs-string">"tag"</span>: <span class="hljs-string">"this is a high quality stream"</span>,
+                <span class="hljs-string">"info"</span>: {
+                    <span class="hljs-string">"bitrate"</span>: <span class="hljs-number">1200</span>,
+                    <span class="hljs-string">"width"</span>: <span class="hljs-number">1280</span>,
+                    <span class="hljs-string">"height"</span>: <span class="hljs-number">720</span>,
+                    <span class="hljs-string">"framerate"</span>: <span class="hljs-number">30</span>
+                },
+                <span class="hljs-string">"hls"</span>: <span class="hljs-string">""</span>,
+                <span class="hljs-string">"h5live"</span>: {
+                    <span class="hljs-string">"rtmp"</span>: {
+                        <span class="hljs-string">"url"</span>: <span class="hljs-string">"rtmp://bintu-play.nanocosmos.de/play"</span>,
+                        <span class="hljs-string">"streamname"</span>: <span class="hljs-string">"XXXXX-YYYY0"</span>
+                    },
+                    <span class="hljs-string">"server"</span>: {
+                        <span class="hljs-string">"websocket"</span>: <span class="hljs-string">"wss://bintu-h5live.nanocosmos.de:443/h5live/stream.mp4"</span>,
+                        <span class="hljs-string">"hls"</span>: <span class="hljs-string">"https://bintu-h5live.nanocosmos.de:443/h5live/http/playlist.m3u8"</span>,
+                        <span class="hljs-string">"progressive"</span>: <span class="hljs-string">"https://bintu-h5live.nanocosmos.de:443/h5live/http/stream.mp4"</span>
+                    },
+                    <span class="hljs-string">"token"</span>: <span class="hljs-string">""</span>,
+                    <span class="hljs-string">"security"</span>: {}
+                },
+                <span class="hljs-string">"bintu"</span>: {}
+            },
+            {
+                <span class="hljs-string">"index"</span>: <span class="hljs-number">1</span>,
+                <span class="hljs-string">"label"</span>: <span class="hljs-string">"medium"</span>,
+                <span class="hljs-string">"tag"</span>: <span class="hljs-string">"this is a medium quality stream"</span>,
+                <span class="hljs-string">"info"</span>: {
+                    <span class="hljs-string">"bitrate"</span>: <span class="hljs-number">800</span>,
+                    <span class="hljs-string">"width"</span>: <span class="hljs-number">864</span>,
+                    <span class="hljs-string">"height"</span>: <span class="hljs-number">480</span>,
+                    <span class="hljs-string">"framerate"</span>: <span class="hljs-number">30</span>
+                },
+                <span class="hljs-string">"hls"</span>: <span class="hljs-string">""</span>,
+                <span class="hljs-string">"h5live"</span>: {
+                    <span class="hljs-string">"rtmp"</span>: {
+                        <span class="hljs-string">"url"</span>: <span class="hljs-string">"rtmp://bintu-play.nanocosmos.de/play"</span>,
+                        <span class="hljs-string">"streamname"</span>: <span class="hljs-string">"XXXXX-YYYY1"</span>
+                    },
+                    <span class="hljs-string">"server"</span>: {
+                        <span class="hljs-string">"websocket"</span>: <span class="hljs-string">"wss://bintu-h5live.nanocosmos.de:443/h5live/stream.mp4"</span>,
+                        <span class="hljs-string">"hls"</span>: <span class="hljs-string">"https://bintu-h5live.nanocosmos.de:443/h5live/http/playlist.m3u8"</span>,
+                        <span class="hljs-string">"progressive"</span>: <span class="hljs-string">"https://bintu-h5live.nanocosmos.de:443/h5live/http/stream.mp4"</span>
+                    },
+                    <span class="hljs-string">"token"</span>: <span class="hljs-string">""</span>,
+                    <span class="hljs-string">"security"</span>: {}
+                },
+                <span class="hljs-string">"bintu"</span>: {}
+            },
+            {
+                <span class="hljs-string">"index"</span>: <span class="hljs-number">2</span>,
+                <span class="hljs-string">"label"</span>: <span class="hljs-string">"low"</span>,
+                <span class="hljs-string">"tag"</span>: <span class="hljs-string">"this is a low quality stream"</span>,
+                <span class="hljs-string">"info"</span>: {
+                    <span class="hljs-string">"bitrate"</span>: <span class="hljs-number">400</span>,
+                    <span class="hljs-string">"width"</span>: <span class="hljs-number">426</span>,
+                    <span class="hljs-string">"height"</span>: <span class="hljs-number">240</span>,
+                    <span class="hljs-string">"framerate"</span>: <span class="hljs-number">15</span>
+                },
+                <span class="hljs-string">"hls"</span>: <span class="hljs-string">""</span>,
+                <span class="hljs-string">"h5live"</span>: {
+                    <span class="hljs-string">"rtmp"</span>: {
+                        <span class="hljs-string">"url"</span>: <span class="hljs-string">"rtmp://bintu-play.nanocosmos.de/play"</span>,
+                        <span class="hljs-string">"streamname"</span>: <span class="hljs-string">"XXXXX-YYYY2"</span>
+                    },
+                    <span class="hljs-string">"server"</span>: {
+                        <span class="hljs-string">"websocket"</span>: <span class="hljs-string">"wss://bintu-h5live.nanocosmos.de:443/h5live/stream.mp4"</span>,
+                        <span class="hljs-string">"hls"</span>: <span class="hljs-string">"https://bintu-h5live.nanocosmos.de:443/h5live/http/playlist.m3u8"</span>,
+                        <span class="hljs-string">"progressive"</span>: <span class="hljs-string">"https://bintu-h5live.nanocosmos.de:443/h5live/http/stream.mp4"</span>
+                    },
+                    <span class="hljs-string">"token"</span>: <span class="hljs-string">""</span>,
+                    <span class="hljs-string">"security"</span>: {}
+                },
+                <span class="hljs-string">"bintu"</span>: {}
+            }
+        ],
+        <span class="hljs-string">"options"</span>: {
+            <span class="hljs-string">"adaption"</span>: {
+                <span class="hljs-string">"rule"</span>: <span class="hljs-string">"deviationOfMean"</span> <span class="hljs-comment">// enable ABR</span>
+            },
+            <span class="hljs-string">"switch"</span>: {
+                <span class="hljs-string">'method'</span>: <span class="hljs-string">'server'</span>,
+                <span class="hljs-string">'pauseOnError'</span>: <span class="hljs-literal">false</span>,
+                <span class="hljs-string">'forcePlay'</span>: <span class="hljs-literal">true</span>,
+                <span class="hljs-string">'fastStart'</span>: <span class="hljs-literal">false</span>,
+                <span class="hljs-string">'timeout'</span>: <span class="hljs-number">10</span>,
+            }
+        },
+        <span class="hljs-string">"startIndex"</span>: <span class="hljs-number">2</span> <span class="hljs-comment">// lowest</span>
+    },
+    <span class="hljs-string">"playback"</span>: {
+        ...
+    },
+    <span class="hljs-string">"style"</span>: {
+        ...
+    }
+};
+</code></pre>
+<blockquote>
+<p><strong>Note:</strong> In case you either provide an invalid <code>startIndex</code> or don't provide one at all the player starts the stream with index 0.</p>
+</blockquote>
+<blockquote>
+<p><strong>Note:</strong> The player will set the default adaption rule none if no adaption rule is passed. You can still switch between your pre-configured entries manually with the switchStream API.</p>
+</blockquote>
+<h4><a class="anchor" aria-hidden="true" id="example-multi-stream-configuration-with-abr-and-playback-security"></a><a href="#example-multi-stream-configuration-with-abr-and-playback-security" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example multi stream configuration (with ABR) and playback security</h4>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">var</span> config = {
+    <span class="hljs-string">"source"</span> : {
+        <span class="hljs-string">"entries"</span>: [ <span class="hljs-comment">// array of 'entry' objects</span>
+            {
+                <span class="hljs-string">"index"</span>: <span class="hljs-number">0</span>,
+                <span class="hljs-string">"label"</span>: <span class="hljs-string">"high"</span>,
+                <span class="hljs-string">"tag"</span>: <span class="hljs-string">"this is a high quality stream"</span>,
+                <span class="hljs-string">"info"</span>: {
+                    <span class="hljs-string">"bitrate"</span>: <span class="hljs-number">1200</span>,
+                    <span class="hljs-string">"width"</span>: <span class="hljs-number">1280</span>,
+                    <span class="hljs-string">"height"</span>: <span class="hljs-number">720</span>,
+                    <span class="hljs-string">"framerate"</span>: <span class="hljs-number">30</span>
+                },
+                <span class="hljs-string">"hls"</span>: <span class="hljs-string">""</span>,
+                <span class="hljs-string">"h5live"</span>: {
+                    <span class="hljs-string">"rtmp"</span>: {
+                        <span class="hljs-string">"url"</span>: <span class="hljs-string">"rtmp://bintu-splay.nanocosmos.de/splay"</span>,
+                        <span class="hljs-string">"streamname"</span>: <span class="hljs-string">"XXXXX-YYYY0"</span>
+                    },
+                    <span class="hljs-string">"server"</span>: {
+                        <span class="hljs-string">"websocket"</span>: <span class="hljs-string">"wss://bintu-h5live-secure.nanocosmos.de:443/h5live/authstream/stream.mp4"</span>,
+                        <span class="hljs-string">"hls"</span>: <span class="hljs-string">"https://bintu-h5live-secure.nanocosmos.de:443/h5live/authhttp/playlist.m3u8"</span>,
+                        <span class="hljs-string">"progressive"</span>: <span class="hljs-string">"https://bintu-h5live-secure.nanocosmos.de:443/h5live/authhttp/stream.mp4"</span>
+                    },
+                    <span class="hljs-string">"token"</span>: <span class="hljs-string">""</span>,
+                    <span class="hljs-comment">// security for streamname XXXXX-YYYY0 here</span>
+                    <span class="hljs-string">"security"</span>: {
+                        <span class="hljs-string">"token"</span>: <span class="hljs-string">"TOKEN_HERE"</span>,
+                        <span class="hljs-string">"expires"</span>: <span class="hljs-string">"EXPIRES_HERE"</span>,
+                        <span class="hljs-string">"options"</span>: <span class="hljs-string">"OPTIONS_HERE"</span>,
+                        <span class="hljs-string">"tag"</span>: <span class="hljs-string">"TAG_HERE"</span>
+                    }
+                },
+                <span class="hljs-string">"bintu"</span>: {}
+            },
+            {
+                <span class="hljs-string">"index"</span>: <span class="hljs-number">1</span>,
+                <span class="hljs-string">"label"</span>: <span class="hljs-string">"medium"</span>,
+                <span class="hljs-string">"tag"</span>: <span class="hljs-string">"this is a medium quality stream"</span>,
+                <span class="hljs-string">"info"</span>: {
+                    <span class="hljs-string">"bitrate"</span>: <span class="hljs-number">800</span>,
+                    <span class="hljs-string">"width"</span>: <span class="hljs-number">864</span>,
+                    <span class="hljs-string">"height"</span>: <span class="hljs-number">480</span>,
+                    <span class="hljs-string">"framerate"</span>: <span class="hljs-number">30</span>
+                },
+                <span class="hljs-string">"hls"</span>: <span class="hljs-string">""</span>,
+                <span class="hljs-string">"h5live"</span>: {
+                    <span class="hljs-string">"rtmp"</span>: {
+                        <span class="hljs-string">"url"</span>: <span class="hljs-string">"rtmp://bintu-splay.nanocosmos.de/splay"</span>,
+                        <span class="hljs-string">"streamname"</span>: <span class="hljs-string">"XXXXX-YYYY1"</span>
+                    },
+                    <span class="hljs-string">"server"</span>: {
+                        <span class="hljs-string">"websocket"</span>: <span class="hljs-string">"wss://bintu-h5live-secure.nanocosmos.de:443/h5live/authstream/stream.mp4"</span>,
+                        <span class="hljs-string">"hls"</span>: <span class="hljs-string">"https://bintu-h5live-secure.nanocosmos.de:443/h5live/authhttp/playlist.m3u8"</span>,
+                        <span class="hljs-string">"progressive"</span>: <span class="hljs-string">"https://bintu-h5live-secure.nanocosmos.de:443/h5live/authhttp/stream.mp4"</span>
+                    },
+                    <span class="hljs-string">"token"</span>: <span class="hljs-string">""</span>,
+                    <span class="hljs-comment">// security for streamname XXXXX-YYYY1 here</span>
+                    <span class="hljs-string">"security"</span>: {
+                        <span class="hljs-string">"token"</span>: <span class="hljs-string">"TOKEN_HERE"</span>,
+                        <span class="hljs-string">"expires"</span>: <span class="hljs-string">"EXPIRES_HERE"</span>,
+                        <span class="hljs-string">"options"</span>: <span class="hljs-string">"OPTIONS_HERE"</span>,
+                        <span class="hljs-string">"tag"</span>: <span class="hljs-string">"TAG_HERE"</span>
+                    }
+                },
+                <span class="hljs-string">"bintu"</span>: {}
+            },
+            {
+                <span class="hljs-string">"index"</span>: <span class="hljs-number">2</span>,
+                <span class="hljs-string">"label"</span>: <span class="hljs-string">"low"</span>,
+                <span class="hljs-string">"tag"</span>: <span class="hljs-string">"this is a low quality stream"</span>,
+                <span class="hljs-string">"info"</span>: {
+                    <span class="hljs-string">"bitrate"</span>: <span class="hljs-number">400</span>,
+                    <span class="hljs-string">"width"</span>: <span class="hljs-number">426</span>,
+                    <span class="hljs-string">"height"</span>: <span class="hljs-number">240</span>,
+                    <span class="hljs-string">"framerate"</span>: <span class="hljs-number">15</span>
+                },
+                <span class="hljs-string">"hls"</span>: <span class="hljs-string">""</span>,
+                <span class="hljs-string">"h5live"</span>: {
+                    <span class="hljs-string">"rtmp"</span>: {
+                        <span class="hljs-string">"url"</span>: <span class="hljs-string">"rtmp://bintu-splay.nanocosmos.de/splay"</span>,
+                        <span class="hljs-string">"streamname"</span>: <span class="hljs-string">"XXXXX-YYYY2"</span>
+                    },
+                    <span class="hljs-string">"server"</span>: {
+                        <span class="hljs-string">"websocket"</span>: <span class="hljs-string">"wss://bintu-h5live-secure.nanocosmos.de:443/h5live/authstream/stream.mp4"</span>,
+                        <span class="hljs-string">"hls"</span>: <span class="hljs-string">"https://bintu-h5live-secure.nanocosmos.de:443/h5live/authhttp/playlist.m3u8"</span>,
+                        <span class="hljs-string">"progressive"</span>: <span class="hljs-string">"https://bintu-h5live-secure.nanocosmos.de:443/h5live/authhttp/stream.mp4"</span>
+                    },
+                    <span class="hljs-string">"token"</span>: <span class="hljs-string">""</span>,
+                    <span class="hljs-comment">// security for streamname XXXXX-YYYY2 here</span>
+                    <span class="hljs-string">"security"</span>: {
+                        <span class="hljs-string">"token"</span>: <span class="hljs-string">"TOKEN_HERE"</span>,
+                        <span class="hljs-string">"expires"</span>: <span class="hljs-string">"EXPIRES_HERE"</span>,
+                        <span class="hljs-string">"options"</span>: <span class="hljs-string">"OPTIONS_HERE"</span>,
+                        <span class="hljs-string">"tag"</span>: <span class="hljs-string">"TAG_HERE"</span>
+                    }
+                },
+                <span class="hljs-string">"bintu"</span>: {}
+            }
+        ],
+        <span class="hljs-string">"options"</span>: {
+            <span class="hljs-string">"adaption"</span>: {
+                <span class="hljs-string">"rule"</span>: <span class="hljs-string">"deviationOfMean"</span> <span class="hljs-comment">// enable ABR</span>
+            },
+            <span class="hljs-string">"switch"</span>: {
+                <span class="hljs-string">'method'</span>: <span class="hljs-string">'server'</span>,
+                <span class="hljs-string">'pauseOnError'</span>: <span class="hljs-literal">false</span>,
+                <span class="hljs-string">'forcePlay'</span>: <span class="hljs-literal">true</span>,
+                <span class="hljs-string">'fastStart'</span>: <span class="hljs-literal">false</span>,
+                <span class="hljs-string">'timeout'</span>: <span class="hljs-number">10</span>,
+            }
+        },
+        <span class="hljs-string">"startIndex"</span>: <span class="hljs-number">2</span> <span class="hljs-comment">// lowest</span>
+    },
+    <span class="hljs-string">"playback"</span>: {
+        ...
+    },
+    <span class="hljs-string">"style"</span>: {
+        ...
+    }
+};
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="example-bintu-multi-stream-configuration-with-abr"></a><a href="#example-bintu-multi-stream-configuration-with-abr" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example bintu multi stream configuration (with ABR)</h4>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">var</span> config = {
+    <span class="hljs-string">"source"</span> : {
+        <span class="hljs-string">"entries"</span>: [ <span class="hljs-comment">// array of 'entry' objects</span>
+            {
+                <span class="hljs-string">"index"</span>: <span class="hljs-number">0</span>,
+                <span class="hljs-string">"label"</span>: <span class="hljs-string">"high"</span>,
+                <span class="hljs-string">"tag"</span>: <span class="hljs-string">"this is a high quality stream"</span>,
+                <span class="hljs-string">"info"</span>: {
+                    <span class="hljs-string">"bitrate"</span>: <span class="hljs-number">1200</span>,
+                    <span class="hljs-string">"width"</span>: <span class="hljs-number">1280</span>,
+                    <span class="hljs-string">"height"</span>: <span class="hljs-number">720</span>,
+                    <span class="hljs-string">"framerate"</span>: <span class="hljs-number">30</span>
+                },
+                <span class="hljs-string">"hls"</span>: <span class="hljs-string">""</span>,
+                <span class="hljs-string">"bintu"</span>: {
+                    <span class="hljs-string">"streamid"</span>: <span class="hljs-string">"XXXXXXXX-XXXX-XXXX-XXXX-YYYYYYYYYYY0"</span>
+                }
+            },
+            {
+                <span class="hljs-string">"index"</span>: <span class="hljs-number">1</span>,
+                <span class="hljs-string">"label"</span>: <span class="hljs-string">"medium"</span>,
+                <span class="hljs-string">"tag"</span>: <span class="hljs-string">"this is a medium quality stream"</span>,
+                <span class="hljs-string">"info"</span>: {
+                    <span class="hljs-string">"bitrate"</span>: <span class="hljs-number">800</span>,
+                    <span class="hljs-string">"width"</span>: <span class="hljs-number">864</span>,
+                    <span class="hljs-string">"height"</span>: <span class="hljs-number">480</span>,
+                    <span class="hljs-string">"framerate"</span>: <span class="hljs-number">30</span>
+                },
+                <span class="hljs-string">"hls"</span>: <span class="hljs-string">""</span>,
+                <span class="hljs-string">"bintu"</span>: {
+                    <span class="hljs-string">"streamid"</span>: <span class="hljs-string">"XXXXXXXX-XXXX-XXXX-XXXX-YYYYYYYYYYY1"</span>
+                }
+            },
+            {
+                <span class="hljs-string">"index"</span>: <span class="hljs-number">2</span>,
+                <span class="hljs-string">"label"</span>: <span class="hljs-string">"low"</span>,
+                <span class="hljs-string">"tag"</span>: <span class="hljs-string">"this is a low quality stream"</span>,
+                <span class="hljs-string">"info"</span>: {
+                    <span class="hljs-string">"bitrate"</span>: <span class="hljs-number">400</span>,
+                    <span class="hljs-string">"width"</span>: <span class="hljs-number">426</span>,
+                    <span class="hljs-string">"height"</span>: <span class="hljs-number">240</span>,
+                    <span class="hljs-string">"framerate"</span>: <span class="hljs-number">15</span>
+                },
+                <span class="hljs-string">"hls"</span>: <span class="hljs-string">""</span>,
+                <span class="hljs-string">"bintu"</span>: {
+                    <span class="hljs-string">"streamid"</span>: <span class="hljs-string">"XXXXXXXX-XXXX-XXXX-XXXX-YYYYYYYYYYY2"</span>
+                }
+            }
+        ],
+        <span class="hljs-string">"options"</span>: {
+            <span class="hljs-string">"adaption"</span>: {
+                <span class="hljs-string">"rule"</span>: <span class="hljs-string">"deviationOfMean"</span> <span class="hljs-comment">// enable ABR</span>
+            },
+            <span class="hljs-string">"switch"</span>: {
+                <span class="hljs-string">'method'</span>: <span class="hljs-string">'server'</span>,
+                <span class="hljs-string">'pauseOnError'</span>: <span class="hljs-literal">false</span>,
+                <span class="hljs-string">'forcePlay'</span>: <span class="hljs-literal">true</span>,
+                <span class="hljs-string">'fastStart'</span>: <span class="hljs-literal">false</span>,
+                <span class="hljs-string">'timeout'</span>: <span class="hljs-number">10</span>,
+            }
+        },
+        <span class="hljs-string">"startIndex"</span>: <span class="hljs-number">2</span> <span class="hljs-comment">// lowest</span>
+    },
+    <span class="hljs-string">"playback"</span>: {
+        ...
+    },
+    <span class="hljs-string">"style"</span>: {
+        ...
+    }
+};
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="example-bintu-multi-stream-configuration-with-abr-and-playback-security"></a><a href="#example-bintu-multi-stream-configuration-with-abr-and-playback-security" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example bintu multi stream configuration (with ABR) and playback security</h4>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">var</span> config = {
+    <span class="hljs-string">"source"</span> : {
+        <span class="hljs-string">"entries"</span>: [ <span class="hljs-comment">// array of 'entry' objects</span>
+            {
+                <span class="hljs-string">"index"</span>: <span class="hljs-number">0</span>,
+                <span class="hljs-string">"label"</span>: <span class="hljs-string">"high"</span>,
+                <span class="hljs-string">"tag"</span>: <span class="hljs-string">"this is a high quality stream"</span>,
+                <span class="hljs-string">"info"</span>: {
+                    <span class="hljs-string">"bitrate"</span>: <span class="hljs-number">1200</span>,
+                    <span class="hljs-string">"width"</span>: <span class="hljs-number">1280</span>,
+                    <span class="hljs-string">"height"</span>: <span class="hljs-number">720</span>,
+                    <span class="hljs-string">"framerate"</span>: <span class="hljs-number">30</span>
+                },
+                <span class="hljs-string">"hls"</span>: <span class="hljs-string">""</span>,
+                <span class="hljs-string">"h5live"</span>: {
+                    <span class="hljs-comment">// security for bintu streamid XXXXXXXX-XXXX-XXXX-XXXX-YYYYYYYYYYY0 here</span>
+                    <span class="hljs-string">"security"</span>: {
+                        <span class="hljs-string">"token"</span>: <span class="hljs-string">"TOKEN_HERE"</span>,
+                        <span class="hljs-string">"expires"</span>: <span class="hljs-string">"EXPIRES_HERE"</span>,
+                        <span class="hljs-string">"options"</span>: <span class="hljs-string">"OPTIONS_HERE"</span>,
+                        <span class="hljs-string">"tag"</span>: <span class="hljs-string">"TAG_HERE"</span>
+                    }
+                },
+                <span class="hljs-string">"bintu"</span>: {
+                    <span class="hljs-string">"streamid"</span>: <span class="hljs-string">"XXXXXXXX-XXXX-XXXX-XXXX-YYYYYYYYYYY0"</span>
+                }
+            },
+            {
+                <span class="hljs-string">"index"</span>: <span class="hljs-number">1</span>,
+                <span class="hljs-string">"label"</span>: <span class="hljs-string">"medium"</span>,
+                <span class="hljs-string">"tag"</span>: <span class="hljs-string">"this is a medium quality stream"</span>,
+                <span class="hljs-string">"info"</span>: {
+                    <span class="hljs-string">"bitrate"</span>: <span class="hljs-number">800</span>,
+                    <span class="hljs-string">"width"</span>: <span class="hljs-number">864</span>,
+                    <span class="hljs-string">"height"</span>: <span class="hljs-number">480</span>,
+                    <span class="hljs-string">"framerate"</span>: <span class="hljs-number">30</span>
+                },
+                <span class="hljs-string">"hls"</span>: <span class="hljs-string">""</span>,
+                <span class="hljs-string">"h5live"</span>: {
+                    <span class="hljs-comment">// security for bintu streamid XXXXXXXX-XXXX-XXXX-XXXX-YYYYYYYYYYY1 here</span>
+                    <span class="hljs-string">"security"</span>: {
+                        <span class="hljs-string">"token"</span>: <span class="hljs-string">"TOKEN_HERE"</span>,
+                        <span class="hljs-string">"expires"</span>: <span class="hljs-string">"EXPIRES_HERE"</span>,
+                        <span class="hljs-string">"options"</span>: <span class="hljs-string">"OPTIONS_HERE"</span>,
+                        <span class="hljs-string">"tag"</span>: <span class="hljs-string">"TAG_HERE"</span>
+                    }
+                },
+                <span class="hljs-string">"bintu"</span>: {
+                    <span class="hljs-string">"streamid"</span>: <span class="hljs-string">"XXXXXXXX-XXXX-XXXX-XXXX-YYYYYYYYYYY1"</span>
+                }
+            },
+            {
+                <span class="hljs-string">"index"</span>: <span class="hljs-number">2</span>,
+                <span class="hljs-string">"label"</span>: <span class="hljs-string">"low"</span>,
+                <span class="hljs-string">"tag"</span>: <span class="hljs-string">"this is a low quality stream"</span>,
+                <span class="hljs-string">"info"</span>: {
+                    <span class="hljs-string">"bitrate"</span>: <span class="hljs-number">400</span>,
+                    <span class="hljs-string">"width"</span>: <span class="hljs-number">426</span>,
+                    <span class="hljs-string">"height"</span>: <span class="hljs-number">240</span>,
+                    <span class="hljs-string">"framerate"</span>: <span class="hljs-number">15</span>
+                },
+                <span class="hljs-string">"hls"</span>: <span class="hljs-string">""</span>,
+                <span class="hljs-string">"h5live"</span>: {
+                    <span class="hljs-comment">// security for bintu streamid XXXXXXXX-XXXX-XXXX-XXXX-YYYYYYYYYYY2 here</span>
+                    <span class="hljs-string">"security"</span>: {
+                        <span class="hljs-string">"token"</span>: <span class="hljs-string">"TOKEN_HERE"</span>,
+                        <span class="hljs-string">"expires"</span>: <span class="hljs-string">"EXPIRES_HERE"</span>,
+                        <span class="hljs-string">"options"</span>: <span class="hljs-string">"OPTIONS_HERE"</span>,
+                        <span class="hljs-string">"tag"</span>: <span class="hljs-string">"TAG_HERE"</span>
+                    }
+                },
+                <span class="hljs-string">"bintu"</span>: {
+                    <span class="hljs-string">"streamid"</span>: <span class="hljs-string">"XXXXXXXX-XXXX-XXXX-XXXX-YYYYYYYYYYY2"</span>
+                }
+            }
+        ],
+        <span class="hljs-string">"options"</span>: {
+            <span class="hljs-string">"adaption"</span>: {
+                <span class="hljs-string">"rule"</span>: <span class="hljs-string">"deviationOfMean"</span> <span class="hljs-comment">// enable ABR</span>
+            },
+            <span class="hljs-string">"switch"</span>: {
+                <span class="hljs-string">'method'</span>: <span class="hljs-string">'server'</span>,
+                <span class="hljs-string">'pauseOnError'</span>: <span class="hljs-literal">false</span>,
+                <span class="hljs-string">'forcePlay'</span>: <span class="hljs-literal">true</span>,
+                <span class="hljs-string">'fastStart'</span>: <span class="hljs-literal">false</span>,
+                <span class="hljs-string">'timeout'</span>: <span class="hljs-number">10</span>,
+            }
+        },
+        <span class="hljs-string">"startIndex"</span>: <span class="hljs-number">2</span> <span class="hljs-comment">// lowest</span>
+    },
+    <span class="hljs-string">"playback"</span>: {
+        ...
+    },
+    <span class="hljs-string">"style"</span>: {
+        ...
+    }
+};
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="switch-options"></a><a href="#switch-options" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Switch options</h3>
+<p>There are multiple possible switch options that can be set directly over the <code>config.source.options.switch</code> object.</p>
+<p><strong>Possible options</strong>:</p>
+<ul>
+<li><code>method</code>:
+<ul>
+<li>The preferred switching method</li>
+<li>Possible values are <strong>'server'</strong> (default) and <strong>'client'</strong></li>
+</ul></li>
+<li><code>pauseOnError</code>:
+<ul>
+<li>If set the player stops in case an error occurs during the process of stream switching</li>
+<li>Possible values are <strong>false</strong> (default) and <strong>true</strong></li>
+</ul></li>
+<li><code>forcePlay</code>:
+<ul>
+<li>If set the player starts the playback even though the player is in <code>paused</code> state</li>
+<li>Possible values are <strong>false</strong> and <strong>true</strong> (default)</li>
+</ul></li>
+<li><code>timeout</code>:
+<ul>
+<li>The maximal time to wait in <strong>seconds</strong> before running into a timeout</li>
+<li>If the time limit is reached the <strong>error 4006</strong> will be thrown inside the <a href="../nanoplayer_api/#onswitchstreamfail"><code>onSwitchStreamFail</code></a> event</li>
+<li>The default value is <strong>10</strong> seconds and the possible range is between <strong>5</strong> and <strong>30</strong> seconds</li>
+</ul></li>
+<li><code>tag</code>:
+<ul>
+<li>This custom field can be any <strong>string</strong> you like and will be returned in all of the switchStream completion events. (<a href="../nanoplayer_api/#onswitchstreamsuccess"><code>onSwitchStreamSuccess</code></a>, <a href="../nanoplayer_api/#onswitchstreamfail"><code>onSwitchStreamFail</code></a> and <a href="../nanoplayer_api/#onswitchstreamabort"><code>onSwitchStreamAbort</code></a>)</li>
+</ul></li>
+</ul>
+<blockquote>
+<p><strong>Note:</strong>
+You can find more specific information on the possible options <a href="../nanoplayer_api#nanoplayerupdatesourcesource-⇒-codepromiseltconfigerrorgtcode">here</a>.</p>
+</blockquote>
+<h3><a class="anchor" aria-hidden="true" id="automatic-bitrate-adaption-abr"></a><a href="#automatic-bitrate-adaption-abr" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Automatic bitrate adaption (ABR)</h3>
+<p>The nanoStream H5Live Player automatic bitrate adaption (ABR) feature decides which quality to play, to accommodate your users' network situation and avoid bufferings and frame drops.</p>
+<h4><a class="anchor" aria-hidden="true" id="how-to-use"></a><a href="#how-to-use" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>How to use</h4>
+<p>The following steps are required to setup the nanoStream H5Live Player with automatic bitrate adaption:</p>
+<ul>
+<li>Configuration of two or more streams in <code>config.source.entries</code>
+<ul>
+<li>ordered by bitrate with <strong>index zero</strong> holding the <strong>highest bitrate</strong></li>
+</ul></li>
+<li>The order is determined by the <code>index</code> property, <strong>not</strong> by the position in the list</li>
+<li>Selecting the initial stream/rendition by assigning the index to <code>config.source.startIndex</code></li>
+<li>Assigning an adaption rule other than <code>none</code> to <code>config.source.options.adaption.rule</code></li>
+<li>Currently available adaption rules are:
+<ul>
+<li><code>none</code> - Manual switching</li>
+<li><code>deviationOfMean</code> - Buffer based bitrate adaption rule</li>
+<li><code>deviationOfMean2</code> - Enhanced buffer based bitrate adaption rule (added in v4.5)</li>
+</ul></li>
+</ul>
+<p>To choose the right quality to start with highly depends on the available qualities and the use case. <br> A very common way is to not start with the highest (eg. medium/low) quality. Therefore there is an <strong>intial switch up</strong> mechanism that switches to a higher quality until the matching quality for the present bandwidth is found.</p>
+<blockquote>
+<p><strong>Note:</strong> This happens <strong>only</strong> on the initialization of the player and won't happen if you chose to start with the highest quality (index 0) by default.</p>
+</blockquote>
+<h4><a class="anchor" aria-hidden="true" id="example-multi-stream-configuration-with-abr-1"></a><a href="#example-multi-stream-configuration-with-abr-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example multi stream configuration (with ABR)</h4>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">var</span> config = {
+    <span class="hljs-string">"source"</span> : {
+        <span class="hljs-string">"entries"</span>: [ <span class="hljs-comment">// array of 'entry' objects</span>
+            {
+                <span class="hljs-string">"index"</span>: <span class="hljs-number">0</span>,
+                <span class="hljs-string">"label"</span>: <span class="hljs-string">"high"</span>,
+                <span class="hljs-string">"tag"</span>: <span class="hljs-string">"this is a high quality stream"</span>,
+                <span class="hljs-string">"info"</span>: {
+                    <span class="hljs-string">"bitrate"</span>: <span class="hljs-number">1200</span>,
+                    <span class="hljs-string">"width"</span>: <span class="hljs-number">1280</span>,
+                    <span class="hljs-string">"height"</span>: <span class="hljs-number">720</span>,
+                    <span class="hljs-string">"framerate"</span>: <span class="hljs-number">30</span>
+                },
+                <span class="hljs-string">"hls"</span>: <span class="hljs-string">""</span>,
+                <span class="hljs-string">"h5live"</span>: {
+                    <span class="hljs-string">"rtmp"</span>: {
+                        <span class="hljs-string">"url"</span>: <span class="hljs-string">"rtmp://bintu-play.nanocosmos.de/play"</span>,
+                        <span class="hljs-string">"streamname"</span>: <span class="hljs-string">"XXXXX-YYYY0"</span>
+                    },
+                    <span class="hljs-string">"server"</span>: {
+                        <span class="hljs-string">"websocket"</span>: <span class="hljs-string">"wss://bintu-h5live.nanocosmos.de:443/h5live/stream.mp4"</span>,
+                        <span class="hljs-string">"hls"</span>: <span class="hljs-string">"https://bintu-h5live.nanocosmos.de:443/h5live/http/playlist.m3u8"</span>,
+                        <span class="hljs-string">"progressive"</span>: <span class="hljs-string">"https://bintu-h5live.nanocosmos.de:443/h5live/http/stream.mp4"</span>
+                    },
+                    <span class="hljs-string">"token"</span>: <span class="hljs-string">""</span>,
+                    <span class="hljs-string">"security"</span>: {}
+                },
+                <span class="hljs-string">"bintu"</span>: {}
+            },
+            {
+                <span class="hljs-string">"index"</span>: <span class="hljs-number">1</span>,
+                <span class="hljs-string">"label"</span>: <span class="hljs-string">"medium"</span>,
+                <span class="hljs-string">"tag"</span>: <span class="hljs-string">"this is a medium quality stream"</span>,
+                <span class="hljs-string">"info"</span>: {
+                    <span class="hljs-string">"bitrate"</span>: <span class="hljs-number">800</span>,
+                    <span class="hljs-string">"width"</span>: <span class="hljs-number">864</span>,
+                    <span class="hljs-string">"height"</span>: <span class="hljs-number">480</span>,
+                    <span class="hljs-string">"framerate"</span>: <span class="hljs-number">30</span>
+                },
+                <span class="hljs-string">"hls"</span>: <span class="hljs-string">""</span>,
+                <span class="hljs-string">"h5live"</span>: {
+                    <span class="hljs-string">"rtmp"</span>: {
+                        <span class="hljs-string">"url"</span>: <span class="hljs-string">"rtmp://bintu-play.nanocosmos.de/play"</span>,
+                        <span class="hljs-string">"streamname"</span>: <span class="hljs-string">"XXXXX-YYYY1"</span>
+                    },
+                    <span class="hljs-string">"server"</span>: {
+                        <span class="hljs-string">"websocket"</span>: <span class="hljs-string">"wss://bintu-h5live.nanocosmos.de:443/h5live/stream.mp4"</span>,
+                        <span class="hljs-string">"hls"</span>: <span class="hljs-string">"https://bintu-h5live.nanocosmos.de:443/h5live/http/playlist.m3u8"</span>,
+                        <span class="hljs-string">"progressive"</span>: <span class="hljs-string">"https://bintu-h5live.nanocosmos.de:443/h5live/http/stream.mp4"</span>
+                    },
+                    <span class="hljs-string">"token"</span>: <span class="hljs-string">""</span>,
+                    <span class="hljs-string">"security"</span>: {}
+                },
+                <span class="hljs-string">"bintu"</span>: {}
+            },
+            {
+                <span class="hljs-string">"index"</span>: <span class="hljs-number">2</span>,
+                <span class="hljs-string">"label"</span>: <span class="hljs-string">"low"</span>,
+                <span class="hljs-string">"tag"</span>: <span class="hljs-string">"this is a low quality stream"</span>,
+                <span class="hljs-string">"info"</span>: {
+                    <span class="hljs-string">"bitrate"</span>: <span class="hljs-number">400</span>,
+                    <span class="hljs-string">"width"</span>: <span class="hljs-number">426</span>,
+                    <span class="hljs-string">"height"</span>: <span class="hljs-number">240</span>,
+                    <span class="hljs-string">"framerate"</span>: <span class="hljs-number">15</span>
+                },
+                <span class="hljs-string">"hls"</span>: <span class="hljs-string">""</span>,
+                <span class="hljs-string">"h5live"</span>: {
+                    <span class="hljs-string">"rtmp"</span>: {
+                        <span class="hljs-string">"url"</span>: <span class="hljs-string">"rtmp://bintu-play.nanocosmos.de/play"</span>,
+                        <span class="hljs-string">"streamname"</span>: <span class="hljs-string">"XXXXX-YYYY2"</span>
+                    },
+                    <span class="hljs-string">"server"</span>: {
+                        <span class="hljs-string">"websocket"</span>: <span class="hljs-string">"wss://bintu-h5live.nanocosmos.de:443/h5live/stream.mp4"</span>,
+                        <span class="hljs-string">"hls"</span>: <span class="hljs-string">"https://bintu-h5live.nanocosmos.de:443/h5live/http/playlist.m3u8"</span>,
+                        <span class="hljs-string">"progressive"</span>: <span class="hljs-string">"https://bintu-h5live.nanocosmos.de:443/h5live/http/stream.mp4"</span>
+                    },
+                    <span class="hljs-string">"token"</span>: <span class="hljs-string">""</span>,
+                    <span class="hljs-string">"security"</span>: {}
+                },
+                <span class="hljs-string">"bintu"</span>: {}
+            }
+        ],
+        <span class="hljs-string">"options"</span>: {
+            <span class="hljs-string">"adaption"</span>: {
+                <span class="hljs-string">"rule"</span>: <span class="hljs-string">"deviationOfMean"</span> <span class="hljs-comment">// enable ABR</span>
+            },
+            <span class="hljs-string">"switch"</span>: {
+                <span class="hljs-string">'method'</span>: <span class="hljs-string">'server'</span>,
+                <span class="hljs-string">'pauseOnError'</span>: <span class="hljs-literal">false</span>,
+                <span class="hljs-string">'forcePlay'</span>: <span class="hljs-literal">true</span>,
+                <span class="hljs-string">'fastStart'</span>: <span class="hljs-literal">false</span>,
+                <span class="hljs-string">'timeout'</span>: <span class="hljs-number">10</span>,
+            }
+        },
+        <span class="hljs-string">"startIndex"</span>: <span class="hljs-number">2</span> <span class="hljs-comment">// lowest</span>
+    },
+    <span class="hljs-string">"playback"</span>: {
+        ...
+    },
+    <span class="hljs-string">"style"</span>: {
+        ...
+    }
+};
+</code></pre>
+<blockquote>
+<p><strong>Note:</strong> In case you either provide an invalid <code>startIndex</code> or don't provide one at all the player starts the stream with index 0.</p>
+</blockquote>
+<blockquote>
+<p><strong>Note:</strong> The player will set the default adaption rule none if no adaption rule is passed. You can still switch between your pre-configured entries manually with the switchStream API.</p>
+</blockquote>
+<h2><a class="anchor" aria-hidden="true" id="switchstream-api"></a><a href="#switchstream-api" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>switchStream API</h2>
+<p>The <code>switchStream</code> feature enables the application/viewer to perform stream switches on the pre-configured stream list by referencing the index property of the target stream entry.</p>
+<blockquote>
+<p><strong>Note:</strong> You can find more information on the switchStream API in our <a href="../nanoplayer_api/#nanoplayerswitchstreamindex-⇒-codepromiseltconfigerrorgtcode">API documentation</a>.</p>
+</blockquote>
+<h3><a class="anchor" aria-hidden="true" id="how-to-use-1"></a><a href="#how-to-use-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>How to use</h3>
+<ul>
+<li>Configuration of two or more streams in <code>config.source.entries</code></li>
+<li>Selecting the initial stream by assigning the index to <code>config.source.startIndex</code></li>
+<li>Assigning the adaption rule <code>none</code> to <code>config.source.options.adaption.rule</code></li>
+<li>Applying switches by calling <code>switchStream(index)</code> with the index of the target stream entry</li>
+<li>Listening to related event notifications
+<ul>
+<li>onSwitchStreamInit</li>
+<li>onSwitchStreamSuccess</li>
+<li>onSwitchStreamAbort</li>
+<li>onSwitchStreamFail</li>
+</ul></li>
+</ul>
+<blockquote>
+<p><strong>Important:</strong> Manual switching via switchStream API will disable any further ABR controlled behavior. Use the <a href="#setadaption-api">setAdaption API</a> to again reinitialize the automatic adaption. You can read more on how to combine automatic and manual switching <a href="#combined-abr-and-manual-switching">here</a>.</p>
+</blockquote>
+<p><strong>Example switchStream call:</strong></p>
+<pre><code class="hljs css language-javascript">player.switchStream(<span class="hljs-number">1</span>).then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">config</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'switch stream initialized with config: '</span> + <span class="hljs-built_in">JSON</span>.stringify(config));
+}, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">error</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(error);
+});
+
+</code></pre>
+<blockquote>
+<p><strong>Note:</strong>
+The switchStream API returns a promise that is rejected if the provided <code>index</code> parameter is out of range.</p>
+</blockquote>
+<h3><a class="anchor" aria-hidden="true" id="switchstream-events"></a><a href="#switchstream-events" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>switchStream events</h3>
+<p>With the release of the <code>switchStream</code> API there are also <strong>4</strong> new events you should listen to:</p>
+<h4><a class="anchor" aria-hidden="true" id="start-event"></a><a href="#start-event" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>start event</h4>
+<ul>
+<li><strong><a href="../nanoplayer_api/#onswitchstreaminit">onSwitchStreamInit</a></strong>: This event signals an initialized switch stream request. This is <strong>only</strong> a start event that will be followed by one of the completion events.</li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="completion-events"></a><a href="#completion-events" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>completion events</h4>
+<ul>
+<li><strong><a href="../nanoplayer_api/#onswitchstreamsuccess">onSwitchStreamSuccess</a></strong>: This event signals a successful switch stream request and fires if the stream was switched.</li>
+<li><strong><a href="../nanoplayer_api/#onswitchstreamfail">onSwitchStreamFail</a></strong>: This event signals a failed switch stream request. Fired if an error occurs during the stream switch.</li>
+<li><strong><a href="../nanoplayer_api/#onswitchstreamabort">onSwitchStreamAbort</a></strong>: This event signals an aborted switch stream request. Possible reasons are an equal source (<strong>'equalsource'</strong>), a superseding (<strong>'superseded'</strong>) or the time difference between two following <code>switchStream</code> calls that is too small  (<strong>'frequency'</strong>).</li>
+</ul>
+<p><br></p>
+<blockquote>
+<p><strong>Also, keep in mind...</strong> there will be an <a href="../nanoplayer_api/#onstreaminfo"><code>onStreamInfo</code></a> event indicating that the first image of the new stream is getting played out.</p>
+</blockquote>
+<h3><a class="anchor" aria-hidden="true" id="difference-switchstream-api--updatesource-api"></a><a href="#difference-switchstream-api--updatesource-api" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Difference switchStream API / updateSource API</h3>
+<p>The switchStream API allows to only choose between the pre-configured stream list (<code>config.source.entries</code>) by referencing the index of the entry while the updateSource API replaces the entire source (<code>config.source</code>) with a new source.</p>
+<blockquote>
+<p>Click here to get more information on the <a href="../nanoplayer_update_source">updateSource API</a></p>
+</blockquote>
+<h2><a class="anchor" aria-hidden="true" id="setadaption-api"></a><a href="#setadaption-api" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>setAdaption API</h2>
+<p>The <code>setAdaption</code> feature enables the application/viewer to change the adaption rule eg. from manually controlled to automatic switching behavior.</p>
+<p>Currently available adaption rules are:</p>
+<ul>
+<li><code>none</code> - Manual switching</li>
+<li><code>deviationOfMean</code> - Buffer based bitrate adaption rule</li>
+<li><code>deviationOfMean2</code> - Enhanced buffer based bitrate adaption rule (added in v4.5)</li>
+</ul>
+<blockquote>
+<p><strong>Note:</strong> You can find more information on the setAdaption API in our <a href="../nanoplayer_api/#nanoplayersetadaptionadaption">API documentation</a>.</p>
+</blockquote>
+<h4><a class="anchor" aria-hidden="true" id="example-to-set-automatic-adaption"></a><a href="#example-to-set-automatic-adaption" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example to set automatic adaption</h4>
+<pre><code class="hljs css language-javascript"><span class="hljs-comment">// player instance of NanoPlayer</span>
+<span class="hljs-keyword">var</span> adaption = {
+    <span class="hljs-string">"rule"</span>: <span class="hljs-string">"deviationOfMean"</span>
+}
+
+player.setAdaption(adaption);
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="combined-abr-and-manual-switching"></a><a href="#combined-abr-and-manual-switching" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Combined ABR and manual switching</h3>
+<p>In case the nanoStream H5Live Player is configured to use ABR and a manual switch gets initialized via the switchStream API the automatic adaption is stopped. From this moment on the switching behavior is manually controlled.</p>
+<p>To again reinitialize the automatic adaption use the <a href="#setadaption-api">setAdaption API</a> with the name of the rule you want to set (eg. <code>deviationOfMean</code>).</p>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 12/13/2020</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/nanoplayer/nanoplayer_token_security"><span class="arrow-prev">← </span><span>Secure playback with H5Live</span></a><a class="docs-next button" href="/docs/nanoplayer/nanoplayer_feature_fullscreen_api"><span>Fullscreen API</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#multi-stream-configuration-integrated-abr-and-stream-switching-features">Multi stream configuration, integrated ABR and stream switching features</a></li><li><a href="#configuration-changes">Configuration changes</a><ul class="toc-headings"><li><a href="#stream-configuration">Stream configuration</a></li><li><a href="#single-stream-configuration">Single Stream configuration</a></li><li><a href="#multi-stream-configuration">Multi stream configuration</a></li><li><a href="#switch-options">Switch options</a></li><li><a href="#automatic-bitrate-adaption-abr">Automatic bitrate adaption (ABR)</a></li></ul></li><li><a href="#switchstream-api">switchStream API</a><ul class="toc-headings"><li><a href="#how-to-use-1">How to use</a></li><li><a href="#switchstream-events">switchStream events</a></li><li><a href="#difference-switchstream-api--updatesource-api">Difference switchStream API / updateSource API</a></li></ul></li><li><a href="#setadaption-api">setAdaption API</a><ul class="toc-headings"><li><a href="#combined-abr-and-manual-switching">Combined ABR and manual switching</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><div><h5>Contact</h5><a href="https://www.nanocosmos.de/">Homepage</a><a href="https://www.nanocosmos.de/contact">Contact</a><a href="https://www.nanocosmos.de/support">Support</a><a href="https://www.nanocosmos.de/terms">Legal Terms</a></div><div><h5>Products</h5><a href="https://www.nanocosmos.de/cloud">Nanostream Cloud with Bintu.Live</a><a href="https://www.nanocosmos.de/h5live">H5Live Low Latency HTML5-Player</a><a href="https://www.nanocosmos.de/webrtc">nanoStream Webcaster</a><a href="https://www.nanocosmos.de/#nanostream">Nanostream Apps and SDK</a></div><div><h5>More</h5><a href="https://www.nanocosmos.de/blog/">Blog</a><a href="https://twitter.com/nanovideo">Twitter</a><a href="https://www.facebook.com/nanocosmos.net/">Facebook</a><a href="https://www.linkedin.com/company/nanocosmos-gmbh">LinkedIn</a><a href="https://github.com/nanocosmos/docs">GitHub</a><a class="github-button" href="https://github.com/nanocosmos/docs" data-icon="octicon-star" data-count-href="/nanocosmos/docs/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://nanocosmos.de/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/footer_logo.png" alt="nanocosmos GmbH" width="170" height="45"/></a><section class="copyright">Copyright © 2020 nanocosmos GmbH</section></footer></div></body></html>

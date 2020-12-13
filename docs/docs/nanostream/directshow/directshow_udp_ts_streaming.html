@@ -1,0 +1,258 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>nanostream/directshow/directshow_udp_ts_streaming · nanocosmos Documentation</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="## nanocosmos UDP/TS Network Writer and Reader Filter"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="nanostream/directshow/directshow_udp_ts_streaming · nanocosmos Documentation"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.nanocosmos.de/"/><meta property="og:description" content="## nanocosmos UDP/TS Network Writer and Reader Filter"/><meta property="og:image" content="https://docs.nanocosmos.de/img/docusaurus.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://docs.nanocosmos.de/img/docusaurus.png"/><link rel="shortcut icon" href="/img/favicon_nano.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script>
+              (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+              (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+              m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+              })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+              ga('create', 'UA-552140-1', 'auto');
+              ga('send', 'pageview');
+            </script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="/js/search.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/nanocosmos_header_logo.png" alt="nanocosmos Documentation"/><h2 class="headerTitleWithLogo">nanocosmos Documentation</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/docs/cloud/cloud_overview" target="_self">nanoStream Cloud</a></li><li class=""><a href="/docs/nanoplayer/nanoplayer_introduction" target="_self">H5Live Player</a></li><li class=""><a href="/docs/webrtc/nanostream_webrtc_introduction" target="_self">nanoStream Webcaster</a></li><li class=""><a href="/docs/nanostream/nanostream" target="_self">nanoStream Apps and SDKs</a></li><li class=""><a href="/docs/samples/samples" target="_self">Samples</a></li><li class=""><a href="/docs/faq/faq_streaming" target="_self">FAQ</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/nanocosmos/docs/tree/master/docs/nanostream/directshow/directshow_udp_ts_streaming.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 id="__docusaurus" class="postHeaderTitle">nanostream/directshow/directshow_udp_ts_streaming</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="nanocosmos-udpts-network-writer-and-reader-filter"></a><a href="#nanocosmos-udpts-network-writer-and-reader-filter" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>nanocosmos UDP/TS Network Writer and Reader Filter</h2>
+<h4><a class="anchor" aria-hidden="true" id="introduction"></a><a href="#introduction" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Introduction</h4>
+<p>DirectShow filters for UDP/TS Streaming</p>
+<ul>
+<li>Supported Architectures: Microsoft DirectShow, Vista, 7, 8, 10, Server</li>
+<li>Supported Protocols: UDP Unicast and Multicast</li>
+<li>Supported Video Codecs: H.264 and MPEG-2 Video</li>
+<li>Supported Audio Codecs: AAC and MPEG Audio</li>
+<li>Supported Payload: MPEG Transport Stream (A/V Interleaved) or Video Elementary Stream (Video only)</li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="modules"></a><a href="#modules" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Modules</h4>
+<p>UDP Network Source Filter: nanoNetSource.ax     \
+UDP Network Writer Filter: nanoNetSink.ax   \</p>
+<h4><a class="anchor" aria-hidden="true" id="directshow-connectivity"></a><a href="#directshow-connectivity" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>DirectShow Connectivity</h4>
+<p>The DirectShow pins are accepting connections matching the following media types:</p>
+<p>Video Major Types:<br>
+MEDIATYPE_Video<br>
+Subtypes:<br>
+H.264: MEDIASUBTYPE_H264,  FourCC: 0x34363248<br>
+H.264: MEDIASUBTYPE_h264,  FourCC: 0x34363268<br>
+MPEG-2: MEDIASUBTYPE_MPEG2_VIDEO<br>
+Formats:<br>
+FORMAT_MPEG2_VIDEO<br>
+FORMAT_NONE</p>
+<p>Audio Major Types:<br>
+MEDIATYPE_Audio<br>
+Subtypes:<br>
+AAC: MEDIASUBTYPE_AAC,  FourCC: 0x000000FF<br>
+MPEG-1 Audio: MEDIASUBTYPE_MPEG1AudioPayload<br>
+MPEG-2 Audio: MEDIASUBTYPE_MPEG2_AUDIO<br>
+Formats:
+AAC, MPEG Audio:  FORMAT_WaveFormatEx</p>
+<h3><a class="anchor" aria-hidden="true" id="configuration"></a><a href="#configuration" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Configuration</h3>
+<h4><a class="anchor" aria-hidden="true" id="configuration-through-the-property-page"></a><a href="#configuration-through-the-property-page" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Configuration through the Property Page</h4>
+<p><img src="img/directshow_udp_ts_streaming_source.jpg" alt="Source Properties"></p>
+<p><strong>Interface</strong>: Desired network interface or Any</p>
+<p><strong>Address</strong>: Local IP address or 0.0.0.0</p>
+<p><strong>Port</strong>: Network port number</p>
+<p><strong>Mode</strong>: Transport Stream (default) or Elementary Stream</p>
+<p><strong>Stream State</strong>: Indicates the current stream state (online/offline)</p>
+<p><strong>Input Stream Mediatype</strong>: Display of the current video format if online</p>
+<p><img src="img/directshow_udp_ts_streaming_writer.jpg" alt="Source Properties"></p>
+<p><strong>Interface</strong>: Desired network interface or Any</p>
+<p><strong>Address</strong>: Hostname or IP address of the receiving machine or multicast address</p>
+<p><strong>Port</strong>: Network port number</p>
+<p><strong>Mode</strong>: Transport Stream (default) or Elementary Stream</p>
+<p><strong>UDP Packet Size</strong>: Should not exceed MTU size. By default 1316 bytes (7 TS packets)</p>
+<h4><a class="anchor" aria-hidden="true" id="configuration-through-com-interface"></a><a href="#configuration-through-com-interface" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Configuration through COM Interface</h4>
+<h5><a class="anchor" aria-hidden="true" id="header-files"></a><a href="#header-files" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Header Files</h5>
+<p>Network Source Filter:</p>
+<ul>
+<li>NetSourceGuids.h</li>
+<li>NetSourceOptions.h</li>
+<li>bsMediaParams.h</li>
+<li>ICodecProp.h</li>
+<li>CommonProps.h</li>
+</ul>
+<p>Network Writer Filter:</p>
+<ul>
+<li>NetWriterGuids.h</li>
+<li>NetWriterOptions.h</li>
+<li>ICodecProp.h</li>
+<li>CommonProps.h</li>
+</ul>
+<h5><a class="anchor" aria-hidden="true" id="com-interfaces"></a><a href="#com-interfaces" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>COM Interfaces</h5>
+<p>Network Source Filter:</p>
+<ul>
+<li>INetSource</li>
+<li>ICodecProp</li>
+<li>IFileSourceFilter</li>
+<li>ICodecAPI</li>
+<li>IBaseFilter</li>
+<li>ISpecifyPropertyPages</li>
+</ul>
+<p>Network Writer Filter:</p>
+<ul>
+<li>INetSink</li>
+<li>ICodecProp</li>
+<li>IFileSinkFilter</li>
+<li>ICodecAPI</li>
+<li>IBaseFilter</li>
+<li>ISpecifyPropertyPages</li>
+</ul>
+<h5><a class="anchor" aria-hidden="true" id="setting-up-the-stream-url"></a><a href="#setting-up-the-stream-url" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Setting up the stream URL</h5>
+<p>The streaming url can be set by using standard DirectShow interfaces //<strong>IFileSourceFilter</strong>// (Reader) and //<strong>IFileSinkFilter</strong>// (Writer)<br>
+or the custom interfaces //<strong>INetSource</strong>// (Reader) and //<strong>INetSink</strong>// (Writer).</p>
+<p>URL Format: udp:%%//%% [ hostnameorIP:port ]\</p>
+<p>Examples:</p>
+<p>Given two machines with different IP addresses, the sender 192.168.1.51 and the receiver 192.168.1.52.</p>
+<p>For a <strong>UDP unicast</strong> stream the Network Writer needs to be set up
+to the destination IP address of the receiver, udp:%%//%%192.168.1.52:1234.<br>
+On the receiver side the Network Source is set up to the local IP address,
+udp:%%//%%192.168.1.52:1234 or udp:%%//%%0.0.0.0:1234.</p>
+<p>For a <strong>UDP multicast</strong> stream the sender and receiver are set up to the same multicast address, e.g. udp:%%//%%225.0.0.40:1234.</p>
+<h5><a class="anchor" aria-hidden="true" id="setting-the-license-to-unlock-the-filter"></a><a href="#setting-the-license-to-unlock-the-filter" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Setting the license to unlock the filter</h5>
+<p>The filter can be unlocked either through a license key entry in the windows registry or by setting the license key through COM interface ICodecProp::SetProperty with the property IID_nanoPeg_LicenseString as first parameter. The second license parameter has to be a wide/unicode string!</p>
+<pre><code class="hljs css language-cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">"ICodecProp.h"</span> <span class="hljs-comment">// ICodecProp interface</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">"CommonProps.h"</span> <span class="hljs-comment">// IID_nanoPeg_LicenseString property id</span></span>
+
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">wchar_t</span>* strwLicense = <span class="hljs-string">L"nlic:...."</span>;
+
+<span class="hljs-comment">// Query ICodeProp interface from IBaseFilter instance</span>
+CComQIPtr &lt;ICodecProp&gt; pCodecProp = m_pBaseFilter;
+
+<span class="hljs-keyword">if</span> (pCodecProp)
+{
+    pCodecProp-&gt;SetProperty(&amp;IID_nanoPeg_LicenseString, strwLicense);
+}
+<span class="hljs-keyword">else</span>
+{
+    <span class="hljs-comment">// Handle error</span>
+}
+</code></pre>
+<h5><a class="anchor" aria-hidden="true" id="inetsource-and-inetsink-interfaces"></a><a href="#inetsource-and-inetsink-interfaces" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>INetSource and INetSink Interfaces</h5>
+<p>The INetSource and INetSink interfaces provide additional functions for getting and setting configuration properties like network interface, hostname, port, operational mode (Transport Stream or Elementary Stream) and the current streaming state.</p>
+<pre><code class="hljs css language-cpp"><span class="hljs-comment">// Interface declared in NetSourceOptions.h  </span>
+<span class="hljs-comment">// IID defined in NetSourceGuids.h  </span>
+<span class="hljs-comment">// {7899B7E7-F8D4-4076-BE9D-D03D51413756}  </span>
+interface INetSource : <span class="hljs-keyword">public</span> IUnknown
+{
+    <span class="hljs-function"><span class="hljs-keyword">virtual</span> STDMETHODIMP <span class="hljs-title">SetPort</span><span class="hljs-params">(<span class="hljs-keyword">int</span> port)</span> </span>= <span class="hljs-number">0</span>;
+    <span class="hljs-function"><span class="hljs-keyword">virtual</span> STDMETHODIMP <span class="hljs-title">SetNetworkInterface</span><span class="hljs-params">(<span class="hljs-keyword">const</span> <span class="hljs-keyword">wchar_t</span>* net_interface)</span> </span>= <span class="hljs-number">0</span>;
+    <span class="hljs-function"><span class="hljs-keyword">virtual</span> STDMETHODIMP <span class="hljs-title">SetServerAddress</span><span class="hljs-params">(<span class="hljs-keyword">const</span> <span class="hljs-keyword">wchar_t</span>* address)</span> </span>= <span class="hljs-number">0</span>;
+    <span class="hljs-function"><span class="hljs-keyword">virtual</span> STDMETHODIMP <span class="hljs-title">GetPort</span><span class="hljs-params">(<span class="hljs-keyword">int</span>* port)</span> </span>= <span class="hljs-number">0</span>;
+    <span class="hljs-function"><span class="hljs-keyword">virtual</span> STDMETHODIMP <span class="hljs-title">GetNetworkInterface</span><span class="hljs-params">(BSTR* net_interface)</span> </span>= <span class="hljs-number">0</span>;
+    <span class="hljs-function"><span class="hljs-keyword">virtual</span> STDMETHODIMP <span class="hljs-title">GetServerAddress</span><span class="hljs-params">(<span class="hljs-keyword">wchar_t</span>* address, <span class="hljs-keyword">int</span> size)</span> </span>= <span class="hljs-number">0</span>;
+    <span class="hljs-function"><span class="hljs-keyword">virtual</span> STDMETHODIMP <span class="hljs-title">GetMode</span><span class="hljs-params">(<span class="hljs-keyword">net_source_mode_t</span>* mode)</span> </span>= <span class="hljs-number">0</span>;
+    <span class="hljs-function"><span class="hljs-keyword">virtual</span> STDMETHODIMP <span class="hljs-title">SetMode</span><span class="hljs-params">(<span class="hljs-keyword">net_source_mode_t</span> mode)</span> </span>= <span class="hljs-number">0</span>;
+    <span class="hljs-function"><span class="hljs-keyword">virtual</span> STDMETHODIMP <span class="hljs-title">GetStreamingState</span><span class="hljs-params">(<span class="hljs-keyword">net_source_state_t</span>* state)</span> </span>= <span class="hljs-number">0</span>;
+    <span class="hljs-function"><span class="hljs-keyword">virtual</span> STDMETHODIMP <span class="hljs-title">GetElemetaryStreamProperties</span><span class="hljs-params">(BS::<span class="hljs-keyword">params_t</span>* params, <span class="hljs-keyword">int</span> pin)</span> </span>= <span class="hljs-number">0</span>;
+    <span class="hljs-function"><span class="hljs-keyword">virtual</span> STDMETHODIMP <span class="hljs-title">GetNumOfAvailableInterface</span><span class="hljs-params">(<span class="hljs-keyword">int</span>* count)</span> </span>= <span class="hljs-number">0</span>;
+    <span class="hljs-function"><span class="hljs-keyword">virtual</span> STDMETHODIMP <span class="hljs-title">GetAvailableInterface</span><span class="hljs-params">(BSTR* nif, <span class="hljs-keyword">int</span> n)</span> </span>= <span class="hljs-number">0</span>;
+    <span class="hljs-function"><span class="hljs-keyword">virtual</span> STDMETHODIMP <span class="hljs-title">InitInput</span><span class="hljs-params">()</span> </span>= <span class="hljs-number">0</span>;
+};
+</code></pre>
+<pre><code class="hljs css language-cpp"><span class="hljs-comment">// Interface declared in NetWriterOptions.h  </span>
+<span class="hljs-comment">// IID defined in NetWriterGuids.h  </span>
+<span class="hljs-comment">// {A4F3C2AC-18F7-4113-92FD-4042BD7279AC}</span>
+interface INetSink : <span class="hljs-keyword">public</span> IUnknown
+{
+    <span class="hljs-function"><span class="hljs-keyword">virtual</span> STDMETHODIMP <span class="hljs-title">SetDest</span><span class="hljs-params">(<span class="hljs-keyword">const</span> <span class="hljs-keyword">wchar_t</span>* dest, <span class="hljs-keyword">int</span> port)</span> </span>= <span class="hljs-number">0</span>;
+    <span class="hljs-function"><span class="hljs-keyword">virtual</span> STDMETHODIMP <span class="hljs-title">SetMode</span><span class="hljs-params">(<span class="hljs-keyword">net_sink_mode_t</span> mode)</span> </span>= <span class="hljs-number">0</span>;
+    <span class="hljs-function"><span class="hljs-keyword">virtual</span> STDMETHODIMP <span class="hljs-title">GetDest</span><span class="hljs-params">(<span class="hljs-keyword">const</span> <span class="hljs-keyword">wchar_t</span>* dest, <span class="hljs-keyword">int</span> size, <span class="hljs-keyword">int</span>* port)</span> </span>= <span class="hljs-number">0</span>;
+    <span class="hljs-function"><span class="hljs-keyword">virtual</span> STDMETHODIMP <span class="hljs-title">GetMode</span><span class="hljs-params">(<span class="hljs-keyword">net_sink_mode_t</span>* mode)</span> </span>= <span class="hljs-number">0</span>;
+    <span class="hljs-function"><span class="hljs-keyword">virtual</span> STDMETHODIMP <span class="hljs-title">GetNumOfAvailableInterface</span><span class="hljs-params">(<span class="hljs-keyword">int</span>* count)</span> </span>= <span class="hljs-number">0</span>;
+    <span class="hljs-function"><span class="hljs-keyword">virtual</span> STDMETHODIMP <span class="hljs-title">GetAvailableInterface</span><span class="hljs-params">(BSTR* nif, <span class="hljs-keyword">int</span> n)</span> </span>= <span class="hljs-number">0</span>;
+    <span class="hljs-function"><span class="hljs-keyword">virtual</span> STDMETHODIMP <span class="hljs-title">GetNetInterface</span><span class="hljs-params">(BSTR* nif)</span> </span>= <span class="hljs-number">0</span>;
+    <span class="hljs-function"><span class="hljs-keyword">virtual</span> STDMETHODIMP <span class="hljs-title">SetNetInterface</span><span class="hljs-params">(BSTR nif)</span> </span>= <span class="hljs-number">0</span>;
+};
+</code></pre>
+<h5><a class="anchor" aria-hidden="true" id="network-source-filter-timeout-settings"></a><a href="#network-source-filter-timeout-settings" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Network Source Filter Timeout Settings</h5>
+<p>Timeout settings can be configured through the standard DirectShow COM interface ICodecAPI or in the Windows Registry.</p>
+<ol>
+<li><strong>Load Timeout</strong> in ms<br>
+The load timeout leads to loading being aborted after the configured  timespan if no stream input was received during IFileSourceFilter::Load.</li>
+</ol>
+<pre><code class="hljs css language-cpp">Registry Key: HKCU\SOFTWARE\nanocosmos\nNetSource  
+Value Name: TimeoutLoad  
+Value Type: REG_DWORD  
+Default Value: <span class="hljs-number">10000</span>  
+
+ICodecAPI interface parameter defined in NetSourceGuids.h  
+Get/Set input timeout during load in ms  
+VARIANT_TYPE: VT_I4, VARIANT::intVal  
+<span class="hljs-keyword">default</span> value: <span class="hljs-number">10000</span> ms  
+{CDC0C5AF<span class="hljs-number">-1666</span><span class="hljs-number">-4b</span>46<span class="hljs-number">-8</span>C7A<span class="hljs-number">-48</span>EFF1C7E965}  
+DEFINE_GUID(PROPID_nanoNSTimeoutLoad,  
+<span class="hljs-number">0xcdc0c5af</span>, <span class="hljs-number">0x1666</span>, <span class="hljs-number">0x4b46</span>, <span class="hljs-number">0x8c</span>, <span class="hljs-number">0x7a</span>, <span class="hljs-number">0x48</span>, <span class="hljs-number">0xef</span>, <span class="hljs-number">0xf1</span>, <span class="hljs-number">0xc7</span>, <span class="hljs-number">0xe9</span>, <span class="hljs-number">0x65</span>);  
+</code></pre>
+<ol start="2">
+<li><strong>Input Timeout</strong> in ms<br>
+The input timeout leads to the filtergraph being stopped if no stream input was received for the configured time, e.g. because the stream was stopped at the sender.</li>
+</ol>
+<pre><code class="hljs css language-cpp">Registry Key: HKCU\SOFTWARE\nanocosmos\nNetSource  
+Value Name: TimeoutInput  
+Value Type: REG_DWORD  
+Default Value: <span class="hljs-number">5000</span>  
+
+ICodecAPI interface parameter defined in NetSourceGuids.h  
+Get/Set input timeout during streaming in ms  
+VARIANT_TYPE: VT_I4, VARIANT::intVal  
+<span class="hljs-keyword">default</span> value: <span class="hljs-number">5000</span> ms  
+{<span class="hljs-number">454B</span>2E50-C50F<span class="hljs-number">-41f</span>6-BF96-BF84016780C6}  
+DEFINE_GUID(PROPID_nanoNSTimeoutInput,  
+<span class="hljs-number">0x454b2e50</span>, <span class="hljs-number">0xc50f</span>, <span class="hljs-number">0x41f6</span>, <span class="hljs-number">0xbf</span>, <span class="hljs-number">0x96</span>, <span class="hljs-number">0xbf</span>, <span class="hljs-number">0x84</span>, <span class="hljs-number">0x1</span>, <span class="hljs-number">0x67</span>, <span class="hljs-number">0x80</span>, <span class="hljs-number">0xc6</span>);  
+</code></pre>
+<ol start="3">
+<li><strong>Output Timeout</strong> in ms<br>
+The output timeout leads to the filtergraph being stopped if no MediaSamples were delivered for the configured time.</li>
+</ol>
+<pre><code class="hljs css language-cpp">Registry Key: HKCU\SOFTWARE\nanocosmos\nNetSource  
+Value Name: TimeoutOutput  
+Value Type: REG_DWORD  
+Default Value: <span class="hljs-number">5000</span>  
+
+ICodecAPI interface parameter defined in NetSourceGuids.h  
+Get/Set output timeout during streaming in ms  
+VARIANT_TYPE: VT_I4, VARIANT::intVal  
+<span class="hljs-keyword">default</span> value: <span class="hljs-number">5000</span> ms  
+{D75ED01E-D608<span class="hljs-number">-436</span>d-BCE7-DBC4AC71A29D}  
+DEFINE_GUID(PROPID_nanoNSTimeoutOutput,  
+<span class="hljs-number">0xd75ed01e</span>, <span class="hljs-number">0xd608</span>, <span class="hljs-number">0x436d</span>, <span class="hljs-number">0xbc</span>, <span class="hljs-number">0xe7</span>, <span class="hljs-number">0xdb</span>, <span class="hljs-number">0xc4</span>, <span class="hljs-number">0xac</span>, <span class="hljs-number">0x71</span>, <span class="hljs-number">0xa2</span>, <span class="hljs-number">0x9d</span>);  
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="network-source-filter-file-dump-settings"></a><a href="#network-source-filter-file-dump-settings" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Network Source Filter File Dump Settings</h4>
+<p>The file dump allows to record the udp input stream to a file.<br>
+It is intended to be used for diagnosis purposes only.<br>
+It is supported for a single Network Source Filter instance only.<br>
+Settings can be configured through the Windows Registry.<br>
+Registry settings are loaded at creation time of an instance.<br>
+The file dump is started and stopped when the filtergraph is started and stopped.</p>
+<ol>
+<li><strong>Enable File Dump</strong>  <br>
+Enable/disable dump file writing</li>
+</ol>
+<pre><code class="hljs css language-cpp">Registry Key: HKCU\SOFTWARE\nanocosmos\nNetSource  
+Value Name: FileDumpEnable
+Value Type: REG_DWORD  
+Valid Values:   <span class="hljs-number">0</span> - disable, <span class="hljs-number">1</span> - enable
+Default Value: <span class="hljs-number">0</span> - disable  
+</code></pre>
+<ol start="2">
+<li><strong>Dump File Name</strong>  <br>
+Full file path to the output file.<br>
+The destination folder must already exist.</li>
+</ol>
+<pre><code class="hljs css language-cpp">Registry Key: HKCU\SOFTWARE\nanocosmos\nNetSource  
+Value Name:     FileDumpFilename  
+Value Type:     REG_SZ / String  
+Valid Values:   A valid output file name  
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="debug-log-configuration-registry-settings"></a><a href="#debug-log-configuration-registry-settings" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Debug-Log Configuration Registry Settings</h4>
+<h5><a class="anchor" aria-hidden="true" id="keys"></a><a href="#keys" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Keys:</h5>
+<p>HKEY_CURRENT_USER\Software\DebugNano\nanoNetSource.ax<br>
+HKEY_CURRENT_USER\Software\DebugNano\nanoNetSink.ax</p>
+<h5><a class="anchor" aria-hidden="true" id="file-name"></a><a href="#file-name" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>File name</h5>
+<p>Sets the output file name. The folder must already exist.\
+Value name:     LogToFile\
+Value type:     REG_SZ / String\
+Valid values:   a valid output file name to enable file logging or an empty string</p>
+<h5><a class="anchor" aria-hidden="true" id="logging-level"></a><a href="#logging-level" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Logging level</h5>
+<p>A higher value increases the amount of logging messages sent, and messages get more detailed. \
+Value name:     TRACE\
+Value type:     REG_DWORD\
+Valid values:</p>
+<ul>
+<li>0 - minimal logging</li>
+<li>…</li>
+<li>9 - maximal logging</li>
+</ul>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 12/13/2020</em></div><div class="docs-prevnext"></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#nanocosmos-udpts-network-writer-and-reader-filter">nanocosmos UDP/TS Network Writer and Reader Filter</a><ul class="toc-headings"><li><a href="#configuration">Configuration</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><div><h5>Contact</h5><a href="https://www.nanocosmos.de/">Homepage</a><a href="https://www.nanocosmos.de/contact">Contact</a><a href="https://www.nanocosmos.de/support">Support</a><a href="https://www.nanocosmos.de/terms">Legal Terms</a></div><div><h5>Products</h5><a href="https://www.nanocosmos.de/cloud">Nanostream Cloud with Bintu.Live</a><a href="https://www.nanocosmos.de/h5live">H5Live Low Latency HTML5-Player</a><a href="https://www.nanocosmos.de/webrtc">nanoStream Webcaster</a><a href="https://www.nanocosmos.de/#nanostream">Nanostream Apps and SDK</a></div><div><h5>More</h5><a href="https://www.nanocosmos.de/blog/">Blog</a><a href="https://twitter.com/nanovideo">Twitter</a><a href="https://www.facebook.com/nanocosmos.net/">Facebook</a><a href="https://www.linkedin.com/company/nanocosmos-gmbh">LinkedIn</a><a href="https://github.com/nanocosmos/docs">GitHub</a><a class="github-button" href="https://github.com/nanocosmos/docs" data-icon="octicon-star" data-count-href="/nanocosmos/docs/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://nanocosmos.de/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/footer_logo.png" alt="nanocosmos GmbH" width="170" height="45"/></a><section class="copyright">Copyright © 2020 nanocosmos GmbH</section></footer></div></body></html>

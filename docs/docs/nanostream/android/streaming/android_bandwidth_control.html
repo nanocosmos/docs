@@ -1,0 +1,89 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>nanostream/android/streaming/android_bandwidth_control · nanocosmos Documentation</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="## Adaptive Bitrate Streaming"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="nanostream/android/streaming/android_bandwidth_control · nanocosmos Documentation"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.nanocosmos.de/"/><meta property="og:description" content="## Adaptive Bitrate Streaming"/><meta property="og:image" content="https://docs.nanocosmos.de/img/docusaurus.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://docs.nanocosmos.de/img/docusaurus.png"/><link rel="shortcut icon" href="/img/favicon_nano.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script>
+              (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+              (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+              m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+              })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+              ga('create', 'UA-552140-1', 'auto');
+              ga('send', 'pageview');
+            </script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="/js/search.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/nanocosmos_header_logo.png" alt="nanocosmos Documentation"/><h2 class="headerTitleWithLogo">nanocosmos Documentation</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/docs/cloud/cloud_overview" target="_self">nanoStream Cloud</a></li><li class=""><a href="/docs/nanoplayer/nanoplayer_introduction" target="_self">H5Live Player</a></li><li class=""><a href="/docs/webrtc/nanostream_webrtc_introduction" target="_self">nanoStream Webcaster</a></li><li class=""><a href="/docs/nanostream/nanostream" target="_self">nanoStream Apps and SDKs</a></li><li class=""><a href="/docs/samples/samples" target="_self">Samples</a></li><li class=""><a href="/docs/faq/faq_streaming" target="_self">FAQ</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/nanocosmos/docs/tree/master/docs/nanostream/android/streaming/android_bandwidth_control.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 id="__docusaurus" class="postHeaderTitle">nanostream/android/streaming/android_bandwidth_control</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="adaptive-bitrate-streaming"></a><a href="#adaptive-bitrate-streaming" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Adaptive Bitrate Streaming</h2>
+<p>By using the Adaptive Bitrate Control (ABC) the stream will automatically adjust to changes of the bandwidth. There are four modes available:</p>
+<ul>
+<li>DISABLED: The Adaptive Bitrate Control is disabled.</li>
+<li>QUALITY_DEGRADE: The video quality will be changed if the bandwidth changes. For instance, if not enough bandwidth is available, the video bitrate will be decreased, which in turn degrades the video quality.</li>
+<li>FRAME_DROP: Low bandwidth is compensated by decreasing the framerate (FPS), but maintaining the video qualtiy.</li>
+<li>QUALITY_DEGRADE_AND_FRAME_DROP: The video quality and the framerate (FPS) decreased if the not enough bandwidth is available.</li>
+</ul>
+<p>Make sure to set the ABC settings before a stream is started.</p>
+<h3><a class="anchor" aria-hidden="true" id="implementation-example"></a><a href="#implementation-example" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Implementation Example</h3>
+<pre><code class="hljs css language-java"><span class="hljs-keyword">private</span> AdaptiveBitrateControlSettings.AdaptiveBitrateControlMode abcMode = AdaptiveBitrateControlSettings.AdaptiveBitrateControlMode.QUALITY_DEGRADE_AND_FRAME_DROP;
+<span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> videoBitrate = <span class="hljs-number">500000</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">initStreamLib</span><span class="hljs-params">()</span> </span>{
+  AdaptiveBitrateControlSettings abcSettings = <span class="hljs-keyword">new</span> AdaptiveBitrateControlSettings(abcMode);
+  abcSettings.SetMaximumBitrate((<span class="hljs-keyword">int</span>)(videoBitrate * <span class="hljs-number">1.5</span>));
+
+  nanoStreamSettings nss = <span class="hljs-keyword">new</span> nanoStreamSettings();
+  nss.setAbcSettings(abcSettings);
+}
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="measuring-the-available-bandwidth"></a><a href="#measuring-the-available-bandwidth" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Measuring the available bandwidth</h3>
+<p>For measuring the available bandwidth you can use the method <code>runBandwidthCheck</code>. After the check finished, the result can be used to set the bitrate for the nanoStream object.
+The check measures the bandwidth by running a test stream to the server.
+The BandwidthCheck Class has three public functions:</p>
+<ul>
+<li>runBandwidthCheck(BandwidthCheckSettings settings, BandwidthCheckResultCallback callback()</li>
+<li>forceStop()</li>
+<li>abort()</li>
+</ul>
+<p>There is a BandwidthCheckSettings Class, the constructor creates a standard object of BandwidthCheckSettings, with the following settings:</p>
+<table>
+<thead>
+<tr><th style="text-align:left">property</th><th style="text-align:left">default values</th><th style="text-align:left">meaning</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align:left">prerollSeconds</td><td style="text-align:left">1 (in sec.)</td><td style="text-align:left">this is the pre roll time to connect to the server</td></tr>
+<tr><td style="text-align:left">runTime</td><td style="text-align:left">5 (in sec.)</td><td style="text-align:left">the run time of the bandwidth check</td></tr>
+<tr><td style="text-align:left">maxBitrate</td><td style="text-align:left">3000000 (bit/s = 3 MBit/s)</td><td style="text-align:left">the maximum bit rate for the bandwidth check</td></tr>
+<tr><td style="text-align:left">rtmpUrl</td><td style="text-align:left">empty</td><td style="text-align:left">the rtmp url for the bandwidth check</td></tr>
+<tr><td style="text-align:left">streamId</td><td style="text-align:left">empty</td><td style="text-align:left">the stream id for the bandwidth check</td></tr>
+</tbody>
+</table>
+<p>With this settings you can call the runBandwidthCheck methode, the second parameter is the callback for the results. This callback class has a finished method that will be called after bandwidth check is done.
+The finished method has one parameter from type BandwidthCheckResult, this object has 6 getter methods:</p>
+<ul>
+<li>getAverageBitrate() // the average measured bandwidth</li>
+<li>getMedianBitrate() // the median measured bandwidth</li>
+<li>getMaxBitrate() // the maximum measured bandwidth</li>
+<li>getMinBitrate() // the minimum measured bandwidth</li>
+<li>getRunTimeMS() // the run time in ms</li>
+<li>getErrorCode() // the error code if all is ok this is nanoResults.N_OK (all error codes can be found in the nanoStream API Reference documentation for nanoResults)</li>
+</ul>
+<p>The forceStop call stops the bandwidth check and will return the results that where measured until then. The abort call stops the bandwidth check but don't return any results.</p>
+<p>The bandwidth check, sends a special type of metadata that will not be recorded on the Streaming Server.</p>
+<h4><a class="anchor" aria-hidden="true" id="implementation-example-1"></a><a href="#implementation-example-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Implementation Example</h4>
+<pre><code class="hljs css language-java"><span class="hljs-keyword">private</span> BandwidthCheck bwCheck = <span class="hljs-keyword">null</span>;
+
+<span class="hljs-keyword">private</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CustomBandwidthCheckResultCallback</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">BandwidthCheckResultCallback</span> </span>{
+  <span class="hljs-meta">@Override</span>
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">finished</span><span class="hljs-params">(<span class="hljs-keyword">final</span> BandwidthCheckResult bandwidthCheckResult)</span> </span>{
+    Log.d(TAG, <span class="hljs-string">"BandwidthCheck results: "</span> +
+      <span class="hljs-string">"\n\tAverage Bitrate (kBit/s): "</span> + bandwidthCheckResult.getAverageBitrate() / <span class="hljs-number">1000</span> +
+      <span class="hljs-string">"\n\tMedian Bitrate  (kBit/s): "</span> + bandwidthCheckResult.getMedianBitrate() / <span class="hljs-number">1000</span> +
+      <span class="hljs-string">"\n\tMax Bitrate     (kBit/s): "</span> + bandwidthCheckResult.getMaxBitrate() / <span class="hljs-number">1000</span> +
+      <span class="hljs-string">"\n\tMin Bitrate     (kBit/s): "</span> + bandwidthCheckResult.getMinBitrate() / <span class="hljs-number">1000</span> +
+      <span class="hljs-string">"\n\tRun Time        (ms)    : "</span> + bandwidthCheckResult.getRunTimeMS());
+  }
+}
+
+<span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">initBandwidthCheck</span><span class="hljs-params">()</span> </span>{
+  <span class="hljs-keyword">if</span>(<span class="hljs-keyword">null</span> == bwCheck) {
+    BandwidthCheckSettings settings = <span class="hljs-keyword">new</span> BandwidthCheckSettings();
+    settings.setRtmpUrl(serverUrl);
+    settings.setStreamId(streamName);
+    bwCheck = <span class="hljs-keyword">new</span> BandwidthCheck();
+    bwCheck.runBandwidthCheck(settings, <span class="hljs-keyword">new</span> CustomBandwidthCheckResultCallback());
+  }
+}
+</code></pre>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 12/13/2020</em></div><div class="docs-prevnext"></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#adaptive-bitrate-streaming">Adaptive Bitrate Streaming</a><ul class="toc-headings"><li><a href="#implementation-example">Implementation Example</a></li><li><a href="#measuring-the-available-bandwidth">Measuring the available bandwidth</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><div><h5>Contact</h5><a href="https://www.nanocosmos.de/">Homepage</a><a href="https://www.nanocosmos.de/contact">Contact</a><a href="https://www.nanocosmos.de/support">Support</a><a href="https://www.nanocosmos.de/terms">Legal Terms</a></div><div><h5>Products</h5><a href="https://www.nanocosmos.de/cloud">Nanostream Cloud with Bintu.Live</a><a href="https://www.nanocosmos.de/h5live">H5Live Low Latency HTML5-Player</a><a href="https://www.nanocosmos.de/webrtc">nanoStream Webcaster</a><a href="https://www.nanocosmos.de/#nanostream">Nanostream Apps and SDK</a></div><div><h5>More</h5><a href="https://www.nanocosmos.de/blog/">Blog</a><a href="https://twitter.com/nanovideo">Twitter</a><a href="https://www.facebook.com/nanocosmos.net/">Facebook</a><a href="https://www.linkedin.com/company/nanocosmos-gmbh">LinkedIn</a><a href="https://github.com/nanocosmos/docs">GitHub</a><a class="github-button" href="https://github.com/nanocosmos/docs" data-icon="octicon-star" data-count-href="/nanocosmos/docs/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://nanocosmos.de/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/footer_logo.png" alt="nanocosmos GmbH" width="170" height="45"/></a><section class="copyright">Copyright © 2020 nanocosmos GmbH</section></footer></div></body></html>

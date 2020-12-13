@@ -1,0 +1,104 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>nanostream/android/streaming/android_camera_focus · nanocosmos Documentation</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="##  Camera Focus"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="nanostream/android/streaming/android_camera_focus · nanocosmos Documentation"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.nanocosmos.de/"/><meta property="og:description" content="##  Camera Focus"/><meta property="og:image" content="https://docs.nanocosmos.de/img/docusaurus.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://docs.nanocosmos.de/img/docusaurus.png"/><link rel="shortcut icon" href="/img/favicon_nano.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script>
+              (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+              (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+              m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+              })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+              ga('create', 'UA-552140-1', 'auto');
+              ga('send', 'pageview');
+            </script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="/js/search.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/nanocosmos_header_logo.png" alt="nanocosmos Documentation"/><h2 class="headerTitleWithLogo">nanocosmos Documentation</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/docs/cloud/cloud_overview" target="_self">nanoStream Cloud</a></li><li class=""><a href="/docs/nanoplayer/nanoplayer_introduction" target="_self">H5Live Player</a></li><li class=""><a href="/docs/webrtc/nanostream_webrtc_introduction" target="_self">nanoStream Webcaster</a></li><li class=""><a href="/docs/nanostream/nanostream" target="_self">nanoStream Apps and SDKs</a></li><li class=""><a href="/docs/samples/samples" target="_self">Samples</a></li><li class=""><a href="/docs/faq/faq_streaming" target="_self">FAQ</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/nanocosmos/docs/tree/master/docs/nanostream/android/streaming/android_camera_focus.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 id="__docusaurus" class="postHeaderTitle">nanostream/android/streaming/android_camera_focus</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="camera-focus"></a><a href="#camera-focus" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Camera Focus</h2>
+<h3><a class="anchor" aria-hidden="true" id="description"></a><a href="#description" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Description</h3>
+<p>The nanoStream Android SDK supports Camera focus and focus lock, if the the internal cameras supports them. There are two nonblocking functions</p>
+<pre><code class="hljs css language-java">setFocusArea(<span class="hljs-keyword">int</span> focusWidth, <span class="hljs-keyword">int</span> focusHeight, <span class="hljs-keyword">float</span> areaMultiple, <span class="hljs-keyword">int</span> x, <span class="hljs-keyword">int</span> y, <span class="hljs-keyword">int</span> previewWidth, <span class="hljs-keyword">int</span> previewHeight, <span class="hljs-keyword">int</span> weigh)
+setFocusLockArea(<span class="hljs-keyword">int</span> focusWidth, <span class="hljs-keyword">int</span> focusHeight, <span class="hljs-keyword">float</span> areaMultiple, <span class="hljs-keyword">int</span> x, <span class="hljs-keyword">int</span> y, <span class="hljs-keyword">int</span> previewWidth, <span class="hljs-keyword">int</span> previewHeight, <span class="hljs-keyword">int</span> weigh)
+</code></pre>
+<p>through the</p>
+<pre><code class="hljs css language-java">addFocusCalback(FocusCallback callback)
+removeFocusCalback(FocusCallback callback)
+</code></pre>
+<p>you can attach or remove a FocusCallback listener.
+To check if your device Supports focus you can call</p>
+<pre><code class="hljs css language-java">isFocusSupported()
+</code></pre>
+<p>this will return true or false</p>
+<h3><a class="anchor" aria-hidden="true" id="parameter-list"></a><a href="#parameter-list" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Parameter List</h3>
+<table>
+<thead>
+<tr><th style="text-align:left">Parameter name</th><th style="text-align:left">meaning</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align:left">focusWidth</td><td style="text-align:left">the focus Area width</td></tr>
+<tr><td style="text-align:left">focusHeight</td><td style="text-align:left">the focus Area height</td></tr>
+<tr><td style="text-align:left">areaMultiple</td><td style="text-align:left">a Multiple for the focus area (default: 1f)</td></tr>
+<tr><td style="text-align:left">x</td><td style="text-align:left">the x position on the Screen</td></tr>
+<tr><td style="text-align:left">y</td><td style="text-align:left">the y position on the Screen</td></tr>
+<tr><td style="text-align:left">previewWidth</td><td style="text-align:left">the width of the preview</td></tr>
+<tr><td style="text-align:left">previewHeight</td><td style="text-align:left">the height of the preview</td></tr>
+<tr><td style="text-align:left">weight</td><td style="text-align:left">the weight of the area must be range from 1 to 1000</td></tr>
+</tbody>
+</table>
+<h3><a class="anchor" aria-hidden="true" id="focuscallback-interface"></a><a href="#focuscallback-interface" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>FocusCallback interface</h3>
+<p>The FocusCallback interface has three abstract functions</p>
+<pre><code class="hljs css language-java">onSuccess()
+onSuccess(Rect rect, Boolean focusLock)
+onFailure()
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="implementation-example"></a><a href="#implementation-example" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Implementation Example</h3>
+<pre><code class="hljs css language-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MainActifity</span> <span class="hljs-title">extens</span> <span class="hljs-title">Actifity</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">FocusCallback</span> </span>{
+  <span class="hljs-keyword">private</span> GestureDetector gestureDetector;
+  <span class="hljs-keyword">private</span> nanoStream streamLib = <span class="hljs-keyword">null</span>;
+
+  <span class="hljs-meta">@Override</span>
+  <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onCreate</span><span class="hljs-params">(Bundle savedInstanceState)</span> </span>{
+    <span class="hljs-keyword">super</span>.onCreate(savedInstanceState);
+    streamLib = <span class="hljs-keyword">new</span> nanoStream(<span class="hljs-keyword">new</span> nanoStreamSettings());
+    <span class="hljs-keyword">if</span>(streamLib.isFocusSupported()) {
+      gestureDetector = <span class="hljs-keyword">new</span> GestureDetector(<span class="hljs-keyword">this</span>, <span class="hljs-keyword">new</span> GestureListener());
+    }
+    ...
+  }
+
+  <span class="hljs-meta">@Override</span>
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">onTouchEvent</span><span class="hljs-params">(MotionEvent event)</span>
+  </span>{
+    <span class="hljs-keyword">if</span> (gestureDetector != <span class="hljs-keyword">null</span>)
+    {
+        gestureDetector.onTouchEvent(event);
+    }
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;
+  }
+  ....
+  <span class="hljs-keyword">private</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">GestureListener</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">OnGestureListener</span> </span>{
+
+     <span class="hljs-meta">@Override</span>
+     <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">onSingleTapUp</span><span class="hljs-params">(MotionEvent e)</span>
+     </span>{
+         <span class="hljs-keyword">if</span> (streamLib != <span class="hljs-keyword">null</span>)
+         {
+             streamLib.setFocusArea(<span class="hljs-number">300</span>, <span class="hljs-number">300</span>, <span class="hljs-number">1f</span>, (<span class="hljs-keyword">int</span>) e.getX(), (<span class="hljs-keyword">int</span>) e.getY(), surface.getWidth(), surface.getHeight(), <span class="hljs-number">1000</span>);
+         }
+         <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;
+     }
+
+    <span class="hljs-meta">@Override</span>
+     <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onLongPress</span><span class="hljs-params">(MotionEvent e)</span>
+     </span>{
+         <span class="hljs-keyword">if</span> (streamLib != <span class="hljs-keyword">null</span>)
+         {
+             streamLib.setFocusLockArea(<span class="hljs-number">300</span>, <span class="hljs-number">300</span>, <span class="hljs-number">1f</span>, (<span class="hljs-keyword">int</span>) e.getX(), (<span class="hljs-keyword">int</span>) e.getY(), surface.getWidth(), surface.getHeight(), <span class="hljs-number">1000</span>);
+         }
+     }
+   }
+
+   <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onSuccess</span><span class="hljs-params">(Rect rect, Boolean aBoolean)</span> </span>{
+      Log.i(TAG, <span class="hljs-string">"focus success"</span>);
+    }
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onFailure</span><span class="hljs-params">()</span> </span>{
+      Log.i(TAG, <span class="hljs-string">"focus failed"</span>);
+    }
+}
+</code></pre>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 12/13/2020</em></div><div class="docs-prevnext"></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#camera-focus">Camera Focus</a><ul class="toc-headings"><li><a href="#description">Description</a></li><li><a href="#parameter-list">Parameter List</a></li><li><a href="#focuscallback-interface">FocusCallback interface</a></li><li><a href="#implementation-example">Implementation Example</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><div><h5>Contact</h5><a href="https://www.nanocosmos.de/">Homepage</a><a href="https://www.nanocosmos.de/contact">Contact</a><a href="https://www.nanocosmos.de/support">Support</a><a href="https://www.nanocosmos.de/terms">Legal Terms</a></div><div><h5>Products</h5><a href="https://www.nanocosmos.de/cloud">Nanostream Cloud with Bintu.Live</a><a href="https://www.nanocosmos.de/h5live">H5Live Low Latency HTML5-Player</a><a href="https://www.nanocosmos.de/webrtc">nanoStream Webcaster</a><a href="https://www.nanocosmos.de/#nanostream">Nanostream Apps and SDK</a></div><div><h5>More</h5><a href="https://www.nanocosmos.de/blog/">Blog</a><a href="https://twitter.com/nanovideo">Twitter</a><a href="https://www.facebook.com/nanocosmos.net/">Facebook</a><a href="https://www.linkedin.com/company/nanocosmos-gmbh">LinkedIn</a><a href="https://github.com/nanocosmos/docs">GitHub</a><a class="github-button" href="https://github.com/nanocosmos/docs" data-icon="octicon-star" data-count-href="/nanocosmos/docs/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://nanocosmos.de/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/footer_logo.png" alt="nanocosmos GmbH" width="170" height="45"/></a><section class="copyright">Copyright © 2020 nanocosmos GmbH</section></footer></div></body></html>

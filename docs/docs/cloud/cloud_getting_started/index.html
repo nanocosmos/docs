@@ -1,0 +1,185 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Getting started · nanocosmos Documentation</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="## Using the bintu.live dashboard"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Getting started · nanocosmos Documentation"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.nanocosmos.de/"/><meta property="og:description" content="## Using the bintu.live dashboard"/><meta property="og:image" content="https://docs.nanocosmos.de/img/docusaurus.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://docs.nanocosmos.de/img/docusaurus.png"/><link rel="shortcut icon" href="/img/favicon_nano.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script>
+              (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+              (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+              m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+              })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+              ga('create', 'UA-552140-1', 'auto');
+              ga('send', 'pageview');
+            </script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="/js/search.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/nanocosmos_header_logo.png" alt="nanocosmos Documentation"/><h2 class="headerTitleWithLogo">nanocosmos Documentation</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/docs/cloud/cloud_overview" target="_self">nanoStream Cloud</a></li><li class=""><a href="/docs/nanoplayer/nanoplayer_introduction" target="_self">H5Live Player</a></li><li class=""><a href="/docs/webrtc/nanostream_webrtc_introduction" target="_self">nanoStream Webcaster</a></li><li class=""><a href="/docs/nanostream/nanostream" target="_self">nanoStream Apps and SDKs</a></li><li class=""><a href="/docs/samples/samples" target="_self">Samples</a></li><li class=""><a href="/docs/faq/faq_streaming" target="_self">FAQ</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>nanoStream Cloud</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">nanoStream Cloud</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/cloud/cloud_overview">Overview</a></li><li class="navListItem"><a class="navItem" href="/docs/cloud/cloud_introduction">Introduction</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/cloud/cloud_getting_started">Getting started</a></li><li class="navListItem"><a class="navItem" href="/docs/cloud/live_encoding">Live Encoding</a></li><li class="navListItem"><a class="navItem" href="/docs/cloud/live-recording-vod">Live Recording and VOD</a></li><li class="navListItem"><a class="navItem" href="/docs/cloud/bintu_api">bintu api</a></li><li class="navListItem"><a class="navItem" href="/docs/cloud/bintu_custom_webhooks">bintu custom web hooks</a></li><li class="navListItem"><a class="navItem" href="/docs/cloud/bintu_stream_tags">bintu.live Stream Tags</a></li><li class="navListItem"><a class="navItem" href="/docs/cloud/support">Support</a></li><li class="navListItem"><a class="navItem" href="/docs/cloud/network-diagnostics">Network Diagnostics</a></li><li class="navListItem"><a class="navItem" href="/docs/cloud/analytics">Analytics</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/nanocosmos/docs/tree/master/docs/cloud/cloud_getting_started.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 id="__docusaurus" class="postHeaderTitle">Getting started</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="using-the-bintulive-dashboard"></a><a href="#using-the-bintulive-dashboard" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Using the bintu.live dashboard</h2>
+<p>bintu.live is the dashboard and API for nanoStream Cloud.</p>
+<h3><a class="anchor" aria-hidden="true" id="what-you-need"></a><a href="#what-you-need" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>What you need</h3>
+<p>To create and broadcast a live stream, you need a live source.
+This can be either a webcam, external camera, streaming device, or even your PC screen.
+To send a live stream to nanoStream Cloud, you need a streaming software or hardware,
+or just your browser which directly can be used to send a live stream to your audience.</p>
+<p>See our introduction videos and tutorials for step-by-step instructions!</p>
+<ul>
+<li><p><a href="https://www.nanocosmos.de/blog/videos">Videos</a></p></li>
+<li><p><a href="https://www.nanocosmos.de/blog/2020/01/how-to-use-obs-as-a-live-encoder-for-your-nanostream/">Getting started with the OBS Software</a></p></li>
+<li><p><a href="https://www.nanocosmos.de/blog/2019/09/how-to-create-a-livestream-with-our-nanostream-webrtc-application-demo-version/">Getting started with nanoStream Webcaster from the browser</a></p></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="create-a-nanostream-cloud-account-bintulive"></a><a href="#create-a-nanostream-cloud-account-bintulive" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Create a nanoStream Cloud account (bintu.live)</h3>
+<p>Click <a href="https://bintu.nanocosmos.de/signup">bintu.nanocosmos.de</a> to sign up and create a new user account</p>
+<p><img src="https://i2.wp.com/www.nanocosmos.de/blog/wp-content/uploads/Screen-Shot-2016-07-19-at-13.45.00.png?resize=600%2C448&amp;ssl=1" alt="Screen Shot 2016-07-19 at 13.45.00">
+<br></p>
+<blockquote>
+<p>Your email account will be part of an <em>organisation</em>. All streams associated with your organisation or company will be filed under this account.</p>
+</blockquote>
+<p><br>
+After signing up, you can click <a href="https://bintu.nanocosmos.de">here</a> to login to your bintu.live stream account.</p>
+<p><img src="https://i2.wp.com/www.nanocosmos.de/blog/wp-content/uploads/Screen-Shot-2016-07-19-at-13.44.40.png?resize=300%2C234&amp;ssl=1" alt="Screen Shot 2016-07-19 at 13.44.40"></p>
+<hr>
+<h3><a class="anchor" aria-hidden="true" id="create-a-new-live-stream"></a><a href="#create-a-new-live-stream" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Create a new live stream</h3>
+<p>Create your first live stream: In the top menu select <code>Stream</code>, then <code>create</code></p>
+<p><a href="https://i1.wp.com/www.nanocosmos.de/blog/wp-content/uploads/Screen-Shot-2016-07-19-at-16.42.57.png?ssl=1"><img src="https://i1.wp.com/www.nanocosmos.de/blog/wp-content/uploads/Screen-Shot-2016-07-19-at-16.42.57.png?resize=599%2C149&amp;ssl=1" alt="Screen Shot 2016-07-19 at 16.42.57"></a></p>
+<blockquote>
+<p>Every stream is assigned a unique ID and an ingest URL for the live encoder software.</p>
+</blockquote>
+<hr>
+<h3><a class="anchor" aria-hidden="true" id="start-a-live-stream-broadcast"></a><a href="#start-a-live-stream-broadcast" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Start a live stream broadcast</h3>
+<p>To start a live stream broadcast, you need a live encoder software, either based on an <code>RTMP Live Encoder application</code>, or the browser-based <a href="../../webrtc/nanostream_webrtc_introduction">nanoStream Webcaster broadcaster</a>.</p>
+<p>You can use <a href="../../nanostream/nanostream">nanoStream Apps</a>, or 3rd part software like <a href="https://obsproject.com/">OBS (Open Broadcaster)</a> or professional Live Encoders like <a href="https://www.elemental.com/products/aws-elemental-live">Elemental Live</a>.</p>
+<blockquote>
+<p>The primary ingest protocol is RTMP.</p>
+</blockquote>
+<p><strong>Copy/paste the ingest URL to use it with your live encoder software</strong></p>
+<p>Example:</p>
+<pre><code class="hljs">rtmp:<span class="hljs-regexp">//</span>bintu-stream.nanocosmos.de<span class="hljs-regexp">/live/</span>XYZ1-<span class="hljs-number">2345</span>
+</code></pre>
+<p>For some live encoder software, you might need to separate the stream url and stream name, e.g.</p>
+<ul>
+<li>RTMP URL: <code>rtmp://bintu-stream.nanocosmos.de/live</code></li>
+<li>Stream Name: <code>XYZ1-2345</code></li>
+</ul>
+<blockquote>
+<p>Some applications like <code>OBS</code> use the name <code>Stream Key</code> instead <code>Stream Name</code></p>
+</blockquote>
+<hr>
+<h3><a class="anchor" aria-hidden="true" id="configuring-the-camera-and-live-encoder"></a><a href="#configuring-the-camera-and-live-encoder" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Configuring the camera and live encoder</h3>
+<p>Codecs:</p>
+<ul>
+<li><code>H264 video</code>,</li>
+<li><code>AAC audio</code></li>
+</ul>
+<p>Video resolution: flexible, e.g. <code>640×480</code>, <code>1280×720</code>, <code>1920×1080</code></p>
+<p>Video bitrate: flexible, e.g. <code>500 kbits/s</code>, <code>1 MBit/s</code></p>
+<hr>
+<h3><a class="anchor" aria-hidden="true" id="running-the-stream"></a><a href="#running-the-stream" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Running the stream</h3>
+<p>After entering the <code>RTMP ingest URL</code> and <code>stream name</code> into your live encoder software, you can instantly start the broadcast to nanoStream Cloud / bintu.live.</p>
+<p><a href="https://i2.wp.com/www.nanocosmos.de/blog/wp-content/uploads/Screen-Shot-2016-07-19-at-16.43.20.png?ssl=1"><img src="https://i2.wp.com/www.nanocosmos.de/blog/wp-content/uploads/Screen-Shot-2016-07-19-at-16.43.20-1024x507.png?resize=640%2C317" alt="Screen Shot 2016-07-19 at 16.43.20"></a></p>
+<hr>
+<h3><a class="anchor" aria-hidden="true" id="play-your-live-stream"></a><a href="#play-your-live-stream" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Play your live stream</h3>
+<p>Play the stream directly in your browser or by inserting the Playout URL into a player application. By using the <code>Web Playout URL</code>, you will automatically be directed to a web player page based on our unique <code>nanoStream H5Live</code> low-latency playback technology.</p>
+<blockquote>
+<p><strong>Note:</strong></p>
+<p>the player URL is different from the Ingest URL!
+This is to adjust to world regional locations of our worldwide CDN with ingest and playback servers.</p>
+</blockquote>
+<p><a href="https://i0.wp.com/www.nanocosmos.de/blog/wp-content/uploads/Screen-Shot-2016-07-19-at-16.43.37.png?ssl=1"><img src="https://i2.wp.com/www.nanocosmos.de/blog/wp-content/uploads/Screen-Shot-2016-07-19-at-16.43.37-1024x554.png?resize=640%2C346" alt="Screen Shot 2016-07-19 at 16.43.37"></a>
+<br>
+The H5Live player is running on a sample page which also shows an embed code to copy to your own web page.
+<br></p>
+<hr>
+<h3><a class="anchor" aria-hidden="true" id="manage-your-live-streams"></a><a href="#manage-your-live-streams" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Manage your live streams</h3>
+<p>Select <code>Streams</code>, then <code>List</code> to find a list of all streams that you created.</p>
+<p>These can be sorted by <code>live</code>, <code>ended</code>, <code>created</code>, or <code>external</code> streams.</p>
+<p><a href="https://i2.wp.com/www.nanocosmos.de/blog/wp-content/uploads/Screen-Shot-2016-07-19-at-16.44.01.png?ssl=1"><img src="https://i1.wp.com/www.nanocosmos.de/blog/wp-content/uploads/Screen-Shot-2016-07-19-at-16.44.01-1024x530.png?resize=640%2C331" alt="Screen Shot 2016-07-19 at 16.44.01"></a></p>
+<h2><a class="anchor" aria-hidden="true" id="additional-features"></a><a href="#additional-features" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Additional features</h2>
+<h3><a class="anchor" aria-hidden="true" id="using-bintulive-stream-tags"></a><a href="#using-bintulive-stream-tags" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Using bintu.live stream tags</h3>
+<p>You can add any text-based tags to your stream. It can be a stream <code>title</code> or any other <code>information</code> that you would like to add to the stream (category, event name, date,…).
+It can also be a <code>JSON string</code> to use for specific programmatic purposes.</p>
+<blockquote>
+<p>A simple use case is grouping the streams with your custom application logic.</p>
+</blockquote>
+<p><br></p>
+<p><img src="https://i0.wp.com/www.nanocosmos.de/blog/wp-content/uploads/BintuPlayer-1024x585.jpg?resize=474%2C271" alt="BintuPlayer"></p>
+<p>Every tag added to a stream is directly displayed in the Stream Info.</p>
+<p><em>See more info about tagging and how it is used in our Bintu Encoder and Player sample apps on our</em> <a href="https://www.nanocosmos.de/blog/2016/06/new-bintu-live-grouping-and-tagging-feature-for-streams/"><em>blog</em></a><em>.</em></p>
+<p>The Bintu Encoder and Player sample apps are part of our <a href="../../nanostream/android/nanostream-android-sdk"><em>mobile nanoStream SDKs</em></a> <em>for iOS and Android.</em></p>
+<hr>
+<h3><a class="anchor" aria-hidden="true" id="metrics"></a><a href="#metrics" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Metrics</h3>
+<p>By selecting <code>Organisation</code> from the top menu, you can see your Organisation ID, as well as monthly and total playtime of all streams.</p>
+<blockquote>
+<p>Please ask for details about other metrics you can get.</p>
+</blockquote>
+<p><img src="https://i1.wp.com/www.nanocosmos.de/blog/wp-content/uploads/Screen-Shot-2016-07-19-at-13.45.44-1024x389.png?resize=474%2C180" alt="Screen Shot 2016-07-19 at 13.45.44"></p>
+<hr>
+<h3><a class="anchor" aria-hidden="true" id="api-access"></a><a href="#api-access" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>API Access</h3>
+<p>Under <code>Keys</code> you will find your account’s API Key and Player Key to manage live streams within your own application.</p>
+<p><img src="https://i0.wp.com/www.nanocosmos.de/blog/wp-content/uploads/keys.png?resize=768%2C194&amp;ssl=1" alt="img"></p>
+<hr>
+<h3><a class="anchor" aria-hidden="true" id="secure-streaming"></a><a href="#secure-streaming" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Secure Streaming</h3>
+<p>Secure streaming can be done on the ingest side based on rtmps or WebRTC.</p>
+<p>For encrypted ingest with rtmps, you can use port 1936 instead 1935.</p>
+<p>Example:</p>
+<p>Standard non-encrypted ingest (RTMP): <a href="rtmp://bintu-stream.nanocosmos.de:1935/live/STREAM">rtmp://bintu-stream.nanocosmos.de:1935/live/STREAM</a>
+Encrypted ingest (RTMPS): <a href="rtmps://bintu-stream.nanocosmos.de:1936/live/STREAM">rtmps://bintu-stream.nanocosmos.de:1936/live/STREAM</a></p>
+<h2><a class="anchor" aria-hidden="true" id="for-secure-playback-with-the-nanostream-h5live-player-you-need-to-have-your-account-enabled-for-playback-security-see-the-h5live-secure-playback-documentation"></a><a href="#for-secure-playback-with-the-nanostream-h5live-player-you-need-to-have-your-account-enabled-for-playback-security-see-the-h5live-secure-playback-documentation" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>For secure playback with the nanoStream H5Live Player you need to have your account enabled for playback security. See the h5live secure playback documentation.</h2>
+<h4><a class="anchor" aria-hidden="true" id="more-information"></a><a href="#more-information" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>More information:</h4>
+<ul>
+<li><a href="https://bintu.nanocosmos.de">bintu.live dashboard</a></li>
+<li><a href="https://bintu.nanocosmos.de/doc/">bintu.live API documentation</a></li>
+<li><a href="cloud_ios_streaming_app">Create a live streaming app in 5 minutes</a></li>
+<li><a href="https://www.nanocosmos.de/blog/2016/07/nanostream-and-bintu-live/">nanoStream and bintu.live</a></li>
+<li><a href="https://www.nanocosmos.de/blog/2016/06/new-bintu-live-grouping-and-tagging-feature-for-streams/">Grouping &amp; Tagging with bintu.live</a></li>
+<li><a href="https://www.nanocosmos.de/blog/2016/05/nanocosmos-presents-new-end-to-end-live-streaming-software/">nanoStream Presents End-to-End Live Streaming Software</a></li>
+<li><a href="http://www.nanocosmos.de/demo">nanoStream software demos and downloads</a></li>
+</ul>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 12/13/2020</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/cloud/cloud_introduction"><span class="arrow-prev">← </span><span>Introduction</span></a><a class="docs-next button" href="/docs/cloud/live_encoding"><span>Live Encoding</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#using-the-bintulive-dashboard">Using the bintu.live dashboard</a><ul class="toc-headings"><li><a href="#what-you-need">What you need</a></li><li><a href="#create-a-nanostream-cloud-account-bintulive">Create a nanoStream Cloud account (bintu.live)</a></li><li><a href="#create-a-new-live-stream">Create a new live stream</a></li><li><a href="#start-a-live-stream-broadcast">Start a live stream broadcast</a></li><li><a href="#configuring-the-camera-and-live-encoder">Configuring the camera and live encoder</a></li><li><a href="#running-the-stream">Running the stream</a></li><li><a href="#play-your-live-stream">Play your live stream</a></li><li><a href="#manage-your-live-streams">Manage your live streams</a></li></ul></li><li><a href="#additional-features">Additional features</a><ul class="toc-headings"><li><a href="#using-bintulive-stream-tags">Using bintu.live stream tags</a></li><li><a href="#metrics">Metrics</a></li><li><a href="#api-access">API Access</a></li><li><a href="#secure-streaming">Secure Streaming</a></li></ul></li><li><a href="#for-secure-playback-with-the-nanostream-h5live-player-you-need-to-have-your-account-enabled-for-playback-security-see-the-h5live-secure-playback-documentation">For secure playback with the nanoStream H5Live Player you need to have your account enabled for playback security. See the h5live secure playback documentation.</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><div><h5>Contact</h5><a href="https://www.nanocosmos.de/">Homepage</a><a href="https://www.nanocosmos.de/contact">Contact</a><a href="https://www.nanocosmos.de/support">Support</a><a href="https://www.nanocosmos.de/terms">Legal Terms</a></div><div><h5>Products</h5><a href="https://www.nanocosmos.de/cloud">Nanostream Cloud with Bintu.Live</a><a href="https://www.nanocosmos.de/h5live">H5Live Low Latency HTML5-Player</a><a href="https://www.nanocosmos.de/webrtc">nanoStream Webcaster</a><a href="https://www.nanocosmos.de/#nanostream">Nanostream Apps and SDK</a></div><div><h5>More</h5><a href="https://www.nanocosmos.de/blog/">Blog</a><a href="https://twitter.com/nanovideo">Twitter</a><a href="https://www.facebook.com/nanocosmos.net/">Facebook</a><a href="https://www.linkedin.com/company/nanocosmos-gmbh">LinkedIn</a><a href="https://github.com/nanocosmos/docs">GitHub</a><a class="github-button" href="https://github.com/nanocosmos/docs" data-icon="octicon-star" data-count-href="/nanocosmos/docs/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://nanocosmos.de/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/footer_logo.png" alt="nanocosmos GmbH" width="170" height="45"/></a><section class="copyright">Copyright © 2020 nanocosmos GmbH</section></footer></div></body></html>

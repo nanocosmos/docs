@@ -1,0 +1,235 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Adjust/Style · nanocosmos Documentation</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;details&gt;&lt;summary&gt;&lt;strong&gt;How to make the player responsive and preserve the aspect ratio?&lt;/strong&gt;&lt;/summary&gt;"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Adjust/Style · nanocosmos Documentation"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.nanocosmos.de/"/><meta property="og:description" content="&lt;details&gt;&lt;summary&gt;&lt;strong&gt;How to make the player responsive and preserve the aspect ratio?&lt;/strong&gt;&lt;/summary&gt;"/><meta property="og:image" content="https://docs.nanocosmos.de/img/docusaurus.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://docs.nanocosmos.de/img/docusaurus.png"/><link rel="shortcut icon" href="/img/favicon_nano.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script>
+              (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+              (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+              m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+              })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+              ga('create', 'UA-552140-1', 'auto');
+              ga('send', 'pageview');
+            </script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="/js/search.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/nanocosmos_header_logo.png" alt="nanocosmos Documentation"/><h2 class="headerTitleWithLogo">nanocosmos Documentation</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/docs/cloud/cloud_overview" target="_self">nanoStream Cloud</a></li><li class=""><a href="/docs/nanoplayer/nanoplayer_introduction" target="_self">H5Live Player</a></li><li class=""><a href="/docs/webrtc/nanostream_webrtc_introduction" target="_self">nanoStream Webcaster</a></li><li class=""><a href="/docs/nanostream/nanostream" target="_self">nanoStream Apps and SDKs</a></li><li class=""><a href="/docs/samples/samples" target="_self">Samples</a></li><li class="siteNavGroupActive"><a href="/docs/faq/faq_streaming" target="_self">FAQ</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>H5Live Player</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">H5Live Player</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/faq/faq_h5live_player_general">General</a></li><li class="navListItem"><a class="navItem" href="/docs/faq/faq_h5live_player_bintu">bintu</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/faq/faq_h5live_player_adjust_style">Adjust/Style</a></li><li class="navListItem"><a class="navItem" href="/docs/faq/faq_h5live_player_metrics">Metrics</a></li><li class="navListItem"><a class="navItem" href="/docs/faq/faq_h5live_player_security">Security</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">nanoStream Webcaster</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/faq/faq_WebRTC_general">General</a></li><li class="navListItem"><a class="navItem" href="/docs/faq/faq_WebRTC_devices">Devices</a></li><li class="navListItem"><a class="navItem" href="/docs/faq/faq_WebRTC_broadcast">Broadcast</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Live Streaming</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/faq/faq_streaming">Live Streaming</a></li><li class="navListItem"><a class="navItem" href="/docs/faq/faq_devices_support">Capture Devices and Camera Support</a></li><li class="navListItem"><a class="navItem" href="/docs/faq/faq_adv_codec_config">Advanced Codec Configuration</a></li><li class="navListItem"><a class="navItem" href="/docs/faq/programming_sdk_api">Programming / SDK / API</a></li><li class="navListItem"><a class="navItem" href="/docs/faq/faq_nanostream_sdk_win">nanoStream SDK for Windows</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Purchase and License</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/faq/faq_purchase_and_license">Purchase and License</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/nanocosmos/docs/tree/master/docs/faq/faq_h5live_player_adjust_style.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 id="__docusaurus" class="postHeaderTitle">Adjust/Style</h1></header><article><div><span><p><details><summary><strong>How to make the player responsive and preserve the aspect ratio?</strong></summary>
+<br>The following example is for a <strong>16:9 ratio</strong>, which can be changed to work for all other aspect ratios.</p>
+<h3><a class="anchor" aria-hidden="true" id="1-player-configuration"></a><a href="#1-player-configuration" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>1. Player configuration</h3>
+<p>Set the <code>style.width</code> and <code>style.height</code> properties inside the player config to <code>auto</code> to  keep the size of the parent container.</p>
+<pre><code class="hljs">    <span class="hljs-comment">// player config </span>
+    <span class="hljs-built_in">var</span> config = {
+        <span class="hljs-string">"style"</span>: {
+            <span class="hljs-string">"width"</span>: <span class="hljs-string">"auto"</span>,
+            <span class="hljs-string">"height"</span>: <span class="hljs-string">"auto"</span>
+        },
+        <span class="hljs-params">...</span>
+    }
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="2-player-div-css"></a><a href="#2-player-div-css" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>2. Player DIV CSS</h3>
+<p>Set a percentage value for <code>padding-bottom</code> to maintain the aspect ratio of the players <code>&lt;div&gt;</code> element.
+<br>For a 16:9 aspect ratio: <strong>(9 / 16 = 0.5625) = 56.25%</strong></p>
+<pre><code class="hljs">    <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"playerDiv"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"padding-bottom: 56.25%"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="other-aspect-ratios"></a><a href="#other-aspect-ratios" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Other aspect ratios</h3>
+<table>
+<thead>
+<tr><th>Aspect ratio</th><th>padding-bottom</th></tr>
+</thead>
+<tbody>
+<tr><td>1:1</td><td>100%</td></tr>
+<tr><td>16:9</td><td>56.25%</td></tr>
+<tr><td>4:3</td><td>75%</td></tr>
+</tbody>
+</table>
+<p></details></p>
+<p><details>
+<summary><strong>How to embed the player into an iframe element?</strong></summary>
+For most use cases the implementation of the player directly into the page is the best option. We recommend embedding the player within an iframe element only when the use case requires it.</p>
+<h3><a class="anchor" aria-hidden="true" id="1-creating-the-embedded-page-including-the-player-on-your-side"></a><a href="#1-creating-the-embedded-page-including-the-player-on-your-side" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>1. Creating the embedded page including the player on your side</h3>
+<p>Please find information and examples on how to add the player to a webpage <a href="https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_getting_started/">here</a>.</p>
+<h3><a class="anchor" aria-hidden="true" id="2-embedding-the-player-page-in-an-iframe-on-a-second-page-on-the-distribution-side"></a><a href="#2-embedding-the-player-page-in-an-iframe-on-a-second-page-on-the-distribution-side" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>2. Embedding the player page in an iframe on a second page on the distribution side</h3>
+<p><strong>Important:</strong> The <code>allowfullscreen</code> attribute is required if the page wants to support fullscreen video.</p>
+<pre><code class="hljs">    &lt;iframe id=<span class="hljs-string">"ifvideo"</span> <span class="hljs-built_in">width</span>=<span class="hljs-string">"640"</span> <span class="hljs-built_in">height</span>=<span class="hljs-string">"480"</span> scrolling=<span class="hljs-string">"no"</span> frameborder=<span class="hljs-string">"0"</span> allowfullscreen=<span class="hljs-string">""</span>
+    src=<span class="hljs-string">"//yourdomain.com/playerpage.html"</span>&gt;
+    &lt;/iframe&gt;
+</code></pre>
+<p></details></p>
+<p><details><summary><strong>Can I use a raw player without built-in controls, animations and styles?</strong></summary></p>
+<p>Yes, by passing the config property <code>config.style.view = false</code>.</p>
+<p>The view is the top level UI layer containing all built-in controls, animations and styles including automatic video scaling.
+Disabling the view will disable these features as well which is why this is recommended for experienced users only.</p>
+<p>If you want to disable certain parts of the view (eg. controls) keep the <code>config.style.view</code> enabled and disable the specific property</p>
+<p>Example to disable inline controls:</p>
+<pre><code class="hljs">    <span class="hljs-attr">"style":</span> <span class="hljs-string">{</span>
+        <span class="hljs-attr">"view":</span> <span class="hljs-literal">true</span> <span class="hljs-string">//</span> <span class="hljs-string">default,</span>
+        <span class="hljs-attr">"controls":</span> <span class="hljs-literal">false</span>
+    <span class="hljs-string">},</span>
+</code></pre>
+<p>You can find more information regarding config properties in our API docs <a href="../../nanoplayer/nanoplayer_api/#nanoplayerconfig--codeobjectcode">here</a>.</p>
+<blockquote>
+<p><strong>Important:</strong>
+If you create custom controls or other overlay elements make sure to set the <code>z-index</code> value &gt; 1 to ensure they are positioned on top of the video layer.</p>
+</blockquote>
+<p></details></p>
+<p><details><summary><strong>Can I customize the inline controls?</strong></summary></p>
+<p>No, but you can disable them by passing:</p>
+<pre><code class="hljs"><span class="hljs-attr">config.style.controls</span> = <span class="hljs-literal">false</span><span class="hljs-comment">;</span>
+</code></pre>
+<blockquote>
+<p><strong>Important:</strong>
+If you create custom controls or other overlay elements make sure to set the <code>z-index</code> value &gt; 1 to ensure they are positioned on top of the video layer.</p>
+</blockquote>
+<p></details></p>
+<p><details><summary><strong>How to adjust the playout orientation when the broadcast on an iOS device get's rotated?</strong></summary></p>
+<blockquote>
+<p><strong>Note:</strong>
+The iPhone and iPad send the stream with the initial orientation of the device. Meaning, if you rotate the device the stream is rotated which is a technical restriction that we can not change.</p>
+</blockquote>
+<p>In order to have live rotation on the player side, we send rotation <strong>metadata</strong> to the player to adjust the playback to the rotation.
+To receive metadata on the player side simply enable it within your player config:</p>
+<pre><code class="hljs">    <span class="hljs-attr">"playback":</span> <span class="hljs-string">{</span>
+        <span class="hljs-attr">"metadata":</span> <span class="hljs-literal">true</span>
+    <span class="hljs-string">},</span>
+</code></pre>
+<p></details></p>
+<p><details><summary><strong>Can I style the player as audio player?</strong></summary></p>
+<p>Yes, you can style the player as audio player by passing</p>
+<pre><code class="hljs css language-javascript">config.style.audioPlayer = <span class="hljs-literal">true</span>;
+</code></pre>
+<p></details></p>
+<p><details><summary><strong>Can I play video only or audio only streams?</strong></summary></p>
+<p>Yes.</p>
+<p></details></p>
+<p><details><summary><strong>Can I use an own external video element?</strong></summary></p>
+<p>Yes, by passing the <code>id</code> attribute of an existing html5 video element through the config property <code>playback.videoId</code>. The video will be inserted into the players container and existing styles will be overwritten and restored after a destroy.</p>
+<blockquote>
+<p><strong>Important:</strong>
+Since introducing player version <strong>4.4</strong> with seamless stream switching on iOS &amp; iPadOS, <strong>2</strong> video elements are needed internally. So for special use cases where existing video tags need to be used for playback an <code>array</code> of maximal two element Ids can be provided via the <code>playback.videoId</code> config property (<strong>NOT mandatory</strong>)</p>
+<ul>
+<li>if 0 Ids are provided 2 video elements will be created internally</li>
+<li>if 1 Id is provided the other video element will be created internally</li>
+</ul>
+<p>You can find more information regarding the <code>playback.videoId</code> and other config properties in our <a href="../../nanoplayer/nanoplayer_api#nanoplayerconfig--codeobjectcode">API docs</a>.</p>
+</blockquote>
+<p></details></p>
+<p><details><summary><strong>Can I update the source?</strong></summary></p>
+<p>Yes, by executing the player’s function <code>updateSource</code> with an updated <code>config.source</code> object.</p>
+<p></details></p>
+<p><details><summary><strong>Is a fullscreen functionality available?</strong></summary></p>
+<p>Yes. Fullscreen is available over the public <a href="../../nanoplayer/nanoplayer_feature_fullscreen_api">fullscreen API</a> or over the bottom right fullscreen button in the built-in H5live player control bar.</p>
+<p></details></p>
+<p><details><summary><strong>Can I use a poster as placeholder for the video?</strong></summary></p>
+<p>But you can use a workaround by passing the id of an existing video tag with poster through the config (<code>config.playback.videoId</code>). This video element would be used by the player instead of creating a new one. See <a href="../../nanoplayer/nanoplayer_api">here</a>.</p>
+<p>Another possibility can be that you grab the video element from the DOM after successful setup and then modify the poster attribute.</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">var</span> video = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">"#playerDiv video"</span>);
+video.poster = ....;
+</code></pre>
+<p></details></p>
+<p><details><summary><strong>Can I change the background color of the player?</strong></summary>
+No, currently there is no way to configure the background-color of the video element, but you can have workarounds. You can select the video in the resolve function of the promise (see the sample) and then change the color or you can create a global css rule for video elements. Please see the following examples.</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">var</span> player; 
+  <span class="hljs-keyword">var</span> config = {
+    <span class="hljs-string">"source"</span>: {
+        <span class="hljs-string">"bintu"</span>: {
+            <span class="hljs-string">"apiurl"</span>: <span class="hljs-string">"https://bintu.nanocosmos.de"</span>,
+            <span class="hljs-string">"streamid"</span>: <span class="hljs-string">"236af21e-fbf3-4ba3-889c-343ef3f0e7ca"</span>
+        }
+    },
+   <span class="hljs-string">"playback"</span>: {
+      <span class="hljs-string">"autoplay"</span>: <span class="hljs-literal">true</span>,
+      <span class="hljs-string">"automute"</span>: <span class="hljs-literal">true</span>,
+      <span class="hljs-string">"muted"</span>: <span class="hljs-literal">false</span>
+  },
+  <span class="hljs-string">"style"</span>: {
+      <span class="hljs-string">"controls"</span>: <span class="hljs-literal">true</span>,
+      <span class="hljs-string">"width"</span>: <span class="hljs-string">"auto"</span>,
+      <span class="hljs-string">"height"</span>: <span class="hljs-string">"auto"</span>,    
+      }
+};
+<span class="hljs-built_in">document</span>.addEventListener(<span class="hljs-string">'DOMContentLoaded'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+    player = <span class="hljs-keyword">new</span> NanoPlayer(<span class="hljs-string">"playerDiv"</span>);
+    player.setup(config).then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">config</span>) </span>{
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"setup success"</span>);
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"config: "</span> + <span class="hljs-built_in">JSON</span>.stringify(config, <span class="hljs-literal">undefined</span>, <span class="hljs-number">4</span>));
+        <span class="hljs-keyword">var</span> video = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'#playerDiv video'</span>);
+        video.style.backgroundColor = <span class="hljs-string">'#123456'</span>;
+    }, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">error</span>) </span>{
+        alert(error.message);
+    });
+});
+</code></pre>
+<pre><code class="hljs"><span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css">
+    <span class="hljs-selector-tag">video</span> {
+        <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#123456</span>;
+    }
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+</code></pre>
+<p></details></p>
+<p><details><summary><strong>Is there a simple code snippet available?</strong></summary></p>
+<p>Yes. Please check out the 'Getting started' topic in the documentation.
+<a href="https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_getting_started/">https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_getting_started/</a></p>
+<p></details></p>
+<p><details><summary><strong>Can I use the player within a mobile webview?</strong></summary></p>
+<p>Yes. Some mobile webviews require configuration flags to be set on the app level
+to allow, e.g. inline playback or playback without user interaction (autoplay).
+Examples
+iOS: allowsInlineMediaPlayback, mediaTypesRequiringUserActionForPlayback
+Android: setMediaPlaybackRequiresUserGesture</p>
+<p>Please check the documentation of the webview component.</p>
+<p></details></p>
+<p><details><summary><strong>Can I have multiple player instances in one page?</strong></summary></p>
+<p>Yes. Please check out the nanoplayer-multi sample in the player package.</p>
+<p></details></p>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 12/13/2020</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/faq/faq_h5live_player_bintu"><span class="arrow-prev">← </span><span>bintu</span></a><a class="docs-next button" href="/docs/faq/faq_h5live_player_metrics"><span>Metrics</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><div><h5>Contact</h5><a href="https://www.nanocosmos.de/">Homepage</a><a href="https://www.nanocosmos.de/contact">Contact</a><a href="https://www.nanocosmos.de/support">Support</a><a href="https://www.nanocosmos.de/terms">Legal Terms</a></div><div><h5>Products</h5><a href="https://www.nanocosmos.de/cloud">Nanostream Cloud with Bintu.Live</a><a href="https://www.nanocosmos.de/h5live">H5Live Low Latency HTML5-Player</a><a href="https://www.nanocosmos.de/webrtc">nanoStream Webcaster</a><a href="https://www.nanocosmos.de/#nanostream">Nanostream Apps and SDK</a></div><div><h5>More</h5><a href="https://www.nanocosmos.de/blog/">Blog</a><a href="https://twitter.com/nanovideo">Twitter</a><a href="https://www.facebook.com/nanocosmos.net/">Facebook</a><a href="https://www.linkedin.com/company/nanocosmos-gmbh">LinkedIn</a><a href="https://github.com/nanocosmos/docs">GitHub</a><a class="github-button" href="https://github.com/nanocosmos/docs" data-icon="octicon-star" data-count-href="/nanocosmos/docs/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://nanocosmos.de/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/footer_logo.png" alt="nanocosmos GmbH" width="170" height="45"/></a><section class="copyright">Copyright © 2020 nanocosmos GmbH</section></footer></div></body></html>

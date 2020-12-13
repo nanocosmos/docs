@@ -1,0 +1,1463 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>nanoStream Webcaster API · nanocosmos Documentation</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;a name=&quot;RtcUser&quot;&gt;&lt;/a&gt;"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="nanoStream Webcaster API · nanocosmos Documentation"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.nanocosmos.de/"/><meta property="og:description" content="&lt;a name=&quot;RtcUser&quot;&gt;&lt;/a&gt;"/><meta property="og:image" content="https://docs.nanocosmos.de/img/docusaurus.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://docs.nanocosmos.de/img/docusaurus.png"/><link rel="shortcut icon" href="/img/favicon_nano.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script>
+              (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+              (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+              m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+              })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+              ga('create', 'UA-552140-1', 'auto');
+              ga('send', 'pageview');
+            </script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="/js/search.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/nanocosmos_header_logo.png" alt="nanocosmos Documentation"/><h2 class="headerTitleWithLogo">nanocosmos Documentation</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/docs/cloud/cloud_overview" target="_self">nanoStream Cloud</a></li><li class=""><a href="/docs/nanoplayer/nanoplayer_introduction" target="_self">H5Live Player</a></li><li class="siteNavGroupActive"><a href="/docs/webrtc/nanostream_webrtc_introduction" target="_self">nanoStream Webcaster</a></li><li class=""><a href="/docs/nanostream/nanostream" target="_self">nanoStream Apps and SDKs</a></li><li class=""><a href="/docs/samples/samples" target="_self">Samples</a></li><li class=""><a href="/docs/faq/faq_streaming" target="_self">FAQ</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>API</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">nanoStream Webcaster</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/webrtc/nanostream_webrtc_introduction">Introduction</a></li><li class="navListItem"><a class="navItem" href="/docs/webrtc/nanostream_webrtc_getting_started">Getting started</a></li><li class="navListItem"><a class="navItem" href="/docs/webrtc/nanostream_webrtc_demos">Browser Demos</a></li><li class="navListItem"><a class="navItem" href="/docs/webrtc/nanostream_webrtc_support">Support</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Features</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/webrtc/nanostream_webrtc_screen_sharing">Screen Sharing</a></li><li class="navListItem"><a class="navItem" href="/docs/webrtc/nanostream_webrtc_multiple_webcasts">Multiple Webcasts</a></li><li class="navListItem"><a class="navItem" href="/docs/webrtc/nanostream_webrtc_quality">Quality Settings</a></li><li class="navListItem"><a class="navItem" href="/docs/webrtc/nanostream_webrtc_device_selection">Device Selection</a></li><li class="navListItem"><a class="navItem" href="/docs/webrtc/nanostream_webrtc_audio_video_only">Audio- / Video-Only</a></li><li class="navListItem"><a class="navItem" href="/docs/webrtc/nanostream_webrtc_speech_music">Speech / Music Streaming</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">API</h3><ul class=""><li class="navListItem navListItemActive"><a class="navItem" href="/docs/webrtc/nanostream_webrtc_api">Webcaster</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Other</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/webrtc/nanostream_webrtc_faq">FAQ</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/nanocosmos/docs/tree/master/docs/webrtc/nanostream_webrtc_api.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 id="__docusaurus" class="postHeaderTitle">nanoStream Webcaster API</h1></header><article><div><span><p><a name="RtcUser"></a></p>
+<h3><a class="anchor" aria-hidden="true" id="rtcuser"></a><a href="#rtcuser" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>RtcUser</h3>
+<p>nanoStream Webcaster Public API Class</p>
+<p><strong>Kind</strong>: global class<br>
+<strong>Version</strong>: 5.9.2</p>
+<hr>
+<h2><a class="anchor" aria-hidden="true" id="constructors"></a><a href="#constructors" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Constructors</h2>
+<p><a name="new_RtcUser_new"></a></p>
+<h3><a class="anchor" aria-hidden="true" id="new-rtcuser"></a><a href="#new-rtcuser" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>new RtcUser()</h3>
+<p>An RtcUser is the main class and entry point of the nanoStream Webcaster API.</p>
+<p><strong>Example</strong></p>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">var</span> rtcUser = <span class="hljs-keyword">new</span> RtcUser();
+</code></pre>
+<hr>
+<h2><a class="anchor" aria-hidden="true" id="functions"></a><a href="#functions" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Functions</h2>
+<p><a name="RtcUser+checkSupport"></a></p>
+<h3><a class="anchor" aria-hidden="true" id="checksupport-⇒-codeintcode"></a><a href="#checksupport-⇒-codeintcode" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>checkSupport() ⇒ <code>int</code></h3>
+<p>Checks if nanoStream Webcaster is supported by current browser.</p>
+<p><strong>Kind</strong>: instance method of <a href="#RtcUser"><code>RtcUser</code></a>  <br>
+<strong>Example</strong></p>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">var</span> supportLevel = RtcUser.checkSupport();
+<span class="hljs-comment">// 0: fully supported, no expected issues</span>
+<span class="hljs-comment">// 1: not supported</span>
+<span class="hljs-comment">// 2: partly supported - an outdated browser version</span>
+<span class="hljs-comment">// 3: partly supported - a critically outdated browser version or a browser with issues, e.g. Edge</span>
+</code></pre>
+<p><a name="RtcUser+signIn"></a></p>
+<h3><a class="anchor" aria-hidden="true" id="signinoptions"></a><a href="#signinoptions" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>signIn(options)</h3>
+<p>Signs in to the server.
+After signIn succeeded you will have a session with the WebRTC server until reloading the browser or calling <a href="#RtcUser+signOut">signOut</a>.
+Parameters in braces &quot;[ ]&quot; are optional.</p>
+<p><strong>Kind</strong>: instance method of <a href="#RtcUser"><code>RtcUser</code></a>  <br>
+<strong>Emits</strong>: <a href="#RtcUser+event_SignInSuccess"><code>SignInSuccess</code></a>, <a href="#RtcUser+event_SignInError"><code>SignInError</code></a></p>
+<table>
+  <thead>
+    <tr>
+      <th>Param</th><th>Type</th><th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+<tr>
+    <td>options</td><td><code>object</code></td><td><p>The options object.</p>
+</td>
+    </tr><tr>
+    <td>options.server</td><td><code>string</code></td><td><p>The URL to the WebRTC server.</p>
+</td>
+    </tr><tr>
+    <td>[options.userName]</td><td><code>string</code></td><td><p>The name of the RtcUser (no spaces) - Deprecated: will be removed in nanoStream Webcaster v.6.</p>
+</td>
+    </tr><tr>
+    <td>[options.room]</td><td><code>string</code></td><td><p>The room to join (no spaces) - Deprecated: will be removed in nanoStream Webcaster v.6.</p>
+</td>
+    </tr><tr>
+    <td>[options.token]</td><td><code>string</code></td><td><p>The access token for authentication.</p>
+</td>
+    </tr><tr>
+    <td>[options.jwt]</td><td><code>string</code></td><td><p>The JWT access token for authentication.</p>
+</td>
+    </tr><tr>
+    <td>[options.bintuApiKey]</td><td><code>string</code></td><td><p>The bintu API key for authentication.</p>
+</td>
+    </tr>  </tbody>
+</table>
+<p><strong>Example</strong></p>
+<pre><code class="hljs css language-js"><span class="hljs-comment">// rtcUser instance of RtcUser</span>
+<span class="hljs-keyword">var</span> options = {
+    <span class="hljs-attr">server</span> : <span class="hljs-string">'https://bintu-webrtc.nanocosmos.de/p/webrtcws'</span>,
+    <span class="hljs-attr">token</span> : <span class="hljs-string">'token-123'</span>,
+    <span class="hljs-attr">bintuApiKey</span> : <span class="hljs-string">'awdegfq3490puerg2w54zj2p0w4h46zphm694i0796'</span>
+};
+rtcUser.signIn(options);
+</code></pre>
+<p><a name="RtcUser+signOut"></a></p>
+<h3><a class="anchor" aria-hidden="true" id="signout"></a><a href="#signout" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>signOut()</h3>
+<p>Signs out from the server. The current session and a broadcast (if running) will be stopped.</p>
+<p><strong>Kind</strong>: instance method of <a href="#RtcUser"><code>RtcUser</code></a>  <br>
+<strong>Emits</strong>: <a href="#RtcUser+event_SignOutSuccess"><code>SignOutSuccess</code></a>, <a href="#RtcUser+event_SignOutError"><code>SignOutError</code></a>  <br>
+<strong>Example</strong></p>
+<pre><code class="hljs css language-js"><span class="hljs-comment">// rtcUser instance of RtcUser</span>
+rtcUser.signOut();
+</code></pre>
+<p><a name="RtcUser+isSignedIn"></a></p>
+<h3><a class="anchor" aria-hidden="true" id="issignedin-⇒-codebooleancode"></a><a href="#issignedin-⇒-codebooleancode" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>isSignedIn() ⇒ <code>boolean</code></h3>
+<p>Checks if the RtcUser is connected with the WebRTC server and signed in (see <a href="#RtcUser+signIn">signIn</a>).</p>
+<p><strong>Kind</strong>: instance method of <a href="#RtcUser"><code>RtcUser</code></a>  <br>
+<strong>Example</strong></p>
+<pre><code class="hljs css language-js"><span class="hljs-comment">// rtcUser instance of RtcUser</span>
+<span class="hljs-keyword">if</span> (rtcUser.isSignedIn()) {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'signed in'</span>);
+} <span class="hljs-keyword">else</span> {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'not signed in'</span>);
+}
+</code></pre>
+<p><a name="RtcUser+setConfig"></a></p>
+<h3><a class="anchor" aria-hidden="true" id="setconfigconfig"></a><a href="#setconfigconfig" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>setConfig(config)</h3>
+<p>Sets global configuration for the RtcUser instance.
+Please note that setting the audio transcoding bitrate is currently done in <a href="#RtcUser+startBroadcast">startBroadcast</a>.
+Parameters in braces &quot;[ ]&quot; are optional.</p>
+<p><strong>Kind</strong>: instance method of <a href="#RtcUser"><code>RtcUser</code></a>  <br>
+<strong>Emits</strong>: <a href="#RtcUser+event_SetConfigError"><code>SetConfigError</code></a></p>
+<table>
+  <thead>
+    <tr>
+      <th>Param</th><th>Type</th><th>Default</th><th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+<tr>
+    <td>config</td><td><code>object</code></td><td></td><td><p>The config object.</p>
+</td>
+    </tr><tr>
+    <td>[config.logLevel]</td><td><code>0</code> | <code>1</code> | <code>2</code> | <code>3</code> | <code>4</code></td><td></td><td><p>Verbosity of console logging. Allowed values: 0 (minimum verbosity) - 4 (maximum verbosity).</p>
+</td>
+    </tr><tr>
+    <td>[config.metrics]</td><td><code>object</code></td><td></td><td><p>The metrics configuration object.</p>
+</td>
+    </tr><tr>
+    <td>[config.metrics.accountId]</td><td><code>string</code></td><td></td><td><p>An account id provided to you.</p>
+</td>
+    </tr><tr>
+    <td>[config.metrics.accountKey]</td><td><code>string</code></td><td></td><td><p>An account key provided to you.</p>
+</td>
+    </tr><tr>
+    <td>[config.metrics.eventId]</td><td><code>string</code></td><td></td><td><p>An id of an event a stream is related to.</p>
+</td>
+    </tr><tr>
+    <td>[config.metrics.statsInterval]</td><td><code>number</code></td><td><code>10</code></td><td><p>The interval how often the stats should be collected in seconds. Allowed values: 1 - 10 second(s).</p>
+</td>
+    </tr><tr>
+    <td>[config.metrics.customField*]</td><td><code>string</code></td><td></td><td><p>A custom field. * can be replaced with 1 - 10 e.g. &#39;customField3&#39;. Possible from &#39;customField1&#39; to &#39;customField10&#39;.</p>
+</td>
+    </tr><tr>
+    <td>[config.bitrates]</td><td><code>object</code></td><td></td><td><p>The codec configuration object.</p>
+</td>
+    </tr><tr>
+    <td>[config.bitrates.videoSendInitialBitrate]</td><td><code>number</code></td><td><code>0</code></td><td><p>The minimum video upstream bitrate in kbps (lower bound, does not work in Firefox). Allowed values: 0 - 34000 kbps.</p>
+</td>
+    </tr><tr>
+    <td>[config.bitrates.videoSendBitrate]</td><td><code>number</code></td><td><code>0</code></td><td><p>The maximum video upstream bitrate in kbps. Allowed values: 0 - 34000 kbps.</p>
+</td>
+    </tr><tr>
+    <td>[config.bitrates.audioSendBitrate]</td><td><code>number</code></td><td><code>0</code></td><td><p>The maximum audio upstream bitrate in kbps (does not work in Firefox). Allowed values: 0 - 510 kbps.</p>
+</td>
+    </tr>  </tbody>
+</table>
+<p><strong>Example</strong></p>
+<pre><code class="hljs css language-js"><span class="hljs-comment">// rtcUser instance of RtcUser</span>
+<span class="hljs-keyword">var</span> config = {
+    <span class="hljs-attr">logLevel</span>: <span class="hljs-number">2</span>,
+    <span class="hljs-attr">metrics</span>: {
+        <span class="hljs-attr">accountId</span>: <span class="hljs-string">'YOUR_ACCOUNT_ID'</span>,
+        <span class="hljs-attr">accountKey</span>: <span class="hljs-string">'YOUR_ACCOUNT_KEY'</span>
+    },
+    <span class="hljs-attr">codecs</span>: {
+        <span class="hljs-attr">videoCodec</span>: <span class="hljs-string">'H264'</span>
+    },
+    <span class="hljs-attr">bitrates</span>: {
+        <span class="hljs-attr">videoSendInitialBitrate</span>: <span class="hljs-number">500</span>,
+        <span class="hljs-attr">videoSendBitrate</span>: <span class="hljs-number">1000</span>
+    }
+};
+rtcUser.setConfig(config);
+</code></pre>
+<p><a name="RtcUser+setIceServers"></a></p>
+<h3><a class="anchor" aria-hidden="true" id="delseticeserversiceserversdel"></a><a href="#delseticeserversiceserversdel" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><del>setIceServers(iceServers)</del></h3>
+<p><strong><em>Deprecated</em></strong></p>
+<p>Sets an array of turn/stun-servers for the peer-to-peer connection.
+Parameters in braces &quot;[ ]&quot; are optional.</p>
+<p><strong>Kind</strong>: instance method of <a href="#RtcUser"><code>RtcUser</code></a></p>
+<table>
+  <thead>
+    <tr>
+      <th>Param</th><th>Type</th><th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+<tr>
+    <td>iceServers</td><td><code>Array.&lt;object&gt;</code></td><td><p>The ice servers object.</p>
+</td>
+    </tr><tr>
+    <td>iceServers[].urls</td><td><code>Array.&lt;string&gt;</code></td><td><p>An array of URLs.</p>
+</td>
+    </tr><tr>
+    <td>[iceServers[].username]</td><td><code>string</code></td><td><p>The username for the ice servers if required.</p>
+</td>
+    </tr><tr>
+    <td>[iceServers[].credential]</td><td><code>string</code></td><td><p>The password for the ice servers if required.</p>
+</td>
+    </tr>  </tbody>
+</table>
+<p><strong>Example</strong></p>
+<pre><code class="hljs css language-js"><span class="hljs-comment">// rtcUser instance of RtcUser</span>
+<span class="hljs-keyword">var</span> iceServers = [
+    {
+        <span class="hljs-attr">urls</span>: [
+            <span class="hljs-string">'turn:turn.myTurnServer.net:80?transport=udp'</span>
+        ],
+        <span class="hljs-attr">username</span>: <span class="hljs-string">'username'</span>,
+        <span class="hljs-attr">credential</span>: <span class="hljs-string">'password'</span>
+    },
+    {
+        <span class="hljs-attr">urls</span>: [
+            <span class="hljs-string">'turn:turn.myTurnServer.net:80?transport=udp'</span>
+        ],
+        <span class="hljs-attr">username</span>: <span class="hljs-string">'username'</span>,
+        <span class="hljs-attr">credential</span>: <span class="hljs-string">'password'</span>
+    },
+    {
+        <span class="hljs-attr">urls</span>: [
+            <span class="hljs-string">'stun:stun.l.google.com:19302'</span>
+        ]
+    }
+];
+rtcUser.setIceServers(iceServers);
+</code></pre>
+<p><a name="RtcUser+checkServer"></a></p>
+<h3><a class="anchor" aria-hidden="true" id="checkserverserver"></a><a href="#checkserverserver" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>checkServer(server)</h3>
+<p>Checks the state of a WebRTC server.</p>
+<p><strong>Kind</strong>: instance method of <a href="#RtcUser"><code>RtcUser</code></a>  <br>
+<strong>Emits</strong>: <a href="#RtcUser+event_ReceivedServerStats"><code>ReceivedServerStats</code></a></p>
+<table>
+  <thead>
+    <tr>
+      <th>Param</th><th>Type</th><th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+<tr>
+    <td>server</td><td><code>string</code></td><td><p>The URL of the server - Deprecated: will be removed in nanoStream Webcaster v.6; the function will check the WebRTC server specified in the signIn() call.</p>
+</td>
+    </tr>  </tbody>
+</table>
+<p><strong>Example</strong></p>
+<pre><code class="hljs css language-js"><span class="hljs-comment">// rtcUser instance of RtcUser</span>
+<span class="hljs-keyword">var</span> server = <span class="hljs-string">'https://rtc-lb.nanocosmos.de/p/webrtc'</span>
+rtcUser.checkServer(server);
+</code></pre>
+<p><a name="RtcUser+enableStats"></a></p>
+<h3><a class="anchor" aria-hidden="true" id="enablestatsenable-interval"></a><a href="#enablestatsenable-interval" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>enableStats([enable], [interval])</h3>
+<p>Enables to receive WebRTC stats in a given time interval.
+Parameters in braces &quot;[ ]&quot; are optional.</p>
+<p><strong>Kind</strong>: instance method of <a href="#RtcUser"><code>RtcUser</code></a>  <br>
+<strong>Emits</strong>: <a href="#RtcUser+event_ReceivedWebRTCStats"><code>ReceivedWebRTCStats</code></a></p>
+<table>
+  <thead>
+    <tr>
+      <th>Param</th><th>Type</th><th>Default</th><th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+<tr>
+    <td>[enable]</td><td><code>boolean</code></td><td><code>true</code></td><td><p>A flag to enable WebRTC stats.</p>
+</td>
+    </tr><tr>
+    <td>[interval]</td><td><code>number</code></td><td><code>1000</code></td><td><p>The interval time in milliseconds. The minimum value: 1 second.</p>
+</td>
+    </tr>  </tbody>
+</table>
+<p><strong>Example</strong></p>
+<pre><code class="hljs css language-js"><span class="hljs-comment">// rtcUser instance of RtcUser</span>
+rtcUser.enableStats();
+</code></pre>
+<p><strong>Example</strong></p>
+<pre><code class="hljs css language-js"><span class="hljs-comment">// rtcUser instance of RtcUser</span>
+<span class="hljs-keyword">var</span> enable = <span class="hljs-literal">false</span>;
+rtcUser.enableStats(enable);
+</code></pre>
+<p><strong>Example</strong></p>
+<pre><code class="hljs css language-js"><span class="hljs-comment">// rtcUser instance of RtcUser</span>
+<span class="hljs-keyword">var</span> enable = <span class="hljs-literal">true</span>;
+<span class="hljs-keyword">var</span> interval = <span class="hljs-number">5000</span>;
+rtcUser.enableStats(enable, interval);
+</code></pre>
+<p><a name="RtcUser+startBroadcast"></a></p>
+<h3><a class="anchor" aria-hidden="true" id="startbroadcastconfig"></a><a href="#startbroadcastconfig" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>startBroadcast(config)</h3>
+<p>Starts a broadcast to an RTMP ingest URL. Note: by default, only audio will be transcoded on server side, H264 codec will be used for video upstream and passed through directly to RTMP.
+Therefore you will find the configuration for the video upstream bitrate here: <a href="#RtcUser+setConfig">setConfig</a>.
+Parameters in braces &quot;[ ]&quot; are optional.</p>
+<p><strong>Kind</strong>: instance method of <a href="#RtcUser"><code>RtcUser</code></a>  <br>
+<strong>Emits</strong>: <a href="#RtcUser+event_StartBroadcastSuccess"><code>StartBroadcastSuccess</code></a>, <a href="#RtcUser+event_StartBroadcastError"><code>StartBroadcastError</code></a>, <a href="#RtcUser+event_BroadcastStatus"><code>BroadcastStatus</code></a>, <a href="#RtcUser+event_BroadcastError"><code>BroadcastError</code></a></p>
+<table>
+  <thead>
+    <tr>
+      <th>Param</th><th>Type</th><th>Default</th><th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+<tr>
+    <td>config</td><td><code>object</code></td><td></td><td><p>The config object.</p>
+</td>
+    </tr><tr>
+    <td>config.transcodingTargets</td><td><code>object</code></td><td></td><td><p>The transcoding config object.</p>
+</td>
+    </tr><tr>
+    <td>config.transcodingTargets.output</td><td><code>string</code></td><td></td><td><p>The RTMP ingest URL.</p>
+</td>
+    </tr><tr>
+    <td>config.transcodingTargets.streamname</td><td><code>string</code></td><td><code>null</code></td><td><p>The RTMP streamname.</p>
+</td>
+    </tr><tr>
+    <td>[config.transcodingTargets.audiobitrate]</td><td><code>number</code></td><td><code>0</code></td><td><p>The RTMP audio transcoded bitrate in bps, eg 64000.</p>
+</td>
+    </tr><tr>
+    <td>[config.transcodingTargets.rtmpconnectinfo]</td><td><code>string</code></td><td><code>null</code></td><td><p>Data to be send with the RTMP streams &quot;onconnect&quot;. Pass flat object with key value pairs, hierarchies are not supported.</p>
+</td>
+    </tr><tr>
+    <td>[config.encoding]</td><td><code>string</code></td><td></td><td><p>The encoding config object.</p>
+</td>
+    </tr><tr>
+    <td>[config.encoding.h264Profile]</td><td><code>&#x27;cbp&#x27;</code></td><td></td><td><p>The H264 profile. Note: the H264 profile should only be set to &#39;cbp&#39; in desktop Chrome (Windows).</p>
+</td>
+    </tr><tr>
+    <td>[config.jwt]</td><td><code>string</code></td><td></td><td><p>The JWT access token for authorization.</p>
+</td>
+    </tr>  </tbody>
+</table>
+<p><strong>Example</strong></p>
+<pre><code class="hljs css language-js"><span class="hljs-comment">// rtcUser instance of RtcUser</span>
+<span class="hljs-keyword">var</span> config = {
+    <span class="hljs-attr">transcodingTargets</span>: {
+        <span class="hljs-attr">output</span>: <span class="hljs-string">'rtmp://myIngestServer.com:1935/live/webrtcBroadcast'</span>,
+        <span class="hljs-attr">audiobitrate</span>: <span class="hljs-number">64000</span>,
+        <span class="hljs-attr">rtmpconnectinfo</span>: {
+            <span class="hljs-string">'key1'</span>: <span class="hljs-string">'value1'</span>,
+            <span class="hljs-string">'key2'</span>: <span class="hljs-number">7.5</span>,
+            <span class="hljs-string">'key3'</span>: <span class="hljs-literal">false</span>
+        }
+    }
+};
+rtcUser.startBroadcast(config);
+</code></pre>
+<p><a name="RtcUser+stopBroadcast"></a></p>
+<h3><a class="anchor" aria-hidden="true" id="stopbroadcast"></a><a href="#stopbroadcast" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>stopBroadcast()</h3>
+<p>Stops a running broadcast.</p>
+<p><strong>Kind</strong>: instance method of <a href="#RtcUser"><code>RtcUser</code></a>  <br>
+<strong>Emits</strong>: <a href="#RtcUser+event_StopBroadcastSuccess"><code>StopBroadcastSuccess</code></a>, <a href="#RtcUser+event_BroadcastError"><code>BroadcastError</code></a>  <br>
+<strong>Example</strong></p>
+<pre><code class="hljs css language-js"><span class="hljs-comment">// rtcUser instance of RtcUser</span>
+rtcUser.stopBroadcast();
+</code></pre>
+<p><a name="RtcUser+sendMetaData"></a></p>
+<h3><a class="anchor" aria-hidden="true" id="sendmetadatahandlername-jsonvalues"></a><a href="#sendmetadatahandlername-jsonvalues" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>sendMetaData(handlerName, jsonValues)</h3>
+<p>Adds live meta data to a broadcast stream.</p>
+<p><strong>Kind</strong>: instance method of <a href="#RtcUser"><code>RtcUser</code></a>  <br>
+<strong>Emits</strong>: <code>RtcUser#event:Error</code></p>
+<table>
+  <thead>
+    <tr>
+      <th>Param</th><th>Type</th><th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+<tr>
+    <td>handlerName</td><td><code>&#x27;onMetaData&#x27;</code> | <code>&#x27;onCuePoint&#x27;</code></td><td><p>Name of the meta data handler. Other types are not supported.</p>
+</td>
+    </tr><tr>
+    <td>jsonValues</td><td><code>object</code></td><td><p>The data to be sent. The parameter can contain a maximum object depth of 6.</p>
+</td>
+    </tr>  </tbody>
+</table>
+<p><strong>Example</strong></p>
+<pre><code class="hljs css language-js"><span class="hljs-comment">// rtcUser instance of RtcUser</span>
+rtcUser.sendMetaData(<span class="hljs-string">'onMetaData'</span>, {<span class="hljs-attr">myString</span>: <span class="hljs-string">'hello'</span>, <span class="hljs-attr">myInteger</span>: <span class="hljs-number">1234</span>});
+</code></pre>
+<p><a name="RtcUser+addScreenCaptureExtension"></a></p>
+<h3><a class="anchor" aria-hidden="true" id="deladdscreencaptureextensionnamedel"></a><a href="#deladdscreencaptureextensionnamedel" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><del>addScreenCaptureExtension(name)</del></h3>
+<p><strong><em>Deprecated</em></strong></p>
+<p>Adds a Screen Capture Extension to the RtcUser for Chrome. Only needed in Chrome version &lt; 72.</p>
+<p><strong>Kind</strong>: instance method of <a href="#RtcUser"><code>RtcUser</code></a></p>
+<table>
+  <thead>
+    <tr>
+      <th>Param</th><th>Type</th><th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+<tr>
+    <td>name</td><td><code>string</code></td><td><p>The name of the screen capture extension.</p>
+</td>
+    </tr>  </tbody>
+</table>
+<p><strong>Example</strong></p>
+<pre><code class="hljs css language-js"><span class="hljs-comment">// rtcUser instance of RtcUser</span>
+<span class="hljs-keyword">var</span> name = <span class="hljs-string">'nanoScreenCapture'</span>;
+rtcUser.addScreenCaptureExtension(name);
+</code></pre>
+<p><a name="RtcUser+isScreenCaptureAvailable"></a></p>
+<h3><a class="anchor" aria-hidden="true" id="isscreencaptureavailable"></a><a href="#isscreencaptureavailable" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>isScreenCaptureAvailable()</h3>
+<p>Checks if a Screen Capture Extension was added via addScreenCaptureExtension().</p>
+<p><strong>Kind</strong>: instance method of <a href="#RtcUser"><code>RtcUser</code></a>  <br>
+<strong>Example</strong></p>
+<pre><code class="hljs css language-js"><span class="hljs-comment">// rtcUser instance of RtcUser</span>
+<span class="hljs-keyword">var</span> name = <span class="hljs-string">'nanoScreenCapture'</span>;
+rtcUser.addScreenCaptureExtension(name);
+<span class="hljs-comment">// wait until api has registered extension:</span>
+setTimeout(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">var</span> hasScreenCapture = rtcUser.isScreenCaptureAvailable();
+}, <span class="hljs-number">1000</span>);
+</code></pre>
+<p><a name="RtcUser+getDevices"></a></p>
+<h3><a class="anchor" aria-hidden="true" id="getdevices"></a><a href="#getdevices" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>getDevices()</h3>
+<p>Gets all connected input video and audio devices.</p>
+<p><strong>Kind</strong>: instance method of <a href="#RtcUser"><code>RtcUser</code></a>  <br>
+<strong>Emits</strong>: <a href="#RtcUser+event_ReceivedDeviceList"><code>ReceivedDeviceList</code></a>, <a href="#RtcUser+event_GetDevicesError"><code>GetDevicesError</code></a>  <br>
+<strong>Example</strong></p>
+<pre><code class="hljs css language-js"><span class="hljs-comment">// rtcUser instance of RtcUser</span>
+rtcUser.getDevices();
+</code></pre>
+<p><a name="RtcUser+setVideoDevice"></a></p>
+<h3><a class="anchor" aria-hidden="true" id="delsetvideodeviceconfigdel"></a><a href="#delsetvideodeviceconfigdel" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><del>setVideoDevice(config)</del></h3>
+<p><strong><em>Deprecated</em></strong></p>
+<p>Sets the input video device with config.
+Parameters in braces &quot;[ ]&quot; are optional.</p>
+<p><strong>Kind</strong>: instance method of <a href="#RtcUser"><code>RtcUser</code></a></p>
+<table>
+  <thead>
+    <tr>
+      <th>Param</th><th>Type</th><th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+<tr>
+    <td>config</td><td><code>object</code></td><td><p>The config object.</p>
+</td>
+    </tr><tr>
+    <td>config.device</td><td><code>boolean</code> | <code>number</code></td><td><p>The value of the video device, possible values: true (auto device), false (no video), number (index of the video device).</p>
+</td>
+    </tr><tr>
+    <td>[config.width]</td><td><code>number</code></td><td><p>The input width (only if device will be set by index).</p>
+</td>
+    </tr><tr>
+    <td>[config.height]</td><td><code>number</code></td><td><p>The input height (only if device will be set by index).</p>
+</td>
+    </tr><tr>
+    <td>[config.framerate]</td><td><code>number</code></td><td><p>The input framerate (only if device will be set by index).</p>
+</td>
+    </tr>  </tbody>
+</table>
+<p><strong>Example</strong></p>
+<pre><code class="hljs css language-js"><span class="hljs-comment">// rtcUser instance of RtcUser</span>
+<span class="hljs-keyword">var</span> config = {
+    <span class="hljs-attr">device</span>: <span class="hljs-number">0</span>,
+    <span class="hljs-attr">width</span>: <span class="hljs-number">640</span>,
+    <span class="hljs-attr">height</span>: <span class="hljs-number">360</span>,
+    <span class="hljs-attr">framerate</span>: <span class="hljs-number">30</span>
+};
+rtcUser.setVideoDevice(config);
+</code></pre>
+<p><strong>Example</strong></p>
+<pre><code class="hljs css language-js"><span class="hljs-comment">// rtcUser instance of RtcUser</span>
+<span class="hljs-keyword">var</span> config = {
+    <span class="hljs-attr">device</span>: <span class="hljs-number">0</span>
+};
+rtcUser.setVideoDevice(config);
+</code></pre>
+<p><strong>Example</strong></p>
+<pre><code class="hljs css language-js"><span class="hljs-comment">// rtcUser instance of RtcUser</span>
+<span class="hljs-keyword">var</span> config = {
+    <span class="hljs-attr">device</span>: <span class="hljs-literal">true</span> <span class="hljs-comment">// auto device</span>
+};
+rtcUser.setVideoDevice(config);
+</code></pre>
+<p><strong>Example</strong></p>
+<pre><code class="hljs css language-js"><span class="hljs-comment">// rtcUser instance of RtcUser</span>
+<span class="hljs-keyword">var</span> config = {
+    <span class="hljs-attr">device</span>: <span class="hljs-literal">false</span> <span class="hljs-comment">// no video</span>
+};
+rtcUser.setVideoDevice(config);
+</code></pre>
+<p><a name="RtcUser+setAudioDevice"></a></p>
+<h3><a class="anchor" aria-hidden="true" id="delsetaudiodeviceconfigdel"></a><a href="#delsetaudiodeviceconfigdel" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><del>setAudioDevice(config)</del></h3>
+<p><strong><em>Deprecated</em></strong></p>
+<p>Sets the input audio device.</p>
+<p><strong>Kind</strong>: instance method of <a href="#RtcUser"><code>RtcUser</code></a></p>
+<table>
+  <thead>
+    <tr>
+      <th>Param</th><th>Type</th><th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+<tr>
+    <td>config</td><td><code>object</code></td><td><p>The config object.</p>
+</td>
+    </tr><tr>
+    <td>config.device</td><td><code>boolean</code> | <code>number</code></td><td><p>The value of the audio device, possible values: true (auto device), false (no audio), number (index of the audio device).</p>
+</td>
+    </tr>  </tbody>
+</table>
+<p><strong>Example</strong></p>
+<pre><code class="hljs css language-js"><span class="hljs-comment">// rtcUser instance of RtcUser</span>
+<span class="hljs-keyword">var</span> config = {
+    <span class="hljs-attr">device</span>: <span class="hljs-number">0</span>
+};
+rtcUser.setAudioDevice(config);
+</code></pre>
+<p><strong>Example</strong></p>
+<pre><code class="hljs css language-js"><span class="hljs-comment">// rtcUser instance of RtcUser</span>
+<span class="hljs-keyword">var</span> config = {
+    <span class="hljs-attr">device</span>: <span class="hljs-number">0</span>
+};
+rtcUser.setAudioDevice(config);
+</code></pre>
+<p><strong>Example</strong></p>
+<pre><code class="hljs css language-js"><span class="hljs-comment">// rtcUser instance of RtcUser</span>
+<span class="hljs-keyword">var</span> config = {
+    <span class="hljs-attr">device</span>: <span class="hljs-literal">true</span> <span class="hljs-comment">// auto device</span>
+};
+rtcUser.setAudioDevice(config);
+</code></pre>
+<p><strong>Example</strong></p>
+<pre><code class="hljs css language-js"><span class="hljs-comment">// rtcUser instance of RtcUser</span>
+<span class="hljs-keyword">var</span> config = {
+    <span class="hljs-attr">device</span>: <span class="hljs-literal">false</span> <span class="hljs-comment">// no video</span>
+};
+rtcUser.setAudioDevice(config);
+</code></pre>
+<p><a name="RtcUser+getSelectedVideoDevice"></a></p>
+<h3><a class="anchor" aria-hidden="true" id="delgetselectedvideodevicedel"></a><a href="#delgetselectedvideodevicedel" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><del>getSelectedVideoDevice()</del></h3>
+<p><strong><em>Deprecated</em></strong></p>
+<p>Gets the current input video device.</p>
+<p><strong>Kind</strong>: instance method of <a href="#RtcUser"><code>RtcUser</code></a>  <br>
+<strong>Example</strong></p>
+<pre><code class="hljs css language-js"><span class="hljs-comment">// rtcUser instance of RtcUser</span>
+<span class="hljs-keyword">var</span> device = rtcUser.getSelectedVideoDevice();
+</code></pre>
+<p><a name="RtcUser+getSelectedAudioDevice"></a></p>
+<h3><a class="anchor" aria-hidden="true" id="delgetselectedaudiodevicedel"></a><a href="#delgetselectedaudiodevicedel" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><del>getSelectedAudioDevice()</del></h3>
+<p><strong><em>Deprecated</em></strong></p>
+<p>Gets the current input audio device.</p>
+<p><strong>Kind</strong>: instance method of <a href="#RtcUser"><code>RtcUser</code></a>  <br>
+<strong>Example</strong></p>
+<pre><code class="hljs css language-js"><span class="hljs-comment">// rtcUser instance of RtcUser</span>
+<span class="hljs-keyword">var</span> device = rtcUser.getSelectedAudioDevice();
+</code></pre>
+<p><a name="RtcUser+getSelectedDevice"></a></p>
+<h3><a class="anchor" aria-hidden="true" id="getselecteddeviceconfig"></a><a href="#getselecteddeviceconfig" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>getSelectedDevice(config)</h3>
+<p>Gets the current input video/audio device.</p>
+<p><strong>Kind</strong>: instance method of <a href="#RtcUser"><code>RtcUser</code></a>  <br>
+<strong>Emits</strong>: <a href="#RtcUser+event_GetSelectedDeviceError"><code>GetSelectedDeviceError</code></a></p>
+<table>
+  <thead>
+    <tr>
+      <th>Param</th><th>Type</th><th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+<tr>
+    <td>config</td><td><code>object</code></td><td><p>The config object.</p>
+</td>
+    </tr><tr>
+    <td>config.kind</td><td><code>&#x27;videoinput&#x27;</code> | <code>&#x27;audioinput&#x27;</code></td><td><p>The device kind.</p>
+</td>
+    </tr>  </tbody>
+</table>
+<p><strong>Example</strong></p>
+<pre><code class="hljs css language-js"><span class="hljs-comment">// rtcUser instance of RtcUser</span>
+<span class="hljs-keyword">var</span> config = {
+    <span class="hljs-attr">kind</span>: <span class="hljs-string">'videoinput'</span>
+};
+<span class="hljs-keyword">var</span> device = rtcUser.getSelectedDevice(config);
+</code></pre>
+<p><a name="RtcUser+startPreview"></a></p>
+<h3><a class="anchor" aria-hidden="true" id="startpreviewconfig"></a><a href="#startpreviewconfig" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>startPreview(config)</h3>
+<p>Starts the preview.
+Parameters in braces &quot;[ ]&quot; are optional.</p>
+<p><strong>Kind</strong>: instance method of <a href="#RtcUser"><code>RtcUser</code></a>  <br>
+<strong>Emits</strong>: <a href="#RtcUser+event_StartPreviewSuccess"><code>StartPreviewSuccess</code></a>, <a href="#RtcUser+event_ReceivedDeviceList"><code>ReceivedDeviceList</code></a>, <a href="#RtcUser+event_StartPreviewError"><code>StartPreviewError</code></a></p>
+<table>
+  <thead>
+    <tr>
+      <th>Param</th><th>Type</th><th>Default</th><th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+<tr>
+    <td>config</td><td><code>object</code></td><td></td><td><p>The config object.</p>
+</td>
+    </tr><tr>
+    <td>config.videoDeviceConfig</td><td><code>object</code></td><td></td><td><p>The video config object.</p>
+</td>
+    </tr><tr>
+    <td>config.videoDeviceConfig.device</td><td><code>boolean</code> | <code>number</code></td><td></td><td><p>The device id to use. Allowed values: 0...n - specific device, true - auto device, false - no video.</p>
+</td>
+    </tr><tr>
+    <td>[config.videoDeviceConfig.width]</td><td><code>number</code></td><td></td><td><p>The video width. Allowed values: 320 - 3840(4K).</p>
+</td>
+    </tr><tr>
+    <td>[config.videoDeviceConfig.height]</td><td><code>number</code></td><td></td><td><p>The video height. Allowed values: 240 - 2160(4K).</p>
+</td>
+    </tr><tr>
+    <td>[config.videoDeviceConfig.framerate]</td><td><code>number</code></td><td></td><td><p>The video framerate. Allowed values: 0 - 60 fps.</p>
+</td>
+    </tr><tr>
+    <td>videoDeviceConfig.source</td><td><code>&#x27;camera&#x27;</code> | <code>&#x27;screen&#x27;</code></td><td></td><td><p>The video source to be requested.</p>
+</td>
+    </tr><tr>
+    <td>config.audioDeviceConfig</td><td><code>object</code></td><td></td><td><p>The audio config object.</p>
+</td>
+    </tr><tr>
+    <td>config.audioDeviceConfig.device</td><td><code>boolean</code> | <code>number</code></td><td></td><td><p>The device id to use. Allowed values: 0...n - specific device, true - auto device, false - no audio.</p>
+</td>
+    </tr><tr>
+    <td>[config.audioDeviceConfig.autoGainControl]</td><td><code>boolean</code></td><td></td><td><p>Automatic gain control attempts to automatically maintain a steady overall volume level.</p>
+</td>
+    </tr><tr>
+    <td>[config.audioDeviceConfig.echoCancellation]</td><td><code>boolean</code></td><td></td><td><p>Echo cancellation attempts to prevent echo effects.</p>
+</td>
+    </tr><tr>
+    <td>[config.audioDeviceConfig.noiseSuppression]</td><td><code>boolean</code></td><td></td><td><p>Noise suppression automatically filters the audio to remove background noise.</p>
+</td>
+    </tr><tr>
+    <td>config.elementId</td><td><code>string</code></td><td></td><td><p>The id of a video element to pass in the requested stream directly.</p>
+</td>
+    </tr><tr>
+    <td>[config.useWebView]</td><td><code>boolean</code></td><td><code>false</code></td><td><p>A flag to indicate that a WebView is used.</p>
+</td>
+    </tr>  </tbody>
+</table>
+<p><strong>Example</strong> <em>(Audio &amp; video.)</em></p>
+<pre><code class="hljs css language-js"><span class="hljs-comment">// rtcUser instance of RtcUser</span>
+<span class="hljs-keyword">var</span> config = {
+    <span class="hljs-attr">videoDeviceConfig</span> : {
+         <span class="hljs-attr">device</span>: <span class="hljs-number">0</span>, <span class="hljs-comment">// video is enabled using specific device</span>
+         <span class="hljs-attr">width</span>: <span class="hljs-number">640</span>,
+         <span class="hljs-attr">height</span>: <span class="hljs-number">360</span>,
+         <span class="hljs-attr">framerate</span>: <span class="hljs-number">30</span>,
+         <span class="hljs-attr">source</span>: <span class="hljs-string">'camera'</span>
+    },
+    <span class="hljs-attr">audioDeviceConfig</span> : {
+         <span class="hljs-attr">device</span>: <span class="hljs-number">0</span> <span class="hljs-comment">// audio is enabled using specific device</span>
+    },
+    <span class="hljs-attr">elementId</span> : <span class="hljs-string">'video-local'</span>,
+    <span class="hljs-attr">useWebView</span> : <span class="hljs-literal">true</span>
+};
+rtcUser.startPreview(config);
+</code></pre>
+<p><strong>Example</strong> <em>(Audio &amp; screen capture.)</em></p>
+<pre><code class="hljs css language-js"><span class="hljs-comment">// rtcUser instance of RtcUser</span>
+<span class="hljs-keyword">var</span> config = {
+    <span class="hljs-attr">videoDeviceConfig</span> : {
+         <span class="hljs-attr">width</span>: <span class="hljs-number">640</span>,
+         <span class="hljs-attr">height</span>: <span class="hljs-number">360</span>,
+         <span class="hljs-attr">framerate</span>: <span class="hljs-number">30</span>,
+         <span class="hljs-attr">source</span>: <span class="hljs-string">'screen'</span>
+    },
+    <span class="hljs-attr">audioDeviceConfig</span> : {
+         <span class="hljs-attr">device</span>: <span class="hljs-number">0</span> <span class="hljs-comment">// audio is enabled using specific device</span>
+    },
+    <span class="hljs-attr">elementId</span> : <span class="hljs-string">'video-local'</span>,
+    <span class="hljs-attr">useWebView</span> : <span class="hljs-literal">true</span>
+};
+rtcUser.startPreview(config);
+</code></pre>
+<p><strong>Example</strong> <em>(Video only.)</em></p>
+<pre><code class="hljs css language-js"><span class="hljs-comment">// rtcUser instance of RtcUser</span>
+<span class="hljs-keyword">var</span> config = {
+    <span class="hljs-attr">videoDeviceConfig</span> : {
+         <span class="hljs-attr">device</span>: <span class="hljs-number">0</span>, <span class="hljs-comment">// video is enabled using specific device</span>
+         <span class="hljs-attr">width</span>: <span class="hljs-number">640</span>,
+         <span class="hljs-attr">height</span>: <span class="hljs-number">360</span>,
+         <span class="hljs-attr">framerate</span>: <span class="hljs-number">30</span>,
+         <span class="hljs-attr">source</span>: <span class="hljs-string">'camera'</span>
+    },
+    <span class="hljs-attr">audioDeviceConfig</span> : {
+         <span class="hljs-attr">device</span>: <span class="hljs-literal">false</span> <span class="hljs-comment">// no audio; video-only preview</span>
+    },
+    <span class="hljs-attr">elementId</span> : <span class="hljs-string">'video-local'</span>,
+    <span class="hljs-attr">useWebView</span> : <span class="hljs-literal">false</span>
+};
+rtcUser.startPreview(config);
+</code></pre>
+<p><strong>Example</strong> <em>(Audio only.)</em></p>
+<pre><code class="hljs css language-js"><span class="hljs-comment">// rtcUser instance of RtcUser</span>
+<span class="hljs-keyword">var</span> config = {
+    <span class="hljs-attr">videoDeviceConfig</span> : {
+         <span class="hljs-attr">device</span>: <span class="hljs-literal">false</span> <span class="hljs-comment">// no video; audio-only preview</span>
+    },
+    <span class="hljs-attr">audioDeviceConfig</span> : {
+         <span class="hljs-attr">device</span>: <span class="hljs-number">0</span> <span class="hljs-comment">// audio is enabled using specific device</span>
+    },
+    <span class="hljs-attr">elementId</span> : <span class="hljs-string">'video-local'</span>,
+    <span class="hljs-attr">useWebView</span> : <span class="hljs-literal">false</span>
+};
+rtcUser.startPreview(config);
+</code></pre>
+<p><strong>Example</strong> <em>(Audio only with all preprocessing disabled.)</em></p>
+<pre><code class="hljs css language-js"><span class="hljs-comment">// rtcUser instance of RtcUser</span>
+<span class="hljs-keyword">var</span> config = {
+    <span class="hljs-attr">videoDeviceConfig</span> : {
+         <span class="hljs-attr">device</span>: <span class="hljs-literal">false</span> <span class="hljs-comment">// no video; audio-only preview</span>
+    },
+    <span class="hljs-attr">audioDeviceConfig</span> : {
+         <span class="hljs-attr">device</span>: <span class="hljs-number">0</span>, <span class="hljs-comment">// audio is enabled using specific device</span>
+         <span class="hljs-attr">autoGainControl</span>: <span class="hljs-literal">false</span>,
+         <span class="hljs-attr">echoCancellation</span>: <span class="hljs-literal">false</span>,
+         <span class="hljs-attr">noiseSuppression</span>: <span class="hljs-literal">false</span>
+    },
+    <span class="hljs-attr">elementId</span> : <span class="hljs-string">'video-local'</span>,
+    <span class="hljs-attr">useWebView</span> : <span class="hljs-literal">false</span>
+};
+rtcUser.startPreview(config);
+</code></pre>
+<p><a name="RtcUser+stopPreview"></a></p>
+<h3><a class="anchor" aria-hidden="true" id="stoppreview"></a><a href="#stoppreview" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>stopPreview()</h3>
+<p>Stops the preview.</p>
+<p><strong>Kind</strong>: instance method of <a href="#RtcUser"><code>RtcUser</code></a>  <br>
+<strong>Emits</strong>: <a href="#RtcUser+event_StopPreviewSuccess"><code>StopPreviewSuccess</code></a>, <a href="#RtcUser+event_StopPreviewError"><code>StopPreviewError</code></a>  <br>
+<strong>Example</strong></p>
+<pre><code class="hljs css language-js"><span class="hljs-comment">// rtcUser instance of RtcUser</span>
+rtcUser.stopPreview();
+</code></pre>
+<p><a name="RtcUser+muteVideo"></a></p>
+<h3><a class="anchor" aria-hidden="true" id="delmutevideomutedel"></a><a href="#delmutevideomutedel" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><del>muteVideo(mute)</del></h3>
+<p><strong><em>Deprecated</em></strong></p>
+<p>Mutes/unmutes the video.</p>
+<p><strong>Kind</strong>: instance method of <a href="#RtcUser"><code>RtcUser</code></a></p>
+<table>
+  <thead>
+    <tr>
+      <th>Param</th><th>Type</th><th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+<tr>
+    <td>mute</td><td><code>boolean</code></td><td><p>Mute/unmute.</p>
+</td>
+    </tr>  </tbody>
+</table>
+<p><strong>Example</strong></p>
+<pre><code class="hljs css language-js"><span class="hljs-comment">// rtcUser instance of RtcUser</span>
+<span class="hljs-keyword">var</span> mute = <span class="hljs-literal">true</span>;
+rtcUser.muteVideo(mute);
+</code></pre>
+<p><a name="RtcUser+muteAudio"></a></p>
+<h3><a class="anchor" aria-hidden="true" id="delmuteaudiomutedel"></a><a href="#delmuteaudiomutedel" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><del>muteAudio(mute)</del></h3>
+<p><strong><em>Deprecated</em></strong></p>
+<p>Mutes/unmutes the audio.</p>
+<p><strong>Kind</strong>: instance method of <a href="#RtcUser"><code>RtcUser</code></a></p>
+<table>
+  <thead>
+    <tr>
+      <th>Param</th><th>Type</th><th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+<tr>
+    <td>mute</td><td><code>boolean</code></td><td><p>Mute/unmute.</p>
+</td>
+    </tr>  </tbody>
+</table>
+<p><strong>Example</strong></p>
+<pre><code class="hljs css language-js"><span class="hljs-comment">// rtcUser instance of RtcUser</span>
+<span class="hljs-keyword">var</span> mute = <span class="hljs-literal">true</span>;
+rtcUser.muteAudio(mute);
+</code></pre>
+<p><a name="RtcUser+muteDevice"></a></p>
+<h3><a class="anchor" aria-hidden="true" id="mutedeviceconfig"></a><a href="#mutedeviceconfig" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>muteDevice(config)</h3>
+<p>Mutes/unmutes a video/audio device.</p>
+<p><strong>Kind</strong>: instance method of <a href="#RtcUser"><code>RtcUser</code></a>  <br>
+<strong>Emits</strong>: <a href="#RtcUser+event_MuteDeviceError"><code>MuteDeviceError</code></a></p>
+<table>
+  <thead>
+    <tr>
+      <th>Param</th><th>Type</th><th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+<tr>
+    <td>config</td><td><code>object</code></td><td><p>The config object.</p>
+</td>
+    </tr><tr>
+    <td>config.kind</td><td><code>&#x27;videoinput&#x27;</code> | <code>&#x27;audioinput&#x27;</code></td><td><p>The device kind to mute.</p>
+</td>
+    </tr><tr>
+    <td>config.mute</td><td><code>boolean</code></td><td><p>A flag to mute/unmute the device.</p>
+</td>
+    </tr>  </tbody>
+</table>
+<p><strong>Example</strong></p>
+<pre><code class="hljs css language-js"><span class="hljs-comment">// rtcUser instance of RtcUser</span>
+<span class="hljs-keyword">var</span> config = {
+    <span class="hljs-attr">kind</span>: <span class="hljs-string">'videoinput'</span>,
+    <span class="hljs-attr">mute</span>: <span class="hljs-literal">true</span>
+}
+rtcUser.muteDevice(config);
+</code></pre>
+<p><a name="RtcUser+injectExternalMediaStream"></a></p>
+<h3><a class="anchor" aria-hidden="true" id="injectexternalmediastreamconfig"></a><a href="#injectexternalmediastreamconfig" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>injectExternalMediaStream(config)</h3>
+<p>Mixes tracks (currently only audio) of an external MediaStream into the currently previewed local stream.</p>
+<p><strong>Kind</strong>: instance method of <a href="#RtcUser"><code>RtcUser</code></a></p>
+<table>
+  <thead>
+    <tr>
+      <th>Param</th><th>Type</th><th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+<tr>
+    <td>config</td><td><code>object</code></td><td><p>Config object with info on what to mix in.</p>
+</td>
+    </tr><tr>
+    <td>config.stream</td><td><code>MediaStream</code></td><td><p>the MediaStream containing the track(s) to mix in.</p>
+</td>
+    </tr><tr>
+    <td>config.tracks</td><td><code>Array.&lt;string&gt;</code></td><td><p>Array with the types of tracks which should be injected (only &#39;audio&#39; is supported at the moment).</p>
+</td>
+    </tr>  </tbody>
+</table>
+<p><strong>Example</strong></p>
+<pre><code class="hljs css language-js"><span class="hljs-comment">// rtcUser instance of RtcUser</span>
+<span class="hljs-comment">// externalStream instance of MediaStream (https://developer.mozilla.org/de/docs/Web/API/MediaStream)</span>
+<span class="hljs-keyword">var</span> data = {<span class="hljs-attr">stream</span>: externalStream, <span class="hljs-attr">tracks</span>: [<span class="hljs-string">'audio'</span>]};
+rtcUser.injectExternalMediaStream(data);
+</code></pre>
+<hr>
+<h2><a class="anchor" aria-hidden="true" id="events"></a><a href="#events" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Events</h2>
+<p><a name="RtcUser+event_SignInSuccess"></a></p>
+<h3><a class="anchor" aria-hidden="true" id="signinsuccess"></a><a href="#signinsuccess" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>&quot;SignInSuccess&quot;</h3>
+<p>SignInSuccess event. The event is fired if sign in succeeded.</p>
+<p><strong>Kind</strong>: event emitted by <a href="#RtcUser"><code>RtcUser</code></a>  <br>
+<strong>Typeof</strong>: <a href="#SignInSuccessEvent"><code>SignInSuccessEvent</code></a>  <br>
+<a name="RtcUser+event_SignInError"></a></p>
+<h3><a class="anchor" aria-hidden="true" id="signinerror"></a><a href="#signinerror" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>&quot;SignInError&quot;</h3>
+<p>SignInError event. The event is fired if sign in failed.</p>
+<p><strong>Kind</strong>: event emitted by <a href="#RtcUser"><code>RtcUser</code></a>  <br>
+<strong>Typeof</strong>: <a href="#ErrorEvent"><code>ErrorEvent</code></a>  <br>
+<a name="RtcUser+event_SignOutSuccess"></a></p>
+<h3><a class="anchor" aria-hidden="true" id="signoutsuccess"></a><a href="#signoutsuccess" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>&quot;SignOutSuccess&quot;</h3>
+<p>SignOutSuccess event. The event is fired if sign out succeeded. Session is now destroyed.</p>
+<p><strong>Kind</strong>: event emitted by <a href="#RtcUser"><code>RtcUser</code></a>  <br>
+<strong>Typeof</strong>: <a href="#SuccessEvent"><code>SuccessEvent</code></a>  <br>
+<a name="RtcUser+event_SignOutError"></a></p>
+<h3><a class="anchor" aria-hidden="true" id="signouterror"></a><a href="#signouterror" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>&quot;SignOutError&quot;</h3>
+<p>SignOutError event. The event is fired if an error occured. Session is destroyed in any case.</p>
+<p><strong>Kind</strong>: event emitted by <a href="#RtcUser"><code>RtcUser</code></a>  <br>
+<strong>Typeof</strong>: <a href="#ErrorEvent"><code>ErrorEvent</code></a>  <br>
+<a name="RtcUser+event_SetConfigError"></a></p>
+<h3><a class="anchor" aria-hidden="true" id="setconfigerror"></a><a href="#setconfigerror" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>&quot;SetConfigError&quot;</h3>
+<p>SetConfigError event. The event is fired if config failed to be set.</p>
+<p><strong>Kind</strong>: event emitted by <a href="#RtcUser"><code>RtcUser</code></a>  <br>
+<strong>Typeof</strong>: <a href="#ErrorEvent"><code>ErrorEvent</code></a>  <br>
+<a name="RtcUser+event_ReceivedServerStats"></a></p>
+<h3><a class="anchor" aria-hidden="true" id="receivedserverstats"></a><a href="#receivedserverstats" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>&quot;ReceivedServerStats&quot;</h3>
+<p>ReceivedServerStats event. The event is fired if server stats is received.</p>
+<p><strong>Kind</strong>: event emitted by <a href="#RtcUser"><code>RtcUser</code></a>  <br>
+<strong>Typeof</strong>: <a href="#ServerStatsEvent"><code>ServerStatsEvent</code></a>  <br>
+<a name="RtcUser+event_ReceivedWebRTCStats"></a></p>
+<h3><a class="anchor" aria-hidden="true" id="receivedwebrtcstats"></a><a href="#receivedwebrtcstats" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>&quot;ReceivedWebRTCStats&quot;</h3>
+<p>ReceivedWebRTCStats event. The event is fired multiple times between the &quot;start&quot; and &quot;stop&quot; broadcast events. The payload contains WebRTC stats information.</p>
+<p><strong>Kind</strong>: event emitted by <a href="#RtcUser"><code>RtcUser</code></a>  <br>
+<strong>Typeof</strong>: <a href="#WebRTCStatsEvent"><code>WebRTCStatsEvent</code></a>  <br>
+<a name="RtcUser+event_StartBroadcastSuccess"></a></p>
+<h3><a class="anchor" aria-hidden="true" id="startbroadcastsuccess"></a><a href="#startbroadcastsuccess" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>&quot;StartBroadcastSuccess&quot;</h3>
+<p>StartBroadcastSuccess event. The event is fired if a broadcast started successfully.</p>
+<p><strong>Kind</strong>: event emitted by <a href="#RtcUser"><code>RtcUser</code></a>  <br>
+<strong>Typeof</strong>: <a href="#SuccessEvent"><code>SuccessEvent</code></a>  <br>
+<a name="RtcUser+event_StartBroadcastError"></a></p>
+<h3><a class="anchor" aria-hidden="true" id="startbroadcasterror"></a><a href="#startbroadcasterror" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>&quot;StartBroadcastError&quot;</h3>
+<p>StartBroadcastError event. The event is fired if a broadcast failed to start.</p>
+<p><strong>Kind</strong>: event emitted by <a href="#RtcUser"><code>RtcUser</code></a>  <br>
+<strong>Typeof</strong>: <a href="#ErrorEvent"><code>ErrorEvent</code></a>  <br>
+<a name="RtcUser+event_BroadcastStatus"></a></p>
+<h3><a class="anchor" aria-hidden="true" id="broadcaststatus"></a><a href="#broadcaststatus" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>&quot;BroadcastStatus&quot;</h3>
+<p>BroadcastStatus event. The event is fired multiple times between the &quot;start&quot; and &quot;stop&quot; broadcast events. The payload contains information about the connection state.</p>
+<p><strong>Kind</strong>: event emitted by <a href="#RtcUser"><code>RtcUser</code></a>  <br>
+<strong>Typeof</strong>: <a href="#StatusEvent"><code>StatusEvent</code></a>  <br>
+<a name="RtcUser+event_BroadcastError"></a></p>
+<h3><a class="anchor" aria-hidden="true" id="broadcasterror"></a><a href="#broadcasterror" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>&quot;BroadcastError&quot;</h3>
+<p>BroadcastError event. The event is fired if a broadcasting error occurred between the &quot;start&quot; and &quot;stop&quot; broadcast events.</p>
+<p><strong>Kind</strong>: event emitted by <a href="#RtcUser"><code>RtcUser</code></a>  <br>
+<strong>Typeof</strong>: <a href="#ErrorEvent"><code>ErrorEvent</code></a>  <br>
+<a name="RtcUser+event_StopBroadcastSuccess"></a></p>
+<h3><a class="anchor" aria-hidden="true" id="stopbroadcastsuccess"></a><a href="#stopbroadcastsuccess" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>&quot;StopBroadcastSuccess&quot;</h3>
+<p>StopBroadcastSuccess event. The event is fired if a broadcast stopped successfully. It does not contain an event payload.</p>
+<p><strong>Kind</strong>: event emitted by <a href="#RtcUser"><code>RtcUser</code></a>  <br>
+<strong>Typeof</strong>: <a href="#SuccessEvent"><code>SuccessEvent</code></a>  <br>
+<a name="RtcUser+event_StopBroadcastError"></a></p>
+<h3><a class="anchor" aria-hidden="true" id="stopbroadcasterror"></a><a href="#stopbroadcasterror" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>&quot;StopBroadcastError&quot;</h3>
+<p>StopBroadcastError event. The event is fired if a broadcast failed to execute the &quot;stop&quot; call as it is expected. Note: the broadcast is guaranteed to stop before the event is fired.</p>
+<p><strong>Kind</strong>: event emitted by <a href="#RtcUser"><code>RtcUser</code></a>  <br>
+<strong>Typeof</strong>: <a href="#ErrorEvent"><code>ErrorEvent</code></a>  <br>
+<a name="RtcUser+event_ReceivedDeviceList"></a></p>
+<h3><a class="anchor" aria-hidden="true" id="receiveddevicelist"></a><a href="#receiveddevicelist" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>&quot;ReceivedDeviceList&quot;</h3>
+<p>ReceivedDeviceList event. The event is fired if a list of connected input video and audio devices is received.</p>
+<p><strong>Kind</strong>: event emitted by <a href="#RtcUser"><code>RtcUser</code></a>  <br>
+<strong>Typeof</strong>: <a href="#DevicesReceivedEvent"><code>DevicesReceivedEvent</code></a>  <br>
+<a name="RtcUser+event_GetDevicesError"></a></p>
+<h2><a class="anchor" aria-hidden="true" id="getdeviceserror"></a><a href="#getdeviceserror" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>&quot;GetDevicesError&quot;</h2>
+<p>GetDevicesError event. The event is fired if an error occured while getting connected input video and audio devices.</p>
+<p><strong>Kind</strong>: event emitted by <a href="#RtcUser"><code>RtcUser</code></a>  <br>
+<strong>Typeof</strong>: <a href="#ErrorEvent"><code>ErrorEvent</code></a>  <br>
+<a name="RtcUser+event_GetSelectedDeviceError"></a></p>
+<h3><a class="anchor" aria-hidden="true" id="getselecteddeviceerror"></a><a href="#getselecteddeviceerror" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>&quot;GetSelectedDeviceError&quot;</h3>
+<p>GetSelectedDeviceError event. The event is fired if a selected video/audio device getting failed.</p>
+<p><strong>Kind</strong>: event emitted by <a href="#RtcUser"><code>RtcUser</code></a>  <br>
+<strong>Typeof</strong>: <a href="#ErrorEvent"><code>ErrorEvent</code></a>  <br>
+<a name="RtcUser+event_StartPreviewSuccess"></a></p>
+<h3><a class="anchor" aria-hidden="true" id="startpreviewsuccess"></a><a href="#startpreviewsuccess" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>&quot;StartPreviewSuccess&quot;</h3>
+<p>StartPreviewSuccess event. The event is fired if a preview started successfully.</p>
+<p><strong>Kind</strong>: event emitted by <a href="#RtcUser"><code>RtcUser</code></a>  <br>
+<strong>Typeof</strong>: <a href="#StartPreviewSuccessEvent"><code>StartPreviewSuccessEvent</code></a>  <br>
+<a name="RtcUser+event_StartPreviewError"></a></p>
+<h3><a class="anchor" aria-hidden="true" id="startpreviewerror"></a><a href="#startpreviewerror" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>&quot;StartPreviewError&quot;</h3>
+<p>StartPreviewError event. The event is fired if a preview failed to start.</p>
+<p><strong>Kind</strong>: event emitted by <a href="#RtcUser"><code>RtcUser</code></a>  <br>
+<strong>Typeof</strong>: <a href="#ErrorEvent"><code>ErrorEvent</code></a>  <br>
+<a name="RtcUser+event_StopPreviewSuccess"></a></p>
+<h3><a class="anchor" aria-hidden="true" id="stoppreviewsuccess"></a><a href="#stoppreviewsuccess" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>&quot;StopPreviewSuccess&quot;</h3>
+<p>StopPreviewSuccess event. The event is fired if a preview stopped successfully.</p>
+<p><strong>Kind</strong>: event emitted by <a href="#RtcUser"><code>RtcUser</code></a>  <br>
+<strong>Typeof</strong>: <a href="#SuccessEvent"><code>SuccessEvent</code></a>  <br>
+<a name="RtcUser+event_StopPreviewError"></a></p>
+<h3><a class="anchor" aria-hidden="true" id="stoppreviewerror"></a><a href="#stoppreviewerror" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>&quot;StopPreviewError&quot;</h3>
+<p>StopPreviewError event. The event is fired if a preview failed to stop. Note: the preview is guaranteed to stop before the event is fired.</p>
+<p><strong>Kind</strong>: event emitted by <a href="#RtcUser"><code>RtcUser</code></a>  <br>
+<strong>Typeof</strong>: <a href="#ErrorEvent"><code>ErrorEvent</code></a>  <br>
+<a name="RtcUser+event_MuteDeviceError"></a></p>
+<h3><a class="anchor" aria-hidden="true" id="mutedeviceerror"></a><a href="#mutedeviceerror" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>&quot;MuteDeviceError&quot;</h3>
+<p>MuteDeviceError event. The event is fired if a video/audio device mute/unmute failed.</p>
+<p><strong>Kind</strong>: event emitted by <a href="#RtcUser"><code>RtcUser</code></a>  <br>
+<strong>Typeof</strong>: <a href="#ErrorEvent"><code>ErrorEvent</code></a></p>
+<hr>
+<h2><a class="anchor" aria-hidden="true" id="type-definitions"></a><a href="#type-definitions" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Type Definitions</h2>
+<p><a name="ErrorEvent"></a></p>
+<h3><a class="anchor" aria-hidden="true" id="errorevent--codeobjectcode"></a><a href="#errorevent--codeobjectcode" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ErrorEvent : <code>object</code></h3>
+<p><strong>Kind</strong>: global typedef<br>
+<strong>Properties</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th><th>Type</th><th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+<tr>
+    <td>data</td><td><code>object</code></td><td><p>The data object - Deprecated: will be removed in nanoStream Webcaster v.6; please use the &quot;error&quot; object instead.</p>
+</td>
+    </tr><tr>
+    <td>error</td><td><code>object</code></td><td><p>The error object.</p>
+</td>
+    </tr><tr>
+    <td>error.code</td><td><code><a href="#ErrorCode">ErrorCode</a></code></td><td><p>The code of the error.</p>
+</td>
+    </tr><tr>
+    <td>error.message</td><td><code>string</code></td><td><p>Human readable message of the error.</p>
+</td>
+    </tr><tr>
+    <td>error.name</td><td><code>string</code></td><td><p>The name of the error.</p>
+</td>
+    </tr><tr>
+    <td>error.text</td><td><code>string</code></td><td><p>The text of the error - Deprecated: will be removed in nanoStream Webcaster v.6; please use the &quot;error.message&quot; property instead.</p>
+</td>
+    </tr><tr>
+    <td>error.type</td><td><code>string</code></td><td><p>The type of the error.</p>
+</td>
+    </tr><tr>
+    <td>error.userinfo</td><td><code>object</code></td><td><p>The user info associated with the error.</p>
+</td>
+    </tr><tr>
+    <td>name</td><td><code>string</code></td><td><p>The name of the event.</p>
+</td>
+    </tr>  </tbody>
+</table>
+<p><a name="SuccessEvent"></a></p>
+<h3><a class="anchor" aria-hidden="true" id="successevent--codeobjectcode"></a><a href="#successevent--codeobjectcode" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>SuccessEvent : <code>object</code></h3>
+<p><strong>Kind</strong>: global typedef<br>
+<strong>Properties</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th><th>Type</th><th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+<tr>
+    <td>[data]</td><td><code>object</code></td><td><p>The data object. Note: the property is optional, therefore, its presence is not guaranteed.</p>
+</td>
+    </tr><tr>
+    <td>[data.output]</td><td><code>string</code></td><td><p>The RTMP ingest URL. Note: the property is optional, therefore, its presence is not guaranteed.</p>
+</td>
+    </tr><tr>
+    <td>[data.streamname]</td><td><code>string</code></td><td><p>The RTMP ingest streamname. Note: the property is optional, therefore, its presence is not guaranteed.</p>
+</td>
+    </tr><tr>
+    <td>[data.stream]</td><td><code>object</code></td><td><p>The stream object. Note: the property is optional, therefore, its presence is not guaranteed.</p>
+</td>
+    </tr>  </tbody>
+</table>
+<p><a name="StatusEvent"></a></p>
+<h3><a class="anchor" aria-hidden="true" id="statusevent--codeobjectcode"></a><a href="#statusevent--codeobjectcode" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>StatusEvent : <code>object</code></h3>
+<p><strong>Kind</strong>: global typedef<br>
+<strong>Properties</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th><th>Type</th><th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+<tr>
+    <td>data</td><td><code>object</code></td><td><p>The data object.</p>
+</td>
+    </tr><tr>
+    <td>data.message</td><td><code>&#x27;signalling&#x27;</code> | <code>&#x27;connected&#x27;</code> | <code>&#x27;reconnecting&#x27;</code> | <code>&#x27;broadcasting&#x27;</code></td><td><p>The connection state message.</p>
+</td>
+    </tr><tr>
+    <td>[data.number]</td><td><code>object</code></td><td><p>Reserverd for internal developer&#39;s use. Note: the property is optional, therefore, its presence is not guaranteed - Deprecated: will be removed in nanoStream Webcaster v.6.</p>
+</td>
+    </tr><tr>
+    <td>[data.rtmp]</td><td><code>object</code></td><td><p>Reserved for internal developer&#39;s use. Note: the property is optional, therefore, its presence is not guaranteed - Deprecated: will be removed in nanoStream Webcaster v.6.</p>
+</td>
+    </tr><tr>
+    <td>data.state</td><td><code>4</code> | <code>5</code> | <code>6</code> | <code>7</code></td><td><p>The connection state. Possible values: 4 = &#39;signalling&#39;, 5 = &#39;connected&#39;, 6 = &#39;broadcasting&#39;, 7 = &#39;reconnecting&#39;.</p>
+</td>
+    </tr><tr>
+    <td>data.streamname</td><td><code>object</code></td><td><p>The RTMP ingest streamname.</p>
+</td>
+    </tr><tr>
+    <td>data.text</td><td><code>&#x27;signalling&#x27;</code> | <code>&#x27;connected&#x27;</code> | <code>&#x27;reconnecting&#x27;</code></td><td><p>The connection state text.</p>
+</td>
+    </tr><tr>
+    <td>[name]</td><td><code>object</code></td><td><p>The name of the event. Note: the property is optional, therefore, its presence is not guaranteed.</p>
+</td>
+    </tr><tr>
+    <td>[target]</td><td><code>object</code></td><td><p>Reserved for internal developer&#39;s use. Note: the property is optional, therefore, its presence is not guaranteed - Deprecated: will be removed in nanoStream Webcaster v.6.</p>
+</td>
+    </tr>  </tbody>
+</table>
+<p><a name="DevicesReceivedEvent"></a></p>
+<h3><a class="anchor" aria-hidden="true" id="devicesreceivedevent--codeobjectcode"></a><a href="#devicesreceivedevent--codeobjectcode" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>DevicesReceivedEvent : <code>object</code></h3>
+<p><strong>Kind</strong>: global typedef<br>
+<strong>Properties</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th><th>Type</th><th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+<tr>
+    <td>data</td><td><code>object</code></td><td><p>The data object.</p>
+</td>
+    </tr><tr>
+    <td>data.devices</td><td><code>object</code></td><td><p>The audio and video devices object.</p>
+</td>
+    </tr><tr>
+    <td>[data.devices.audiodevices]</td><td><code>Array.&lt;object&gt;</code></td><td><p>An array of connected input audio devices. Note: the property is optional, therefore, its presence is not guaranteed.</p>
+</td>
+    </tr><tr>
+    <td>data.devices.audiodevices.id</td><td><code>string</code></td><td><p>The id of an audio device.</p>
+</td>
+    </tr><tr>
+    <td>data.devices.audiodevices.index</td><td><code>number</code></td><td><p>The index of an audio device. Note: indices start from 0.</p>
+</td>
+    </tr><tr>
+    <td>[data.devices.videodevices]</td><td><code>Array.&lt;object&gt;</code></td><td><p>An array of connected input video devices. Note: the property is optional, therefore, its presence is not guaranteed.</p>
+</td>
+    </tr><tr>
+    <td>data.devices.videodevices.id</td><td><code>string</code></td><td><p>The id of a video device.</p>
+</td>
+    </tr><tr>
+    <td>data.devices.videodevices.index</td><td><code>number</code></td><td><p>The index of a video device. Note: indices start from 0.</p>
+</td>
+    </tr><tr>
+    <td>data.updated</td><td><code>boolean</code></td><td><p>Reserved for internal developer&#39;s use - Deprecated: will be removed in nanoStream Webcaster v.6.</p>
+</td>
+    </tr>  </tbody>
+</table>
+<p><a name="StartPreviewSuccessEvent"></a></p>
+<h3><a class="anchor" aria-hidden="true" id="startpreviewsuccessevent--codeobjectcode"></a><a href="#startpreviewsuccessevent--codeobjectcode" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>StartPreviewSuccessEvent : <code>object</code></h3>
+<p><strong>Kind</strong>: global typedef<br>
+<strong>Properties</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th><th>Type</th><th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+<tr>
+    <td>data</td><td><code>object</code></td><td><p>The data object.</p>
+</td>
+    </tr><tr>
+    <td>data.constraints</td><td><code>object</code></td><td><p>The constraints object.</p>
+</td>
+    </tr><tr>
+    <td>[data.constraints.audio]</td><td><code>object</code></td><td><p>The audio constraints object. Note: the property is optional, therefore, its presence is not guaranteed.</p>
+</td>
+    </tr><tr>
+    <td>data.constraints.audio.deviceId</td><td><code>object</code></td><td><p>The id of an audio device.</p>
+</td>
+    </tr><tr>
+    <td>[data.constraints.video]</td><td><code>object</code></td><td><p>The video constraints object. Note: the property is optional, therefore, its presence is not guaranteed.</p>
+</td>
+    </tr><tr>
+    <td>data.constraints.video.deviceId</td><td><code>object</code></td><td><p>The id of a video device.</p>
+</td>
+    </tr><tr>
+    <td>[data.constraints.video.framerate]</td><td><code>object</code></td><td><p>The video framerate. Note: the property is optional, therefore, its presence is not guaranteed.</p>
+</td>
+    </tr><tr>
+    <td>[data.constraints.video.height]</td><td><code>object</code></td><td><p>The video height. Note: the property is optional, therefore, its presence is not guaranteed.</p>
+</td>
+    </tr><tr>
+    <td>data.constraints.video.source</td><td><code>string</code></td><td><p>The video source.</p>
+</td>
+    </tr><tr>
+    <td>[data.constraints.video.width]</td><td><code>object</code></td><td><p>The video width. Note: the property is optional, therefore, its presence is not guaranteed.</p>
+</td>
+    </tr><tr>
+    <td>data.metadata</td><td><code>object</code></td><td><p>The metadata object.</p>
+</td>
+    </tr><tr>
+    <td>data.metadata.framerate</td><td><code>number</code></td><td><p>The video framerate set in metdata.</p>
+</td>
+    </tr><tr>
+    <td>data.metadata.hasAudio</td><td><code>number</code></td><td><p>A flag to indicate that audio is present.</p>
+</td>
+    </tr><tr>
+    <td>data.metadata.hasVideo</td><td><code>number</code></td><td><p>A flag to indicate that video is present.</p>
+</td>
+    </tr><tr>
+    <td>data.metadata.height</td><td><code>number</code></td><td><p>The video height set in metadata.</p>
+</td>
+    </tr><tr>
+    <td>data.metadata.width</td><td><code>number</code></td><td><p>The video width set in metadata.</p>
+</td>
+    </tr><tr>
+    <td>data.stream</td><td><code>object</code></td><td><p>The stream object.</p>
+</td>
+    </tr><tr>
+    <td>data.stream.active</td><td><code>boolean</code></td><td><p>A flag to indicate that a stream is active.</p>
+</td>
+    </tr><tr>
+    <td>data.stream.id</td><td><code>string</code></td><td><p>The stream id.</p>
+</td>
+    </tr>  </tbody>
+</table>
+<p><a name="SignInSuccessEvent"></a></p>
+<h3><a class="anchor" aria-hidden="true" id="signinsuccessevent--codeobjectcode"></a><a href="#signinsuccessevent--codeobjectcode" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>SignInSuccessEvent : <code>object</code></h3>
+<p><strong>Kind</strong>: global typedef<br>
+<strong>Properties</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th><th>Type</th><th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+<tr>
+    <td>data</td><td><code>object</code></td><td><p>The data object.</p>
+</td>
+    </tr><tr>
+    <td>data.server</td><td><code>string</code></td><td><p>The URL of the WebRTC server</p>
+</td>
+    </tr><tr>
+    <td>data.userId</td><td><code>string</code></td><td><p>The user id of the WebRTC server.</p>
+</td>
+    </tr>  </tbody>
+</table>
+<p><a name="ServerStatsEvent"></a></p>
+<h3><a class="anchor" aria-hidden="true" id="serverstatsevent--codeobjectcode"></a><a href="#serverstatsevent--codeobjectcode" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ServerStatsEvent : <code>object</code></h3>
+<p><strong>Kind</strong>: global typedef<br>
+<strong>Properties</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th><th>Type</th><th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+<tr>
+    <td>data</td><td><code>object</code></td><td><p>The data object.</p>
+</td>
+    </tr><tr>
+    <td>data.stats</td><td><code>object</code></td><td><p>The stats object.</p>
+</td>
+    </tr><tr>
+    <td>data.stats.active_connections</td><td><code>number</code></td><td><p>The total number of active connections to the WebRTC server.</p>
+</td>
+    </tr><tr>
+    <td>data.stats.active_passthroughs</td><td><code>number</code></td><td><p>The number of active connections with passthrough enabled to the WebRTC server.</p>
+</td>
+    </tr><tr>
+    <td>data.stats.active_transcoders</td><td><code>number</code></td><td><p>The number of active connections with transcoding enabled to the WebRTC server.</p>
+</td>
+    </tr><tr>
+    <td>data.stats.cpu_load</td><td><code>number</code></td><td><p>The WebRTC server CPU load.</p>
+</td>
+    </tr><tr>
+    <td>data.stats.disk_space</td><td><code>number</code></td><td><p>The WebRTC server disk space.</p>
+</td>
+    </tr><tr>
+    <td>data.stats.domainname</td><td><code>string</code></td><td><p>The WebRTC server domain name.</p>
+</td>
+    </tr><tr>
+    <td>data.stats.hostname</td><td><code>string</code></td><td><p>The WebRTC server host name.</p>
+</td>
+    </tr><tr>
+    <td>data.stats.license</td><td><code>object</code></td><td><p>The WebRTC server license.</p>
+</td>
+    </tr><tr>
+    <td>data.stats.license.end</td><td><code>string</code></td><td><p>The license expiration date.</p>
+</td>
+    </tr><tr>
+    <td>data.stats.license.expired</td><td><code>boolean</code></td><td><p>A flag to indicate that the license has expired.</p>
+</td>
+    </tr><tr>
+    <td>data.stats.license.expiring</td><td><code>boolean</code></td><td><p>A flag to indicate if the license has an end date or not.</p>
+</td>
+    </tr><tr>
+    <td>data.stats.license.start</td><td><code>string</code></td><td><p>The license issue date.</p>
+</td>
+    </tr><tr>
+    <td>data.stats.license.valid</td><td><code>boolean</code></td><td><p>A flag to indicate that the license is valid.</p>
+</td>
+    </tr><tr>
+    <td>data.stats.max_cpu_load</td><td><code>number</code></td><td><p>The WebRTC server maximum CPU load.</p>
+</td>
+    </tr><tr>
+    <td>data.stats.max_transcoders</td><td><code>number</code></td><td><p>The WebRTC server maximum number of transcoders.</p>
+</td>
+    </tr><tr>
+    <td>data.stats.server_version</td><td><code>string</code></td><td><p>The version of the WebRTC server.</p>
+</td>
+    </tr><tr>
+    <td>data.stats.transcoder_version</td><td><code>string</code></td><td><p>The version of the transcoder.</p>
+</td>
+    </tr><tr>
+    <td>name</td><td><code>string</code></td><td><p>The name of the event.</p>
+</td>
+    </tr><tr>
+    <td>target</td><td><code>string</code></td><td><p>Reserved for internal developer&#39;s use - Deprecated: will be removed in nanoStream Webcaster v.6.</p>
+</td>
+    </tr>  </tbody>
+</table>
+<p><a name="WebRTCStatsEvent"></a></p>
+<h3><a class="anchor" aria-hidden="true" id="webrtcstatsevent--codeobjectcode"></a><a href="#webrtcstatsevent--codeobjectcode" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>WebRTCStatsEvent : <code>object</code></h3>
+<p><strong>Kind</strong>: global typedef<br>
+<strong>Properties</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th><th>Type</th><th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+<tr>
+    <td>data</td><td><code>object</code></td><td><p>The data object.</p>
+</td>
+    </tr><tr>
+    <td>data.message</td><td><code>string</code></td><td><p>The connection state message (expected value: &#39;broadcasting&#39;).</p>
+</td>
+    </tr><tr>
+    <td>data.stats.results</td><td><code>object</code></td><td><p>The results object.</p>
+</td>
+    </tr><tr>
+    <td>[data.stats.results.audioBitrate]</td><td><code>string</code></td><td><p>The audio bitrate in kbps. Note: the property is optional, therefore, its presence is not guaranteed.</p>
+</td>
+    </tr><tr>
+    <td>[data.stats.results.audioCodec]</td><td><code>string</code></td><td><p>The audio codec. Note: the property is optional, therefore, its presence is not guaranteed.</p>
+</td>
+    </tr><tr>
+    <td>[data.stats.results.frameHeight]</td><td><code>number</code></td><td><p>The video frame height. Note: the property is optional, therefore, its presence is not guaranteed.</p>
+</td>
+    </tr><tr>
+    <td>[data.stats.results.frameWidth]</td><td><code>number</code></td><td><p>The video frame width. Note: the property is optional, therefore, its presence is not guaranteed.</p>
+</td>
+    </tr><tr>
+    <td>[data.stats.results.framerate]</td><td><code>number</code></td><td><p>The video frame rate in fps. Note: the property is optional, therefore, its presence is not guaranteed.</p>
+</td>
+    </tr><tr>
+    <td>[data.stats.results.videoBitrate]</td><td><code>number</code></td><td><p>The video bitrate in kbps. Note: the property is optional, therefore, its presence is not guaranteed.</p>
+</td>
+    </tr><tr>
+    <td>[data.stats.results.videoCodec]</td><td><code>string</code></td><td><p>The video codec. Note: the property is optional, therefore, its presence is not guaranteed.</p>
+</td>
+    </tr><tr>
+    <td>data.stats.state</td><td><code>number</code></td><td><p>The connection state. The expected value: 6 = &#39;broadcasting&#39;.</p>
+</td>
+    </tr><tr>
+    <td>data.stats.streamname</td><td><code>string</code></td><td><p>The RTMP ingest streamname.</p>
+</td>
+    </tr><tr>
+    <td>data.stats.text</td><td><code>string</code></td><td><p>The connection state text. The expected value: &#39;broadcasting&#39;.</p>
+</td>
+    </tr><tr>
+    <td>name</td><td><code>string</code></td><td><p>The name of the event.</p>
+</td>
+    </tr><tr>
+    <td>target</td><td><code>string</code></td><td><p>Reserved for internal developer&#39;s use - Deprecated: will be removed in nanoStream Webcaster v.6.</p>
+</td>
+    </tr>  </tbody>
+</table>
+<p><a name="ErrorCode"></a></p>
+<h3><a class="anchor" aria-hidden="true" id="errorcode--codenumbercode"></a><a href="#errorcode--codenumbercode" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ErrorCode : <code>number</code></h3>
+<p>The possible client error codes in an ErrorEvent event.</p>
+<p><strong>Kind</strong>: global typedef<br>
+<strong>See</strong>: <a href="#ErrorEvent">ErrorEvent</a>  <br>
+<strong>Properties</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th><th>Type</th><th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+<tr>
+    <td>1000-1999</td><td><code>GeneralError</code></td><td></td>
+    </tr><tr>
+    <td>1000</td><td></td><td><p>A general error returned by any nanoStream Webcaster component (see the error message for more informaiton).</p>
+</td>
+    </tr><tr>
+    <td>1001</td><td></td><td><p>A type is not valid.</p>
+</td>
+    </tr><tr>
+    <td>1002</td><td></td><td><p>A value is not valid.</p>
+</td>
+    </tr><tr>
+    <td>1003</td><td></td><td><p>An enum value is not valid.</p>
+</td>
+    </tr><tr>
+    <td>1004</td><td></td><td><p>An object does not exist.</p>
+</td>
+    </tr><tr>
+    <td>1005</td><td></td><td><p>A functions is not defined.</p>
+</td>
+    </tr><tr>
+    <td>2000-2999</td><td><code>RequestError</code></td><td></td>
+    </tr><tr>
+    <td>2000</td><td></td><td><p>A general request error - Deprecated: will be removed in nanoStream Webcaster v.6.</p>
+</td>
+    </tr><tr>
+    <td>3000-3999</td><td><code>WebSocketError</code></td><td></td>
+    </tr><tr>
+    <td>3000</td><td></td><td><p>A general WebSocket error (see the error message for more information).</p>
+</td>
+    </tr><tr>
+    <td>3001</td><td></td><td><p>A WebSocket state is wrong (see an error message for more information).</p>
+</td>
+    </tr><tr>
+    <td>3002</td><td></td><td><p>An error occurred when creating a WebSocket.</p>
+</td>
+    </tr><tr>
+    <td>4000-4999</td><td><code>SessionError</code></td><td></td>
+    </tr><tr>
+    <td>4000</td><td></td><td><p>Sign in failed.</p>
+</td>
+    </tr><tr>
+    <td>4001</td><td></td><td><p>A session is not signed in.</p>
+</td>
+    </tr><tr>
+    <td>5000-5999</td><td><code>BroadcastError</code></td><td></td>
+    </tr><tr>
+    <td>5000</td><td></td><td><p>A broadcast failed to start.</p>
+</td>
+    </tr><tr>
+    <td>5001</td><td></td><td><p>A general broadcast error (see the error message for more information).</p>
+</td>
+    </tr><tr>
+    <td>5002</td><td></td><td><p>A broadcast failed to stop.</p>
+</td>
+    </tr><tr>
+    <td>6000-6999</td><td><code>WebRTCError</code></td><td></td>
+    </tr><tr>
+    <td>6000</td><td></td><td><p>A media stream was received, but no video/audio data is coming from a device. The device could be in use from another application.</p>
+</td>
+    </tr><tr>
+    <td>6001</td><td></td><td><p>A media stream was received, but it contains no tracks.</p>
+</td>
+    </tr><tr>
+    <td>6002</td><td></td><td><p>A media stream was not found.</p>
+</td>
+    </tr><tr>
+    <td>6003</td><td></td><td><p>A media stream was not removed.</p>
+</td>
+    </tr><tr>
+    <td>6004</td><td></td><td><p>No devices are available for &quot;getUserMedia&quot;.</p>
+</td>
+    </tr><tr>
+    <td>6005</td><td></td><td><p>A general &quot;getUserMedia&quot; error (may include: &#39;PermissionDenied&#39;, &#39;NotAllowedError&#39;, &#39;NotReadableError&#39;, &#39;NotFoundError&#39;,
+&#39;OverconstrainedError&#39;, &#39;AbortError&#39;, &#39;GetMediaError&#39;, &#39;NoDeviceError&#39;, &#39;NoStreamError&#39;).</p>
+</td>
+    </tr><tr>
+    <td>6006</td><td></td><td><p>Devices failed to get enumerated.</p>
+</td>
+    </tr><tr>
+    <td>6008</td><td></td><td><p>A general &quot;getDisplayMedia&quot; error (may include: &#39;PermissionDenied&#39;, &#39;NotAllowedError&#39;).</p>
+</td>
+    </tr><tr>
+    <td>7000-7999</td><td><code>WebRTCError</code></td><td></td>
+    </tr><tr>
+    <td>7000</td><td></td><td><p>An error occurred on the server.</p>
+</td>
+    </tr>  </tbody>
+</table>
+<hr>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 12/13/2020</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/webrtc/nanostream_webrtc_speech_music"><span class="arrow-prev">← </span><span>Speech / Music Streaming</span></a><a class="docs-next button" href="/docs/webrtc/nanostream_webrtc_faq"><span>FAQ</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#constructors">Constructors</a><ul class="toc-headings"><li><a href="#new-rtcuser">new RtcUser()</a></li></ul></li><li><a href="#functions">Functions</a><ul class="toc-headings"><li><a href="#checksupport-⇒-codeintcode">checkSupport() ⇒ <code>int</code></a></li><li><a href="#signinoptions">signIn(options)</a></li><li><a href="#signout">signOut()</a></li><li><a href="#issignedin-⇒-codebooleancode">isSignedIn() ⇒ <code>boolean</code></a></li><li><a href="#setconfigconfig">setConfig(config)</a></li><li><a href="#delseticeserversiceserversdel"><del>setIceServers(iceServers)</del></a></li><li><a href="#checkserverserver">checkServer(server)</a></li><li><a href="#enablestatsenable-interval">enableStats([enable], [interval])</a></li><li><a href="#startbroadcastconfig">startBroadcast(config)</a></li><li><a href="#stopbroadcast">stopBroadcast()</a></li><li><a href="#sendmetadatahandlername-jsonvalues">sendMetaData(handlerName, jsonValues)</a></li><li><a href="#deladdscreencaptureextensionnamedel"><del>addScreenCaptureExtension(name)</del></a></li><li><a href="#isscreencaptureavailable">isScreenCaptureAvailable()</a></li><li><a href="#getdevices">getDevices()</a></li><li><a href="#delsetvideodeviceconfigdel"><del>setVideoDevice(config)</del></a></li><li><a href="#delsetaudiodeviceconfigdel"><del>setAudioDevice(config)</del></a></li><li><a href="#delgetselectedvideodevicedel"><del>getSelectedVideoDevice()</del></a></li><li><a href="#delgetselectedaudiodevicedel"><del>getSelectedAudioDevice()</del></a></li><li><a href="#getselecteddeviceconfig">getSelectedDevice(config)</a></li><li><a href="#startpreviewconfig">startPreview(config)</a></li><li><a href="#stoppreview">stopPreview()</a></li><li><a href="#delmutevideomutedel"><del>muteVideo(mute)</del></a></li><li><a href="#delmuteaudiomutedel"><del>muteAudio(mute)</del></a></li><li><a href="#mutedeviceconfig">muteDevice(config)</a></li><li><a href="#injectexternalmediastreamconfig">injectExternalMediaStream(config)</a></li></ul></li><li><a href="#events">Events</a><ul class="toc-headings"><li><a href="#signinsuccess">&quot;SignInSuccess&quot;</a></li><li><a href="#signinerror">&quot;SignInError&quot;</a></li><li><a href="#signoutsuccess">&quot;SignOutSuccess&quot;</a></li><li><a href="#signouterror">&quot;SignOutError&quot;</a></li><li><a href="#setconfigerror">&quot;SetConfigError&quot;</a></li><li><a href="#receivedserverstats">&quot;ReceivedServerStats&quot;</a></li><li><a href="#receivedwebrtcstats">&quot;ReceivedWebRTCStats&quot;</a></li><li><a href="#startbroadcastsuccess">&quot;StartBroadcastSuccess&quot;</a></li><li><a href="#startbroadcasterror">&quot;StartBroadcastError&quot;</a></li><li><a href="#broadcaststatus">&quot;BroadcastStatus&quot;</a></li><li><a href="#broadcasterror">&quot;BroadcastError&quot;</a></li><li><a href="#stopbroadcastsuccess">&quot;StopBroadcastSuccess&quot;</a></li><li><a href="#stopbroadcasterror">&quot;StopBroadcastError&quot;</a></li><li><a href="#receiveddevicelist">&quot;ReceivedDeviceList&quot;</a></li></ul></li><li><a href="#getdeviceserror">&quot;GetDevicesError&quot;</a><ul class="toc-headings"><li><a href="#getselecteddeviceerror">&quot;GetSelectedDeviceError&quot;</a></li><li><a href="#startpreviewsuccess">&quot;StartPreviewSuccess&quot;</a></li><li><a href="#startpreviewerror">&quot;StartPreviewError&quot;</a></li><li><a href="#stoppreviewsuccess">&quot;StopPreviewSuccess&quot;</a></li><li><a href="#stoppreviewerror">&quot;StopPreviewError&quot;</a></li><li><a href="#mutedeviceerror">&quot;MuteDeviceError&quot;</a></li></ul></li><li><a href="#type-definitions">Type Definitions</a><ul class="toc-headings"><li><a href="#errorevent--codeobjectcode">ErrorEvent : <code>object</code></a></li><li><a href="#successevent--codeobjectcode">SuccessEvent : <code>object</code></a></li><li><a href="#statusevent--codeobjectcode">StatusEvent : <code>object</code></a></li><li><a href="#devicesreceivedevent--codeobjectcode">DevicesReceivedEvent : <code>object</code></a></li><li><a href="#startpreviewsuccessevent--codeobjectcode">StartPreviewSuccessEvent : <code>object</code></a></li><li><a href="#signinsuccessevent--codeobjectcode">SignInSuccessEvent : <code>object</code></a></li><li><a href="#serverstatsevent--codeobjectcode">ServerStatsEvent : <code>object</code></a></li><li><a href="#webrtcstatsevent--codeobjectcode">WebRTCStatsEvent : <code>object</code></a></li><li><a href="#errorcode--codenumbercode">ErrorCode : <code>number</code></a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><div><h5>Contact</h5><a href="https://www.nanocosmos.de/">Homepage</a><a href="https://www.nanocosmos.de/contact">Contact</a><a href="https://www.nanocosmos.de/support">Support</a><a href="https://www.nanocosmos.de/terms">Legal Terms</a></div><div><h5>Products</h5><a href="https://www.nanocosmos.de/cloud">Nanostream Cloud with Bintu.Live</a><a href="https://www.nanocosmos.de/h5live">H5Live Low Latency HTML5-Player</a><a href="https://www.nanocosmos.de/webrtc">nanoStream Webcaster</a><a href="https://www.nanocosmos.de/#nanostream">Nanostream Apps and SDK</a></div><div><h5>More</h5><a href="https://www.nanocosmos.de/blog/">Blog</a><a href="https://twitter.com/nanovideo">Twitter</a><a href="https://www.facebook.com/nanocosmos.net/">Facebook</a><a href="https://www.linkedin.com/company/nanocosmos-gmbh">LinkedIn</a><a href="https://github.com/nanocosmos/docs">GitHub</a><a class="github-button" href="https://github.com/nanocosmos/docs" data-icon="octicon-star" data-count-href="/nanocosmos/docs/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://nanocosmos.de/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/footer_logo.png" alt="nanocosmos GmbH" width="170" height="45"/></a><section class="copyright">Copyright © 2020 nanocosmos GmbH</section></footer></div></body></html>
