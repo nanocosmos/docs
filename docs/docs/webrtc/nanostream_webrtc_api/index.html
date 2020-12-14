@@ -66,7 +66,7 @@
 <h3><a class="anchor" aria-hidden="true" id="rtcuser"></a><a href="#rtcuser" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>RtcUser</h3>
 <p>nanoStream Webcaster Public API Class</p>
 <p><strong>Kind</strong>: global class<br>
-<strong>Version</strong>: 5.9.2</p>
+<strong>Version</strong>: 5.9.6</p>
 <hr>
 <h2><a class="anchor" aria-hidden="true" id="constructors"></a><a href="#constructors" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Constructors</h2>
 <p><a name="new_RtcUser_new"></a></p>
@@ -1022,6 +1022,39 @@ rtcUser.injectExternalMediaStream(data);
     <td>error.userinfo</td><td><code>object</code></td><td><p>The user info associated with the error.</p>
 </td>
     </tr><tr>
+    <td>[error.userinfo.metadata]</td><td><code>object</code></td><td><p>Metadata with additional state information.</p>
+</td>
+    </tr><tr>
+    <td>[error.userinfo.metadata.sessionId]</td><td><code>object</code></td><td><p>Session id (defined only if signed in).</p>
+</td>
+    </tr><tr>
+    <td>[error.userinfo.metadata.isSignedIn]</td><td><code>object</code></td><td><p>Wether a session to the server was established successfully.</p>
+</td>
+    </tr><tr>
+    <td>[error.userinfo.metadata.server]</td><td><code>object</code></td><td><p>Server url (defined only if a connection to the server was made).</p>
+</td>
+    </tr><tr>
+    <td>[error.userinfo.metadata.streamname]</td><td><code>object</code></td><td><p>RTMP stream name (defined only if a broadcast was started).</p>
+</td>
+    </tr><tr>
+    <td>[error.userinfo.metadata.hasAudio]</td><td><code>object</code></td><td><p>Wether the current stream has an audio track.</p>
+</td>
+    </tr><tr>
+    <td>[error.userinfo.metadata.hasVideo]</td><td><code>object</code></td><td><p>Wether the current stream has an video track.</p>
+</td>
+    </tr><tr>
+    <td>[error.userinfo.metadata.isMobile]</td><td><code>object</code></td><td><p>Wether the current device is a mobile device.</p>
+</td>
+    </tr><tr>
+    <td>[error.userinfo.metadata.browser]</td><td><code>object</code></td><td><p>Currently used browser.</p>
+</td>
+    </tr><tr>
+    <td>[error.userinfo.metadata.browserVersion]</td><td><code>object</code></td><td><p>Currently used browser version.</p>
+</td>
+    </tr><tr>
+    <td>[error.userinfo.metadata.os]</td><td><code>object</code></td><td><p>Current operating system.</p>
+</td>
+    </tr><tr>
     <td>name</td><td><code>string</code></td><td><p>The name of the event.</p>
 </td>
     </tr>  </tbody>
@@ -1417,13 +1450,13 @@ rtcUser.injectExternalMediaStream(data);
     </tr><tr>
     <td>5000-5999</td><td><code>BroadcastError</code></td><td></td>
     </tr><tr>
-    <td>5000</td><td></td><td><p>A broadcast failed to start.</p>
+    <td>5001</td><td></td><td><p>A broadcast failed to start.</p>
 </td>
     </tr><tr>
-    <td>5001</td><td></td><td><p>A general broadcast error (see the error message for more information).</p>
+    <td>5002</td><td></td><td><p>A Broadcast failed after it was started (see the error message for more information).</p>
 </td>
     </tr><tr>
-    <td>5002</td><td></td><td><p>A broadcast failed to stop.</p>
+    <td>5003</td><td></td><td><p>Stopping broadcast caused an error. Either no broadcast is runnung or an active broadcast is currently shutting down.</p>
 </td>
     </tr><tr>
     <td>6000-6999</td><td><code>WebRTCError</code></td><td></td>
@@ -1453,11 +1486,73 @@ rtcUser.injectExternalMediaStream(data);
     <td>6008</td><td></td><td><p>A general &quot;getDisplayMedia&quot; error (may include: &#39;PermissionDenied&#39;, &#39;NotAllowedError&#39;).</p>
 </td>
     </tr><tr>
-    <td>7000-7999</td><td><code>WebRTCError</code></td><td></td>
+    <td>101000-109999</td><td><code>ServerError</code></td><td><p>Server-side errors start with 10xxxx.</p>
+</td>
     </tr><tr>
-    <td>7000</td><td></td><td><p>An error occurred on the server.</p>
+    <td>101000-101999</td><td><code>GeneralError</code></td><td><p>Server-side general errors.</p>
+</td>
+    </tr><tr>
+    <td>101001</td><td></td><td><p>An internal server error.</p>
+</td>
+    </tr><tr>
+    <td>101002</td><td></td><td><p>A parameter is required.</p>
+</td>
+    </tr><tr>
+    <td>101003</td><td></td><td><p>A data type is wrong.</p>
+</td>
+    </tr><tr>
+    <td>102000-102999</td><td><code>AccessError</code></td><td><p>Server-side access errors.</p>
+</td>
+    </tr><tr>
+    <td>102001</td><td></td><td><p>Access is denied.</p>
+</td>
+    </tr><tr>
+    <td>103000-103999</td><td><code>AuthenticationError</code></td><td><p>Server-side authentication errors.</p>
+</td>
+    </tr><tr>
+    <td>103000</td><td></td><td><p>The server could not initialize authentication.</p>
+</td>
+    </tr><tr>
+    <td>103001</td><td></td><td><p>Wrong authentification data. A valid token, or username and password is/are required.</p>
+</td>
+    </tr><tr>
+    <td>103002</td><td></td><td><p>Access to a feature is forbidden (features: &#39;webrtc&#39;).</p>
+</td>
+    </tr><tr>
+    <td>104000-104999</td><td><code>BintuError</code></td><td><p>Server-side bintu related errors.</p>
+</td>
+    </tr><tr>
+    <td>104001</td><td></td><td><p>A stream option is not allowed (options: &#39;webrtc&#39;, &#39;transcoding&#39;).</p>
+</td>
+    </tr><tr>
+    <td>104002</td><td></td><td><p>A bintu API key is invalid.</p>
+</td>
+    </tr><tr>
+    <td>105000-105999</td><td><code>TranscoderError</code></td><td><p>Server-side configuration errors.</p>
+</td>
+    </tr><tr>
+    <td>106000-106999</td><td><code>SystemMonitorError</code></td><td><p>Server-side monitoring errors.</p>
+</td>
+    </tr><tr>
+    <td>106001</td><td></td><td><p>An error occured while retrieving system info.</p>
+</td>
+    </tr><tr>
+    <td>107000-107999</td><td><code>SessionError</code></td><td></td>
+    </tr><tr>
+    <td>107001</td><td></td><td><p>A configuration is malformed.</p>
+</td>
+    </tr><tr>
+    <td>107002</td><td></td><td><p>A session is invalid.</p>
+</td>
+    </tr><tr>
+    <td>108000-108999</td><td><code>ChatError</code></td><td><p>Deprecated.</p>
+</td>
+    </tr><tr>
+    <td>109000-109999</td><td><code>RTMPError</code></td><td></td>
+    </tr><tr>
+    <td>109000</td><td></td><td><p>The RTMP connection has failed.</p>
 </td>
     </tr>  </tbody>
 </table>
 <hr>
-</span></div></article></div><div class="docLastUpdate"><em>Last updated on 12/13/2020</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/docs/webrtc/nanostream_webrtc_speech_music"><span class="arrow-prev">← </span><span>Speech / Music Streaming</span></a><a class="docs-next button" href="/docs/docs/webrtc/nanostream_webrtc_faq"><span>FAQ</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#constructors">Constructors</a><ul class="toc-headings"><li><a href="#new-rtcuser">new RtcUser()</a></li></ul></li><li><a href="#functions">Functions</a><ul class="toc-headings"><li><a href="#checksupport-⇒-codeintcode">checkSupport() ⇒ <code>int</code></a></li><li><a href="#signinoptions">signIn(options)</a></li><li><a href="#signout">signOut()</a></li><li><a href="#issignedin-⇒-codebooleancode">isSignedIn() ⇒ <code>boolean</code></a></li><li><a href="#setconfigconfig">setConfig(config)</a></li><li><a href="#delseticeserversiceserversdel"><del>setIceServers(iceServers)</del></a></li><li><a href="#checkserverserver">checkServer(server)</a></li><li><a href="#enablestatsenable-interval">enableStats([enable], [interval])</a></li><li><a href="#startbroadcastconfig">startBroadcast(config)</a></li><li><a href="#stopbroadcast">stopBroadcast()</a></li><li><a href="#sendmetadatahandlername-jsonvalues">sendMetaData(handlerName, jsonValues)</a></li><li><a href="#deladdscreencaptureextensionnamedel"><del>addScreenCaptureExtension(name)</del></a></li><li><a href="#isscreencaptureavailable">isScreenCaptureAvailable()</a></li><li><a href="#getdevices">getDevices()</a></li><li><a href="#delsetvideodeviceconfigdel"><del>setVideoDevice(config)</del></a></li><li><a href="#delsetaudiodeviceconfigdel"><del>setAudioDevice(config)</del></a></li><li><a href="#delgetselectedvideodevicedel"><del>getSelectedVideoDevice()</del></a></li><li><a href="#delgetselectedaudiodevicedel"><del>getSelectedAudioDevice()</del></a></li><li><a href="#getselecteddeviceconfig">getSelectedDevice(config)</a></li><li><a href="#startpreviewconfig">startPreview(config)</a></li><li><a href="#stoppreview">stopPreview()</a></li><li><a href="#delmutevideomutedel"><del>muteVideo(mute)</del></a></li><li><a href="#delmuteaudiomutedel"><del>muteAudio(mute)</del></a></li><li><a href="#mutedeviceconfig">muteDevice(config)</a></li><li><a href="#injectexternalmediastreamconfig">injectExternalMediaStream(config)</a></li></ul></li><li><a href="#events">Events</a><ul class="toc-headings"><li><a href="#signinsuccess">&quot;SignInSuccess&quot;</a></li><li><a href="#signinerror">&quot;SignInError&quot;</a></li><li><a href="#signoutsuccess">&quot;SignOutSuccess&quot;</a></li><li><a href="#signouterror">&quot;SignOutError&quot;</a></li><li><a href="#setconfigerror">&quot;SetConfigError&quot;</a></li><li><a href="#receivedserverstats">&quot;ReceivedServerStats&quot;</a></li><li><a href="#receivedwebrtcstats">&quot;ReceivedWebRTCStats&quot;</a></li><li><a href="#startbroadcastsuccess">&quot;StartBroadcastSuccess&quot;</a></li><li><a href="#startbroadcasterror">&quot;StartBroadcastError&quot;</a></li><li><a href="#broadcaststatus">&quot;BroadcastStatus&quot;</a></li><li><a href="#broadcasterror">&quot;BroadcastError&quot;</a></li><li><a href="#stopbroadcastsuccess">&quot;StopBroadcastSuccess&quot;</a></li><li><a href="#stopbroadcasterror">&quot;StopBroadcastError&quot;</a></li><li><a href="#receiveddevicelist">&quot;ReceivedDeviceList&quot;</a></li></ul></li><li><a href="#getdeviceserror">&quot;GetDevicesError&quot;</a><ul class="toc-headings"><li><a href="#getselecteddeviceerror">&quot;GetSelectedDeviceError&quot;</a></li><li><a href="#startpreviewsuccess">&quot;StartPreviewSuccess&quot;</a></li><li><a href="#startpreviewerror">&quot;StartPreviewError&quot;</a></li><li><a href="#stoppreviewsuccess">&quot;StopPreviewSuccess&quot;</a></li><li><a href="#stoppreviewerror">&quot;StopPreviewError&quot;</a></li><li><a href="#mutedeviceerror">&quot;MuteDeviceError&quot;</a></li></ul></li><li><a href="#type-definitions">Type Definitions</a><ul class="toc-headings"><li><a href="#errorevent--codeobjectcode">ErrorEvent : <code>object</code></a></li><li><a href="#successevent--codeobjectcode">SuccessEvent : <code>object</code></a></li><li><a href="#statusevent--codeobjectcode">StatusEvent : <code>object</code></a></li><li><a href="#devicesreceivedevent--codeobjectcode">DevicesReceivedEvent : <code>object</code></a></li><li><a href="#startpreviewsuccessevent--codeobjectcode">StartPreviewSuccessEvent : <code>object</code></a></li><li><a href="#signinsuccessevent--codeobjectcode">SignInSuccessEvent : <code>object</code></a></li><li><a href="#serverstatsevent--codeobjectcode">ServerStatsEvent : <code>object</code></a></li><li><a href="#webrtcstatsevent--codeobjectcode">WebRTCStatsEvent : <code>object</code></a></li><li><a href="#errorcode--codenumbercode">ErrorCode : <code>number</code></a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><div><h5>Contact</h5><a href="https://www.nanocosmos.de/">Homepage</a><a href="https://www.nanocosmos.de/contact">Contact</a><a href="https://www.nanocosmos.de/support">Support</a><a href="https://www.nanocosmos.de/terms">Legal Terms</a></div><div><h5>Products</h5><a href="https://www.nanocosmos.de/cloud">Nanostream Cloud with Bintu.Live</a><a href="https://www.nanocosmos.de/h5live">H5Live Low Latency HTML5-Player</a><a href="https://www.nanocosmos.de/webrtc">nanoStream Webcaster</a><a href="https://www.nanocosmos.de/#nanostream">Nanostream Apps and SDK</a></div><div><h5>More</h5><a href="https://www.nanocosmos.de/blog/">Blog</a><a href="https://twitter.com/nanovideo">Twitter</a><a href="https://www.facebook.com/nanocosmos.net/">Facebook</a><a href="https://www.linkedin.com/company/nanocosmos-gmbh">LinkedIn</a><a href="https://github.com/nanocosmos/docs">GitHub</a><a class="github-button" href="https://github.com/nanocosmos/docs" data-icon="octicon-star" data-count-href="/nanocosmos/docs/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://nanocosmos.de/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/docs/img/footer_logo.png" alt="nanocosmos GmbH" width="170" height="45"/></a><section class="copyright">Copyright © 2020 nanocosmos GmbH</section></footer></div></body></html>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 12/14/2020</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/docs/webrtc/nanostream_webrtc_speech_music"><span class="arrow-prev">← </span><span>Speech / Music Streaming</span></a><a class="docs-next button" href="/docs/docs/webrtc/nanostream_webrtc_faq"><span>FAQ</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#constructors">Constructors</a><ul class="toc-headings"><li><a href="#new-rtcuser">new RtcUser()</a></li></ul></li><li><a href="#functions">Functions</a><ul class="toc-headings"><li><a href="#checksupport-⇒-codeintcode">checkSupport() ⇒ <code>int</code></a></li><li><a href="#signinoptions">signIn(options)</a></li><li><a href="#signout">signOut()</a></li><li><a href="#issignedin-⇒-codebooleancode">isSignedIn() ⇒ <code>boolean</code></a></li><li><a href="#setconfigconfig">setConfig(config)</a></li><li><a href="#delseticeserversiceserversdel"><del>setIceServers(iceServers)</del></a></li><li><a href="#checkserverserver">checkServer(server)</a></li><li><a href="#enablestatsenable-interval">enableStats([enable], [interval])</a></li><li><a href="#startbroadcastconfig">startBroadcast(config)</a></li><li><a href="#stopbroadcast">stopBroadcast()</a></li><li><a href="#sendmetadatahandlername-jsonvalues">sendMetaData(handlerName, jsonValues)</a></li><li><a href="#deladdscreencaptureextensionnamedel"><del>addScreenCaptureExtension(name)</del></a></li><li><a href="#isscreencaptureavailable">isScreenCaptureAvailable()</a></li><li><a href="#getdevices">getDevices()</a></li><li><a href="#delsetvideodeviceconfigdel"><del>setVideoDevice(config)</del></a></li><li><a href="#delsetaudiodeviceconfigdel"><del>setAudioDevice(config)</del></a></li><li><a href="#delgetselectedvideodevicedel"><del>getSelectedVideoDevice()</del></a></li><li><a href="#delgetselectedaudiodevicedel"><del>getSelectedAudioDevice()</del></a></li><li><a href="#getselecteddeviceconfig">getSelectedDevice(config)</a></li><li><a href="#startpreviewconfig">startPreview(config)</a></li><li><a href="#stoppreview">stopPreview()</a></li><li><a href="#delmutevideomutedel"><del>muteVideo(mute)</del></a></li><li><a href="#delmuteaudiomutedel"><del>muteAudio(mute)</del></a></li><li><a href="#mutedeviceconfig">muteDevice(config)</a></li><li><a href="#injectexternalmediastreamconfig">injectExternalMediaStream(config)</a></li></ul></li><li><a href="#events">Events</a><ul class="toc-headings"><li><a href="#signinsuccess">&quot;SignInSuccess&quot;</a></li><li><a href="#signinerror">&quot;SignInError&quot;</a></li><li><a href="#signoutsuccess">&quot;SignOutSuccess&quot;</a></li><li><a href="#signouterror">&quot;SignOutError&quot;</a></li><li><a href="#setconfigerror">&quot;SetConfigError&quot;</a></li><li><a href="#receivedserverstats">&quot;ReceivedServerStats&quot;</a></li><li><a href="#receivedwebrtcstats">&quot;ReceivedWebRTCStats&quot;</a></li><li><a href="#startbroadcastsuccess">&quot;StartBroadcastSuccess&quot;</a></li><li><a href="#startbroadcasterror">&quot;StartBroadcastError&quot;</a></li><li><a href="#broadcaststatus">&quot;BroadcastStatus&quot;</a></li><li><a href="#broadcasterror">&quot;BroadcastError&quot;</a></li><li><a href="#stopbroadcastsuccess">&quot;StopBroadcastSuccess&quot;</a></li><li><a href="#stopbroadcasterror">&quot;StopBroadcastError&quot;</a></li><li><a href="#receiveddevicelist">&quot;ReceivedDeviceList&quot;</a></li></ul></li><li><a href="#getdeviceserror">&quot;GetDevicesError&quot;</a><ul class="toc-headings"><li><a href="#getselecteddeviceerror">&quot;GetSelectedDeviceError&quot;</a></li><li><a href="#startpreviewsuccess">&quot;StartPreviewSuccess&quot;</a></li><li><a href="#startpreviewerror">&quot;StartPreviewError&quot;</a></li><li><a href="#stoppreviewsuccess">&quot;StopPreviewSuccess&quot;</a></li><li><a href="#stoppreviewerror">&quot;StopPreviewError&quot;</a></li><li><a href="#mutedeviceerror">&quot;MuteDeviceError&quot;</a></li></ul></li><li><a href="#type-definitions">Type Definitions</a><ul class="toc-headings"><li><a href="#errorevent--codeobjectcode">ErrorEvent : <code>object</code></a></li><li><a href="#successevent--codeobjectcode">SuccessEvent : <code>object</code></a></li><li><a href="#statusevent--codeobjectcode">StatusEvent : <code>object</code></a></li><li><a href="#devicesreceivedevent--codeobjectcode">DevicesReceivedEvent : <code>object</code></a></li><li><a href="#startpreviewsuccessevent--codeobjectcode">StartPreviewSuccessEvent : <code>object</code></a></li><li><a href="#signinsuccessevent--codeobjectcode">SignInSuccessEvent : <code>object</code></a></li><li><a href="#serverstatsevent--codeobjectcode">ServerStatsEvent : <code>object</code></a></li><li><a href="#webrtcstatsevent--codeobjectcode">WebRTCStatsEvent : <code>object</code></a></li><li><a href="#errorcode--codenumbercode">ErrorCode : <code>number</code></a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><div><h5>Contact</h5><a href="https://www.nanocosmos.de/">Homepage</a><a href="https://www.nanocosmos.de/contact">Contact</a><a href="https://www.nanocosmos.de/support">Support</a><a href="https://www.nanocosmos.de/terms">Legal Terms</a></div><div><h5>Products</h5><a href="https://www.nanocosmos.de/cloud">Nanostream Cloud with Bintu.Live</a><a href="https://www.nanocosmos.de/h5live">H5Live Low Latency HTML5-Player</a><a href="https://www.nanocosmos.de/webrtc">nanoStream Webcaster</a><a href="https://www.nanocosmos.de/#nanostream">Nanostream Apps and SDK</a></div><div><h5>More</h5><a href="https://www.nanocosmos.de/blog/">Blog</a><a href="https://twitter.com/nanovideo">Twitter</a><a href="https://www.facebook.com/nanocosmos.net/">Facebook</a><a href="https://www.linkedin.com/company/nanocosmos-gmbh">LinkedIn</a><a href="https://github.com/nanocosmos/docs">GitHub</a><a class="github-button" href="https://github.com/nanocosmos/docs" data-icon="octicon-star" data-count-href="/nanocosmos/docs/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://nanocosmos.de/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/docs/img/footer_logo.png" alt="nanocosmos GmbH" width="170" height="45"/></a><section class="copyright">Copyright © 2020 nanocosmos GmbH</section></footer></div></body></html>
