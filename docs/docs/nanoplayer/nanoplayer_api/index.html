@@ -64,9 +64,9 @@
             });
         </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/nanocosmos/docs/tree/master/docs/nanoplayer/nanoplayer_api.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 id="__docusaurus" class="postHeaderTitle">NanoPlayer</h1></header><article><div><span><p><a name="NanoPlayer"></a></p>
 <h2><a class="anchor" aria-hidden="true" id="nanoplayer"></a><a href="#nanoplayer" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>NanoPlayer</h2>
-<p>NanoPlayer (H5Live) Public API Class 4.8.1</p>
+<p>NanoPlayer (H5Live) Public API Class 4.9.1</p>
 <p><strong>Kind</strong>: global class<br>
-<strong>Version</strong>: 4.8.1<br>
+<strong>Version</strong>: 4.9.1<br>
 <a name="new_NanoPlayer_new"></a></p>
 <h3><a class="anchor" aria-hidden="true" id="new-nanoplayerplayerdivid"></a><a href="#new-nanoplayerplayerdivid" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>new NanoPlayer(playerDivId)</h3>
 <p>The constructor. The source can be loaded via script tag, AMD (requirejs) or CommonJS</p>
@@ -231,42 +231,53 @@
     </tr>  </tbody>
 </table>
 <p><strong>Example</strong></p>
-<pre><code class="hljs css language-js"><span class="hljs-comment">// player instance of NanoPlayer</span>player.setup(config).then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">config</span>) </span>{    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'setup ok with config: '</span> + <span class="hljs-built_in">JSON</span>.stringify(config));}, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">error</span>) </span>{    <span class="hljs-built_in">console</span>.log(error);});
+<pre><code class="hljs css language-js"><span class="hljs-comment">// player instance of NanoPlayer</span>
+player.setup(config).then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">config</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'setup ok with config: '</span> + <span class="hljs-built_in">JSON</span>.stringify(config));
+}, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">error</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(error);
+});
 </code></pre>
 <p><a name="NanoPlayer+destroy"></a></p>
 <h3><a class="anchor" aria-hidden="true" id="nanoplayerdestroy"></a><a href="#nanoplayerdestroy" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>nanoPlayer.destroy()</h3>
 <p>Cleans up the player and removes all nested elements from the container div.</p>
 <p><strong>Kind</strong>: instance method of <a href="#NanoPlayer"><code>NanoPlayer</code></a>  <br>
 <strong>Example</strong></p>
-<pre><code class="hljs css language-js"><span class="hljs-comment">// player instance of NanoPlayer</span>player.destroy();player.setup(config);
+<pre><code class="hljs css language-js"><span class="hljs-comment">// player instance of NanoPlayer</span>
+player.destroy();
+player.setup(config);
 </code></pre>
 <p><a name="NanoPlayer+play"></a></p>
 <h3><a class="anchor" aria-hidden="true" id="nanoplayerplay"></a><a href="#nanoplayerplay" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>nanoPlayer.play()</h3>
 <p>Plays the player.</p>
 <p><strong>Kind</strong>: instance method of <a href="#NanoPlayer"><code>NanoPlayer</code></a>  <br>
 <strong>Example</strong></p>
-<pre><code class="hljs css language-js"><span class="hljs-comment">// player instance of NanoPlayer</span>player.play();
+<pre><code class="hljs css language-js"><span class="hljs-comment">// player instance of NanoPlayer</span>
+player.play();
 </code></pre>
 <p><a name="NanoPlayer+pause"></a></p>
 <h3><a class="anchor" aria-hidden="true" id="nanoplayerpause"></a><a href="#nanoplayerpause" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>nanoPlayer.pause()</h3>
 <p>Pauses the player.</p>
 <p><strong>Kind</strong>: instance method of <a href="#NanoPlayer"><code>NanoPlayer</code></a>  <br>
 <strong>Example</strong></p>
-<pre><code class="hljs css language-js"><span class="hljs-comment">// player instance of NanoPlayer</span>player.pause();
+<pre><code class="hljs css language-js"><span class="hljs-comment">// player instance of NanoPlayer</span>
+player.pause();
 </code></pre>
 <p><a name="NanoPlayer+mute"></a></p>
 <h3><a class="anchor" aria-hidden="true" id="nanoplayermute"></a><a href="#nanoplayermute" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>nanoPlayer.mute()</h3>
 <p>Mutes the player.</p>
 <p><strong>Kind</strong>: instance method of <a href="#NanoPlayer"><code>NanoPlayer</code></a>  <br>
 <strong>Example</strong></p>
-<pre><code class="hljs css language-js"><span class="hljs-comment">// player instance of NanoPlayer</span>player.mute();
+<pre><code class="hljs css language-js"><span class="hljs-comment">// player instance of NanoPlayer</span>
+player.mute();
 </code></pre>
 <p><a name="NanoPlayer+unmute"></a></p>
 <h3><a class="anchor" aria-hidden="true" id="nanoplayerunmute"></a><a href="#nanoplayerunmute" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>nanoPlayer.unmute()</h3>
 <p>Unmutes the player.</p>
 <p><strong>Kind</strong>: instance method of <a href="#NanoPlayer"><code>NanoPlayer</code></a>  <br>
 <strong>Example</strong></p>
-<pre><code class="hljs css language-js"><span class="hljs-comment">// player instance of NanoPlayer</span>player.unmute();
+<pre><code class="hljs css language-js"><span class="hljs-comment">// player instance of NanoPlayer</span>
+player.unmute();
 </code></pre>
 <p><a name="NanoPlayer+setVolume"></a></p>
 <h3><a class="anchor" aria-hidden="true" id="nanoplayersetvolumevolume"></a><a href="#nanoplayersetvolumevolume" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>nanoPlayer.setVolume(volume)</h3>
@@ -285,7 +296,8 @@
     </tr>  </tbody>
 </table>
 <p><strong>Example</strong></p>
-<pre><code class="hljs css language-js"><span class="hljs-comment">// player instance of NanoPlayer</span>player.setVolume(<span class="hljs-number">0.3</span>);
+<pre><code class="hljs css language-js"><span class="hljs-comment">// player instance of NanoPlayer</span>
+player.setVolume(<span class="hljs-number">0.3</span>);
 </code></pre>
 <p><a name="NanoPlayer+updateSource"></a></p>
 <h3><a class="anchor" aria-hidden="true" id="nanoplayerupdatesourcesource-⇒-codepromiseltconfigerrorgtcode"></a><a href="#nanoplayerupdatesourcesource-⇒-codepromiseltconfigerrorgtcode" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>nanoPlayer.updateSource(source) ⇒ <code>Promise.&lt;(config|error)&gt;</code></h3>
@@ -398,10 +410,149 @@
     </tr>  </tbody>
 </table>
 <p><strong>Example</strong></p>
-<pre><code class="hljs css language-js"><span class="hljs-keyword">var</span> source = {    <span class="hljs-string">"entries"</span>: [            {                <span class="hljs-string">"index"</span>: <span class="hljs-number">0</span>,                <span class="hljs-string">"label"</span>: <span class="hljs-string">"high"</span>,                <span class="hljs-string">"tag"</span>: <span class="hljs-string">"this is a high quality stream"</span>,                <span class="hljs-string">"info"</span>: {                    <span class="hljs-string">"bitrate"</span>: <span class="hljs-number">1200</span>,                    <span class="hljs-string">"width"</span>: <span class="hljs-number">1280</span>,                    <span class="hljs-string">"height"</span>: <span class="hljs-number">720</span>,                    <span class="hljs-string">"framerate"</span>: <span class="hljs-number">30</span>                },                <span class="hljs-string">"hls"</span>: <span class="hljs-string">""</span>,                <span class="hljs-string">"h5live"</span>: {                    <span class="hljs-string">"rtmp"</span>: {                        <span class="hljs-string">"url"</span>: <span class="hljs-string">"rtmp://bintu-play.nanocosmos.de/play"</span>,                        <span class="hljs-string">"streamname"</span>: <span class="hljs-string">"XXXXX-YYYY1"</span>                    },                    <span class="hljs-string">"server"</span>: {                        <span class="hljs-string">"websocket"</span>: <span class="hljs-string">"wss://bintu-h5live.nanocosmos.de:443/h5live/stream.mp4"</span>,                        <span class="hljs-string">"hls"</span>: <span class="hljs-string">"https://bintu-h5live.nanocosmos.de:443/h5live/http/playlist.m3u8"</span>,                        <span class="hljs-string">"progressive"</span>: <span class="hljs-string">"https://bintu-h5live.nanocosmos.de:443/h5live/http/stream.mp4"</span>                    },                    <span class="hljs-string">"token"</span>: <span class="hljs-string">""</span>,                    <span class="hljs-string">"security"</span>: {}                },                <span class="hljs-string">"bintu"</span>: {}            },            {                <span class="hljs-string">"index"</span>: <span class="hljs-number">1</span>,                <span class="hljs-string">"label"</span>: <span class="hljs-string">"medium"</span>,                <span class="hljs-string">"tag"</span>: <span class="hljs-string">"this is a medium quality stream"</span>,                <span class="hljs-string">"info"</span>: {                    <span class="hljs-string">"bitrate"</span>: <span class="hljs-number">800</span>,                    <span class="hljs-string">"width"</span>: <span class="hljs-number">864</span>,                    <span class="hljs-string">"height"</span>: <span class="hljs-number">480</span>,                    <span class="hljs-string">"framerate"</span>: <span class="hljs-number">30</span>                },                <span class="hljs-string">"hls"</span>: <span class="hljs-string">""</span>,                <span class="hljs-string">"h5live"</span>: {                    <span class="hljs-string">"rtmp"</span>: {                        <span class="hljs-string">"url"</span>: <span class="hljs-string">"rtmp://bintu-play.nanocosmos.de/play"</span>,                        <span class="hljs-string">"streamname"</span>: <span class="hljs-string">"XXXXX-YYYY2"</span>                    },                    <span class="hljs-string">"server"</span>: {                        <span class="hljs-string">"websocket"</span>: <span class="hljs-string">"wss://bintu-h5live.nanocosmos.de:443/h5live/stream.mp4"</span>,                        <span class="hljs-string">"hls"</span>: <span class="hljs-string">"https://bintu-h5live.nanocosmos.de:443/h5live/http/playlist.m3u8"</span>,                        <span class="hljs-string">"progressive"</span>: <span class="hljs-string">"https://bintu-h5live.nanocosmos.de:443/h5live/http/stream.mp4"</span>                    },                    <span class="hljs-string">"token"</span>: <span class="hljs-string">""</span>,                    <span class="hljs-string">"security"</span>: {}                },                <span class="hljs-string">"bintu"</span>: {}            },            {                <span class="hljs-string">"index"</span>: <span class="hljs-number">2</span>,                <span class="hljs-string">"label"</span>: <span class="hljs-string">"low"</span>,                <span class="hljs-string">"tag"</span>: <span class="hljs-string">"this is a low quality stream"</span>,                <span class="hljs-string">"info"</span>: {                    <span class="hljs-string">"bitrate"</span>: <span class="hljs-number">400</span>,                    <span class="hljs-string">"width"</span>: <span class="hljs-number">426</span>,                    <span class="hljs-string">"height"</span>: <span class="hljs-number">240</span>,                    <span class="hljs-string">"framerate"</span>: <span class="hljs-number">15</span>                },                <span class="hljs-string">"hls"</span>: <span class="hljs-string">""</span>,                <span class="hljs-string">"h5live"</span>: {                    <span class="hljs-string">"rtmp"</span>: {                        <span class="hljs-string">"url"</span>: <span class="hljs-string">"rtmp://bintu-play.nanocosmos.de/play"</span>,                        <span class="hljs-string">"streamname"</span>: <span class="hljs-string">"XXXXX-YYYY3"</span>                    },                    <span class="hljs-string">"server"</span>: {                        <span class="hljs-string">"websocket"</span>: <span class="hljs-string">"wss://bintu-h5live.nanocosmos.de:443/h5live/stream.mp4"</span>,                        <span class="hljs-string">"hls"</span>: <span class="hljs-string">"https://bintu-h5live.nanocosmos.de:443/h5live/http/playlist.m3u8"</span>,                        <span class="hljs-string">"progressive"</span>: <span class="hljs-string">"https://bintu-h5live.nanocosmos.de:443/h5live/http/stream.mp4"</span>                    },                    <span class="hljs-string">"token"</span>: <span class="hljs-string">""</span>,                    <span class="hljs-string">"security"</span>: {}                },                <span class="hljs-string">"bintu"</span>: {}            }    ],    <span class="hljs-string">"options"</span>: {        <span class="hljs-string">"adaption"</span>: {            <span class="hljs-string">"rule"</span>: <span class="hljs-string">"deviationOfMean"</span>        },        <span class="hljs-string">"switch"</span>: {            <span class="hljs-string">'method'</span>: <span class="hljs-string">'server'</span>,            <span class="hljs-string">'pauseOnError'</span>: <span class="hljs-literal">false</span>,            <span class="hljs-string">'forcePlay'</span>: <span class="hljs-literal">true</span>,            <span class="hljs-string">'fastStart'</span>: <span class="hljs-literal">false</span>,            <span class="hljs-string">'timeout'</span>: <span class="hljs-number">20</span>        }    },    <span class="hljs-string">"startIndex"</span>: <span class="hljs-number">2</span> <span class="hljs-comment">// lowest</span>};<span class="hljs-comment">// player instance of NanoPlayer</span>player.updateSource(source).then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">config</span>) </span>{    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'update source ok with config: '</span> + <span class="hljs-built_in">JSON</span>.stringify(config));}, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">error</span>) </span>{    <span class="hljs-built_in">console</span>.log(error);});
+<pre><code class="hljs css language-js"><span class="hljs-keyword">var</span> source = {
+    <span class="hljs-string">"entries"</span>: [
+            {
+                <span class="hljs-string">"index"</span>: <span class="hljs-number">0</span>,
+                <span class="hljs-string">"label"</span>: <span class="hljs-string">"high"</span>,
+                <span class="hljs-string">"tag"</span>: <span class="hljs-string">"this is a high quality stream"</span>,
+                <span class="hljs-string">"info"</span>: {
+                    <span class="hljs-string">"bitrate"</span>: <span class="hljs-number">1200</span>,
+                    <span class="hljs-string">"width"</span>: <span class="hljs-number">1280</span>,
+                    <span class="hljs-string">"height"</span>: <span class="hljs-number">720</span>,
+                    <span class="hljs-string">"framerate"</span>: <span class="hljs-number">30</span>
+                },
+                <span class="hljs-string">"hls"</span>: <span class="hljs-string">""</span>,
+                <span class="hljs-string">"h5live"</span>: {
+                    <span class="hljs-string">"rtmp"</span>: {
+                        <span class="hljs-string">"url"</span>: <span class="hljs-string">"rtmp://bintu-play.nanocosmos.de/play"</span>,
+                        <span class="hljs-string">"streamname"</span>: <span class="hljs-string">"XXXXX-YYYY1"</span>
+                    },
+                    <span class="hljs-string">"server"</span>: {
+                        <span class="hljs-string">"websocket"</span>: <span class="hljs-string">"wss://bintu-h5live.nanocosmos.de:443/h5live/stream.mp4"</span>,
+                        <span class="hljs-string">"hls"</span>: <span class="hljs-string">"https://bintu-h5live.nanocosmos.de:443/h5live/http/playlist.m3u8"</span>,
+                        <span class="hljs-string">"progressive"</span>: <span class="hljs-string">"https://bintu-h5live.nanocosmos.de:443/h5live/http/stream.mp4"</span>
+                    },
+                    <span class="hljs-string">"token"</span>: <span class="hljs-string">""</span>,
+                    <span class="hljs-string">"security"</span>: {}
+                },
+                <span class="hljs-string">"bintu"</span>: {}
+            },
+            {
+                <span class="hljs-string">"index"</span>: <span class="hljs-number">1</span>,
+                <span class="hljs-string">"label"</span>: <span class="hljs-string">"medium"</span>,
+                <span class="hljs-string">"tag"</span>: <span class="hljs-string">"this is a medium quality stream"</span>,
+                <span class="hljs-string">"info"</span>: {
+                    <span class="hljs-string">"bitrate"</span>: <span class="hljs-number">800</span>,
+                    <span class="hljs-string">"width"</span>: <span class="hljs-number">864</span>,
+                    <span class="hljs-string">"height"</span>: <span class="hljs-number">480</span>,
+                    <span class="hljs-string">"framerate"</span>: <span class="hljs-number">30</span>
+                },
+                <span class="hljs-string">"hls"</span>: <span class="hljs-string">""</span>,
+                <span class="hljs-string">"h5live"</span>: {
+                    <span class="hljs-string">"rtmp"</span>: {
+                        <span class="hljs-string">"url"</span>: <span class="hljs-string">"rtmp://bintu-play.nanocosmos.de/play"</span>,
+                        <span class="hljs-string">"streamname"</span>: <span class="hljs-string">"XXXXX-YYYY2"</span>
+                    },
+                    <span class="hljs-string">"server"</span>: {
+                        <span class="hljs-string">"websocket"</span>: <span class="hljs-string">"wss://bintu-h5live.nanocosmos.de:443/h5live/stream.mp4"</span>,
+                        <span class="hljs-string">"hls"</span>: <span class="hljs-string">"https://bintu-h5live.nanocosmos.de:443/h5live/http/playlist.m3u8"</span>,
+                        <span class="hljs-string">"progressive"</span>: <span class="hljs-string">"https://bintu-h5live.nanocosmos.de:443/h5live/http/stream.mp4"</span>
+                    },
+                    <span class="hljs-string">"token"</span>: <span class="hljs-string">""</span>,
+                    <span class="hljs-string">"security"</span>: {}
+                },
+                <span class="hljs-string">"bintu"</span>: {}
+            },
+            {
+                <span class="hljs-string">"index"</span>: <span class="hljs-number">2</span>,
+                <span class="hljs-string">"label"</span>: <span class="hljs-string">"low"</span>,
+                <span class="hljs-string">"tag"</span>: <span class="hljs-string">"this is a low quality stream"</span>,
+                <span class="hljs-string">"info"</span>: {
+                    <span class="hljs-string">"bitrate"</span>: <span class="hljs-number">400</span>,
+                    <span class="hljs-string">"width"</span>: <span class="hljs-number">426</span>,
+                    <span class="hljs-string">"height"</span>: <span class="hljs-number">240</span>,
+                    <span class="hljs-string">"framerate"</span>: <span class="hljs-number">15</span>
+                },
+                <span class="hljs-string">"hls"</span>: <span class="hljs-string">""</span>,
+                <span class="hljs-string">"h5live"</span>: {
+                    <span class="hljs-string">"rtmp"</span>: {
+                        <span class="hljs-string">"url"</span>: <span class="hljs-string">"rtmp://bintu-play.nanocosmos.de/play"</span>,
+                        <span class="hljs-string">"streamname"</span>: <span class="hljs-string">"XXXXX-YYYY3"</span>
+                    },
+                    <span class="hljs-string">"server"</span>: {
+                        <span class="hljs-string">"websocket"</span>: <span class="hljs-string">"wss://bintu-h5live.nanocosmos.de:443/h5live/stream.mp4"</span>,
+                        <span class="hljs-string">"hls"</span>: <span class="hljs-string">"https://bintu-h5live.nanocosmos.de:443/h5live/http/playlist.m3u8"</span>,
+                        <span class="hljs-string">"progressive"</span>: <span class="hljs-string">"https://bintu-h5live.nanocosmos.de:443/h5live/http/stream.mp4"</span>
+                    },
+                    <span class="hljs-string">"token"</span>: <span class="hljs-string">""</span>,
+                    <span class="hljs-string">"security"</span>: {}
+                },
+                <span class="hljs-string">"bintu"</span>: {}
+            }
+    ],
+    <span class="hljs-string">"options"</span>: {
+        <span class="hljs-string">"adaption"</span>: {
+            <span class="hljs-string">"rule"</span>: <span class="hljs-string">"deviationOfMean"</span>
+        },
+        <span class="hljs-string">"switch"</span>: {
+            <span class="hljs-string">'method'</span>: <span class="hljs-string">'server'</span>,
+            <span class="hljs-string">'pauseOnError'</span>: <span class="hljs-literal">false</span>,
+            <span class="hljs-string">'forcePlay'</span>: <span class="hljs-literal">true</span>,
+            <span class="hljs-string">'fastStart'</span>: <span class="hljs-literal">false</span>,
+            <span class="hljs-string">'timeout'</span>: <span class="hljs-number">20</span>
+        }
+    },
+    <span class="hljs-string">"startIndex"</span>: <span class="hljs-number">2</span> <span class="hljs-comment">// lowest</span>
+};
+<span class="hljs-comment">// player instance of NanoPlayer</span>
+player.updateSource(source).then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">config</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'update source ok with config: '</span> + <span class="hljs-built_in">JSON</span>.stringify(config));
+}, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">error</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(error);
+});
 </code></pre>
 <p><strong>Example</strong></p>
-<pre><code class="hljs css language-js"><span class="hljs-keyword">var</span> source = {    <span class="hljs-string">"entries"</span>: [            {                <span class="hljs-string">"index"</span>: <span class="hljs-number">0</span>,                <span class="hljs-string">"label"</span>: <span class="hljs-string">"high"</span>, <span class="hljs-comment">// optional</span>                <span class="hljs-string">"tag"</span>: <span class="hljs-string">"this is a high quality stream"</span>, <span class="hljs-comment">// optional</span>                <span class="hljs-string">"info"</span>: { <span class="hljs-comment">// optional</span>                    <span class="hljs-string">"bitrate"</span>: <span class="hljs-number">1200</span>,                    <span class="hljs-string">"width"</span>: <span class="hljs-number">1280</span>,                    <span class="hljs-string">"height"</span>: <span class="hljs-number">720</span>,                    <span class="hljs-string">"framerate"</span>: <span class="hljs-number">30</span>                },                <span class="hljs-string">"h5live"</span>: {                     <span class="hljs-comment">// your rtmp stream</span>                    <span class="hljs-string">"rtmp"</span>: {                        <span class="hljs-string">"url"</span>: <span class="hljs-string">"rtmp://bintu-play.nanocosmos.de/play"</span>,                        <span class="hljs-string">"streamname"</span>: <span class="hljs-string">"XXXXX-YYYYY"</span>                    },                    <span class="hljs-string">"server"</span>: {                        <span class="hljs-string">"websocket"</span>: <span class="hljs-string">"wss://bintu-h5live.nanocosmos.de:443/h5live/stream.mp4"</span>,                        <span class="hljs-string">"hls"</span>: <span class="hljs-string">"https://bintu-h5live.nanocosmos.de:443/h5live/http/playlist.m3u8"</span>,                        <span class="hljs-string">"progressive"</span>: <span class="hljs-string">"https://bintu-h5live.nanocosmos.de:443/h5live/http/stream.mp4"</span>                    },                    <span class="hljs-comment">// optional (secure token)</span>                    <span class="hljs-string">"security"</span>: {                        <span class="hljs-string">"token"</span>: <span class="hljs-string">'awe456b367g4e6rm8f56hbe6gd8f5m8df6n8idf6tf8mfd68ndi'</span>,                        <span class="hljs-string">"expires"</span>: <span class="hljs-string">'1519819200'</span>,                        <span class="hljs-string">"options"</span>: <span class="hljs-string">'15'</span>,                        <span class="hljs-string">"tag"</span>: <span class="hljs-string">'anyTag'</span>                    }                }            }    ]};<span class="hljs-comment">// player instance of NanoPlayer</span>player.updateSource(source).then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">config</span>) </span>{    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'update source initialized with config: '</span> + <span class="hljs-built_in">JSON</span>.stringify(config));}, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">error</span>) </span>{    <span class="hljs-built_in">console</span>.log(error);});
+<pre><code class="hljs css language-js"><span class="hljs-keyword">var</span> source = {
+    <span class="hljs-string">"entries"</span>: [
+            {
+                <span class="hljs-string">"index"</span>: <span class="hljs-number">0</span>,
+                <span class="hljs-string">"label"</span>: <span class="hljs-string">"high"</span>, <span class="hljs-comment">// optional</span>
+                <span class="hljs-string">"tag"</span>: <span class="hljs-string">"this is a high quality stream"</span>, <span class="hljs-comment">// optional</span>
+                <span class="hljs-string">"info"</span>: { <span class="hljs-comment">// optional</span>
+                    <span class="hljs-string">"bitrate"</span>: <span class="hljs-number">1200</span>,
+                    <span class="hljs-string">"width"</span>: <span class="hljs-number">1280</span>,
+                    <span class="hljs-string">"height"</span>: <span class="hljs-number">720</span>,
+                    <span class="hljs-string">"framerate"</span>: <span class="hljs-number">30</span>
+                },
+                <span class="hljs-string">"h5live"</span>: {
+                     <span class="hljs-comment">// your rtmp stream</span>
+                    <span class="hljs-string">"rtmp"</span>: {
+                        <span class="hljs-string">"url"</span>: <span class="hljs-string">"rtmp://bintu-play.nanocosmos.de/play"</span>,
+                        <span class="hljs-string">"streamname"</span>: <span class="hljs-string">"XXXXX-YYYYY"</span>
+                    },
+                    <span class="hljs-string">"server"</span>: {
+                        <span class="hljs-string">"websocket"</span>: <span class="hljs-string">"wss://bintu-h5live.nanocosmos.de:443/h5live/stream.mp4"</span>,
+                        <span class="hljs-string">"hls"</span>: <span class="hljs-string">"https://bintu-h5live.nanocosmos.de:443/h5live/http/playlist.m3u8"</span>,
+                        <span class="hljs-string">"progressive"</span>: <span class="hljs-string">"https://bintu-h5live.nanocosmos.de:443/h5live/http/stream.mp4"</span>
+                    },
+                    <span class="hljs-comment">// optional (secure token)</span>
+                    <span class="hljs-string">"security"</span>: {
+                        <span class="hljs-string">"token"</span>: <span class="hljs-string">'awe456b367g4e6rm8f56hbe6gd8f5m8df6n8idf6tf8mfd68ndi'</span>,
+                        <span class="hljs-string">"expires"</span>: <span class="hljs-string">'1519819200'</span>,
+                        <span class="hljs-string">"options"</span>: <span class="hljs-string">'15'</span>,
+                        <span class="hljs-string">"tag"</span>: <span class="hljs-string">'anyTag'</span>
+                    }
+                }
+            }
+    ]
+};
+<span class="hljs-comment">// player instance of NanoPlayer</span>
+player.updateSource(source).then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">config</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'update source initialized with config: '</span> + <span class="hljs-built_in">JSON</span>.stringify(config));
+}, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">error</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(error);
+});
 </code></pre>
 <p><a name="NanoPlayer+switchStream"></a></p>
 <h3><a class="anchor" aria-hidden="true" id="nanoplayerswitchstreamindex-⇒-codepromiseltconfigerrorgtcode"></a><a href="#nanoplayerswitchstreamindex-⇒-codepromiseltconfigerrorgtcode" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>nanoPlayer.switchStream(index) ⇒ <code>Promise.&lt;(config|error)&gt;</code></h3>
@@ -421,7 +572,12 @@
     </tr>  </tbody>
 </table>
 <p><strong>Example</strong></p>
-<pre><code class="hljs css language-js"><span class="hljs-comment">// player instance of NanoPlayer</span>player.switchStream(<span class="hljs-number">1</span>).then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">config</span>) </span>{    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'switch stream initialized with config: '</span> + <span class="hljs-built_in">JSON</span>.stringify(config));}, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">error</span>) </span>{    <span class="hljs-built_in">console</span>.log(error);});
+<pre><code class="hljs css language-js"><span class="hljs-comment">// player instance of NanoPlayer</span>
+player.switchStream(<span class="hljs-number">1</span>).then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">config</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'switch stream initialized with config: '</span> + <span class="hljs-built_in">JSON</span>.stringify(config));
+}, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">error</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(error);
+});
 </code></pre>
 <p><a name="NanoPlayer+setAdaption"></a></p>
 <h3><a class="anchor" aria-hidden="true" id="nanoplayersetadaptionadaption"></a><a href="#nanoplayersetadaptionadaption" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>nanoPlayer.setAdaption(adaption)</h3>
@@ -441,21 +597,44 @@
     </tr>  </tbody>
 </table>
 <p><strong>Example</strong></p>
-<pre><code class="hljs css language-js"><span class="hljs-comment">// player instance of NanoPlayer</span><span class="hljs-keyword">var</span> adaption = {    <span class="hljs-string">"rule"</span>: <span class="hljs-string">"deviationOfMean"</span>}<span class="hljs-keyword">if</span> (!useAdaption) {    adaption.rule = <span class="hljs-string">"none"</span>;}player.setAdaption(adaption);
+<pre><code class="hljs css language-js"><span class="hljs-comment">// player instance of NanoPlayer</span>
+<span class="hljs-keyword">var</span> adaption = {
+    <span class="hljs-string">"rule"</span>: <span class="hljs-string">"deviationOfMean"</span>
+}
+<span class="hljs-keyword">if</span> (!useAdaption) {
+    adaption.rule = <span class="hljs-string">"none"</span>;
+}
+player.setAdaption(adaption);
 </code></pre>
 <p><a name="NanoPlayer+requestFullscreen"></a></p>
 <h3><a class="anchor" aria-hidden="true" id="nanoplayerrequestfullscreen-⇒-codepromiseltundefinederrorgtcode"></a><a href="#nanoplayerrequestfullscreen-⇒-codepromiseltundefinederrorgtcode" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>nanoPlayer.requestFullscreen() ⇒ <code>Promise.&lt;(undefined|error)&gt;</code></h3>
 <p>Request fullscreen mode for the player if not entered.</p>
 <p><strong>Kind</strong>: instance method of <a href="#NanoPlayer"><code>NanoPlayer</code></a>  <br>
 <strong>Example</strong></p>
-<pre><code class="hljs css language-js"><span class="hljs-comment">// player instance of NanoPlayer</span>player.requestFullscreen()   .then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>)</span>{       <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'requestFullscreen resolved'</span>);   })   .catch(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">err</span>) </span>{       <span class="hljs-comment">// error reasons can be 'denied' or 'disabled' (e.g. in audio player mode)</span>       <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'requestFullscreen rejected: '</span> + err.reason);   });
+<pre><code class="hljs css language-js"><span class="hljs-comment">// player instance of NanoPlayer</span>
+player.requestFullscreen()
+   .then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>)</span>{
+       <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'requestFullscreen resolved'</span>);
+   })
+   .catch(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">err</span>) </span>{
+       <span class="hljs-comment">// error reasons can be 'denied' or 'disabled' (e.g. in audio player mode)</span>
+       <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'requestFullscreen rejected: '</span> + err.reason);
+   });
 </code></pre>
 <p><a name="NanoPlayer+exitFullscreen"></a></p>
 <h3><a class="anchor" aria-hidden="true" id="nanoplayerexitfullscreen-⇒-codepromiseltundefinederrorgtcode"></a><a href="#nanoplayerexitfullscreen-⇒-codepromiseltundefinederrorgtcode" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>nanoPlayer.exitFullscreen() ⇒ <code>Promise.&lt;(undefined|error)&gt;</code></h3>
 <p>Exit fullscreen mode if entered.</p>
 <p><strong>Kind</strong>: instance method of <a href="#NanoPlayer"><code>NanoPlayer</code></a>  <br>
 <strong>Example</strong></p>
-<pre><code class="hljs css language-js"><span class="hljs-comment">// player instance of NanoPlayer</span>player.exitFullscreen()   .then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>)</span>{       <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'exitFullscreen resolved'</span>);   })   .catch(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">err</span>) </span>{       <span class="hljs-comment">// error reasons can be 'denied' or 'disabled' (e.g. in audio player mode)</span>       <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'exitFullscreen rejected: '</span> + err.reason);   });
+<pre><code class="hljs css language-js"><span class="hljs-comment">// player instance of NanoPlayer</span>
+player.exitFullscreen()
+   .then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>)</span>{
+       <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'exitFullscreen resolved'</span>);
+   })
+   .catch(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">err</span>) </span>{
+       <span class="hljs-comment">// error reasons can be 'denied' or 'disabled' (e.g. in audio player mode)</span>
+       <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'exitFullscreen rejected: '</span> + err.reason);
+   });
 </code></pre>
 <p><a name="NanoPlayer..event_onReady"></a></p>
 <h3><a class="anchor" aria-hidden="true" id="onready"></a><a href="#onready" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>&quot;onReady&quot;</h3>
@@ -494,7 +673,16 @@
     </tr>  </tbody>
 </table>
 <p><strong>Example</strong></p>
-<pre><code class="hljs css language-js"><span class="hljs-comment">// player instance of NanoPlayer</span><span class="hljs-keyword">var</span> onReady = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">event</span>) </span>{    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Ready: '</span> + <span class="hljs-built_in">JSON</span>.stringify(event.data.config));}config.events.onReady = onReady;player.setup(config).then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">config</span>) </span>{    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'setup ok with config: '</span> + <span class="hljs-built_in">JSON</span>.stringify(config));}, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">error</span>) </span>{    <span class="hljs-built_in">console</span>.log(error);});
+<pre><code class="hljs css language-js"><span class="hljs-comment">// player instance of NanoPlayer</span>
+<span class="hljs-keyword">var</span> onReady = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">event</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Ready: '</span> + <span class="hljs-built_in">JSON</span>.stringify(event.data.config));
+}
+config.events.onReady = onReady;
+player.setup(config).then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">config</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'setup ok with config: '</span> + <span class="hljs-built_in">JSON</span>.stringify(config));
+}, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">error</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(error);
+});
 </code></pre>
 <p><a name="NanoPlayer..event_onPlay"></a></p>
 <h3><a class="anchor" aria-hidden="true" id="onplay"></a><a href="#onplay" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>&quot;onPlay&quot;</h3>
@@ -551,7 +739,17 @@
     </tr>  </tbody>
 </table>
 <p><strong>Example</strong></p>
-<pre><code class="hljs css language-js"><span class="hljs-comment">// player instance of NanoPlayer</span><span class="hljs-keyword">var</span> onPlay = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">event</span>) </span>{    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Playing'</span>);    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'play stats: '</span> + <span class="hljs-built_in">JSON</span>.stringify(event.data.stats));};config.events.onPlay = onPlay;player.setup(config).then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">config</span>) </span>{    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'setup ok with config: '</span> + <span class="hljs-built_in">JSON</span>.stringify(config));}, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">error</span>) </span>{    <span class="hljs-built_in">console</span>.log(error);});
+<pre><code class="hljs css language-js"><span class="hljs-comment">// player instance of NanoPlayer</span>
+<span class="hljs-keyword">var</span> onPlay = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">event</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Playing'</span>);
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'play stats: '</span> + <span class="hljs-built_in">JSON</span>.stringify(event.data.stats));
+};
+config.events.onPlay = onPlay;
+player.setup(config).then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">config</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'setup ok with config: '</span> + <span class="hljs-built_in">JSON</span>.stringify(config));
+}, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">error</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(error);
+});
 </code></pre>
 <p><a name="NanoPlayer..event_onPause"></a></p>
 <h3><a class="anchor" aria-hidden="true" id="onpause"></a><a href="#onpause" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>&quot;onPause&quot;</h3>
@@ -590,7 +788,19 @@
     </tr>  </tbody>
 </table>
 <p><strong>Example</strong></p>
-<pre><code class="hljs css language-js"><span class="hljs-comment">// player instance of NanoPlayer</span><span class="hljs-keyword">var</span> onPause = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">event</span>) </span>{    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Pause'</span>);    <span class="hljs-keyword">if</span> (event.data.reason !== <span class="hljs-string">'normal'</span>) {         alert(<span class="hljs-string">'Paused with reason: '</span> + event.data.reason);    }};config.events.onPause = onPause;player.setup(config).then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">config</span>) </span>{    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'setup ok with config: '</span> + <span class="hljs-built_in">JSON</span>.stringify(config));}, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">error</span>) </span>{    <span class="hljs-built_in">console</span>.log(error);});
+<pre><code class="hljs css language-js"><span class="hljs-comment">// player instance of NanoPlayer</span>
+<span class="hljs-keyword">var</span> onPause = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">event</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Pause'</span>);
+    <span class="hljs-keyword">if</span> (event.data.reason !== <span class="hljs-string">'normal'</span>) {
+         alert(<span class="hljs-string">'Paused with reason: '</span> + event.data.reason);
+    }
+};
+config.events.onPause = onPause;
+player.setup(config).then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">config</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'setup ok with config: '</span> + <span class="hljs-built_in">JSON</span>.stringify(config));
+}, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">error</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(error);
+});
 </code></pre>
 <p><a name="NanoPlayer..event_onLoading"></a></p>
 <h3><a class="anchor" aria-hidden="true" id="onloading"></a><a href="#onloading" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>&quot;onLoading&quot;</h3>
@@ -629,7 +839,16 @@
     </tr>  </tbody>
 </table>
 <p><strong>Example</strong></p>
-<pre><code class="hljs css language-js"><span class="hljs-comment">// player instance of NanoPlayer</span><span class="hljs-keyword">var</span> onLoading = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">event</span>) </span>{    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Loading with delay of '</span> + event.data.connectDelay + <span class="hljs-string">' milliseconds'</span>);};config.events.onLoading = onLoading;player.setup(config).then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">config</span>) </span>{    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'setup ok with config: '</span> + <span class="hljs-built_in">JSON</span>.stringify(config));}, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">error</span>) </span>{    <span class="hljs-built_in">console</span>.log(error);});
+<pre><code class="hljs css language-js"><span class="hljs-comment">// player instance of NanoPlayer</span>
+<span class="hljs-keyword">var</span> onLoading = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">event</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Loading with delay of '</span> + event.data.connectDelay + <span class="hljs-string">' milliseconds'</span>);
+};
+config.events.onLoading = onLoading;
+player.setup(config).then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">config</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'setup ok with config: '</span> + <span class="hljs-built_in">JSON</span>.stringify(config));
+}, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">error</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(error);
+});
 </code></pre>
 <p><a name="NanoPlayer..event_onStartBuffering"></a></p>
 <h3><a class="anchor" aria-hidden="true" id="onstartbuffering"></a><a href="#onstartbuffering" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>&quot;onStartBuffering&quot;</h3>
@@ -665,7 +884,16 @@
     </tr>  </tbody>
 </table>
 <p><strong>Example</strong></p>
-<pre><code class="hljs css language-js"><span class="hljs-comment">// player instance of NanoPlayer</span><span class="hljs-keyword">var</span> onStartBuffering = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">event</span>) </span>{    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Buffering'</span>);};config.events.onStartBuffering = onStartBuffering;player.setup(config).then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">config</span>) </span>{    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'setup ok with config: '</span> + <span class="hljs-built_in">JSON</span>.stringify(config));}, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">error</span>) </span>{    <span class="hljs-built_in">console</span>.log(error);});
+<pre><code class="hljs css language-js"><span class="hljs-comment">// player instance of NanoPlayer</span>
+<span class="hljs-keyword">var</span> onStartBuffering = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">event</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Buffering'</span>);
+};
+config.events.onStartBuffering = onStartBuffering;
+player.setup(config).then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">config</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'setup ok with config: '</span> + <span class="hljs-built_in">JSON</span>.stringify(config));
+}, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">error</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(error);
+});
 </code></pre>
 <p><a name="NanoPlayer..event_onStopBuffering"></a></p>
 <h3><a class="anchor" aria-hidden="true" id="onstopbuffering"></a><a href="#onstopbuffering" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>&quot;onStopBuffering&quot;</h3>
@@ -701,7 +929,16 @@
     </tr>  </tbody>
 </table>
 <p><strong>Example</strong></p>
-<pre><code class="hljs css language-js"><span class="hljs-comment">// player instance of NanoPlayer</span><span class="hljs-keyword">var</span> onStopBuffering = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">event</span>) </span>{    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Resume'</span>);};config.events.onStopBuffering = onStopBuffering;player.setup(config).then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">config</span>) </span>{    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'setup ok with config: '</span> + <span class="hljs-built_in">JSON</span>.stringify(config));}, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">error</span>) </span>{    <span class="hljs-built_in">console</span>.log(error);});
+<pre><code class="hljs css language-js"><span class="hljs-comment">// player instance of NanoPlayer</span>
+<span class="hljs-keyword">var</span> onStopBuffering = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">event</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Resume'</span>);
+};
+config.events.onStopBuffering = onStopBuffering;
+player.setup(config).then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">config</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'setup ok with config: '</span> + <span class="hljs-built_in">JSON</span>.stringify(config));
+}, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">error</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(error);
+});
 </code></pre>
 <p><a name="NanoPlayer..event_onError"></a></p>
 <h3><a class="anchor" aria-hidden="true" id="onerror"></a><a href="#onerror" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>&quot;onError&quot;</h3>
@@ -743,7 +980,16 @@
     </tr>  </tbody>
 </table>
 <p><strong>Example</strong></p>
-<pre><code class="hljs css language-js"><span class="hljs-comment">// player instance of NanoPlayer</span><span class="hljs-keyword">var</span> onError = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">event</span>) </span>{    alert(<span class="hljs-string">'Error: '</span> + event.data.code + <span class="hljs-string">' '</span> + event.data.message);};config.events.onError = onError;player.setup(config).then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">config</span>) </span>{    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'setup ok with config: '</span> + <span class="hljs-built_in">JSON</span>.stringify(config));}, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">error</span>) </span>{    <span class="hljs-built_in">console</span>.log(error);});
+<pre><code class="hljs css language-js"><span class="hljs-comment">// player instance of NanoPlayer</span>
+<span class="hljs-keyword">var</span> onError = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">event</span>) </span>{
+    alert(<span class="hljs-string">'Error: '</span> + event.data.code + <span class="hljs-string">' '</span> + event.data.message);
+};
+config.events.onError = onError;
+player.setup(config).then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">config</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'setup ok with config: '</span> + <span class="hljs-built_in">JSON</span>.stringify(config));
+}, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">error</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(error);
+});
 </code></pre>
 <p><a name="NanoPlayer..event_onStats"></a></p>
 <h3><a class="anchor" aria-hidden="true" id="onstats"></a><a href="#onstats" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>&quot;onStats&quot;</h3>
@@ -866,7 +1112,16 @@
     </tr>  </tbody>
 </table>
 <p><strong>Example</strong></p>
-<pre><code class="hljs css language-js"><span class="hljs-comment">// player instance of NanoPlayer</span><span class="hljs-keyword">var</span> onStats = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">event</span>) </span>{    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Stats: '</span> + <span class="hljs-built_in">JSON</span>.stringify(event.data.stats));};config.events.onStats = onStats;player.setup(config).then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">config</span>) </span>{    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'setup ok with config: '</span> + <span class="hljs-built_in">JSON</span>.stringify(config));}, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">error</span>) </span>{    <span class="hljs-built_in">console</span>.log(error);});
+<pre><code class="hljs css language-js"><span class="hljs-comment">// player instance of NanoPlayer</span>
+<span class="hljs-keyword">var</span> onStats = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">event</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Stats: '</span> + <span class="hljs-built_in">JSON</span>.stringify(event.data.stats));
+};
+config.events.onStats = onStats;
+player.setup(config).then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">config</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'setup ok with config: '</span> + <span class="hljs-built_in">JSON</span>.stringify(config));
+}, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">error</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(error);
+});
 </code></pre>
 <p><a name="NanoPlayer..event_onMetaData"></a></p>
 <h3><a class="anchor" aria-hidden="true" id="onmetadata"></a><a href="#onmetadata" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>&quot;onMetaData&quot;</h3>
@@ -908,7 +1163,16 @@
     </tr>  </tbody>
 </table>
 <p><strong>Example</strong></p>
-<pre><code class="hljs css language-js"><span class="hljs-comment">// player instance of NanoPlayer</span><span class="hljs-keyword">var</span> onMetaData = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">event</span>) </span>{    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'MetaData: '</span> + <span class="hljs-built_in">JSON</span>.stringify(event.data));};config.events.onMetaData = onMetaData;player.setup(config).then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">config</span>) </span>{    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'setup ok with config: '</span> + <span class="hljs-built_in">JSON</span>.stringify(config));}, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">error</span>) </span>{    <span class="hljs-built_in">console</span>.log(error);});
+<pre><code class="hljs css language-js"><span class="hljs-comment">// player instance of NanoPlayer</span>
+<span class="hljs-keyword">var</span> onMetaData = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">event</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'MetaData: '</span> + <span class="hljs-built_in">JSON</span>.stringify(event.data));
+};
+config.events.onMetaData = onMetaData;
+player.setup(config).then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">config</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'setup ok with config: '</span> + <span class="hljs-built_in">JSON</span>.stringify(config));
+}, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">error</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(error);
+});
 </code></pre>
 <p><a name="NanoPlayer..event_onMute"></a></p>
 <h3><a class="anchor" aria-hidden="true" id="onmute"></a><a href="#onmute" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>&quot;onMute&quot;</h3>
@@ -944,7 +1208,16 @@
     </tr>  </tbody>
 </table>
 <p><strong>Example</strong></p>
-<pre><code class="hljs css language-js"><span class="hljs-comment">// player instance of NanoPlayer</span><span class="hljs-keyword">var</span> onMute = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">event</span>) </span>{    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Muted with volume: '</span> + event.data.volume);};config.events.onMute = onMute;player.setup(config).then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">config</span>) </span>{    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'setup ok with config: '</span> + <span class="hljs-built_in">JSON</span>.stringify(config));}, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">error</span>) </span>{    <span class="hljs-built_in">console</span>.log(error);});
+<pre><code class="hljs css language-js"><span class="hljs-comment">// player instance of NanoPlayer</span>
+<span class="hljs-keyword">var</span> onMute = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">event</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Muted with volume: '</span> + event.data.volume);
+};
+config.events.onMute = onMute;
+player.setup(config).then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">config</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'setup ok with config: '</span> + <span class="hljs-built_in">JSON</span>.stringify(config));
+}, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">error</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(error);
+});
 </code></pre>
 <p><a name="NanoPlayer..event_onUnmute"></a></p>
 <h3><a class="anchor" aria-hidden="true" id="onunmute"></a><a href="#onunmute" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>&quot;onUnmute&quot;</h3>
@@ -980,7 +1253,16 @@
     </tr>  </tbody>
 </table>
 <p><strong>Example</strong></p>
-<pre><code class="hljs css language-js"><span class="hljs-comment">// player instance of NanoPlayer</span><span class="hljs-keyword">var</span> onUnmute = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">event</span>) </span>{    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Unmuted with volume: '</span> + event.data.volume);};config.events.onUnmute = onUnmute;player.setup(config).then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">config</span>) </span>{    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'setup ok with config: '</span> + <span class="hljs-built_in">JSON</span>.stringify(config));}, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">error</span>) </span>{    <span class="hljs-built_in">console</span>.log(error);});
+<pre><code class="hljs css language-js"><span class="hljs-comment">// player instance of NanoPlayer</span>
+<span class="hljs-keyword">var</span> onUnmute = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">event</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Unmuted with volume: '</span> + event.data.volume);
+};
+config.events.onUnmute = onUnmute;
+player.setup(config).then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">config</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'setup ok with config: '</span> + <span class="hljs-built_in">JSON</span>.stringify(config));
+}, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">error</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(error);
+});
 </code></pre>
 <p><a name="NanoPlayer..event_onVolumeChange"></a></p>
 <h3><a class="anchor" aria-hidden="true" id="onvolumechange"></a><a href="#onvolumechange" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>&quot;onVolumeChange&quot;</h3>
@@ -1016,7 +1298,16 @@
     </tr>  </tbody>
 </table>
 <p><strong>Example</strong></p>
-<pre><code class="hljs css language-js"><span class="hljs-comment">// player instance of NanoPlayer</span><span class="hljs-keyword">var</span> onVolumeChange = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">event</span>) </span>{    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Volume: '</span> + event.data.volume);};config.events.onVolumeChange = onVolumeChange;player.setup(config).then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">config</span>) </span>{    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'setup ok with config: '</span> + <span class="hljs-built_in">JSON</span>.stringify(config));}, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">error</span>) </span>{    <span class="hljs-built_in">console</span>.log(error);});
+<pre><code class="hljs css language-js"><span class="hljs-comment">// player instance of NanoPlayer</span>
+<span class="hljs-keyword">var</span> onVolumeChange = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">event</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Volume: '</span> + event.data.volume);
+};
+config.events.onVolumeChange = onVolumeChange;
+player.setup(config).then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">config</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'setup ok with config: '</span> + <span class="hljs-built_in">JSON</span>.stringify(config));
+}, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">error</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(error);
+});
 </code></pre>
 <p><a name="NanoPlayer..event_onStreamInfo"></a></p>
 <h3><a class="anchor" aria-hidden="true" id="onstreaminfo"></a><a href="#onstreaminfo" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>&quot;onStreamInfo&quot;</h3>
@@ -1094,7 +1385,16 @@
     </tr>  </tbody>
 </table>
 <p><strong>Example</strong></p>
-<pre><code class="hljs css language-js"><span class="hljs-comment">// player instance of NanoPlayer</span><span class="hljs-keyword">var</span> onStreamInfo = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">event</span>) </span>{    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'StreamInfo: '</span> + <span class="hljs-built_in">JSON</span>.stringify(event.data.streamInfo));};config.events.onStreamInfo = onStreamInfo;player.setup(config).then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">config</span>) </span>{    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'setup ok with config: '</span> + <span class="hljs-built_in">JSON</span>.stringify(config));}, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">error</span>) </span>{    <span class="hljs-built_in">console</span>.log(error);});
+<pre><code class="hljs css language-js"><span class="hljs-comment">// player instance of NanoPlayer</span>
+<span class="hljs-keyword">var</span> onStreamInfo = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">event</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'StreamInfo: '</span> + <span class="hljs-built_in">JSON</span>.stringify(event.data.streamInfo));
+};
+config.events.onStreamInfo = onStreamInfo;
+player.setup(config).then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">config</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'setup ok with config: '</span> + <span class="hljs-built_in">JSON</span>.stringify(config));
+}, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">error</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(error);
+});
 </code></pre>
 <p><a name="NanoPlayer..event_onStreamInfoUpdate"></a></p>
 <h3><a class="anchor" aria-hidden="true" id="onstreaminfoupdate"></a><a href="#onstreaminfoupdate" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>&quot;onStreamInfoUpdate&quot;</h3>
@@ -1163,7 +1463,16 @@
     </tr>  </tbody>
 </table>
 <p><strong>Example</strong></p>
-<pre><code class="hljs css language-js"><span class="hljs-comment">// player instance of NanoPlayer</span><span class="hljs-keyword">var</span> onStreamInfoUpdate = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">event</span>) </span>{    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'StreamInfo updated: '</span> + <span class="hljs-built_in">JSON</span>.stringify(event.data.streamInfo));};config.events.onStreamInfoUpdate = onStreamInfoUpdate;player.setup(config).then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">config</span>) </span>{    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'setup ok with config: '</span> + <span class="hljs-built_in">JSON</span>.stringify(config));}, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">error</span>) </span>{    <span class="hljs-built_in">console</span>.log(error);});
+<pre><code class="hljs css language-js"><span class="hljs-comment">// player instance of NanoPlayer</span>
+<span class="hljs-keyword">var</span> onStreamInfoUpdate = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">event</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'StreamInfo updated: '</span> + <span class="hljs-built_in">JSON</span>.stringify(event.data.streamInfo));
+};
+config.events.onStreamInfoUpdate = onStreamInfoUpdate;
+player.setup(config).then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">config</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'setup ok with config: '</span> + <span class="hljs-built_in">JSON</span>.stringify(config));
+}, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">error</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(error);
+});
 </code></pre>
 <p><a name="NanoPlayer..event_onWarning"></a></p>
 <h3><a class="anchor" aria-hidden="true" id="onwarning"></a><a href="#onwarning" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>&quot;onWarning&quot;</h3>
@@ -1202,7 +1511,16 @@
     </tr>  </tbody>
 </table>
 <p><strong>Example</strong></p>
-<pre><code class="hljs css language-js"><span class="hljs-comment">// player instance of NanoPlayer</span><span class="hljs-keyword">var</span> onWarning = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">event</span>) </span>{    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Warning: '</span> + event.data.message);};config.events.onWarning = onWarning;player.setup(config).then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">config</span>) </span>{    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'setup ok with config: '</span> + <span class="hljs-built_in">JSON</span>.stringify(config));}, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">error</span>) </span>{    <span class="hljs-built_in">console</span>.log(error);});
+<pre><code class="hljs css language-js"><span class="hljs-comment">// player instance of NanoPlayer</span>
+<span class="hljs-keyword">var</span> onWarning = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">event</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Warning: '</span> + event.data.message);
+};
+config.events.onWarning = onWarning;
+player.setup(config).then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">config</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'setup ok with config: '</span> + <span class="hljs-built_in">JSON</span>.stringify(config));
+}, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">error</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(error);
+});
 </code></pre>
 <p><a name="NanoPlayer..event_onDestroy"></a></p>
 <h3><a class="anchor" aria-hidden="true" id="ondestroy"></a><a href="#ondestroy" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>&quot;onDestroy&quot;</h3>
@@ -1238,7 +1556,16 @@
     </tr>  </tbody>
 </table>
 <p><strong>Example</strong></p>
-<pre><code class="hljs css language-js"><span class="hljs-comment">// player instance of NanoPlayer</span><span class="hljs-keyword">var</span> onDestroy = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">event</span>) </span>{    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'player destroy'</span>);};config.events.onDestroy = onDestroy;player.setup(config).then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">config</span>) </span>{    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'setup ok with config: '</span> + <span class="hljs-built_in">JSON</span>.stringify(config));}, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">error</span>) </span>{    <span class="hljs-built_in">console</span>.log(error);});
+<pre><code class="hljs css language-js"><span class="hljs-comment">// player instance of NanoPlayer</span>
+<span class="hljs-keyword">var</span> onDestroy = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">event</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'player destroy'</span>);
+};
+config.events.onDestroy = onDestroy;
+player.setup(config).then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">config</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'setup ok with config: '</span> + <span class="hljs-built_in">JSON</span>.stringify(config));
+}, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">error</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(error);
+});
 </code></pre>
 <p><a name="NanoPlayer..event_onUpdateSourceInit"></a></p>
 <h3><a class="anchor" aria-hidden="true" id="onupdatesourceinit"></a><a href="#onupdatesourceinit" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>&quot;onUpdateSourceInit&quot;</h3>
@@ -1298,7 +1625,18 @@
     </tr>  </tbody>
 </table>
 <p><strong>Example</strong></p>
-<pre><code class="hljs css language-js"><span class="hljs-comment">// player instance of NanoPlayer</span><span class="hljs-keyword">var</span> onUpdateSourceInit = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">event</span>) </span>{    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'update source init with source: '</span> + <span class="hljs-built_in">JSON</span>.stringify(event.data.source) + <span class="hljs-string">' and options: '</span> + <span class="hljs-built_in">JSON</span>.stringify(event.data.options));    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'update source tag: '</span> + event.data.tag);    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'update source count: '</span> + event.data.count);};config.events.onUpdateSourceInit = onUpdateSourceInit;player.setup(config).then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">config</span>) </span>{    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'setup ok with config: '</span> + <span class="hljs-built_in">JSON</span>.stringify(config));}, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">error</span>) </span>{    <span class="hljs-built_in">console</span>.log(error);});
+<pre><code class="hljs css language-js"><span class="hljs-comment">// player instance of NanoPlayer</span>
+<span class="hljs-keyword">var</span> onUpdateSourceInit = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">event</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'update source init with source: '</span> + <span class="hljs-built_in">JSON</span>.stringify(event.data.source) + <span class="hljs-string">' and options: '</span> + <span class="hljs-built_in">JSON</span>.stringify(event.data.options));
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'update source tag: '</span> + event.data.tag);
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'update source count: '</span> + event.data.count);
+};
+config.events.onUpdateSourceInit = onUpdateSourceInit;
+player.setup(config).then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">config</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'setup ok with config: '</span> + <span class="hljs-built_in">JSON</span>.stringify(config));
+}, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">error</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(error);
+});
 </code></pre>
 <p><a name="NanoPlayer..event_onUpdateSourceSuccess"></a></p>
 <h3><a class="anchor" aria-hidden="true" id="onupdatesourcesuccess"></a><a href="#onupdatesourcesuccess" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>&quot;onUpdateSourceSuccess&quot;</h3>
@@ -1355,7 +1693,16 @@
     </tr>  </tbody>
 </table>
 <p><strong>Example</strong></p>
-<pre><code class="hljs css language-js"><span class="hljs-comment">// player instance of NanoPlayer</span><span class="hljs-keyword">var</span> onUpdateSourceSuccess = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">event</span>) </span>{    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'update source success with entry: '</span> + <span class="hljs-built_in">JSON</span>.stringify(event.data.entry) + <span class="hljs-string">', with tag: '</span> + event.data.tag + <span class="hljs-string">' and count: '</span> + event.data.count);};config.events.onUpdateSourceSuccess = onUpdateSourceSuccess;player.setup(config).then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">config</span>) </span>{    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'setup ok with config: '</span> + <span class="hljs-built_in">JSON</span>.stringify(config));}, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">error</span>) </span>{    <span class="hljs-built_in">console</span>.log(error);});
+<pre><code class="hljs css language-js"><span class="hljs-comment">// player instance of NanoPlayer</span>
+<span class="hljs-keyword">var</span> onUpdateSourceSuccess = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">event</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'update source success with entry: '</span> + <span class="hljs-built_in">JSON</span>.stringify(event.data.entry) + <span class="hljs-string">', with tag: '</span> + event.data.tag + <span class="hljs-string">' and count: '</span> + event.data.count);
+};
+config.events.onUpdateSourceSuccess = onUpdateSourceSuccess;
+player.setup(config).then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">config</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'setup ok with config: '</span> + <span class="hljs-built_in">JSON</span>.stringify(config));
+}, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">error</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(error);
+});
 </code></pre>
 <p><a name="NanoPlayer..event_onUpdateSourceFail"></a></p>
 <h3><a class="anchor" aria-hidden="true" id="onupdatesourcefail"></a><a href="#onupdatesourcefail" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>&quot;onUpdateSourceFail&quot;</h3>
@@ -1415,7 +1762,18 @@
     </tr>  </tbody>
 </table>
 <p><strong>Example</strong></p>
-<pre><code class="hljs css language-js"><span class="hljs-comment">// player instance of NanoPlayer</span><span class="hljs-keyword">var</span> onUpdateSourceFail = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">event</span>) </span>{    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'update source fail with entry: '</span> + <span class="hljs-built_in">JSON</span>.stringify(event.data.entry) + <span class="hljs-string">', with error code: '</span> + event.data.code + <span class="hljs-string">' and error message: '</span> + event.data.message);    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'update source tag: '</span> + event.data.tag);    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'update source count: '</span> + event.data.count);};config.events.onUpdateSourceFail = onUpdateSourceFail;player.setup(config).then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">config</span>) </span>{    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'setup ok with config: '</span> + <span class="hljs-built_in">JSON</span>.stringify(config));}, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">error</span>) </span>{    <span class="hljs-built_in">console</span>.log(error);});
+<pre><code class="hljs css language-js"><span class="hljs-comment">// player instance of NanoPlayer</span>
+<span class="hljs-keyword">var</span> onUpdateSourceFail = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">event</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'update source fail with entry: '</span> + <span class="hljs-built_in">JSON</span>.stringify(event.data.entry) + <span class="hljs-string">', with error code: '</span> + event.data.code + <span class="hljs-string">' and error message: '</span> + event.data.message);
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'update source tag: '</span> + event.data.tag);
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'update source count: '</span> + event.data.count);
+};
+config.events.onUpdateSourceFail = onUpdateSourceFail;
+player.setup(config).then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">config</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'setup ok with config: '</span> + <span class="hljs-built_in">JSON</span>.stringify(config));
+}, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">error</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(error);
+});
 </code></pre>
 <p><a name="NanoPlayer..event_onUpdateSourceAbort"></a></p>
 <h3><a class="anchor" aria-hidden="true" id="onupdatesourceabort"></a><a href="#onupdatesourceabort" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>&quot;onUpdateSourceAbort&quot;</h3>
@@ -1475,7 +1833,18 @@
     </tr>  </tbody>
 </table>
 <p><strong>Example</strong></p>
-<pre><code class="hljs css language-js"><span class="hljs-comment">// player instance of NanoPlayer</span><span class="hljs-keyword">var</span> onUpdateSourceAbort = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">event</span>) </span>{    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'update source abort with entry: '</span> + <span class="hljs-built_in">JSON</span>.stringify(event.data.entry) + <span class="hljs-string">' and reason: '</span> + event.data.reason);    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'tag: '</span> + event.data.tag);    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'count: '</span> + event.data.count);};config.events.onUpdateSourceAbort = onUpdateSourceAbort;player.setup(config).then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">config</span>) </span>{    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'setup ok with config: '</span> + <span class="hljs-built_in">JSON</span>.stringify(config));}, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">error</span>) </span>{    <span class="hljs-built_in">console</span>.log(error);});
+<pre><code class="hljs css language-js"><span class="hljs-comment">// player instance of NanoPlayer</span>
+<span class="hljs-keyword">var</span> onUpdateSourceAbort = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">event</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'update source abort with entry: '</span> + <span class="hljs-built_in">JSON</span>.stringify(event.data.entry) + <span class="hljs-string">' and reason: '</span> + event.data.reason);
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'tag: '</span> + event.data.tag);
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'count: '</span> + event.data.count);
+};
+config.events.onUpdateSourceAbort = onUpdateSourceAbort;
+player.setup(config).then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">config</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'setup ok with config: '</span> + <span class="hljs-built_in">JSON</span>.stringify(config));
+}, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">error</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(error);
+});
 </code></pre>
 <p><a name="NanoPlayer..event_onSwitchStreamInit"></a></p>
 <h3><a class="anchor" aria-hidden="true" id="onswitchstreaminit"></a><a href="#onswitchstreaminit" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>&quot;onSwitchStreamInit&quot;</h3>
@@ -1535,7 +1904,18 @@
     </tr>  </tbody>
 </table>
 <p><strong>Example</strong></p>
-<pre><code class="hljs css language-js"><span class="hljs-comment">// player instance of NanoPlayer</span><span class="hljs-keyword">var</span> onSwitchStreamInit = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">event</span>) </span>{    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'switch stream init by rule '</span> + event.data.rule + <span class="hljs-string">' from type '</span> + event.data.type + <span class="hljs-string">'with entry: '</span> + <span class="hljs-built_in">JSON</span>.stringify(event.data.entry) + <span class="hljs-string">' and options: '</span> + <span class="hljs-built_in">JSON</span>.stringify(event.data.options));    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'switch stream tag: '</span> + event.data.tag);    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'switch stream count: '</span> + event.data.count);};config.events.onSwitchStreamInit = onSwitchStreamInit;player.setup(config).then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">config</span>) </span>{    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'setup ok with config: '</span> + <span class="hljs-built_in">JSON</span>.stringify(config));}, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">error</span>) </span>{    <span class="hljs-built_in">console</span>.log(error);});
+<pre><code class="hljs css language-js"><span class="hljs-comment">// player instance of NanoPlayer</span>
+<span class="hljs-keyword">var</span> onSwitchStreamInit = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">event</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'switch stream init by rule '</span> + event.data.rule + <span class="hljs-string">' from type '</span> + event.data.type + <span class="hljs-string">'with entry: '</span> + <span class="hljs-built_in">JSON</span>.stringify(event.data.entry) + <span class="hljs-string">' and options: '</span> + <span class="hljs-built_in">JSON</span>.stringify(event.data.options));
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'switch stream tag: '</span> + event.data.tag);
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'switch stream count: '</span> + event.data.count);
+};
+config.events.onSwitchStreamInit = onSwitchStreamInit;
+player.setup(config).then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">config</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'setup ok with config: '</span> + <span class="hljs-built_in">JSON</span>.stringify(config));
+}, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">error</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(error);
+});
 </code></pre>
 <p><a name="NanoPlayer..event_onSwitchStreamSuccess"></a></p>
 <h3><a class="anchor" aria-hidden="true" id="onswitchstreamsuccess"></a><a href="#onswitchstreamsuccess" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>&quot;onSwitchStreamSuccess&quot;</h3>
@@ -1592,7 +1972,16 @@
     </tr>  </tbody>
 </table>
 <p><strong>Example</strong></p>
-<pre><code class="hljs css language-js"><span class="hljs-comment">// player instance of NanoPlayer</span><span class="hljs-keyword">var</span> onSwitchStreamSuccess = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">event</span>) </span>{    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'switch stream success by rule '</span> + event.data.rule + <span class="hljs-string">' from type '</span> + event.data.type + <span class="hljs-string">'with entry: '</span> + <span class="hljs-built_in">JSON</span>.stringify(event.data.entry) + <span class="hljs-string">' with tag: '</span> + event.data.tag + <span class="hljs-string">' and count: '</span> + event.data.count);};config.events.onSwitchStreamSuccess = onSwitchStreamSuccess;player.setup(config).then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">config</span>) </span>{    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'setup ok with config: '</span> + <span class="hljs-built_in">JSON</span>.stringify(config));}, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">error</span>) </span>{    <span class="hljs-built_in">console</span>.log(error);});
+<pre><code class="hljs css language-js"><span class="hljs-comment">// player instance of NanoPlayer</span>
+<span class="hljs-keyword">var</span> onSwitchStreamSuccess = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">event</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'switch stream success by rule '</span> + event.data.rule + <span class="hljs-string">' from type '</span> + event.data.type + <span class="hljs-string">'with entry: '</span> + <span class="hljs-built_in">JSON</span>.stringify(event.data.entry) + <span class="hljs-string">' with tag: '</span> + event.data.tag + <span class="hljs-string">' and count: '</span> + event.data.count);
+};
+config.events.onSwitchStreamSuccess = onSwitchStreamSuccess;
+player.setup(config).then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">config</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'setup ok with config: '</span> + <span class="hljs-built_in">JSON</span>.stringify(config));
+}, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">error</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(error);
+});
 </code></pre>
 <p><a name="NanoPlayer..event_onSwitchStreamFail"></a></p>
 <h3><a class="anchor" aria-hidden="true" id="onswitchstreamfail"></a><a href="#onswitchstreamfail" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>&quot;onSwitchStreamFail&quot;</h3>
@@ -1652,7 +2041,18 @@
     </tr>  </tbody>
 </table>
 <p><strong>Example</strong></p>
-<pre><code class="hljs css language-js"><span class="hljs-comment">// player instance of NanoPlayer</span><span class="hljs-keyword">var</span> onSwitchStreamFail = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">event</span>) </span>{    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'switch stream fail by rule '</span> + event.data.rule + <span class="hljs-string">' from type '</span> + event.data.type + <span class="hljs-string">'with entry: '</span> + <span class="hljs-built_in">JSON</span>.stringify(event.data.entry) + <span class="hljs-string">' with error code: '</span> + event.data.code + <span class="hljs-string">' and error message: '</span> + event.data.message);    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'switch stream tag: '</span> + event.data.tag);    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'switch stream count: '</span> + event.data.count);};config.events.onSwitchStreamFail = onSwitchStreamFail;player.setup(config).then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">config</span>) </span>{    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'setup ok with config: '</span> + <span class="hljs-built_in">JSON</span>.stringify(config));}, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">error</span>) </span>{    <span class="hljs-built_in">console</span>.log(error);});
+<pre><code class="hljs css language-js"><span class="hljs-comment">// player instance of NanoPlayer</span>
+<span class="hljs-keyword">var</span> onSwitchStreamFail = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">event</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'switch stream fail by rule '</span> + event.data.rule + <span class="hljs-string">' from type '</span> + event.data.type + <span class="hljs-string">'with entry: '</span> + <span class="hljs-built_in">JSON</span>.stringify(event.data.entry) + <span class="hljs-string">' with error code: '</span> + event.data.code + <span class="hljs-string">' and error message: '</span> + event.data.message);
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'switch stream tag: '</span> + event.data.tag);
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'switch stream count: '</span> + event.data.count);
+};
+config.events.onSwitchStreamFail = onSwitchStreamFail;
+player.setup(config).then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">config</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'setup ok with config: '</span> + <span class="hljs-built_in">JSON</span>.stringify(config));
+}, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">error</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(error);
+});
 </code></pre>
 <p><a name="NanoPlayer..event_onSwitchStreamAbort"></a></p>
 <h3><a class="anchor" aria-hidden="true" id="onswitchstreamabort"></a><a href="#onswitchstreamabort" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>&quot;onSwitchStreamAbort&quot;</h3>
@@ -1712,7 +2112,18 @@
     </tr>  </tbody>
 </table>
 <p><strong>Example</strong></p>
-<pre><code class="hljs css language-js"><span class="hljs-comment">// player instance of NanoPlayer</span><span class="hljs-keyword">var</span> onSwitchStreamAbort = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">event</span>) </span>{    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'switch stream abort by rule '</span> + event.data.rule + <span class="hljs-string">' from type '</span> + event.data.type + <span class="hljs-string">'with entry: '</span> + <span class="hljs-built_in">JSON</span>.stringify(event.data.entry) + <span class="hljs-string">' with reason: '</span> + event.data.reason));    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'tag: '</span> + event.data.tag);    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'count: '</span> + event.data.count);};config.events.onSwitchStreamAbort = onSwitchStreamAbort;player.setup(config).then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">config</span>) </span>{    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'setup ok with config: '</span> + <span class="hljs-built_in">JSON</span>.stringify(config));}, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">error</span>) </span>{    <span class="hljs-built_in">console</span>.log(error);});
+<pre><code class="hljs css language-js"><span class="hljs-comment">// player instance of NanoPlayer</span>
+<span class="hljs-keyword">var</span> onSwitchStreamAbort = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">event</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'switch stream abort by rule '</span> + event.data.rule + <span class="hljs-string">' from type '</span> + event.data.type + <span class="hljs-string">'with entry: '</span> + <span class="hljs-built_in">JSON</span>.stringify(event.data.entry) + <span class="hljs-string">' with reason: '</span> + event.data.reason));
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'tag: '</span> + event.data.tag);
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'count: '</span> + event.data.count);
+};
+config.events.onSwitchStreamAbort = onSwitchStreamAbort;
+player.setup(config).then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">config</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'setup ok with config: '</span> + <span class="hljs-built_in">JSON</span>.stringify(config));
+}, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">error</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(error);
+});
 </code></pre>
 <p><a name="NanoPlayer..event_onServerInfo"></a></p>
 <h3><a class="anchor" aria-hidden="true" id="onserverinfo"></a><a href="#onserverinfo" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>&quot;onServerInfo&quot;</h3>
@@ -1757,7 +2168,16 @@
     </tr>  </tbody>
 </table>
 <p><strong>Example</strong></p>
-<pre><code class="hljs css language-js"><span class="hljs-comment">// player instance of NanoPlayer</span><span class="hljs-keyword">var</span> onServerInfo = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">event</span>) </span>{    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'ServerInfo: '</span> + <span class="hljs-built_in">JSON</span>.stringify(event.data.serverInfo));};config.events.onServerInfo = onServerInfo;player.setup(config).then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">config</span>) </span>{    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'setup ok with config: '</span> + <span class="hljs-built_in">JSON</span>.stringify(config));}, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">error</span>) </span>{    <span class="hljs-built_in">console</span>.log(error);});
+<pre><code class="hljs css language-js"><span class="hljs-comment">// player instance of NanoPlayer</span>
+<span class="hljs-keyword">var</span> onServerInfo = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">event</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'ServerInfo: '</span> + <span class="hljs-built_in">JSON</span>.stringify(event.data.serverInfo));
+};
+config.events.onServerInfo = onServerInfo;
+player.setup(config).then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">config</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'setup ok with config: '</span> + <span class="hljs-built_in">JSON</span>.stringify(config));
+}, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">error</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(error);
+});
 </code></pre>
 <p><a name="NanoPlayer..event_onFullscreenChange"></a></p>
 <h3><a class="anchor" aria-hidden="true" id="onfullscreenchange"></a><a href="#onfullscreenchange" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>&quot;onFullscreenChange&quot;</h3>
@@ -1796,7 +2216,19 @@
     </tr>  </tbody>
 </table>
 <p><strong>Example</strong></p>
-<pre><code class="hljs css language-js"><span class="hljs-comment">// player instance of NanoPlayer</span><span class="hljs-keyword">var</span> onFullscreenChange = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">event</span>) </span>{    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'FullscreenChange'</span>);    <span class="hljs-keyword">if</span> (event.data.entered === <span class="hljs-literal">true</span>) {         <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Fullscreen Mode Entered'</span>);    }};config.events.onFullscreenChange = onFullscreenChange;player.setup(config).then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">config</span>) </span>{    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'setup ok with config: '</span> + <span class="hljs-built_in">JSON</span>.stringify(config));}, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">error</span>) </span>{    <span class="hljs-built_in">console</span>.log(error);});
+<pre><code class="hljs css language-js"><span class="hljs-comment">// player instance of NanoPlayer</span>
+<span class="hljs-keyword">var</span> onFullscreenChange = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">event</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'FullscreenChange'</span>);
+    <span class="hljs-keyword">if</span> (event.data.entered === <span class="hljs-literal">true</span>) {
+         <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Fullscreen Mode Entered'</span>);
+    }
+};
+config.events.onFullscreenChange = onFullscreenChange;
+player.setup(config).then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">config</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'setup ok with config: '</span> + <span class="hljs-built_in">JSON</span>.stringify(config));
+}, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">error</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(error);
+});
 </code></pre>
 <p><a name="NanoPlayer..config"></a></p>
 <h3><a class="anchor" aria-hidden="true" id="nanoplayerconfig--codeobjectcode"></a><a href="#nanoplayerconfig--codeobjectcode" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>NanoPlayer~config : <code>object</code></h3>
@@ -2010,6 +2442,24 @@
     <td>[style.centerView]</td><td><code>boolean</code></td><td><code>true</code></td><td><p>Enable/disable the animations and icons in the center of the player&#39;s view.</p>
 </td>
     </tr><tr>
+    <td>[style.symbolColor]</td><td><code>string</code></td><td><code>&quot;rgba(244,233,233,1)&quot;</code></td><td><p>Sets the color of the symbols used in centerView and controls - The given color string can be a valid css (case insensitive) keyword, hex code with/without alpha, rgb, rgba, hsl or hsla. Example values: &quot;white&quot;, &quot;#ffffff&quot;, &quot;rgba(237,125,14,0.5)&quot;.</p>
+</td>
+    </tr><tr>
+    <td>[style.controlBarColor]</td><td><code>string</code></td><td><code>&quot;rgba(0,0,0,0.5)&quot;</code></td><td><p>Sets the color of the control bar - The given color string can be a valid css (case insensitive) keyword, hex code with/without alpha, rgb, rgba, hsl or hsla. Example values: &quot;white&quot;, &quot;#ffffff&quot;, &quot;rgba(237,125,14,0.5)&quot;.</p>
+</td>
+    </tr><tr>
+    <td>[style.buttonAnimation]</td><td><code>boolean</code></td><td><code>true</code></td><td><p>If true all buttons have short animations at &#39;mouseover&#39; and &#39;click&#39;.</p>
+</td>
+    </tr><tr>
+    <td>[style.buttonHighlighting]</td><td><code>boolean</code></td><td><code>true</code></td><td><p>If true all buttons are slightly highlighted at hover.</p>
+</td>
+    </tr><tr>
+    <td>[style.buttonCursor]</td><td><code>string</code></td><td><code>&quot;pointer&quot;</code></td><td><p>Sets the cursor of all buttons. Possible values are valid css cursor values like &#39;default&#39; or &#39;pointer&#39;.</p>
+</td>
+    </tr><tr>
+    <td>[style.poster]</td><td><code>string</code></td><td></td><td><p>Sets a poster image to the player that is visible before and after playback. That can be every valid source of an IMG element. Valid sources are e.g. &#39;./assets/poster.png&#39; or &#39;https://[YOURDOMAIN]/assets/poster.gif&#39;. The poster will be displayed &#39;letterbox&#39;.</p>
+</td>
+    </tr><tr>
     <td>[events]</td><td><code>object</code></td><td></td><td><p>The object to set handlers to the player events.</p>
 </td>
     </tr><tr>
@@ -2135,16 +2585,287 @@
     </tr>  </tbody>
 </table>
 <p><strong>Example</strong></p>
-<pre><code class="hljs css language-js"><span class="hljs-keyword">var</span> config = {    <span class="hljs-attr">source</span>: {        <span class="hljs-attr">bintu</span>: { <span class="hljs-comment">// DEPRECATED. PLEASE USE ENTRIES!!! WILL BE OVERWRITTEN IN CASE AT LEAST ONE 'ENTRY' IS DEFINED IN 'ENTRIES' ARRAY.</span>            streamid: <span class="hljs-string">'q23rf2tzw3h6754iretmft7irt'</span>        }    }};
+<pre><code class="hljs css language-js"><span class="hljs-keyword">var</span> config = {
+    <span class="hljs-attr">source</span>: {
+        <span class="hljs-attr">bintu</span>: { <span class="hljs-comment">// DEPRECATED. PLEASE USE ENTRIES!!! WILL BE OVERWRITTEN IN CASE AT LEAST ONE 'ENTRY' IS DEFINED IN 'ENTRIES' ARRAY.</span>
+            <span class="hljs-attr">streamid</span>: <span class="hljs-string">'q23rf2tzw3h6754iretmft7irt'</span>
+        }
+    }
+};
 </code></pre>
 <p><strong>Example</strong></p>
-<pre><code class="hljs css language-js"><span class="hljs-comment">// Complete config example</span><span class="hljs-keyword">var</span> config = {    <span class="hljs-string">"source"</span> : {        <span class="hljs-string">"entries"</span>: [ <span class="hljs-comment">// array of 'entry' objects</span>                {                    <span class="hljs-string">"index"</span>: <span class="hljs-number">0</span>,                    <span class="hljs-string">"label"</span>: <span class="hljs-string">"high"</span>,                    <span class="hljs-string">"tag"</span>: <span class="hljs-string">"this is a high quality stream"</span>,                    <span class="hljs-string">"info"</span>: {                        <span class="hljs-string">"bitrate"</span>: <span class="hljs-number">1200</span>,                        <span class="hljs-string">"width"</span>: <span class="hljs-number">1280</span>,                        <span class="hljs-string">"height"</span>: <span class="hljs-number">720</span>,                        <span class="hljs-string">"framerate"</span>: <span class="hljs-number">30</span>                    },                    <span class="hljs-string">"hls"</span>: <span class="hljs-string">""</span>,                    <span class="hljs-string">"h5live"</span>: {                        <span class="hljs-string">"rtmp"</span>: {                            <span class="hljs-string">"url"</span>: <span class="hljs-string">"rtmp://bintu-play.nanocosmos.de/play"</span>,                            <span class="hljs-string">"streamname"</span>: <span class="hljs-string">"XXXXX-YYYY1"</span>                        },                        <span class="hljs-string">"server"</span>: {                            <span class="hljs-string">"websocket"</span>: <span class="hljs-string">"wss://bintu-h5live.nanocosmos.de:443/h5live/stream.mp4"</span>,                            <span class="hljs-string">"hls"</span>: <span class="hljs-string">"https://bintu-h5live.nanocosmos.de:443/h5live/http/playlist.m3u8"</span>,                            <span class="hljs-string">"progressive"</span>: <span class="hljs-string">"https://bintu-h5live.nanocosmos.de:443/h5live/http/stream.mp4"</span>                        },                        <span class="hljs-string">"token"</span>: <span class="hljs-string">""</span>,                        <span class="hljs-string">"security"</span>: {}                    },                    <span class="hljs-string">"bintu"</span>: {}                },                {                    <span class="hljs-string">"index"</span>: <span class="hljs-number">1</span>,                    <span class="hljs-string">"label"</span>: <span class="hljs-string">"medium"</span>,                    <span class="hljs-string">"tag"</span>: <span class="hljs-string">"this is a medium quality stream"</span>,                    <span class="hljs-string">"info"</span>: {                        <span class="hljs-string">"bitrate"</span>: <span class="hljs-number">800</span>,                        <span class="hljs-string">"width"</span>: <span class="hljs-number">864</span>,                        <span class="hljs-string">"height"</span>: <span class="hljs-number">480</span>,                        <span class="hljs-string">"framerate"</span>: <span class="hljs-number">30</span>                    },                    <span class="hljs-string">"hls"</span>: <span class="hljs-string">""</span>,                    <span class="hljs-string">"h5live"</span>: {                        <span class="hljs-string">"rtmp"</span>: {                            <span class="hljs-string">"url"</span>: <span class="hljs-string">"rtmp://bintu-play.nanocosmos.de/play"</span>,                            <span class="hljs-string">"streamname"</span>: <span class="hljs-string">"XXXXX-YYYY2"</span>                        },                        <span class="hljs-string">"server"</span>: {                            <span class="hljs-string">"websocket"</span>: <span class="hljs-string">"wss://bintu-h5live.nanocosmos.de:443/h5live/stream.mp4"</span>,                            <span class="hljs-string">"hls"</span>: <span class="hljs-string">"https://bintu-h5live.nanocosmos.de:443/h5live/http/playlist.m3u8"</span>,                            <span class="hljs-string">"progressive"</span>: <span class="hljs-string">"https://bintu-h5live.nanocosmos.de:443/h5live/http/stream.mp4"</span>                        },                        <span class="hljs-string">"token"</span>: <span class="hljs-string">""</span>,                        <span class="hljs-string">"security"</span>: {}                    },                    <span class="hljs-string">"bintu"</span>: {}                },                {                    <span class="hljs-string">"index"</span>: <span class="hljs-number">2</span>,                    <span class="hljs-string">"label"</span>: <span class="hljs-string">"low"</span>,                    <span class="hljs-string">"tag"</span>: <span class="hljs-string">"this is a low quality stream"</span>,                    <span class="hljs-string">"info"</span>: {                        <span class="hljs-string">"bitrate"</span>: <span class="hljs-number">400</span>,                        <span class="hljs-string">"width"</span>: <span class="hljs-number">426</span>,                        <span class="hljs-string">"height"</span>: <span class="hljs-number">240</span>,                        <span class="hljs-string">"framerate"</span>: <span class="hljs-number">15</span>                    },                    <span class="hljs-string">"hls"</span>: <span class="hljs-string">""</span>,                    <span class="hljs-string">"h5live"</span>: {                        <span class="hljs-string">"rtmp"</span>: {                            <span class="hljs-string">"url"</span>: <span class="hljs-string">"rtmp://bintu-play.nanocosmos.de/play"</span>,                            <span class="hljs-string">"streamname"</span>: <span class="hljs-string">"XXXXX-YYYY3"</span>                        },                        <span class="hljs-string">"server"</span>: {                            <span class="hljs-string">"websocket"</span>: <span class="hljs-string">"wss://bintu-h5live.nanocosmos.de:443/h5live/stream.mp4"</span>,                            <span class="hljs-string">"hls"</span>: <span class="hljs-string">"https://bintu-h5live.nanocosmos.de:443/h5live/http/playlist.m3u8"</span>,                            <span class="hljs-string">"progressive"</span>: <span class="hljs-string">"https://bintu-h5live.nanocosmos.de:443/h5live/http/stream.mp4"</span>                        },                        <span class="hljs-string">"token"</span>: <span class="hljs-string">""</span>,                        <span class="hljs-string">"security"</span>: {}                    },                    <span class="hljs-string">"bintu"</span>: {}                }        ],        <span class="hljs-string">"options"</span>: {            <span class="hljs-string">"adaption"</span>: {                <span class="hljs-string">"rule"</span>: <span class="hljs-string">"deviationOfMean"</span>            },            <span class="hljs-string">"switch"</span>: {                <span class="hljs-string">'method'</span>: <span class="hljs-string">'server'</span>,                <span class="hljs-string">'pauseOnError'</span>: <span class="hljs-literal">false</span>,                <span class="hljs-string">'forcePlay'</span>: <span class="hljs-literal">true</span>,                <span class="hljs-string">'fastStart'</span>: <span class="hljs-literal">false</span>,                <span class="hljs-string">'timeout'</span>: <span class="hljs-number">20</span>            }        },        <span class="hljs-string">"startIndex"</span>: <span class="hljs-number">2</span> <span class="hljs-comment">// lowest</span>    },    <span class="hljs-comment">// playback is completely optional</span>    <span class="hljs-string">"playback"</span>: {        <span class="hljs-string">"autoplay"</span>: <span class="hljs-literal">false</span>,        <span class="hljs-string">"metadata"</span>: <span class="hljs-literal">true</span>,        <span class="hljs-string">"keepConnection"</span>: <span class="hljs-literal">true</span>,        <span class="hljs-string">"reconnect"</span>: {            <span class="hljs-string">"minDelay"</span>: <span class="hljs-number">2.5</span>,            <span class="hljs-string">"maxDelay"</span>: <span class="hljs-number">12.5</span>,            <span class="hljs-string">"delaySteps"</span>: <span class="hljs-number">6</span>,            <span class="hljs-string">"maxRetries"</span>: <span class="hljs-number">20</span>        }    },    <span class="hljs-string">"events"</span>: {        <span class="hljs-string">"onWarning"</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">e</span>) </span>{            <span class="hljs-built_in">console</span>.log(e);        }    },    <span class="hljs-string">"style"</span>: {        <span class="hljs-string">"width"</span>: <span class="hljs-string">'1280px'</span>,        <span class="hljs-string">"height"</span>: <span class="hljs-string">'720px'</span>    },    <span class="hljs-comment">// optional buffer tweaks, use with care, usually not required</span>    <span class="hljs-string">"tweaks"</span>: {        <span class="hljs-string">"buffer"</span>: {            <span class="hljs-string">"min"</span>: <span class="hljs-number">0.2</span>,            <span class="hljs-string">"start"</span>: <span class="hljs-number">0.5</span>,            <span class="hljs-string">"max"</span>: <span class="hljs-number">8.0</span>,            <span class="hljs-string">"target"</span>: <span class="hljs-number">1.2</span>,            <span class="hljs-string">"limit"</span>: <span class="hljs-number">1.7</span>        },        <span class="hljs-string">"bufferDynamic"</span>: {            <span class="hljs-string">"offsetThreshold"</span>: <span class="hljs-number">2</span>,            <span class="hljs-string">"offsetStep"</span>: <span class="hljs-number">0.5</span>,            <span class="hljs-string">"cooldownTime"</span>: <span class="hljs-number">10</span>        }    },    <span class="hljs-comment">// metrics/analytics (requires account)</span>    <span class="hljs-string">"metrics"</span>: {        <span class="hljs-string">"accountId"</span>: <span class="hljs-string">'myId'</span>,        <span class="hljs-string">"accountKey"</span>: <span class="hljs-string">'sdfhe457zsjhnrtzd8'</span>,        <span class="hljs-string">"userId"</span>: <span class="hljs-string">'myUserId'</span>,        <span class="hljs-string">"eventId"</span>: <span class="hljs-string">'myEventId'</span>,        <span class="hljs-string">"statsInterval"</span>: <span class="hljs-number">10</span>,        <span class="hljs-string">"customField1"</span>: <span class="hljs-string">'custom'</span>,        <span class="hljs-string">"customField2"</span>: <span class="hljs-number">42</span>,        <span class="hljs-string">"customField3"</span>: <span class="hljs-literal">true</span>    }};
+<pre><code class="hljs css language-js"><span class="hljs-comment">// Complete config example</span>
+<span class="hljs-keyword">var</span> config = {
+    <span class="hljs-string">"source"</span> : {
+        <span class="hljs-string">"entries"</span>: [ <span class="hljs-comment">// array of 'entry' objects</span>
+                {
+                    <span class="hljs-string">"index"</span>: <span class="hljs-number">0</span>,
+                    <span class="hljs-string">"label"</span>: <span class="hljs-string">"high"</span>,
+                    <span class="hljs-string">"tag"</span>: <span class="hljs-string">"this is a high quality stream"</span>,
+                    <span class="hljs-string">"info"</span>: {
+                        <span class="hljs-string">"bitrate"</span>: <span class="hljs-number">1200</span>,
+                        <span class="hljs-string">"width"</span>: <span class="hljs-number">1280</span>,
+                        <span class="hljs-string">"height"</span>: <span class="hljs-number">720</span>,
+                        <span class="hljs-string">"framerate"</span>: <span class="hljs-number">30</span>
+                    },
+                    <span class="hljs-string">"hls"</span>: <span class="hljs-string">""</span>,
+                    <span class="hljs-string">"h5live"</span>: {
+                        <span class="hljs-string">"rtmp"</span>: {
+                            <span class="hljs-string">"url"</span>: <span class="hljs-string">"rtmp://bintu-play.nanocosmos.de/play"</span>,
+                            <span class="hljs-string">"streamname"</span>: <span class="hljs-string">"XXXXX-YYYY1"</span>
+                        },
+                        <span class="hljs-string">"server"</span>: {
+                            <span class="hljs-string">"websocket"</span>: <span class="hljs-string">"wss://bintu-h5live.nanocosmos.de:443/h5live/stream.mp4"</span>,
+                            <span class="hljs-string">"hls"</span>: <span class="hljs-string">"https://bintu-h5live.nanocosmos.de:443/h5live/http/playlist.m3u8"</span>,
+                            <span class="hljs-string">"progressive"</span>: <span class="hljs-string">"https://bintu-h5live.nanocosmos.de:443/h5live/http/stream.mp4"</span>
+                        },
+                        <span class="hljs-string">"token"</span>: <span class="hljs-string">""</span>,
+                        <span class="hljs-string">"security"</span>: {}
+                    },
+                    <span class="hljs-string">"bintu"</span>: {}
+                },
+                {
+                    <span class="hljs-string">"index"</span>: <span class="hljs-number">1</span>,
+                    <span class="hljs-string">"label"</span>: <span class="hljs-string">"medium"</span>,
+                    <span class="hljs-string">"tag"</span>: <span class="hljs-string">"this is a medium quality stream"</span>,
+                    <span class="hljs-string">"info"</span>: {
+                        <span class="hljs-string">"bitrate"</span>: <span class="hljs-number">800</span>,
+                        <span class="hljs-string">"width"</span>: <span class="hljs-number">864</span>,
+                        <span class="hljs-string">"height"</span>: <span class="hljs-number">480</span>,
+                        <span class="hljs-string">"framerate"</span>: <span class="hljs-number">30</span>
+                    },
+                    <span class="hljs-string">"hls"</span>: <span class="hljs-string">""</span>,
+                    <span class="hljs-string">"h5live"</span>: {
+                        <span class="hljs-string">"rtmp"</span>: {
+                            <span class="hljs-string">"url"</span>: <span class="hljs-string">"rtmp://bintu-play.nanocosmos.de/play"</span>,
+                            <span class="hljs-string">"streamname"</span>: <span class="hljs-string">"XXXXX-YYYY2"</span>
+                        },
+                        <span class="hljs-string">"server"</span>: {
+                            <span class="hljs-string">"websocket"</span>: <span class="hljs-string">"wss://bintu-h5live.nanocosmos.de:443/h5live/stream.mp4"</span>,
+                            <span class="hljs-string">"hls"</span>: <span class="hljs-string">"https://bintu-h5live.nanocosmos.de:443/h5live/http/playlist.m3u8"</span>,
+                            <span class="hljs-string">"progressive"</span>: <span class="hljs-string">"https://bintu-h5live.nanocosmos.de:443/h5live/http/stream.mp4"</span>
+                        },
+                        <span class="hljs-string">"token"</span>: <span class="hljs-string">""</span>,
+                        <span class="hljs-string">"security"</span>: {}
+                    },
+                    <span class="hljs-string">"bintu"</span>: {}
+                },
+                {
+                    <span class="hljs-string">"index"</span>: <span class="hljs-number">2</span>,
+                    <span class="hljs-string">"label"</span>: <span class="hljs-string">"low"</span>,
+                    <span class="hljs-string">"tag"</span>: <span class="hljs-string">"this is a low quality stream"</span>,
+                    <span class="hljs-string">"info"</span>: {
+                        <span class="hljs-string">"bitrate"</span>: <span class="hljs-number">400</span>,
+                        <span class="hljs-string">"width"</span>: <span class="hljs-number">426</span>,
+                        <span class="hljs-string">"height"</span>: <span class="hljs-number">240</span>,
+                        <span class="hljs-string">"framerate"</span>: <span class="hljs-number">15</span>
+                    },
+                    <span class="hljs-string">"hls"</span>: <span class="hljs-string">""</span>,
+                    <span class="hljs-string">"h5live"</span>: {
+                        <span class="hljs-string">"rtmp"</span>: {
+                            <span class="hljs-string">"url"</span>: <span class="hljs-string">"rtmp://bintu-play.nanocosmos.de/play"</span>,
+                            <span class="hljs-string">"streamname"</span>: <span class="hljs-string">"XXXXX-YYYY3"</span>
+                        },
+                        <span class="hljs-string">"server"</span>: {
+                            <span class="hljs-string">"websocket"</span>: <span class="hljs-string">"wss://bintu-h5live.nanocosmos.de:443/h5live/stream.mp4"</span>,
+                            <span class="hljs-string">"hls"</span>: <span class="hljs-string">"https://bintu-h5live.nanocosmos.de:443/h5live/http/playlist.m3u8"</span>,
+                            <span class="hljs-string">"progressive"</span>: <span class="hljs-string">"https://bintu-h5live.nanocosmos.de:443/h5live/http/stream.mp4"</span>
+                        },
+                        <span class="hljs-string">"token"</span>: <span class="hljs-string">""</span>,
+                        <span class="hljs-string">"security"</span>: {}
+                    },
+                    <span class="hljs-string">"bintu"</span>: {}
+                }
+        ],
+        <span class="hljs-string">"options"</span>: {
+            <span class="hljs-string">"adaption"</span>: {
+                <span class="hljs-string">"rule"</span>: <span class="hljs-string">"deviationOfMean"</span>
+            },
+            <span class="hljs-string">"switch"</span>: {
+                <span class="hljs-string">'method'</span>: <span class="hljs-string">'server'</span>,
+                <span class="hljs-string">'pauseOnError'</span>: <span class="hljs-literal">false</span>,
+                <span class="hljs-string">'forcePlay'</span>: <span class="hljs-literal">true</span>,
+                <span class="hljs-string">'fastStart'</span>: <span class="hljs-literal">false</span>,
+                <span class="hljs-string">'timeout'</span>: <span class="hljs-number">20</span>
+            }
+        },
+        <span class="hljs-string">"startIndex"</span>: <span class="hljs-number">2</span> <span class="hljs-comment">// lowest</span>
+    },
+    <span class="hljs-comment">// playback is completely optional</span>
+    <span class="hljs-string">"playback"</span>: {
+        <span class="hljs-string">"autoplay"</span>: <span class="hljs-literal">false</span>,
+        <span class="hljs-string">"metadata"</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-string">"keepConnection"</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-string">"reconnect"</span>: {
+            <span class="hljs-string">"minDelay"</span>: <span class="hljs-number">2.5</span>,
+            <span class="hljs-string">"maxDelay"</span>: <span class="hljs-number">12.5</span>,
+            <span class="hljs-string">"delaySteps"</span>: <span class="hljs-number">6</span>,
+            <span class="hljs-string">"maxRetries"</span>: <span class="hljs-number">20</span>
+        }
+    },
+    <span class="hljs-string">"events"</span>: {
+        <span class="hljs-string">"onWarning"</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">e</span>) </span>{
+            <span class="hljs-built_in">console</span>.log(e);
+        }
+    },
+    <span class="hljs-string">"style"</span>: {
+        <span class="hljs-string">"width"</span>: <span class="hljs-string">'1280px'</span>,
+        <span class="hljs-string">"height"</span>: <span class="hljs-string">'720px'</span>
+    },
+    <span class="hljs-comment">// optional buffer tweaks, use with care, usually not required</span>
+    <span class="hljs-string">"tweaks"</span>: {
+        <span class="hljs-string">"buffer"</span>: {
+            <span class="hljs-string">"min"</span>: <span class="hljs-number">0.2</span>,
+            <span class="hljs-string">"start"</span>: <span class="hljs-number">0.5</span>,
+            <span class="hljs-string">"max"</span>: <span class="hljs-number">8.0</span>,
+            <span class="hljs-string">"target"</span>: <span class="hljs-number">1.2</span>,
+            <span class="hljs-string">"limit"</span>: <span class="hljs-number">1.7</span>
+        },
+        <span class="hljs-string">"bufferDynamic"</span>: {
+            <span class="hljs-string">"offsetThreshold"</span>: <span class="hljs-number">2</span>,
+            <span class="hljs-string">"offsetStep"</span>: <span class="hljs-number">0.5</span>,
+            <span class="hljs-string">"cooldownTime"</span>: <span class="hljs-number">10</span>
+        }
+    },
+    <span class="hljs-comment">// metrics/analytics (requires account)</span>
+    <span class="hljs-string">"metrics"</span>: {
+        <span class="hljs-string">"accountId"</span>: <span class="hljs-string">'myId'</span>,
+        <span class="hljs-string">"accountKey"</span>: <span class="hljs-string">'sdfhe457zsjhnrtzd8'</span>,
+        <span class="hljs-string">"userId"</span>: <span class="hljs-string">'myUserId'</span>,
+        <span class="hljs-string">"eventId"</span>: <span class="hljs-string">'myEventId'</span>,
+        <span class="hljs-string">"statsInterval"</span>: <span class="hljs-number">10</span>,
+        <span class="hljs-string">"customField1"</span>: <span class="hljs-string">'custom'</span>,
+        <span class="hljs-string">"customField2"</span>: <span class="hljs-number">42</span>,
+        <span class="hljs-string">"customField3"</span>: <span class="hljs-literal">true</span>
+    }
+};
 </code></pre>
 <p><strong>Example</strong></p>
-<pre><code class="hljs css language-js"><span class="hljs-comment">// example with source url params and events</span><span class="hljs-keyword">var</span> config = {    <span class="hljs-string">"source"</span>: {        <span class="hljs-string">"h5live"</span>: { <span class="hljs-comment">// DEPRECATED. PLEASE USE ENTRIES!!! WILL BE OVERWRITTEN IN CASE AT LEAST ONE 'ENTRY' IS DEFINED IN 'ENTRIES' ARRAY.</span>            <span class="hljs-string">"server"</span>: {                <span class="hljs-string">"websocket"</span>: <span class="hljs-string">'wss://bintu-h5live.nanocosmos.de/h5live/stream'</span>,                <span class="hljs-string">"hls"</span>: <span class="hljs-string">'https://bintu-h5live.nanocosmos.de/h5live/http/playlist.m3u8'</span>            },            <span class="hljs-comment">// rtmp stream source (your live stream)</span>            <span class="hljs-string">"params"</span>: {                <span class="hljs-string">"url"</span>: <span class="hljs-string">'rtmp://bintu-play.nanocosmos.de:80/live'</span>,                <span class="hljs-string">"streamname"</span>: <span class="hljs-string">'XXXXX-YYYYY'</span>                <span class="hljs-string">"custom_key"</span>: <span class="hljs-string">'custom_value'</span>            }        }    },    <span class="hljs-string">"playback"</span>: {        <span class="hljs-string">"autoplay"</span>: <span class="hljs-literal">false</span>,        <span class="hljs-string">"videoId"</span>: [<span class="hljs-string">'myVideoTagId'</span>, <span class="hljs-string">'myVideoTagId'</span>]    },    <span class="hljs-string">"events"</span>: {        <span class="hljs-string">"onStats"</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">e</span>) </span>{            <span class="hljs-built_in">console</span>.log(e);        }    },    <span class="hljs-string">"style"</span>: {       <span class="hljs-attr">view</span>: <span class="hljs-literal">false</span>    },    <span class="hljs-string">"metrics"</span>: {        <span class="hljs-string">"accountId"</span>: <span class="hljs-string">'myId'</span>,        <span class="hljs-string">"accountKey"</span>: <span class="hljs-string">'sdfhe457zsjhnrtzd8'</span>    }};
+<pre><code class="hljs css language-js"><span class="hljs-comment">// example with source url params and events</span>
+<span class="hljs-keyword">var</span> config = {
+    <span class="hljs-string">"source"</span>: {
+        <span class="hljs-string">"h5live"</span>: { <span class="hljs-comment">// DEPRECATED. PLEASE USE ENTRIES!!! WILL BE OVERWRITTEN IN CASE AT LEAST ONE 'ENTRY' IS DEFINED IN 'ENTRIES' ARRAY.</span>
+            <span class="hljs-string">"server"</span>: {
+                <span class="hljs-string">"websocket"</span>: <span class="hljs-string">'wss://bintu-h5live.nanocosmos.de/h5live/stream'</span>,
+                <span class="hljs-string">"hls"</span>: <span class="hljs-string">'https://bintu-h5live.nanocosmos.de/h5live/http/playlist.m3u8'</span>
+            },
+            <span class="hljs-comment">// rtmp stream source (your live stream)</span>
+            <span class="hljs-string">"params"</span>: {
+                <span class="hljs-string">"url"</span>: <span class="hljs-string">'rtmp://bintu-play.nanocosmos.de:80/live'</span>,
+                <span class="hljs-string">"streamname"</span>: <span class="hljs-string">'XXXXX-YYYYY'</span>
+                <span class="hljs-string">"custom_key"</span>: <span class="hljs-string">'custom_value'</span>
+            }
+        }
+    },
+    <span class="hljs-string">"playback"</span>: {
+        <span class="hljs-string">"autoplay"</span>: <span class="hljs-literal">false</span>,
+        <span class="hljs-string">"videoId"</span>: [<span class="hljs-string">'myVideoTagId'</span>, <span class="hljs-string">'myVideoTagId'</span>]
+    },
+    <span class="hljs-string">"events"</span>: {
+        <span class="hljs-string">"onStats"</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">e</span>) </span>{
+            <span class="hljs-built_in">console</span>.log(e);
+        }
+    },
+    <span class="hljs-string">"style"</span>: {
+       <span class="hljs-attr">view</span>: <span class="hljs-literal">false</span>
+    },
+    <span class="hljs-string">"metrics"</span>: {
+        <span class="hljs-string">"accountId"</span>: <span class="hljs-string">'myId'</span>,
+        <span class="hljs-string">"accountKey"</span>: <span class="hljs-string">'sdfhe457zsjhnrtzd8'</span>
+    }
+};
 </code></pre>
 <p><strong>Example</strong></p>
-<pre><code class="hljs css language-js">var config = {    "source" : {        "entries": [ // array of 'entry' objects, here only one is defined as single source                {                    "index": 0,                    "label": "high", // optional                    "tag": "this is a high quality stream", // optional                    "info": { // optional                        "bitrate": 1200,                        "width": 1280,                        "height": 720,                        "framerate": 30                    },                    "hls": "",                    "h5live": {                        "rtmp": {                            "url": "rtmp://bintu-play.nanocosmos.de/play",                            "streamname": "XXXXX-YYYYY"                        },                        "server": {                            "websocket": "wss://bintu-h5live.nanocosmos.de:443/h5live/stream.mp4",                            "hls": "https://bintu-h5live.nanocosmos.de:443/h5live/http/playlist.m3u8",                            "progressive": "https://bintu-h5live.nanocosmos.de:443/h5live/http/stream.mp4"                        },                        // (optional) secure token                        "security": {                            "token": 'awe456b367g4e6rm8f56hbe6gd8f5m8df6n8idf6tf8mfd68ndi',                            "expires": '1519819200',                            "options": '15',                            "tag": 'anyTag'                        }                    }                }        ],        "options": { // optional            "adaption": {                "rule": "none"            }        },        "startIndex": 0 // optional    },    "playback": {        "autoplay": true,        "muted": true    },    "events": {        "onReady": function (e) {            console.log('player ready with ' + JSON.stringify(e));        },        "onPlay": function (e) {            console.log('playing');            console.log('play stats: ' + JSON.stringify(e.data.stats));        },        "onPause": function (e) {            console.log('pause');            if (e.data.reason !== 'normal') {                alert('Paused with reason: ' + e.data.reason);            }        },        "onError": function (e) {            try {                var err = JSON.stringify(e);                if (err === '{}') {                    err = e.message;                }                e = err;            } catch (err) { }            console.log(e);            alert(e);        },        "onMetaData": function (e) {            console.log(e);        },        "onStats": function (e) {            console.log(e);        },        "onStreamInfo": function (e) {            console.log(e);        },        "onDestroy": function (e) {            console.log(e);        }    },    "style": {        "width: '1280px',        "aspectratio": '16/9',        "controls": false,        "scaling": 'crop'    }};
+<pre><code class="hljs css language-js">var config = {
+    "source" : {
+        "entries": [ // array of 'entry' objects, here only one is defined as single source
+                {
+                    "index": 0,
+                    "label": "high", // optional
+                    "tag": "this is a high quality stream", // optional
+                    "info": { // optional
+                        "bitrate": 1200,
+                        "width": 1280,
+                        "height": 720,
+                        "framerate": 30
+                    },
+                    "hls": "",
+                    "h5live": {
+                        "rtmp": {
+                            "url": "rtmp://bintu-play.nanocosmos.de/play",
+                            "streamname": "XXXXX-YYYYY"
+                        },
+                        "server": {
+                            "websocket": "wss://bintu-h5live.nanocosmos.de:443/h5live/stream.mp4",
+                            "hls": "https://bintu-h5live.nanocosmos.de:443/h5live/http/playlist.m3u8",
+                            "progressive": "https://bintu-h5live.nanocosmos.de:443/h5live/http/stream.mp4"
+                        },
+                        // (optional) secure token
+                        "security": {
+                            "token": 'awe456b367g4e6rm8f56hbe6gd8f5m8df6n8idf6tf8mfd68ndi',
+                            "expires": '1519819200',
+                            "options": '15',
+                            "tag": 'anyTag'
+                        }
+                    }
+                }
+        ],
+        "options": { // optional
+            "adaption": {
+                "rule": "none"
+            }
+        },
+        "startIndex": 0 // optional
+    },
+    "playback": {
+        "autoplay": true,
+        "muted": true
+    },
+    "events": {
+        "onReady": function (e) {
+            console.log('player ready with ' + JSON.stringify(e));
+        },
+        "onPlay": function (e) {
+            console.log('playing');
+            console.log('play stats: ' + JSON.stringify(e.data.stats));
+        },
+        "onPause": function (e) {
+            console.log('pause');
+            if (e.data.reason !== 'normal') {
+                alert('Paused with reason: ' + e.data.reason);
+            }
+        },
+        "onError": function (e) {
+            try {
+                var err = JSON.stringify(e);
+                if (err === '{}') {
+                    err = e.message;
+                }
+                e = err;
+            } catch (err) { }
+            console.log(e);
+            alert(e);
+        },
+        "onMetaData": function (e) {
+            console.log(e);
+        },
+        "onStats": function (e) {
+            console.log(e);
+        },
+        "onStreamInfo": function (e) {
+            console.log(e);
+        },
+        "onDestroy": function (e) {
+            console.log(e);
+        }
+    },
+    "style": {
+        "width: '1280px',
+        "aspectratio": '16/9',
+        "controls": false,
+        "scaling": 'crop'
+    }
+};
 </code></pre>
 <p><a name="NanoPlayer..entry"></a></p>
 <h3><a class="anchor" aria-hidden="true" id="nanoplayerentry--codeobjectcode"></a><a href="#nanoplayerentry--codeobjectcode" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>NanoPlayer~entry : <code>object</code></h3>
@@ -2243,10 +2964,137 @@
     </tr>  </tbody>
 </table>
 <p><strong>Example</strong></p>
-<pre><code class="hljs css language-js"><span class="hljs-keyword">var</span> source = {    <span class="hljs-string">"entries"</span>: [            {                <span class="hljs-string">"index"</span>: <span class="hljs-number">0</span>,                <span class="hljs-string">"label"</span>: <span class="hljs-string">"high"</span>,                <span class="hljs-string">"tag"</span>: <span class="hljs-string">"this is a high quality stream"</span>,                <span class="hljs-string">"info"</span>: {                    <span class="hljs-string">"bitrate"</span>: <span class="hljs-number">1200</span>,                    <span class="hljs-string">"width"</span>: <span class="hljs-number">1280</span>,                    <span class="hljs-string">"height"</span>: <span class="hljs-number">720</span>,                    <span class="hljs-string">"framerate"</span>: <span class="hljs-number">30</span>                },                <span class="hljs-string">"hls"</span>: <span class="hljs-string">""</span>,                <span class="hljs-string">"h5live"</span>: {                    <span class="hljs-string">"rtmp"</span>: {                        <span class="hljs-string">"url"</span>: <span class="hljs-string">"rtmp://bintu-play.nanocosmos.de/play"</span>,                        <span class="hljs-string">"streamname"</span>: <span class="hljs-string">"XXXXX-YYYY1"</span>                    },                    <span class="hljs-string">"server"</span>: {                        <span class="hljs-string">"websocket"</span>: <span class="hljs-string">"wss://bintu-h5live.nanocosmos.de:443/h5live/stream.mp4"</span>,                        <span class="hljs-string">"hls"</span>: <span class="hljs-string">"https://bintu-h5live.nanocosmos.de:443/h5live/http/playlist.m3u8"</span>,                        <span class="hljs-string">"progressive"</span>: <span class="hljs-string">"https://bintu-h5live.nanocosmos.de:443/h5live/http/stream.mp4"</span>                    },                    <span class="hljs-string">"token"</span>: <span class="hljs-string">""</span>,                    <span class="hljs-string">"security"</span>: {}                },                <span class="hljs-string">"bintu"</span>: {}            },            {                <span class="hljs-string">"index"</span>: <span class="hljs-number">1</span>,                <span class="hljs-string">"label"</span>: <span class="hljs-string">"medium"</span>,                <span class="hljs-string">"tag"</span>: <span class="hljs-string">"this is a medium quality stream"</span>,                <span class="hljs-string">"info"</span>: {                    <span class="hljs-string">"bitrate"</span>: <span class="hljs-number">800</span>,                    <span class="hljs-string">"width"</span>: <span class="hljs-number">864</span>,                    <span class="hljs-string">"height"</span>: <span class="hljs-number">480</span>,                    <span class="hljs-string">"framerate"</span>: <span class="hljs-number">30</span>                },                <span class="hljs-string">"hls"</span>: <span class="hljs-string">""</span>,                <span class="hljs-string">"h5live"</span>: {                    <span class="hljs-string">"rtmp"</span>: {                        <span class="hljs-string">"url"</span>: <span class="hljs-string">"rtmp://bintu-play.nanocosmos.de/play"</span>,                        <span class="hljs-string">"streamname"</span>: <span class="hljs-string">"XXXXX-YYYY2"</span>                    },                    <span class="hljs-string">"server"</span>: {                        <span class="hljs-string">"websocket"</span>: <span class="hljs-string">"wss://bintu-h5live.nanocosmos.de:443/h5live/stream.mp4"</span>,                        <span class="hljs-string">"hls"</span>: <span class="hljs-string">"https://bintu-h5live.nanocosmos.de:443/h5live/http/playlist.m3u8"</span>,                        <span class="hljs-string">"progressive"</span>: <span class="hljs-string">"https://bintu-h5live.nanocosmos.de:443/h5live/http/stream.mp4"</span>                    },                    <span class="hljs-string">"token"</span>: <span class="hljs-string">""</span>,                    <span class="hljs-string">"security"</span>: {}                },                <span class="hljs-string">"bintu"</span>: {}            },            {                <span class="hljs-string">"index"</span>: <span class="hljs-number">2</span>,                <span class="hljs-string">"label"</span>: <span class="hljs-string">"low"</span>,                <span class="hljs-string">"tag"</span>: <span class="hljs-string">"this is a low quality stream"</span>,                <span class="hljs-string">"info"</span>: {                    <span class="hljs-string">"bitrate"</span>: <span class="hljs-number">400</span>,                    <span class="hljs-string">"width"</span>: <span class="hljs-number">426</span>,                    <span class="hljs-string">"height"</span>: <span class="hljs-number">240</span>,                    <span class="hljs-string">"framerate"</span>: <span class="hljs-number">15</span>                },                <span class="hljs-string">"hls"</span>: <span class="hljs-string">""</span>,                <span class="hljs-string">"h5live"</span>: {                    <span class="hljs-string">"rtmp"</span>: {                        <span class="hljs-string">"url"</span>: <span class="hljs-string">"rtmp://bintu-play.nanocosmos.de/play"</span>,                        <span class="hljs-string">"streamname"</span>: <span class="hljs-string">"XXXXX-YYYY3"</span>                    },                    <span class="hljs-string">"server"</span>: {                        <span class="hljs-string">"websocket"</span>: <span class="hljs-string">"wss://bintu-h5live.nanocosmos.de:443/h5live/stream.mp4"</span>,                        <span class="hljs-string">"hls"</span>: <span class="hljs-string">"https://bintu-h5live.nanocosmos.de:443/h5live/http/playlist.m3u8"</span>,                        <span class="hljs-string">"progressive"</span>: <span class="hljs-string">"https://bintu-h5live.nanocosmos.de:443/h5live/http/stream.mp4"</span>                    },                    <span class="hljs-string">"token"</span>: <span class="hljs-string">""</span>,                    <span class="hljs-string">"security"</span>: {}                },                <span class="hljs-string">"bintu"</span>: {}            }    ],    <span class="hljs-string">"options"</span>: {        <span class="hljs-string">"adaption"</span>: {            <span class="hljs-string">"rule"</span>: <span class="hljs-string">"deviationOfMean"</span>        },        <span class="hljs-string">"switch"</span>: {            <span class="hljs-string">'method'</span>: <span class="hljs-string">'server'</span>,            <span class="hljs-string">'pauseOnError'</span>: <span class="hljs-literal">false</span>,            <span class="hljs-string">'forcePlay'</span>: <span class="hljs-literal">true</span>,            <span class="hljs-string">'fastStart'</span>: <span class="hljs-literal">false</span>,            <span class="hljs-string">'timeout'</span>: <span class="hljs-number">20</span>        }    },    <span class="hljs-string">"startIndex"</span>: <span class="hljs-number">2</span> <span class="hljs-comment">// lowest</span>};
+<pre><code class="hljs css language-js"><span class="hljs-keyword">var</span> source = {
+    <span class="hljs-string">"entries"</span>: [
+            {
+                <span class="hljs-string">"index"</span>: <span class="hljs-number">0</span>,
+                <span class="hljs-string">"label"</span>: <span class="hljs-string">"high"</span>,
+                <span class="hljs-string">"tag"</span>: <span class="hljs-string">"this is a high quality stream"</span>,
+                <span class="hljs-string">"info"</span>: {
+                    <span class="hljs-string">"bitrate"</span>: <span class="hljs-number">1200</span>,
+                    <span class="hljs-string">"width"</span>: <span class="hljs-number">1280</span>,
+                    <span class="hljs-string">"height"</span>: <span class="hljs-number">720</span>,
+                    <span class="hljs-string">"framerate"</span>: <span class="hljs-number">30</span>
+                },
+                <span class="hljs-string">"hls"</span>: <span class="hljs-string">""</span>,
+                <span class="hljs-string">"h5live"</span>: {
+                    <span class="hljs-string">"rtmp"</span>: {
+                        <span class="hljs-string">"url"</span>: <span class="hljs-string">"rtmp://bintu-play.nanocosmos.de/play"</span>,
+                        <span class="hljs-string">"streamname"</span>: <span class="hljs-string">"XXXXX-YYYY1"</span>
+                    },
+                    <span class="hljs-string">"server"</span>: {
+                        <span class="hljs-string">"websocket"</span>: <span class="hljs-string">"wss://bintu-h5live.nanocosmos.de:443/h5live/stream.mp4"</span>,
+                        <span class="hljs-string">"hls"</span>: <span class="hljs-string">"https://bintu-h5live.nanocosmos.de:443/h5live/http/playlist.m3u8"</span>,
+                        <span class="hljs-string">"progressive"</span>: <span class="hljs-string">"https://bintu-h5live.nanocosmos.de:443/h5live/http/stream.mp4"</span>
+                    },
+                    <span class="hljs-string">"token"</span>: <span class="hljs-string">""</span>,
+                    <span class="hljs-string">"security"</span>: {}
+                },
+                <span class="hljs-string">"bintu"</span>: {}
+            },
+            {
+                <span class="hljs-string">"index"</span>: <span class="hljs-number">1</span>,
+                <span class="hljs-string">"label"</span>: <span class="hljs-string">"medium"</span>,
+                <span class="hljs-string">"tag"</span>: <span class="hljs-string">"this is a medium quality stream"</span>,
+                <span class="hljs-string">"info"</span>: {
+                    <span class="hljs-string">"bitrate"</span>: <span class="hljs-number">800</span>,
+                    <span class="hljs-string">"width"</span>: <span class="hljs-number">864</span>,
+                    <span class="hljs-string">"height"</span>: <span class="hljs-number">480</span>,
+                    <span class="hljs-string">"framerate"</span>: <span class="hljs-number">30</span>
+                },
+                <span class="hljs-string">"hls"</span>: <span class="hljs-string">""</span>,
+                <span class="hljs-string">"h5live"</span>: {
+                    <span class="hljs-string">"rtmp"</span>: {
+                        <span class="hljs-string">"url"</span>: <span class="hljs-string">"rtmp://bintu-play.nanocosmos.de/play"</span>,
+                        <span class="hljs-string">"streamname"</span>: <span class="hljs-string">"XXXXX-YYYY2"</span>
+                    },
+                    <span class="hljs-string">"server"</span>: {
+                        <span class="hljs-string">"websocket"</span>: <span class="hljs-string">"wss://bintu-h5live.nanocosmos.de:443/h5live/stream.mp4"</span>,
+                        <span class="hljs-string">"hls"</span>: <span class="hljs-string">"https://bintu-h5live.nanocosmos.de:443/h5live/http/playlist.m3u8"</span>,
+                        <span class="hljs-string">"progressive"</span>: <span class="hljs-string">"https://bintu-h5live.nanocosmos.de:443/h5live/http/stream.mp4"</span>
+                    },
+                    <span class="hljs-string">"token"</span>: <span class="hljs-string">""</span>,
+                    <span class="hljs-string">"security"</span>: {}
+                },
+                <span class="hljs-string">"bintu"</span>: {}
+            },
+            {
+                <span class="hljs-string">"index"</span>: <span class="hljs-number">2</span>,
+                <span class="hljs-string">"label"</span>: <span class="hljs-string">"low"</span>,
+                <span class="hljs-string">"tag"</span>: <span class="hljs-string">"this is a low quality stream"</span>,
+                <span class="hljs-string">"info"</span>: {
+                    <span class="hljs-string">"bitrate"</span>: <span class="hljs-number">400</span>,
+                    <span class="hljs-string">"width"</span>: <span class="hljs-number">426</span>,
+                    <span class="hljs-string">"height"</span>: <span class="hljs-number">240</span>,
+                    <span class="hljs-string">"framerate"</span>: <span class="hljs-number">15</span>
+                },
+                <span class="hljs-string">"hls"</span>: <span class="hljs-string">""</span>,
+                <span class="hljs-string">"h5live"</span>: {
+                    <span class="hljs-string">"rtmp"</span>: {
+                        <span class="hljs-string">"url"</span>: <span class="hljs-string">"rtmp://bintu-play.nanocosmos.de/play"</span>,
+                        <span class="hljs-string">"streamname"</span>: <span class="hljs-string">"XXXXX-YYYY3"</span>
+                    },
+                    <span class="hljs-string">"server"</span>: {
+                        <span class="hljs-string">"websocket"</span>: <span class="hljs-string">"wss://bintu-h5live.nanocosmos.de:443/h5live/stream.mp4"</span>,
+                        <span class="hljs-string">"hls"</span>: <span class="hljs-string">"https://bintu-h5live.nanocosmos.de:443/h5live/http/playlist.m3u8"</span>,
+                        <span class="hljs-string">"progressive"</span>: <span class="hljs-string">"https://bintu-h5live.nanocosmos.de:443/h5live/http/stream.mp4"</span>
+                    },
+                    <span class="hljs-string">"token"</span>: <span class="hljs-string">""</span>,
+                    <span class="hljs-string">"security"</span>: {}
+                },
+                <span class="hljs-string">"bintu"</span>: {}
+            }
+    ],
+    <span class="hljs-string">"options"</span>: {
+        <span class="hljs-string">"adaption"</span>: {
+            <span class="hljs-string">"rule"</span>: <span class="hljs-string">"deviationOfMean"</span>
+        },
+        <span class="hljs-string">"switch"</span>: {
+            <span class="hljs-string">'method'</span>: <span class="hljs-string">'server'</span>,
+            <span class="hljs-string">'pauseOnError'</span>: <span class="hljs-literal">false</span>,
+            <span class="hljs-string">'forcePlay'</span>: <span class="hljs-literal">true</span>,
+            <span class="hljs-string">'fastStart'</span>: <span class="hljs-literal">false</span>,
+            <span class="hljs-string">'timeout'</span>: <span class="hljs-number">20</span>
+        }
+    },
+    <span class="hljs-string">"startIndex"</span>: <span class="hljs-number">2</span> <span class="hljs-comment">// lowest</span>
+};
 </code></pre>
 <p><strong>Example</strong></p>
-<pre><code class="hljs css language-js"><span class="hljs-keyword">var</span> source = {    <span class="hljs-string">"entries"</span>: [            {                <span class="hljs-string">"index"</span>: <span class="hljs-number">0</span>,                <span class="hljs-string">"label"</span>: <span class="hljs-string">"high"</span>, <span class="hljs-comment">// optional</span>                <span class="hljs-string">"tag"</span>: <span class="hljs-string">"this is a high quality stream"</span>, <span class="hljs-comment">// optional</span>                <span class="hljs-string">"info"</span>: { <span class="hljs-comment">// optional</span>                    <span class="hljs-string">"bitrate"</span>: <span class="hljs-number">1200</span>,                    <span class="hljs-string">"width"</span>: <span class="hljs-number">1280</span>,                    <span class="hljs-string">"height"</span>: <span class="hljs-number">720</span>,                    <span class="hljs-string">"framerate"</span>: <span class="hljs-number">30</span>                },                <span class="hljs-string">"h5live"</span>: {                     <span class="hljs-comment">// your rtmp stream</span>                    <span class="hljs-string">"rtmp"</span>: {                        <span class="hljs-string">"url"</span>: <span class="hljs-string">"rtmp://bintu-play.nanocosmos.de/play"</span>,                        <span class="hljs-string">"streamname"</span>: <span class="hljs-string">"XXXXX-YYYYY"</span>                    },                    <span class="hljs-string">"server"</span>: {                        <span class="hljs-string">"websocket"</span>: <span class="hljs-string">"wss://bintu-h5live.nanocosmos.de:443/h5live/stream.mp4"</span>,                        <span class="hljs-string">"hls"</span>: <span class="hljs-string">"https://bintu-h5live.nanocosmos.de:443/h5live/http/playlist.m3u8"</span>,                        <span class="hljs-string">"progressive"</span>: <span class="hljs-string">"https://bintu-h5live.nanocosmos.de:443/h5live/http/stream.mp4"</span>                    },                    <span class="hljs-comment">// optional (secure token)</span>                    <span class="hljs-string">"security"</span>: {                        <span class="hljs-string">"token"</span>: <span class="hljs-string">'awe456b367g4e6rm8f56hbe6gd8f5m8df6n8idf6tf8mfd68ndi'</span>,                        <span class="hljs-string">"expires"</span>: <span class="hljs-string">'1519819200'</span>,                        <span class="hljs-string">"options"</span>: <span class="hljs-string">'15'</span>,                        <span class="hljs-string">"tag"</span>: <span class="hljs-string">'anyTag'</span>                    }                }            }    ]};
+<pre><code class="hljs css language-js"><span class="hljs-keyword">var</span> source = {
+    <span class="hljs-string">"entries"</span>: [
+            {
+                <span class="hljs-string">"index"</span>: <span class="hljs-number">0</span>,
+                <span class="hljs-string">"label"</span>: <span class="hljs-string">"high"</span>, <span class="hljs-comment">// optional</span>
+                <span class="hljs-string">"tag"</span>: <span class="hljs-string">"this is a high quality stream"</span>, <span class="hljs-comment">// optional</span>
+                <span class="hljs-string">"info"</span>: { <span class="hljs-comment">// optional</span>
+                    <span class="hljs-string">"bitrate"</span>: <span class="hljs-number">1200</span>,
+                    <span class="hljs-string">"width"</span>: <span class="hljs-number">1280</span>,
+                    <span class="hljs-string">"height"</span>: <span class="hljs-number">720</span>,
+                    <span class="hljs-string">"framerate"</span>: <span class="hljs-number">30</span>
+                },
+                <span class="hljs-string">"h5live"</span>: {
+                     <span class="hljs-comment">// your rtmp stream</span>
+                    <span class="hljs-string">"rtmp"</span>: {
+                        <span class="hljs-string">"url"</span>: <span class="hljs-string">"rtmp://bintu-play.nanocosmos.de/play"</span>,
+                        <span class="hljs-string">"streamname"</span>: <span class="hljs-string">"XXXXX-YYYYY"</span>
+                    },
+                    <span class="hljs-string">"server"</span>: {
+                        <span class="hljs-string">"websocket"</span>: <span class="hljs-string">"wss://bintu-h5live.nanocosmos.de:443/h5live/stream.mp4"</span>,
+                        <span class="hljs-string">"hls"</span>: <span class="hljs-string">"https://bintu-h5live.nanocosmos.de:443/h5live/http/playlist.m3u8"</span>,
+                        <span class="hljs-string">"progressive"</span>: <span class="hljs-string">"https://bintu-h5live.nanocosmos.de:443/h5live/http/stream.mp4"</span>
+                    },
+                    <span class="hljs-comment">// optional (secure token)</span>
+                    <span class="hljs-string">"security"</span>: {
+                        <span class="hljs-string">"token"</span>: <span class="hljs-string">'awe456b367g4e6rm8f56hbe6gd8f5m8df6n8idf6tf8mfd68ndi'</span>,
+                        <span class="hljs-string">"expires"</span>: <span class="hljs-string">'1519819200'</span>,
+                        <span class="hljs-string">"options"</span>: <span class="hljs-string">'15'</span>,
+                        <span class="hljs-string">"tag"</span>: <span class="hljs-string">'anyTag'</span>
+                    }
+                }
+            }
+    ]
+};
 </code></pre>
 <p><a name="NanoPlayer..errorcode"></a></p>
 <h3><a class="anchor" aria-hidden="true" id="nanoplayererrorcode--codenumbercode"></a><a href="#nanoplayererrorcode--codenumbercode" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>NanoPlayer~errorcode : <code>number</code></h3>
@@ -2628,5 +3476,4 @@
     <td>sourcestreamstopped</td><td><p>Paused because the source stream has been stopped.</p>
 </td>
     </tr>  </tbody>
-</table>
-</span></div></article></div><div class="docLastUpdate"><em>Last updated on 12/21/2020</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/docs/nanoplayer/nanoplayer_feature_network_reconnect"><span class="arrow-prev">← </span><span>Network Reconnect</span></a><a class="docs-next button" href="/docs/docs/nanoplayer/nanoplayer_api_errors"><span class="function-name-prevnext">NanoPlayer Status &amp; Error Codes</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#nanoplayer">NanoPlayer</a><ul class="toc-headings"><li><a href="#new-nanoplayerplayerdivid">new NanoPlayer(playerDivId)</a></li><li><a href="#nanoplayerversion--codestringcode">nanoPlayer.version : <code>string</code></a></li><li><a href="#nanoplayercoreversion--codestringcode">nanoPlayer.coreversion : <code>string</code></a></li><li><a href="#nanoplayerviewversion--codestringcode">nanoPlayer.viewversion : <code>string</code></a></li><li><a href="#nanoplayertype--codestringcode">nanoPlayer.type : <code>string</code></a></li><li><a href="#nanoplayerid--codestringcode">nanoPlayer.id : <code>string</code></a></li><li><a href="#nanoplayercapabilities--codearrayltstringgtcode">nanoPlayer.capabilities : <code>Array.&lt;string&gt;</code></a></li><li><a href="#nanoplayersetupconfig-⇒-codepromiseltconfigerrorgtcode">nanoPlayer.setup(config) ⇒ <code>Promise.&lt;(config|error)&gt;</code></a></li><li><a href="#nanoplayerdestroy">nanoPlayer.destroy()</a></li><li><a href="#nanoplayerplay">nanoPlayer.play()</a></li><li><a href="#nanoplayerpause">nanoPlayer.pause()</a></li><li><a href="#nanoplayermute">nanoPlayer.mute()</a></li><li><a href="#nanoplayerunmute">nanoPlayer.unmute()</a></li><li><a href="#nanoplayersetvolumevolume">nanoPlayer.setVolume(volume)</a></li><li><a href="#nanoplayerupdatesourcesource-⇒-codepromiseltconfigerrorgtcode">nanoPlayer.updateSource(source) ⇒ <code>Promise.&lt;(config|error)&gt;</code></a></li><li><a href="#nanoplayerswitchstreamindex-⇒-codepromiseltconfigerrorgtcode">nanoPlayer.switchStream(index) ⇒ <code>Promise.&lt;(config|error)&gt;</code></a></li><li><a href="#nanoplayersetadaptionadaption">nanoPlayer.setAdaption(adaption)</a></li><li><a href="#nanoplayerrequestfullscreen-⇒-codepromiseltundefinederrorgtcode">nanoPlayer.requestFullscreen() ⇒ <code>Promise.&lt;(undefined|error)&gt;</code></a></li><li><a href="#nanoplayerexitfullscreen-⇒-codepromiseltundefinederrorgtcode">nanoPlayer.exitFullscreen() ⇒ <code>Promise.&lt;(undefined|error)&gt;</code></a></li><li><a href="#onready">&quot;onReady&quot;</a></li><li><a href="#onplay">&quot;onPlay&quot;</a></li><li><a href="#onpause">&quot;onPause&quot;</a></li><li><a href="#onloading">&quot;onLoading&quot;</a></li><li><a href="#onstartbuffering">&quot;onStartBuffering&quot;</a></li><li><a href="#onstopbuffering">&quot;onStopBuffering&quot;</a></li><li><a href="#onerror">&quot;onError&quot;</a></li><li><a href="#onstats">&quot;onStats&quot;</a></li><li><a href="#onmetadata">&quot;onMetaData&quot;</a></li><li><a href="#onmute">&quot;onMute&quot;</a></li><li><a href="#onunmute">&quot;onUnmute&quot;</a></li><li><a href="#onvolumechange">&quot;onVolumeChange&quot;</a></li><li><a href="#onstreaminfo">&quot;onStreamInfo&quot;</a></li><li><a href="#onstreaminfoupdate">&quot;onStreamInfoUpdate&quot;</a></li><li><a href="#onwarning">&quot;onWarning&quot;</a></li><li><a href="#ondestroy">&quot;onDestroy&quot;</a></li><li><a href="#onupdatesourceinit">&quot;onUpdateSourceInit&quot;</a></li><li><a href="#onupdatesourcesuccess">&quot;onUpdateSourceSuccess&quot;</a></li><li><a href="#onupdatesourcefail">&quot;onUpdateSourceFail&quot;</a></li><li><a href="#onupdatesourceabort">&quot;onUpdateSourceAbort&quot;</a></li><li><a href="#onswitchstreaminit">&quot;onSwitchStreamInit&quot;</a></li><li><a href="#onswitchstreamsuccess">&quot;onSwitchStreamSuccess&quot;</a></li><li><a href="#onswitchstreamfail">&quot;onSwitchStreamFail&quot;</a></li><li><a href="#onswitchstreamabort">&quot;onSwitchStreamAbort&quot;</a></li><li><a href="#onserverinfo">&quot;onServerInfo&quot;</a></li><li><a href="#onfullscreenchange">&quot;onFullscreenChange&quot;</a></li><li><a href="#nanoplayerconfig--codeobjectcode">NanoPlayer~config : <code>object</code></a></li><li><a href="#nanoplayerentry--codeobjectcode">NanoPlayer~entry : <code>object</code></a></li><li><a href="#nanoplayererrorcode--codenumbercode">NanoPlayer~errorcode : <code>number</code></a></li><li><a href="#nanoplayerstate--codenumbercode">NanoPlayer~state : <code>number</code></a></li><li><a href="#nanoplayerpausereason--codestringcode">NanoPlayer~pausereason : <code>string</code></a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><div><h5>Contact</h5><a href="https://www.nanocosmos.de/">Homepage</a><a href="https://www.nanocosmos.de/contact">Contact</a><a href="https://www.nanocosmos.de/support">Support</a><a href="https://www.nanocosmos.de/terms">Legal Terms</a></div><div><h5>Products</h5><a href="https://www.nanocosmos.de/cloud">Nanostream Cloud with Bintu.Live</a><a href="https://www.nanocosmos.de/h5live">H5Live Low Latency HTML5-Player</a><a href="https://www.nanocosmos.de/webrtc">nanoStream Webcaster</a><a href="https://www.nanocosmos.de/#nanostream">Nanostream Apps and SDK</a></div><div><h5>More</h5><a href="https://www.nanocosmos.de/blog/">Blog</a><a href="https://twitter.com/nanovideo">Twitter</a><a href="https://www.facebook.com/nanocosmos.net/">Facebook</a><a href="https://www.linkedin.com/company/nanocosmos-gmbh">LinkedIn</a><a href="https://github.com/nanocosmos/docs">GitHub</a><a class="github-button" href="https://github.com/nanocosmos/docs" data-icon="octicon-star" data-count-href="/nanocosmos/docs/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://nanocosmos.de/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/docs/img/footer_logo.png" alt="nanocosmos GmbH" width="170" height="45"/></a><section class="copyright">Copyright © 2020 nanocosmos GmbH</section></footer></div></body></html>
+</table></span></div></article></div><div class="docLastUpdate"><em>Last updated on 1/27/2021</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/docs/nanoplayer/nanoplayer_feature_network_reconnect"><span class="arrow-prev">← </span><span>Network Reconnect</span></a><a class="docs-next button" href="/docs/docs/nanoplayer/nanoplayer_api_errors"><span class="function-name-prevnext">NanoPlayer Status &amp; Error Codes</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#nanoplayer">NanoPlayer</a><ul class="toc-headings"><li><a href="#new-nanoplayerplayerdivid">new NanoPlayer(playerDivId)</a></li><li><a href="#nanoplayerversion--codestringcode">nanoPlayer.version : <code>string</code></a></li><li><a href="#nanoplayercoreversion--codestringcode">nanoPlayer.coreversion : <code>string</code></a></li><li><a href="#nanoplayerviewversion--codestringcode">nanoPlayer.viewversion : <code>string</code></a></li><li><a href="#nanoplayertype--codestringcode">nanoPlayer.type : <code>string</code></a></li><li><a href="#nanoplayerid--codestringcode">nanoPlayer.id : <code>string</code></a></li><li><a href="#nanoplayercapabilities--codearrayltstringgtcode">nanoPlayer.capabilities : <code>Array.&lt;string&gt;</code></a></li><li><a href="#nanoplayersetupconfig-⇒-codepromiseltconfigerrorgtcode">nanoPlayer.setup(config) ⇒ <code>Promise.&lt;(config|error)&gt;</code></a></li><li><a href="#nanoplayerdestroy">nanoPlayer.destroy()</a></li><li><a href="#nanoplayerplay">nanoPlayer.play()</a></li><li><a href="#nanoplayerpause">nanoPlayer.pause()</a></li><li><a href="#nanoplayermute">nanoPlayer.mute()</a></li><li><a href="#nanoplayerunmute">nanoPlayer.unmute()</a></li><li><a href="#nanoplayersetvolumevolume">nanoPlayer.setVolume(volume)</a></li><li><a href="#nanoplayerupdatesourcesource-⇒-codepromiseltconfigerrorgtcode">nanoPlayer.updateSource(source) ⇒ <code>Promise.&lt;(config|error)&gt;</code></a></li><li><a href="#nanoplayerswitchstreamindex-⇒-codepromiseltconfigerrorgtcode">nanoPlayer.switchStream(index) ⇒ <code>Promise.&lt;(config|error)&gt;</code></a></li><li><a href="#nanoplayersetadaptionadaption">nanoPlayer.setAdaption(adaption)</a></li><li><a href="#nanoplayerrequestfullscreen-⇒-codepromiseltundefinederrorgtcode">nanoPlayer.requestFullscreen() ⇒ <code>Promise.&lt;(undefined|error)&gt;</code></a></li><li><a href="#nanoplayerexitfullscreen-⇒-codepromiseltundefinederrorgtcode">nanoPlayer.exitFullscreen() ⇒ <code>Promise.&lt;(undefined|error)&gt;</code></a></li><li><a href="#onready">&quot;onReady&quot;</a></li><li><a href="#onplay">&quot;onPlay&quot;</a></li><li><a href="#onpause">&quot;onPause&quot;</a></li><li><a href="#onloading">&quot;onLoading&quot;</a></li><li><a href="#onstartbuffering">&quot;onStartBuffering&quot;</a></li><li><a href="#onstopbuffering">&quot;onStopBuffering&quot;</a></li><li><a href="#onerror">&quot;onError&quot;</a></li><li><a href="#onstats">&quot;onStats&quot;</a></li><li><a href="#onmetadata">&quot;onMetaData&quot;</a></li><li><a href="#onmute">&quot;onMute&quot;</a></li><li><a href="#onunmute">&quot;onUnmute&quot;</a></li><li><a href="#onvolumechange">&quot;onVolumeChange&quot;</a></li><li><a href="#onstreaminfo">&quot;onStreamInfo&quot;</a></li><li><a href="#onstreaminfoupdate">&quot;onStreamInfoUpdate&quot;</a></li><li><a href="#onwarning">&quot;onWarning&quot;</a></li><li><a href="#ondestroy">&quot;onDestroy&quot;</a></li><li><a href="#onupdatesourceinit">&quot;onUpdateSourceInit&quot;</a></li><li><a href="#onupdatesourcesuccess">&quot;onUpdateSourceSuccess&quot;</a></li><li><a href="#onupdatesourcefail">&quot;onUpdateSourceFail&quot;</a></li><li><a href="#onupdatesourceabort">&quot;onUpdateSourceAbort&quot;</a></li><li><a href="#onswitchstreaminit">&quot;onSwitchStreamInit&quot;</a></li><li><a href="#onswitchstreamsuccess">&quot;onSwitchStreamSuccess&quot;</a></li><li><a href="#onswitchstreamfail">&quot;onSwitchStreamFail&quot;</a></li><li><a href="#onswitchstreamabort">&quot;onSwitchStreamAbort&quot;</a></li><li><a href="#onserverinfo">&quot;onServerInfo&quot;</a></li><li><a href="#onfullscreenchange">&quot;onFullscreenChange&quot;</a></li><li><a href="#nanoplayerconfig--codeobjectcode">NanoPlayer~config : <code>object</code></a></li><li><a href="#nanoplayerentry--codeobjectcode">NanoPlayer~entry : <code>object</code></a></li><li><a href="#nanoplayererrorcode--codenumbercode">NanoPlayer~errorcode : <code>number</code></a></li><li><a href="#nanoplayerstate--codenumbercode">NanoPlayer~state : <code>number</code></a></li><li><a href="#nanoplayerpausereason--codestringcode">NanoPlayer~pausereason : <code>string</code></a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><div><h5>Contact</h5><a href="https://www.nanocosmos.de/">Homepage</a><a href="https://www.nanocosmos.de/contact">Contact</a><a href="https://www.nanocosmos.de/support">Support</a><a href="https://www.nanocosmos.de/terms">Legal Terms</a></div><div><h5>Products</h5><a href="https://www.nanocosmos.de/cloud">Nanostream Cloud with Bintu.Live</a><a href="https://www.nanocosmos.de/h5live">H5Live Low Latency HTML5-Player</a><a href="https://www.nanocosmos.de/webrtc">nanoStream Webcaster</a><a href="https://www.nanocosmos.de/#nanostream">Nanostream Apps and SDK</a></div><div><h5>More</h5><a href="https://www.nanocosmos.de/blog/">Blog</a><a href="https://twitter.com/nanovideo">Twitter</a><a href="https://www.facebook.com/nanocosmos.net/">Facebook</a><a href="https://www.linkedin.com/company/nanocosmos-gmbh">LinkedIn</a><a href="https://github.com/nanocosmos/docs">GitHub</a><a class="github-button" href="https://github.com/nanocosmos/docs" data-icon="octicon-star" data-count-href="/nanocosmos/docs/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://nanocosmos.de/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/docs/img/footer_logo.png" alt="nanocosmos GmbH" width="170" height="45"/></a><section class="copyright">Copyright © 2021 nanocosmos GmbH</section></footer></div></body></html>
