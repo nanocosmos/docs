@@ -8,22 +8,59 @@
 // See https://docusaurus.io/docs/site-config for all the possible
 // site configuration options.
 
-const siteConfig = {
-  title: 'nanocosmos Documentation', // Title for your website.	
-  tagline: 'nanoStream Cloud & H5Live Player - Around The World in 1 Second',
-  title: 'nanocosmos Documentation',  
-
+var configs = [];
+var configGithub = {
   url: 'https://docs.nanocosmos.de', // Your website URL
   baseUrl: '/', // Base URL for your project - should be absolute */
-  
+
   // For github.io type URLs, you would set the url and baseUrl like:
-  url: 'https://nanocosmos.github.io', // Your website URL
-  baseUrl: '/docs/', // Base URL for your project */
+  //url: 'https://nanocosmos.github.io', // Your website URL
+  //baseUrl: '/docs/', // Base URL for your project */
 
   //   url: 'https://facebook.github.io',
   //   baseUrl: '/test-site/',
 
   cname: 'nanocosmos.github.io',
+};
+
+const configGitlab = {
+  url: 'https://doc.pages.nanocosmos.de', // Your website URL
+  baseUrl: '/docs/docs/', // Base URL for your project - should be absolute */
+  cname: 'nanocosmos.github.io',
+};
+
+const configDocs1 = {
+  url: 'https://docs1.nanocosmos.de', // Your website URL
+  baseUrl: '/', // Base URL for your project - should be absolute */
+  cname: 'nanocosmos.github.io',
+};
+
+var configs = [];
+configs["gitlab"] = configGitlab;
+configs["github"] = configGithub;
+configs["docs1"] = configDocs1;
+
+// override from environment variable
+// example: DOCS_ENV=github && docusaurus-build
+var configName   = process.env.DOCS_ENV;
+if(!configName || configName.length==0) {
+  //configName = "docs1";
+  configName = "gitlab";
+  configName = "github";
+}
+
+console.log("Using config " + configName);
+var myConfig = configs[configName];
+
+const siteConfig = {
+  title: 'nanocosmos Documentation', // Title for your website.	
+  tagline: 'nanoStream Cloud & H5Live Player - Around The World in 1 Second',
+  title: 'nanocosmos Documentation',  
+
+  url: myConfig.url, // Your website URL
+  baseUrl: myConfig.baseUrl, // Base URL for your project - should be absolute */
+  
+  cname: myConfig.cname,
 
   // Used for publishing and more
   projectName: 'docs',
@@ -73,7 +110,7 @@ const siteConfig = {
   //docsSideNavCollapsible : true,
 
   // This copyright info is used in /core/Footer.js and blog RSS/Atom feeds.
-  copyright: `Copyright © ${new Date().getFullYear()} nanocosmos GmbH`,
+  copyright: `Copyright © ${new Date().getFullYear()} nanocosmos GmbH - doc version ${new Date()}`,
 
   highlight: {
     // Highlight.js theme to use for syntax highlighting in code blocks.
@@ -104,5 +141,7 @@ const siteConfig = {
 
      editUrl: 'https://github.com/nanocosmos/docs/tree/master/docs/'
 };
+
+console.log("Using config " + configName + "  URL: " + siteConfig.url);
 
 module.exports = siteConfig;
