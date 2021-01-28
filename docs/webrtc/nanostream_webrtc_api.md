@@ -10,7 +10,7 @@ sidebar_label: Webcaster
 nanoStream Webcaster Public API Class
 
 **Kind**: global class  
-**Version**: 5.9.6  
+**Version**: 5.11.0  
 
 -----
 
@@ -938,6 +938,48 @@ Mixes tracks (currently only audio) of an external MediaStream into the currentl
 // externalStream instance of MediaStream (https://developer.mozilla.org/de/docs/Web/API/MediaStream)
 var data = {stream: externalStream, tracks: ['audio']};
 rtcUser.injectExternalMediaStream(data);
+```
+<a name="RtcUser+setMediaStream"></a>
+
+## rtcUser.setMediaStream(config)
+Sets an external media stream.
+
+**Kind**: instance method of [<code>RtcUser</code>](#RtcUser)  
+<table>
+  <thead>
+    <tr>
+      <th>Param</th><th>Type</th><th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+<tr>
+    <td>config</td><td><code>object</code></td><td><p>The config object.</p>
+</td>
+    </tr><tr>
+    <td>config.stream</td><td><code>number</code></td><td><p>The MediaStream object.</p>
+</td>
+    </tr><tr>
+    <td>[config.width]</td><td><code>number</code></td><td><p>The video width. Allowed values: 320 - 3840(4K).</p>
+</td>
+    </tr><tr>
+    <td>[config.height]</td><td><code>number</code></td><td><p>The video height. Allowed values: 240 - 2160(4K).</p>
+</td>
+    </tr><tr>
+    <td>[config.framerate]</td><td><code>number</code></td><td><p>The video framerate. Allowed values: 0 - 60 fps.</p>
+</td>
+    </tr>  </tbody>
+</table>
+
+**Example**  
+```js
+// rtcUser instance of RtcUser
+var config = {
+    stream: myStream,
+    width: 640,
+    height: 480,
+    framerate: 30
+}
+rtcUser.setMediaStream(config);
 ```
 
 -----
