@@ -16,9 +16,6 @@ The bintu.live stream management software is part of the nanoStream Cloud an ena
 
 > It is easy to setup and manage your live streams without additional server software. Leverage proven software know-how and quality with nanoStream Cloud live streaming services for low-latency live streaming for your own brand. Start streaming immediately!
 
-![live streaming Schema.png](https://i0.wp.com/www.nanocosmos.de/blog/wp-content/uploads/live-streaming-Schema.png-1024x514.png?resize=474%2C238)
-
-
 
 ## bintu concepts
 

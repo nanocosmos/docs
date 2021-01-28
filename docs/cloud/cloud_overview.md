@@ -92,3 +92,6 @@ The player can easily be embedded on your own web page with a code snippet shown
 Check out our video tutorials and our blog!
 
 For any further questions, use our technical support: https://www.nanocosmos.de/support
+
+
+![live streaming Schema.png](https://www.nanocosmos.de/v6/images/nanoStreamCloud-Schema20-1.png)
