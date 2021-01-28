@@ -1,0 +1,24 @@
+image: node:14.13.1
+
+# This folder is cached between builds
+# http://docs.gitlab.com/ee/ci/yaml/README.html#cache
+cache:
+  paths:
+    - node_modules/
+variables:
+  DOCS_ENV: "gitlab"
+
+pages:
+    stage: deploy
+    script:
+      - cd website
+      - yarn install
+      - yarn run build
+      - mkdir .public
+      - cp -r build/* .public
+      - mv .public ../public
+    artifacts:
+        paths:
+          - public
+    #only:
+    #  - master
