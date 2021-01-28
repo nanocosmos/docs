@@ -4,9 +4,9 @@ Official documentation of nanocosmos products.
 
 nanoStream Cloud - Live Streaming Service with Ultra Low Latency - go live around the world in about 1 second
 
-Official web page: https://docs.nanocosmos.de
+Official documentation web page: https://docs.nanocosmos.de
 
-Markdown source code here.
+Generated from Markdown source code here.
 
 [nanoStream Cloud](docs/cloud)
 
