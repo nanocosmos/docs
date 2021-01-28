@@ -10,7 +10,7 @@ sidebar_label: Webcaster
 nanoStream Webcaster Public API Class
 
 **Kind**: global class  
-**Version**: 5.9.2  
+**Version**: 5.11.0  
 
 -----
 
@@ -939,6 +939,48 @@ Mixes tracks (currently only audio) of an external MediaStream into the currentl
 var data = {stream: externalStream, tracks: ['audio']};
 rtcUser.injectExternalMediaStream(data);
 ```
+<a name="RtcUser+setMediaStream"></a>
+
+## rtcUser.setMediaStream(config)
+Sets an external media stream.
+
+**Kind**: instance method of [<code>RtcUser</code>](#RtcUser)  
+<table>
+  <thead>
+    <tr>
+      <th>Param</th><th>Type</th><th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+<tr>
+    <td>config</td><td><code>object</code></td><td><p>The config object.</p>
+</td>
+    </tr><tr>
+    <td>config.stream</td><td><code>number</code></td><td><p>The MediaStream object.</p>
+</td>
+    </tr><tr>
+    <td>[config.width]</td><td><code>number</code></td><td><p>The video width. Allowed values: 320 - 3840(4K).</p>
+</td>
+    </tr><tr>
+    <td>[config.height]</td><td><code>number</code></td><td><p>The video height. Allowed values: 240 - 2160(4K).</p>
+</td>
+    </tr><tr>
+    <td>[config.framerate]</td><td><code>number</code></td><td><p>The video framerate. Allowed values: 0 - 60 fps.</p>
+</td>
+    </tr>  </tbody>
+</table>
+
+**Example**  
+```js
+// rtcUser instance of RtcUser
+var config = {
+    stream: myStream,
+    width: 640,
+    height: 480,
+    framerate: 30
+}
+rtcUser.setMediaStream(config);
+```
 
 -----
 
@@ -1130,6 +1172,39 @@ MuteDeviceError event. The event is fired if a video/audio device mute/unmute fa
 </td>
     </tr><tr>
     <td>error.userinfo</td><td><code>object</code></td><td><p>The user info associated with the error.</p>
+</td>
+    </tr><tr>
+    <td>[error.userinfo.metadata]</td><td><code>object</code></td><td><p>Metadata with additional state information.</p>
+</td>
+    </tr><tr>
+    <td>[error.userinfo.metadata.sessionId]</td><td><code>object</code></td><td><p>Session id (defined only if signed in).</p>
+</td>
+    </tr><tr>
+    <td>[error.userinfo.metadata.isSignedIn]</td><td><code>object</code></td><td><p>Wether a session to the server was established successfully.</p>
+</td>
+    </tr><tr>
+    <td>[error.userinfo.metadata.server]</td><td><code>object</code></td><td><p>Server url (defined only if a connection to the server was made).</p>
+</td>
+    </tr><tr>
+    <td>[error.userinfo.metadata.streamname]</td><td><code>object</code></td><td><p>RTMP stream name (defined only if a broadcast was started).</p>
+</td>
+    </tr><tr>
+    <td>[error.userinfo.metadata.hasAudio]</td><td><code>object</code></td><td><p>Wether the current stream has an audio track.</p>
+</td>
+    </tr><tr>
+    <td>[error.userinfo.metadata.hasVideo]</td><td><code>object</code></td><td><p>Wether the current stream has an video track.</p>
+</td>
+    </tr><tr>
+    <td>[error.userinfo.metadata.isMobile]</td><td><code>object</code></td><td><p>Wether the current device is a mobile device.</p>
+</td>
+    </tr><tr>
+    <td>[error.userinfo.metadata.browser]</td><td><code>object</code></td><td><p>Currently used browser.</p>
+</td>
+    </tr><tr>
+    <td>[error.userinfo.metadata.browserVersion]</td><td><code>object</code></td><td><p>Currently used browser version.</p>
+</td>
+    </tr><tr>
+    <td>[error.userinfo.metadata.os]</td><td><code>object</code></td><td><p>Current operating system.</p>
 </td>
     </tr><tr>
     <td>name</td><td><code>string</code></td><td><p>The name of the event.</p>
@@ -1552,13 +1627,13 @@ The possible client error codes in an ErrorEvent event.
     </tr><tr>
     <td>5000-5999</td><td><code>BroadcastError</code></td><td></td>
     </tr><tr>
-    <td>5000</td><td></td><td><p>A broadcast failed to start.</p>
+    <td>5001</td><td></td><td><p>A broadcast failed to start.</p>
 </td>
     </tr><tr>
-    <td>5001</td><td></td><td><p>A general broadcast error (see the error message for more information).</p>
+    <td>5002</td><td></td><td><p>A Broadcast failed after it was started (see the error message for more information).</p>
 </td>
     </tr><tr>
-    <td>5002</td><td></td><td><p>A broadcast failed to stop.</p>
+    <td>5003</td><td></td><td><p>Stopping broadcast caused an error. Either no broadcast is runnung or an active broadcast is currently shutting down.</p>
 </td>
     </tr><tr>
     <td>6000-6999</td><td><code>WebRTCError</code></td><td></td>
@@ -1588,9 +1663,71 @@ The possible client error codes in an ErrorEvent event.
     <td>6008</td><td></td><td><p>A general &quot;getDisplayMedia&quot; error (may include: &#39;PermissionDenied&#39;, &#39;NotAllowedError&#39;).</p>
 </td>
     </tr><tr>
-    <td>7000-7999</td><td><code>WebRTCError</code></td><td></td>
+    <td>101000-109999</td><td><code>ServerError</code></td><td><p>Server-side errors start with 10xxxx.</p>
+</td>
     </tr><tr>
-    <td>7000</td><td></td><td><p>An error occurred on the server.</p>
+    <td>101000-101999</td><td><code>GeneralError</code></td><td><p>Server-side general errors.</p>
+</td>
+    </tr><tr>
+    <td>101001</td><td></td><td><p>An internal server error.</p>
+</td>
+    </tr><tr>
+    <td>101002</td><td></td><td><p>A parameter is required.</p>
+</td>
+    </tr><tr>
+    <td>101003</td><td></td><td><p>A data type is wrong.</p>
+</td>
+    </tr><tr>
+    <td>102000-102999</td><td><code>AccessError</code></td><td><p>Server-side access errors.</p>
+</td>
+    </tr><tr>
+    <td>102001</td><td></td><td><p>Access is denied.</p>
+</td>
+    </tr><tr>
+    <td>103000-103999</td><td><code>AuthenticationError</code></td><td><p>Server-side authentication errors.</p>
+</td>
+    </tr><tr>
+    <td>103000</td><td></td><td><p>The server could not initialize authentication.</p>
+</td>
+    </tr><tr>
+    <td>103001</td><td></td><td><p>Wrong authentification data. A valid token, or username and password is/are required.</p>
+</td>
+    </tr><tr>
+    <td>103002</td><td></td><td><p>Access to a feature is forbidden (features: &#39;webrtc&#39;).</p>
+</td>
+    </tr><tr>
+    <td>104000-104999</td><td><code>BintuError</code></td><td><p>Server-side bintu related errors.</p>
+</td>
+    </tr><tr>
+    <td>104001</td><td></td><td><p>A stream option is not allowed (options: &#39;webrtc&#39;, &#39;transcoding&#39;).</p>
+</td>
+    </tr><tr>
+    <td>104002</td><td></td><td><p>A bintu API key is invalid.</p>
+</td>
+    </tr><tr>
+    <td>105000-105999</td><td><code>TranscoderError</code></td><td><p>Server-side configuration errors.</p>
+</td>
+    </tr><tr>
+    <td>106000-106999</td><td><code>SystemMonitorError</code></td><td><p>Server-side monitoring errors.</p>
+</td>
+    </tr><tr>
+    <td>106001</td><td></td><td><p>An error occured while retrieving system info.</p>
+</td>
+    </tr><tr>
+    <td>107000-107999</td><td><code>SessionError</code></td><td></td>
+    </tr><tr>
+    <td>107001</td><td></td><td><p>A configuration is malformed.</p>
+</td>
+    </tr><tr>
+    <td>107002</td><td></td><td><p>A session is invalid.</p>
+</td>
+    </tr><tr>
+    <td>108000-108999</td><td><code>ChatError</code></td><td><p>Deprecated.</p>
+</td>
+    </tr><tr>
+    <td>109000-109999</td><td><code>RTMPError</code></td><td></td>
+    </tr><tr>
+    <td>109000</td><td></td><td><p>The RTMP connection has failed.</p>
 </td>
     </tr>  </tbody>
 </table>
