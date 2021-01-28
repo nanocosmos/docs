@@ -16,6 +16,6 @@ Generated from Markdown source code here.
 
 (c) 2021 nanocosmos gmbh
 
-Contact: https://www.nanocosmos.de/Contact
+Contact: https://www.nanocosmos.de/contact
 
 https://info.nanocosmos.de
