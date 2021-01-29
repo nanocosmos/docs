@@ -20,7 +20,8 @@ var configGithub = {
   //   url: 'https://facebook.github.io',
   //   baseUrl: '/test-site/',
 
-  cname: 'nanocosmos.github.io',
+// cname: 'nanocosmos.github.io'
+  cname: 'docs.nanocosmos.de'
 };
 
 const configGitlab = {
@@ -45,7 +46,7 @@ configs["docs1"] = configDocs1;
 var configName   = process.env.DOCS_ENV;
 if(!configName || configName.length==0) {
   //configName = "docs1";
-  configName = "gitlab";
+  //configName = "gitlab";
   configName = "github";
 }
 
