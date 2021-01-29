@@ -33,19 +33,27 @@ const configGitlab = {
 const configDocs1 = {
   url: 'https://docs1.nanocosmos.de', // Your website URL
   baseUrl: '/', // Base URL for your project - should be absolute */
-  cname: 'nanocosmos.github.io',
+  //cname: 'nanocosmos.github.io',
+};
+
+const configDocsDev = {
+  url: 'https://docs-dev.nanocosmos.de', // Your website URL
+  baseUrl: '/', // Base URL for your project - should be absolute */
+  //cname: 'nanocosmos.github.io',
 };
 
 var configs = [];
 configs["gitlab"] = configGitlab;
 configs["github"] = configGithub;
 configs["docs1"] = configDocs1;
+configs["docs-dev"] = configDocsDev;
 
 // override from environment variable
 // example: DOCS_ENV=github && docusaurus-build
 var configName   = process.env.DOCS_ENV;
 if(!configName || configName.length==0) {
   //configName = "docs1";
+  //configName = "docs-dev";
   //configName = "gitlab";
   configName = "github";
 }
