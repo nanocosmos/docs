@@ -1,4 +1,4 @@
-image: node:14.13.1
+image: node:14
 
 # This folder is cached between builds
 # http://docs.gitlab.com/ee/ci/yaml/README.html#cache
@@ -8,7 +8,7 @@ cache:
 variables:
   DOCS_ENV: "gitlab"
 
-pages:
+.pages:
     stage: deploy
     script:
       - cd website
@@ -22,3 +22,59 @@ pages:
           - public
     #only:
     #  - master
+
+
+# gitlab ci: deploy stages for review/production/release
+
+variables:
+# uncomment, not set 0!
+# global variables to disable jobs
+  TEST_DISABLED: 1
+  SAST_DISABLED: 1
+  CODE_QUALITY_DISABLED: 1
+  PERFORMANCE_DISABLED: 1
+  SECRET_DETECTION_DISABLED: 1
+
+# enable or disable workflow features  
+  #CANARY_ENABLED: 1
+  #STAGING_ENABLED: 1
+  #REVIEW_DISABLED: 1
+  #CI_KUBERNETES_ACTIVE: null
+
+include:
+# include gitlab pages if wanted, result https://project.pages.nanocosmos.de
+  - template: Pages/HTML.gitlab-ci.yml
+# include build/deploy environments: review/production/release
+  - template: Auto-DevOps.gitlab-ci.yml
+
+# More info:
+# https://gitlab.com/gitlab-org/gitlab-foss/-/blob/master/lib/gitlab/ci/templates/Auto-DevOps.gitlab-ci.yml  
+# https://gitlab.com/gitlab-org/gitlab-foss/-/blob/master/lib/gitlab/ci/templates/Jobs/Deploy.gitlab-ci.yml
+  
+build:
+  stage: build
+  rules:
+    - if: $BUILD_DISABLED
+      when: never
+
+# review: develop/feature branches
+# example URL: https://projectname-develop-3zknud.k8s-dev.nanocosmos.de/
+review:
+  environment:
+    name: review/$CI_COMMIT_REF_NAME
+    #url: http://$CI_PROJECT_ID-$CI_ENVIRONMENT_SLUG.$KUBE_INGRESS_BASE_DOMAIN
+    url: http://$CI_PROJECT_NAME-$CI_ENVIRONMENT_SLUG-CI_COMMIT_REF_SLUG.$KUBE_INGRESS_BASE_DOMAIN
+#    - if: $CI_COMMIT_REF_NAME =~ /^release\//
+#      when: never
+#    - if: $CI_COMMIT_BRANCH == "master"
+#      when: never
+
+# production: master/main branch
+# example URL: https://projectname-review.k8s-prod.nanocosmos.de/
+production: 
+  environment:
+    name: production
+    url: http://$CI_PROJECT_NAME.$KUBE_INGRESS_BASE_DOMAIN
+  
+
+
