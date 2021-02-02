@@ -4,6 +4,7 @@ WORKDIR /website
 COPY . /website
 ENV PATH /website/node_modules/.bin:$PATH
 RUN bash build-docu.sh
+RUN ls -lisa
 
 # stage 2 - build the final image and copy the react build files
 FROM nginx:1.18
