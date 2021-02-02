@@ -50,12 +50,6 @@ include:
 # More info:
 # https://gitlab.com/gitlab-org/gitlab-foss/-/blob/master/lib/gitlab/ci/templates/Auto-DevOps.gitlab-ci.yml  
 # https://gitlab.com/gitlab-org/gitlab-foss/-/blob/master/lib/gitlab/ci/templates/Jobs/Deploy.gitlab-ci.yml
-  
-build:
-  stage: build
-  rules:
-    - if: $BUILD_DISABLED
-      when: never
 
 # review: develop/feature branches
 # example URL: https://projectname-develop-3zknud.k8s-dev.nanocosmos.de/
@@ -64,10 +58,6 @@ review:
     name: review/$CI_COMMIT_REF_NAME
     #url: http://$CI_PROJECT_ID-$CI_ENVIRONMENT_SLUG.$KUBE_INGRESS_BASE_DOMAIN
     url: http://$CI_PROJECT_NAME-$CI_ENVIRONMENT_SLUG-CI_COMMIT_REF_SLUG.$KUBE_INGRESS_BASE_DOMAIN
-#    - if: $CI_COMMIT_REF_NAME =~ /^release\//
-#      when: never
-#    - if: $CI_COMMIT_BRANCH == "master"
-#      when: never
 
 # production: master/main branch
 # example URL: https://projectname-review.k8s-prod.nanocosmos.de/
