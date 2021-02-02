@@ -1,7 +1,6 @@
 # stage1 - build app first 
 FROM node:12 as build
 WORKDIR /website
-COPY ./package.json /website/
 COPY . /website
 ENV PATH /website/node_modules/.bin:$PATH
 RUN bash build-docu.sh
