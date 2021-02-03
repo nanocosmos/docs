@@ -15,7 +15,7 @@ EXPOSE $PORT
 # stage 2 - build the final image and copy the react build files
 FROM nginx:1.18
 COPY --from=build /app/website/build /usr/share/nginx/html
-RUN rm /etc/nginx/conf.d/default.conf
+#RUN rm /etc/nginx/conf.d/default.conf
 COPY dockerfile-setup/nginx.conf /etc/nginx/conf.d
 EXPOSE 3000
 CMD ["nginx", "-g", "daemon off;"]
