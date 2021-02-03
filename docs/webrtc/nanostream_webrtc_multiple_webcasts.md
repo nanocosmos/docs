@@ -103,7 +103,7 @@ We will now:
 - request the device lists for both instances
 - start the webcasts once we have a preview (prepared in last step)
 
-After we signed in successfully, we can call [getDevices()](nanostream_webrtc_api/#getdevices),<br>
+After we signed in successfully, we can call [getDevices()](nanostream_webrtc_api/#rtcusergetdevices),<br>
 this will emit the [ReceivedDeviceList](nanostream_webrtc_api/#RtcUser+event_ReceivedDeviceList) event when succeeding.<br>
 In this example we simply start the broadcasts immediately once the [StartPreviewSuccess()](nanostream_webrtc_api/#RtcUser+event_StartPreviewSuccess) events have been fired.
 
