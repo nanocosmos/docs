@@ -24,9 +24,9 @@ var configGithub = {
 };
 
 const configGitlab = {
-  url: 'https://doc.pages.nanocosmos.de', // Your website URL
-  baseUrl: '/docs/docs/', // Base URL for your project - should be absolute */
-  cname: 'nanocosmos.github.io',
+  url: process.env.GITLAB_ENVIRONMENT_URL, // Your website URL
+  baseUrl: '/', // Base URL for your project - should be absolute */
+  //cname: 'nanocosmos.github.io',
 };
 
 const configDocs1 = {
@@ -45,7 +45,7 @@ configs["docs1"] = configDocs1;
 var configName   = process.env.DOCS_ENV;
 if(!configName || configName.length==0) {
   //configName = "docs1";
-  configName = "gitlab";
+  //configName = "gitlab";
   configName = "github";
 }
 
