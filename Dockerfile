@@ -17,5 +17,5 @@ COPY --from=build /app/website/build /usr/share/nginx/html
 RUN find /usr/share/nginx/html
 RUN rm /etc/nginx/conf.d/default.conf
 COPY dockerfile-setup/nginx.conf /etc/nginx/conf.d
-EXPOSE 5000
+EXPOSE 3000
 CMD ["nginx", "-g", "daemon off;"]
