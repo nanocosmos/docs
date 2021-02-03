@@ -3,7 +3,7 @@ FROM node:12 as build
 WORKDIR /website
 COPY . /website
 ENV PATH /website/node_modules/.bin:$PATH
-RUN cd website
+WORKDIR /website/website
 RUN npm install
 RUN npm start -- --port 5000
 EXPOSE 5000
