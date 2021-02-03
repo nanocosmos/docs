@@ -6,7 +6,7 @@ cache:
   paths:
     - node_modules/
 variables:
-  DOCS_ENV: "gitlab"
+  DOCS_ENV: "gitlab" 
 
 .pages:
     stage: deploy
@@ -56,8 +56,10 @@ include:
 review:
   environment:
     name: review/$CI_COMMIT_REF_NAME
-    #url: http://$CI_PROJECT_ID-$CI_ENVIRONMENT_SLUG.$KUBE_INGRESS_BASE_DOMAIN
-    #url: http://$CI_PROJECT_NAME-$CI_ENVIRONMENT_SLUG-CI_COMMIT_REF_SLUG.$KUBE_INGRESS_BASE_DOMAIN
+    url: http://$CI_PROJECT_ID-$CI_ENVIRONMENT_SLUG.$KUBE_INGRESS_BASE_DOMAIN
+    #url: http://$CI_PROJECT_NAME-$CI_ENVIRONMENT_SLUG-$CI_COMMIT_REF_SLUG.$KUBE_INGRESS_BASE_DOMAIN
+  variables:
+    DOCS_URL: http://$CI_PROJECT_NAME-$CI_ENVIRONMENT_SLUG.$KUBE_INGRESS_BASE_DOMAIN
 
 # production: master/main branch
 # example URL: https://projectname-review.k8s-prod.nanocosmos.de/
@@ -65,6 +67,8 @@ production:
   environment:
     name: production
     url: http://$CI_PROJECT_NAME.$KUBE_INGRESS_BASE_DOMAIN
+  variables:
+    DOCS_URL: http://$CI_PROJECT_NAME.$KUBE_INGRESS_BASE_DOMAIN
   
 
 
