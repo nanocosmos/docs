@@ -1,11 +1,10 @@
 # stage1 - build app first 
-FROM node:12 as build
+FROM node:14-slim as build
 WORKDIR /website
 COPY . /website
 ENV PATH /website/node_modules/.bin:$PATH
 WORKDIR /website/website
-RUN npm install
-ENV PORT 5000
+RUN npm i
 EXPOSE $PORT
 CMD [ "npm", "start", "-- --port 5000"]
 
