@@ -5,7 +5,7 @@ sidebar_label: Speech / Music Streaming
 ---
 
 Since Webcaster version 5.8.0 additional audio preprocessing options are available.<br>
-Additionally to configuring bitrates ([Features > Quality Settings](../nanostream_webrtc_quality/)),
+Additionally to configuring bitrates ([Features > Quality Settings](nanostream_webrtc_quality/)),
 it is from now on possible to disable or enable the following filters explicitly:
 
 - <b>autoGainControl</b> - Attempts to automatically maintain a steady overall volume level.
