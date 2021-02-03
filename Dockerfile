@@ -6,6 +6,7 @@ ENV PATH /website/node_modules/.bin:$PATH
 WORKDIR /website/website
 RUN npm i
 ENV PORT 3000
+ENV DOCS_ENV gitlab
 EXPOSE $PORT
 CMD [ "npm", "start"]
 
