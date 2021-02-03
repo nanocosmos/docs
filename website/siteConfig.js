@@ -8,6 +8,15 @@
 // See https://docusaurus.io/docs/site-config for all the possible
 // site configuration options.
 
+// override from environment variable
+// example: DOCS_ENV=github && docusaurus-build
+var configName   = process.env.DOCS_ENV;
+if(!configName || configName.length==0) {
+  //configName = "docs1";
+  //configName = "gitlab";
+  configName = "github";
+}
+
 var configs = [];
 var configGithub = {
   url: 'https://docs.nanocosmos.de', // Your website URL
@@ -23,8 +32,15 @@ var configGithub = {
   cname: 'nanocosmos.github.io',
 };
 
+const configGitlabPages = {
+  url: 'https://doc.pages.nanocosmos.de', // Your website URL
+  baseUrl: '/docs/docs/', // Base URL for your project - should be absolute */
+  cname: 'nanocosmos.github.io',
+};
+
 const configGitlab = {
-  url: process.env.GITLAB_ENVIRONMENT_URL, // Your website URL
+  //url: process.env.GITLAB_ENVIRONMENT_URL, // Your website URL
+  url: process.env.DOCS_URL, // Your website URL
   baseUrl: '/', // Base URL for your project - should be absolute */
   //cname: 'nanocosmos.github.io',
 };
@@ -36,18 +52,10 @@ const configDocs1 = {
 };
 
 var configs = [];
+configs["gitlab-pages"] = configGitlabPages;
 configs["gitlab"] = configGitlab;
 configs["github"] = configGithub;
 configs["docs1"] = configDocs1;
-
-// override from environment variable
-// example: DOCS_ENV=github && docusaurus-build
-var configName   = process.env.DOCS_ENV;
-if(!configName || configName.length==0) {
-  //configName = "docs1";
-  //configName = "gitlab";
-  configName = "github";
-}
 
 console.log("Using config " + configName);
 var myConfig = configs[configName];
