@@ -1,12 +1,22 @@
 image: node:14
 
+# gitlab ci: deploy stages for review/production/release
+
+variables:
+  DOCS_ENV: "gitlab" 
+# uncomment, not set 0!
+# global variables to disable jobs
+  TEST_DISABLED: 1
+  SAST_DISABLED: 1
+  CODE_QUALITY_DISABLED: 1
+  PERFORMANCE_DISABLED: 1
+  SECRET_DETECTION_DISABLED: 1
+
 # This folder is cached between builds
 # http://docs.gitlab.com/ee/ci/yaml/README.html#cache
 cache:
   paths:
     - node_modules/
-variables:
-  DOCS_ENV: "gitlab" 
 
 .pages:
     stage: deploy
@@ -23,17 +33,6 @@ variables:
     #only:
     #  - master
 
-
-# gitlab ci: deploy stages for review/production/release
-
-variables:
-# uncomment, not set 0!
-# global variables to disable jobs
-  TEST_DISABLED: 1
-  SAST_DISABLED: 1
-  CODE_QUALITY_DISABLED: 1
-  PERFORMANCE_DISABLED: 1
-  SECRET_DETECTION_DISABLED: 1
 
 # enable or disable workflow features  
   #CANARY_ENABLED: 1
@@ -56,10 +55,10 @@ include:
 review:
   environment:
     name: review/$CI_COMMIT_REF_NAME
-    url: http://$CI_PROJECT_ID-$CI_ENVIRONMENT_SLUG.$KUBE_INGRESS_BASE_DOMAIN
+    url: http://$CI_ENVIRONMENT_SLUG-$CI_COMMIT_REF_SLUG.$KUBE_INGRESS_BASE_DOMAIN
     #url: http://$CI_PROJECT_NAME-$CI_ENVIRONMENT_SLUG-$CI_COMMIT_REF_SLUG.$KUBE_INGRESS_BASE_DOMAIN
   variables:
-    DOCS_URL: http://$CI_PROJECT_NAME-$CI_ENVIRONMENT_SLUG.$KUBE_INGRESS_BASE_DOMAIN
+    DOCS_URL: http://$CI_ENVIRONMENT_SLUG-$CI_COMMIT_REF_SLUG.$KUBE_INGRESS_BASE_DOMAIN
 
 # production: master/main branch
 # example URL: https://projectname-review.k8s-prod.nanocosmos.de/
