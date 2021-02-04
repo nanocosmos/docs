@@ -1,5 +1,5 @@
 # stage1 - build app first 
-FROM node:12-alpine as build
+FROM node:14-slim as build
 
 WORKDIR /app
 COPY . /app
