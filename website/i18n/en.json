@@ -170,6 +170,10 @@
         "title": "FAQ",
         "sidebar_label": "FAQ"
       },
+      "nanoplayer/nanoplayer_feature_customization": {
+        "title": "Customization",
+        "sidebar_label": "Customization"
+      },
       "nanoplayer/nanoplayer_feature_fullscreen_api": {
         "title": "Fullscreen API",
         "sidebar_label": "Fullscreen API"
