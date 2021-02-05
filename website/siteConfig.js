@@ -47,7 +47,7 @@ console.log("Using config " + configName + " " + myConfig.url);
 console.log(JSON.stringify(myConfig));
 
 const siteConfig = {
-  title: 'nanocosmos Documentation', // Title for your website.	
+  title: 'nanocosmos Documentation', // Title for your website. 
   tagline: 'nanoStream Cloud & H5Live Player - Around The World in 1 Second',
   title: 'nanocosmos Documentation',  
 

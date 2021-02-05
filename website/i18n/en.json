@@ -54,7 +54,7 @@
       },
       "cloud/security": {
         "title": "nanoStream Cloud Security",
-        "sidebar_label": "Security"
+        "sidebar_label": "nanoStream Cloud Security"
       },
       "cloud/support": {
         "title": "Support",
@@ -613,6 +613,10 @@
         "title": "Screen Sharing",
         "sidebar_label": "Screen Sharing"
       },
+      "webrtc/nanostream_webrtc_set_mediastream": {
+        "title": "External Streams / Mixing",
+        "sidebar_label": "External Streams / Mixing"
+      },
       "webrtc/nanostream_webrtc_speech_music": {
         "title": "Speech / Music Streaming",
         "sidebar_label": "Speech / Music Streaming"
@@ -637,6 +641,8 @@
       "Other": "Other",
       "nanoStream Webcaster": "nanoStream Webcaster",
       "nanoStream Cloud": "nanoStream Cloud",
+      "bintu api": "bintu api",
+      "Support": "Support",
       "nanoStream SDKs/Apps": "nanoStream SDKs/Apps",
       "Android": "Android",
       "iOS": "iOS",

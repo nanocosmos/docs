@@ -28,10 +28,10 @@ Which browsers/plattforms do we support??
 
 The low-latency nanoStream h5Live Player runs on all full-featured HTML5 browsers including
 
-- Safari 10,11,12 on iOS and macOS
+- Safari 10 and higher on iOS and macOS
 - Chrome 54 and higher on desktop and mobile
 - Firefox 48 and higher
-- Edge
+- MS Edge (all versions)
 - Internet Explorer 11 (starting Windows 8.1)
 
 For Internet Explorer 11 on Windows 7, H5Live player contains a Flash player fallback for RTMP.
@@ -90,11 +90,12 @@ You can check the static capabilities array of the NanoPlayers class `NanoPlayer
 </details>
 
 
-<details><summary><strong>Is H5Live supported in a Webview on iOS and Android?</strong></summary>
-H5Live Player works both on the native browsers Safari on iOS and Chrome on Android.
-For in-app usage for developers, also Android and iOS Webview works.
-There is one restriction about codec support, the systems need to support both H264 video 
-and AAC audio for playback.
+<details><summary><strong>Is H5Live supported in native apps in a Webview on iOS and Android?</strong></summary>
+
+H5Live Player works on native browsers like Safari on iOS and Chrome on Android.
+For native apps, you can use WebView components in-app, which both operating systems support. 
+Example for iOS: https://developer.apple.com/documentation/webkit/wkwebview/
+The operating systems need to support both H264 video and AAC audio formats for playback, which most platforms do.
 
 </details>
 

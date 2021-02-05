@@ -37,7 +37,8 @@
       "webrtc/nanostream_webrtc_quality",
       "webrtc/nanostream_webrtc_device_selection",
       "webrtc/nanostream_webrtc_audio_video_only",
-      "webrtc/nanostream_webrtc_speech_music"
+      "webrtc/nanostream_webrtc_speech_music",
+      "webrtc/nanostream_webrtc_set_mediastream"
     ],
     "API": [
       "webrtc/nanostream_webrtc_api"
@@ -53,12 +54,17 @@
       "cloud/cloud_getting_started",
       "cloud/live_encoding",
       "cloud/live-recording-vod",
+      "cloud/security",
+      "cloud/analytics"
+    ],
+    "bintu api": [
       "cloud/bintu_api",
       "cloud/bintu_custom_webhooks",
-      "cloud/bintu_stream_tags",
-      "cloud/support",
+      "cloud/bintu_stream_tags"
+    ],
+    "Support": [
       "cloud/network-diagnostics",
-      "cloud/analytics"
+      "cloud/support"
     ]
   },
   "nanostream": {

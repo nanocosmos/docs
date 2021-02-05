@@ -1,7 +1,7 @@
 ---
 id: security
 title: nanoStream Cloud Security
-sidebar_label: Security
+sidebar_label: nanoStream Cloud Security
 ---
 
 # nanoStream Cloud Security
