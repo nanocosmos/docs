@@ -58,9 +58,13 @@ To change the color, insert its value in one of the formats (all case insensitiv
 
 In `config.style.symbolColor` you need to pass the value of the desired color. The default value is “rgba(244,233,233,1)”.
 
+![Schema](https://www.nanocosmos.de/blog/wp-content/uploads/2021/02/symbolColororange.png)
+
 # controlBarColor
 
 The control bar color background is set by default to “rgba(0,0,0,0.5)”. To change it, insert the string with desired color value in `config.style.controlBarColor`.
+
+![Schema](https://www.nanocosmos.de/blog/wp-content/uploads/2021/02/colorBar.png)
 
 #### Code example:
 
@@ -170,18 +174,27 @@ Inline controls are set by default, however, it is possible to disable them by c
 ### 3.2 Style as an audio only player
 
 <!-- so when you have video+audio then only audio is displayed so how to style the video player-->
-To have audio only player (there is the video element but you don't want to display it = edit it luiza), it is enough to set audioPlayer value to true in `config.style.audioPlayer`. 
+To style player as an audio only (without displaying the video element), it is enough to set audioPlayer value to true in `config.style.audioPlayer`. 
 ```
 "style": {
     "audioPlayer": true
 }
 ```
 
+![Schema](https://www.nanocosmos.de/blog/wp-content/uploads/2021/02/audioOnly.png)
+
 To customize audio only control bar follow 1.2. 
 
-======== 
-### 3.3 DISPLAY AUDIO ONLY
-DISPLAY AUDIO ONLY - for audio only stream, when you don't have any video, black screen with audio control 
+
+### 3.3 Display audio only stream
+
+For audio only stream, when there is no video, you can style the player to have a black background in the video frame and audio controls.
+
+```
+"style": {
+    "displayAudioOnly": true
+}
+```
 
 
 ### 3.4 Hide fullscreen control
