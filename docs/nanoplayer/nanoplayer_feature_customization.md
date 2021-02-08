@@ -220,7 +220,7 @@ It is possible to customize other parameters as well by setting them to: `true` 
 - keepFrame
 - centerView
 
-List of all parameters available for styling can be found in [NanoPlayer API] (https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_api) in `style object`. 
+List of all parameters available for styling can be found in [NanoPlayer API](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_api) in `style object`. 
 
 
 ## 4 Code snippet with customization
