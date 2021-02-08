@@ -14,7 +14,7 @@ To make the player responsive and preserve the aspect ratio, you need to set up 
 Set the `style.width` and `style.height` properties inside the player config to `auto` to  keep the size of the parent container.
 
 ```
-    // player config 
+// player config 
     var config = {
         "style": {
             "width": "auto",
@@ -58,13 +58,11 @@ To change the color, insert its value in one of the formats (all case insensitiv
 
 In `config.style.symbolColor` you need to pass the value of the desired color. The default value is “rgba(244,233,233,1)”.
 
-![Schema](https://www.nanocosmos.de/blog/wp-content/uploads/2021/02/symbolColororange.png)
 
 # controlBarColor
 
 The control bar color background is set by default to “rgba(0,0,0,0.5)”. To change it, insert the string with desired color value in `config.style.controlBarColor`.
 
-![Schema](https://www.nanocosmos.de/blog/wp-content/uploads/2021/02/colorBar.png)
 
 #### Code example:
 
@@ -75,8 +73,10 @@ Example with HEX color value for symbolColor:
         "controlBarColor": "#00000"
 }
 ```
+![Schema](https://www.nanocosmos.de/blog/wp-content/uploads/2021/02/symbolColororange.png)
 
 Example with RGBA color value and trasparency:
+
 Note: symbolColor is set to white only for display contrast in this example
 
 ```
@@ -85,6 +85,7 @@ Note: symbolColor is set to white only for display contrast in this example
         "controlBarColor": "rgba(237,125,14,0.8)"
 }
 ```
+![Schema](https://www.nanocosmos.de/blog/wp-content/uploads/2021/02/colorBar.png)
 
 ### 2.2 buttonHighlighting and buttonAnimation
 
@@ -116,6 +117,7 @@ There are three available cursor options in the player which can be implemented 
 By default it is set to an arrow pointer (`default`). 
 
 #### Code example default cursor
+
 ```
 "style": {
     "buttonCursor": "default"
@@ -132,6 +134,7 @@ Changing the default value to `pointer`, resolves in a switch from arrow cursor 
 Another possibility is setting the value to `progress`, which then will add a spinning wheel to the default arrow while hovering over a clickable element. 
 
 #### Code example progress cursor
+
 ```
 "style": {
     "buttonCursor": "progress"
@@ -142,6 +145,7 @@ Another possibility is setting the value to `progress`, which then will add a sp
 Poster images, which are displayed while video element is loading, are supported and can be added in the `config.style.poster`. The string has to be relative or absolute path to a valid img source like “./assets/poster.png” or image URL.
 
 #### Code example poster
+
 ```
 "style": {
     "poster": "https://[yourdomain]/assets/niceimage.png"
@@ -173,14 +177,15 @@ Inline controls are set by default, however, it is possible to disable them by c
 
 ### 3.2 Style as an audio only player
 
-<!-- so when you have video+audio then only audio is displayed so how to style the video player-->
 To style player as an audio only (without displaying the video element), it is enough to set audioPlayer value to true in `config.style.audioPlayer`. 
+
 ```
 "style": {
     "audioPlayer": true
 }
 ```
 
+Example:
 ![Schema](https://www.nanocosmos.de/blog/wp-content/uploads/2021/02/audioOnly.png)
 
 To customize audio only control bar follow 1.2. 
@@ -205,4 +210,74 @@ To hide fulscreen control icon set the fullScreenControl to false in `config.sty
 "style": {
     "fullScreenControl": false
 }
+```
+
+### 3.5 Other customizable parameters with boolean value
+
+It is possible to customize other parameters as well by setting them to: `true` or `false` in `config.style.[parameter]`, e.g.:
+- interactive
+- view
+- keepFrame
+- centerView
+
+List of all parameters available for styling can be found in [NanoPlayer API] (https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_api) in `style object`. 
+
+
+## 4 Code snippet with customization
+
+In this example we want to change `controlBarColor` to orange, replace the `default` `buttonCursor` with a `progress` one and disable the `buttonAnimation`. To try it out simply copy the snippet and paste it in body of any HTML file.
+
+```
+    <div id="playerDiv"></div>
+    <script src="//demo.nanocosmos.de/nanoplayer/api/release/nanoplayer.4.min.js?20210127"></script>
+    <script>
+    var player;
+    var defaultUrl = "rtmp://bintu-play.nanocosmos.de/play"; 
+    var defaultServer = {
+        "websocket": "wss://bintu-h5live.nanocosmos.de:443/h5live/stream",
+        "hls": "https://bintu-h5live.nanocosmos.de:443/h5live/http/playlist.m3u8",
+        "progressive": "https://bintu-h5live.nanocosmos.de:443/h5live/http/stream.mp4"
+    }; 
+    var streamNames = [ 
+       "HX26g-NRbx9" 
+    ]; 
+    var config = {
+        "source": {
+            "startIndex": 0,
+            "entries": [
+                {
+                    "index": 0,
+                    "h5live": {
+                        "server": defaultServer,
+                        "rtmp": {
+                            "url": defaultUrl,
+                            "streamname": streamNames[0]
+                        }
+                    }
+                }
+            ]
+        },
+        "playback": {
+            "autoplay": true,
+            "automute": true,
+            "muted": true
+        },
+        "style": {
+        "displayMutedAutoplay": true,
+        "symbolColor": "rgb(255,255,255)",
+        "controlBarColor": "rgba(237,125,14,0.8)",
+        "buttonAnimation": false,
+        "buttonCursor": "progress"
+    },
+    };
+    document.addEventListener('DOMContentLoaded', function () {
+        player = new NanoPlayer("playerDiv");
+        player.setup(config).then(function (config) {
+            console.log("setup success");
+            console.log("config: " + JSON.stringify(config, undefined, 4));
+        }, function (error) {
+            alert(error.message);
+        });
+    });
+    </script>
 ```
