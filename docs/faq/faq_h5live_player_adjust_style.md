@@ -173,7 +173,20 @@ video.poster = ....;
 </details>
 
 <details><summary><strong>Can I change the background color of the player?</strong></summary>
-No, currently there is no way to configure the background-color of the video element, but you can have workarounds. You can select the video in the resolve function of the promise (see the sample) and then change the color or you can create a global css rule for video elements. Please see the following examples.
+
+Of course, the **nanoStream H5Live Player Version 4.9.1** introduced this possibility. To change the background color of the player set the backgroundColor parameter in `config.style.backgroundColor` to the desired color. By default it is set to black.
+
+#### Code example with changed background color
+
+```
+"style": {
+    "backgroundColor": 'white'
+}
+```
+
+However, if you prefer to use older version of **nanoStream H5Live Player**, then there is no way to configure the background-color of the video element, but you can have workarounds. You can select the video in the resolve function of the promise (see the sample) and then change the color or you can create a global CSS rule for video elements. Please see the following examples.
+
+#### Code example with change in the resolve function of the promise
 
 ```javascript
 var player; 
@@ -207,6 +220,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 ```
+#### Code example with changed global CSS rule
 
 ```
 <style>
