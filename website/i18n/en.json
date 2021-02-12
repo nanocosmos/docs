@@ -171,8 +171,8 @@
         "sidebar_label": "FAQ"
       },
       "nanoplayer/nanoplayer_feature_customization": {
-        "title": "Customization",
-        "sidebar_label": "Customization"
+        "title": "UI and customization",
+        "sidebar_label": "UI and customization"
       },
       "nanoplayer/nanoplayer_feature_fullscreen_api": {
         "title": "Fullscreen API",

@@ -1,14 +1,27 @@
 ---
 id: nanoplayer_feature_customization
-title: Player UI and general customization
-sidebar_label: Player UI and general customization
+title: UI and customization 
+sidebar_label: UI and customization
 ---
 
-When using H5Live Player, you can customize some parameters according to your needs.
+Changing parameters is straightforward and easy. You can have a tailor-made design and a smooth appearance within seconds. **It is possible**, among others, **to adjust integrated player controls, icons, background color, add a poster, change the cursor** etc. Of course, you can also disable all built-in styles. In this manual, we will go through customizable elements so that  **H5Live Player** UI will suit all your needs.
 
-## Build-in controls, animations and styles
+![PlayerManual](/img/nanoplayer/h5Live_view_with_poster.png)
 
-The **nanoStream H5Live Player Version 4.9.1** is introducing new possibilities in terms of design. The control bar and control icons background colors are customizable. The player is more vivid due to additional button behaviour: `buttonHighlighting`, `buttonAnimation` and variety of available cursors with `buttonCursor`. See the [config](../nanoplayer_api/#nanoplayerconfig--codeobjectcode) here.
+1. [**view**](#other-customizations): video overlayer including visible styles, controls and poster/background.
+2. [**center view**](#other-customizations): can include play button [see example above], loading animation, mute/volume icon.
+3. [**controls**](#built-in-controls-animations-and-styles): control bar with play/pause control, mute control, volume control (slider), playback time, fullscreen control.
+4. [**poster**](#poster) / [**background**](#background-color-of-the-player): a poster [image of your choice] that can be set and the background color can be changed. 
+
+Below you have a short description of each property and how-to for adjusting styles.
+
+## Built-in controls, animations and styles
+
+The [**nanoStream H5Live Player Version 4.9.1**](https://www.nanocosmos.de/blog/2021/02/nanostream-player-4-9-1-introducing-a-new-design/) is introducing new possibilities in terms of design. The control bar and control icons background colors are customizable. The player is more vivid due to additional button behavior: `buttonHighlighting`, `buttonAnimation` and a variety of available cursors with `buttonCursor`. See the [config](../nanoplayer/nanoplayer_api/#nanoplayerconfig--codeobjectcode) here.
+
+**The default style of the player:**
+
+![Default](/img/nanoplayer/h5Live_view_nanoplayer_default.png)
 
 ### "symbolColor" and "controlBarColor"
 
@@ -22,8 +35,6 @@ To change one of the colors, insert its value in one of the formats (all case in
 - HSL e.g. "hsl(39,100%,50%)" and with alpha "hsla(39,100%,50%,0.5)"
 - valid CSS Keyword (e.g. "pink"/"white"/"aquamarine")
 
-#### Code example
-
 Example with HEX color value for symbolColor:
 
 ```javascript
@@ -33,11 +44,10 @@ Example with HEX color value for symbolColor:
 }
 ```
 
-![Schema](https://www.nanocosmos.de/blog/wp-content/uploads/2021/02/symbolColororange.png)
+![Schema](/img/nanoplayer/h5Live_view_symbolColororange.png)
+
 
 Example with RGBA color value and transparency:
-
-symbolColor is set to white only for display contrast in this example
 
 ```javascript
 "style": {
@@ -46,15 +56,14 @@ symbolColor is set to white only for display contrast in this example
 }
 ```
 
-![Schema](https://www.nanocosmos.de/blog/wp-content/uploads/2021/02/colorBar.png)
+![Schema](/img/nanoplayer/h5Live_view_colorBar.png)
 
 ### "buttonHighlighting" and "buttonAnimation"
 
-Both properties add the 3D effect to player and make it more lively.
-While hovering over a clickable element (one of control icons):
+Both properties add the 3D effect to the player and make it more lively.
 
-- `buttonHighlighting` activates a a shadow container of this element
-- `buttonAnimation` magnifies the element
+- `buttonHighlighting` on hover activates a shadow container of the button
+- `buttonAnimation` on hover magnifies the button and bounces when clicked
 
 The  `config.style.buttonHighlighting` and `config.style.buttonAnimation` properties will either be:
 
@@ -72,13 +81,13 @@ The  `config.style.buttonHighlighting` and `config.style.buttonAnimation` proper
 
 ### "buttonCursor"
 
-[CHANGE IT]There are three available cursor options in the player which can be implemented in `config.style.buttonCursor`:
+To change the cursor, you can use any CSS cursor property, e.g:
 
 - "default"
 - "pointer"
 - "grab"
 
-The default value is set to an `"pointer"`.
+The default value is set to `"pointer"`. To change it, implement the string with the desirable CSS cursor in `config.style.buttonCursor`
 
 #### Example
 
@@ -88,13 +97,13 @@ The default value is set to an `"pointer"`.
 }
 ```
 
-Changing the default value to `"default"`, resolves in a switch from arrow cursor to a tiny hand while hovering over a clickable element.
+Changing the default value to `"default"`, resolves in a switch from a tiny hand to an arrow while hovering over a clickable element.
 
 ### Poster
 
-Poster images, which are displayed while video element is loading, are supported and can be added in the `config.style.poster`. The string has to be relative or absolute path to a valid img source like “./assets/poster.png” or image URL.
+Poster images, which are displayed while the video element is loading, are supported and can be added in the `config.style.poster`. The string has to be a relative or absolute path to a valid image source like “./assets/poster.png” or image URL.
 
-#### Code example poster
+#### Example
 
 ```javascript
 "style": {
@@ -104,7 +113,7 @@ Poster images, which are displayed while video element is loading, are supported
 
 ### Background color of the player
 
-To change the background color of the player set the backgroundColor parameter in `config.style.backgroundColor` to the desired color. By default it is set to black.
+To change the background color of the player set the backgroundColor parameter in `config.style.backgroundColor` to the desired color. By default, it is set to black.
 
 ```javascript
 "style": {
@@ -112,7 +121,7 @@ To change the background color of the player set the backgroundColor parameter i
 }
 ```
 
-## Responsivness
+## Responsiveness
 
 To make the player responsive and preserve the aspect ratio, you need to set up player configuration and the CSS of playerDiv.
 
@@ -152,9 +161,17 @@ For a 16:9 aspect ratio: **(9 / 16 = 0.5625) = 56.25%**
 
 ## Other Customizations
 
-### Disable build-in controls
+To disable all custom properties in the player, e.g. in case you want to build your controls or display the video as a background without any icons, you can simply set the `view` to false in `config.style.controls`. In this way, you receive a plain video element.
 
-Inline controls are set by default, however, it is possible to disable them by changing the value to false in `config.style.controls`.
+```javascript
+"style": {
+    "view": false
+}
+```
+
+### Disable built-in controls
+
+Inline controls are set by default. However, it is possible to disable them by changing the value to false in `config.style.controls`.
 
 ```javascript
 "style": {
@@ -165,9 +182,9 @@ Inline controls are set by default, however, it is possible to disable them by c
 > **Important**
 > If you create custom controls or other overlay elements make sure to set the z-index value > 1 to ensure they are positioned on top of the video layer.
 
-### Style as an audio only player
+### Style as an audio-only player
 
-To style player as an audio only (without displaying the video element), it is enough to set audioPlayer value to true in `config.style.audioPlayer`.
+To style the player as audio-only (without displaying the video element), it is enough to set the audioPlayer value to true in `config.style.audioPlayer`.
 
 ```javascript
 "style": {
@@ -175,14 +192,13 @@ To style player as an audio only (without displaying the video element), it is e
 }
 ```
 
-Example:
-![Schema](https://www.nanocosmos.de/blog/wp-content/uploads/2021/02/audioOnly.png)
+![Schema](/img/nanoplayer/h5Live_view_audioOnly.png)
 
-To customize audio only control bar follow  
+To customize audio-only control bar follow [built-in controls customization](#built-in-controls-animations-and-styles). 
 
-### Display audio only stream
+### Display audio-only stream
 
-For audio only stream, when there is no video, you can style the player to have a black background in the video frame and audio controls.
+For audio-only stream, when there is no video, you can style the player to have a black background in the video frame and audio controls.
 
 ```javascript
 "style": {
@@ -192,7 +208,7 @@ For audio only stream, when there is no video, you can style the player to have 
 
 ### Hide fullscreen control
 
-To hide fulscreen control icon set the fullScreenControl to false in `config.style.fullScreenControl`.
+To hide fulscreen control icon set the `fullScreenControl` to false in `config.style.fullScreenControl`.
 
 ```javascript
 "style": {
@@ -200,20 +216,20 @@ To hide fulscreen control icon set the fullScreenControl to false in `config.sty
 }
 ```
 
-### Other customizable parameters with boolean value
+### Other customizable parameters with a boolean value
 
-It is possible to customize other parameters as well by setting them to: `true` or `false` in `config.style.[parameter]`, e.g.:
+It is possible to customize other parameters as well by setting them to true or false in `config.style.[parameter]`, e.g.:
 
 - `interactive`
 - `view`
 - `keepFrame`
 - `centerView`
 
-List of all parameters available for styling can be found in [NanoPlayer API](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_api/#nanoplayerconfig--codeobjectcode) in `style` object.
+A list of all parameters available for styling can be found in [NanoPlayer API](../nanoplayer/nanoplayer_api/#nanoplayerconfig--codeobjectcode) in the `style` object.
 
 ## Example code snippet with customization
 
-[CHANGHE IT] In this example we want to change `controlBarColor` to orange, replace the `default` `buttonCursor` with a `progress` one and disable the `buttonAnimation`. To try it out simply copy the snippet and paste it in body of any HTML file.
+In this example we want to change `controlBarColor` to orange, replace the default `buttonCursor` with a `grab` one and disable the `buttonAnimation`. For presentation, we insert all other customizable parameters within the `style` object. To try it out simply copy the snippet and paste it into a body of any HTML file.
 
 ```html
     <div id="playerDiv"></div>
@@ -248,7 +264,7 @@ List of all parameters available for styling can be found in [NanoPlayer API](ht
         "playback": {
             "autoplay": true,
             "automute": true,
-            "muted": false
+            "muted": true
         },
         "style": {
             "controls"             : true,
