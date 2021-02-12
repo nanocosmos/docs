@@ -17,7 +17,7 @@ Below you have a short description of each property and how-to for adjusting sty
 
 ## Built-in controls, animations and styles
 
-The [**nanoStream H5Live Player Version 4.9.1**](https://www.nanocosmos.de/blog/2021/02/nanostream-player-4-9-1-introducing-a-new-design/) is introducing new possibilities in terms of design. The control bar and control icons background colors are customizable. The player is more vivid due to additional button behavior: `buttonHighlighting`, `buttonAnimation` and a variety of available cursors with `buttonCursor`. See the [config](../nanoplayer/nanoplayer_api/#nanoplayerconfig--codeobjectcode) here.
+The [**nanoStream H5Live Player Version 4.9.1**](https://www.nanocosmos.de/blog/2021/02/nanostream-player-4-9-1-introducing-a-new-design/) is introducing new possibilities in terms of design. The control bar and control icons background colors are customizable. The player is more vivid due to additional button behavior: `buttonHighlighting`, `buttonAnimation` and a variety of available cursors with `buttonCursor`. See the [config](../nanoplayer_api/#nanoplayerconfig--codeobjectcode) here.
 
 **The default style of the player:**
 
@@ -225,7 +225,7 @@ It is possible to customize other parameters as well by setting them to true or 
 - `keepFrame`
 - `centerView`
 
-A list of all parameters available for styling can be found in [NanoPlayer API](../nanoplayer/nanoplayer_api/#nanoplayerconfig--codeobjectcode) in the `style` object.
+A list of all parameters available for styling can be found in [NanoPlayer API](../nanoplayer_api/#nanoplayerconfig--codeobjectcode) in the `style` object.
 
 ## Example code snippet with customization
 
