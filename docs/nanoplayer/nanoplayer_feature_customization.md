@@ -11,7 +11,7 @@ Changing parameters is straightforward and easy. You can have a tailor-made desi
 1. [**view**](#other-customizations): video overlayer including visible styles, controls and poster/background.
 2. [**center view**](#other-customizations): can include play button [see example above], loading animation, mute/volume icon.
 3. [**controls**](#built-in-controls-animations-and-styles): control bar with play/pause control, mute control, volume control (slider), playback time, fullscreen control.
-4. [**poster**](#poster) / [**background**](#background-color-of-the-player): a poster [image of your choice] that can be set and the background color can be changed. 
+4. [**poster**](#poster) / [**background**](#background-color-of-the-player): a poster [image of your choice] that can be set and the background color can be changed.
 
 Below you have a short description of each property and how-to for adjusting styles.
 
@@ -25,15 +25,15 @@ The [**nanoStream H5Live Player Version 4.9.1**](https://www.nanocosmos.de/blog/
 
 ### "symbolColor" and "controlBarColor"
 
-In `config.style.symbolColor` you need to pass the value of the desired color. The default value is “rgba(244,233,233,1)”.
-The control bar color background is set by default to “rgba(0,0,0,0.5)”. To change it, insert the string with desired color value in `config.style.controlBarColor`.
+In `config.style.symbolColor` you need to pass the value of the desired color. The default value is `"rgba(244,233,233,1)"`.
+The control bar color background is set by default to `"rgba(0,0,0,0.5)"`. To change it, insert the string with desired color value in `config.style.controlBarColor`.
 
 To change one of the colors, insert its value in one of the formats (all case insensitive):
 
-- RGB e.g. "rgb(255,165,0)" and with alpha "rgba(255,165,0,0.5)"
-- HEX e.g. "#FFA500" or "#fa0" and with alpha "#FFA500AA" or "#fa0a"
-- HSL e.g. "hsl(39,100%,50%)" and with alpha "hsla(39,100%,50%,0.5)"
-- valid CSS Keyword (e.g. "pink"/"white"/"aquamarine")
+- RGB e.g. `"rgb(255,165,0)"` and with alpha `"rgba(255,165,0,0.5)"`
+- HEX e.g. `"#FFA500"` or `"#fa0"` and with alpha `"#FFA500AA"` or `"#fa0a"`
+- HSL e.g. `"hsl(39,100%,50%)"` and with alpha `"hsla(39,100%,50%,0.5)"`
+- valid CSS Keyword (e.g. `"pink"`/`"white"`/`"aquamarine"`)
 
 Example with HEX color value for symbolColor:
 
@@ -45,7 +45,6 @@ Example with HEX color value for symbolColor:
 ```
 
 ![Schema](/img/nanoplayer/h5Live_view_symbolColororange.png)
-
 
 Example with RGBA color value and transparency:
 
@@ -83,9 +82,9 @@ The  `config.style.buttonHighlighting` and `config.style.buttonAnimation` proper
 
 To change the cursor, you can use any CSS cursor property, e.g:
 
-- "default"
-- "pointer"
-- "grab"
+- `"default"`
+- `"pointer"`
+- `"grab"`
 
 The default value is set to `"pointer"`. To change it, implement the string with the desirable CSS cursor in `config.style.buttonCursor`
 
@@ -97,11 +96,11 @@ The default value is set to `"pointer"`. To change it, implement the string with
 }
 ```
 
-Changing the default value to `"default"`, resolves in a switch from a tiny hand to an arrow while hovering over a clickable element.
+Changing the default value to `"default"`, resolves in a switch from the pointing finger to an arrow while hovering over a clickable element.
 
 ### Poster
 
-Poster images, which are displayed while the video element is loading, are supported and can be added in the `config.style.poster`. The string has to be a relative or absolute path to a valid image source like “./assets/poster.png” or image URL.
+Poster images, which are displayed while the video element is loading, are supported and can be added in the `config.style.poster`. The string has to be a relative or absolute path to a valid image source like `"./assets/poster.png"` or image URL.
 
 #### Example
 
@@ -113,7 +112,7 @@ Poster images, which are displayed while the video element is loading, are suppo
 
 ### Background color of the player
 
-To change the background color of the player set the backgroundColor parameter in `config.style.backgroundColor` to the desired color. By default, it is set to black.
+To change the background color of the player set the backgroundColor parameter in `config.style.backgroundColor` to the desired color. By default, it is set to `"black"`.
 
 ```javascript
 "style": {
@@ -147,7 +146,7 @@ For a 16:9 aspect ratio: **(9 / 16 = 0.5625) = 56.25%**
 
 ```html
     <body>
-        <div id="playerDiv" style="width:100%;padding-bottom: 56.25%"></div>
+        <div id="playerDiv" style="width:100%;padding-bottom:56.25%"></div>
     </body>
 ```
 
@@ -171,7 +170,7 @@ To disable all custom properties in the player, e.g. in case you want to build y
 
 ### Disable built-in controls
 
-Inline controls are set by default. However, it is possible to disable them by changing the value to false in `config.style.controls`.
+Inline controls are set by default. However, it is possible to disable them by changing the value to `false` in `config.style.controls`.
 
 ```javascript
 "style": {
@@ -180,11 +179,11 @@ Inline controls are set by default. However, it is possible to disable them by c
 ```
 
 > **Important**
-> If you create custom controls or other overlay elements make sure to set the z-index value > 1 to ensure they are positioned on top of the video layer.
+> If you create custom controls or other overlay elements make sure to set the z-index value > 10 to ensure they are positioned on top of the video layer.
 
 ### Style as an audio-only player
 
-To style the player as audio-only (without displaying the video element), it is enough to set the audioPlayer value to true in `config.style.audioPlayer`.
+To style the player as audio-only (without displaying the video element), it is enough to set the audioPlayer value to `true` in `config.style.audioPlayer`.
 
 ```javascript
 "style": {
@@ -194,7 +193,7 @@ To style the player as audio-only (without displaying the video element), it is 
 
 ![Schema](/img/nanoplayer/h5Live_view_audioOnly.png)
 
-To customize audio-only control bar follow [built-in controls customization](#built-in-controls-animations-and-styles). 
+To customize audio-only control bar follow [built-in controls customization](#built-in-controls-animations-and-styles).
 
 ### Display audio-only stream
 
@@ -208,7 +207,7 @@ For audio-only stream, when there is no video, you can style the player to have 
 
 ### Hide fullscreen control
 
-To hide fulscreen control icon set the `fullScreenControl` to false in `config.style.fullScreenControl`.
+To hide fulscreen control icon set the fullscreen control to `false` in `config.style.fullScreenControl`.
 
 ```javascript
 "style": {
@@ -218,18 +217,18 @@ To hide fulscreen control icon set the `fullScreenControl` to false in `config.s
 
 ### Other customizable parameters with a boolean value
 
-It is possible to customize other parameters as well by setting them to true or false in `config.style.[parameter]`, e.g.:
+It is possible to customize other parameters as well by setting them to `true` or `false` in `config.style.[parameter]`, e.g.:
 
 - `interactive`
 - `view`
 - `keepFrame`
 - `centerView`
 
-A list of all parameters available for styling can be found in [NanoPlayer API](../nanoplayer_api/#nanoplayerconfig--codeobjectcode) in the `style` object.
+A list of all parameters available for styling can be found in [NanoPlayer API](../nanoplayer_api/#nanoplayerconfig--codeobjectcode) in the `config.style` object.
 
 ## Example code snippet with customization
 
-In this example we want to change `controlBarColor` to orange, replace the default `buttonCursor` with a `grab` one and disable the `buttonAnimation`. For presentation, we insert all other customizable parameters within the `style` object. To try it out simply copy the snippet and paste it into a body of any HTML file (replace the streamname `[your_streamname]` with yours).
+In this example we want to change `controlBarColor` and `symbolColor`, replace the default `buttonCursor` and disable the `buttonAnimation`. In addition the `playerDiv` is styled responsive. For presentation, we insert all other customizable parameters within the `style` object. To try it out simply copy the snippet and paste it into a body of any HTML file (replace the streamname `[your_streamname]` with yours).
 
 ```html
     <div id="playerDiv" style="width:100%;padding-bottom: 56.25%"></div>
