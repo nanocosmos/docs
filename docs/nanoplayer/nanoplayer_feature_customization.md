@@ -229,10 +229,10 @@ A list of all parameters available for styling can be found in [NanoPlayer API](
 
 ## Example code snippet with customization
 
-In this example we want to change `controlBarColor` to orange, replace the default `buttonCursor` with a `grab` one and disable the `buttonAnimation`. For presentation, we insert all other customizable parameters within the `style` object. To try it out simply copy the snippet and paste it into a body of any HTML file.
+In this example we want to change `controlBarColor` to orange, replace the default `buttonCursor` with a `grab` one and disable the `buttonAnimation`. For presentation, we insert all other customizable parameters within the `style` object. To try it out simply copy the snippet and paste it into a body of any HTML file (replace the streamname `[your_streamname]` with yours).
 
 ```html
-    <div id="playerDiv"></div>
+    <div id="playerDiv" style="width:100%;padding-bottom: 56.25%"></div>
     <script src="//demo.nanocosmos.de/nanoplayer/api/release/nanoplayer.4.min.js?20210127"></script>
     <script>
     var player;
@@ -243,7 +243,7 @@ In this example we want to change `controlBarColor` to orange, replace the defau
         "progressive": "https://bintu-h5live.nanocosmos.de:443/h5live/http/stream.mp4"
     }; 
     var streamNames = [ 
-       "HX26g-NRbx9" 
+        "[your_streamname]"
     ]; 
     var config = {
         "source": {
@@ -254,19 +254,21 @@ In this example we want to change `controlBarColor` to orange, replace the defau
                     "h5live": {
                         "server": defaultServer,
                         "rtmp": {
-                            "url": defaultUrl,
-                            "streamname": streamNames[0]
+                            "url"        : defaultUrl,
+                            "streamname" : streamNames[0]
                         }
                     }
                 }
             ]
         },
         "playback": {
-            "autoplay": true,
-            "automute": true,
-            "muted": true
+            "autoplay" : true,
+            "automute" : true,
+            "muted"    : false
         },
         "style": {
+            "width"                : "auto",
+            "height"               : "auto",
             "controls"             : true,
             "interactive"          : true,
             "view"                 : true,
@@ -275,10 +277,10 @@ In this example we want to change `controlBarColor` to orange, replace the defau
             "displayAudioOnly"     : true,
             "audioPlayer"          : false,
             "displayMutedAutoplay" : true,
-            "backgroundColor"      : "rgba(237,125,14,1)",
+            "backgroundColor"      : "rgb(237,125,14)",
             "fullScreenControl"    : true,
             "centerView"           : true,
-            "symbolColor"          : "rgb(255,255,255)",
+            "symbolColor"          : "#FFF",
             "controlBarColor"      : "rgba(237,125,14,0.8)",
             "buttonAnimation"      : false,
             "buttonHighlighting"   : true,
