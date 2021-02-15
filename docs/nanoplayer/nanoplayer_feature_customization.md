@@ -35,12 +35,12 @@ To change one of the colors, insert its value in one of the formats (all case in
 - HSL e.g. `"hsl(39,100%,50%)"` and with alpha `"hsla(39,100%,50%,0.5)"`
 - valid CSS Keyword (e.g. `"pink"`/`"white"`/`"aquamarine"`)
 
-Example with HEX color value for symbolColor:
+Example with HEX color value for symbolColor and controlBarColor:
 
 ```javascript
 "style": {
-        "symbolColor": "#ed7d0e",
-        "controlBarColor": "#000000FF"
+        "symbolColor"     : "#ed7d0e",
+        "controlBarColor" : "#000000FF"
 }
 ```
 
@@ -50,8 +50,8 @@ Example with RGBA color value and transparency:
 
 ```javascript
 "style": {
-        "symbolColor": "rgb(255,255,255)",
-        "controlBarColor": "rgba(237,125,14,0.8)"
+        "symbolColor"     : "rgb(255,255,255)",
+        "controlBarColor" : "rgba(237,125,14,0.8)"
 }
 ```
 
@@ -66,15 +66,15 @@ Both properties add the 3D effect to the player and make it more lively.
 
 The  `config.style.buttonHighlighting` and `config.style.buttonAnimation` properties will either be:
 
-- **true** by default, means that they are displayed
-- **false** to have them disabled
+- `true` by default, means that they are displayed
+- `false` to have them disabled
 
 #### Example
 
 ```javascript
 "style": {
-    "buttonHighlighting": false,
-    "buttonAnimation": false
+    "buttonHighlighting" : false,
+    "buttonAnimation"    : false
 }
 ```
 
@@ -132,8 +132,8 @@ Set the `style.width` and `style.height` properties inside the player config to 
 // player config 
     var config = {
         "style": {
-            "width": "auto",
-            "height": "auto"
+            "width"  : "auto",
+            "height" : "auto"
         },
         ...
     }
