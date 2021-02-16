@@ -11,6 +11,7 @@
           "nanoplayer/nanoplayer_token_security",
           "nanoplayer/nanoplayer_feature_stream_switching",
           "nanoplayer/nanoplayer_feature_fullscreen_api",
+          "nanoplayer/nanoplayer_feature_customization",
           "nanoplayer/nanoplayer_feature_network_reconnect"
       ],
       "API": [
@@ -37,7 +38,8 @@
       "webrtc/nanostream_webrtc_quality",
       "webrtc/nanostream_webrtc_device_selection",
       "webrtc/nanostream_webrtc_audio_video_only",
-      "webrtc/nanostream_webrtc_speech_music"
+      "webrtc/nanostream_webrtc_speech_music",
+      "webrtc/nanostream_webrtc_set_mediastream"
     ],
     "API": [
       "webrtc/nanostream_webrtc_api"

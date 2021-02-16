@@ -27,7 +27,7 @@ Those are:
 - video framerate
 - audio source
 
-The corresponding API call is [startPreview(previewConfig)](../nanostream_webrtc_api/#startpreviewconfig)
+The corresponding API call is [startPreview(previewConfig)](nanostream_webrtc_api/#rtcuserstartpreviewconfig)
 
 ```js
 var videoDeviceConfig = {
@@ -62,7 +62,7 @@ Note that the `width`, `height`, and `framerate` parameters provided to the `sta
 
 After the preview has been started and before the stream gets send to the nanoStream Cloud, it will be encoded in the browser.
 You can set audio and video target encoding bitrates. <br>
-This is done with [setConfig(config)](../nanostream_webrtc_api/#setconfigconfig)
+This is done with [setConfig(config)](nanostream_webrtc_api/#rtcusersetconfigconfig)
 
 ```js
 // set bitrates in kbits/s
@@ -80,12 +80,12 @@ rtcuser.setConfig(config);
 Note that those are target bitrates, `videoSendBitrate` is the maximum bitrate. The Webcaster will only go up to the configured bitrate when the image is complex (e.g., when much movement is visible in the image). This usually means that the mean bitrate will be lower than the
 configured maximum bitrate. For example: if there is no movement in front of the camera or the image is dark, the video bitrate will be lower than configured.
 
-Also note that due to non spec-compliant behaviour of some Android devices, it might be required to restart a stream after resolution has changed. Not doing so, can result in a corrupted playback. Resolution change can be detected in the Webcaster stats that is enabled by [enableStats([enable], [interval])](../nanostream_webrtc_api/#enablestatsenable-interval).
+Also note that due to non spec-compliant behaviour of some Android devices, it might be required to restart a stream after resolution has changed. Not doing so, can result in a corrupted playback. Resolution change can be detected in the Webcaster stats that is enabled by [enableStats([enable], [interval])](nanostream_webrtc_api/#rtcuserenablestatsenable-interval).
 
 ### Audio conversion on the server
 
 Video bitrate of the resulting RTMP stream will be similar to the bitrate encoded by the browsers. Audio is converted on server side.<br>
-<b>RTMP audio bitrate</b> can be set with [startBroadcast(broadcastConfig)](../nanostream_webrtc_api/#startbroadcastconfig) 
+<b>RTMP audio bitrate</b> can be set with [startBroadcast(broadcastConfig)](nanostream_webrtc_api/#rtcuserstartbroadcastconfig) 
 
 ```js
 // set audio transcoding bitrate in bits/s

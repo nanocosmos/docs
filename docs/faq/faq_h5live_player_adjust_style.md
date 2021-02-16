@@ -90,14 +90,16 @@ You can find more information regarding config properties in our API docs [here]
 
 <details><summary><strong>Can I customize the inline controls?</strong></summary>
 
-No, but you can disable them by passing:
+Yes, of course. To adjust the inline controls please follow our customization guideline [here](../../nanoplayer/nanoplayer_feature_customization/#built-in-controls-animations-and-styles)
+
+In case you would like to disable them, it is enough to pass false in `config.style.controls`.
 
 ```
 config.style.controls = false;
 ```
 
 > **Important:**
-> If you create custom controls or other overlay elements make sure to set the `z-index` value > 1 to ensure they are positioned on top of the video layer.
+> If you create custom controls or other overlay elements make sure to set the `z-index` value > 10 to ensure they are positioned on top of the video layer.
 
 </details>
 
@@ -161,7 +163,18 @@ Yes. Fullscreen is available over the public [fullscreen API](../../nanoplayer/n
 
 <details><summary><strong>Can I use a poster as placeholder for the video?</strong></summary>
 
-But you can use a workaround by passing the id of an existing video tag with poster through the config (`config.playback.videoId`). This video element would be used by the player instead of creating a new one. See [here](../../nanoplayer/nanoplayer_api).
+Since the **nanoStream H5Live Player Version 4.9.1** it is possible.
+Poster images, which are displayed while the video element is loading, are supported and can be added in the `config.style.poster`. The string has to be a relative or absolute path to a valid image source like `"./assets/poster.png"` or image URL.
+
+#### Example
+
+```javascript
+"style": {
+    "poster": "https://[yourdomain]/assets/niceimage.png"
+}
+```
+
+However, if you prefer to use other version of H5Live Player, you cannot set poster in this way. Alternatively, you can use a workaround by passing the id of an existing video tag with poster through the config (`config.playback.videoId`). This video element would be used by the player instead of creating a new one. See [here](../../nanoplayer/nanoplayer_api#nanoplayerconfig--codeobjectcode).
 
 Another possibility can be that you grab the video element from the DOM after successful setup and then modify the poster attribute.
 
@@ -173,7 +186,20 @@ video.poster = ....;
 </details>
 
 <details><summary><strong>Can I change the background color of the player?</strong></summary>
-No, currently there is no way to configure the background-color of the video element, but you can have workarounds. You can select the video in the resolve function of the promise (see the sample) and then change the color or you can create a global css rule for video elements. Please see the following examples.
+
+To change the background color of the player set the backgroundColor parameter in `config.style.backgroundColor` to the desired color. By default it is set to black.
+
+#### Code example with changed background color
+
+```
+"style": {
+    "backgroundColor": 'white'
+}
+```
+
+However, if you prefer to use older version of **nanoStream H5Live Player**, then there is no way to configure the background-color of the video element, but you can have workarounds. You can select the video in the resolve function of the promise (see the sample) and then change the color or you can create a global CSS rule for video elements. Please see the following examples.
+
+#### Code example with change in the resolve function of the promise
 
 ```javascript
 var player; 
@@ -207,6 +233,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 ```
+#### Code example with changed global CSS rule
 
 ```
 <style>

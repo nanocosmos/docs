@@ -6,7 +6,7 @@ sidebar_label: Webcaster
 
 <a name="RtcUser"></a>
 
-### RtcUser
+## RtcUser
 nanoStream Webcaster Public API Class
 
 **Kind**: global class  
@@ -17,7 +17,7 @@ nanoStream Webcaster Public API Class
 ## Constructors
 <a name="new_RtcUser_new"></a>
 
-### new RtcUser()
+## new RtcUser()
 An RtcUser is the main class and entry point of the nanoStream Webcaster API.
 
 **Example**  
@@ -30,7 +30,7 @@ var rtcUser = new RtcUser();
 ## Functions
 <a name="RtcUser+checkSupport"></a>
 
-### checkSupport() ⇒ <code>int</code>
+## rtcUser.checkSupport() ⇒ <code>int</code>
 Checks if nanoStream Webcaster is supported by current browser.
 
 **Kind**: instance method of [<code>RtcUser</code>](#RtcUser)  
@@ -44,7 +44,7 @@ var supportLevel = RtcUser.checkSupport();
 ```
 <a name="RtcUser+signIn"></a>
 
-### signIn(options)
+## rtcUser.signIn(options)
 Signs in to the server.
 After signIn succeeded you will have a session with the WebRTC server until reloading the browser or calling [signOut](#RtcUser+signOut).
 Parameters in braces "[ ]" are optional.
@@ -94,7 +94,7 @@ rtcUser.signIn(options);
 ```
 <a name="RtcUser+signOut"></a>
 
-### signOut()
+## rtcUser.signOut()
 Signs out from the server. The current session and a broadcast (if running) will be stopped.
 
 **Kind**: instance method of [<code>RtcUser</code>](#RtcUser)  
@@ -106,7 +106,7 @@ rtcUser.signOut();
 ```
 <a name="RtcUser+isSignedIn"></a>
 
-### isSignedIn() ⇒ <code>boolean</code>
+## rtcUser.isSignedIn() ⇒ <code>boolean</code>
 Checks if the RtcUser is connected with the WebRTC server and signed in (see [signIn](#RtcUser+signIn)).
 
 **Kind**: instance method of [<code>RtcUser</code>](#RtcUser)  
@@ -121,7 +121,7 @@ if (rtcUser.isSignedIn()) {
 ```
 <a name="RtcUser+setConfig"></a>
 
-### setConfig(config)
+## rtcUser.setConfig(config)
 Sets global configuration for the RtcUser instance.
 Please note that setting the audio transcoding bitrate is currently done in [startBroadcast](#RtcUser+startBroadcast).
 Parameters in braces "[ ]" are optional.
@@ -195,7 +195,7 @@ rtcUser.setConfig(config);
 ```
 <a name="RtcUser+setIceServers"></a>
 
-### <del>setIceServers(iceServers)</del>
+## <del>rtcUser.setIceServers(iceServers)</del>
 ***Deprecated***
 
 Sets an array of turn/stun-servers for the peer-to-peer connection.
@@ -252,7 +252,7 @@ rtcUser.setIceServers(iceServers);
 ```
 <a name="RtcUser+checkServer"></a>
 
-### checkServer(server)
+## rtcUser.checkServer(server)
 Checks the state of a WebRTC server.
 
 **Kind**: instance method of [<code>RtcUser</code>](#RtcUser)  
@@ -278,7 +278,7 @@ rtcUser.checkServer(server);
 ```
 <a name="RtcUser+enableStats"></a>
 
-### enableStats([enable], [interval])
+## rtcUser.enableStats([enable], [interval])
 Enables to receive WebRTC stats in a given time interval.
 Parameters in braces "[ ]" are optional.
 
@@ -320,7 +320,7 @@ rtcUser.enableStats(enable, interval);
 ```
 <a name="RtcUser+startBroadcast"></a>
 
-### startBroadcast(config)
+## rtcUser.startBroadcast(config)
 Starts a broadcast to an RTMP ingest URL. Note: by default, only audio will be transcoded on server side, H264 codec will be used for video upstream and passed through directly to RTMP.
 Therefore you will find the configuration for the video upstream bitrate here: [setConfig](#RtcUser+setConfig).
 Parameters in braces "[ ]" are optional.
@@ -382,7 +382,7 @@ rtcUser.startBroadcast(config);
 ```
 <a name="RtcUser+stopBroadcast"></a>
 
-### stopBroadcast()
+## rtcUser.stopBroadcast()
 Stops a running broadcast.
 
 **Kind**: instance method of [<code>RtcUser</code>](#RtcUser)  
@@ -394,7 +394,7 @@ rtcUser.stopBroadcast();
 ```
 <a name="RtcUser+sendMetaData"></a>
 
-### sendMetaData(handlerName, jsonValues)
+## rtcUser.sendMetaData(handlerName, jsonValues)
 Adds live meta data to a broadcast stream.
 
 **Kind**: instance method of [<code>RtcUser</code>](#RtcUser)  
@@ -422,7 +422,7 @@ rtcUser.sendMetaData('onMetaData', {myString: 'hello', myInteger: 1234});
 ```
 <a name="RtcUser+addScreenCaptureExtension"></a>
 
-### <del>addScreenCaptureExtension(name)</del>
+## <del>rtcUser.addScreenCaptureExtension(name)</del>
 ***Deprecated***
 
 Adds a Screen Capture Extension to the RtcUser for Chrome. Only needed in Chrome version < 72.
@@ -449,7 +449,7 @@ rtcUser.addScreenCaptureExtension(name);
 ```
 <a name="RtcUser+isScreenCaptureAvailable"></a>
 
-### isScreenCaptureAvailable()
+## rtcUser.isScreenCaptureAvailable()
 Checks if a Screen Capture Extension was added via addScreenCaptureExtension().
 
 **Kind**: instance method of [<code>RtcUser</code>](#RtcUser)  
@@ -465,7 +465,7 @@ setTimeout(function() {
 ```
 <a name="RtcUser+getDevices"></a>
 
-### getDevices()
+## rtcUser.getDevices()
 Gets all connected input video and audio devices.
 
 **Kind**: instance method of [<code>RtcUser</code>](#RtcUser)  
@@ -477,7 +477,7 @@ rtcUser.getDevices();
 ```
 <a name="RtcUser+setVideoDevice"></a>
 
-### <del>setVideoDevice(config)</del>
+## <del>rtcUser.setVideoDevice(config)</del>
 ***Deprecated***
 
 Sets the input video device with config.
@@ -546,7 +546,7 @@ rtcUser.setVideoDevice(config);
 ```
 <a name="RtcUser+setAudioDevice"></a>
 
-### <del>setAudioDevice(config)</del>
+## <del>rtcUser.setAudioDevice(config)</del>
 ***Deprecated***
 
 Sets the input audio device.
@@ -602,7 +602,7 @@ rtcUser.setAudioDevice(config);
 ```
 <a name="RtcUser+getSelectedVideoDevice"></a>
 
-### <del>getSelectedVideoDevice()</del>
+## <del>rtcUser.getSelectedVideoDevice()</del>
 ***Deprecated***
 
 Gets the current input video device.
@@ -615,7 +615,7 @@ var device = rtcUser.getSelectedVideoDevice();
 ```
 <a name="RtcUser+getSelectedAudioDevice"></a>
 
-### <del>getSelectedAudioDevice()</del>
+## <del>rtcUser.getSelectedAudioDevice()</del>
 ***Deprecated***
 
 Gets the current input audio device.
@@ -628,7 +628,7 @@ var device = rtcUser.getSelectedAudioDevice();
 ```
 <a name="RtcUser+getSelectedDevice"></a>
 
-### getSelectedDevice(config)
+## rtcUser.getSelectedDevice(config)
 Gets the current input video/audio device.
 
 **Kind**: instance method of [<code>RtcUser</code>](#RtcUser)  
@@ -659,7 +659,7 @@ var device = rtcUser.getSelectedDevice(config);
 ```
 <a name="RtcUser+startPreview"></a>
 
-### startPreview(config)
+## rtcUser.startPreview(config)
 Starts the preview.
 Parameters in braces "[ ]" are optional.
 
@@ -808,7 +808,7 @@ rtcUser.startPreview(config);
 ```
 <a name="RtcUser+stopPreview"></a>
 
-### stopPreview()
+## rtcUser.stopPreview()
 Stops the preview.
 
 **Kind**: instance method of [<code>RtcUser</code>](#RtcUser)  
@@ -820,7 +820,7 @@ rtcUser.stopPreview();
 ```
 <a name="RtcUser+muteVideo"></a>
 
-### <del>muteVideo(mute)</del>
+## <del>rtcUser.muteVideo(mute)</del>
 ***Deprecated***
 
 Mutes/unmutes the video.
@@ -847,7 +847,7 @@ rtcUser.muteVideo(mute);
 ```
 <a name="RtcUser+muteAudio"></a>
 
-### <del>muteAudio(mute)</del>
+## <del>rtcUser.muteAudio(mute)</del>
 ***Deprecated***
 
 Mutes/unmutes the audio.
@@ -874,7 +874,7 @@ rtcUser.muteAudio(mute);
 ```
 <a name="RtcUser+muteDevice"></a>
 
-### muteDevice(config)
+## rtcUser.muteDevice(config)
 Mutes/unmutes a video/audio device.
 
 **Kind**: instance method of [<code>RtcUser</code>](#RtcUser)  
@@ -909,7 +909,7 @@ rtcUser.muteDevice(config);
 ```
 <a name="RtcUser+injectExternalMediaStream"></a>
 
-### injectExternalMediaStream(config)
+## rtcUser.injectExternalMediaStream(config)
 Mixes tracks (currently only audio) of an external MediaStream into the currently previewed local stream.
 
 **Kind**: instance method of [<code>RtcUser</code>](#RtcUser)  
@@ -942,7 +942,35 @@ rtcUser.injectExternalMediaStream(data);
 <a name="RtcUser+setMediaStream"></a>
 
 ## rtcUser.setMediaStream(config)
-Sets an external media stream.
+Sets an [MediaStream](https://developer.mozilla.org/en-US/docs/Web/API/MediaStream) that will
+be used as source for webcasting instead of an internally created  stream (by your live cam or screen).
+
+#### Notes:
+ 
+If you simply intent to utilize a combination of camera, microphone or screen share sources:
+  - please use the [startPreview](#RtcUser+startPreview) call.
+
+#### Context:
+
+It must contain one or two [MediaStreamTracks](https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamTrack),
+one VideoStreamTrack and / or one AudioStreamTrack.
+
+The MediaStream can be mixed together on application level by combining different sources:  
+  - [audio and video devices](https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia)
+  - [screen share sources](https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getDisplayMedia)
+  - [rendering on HTML canvas](https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/captureStream)
+  - [WebAudio API](https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamAudioDestinationNode)
+
+#### Restrictions:
+
+When utilizing this API call, application developers are responsible for the externally created stream.
+
+  - <b>Maintaining the provided framerate</b> is critical for end to end latency of the webcast.
+  - <b>Tab throttling.</b> When the current tab gets out of focus, most browsers will enable tab throttling.
+    Timers, like `setInterval`, will be updated less frequently. You should check wether the tab left focus, and warn your users accordingly.
+    E.g. with the DOM [visibilitychange event](https://developer.mozilla.org/en-US/docs/Web/API/Document/visibilitychange_event)
+  - <b>Video dimensions (width & height)</b> must not change during a webcast.
+  - Under certain circumstances the browsers encoder will <b>adapt the video resolution</b>, for example when <b>CPU overusage</b> is being detected.
 
 **Kind**: instance method of [<code>RtcUser</code>](#RtcUser)  
 <table>
@@ -956,7 +984,7 @@ Sets an external media stream.
     <td>config</td><td><code>object</code></td><td><p>The config object.</p>
 </td>
     </tr><tr>
-    <td>config.stream</td><td><code>number</code></td><td><p>The MediaStream object.</p>
+    <td>config.stream</td><td><code>number</code></td><td><p>The <a href="https://developer.mozilla.org/en-US/docs/Web/API/MediaStream">MediaStream</a>.</p>
 </td>
     </tr><tr>
     <td>[config.width]</td><td><code>number</code></td><td><p>The video width. Allowed values: 320 - 3840(4K).</p>
@@ -965,7 +993,7 @@ Sets an external media stream.
     <td>[config.height]</td><td><code>number</code></td><td><p>The video height. Allowed values: 240 - 2160(4K).</p>
 </td>
     </tr><tr>
-    <td>[config.framerate]</td><td><code>number</code></td><td><p>The video framerate. Allowed values: 0 - 60 fps.</p>
+    <td>[config.framerate]</td><td><code>number</code></td><td><p>The target video framerate. Allowed values: 0 - 60 fps.</p>
 </td>
     </tr>  </tbody>
 </table>
@@ -973,12 +1001,41 @@ Sets an external media stream.
 **Example**  
 ```js
 // rtcUser instance of RtcUser
+// pass an MediaStream to the API
+
+var canvasWidth = 1280;
+var canvasHeight = 720;
+var framerate = 30;
+
+// access your HTML canvas (<canvas id="my-canvas"/> element)
+var canvas = document.getElementById('my-canvas');
+var context = canvas.getContext('2d');
+
+// create a MediaStream from the canvas
+var canvasStream = canvas.captureStream(framerate);
+
+// optionally, add an AudioStreamTrack
+var myAudioTrack = ...;
+canvasStream.addTrack(myAudioTrack);
+
+// your render loop, the loop calls itself 30 (framerate) times per second
+// as an example, we simply draw the string "Hello World"
+function renderLoop() {
+    context.font = '50px serif';
+    context.fillText('Hello world', 50, 90);
+    setTimeout(loop, 1000 / framerate); // drawing at 30fps
+ };
+
 var config = {
-    stream: myStream,
-    width: 640,
-    height: 480,
-    framerate: 30
-}
+    stream: canvasStream,
+    width: canvasWidth,
+    height: canvasHeight,
+    framerate: framerate
+};
+
+// start the render loop
+renderLoop();
+
 rtcUser.setMediaStream(config);
 ```
 
@@ -987,98 +1044,98 @@ rtcUser.setMediaStream(config);
 ## Events
 <a name="RtcUser+event_SignInSuccess"></a>
 
-### "SignInSuccess"
+## "SignInSuccess"
 SignInSuccess event. The event is fired if sign in succeeded.
 
 **Kind**: event emitted by [<code>RtcUser</code>](#RtcUser)  
 **Typeof**: [<code>SignInSuccessEvent</code>](#SignInSuccessEvent)  
 <a name="RtcUser+event_SignInError"></a>
 
-### "SignInError"
+## "SignInError"
 SignInError event. The event is fired if sign in failed.
 
 **Kind**: event emitted by [<code>RtcUser</code>](#RtcUser)  
 **Typeof**: [<code>ErrorEvent</code>](#ErrorEvent)  
 <a name="RtcUser+event_SignOutSuccess"></a>
 
-### "SignOutSuccess"
+## "SignOutSuccess"
 SignOutSuccess event. The event is fired if sign out succeeded. Session is now destroyed.
 
 **Kind**: event emitted by [<code>RtcUser</code>](#RtcUser)  
 **Typeof**: [<code>SuccessEvent</code>](#SuccessEvent)  
 <a name="RtcUser+event_SignOutError"></a>
 
-### "SignOutError"
+## "SignOutError"
 SignOutError event. The event is fired if an error occured. Session is destroyed in any case.
 
 **Kind**: event emitted by [<code>RtcUser</code>](#RtcUser)  
 **Typeof**: [<code>ErrorEvent</code>](#ErrorEvent)  
 <a name="RtcUser+event_SetConfigError"></a>
 
-### "SetConfigError"
+## "SetConfigError"
 SetConfigError event. The event is fired if config failed to be set.
 
 **Kind**: event emitted by [<code>RtcUser</code>](#RtcUser)  
 **Typeof**: [<code>ErrorEvent</code>](#ErrorEvent)  
 <a name="RtcUser+event_ReceivedServerStats"></a>
 
-### "ReceivedServerStats"
+## "ReceivedServerStats"
 ReceivedServerStats event. The event is fired if server stats is received.
 
 **Kind**: event emitted by [<code>RtcUser</code>](#RtcUser)  
 **Typeof**: [<code>ServerStatsEvent</code>](#ServerStatsEvent)  
 <a name="RtcUser+event_ReceivedWebRTCStats"></a>
 
-### "ReceivedWebRTCStats"
+## "ReceivedWebRTCStats"
 ReceivedWebRTCStats event. The event is fired multiple times between the "start" and "stop" broadcast events. The payload contains WebRTC stats information.
 
 **Kind**: event emitted by [<code>RtcUser</code>](#RtcUser)  
 **Typeof**: [<code>WebRTCStatsEvent</code>](#WebRTCStatsEvent)  
 <a name="RtcUser+event_StartBroadcastSuccess"></a>
 
-### "StartBroadcastSuccess"
+## "StartBroadcastSuccess"
 StartBroadcastSuccess event. The event is fired if a broadcast started successfully.
 
 **Kind**: event emitted by [<code>RtcUser</code>](#RtcUser)  
 **Typeof**: [<code>SuccessEvent</code>](#SuccessEvent)  
 <a name="RtcUser+event_StartBroadcastError"></a>
 
-### "StartBroadcastError"
+## "StartBroadcastError"
 StartBroadcastError event. The event is fired if a broadcast failed to start.
 
 **Kind**: event emitted by [<code>RtcUser</code>](#RtcUser)  
 **Typeof**: [<code>ErrorEvent</code>](#ErrorEvent)  
 <a name="RtcUser+event_BroadcastStatus"></a>
 
-### "BroadcastStatus"
+## "BroadcastStatus"
 BroadcastStatus event. The event is fired multiple times between the "start" and "stop" broadcast events. The payload contains information about the connection state.
 
 **Kind**: event emitted by [<code>RtcUser</code>](#RtcUser)  
 **Typeof**: [<code>StatusEvent</code>](#StatusEvent)  
 <a name="RtcUser+event_BroadcastError"></a>
 
-### "BroadcastError"
+## "BroadcastError"
 BroadcastError event. The event is fired if a broadcasting error occurred between the "start" and "stop" broadcast events.
 
 **Kind**: event emitted by [<code>RtcUser</code>](#RtcUser)  
 **Typeof**: [<code>ErrorEvent</code>](#ErrorEvent)  
 <a name="RtcUser+event_StopBroadcastSuccess"></a>
 
-### "StopBroadcastSuccess"
+## "StopBroadcastSuccess"
 StopBroadcastSuccess event. The event is fired if a broadcast stopped successfully. It does not contain an event payload.
 
 **Kind**: event emitted by [<code>RtcUser</code>](#RtcUser)  
 **Typeof**: [<code>SuccessEvent</code>](#SuccessEvent)  
 <a name="RtcUser+event_StopBroadcastError"></a>
 
-### "StopBroadcastError"
+## "StopBroadcastError"
 StopBroadcastError event. The event is fired if a broadcast failed to execute the "stop" call as it is expected. Note: the broadcast is guaranteed to stop before the event is fired.
 
 **Kind**: event emitted by [<code>RtcUser</code>](#RtcUser)  
 **Typeof**: [<code>ErrorEvent</code>](#ErrorEvent)  
 <a name="RtcUser+event_ReceivedDeviceList"></a>
 
-### "ReceivedDeviceList"
+## "ReceivedDeviceList"
 ReceivedDeviceList event. The event is fired if a list of connected input video and audio devices is received.
 
 **Kind**: event emitted by [<code>RtcUser</code>](#RtcUser)  
@@ -1092,42 +1149,42 @@ GetDevicesError event. The event is fired if an error occured while getting conn
 **Typeof**: [<code>ErrorEvent</code>](#ErrorEvent)  
 <a name="RtcUser+event_GetSelectedDeviceError"></a>
 
-### "GetSelectedDeviceError"
+## "GetSelectedDeviceError"
 GetSelectedDeviceError event. The event is fired if a selected video/audio device getting failed.
 
 **Kind**: event emitted by [<code>RtcUser</code>](#RtcUser)  
 **Typeof**: [<code>ErrorEvent</code>](#ErrorEvent)  
 <a name="RtcUser+event_StartPreviewSuccess"></a>
 
-### "StartPreviewSuccess"
+## "StartPreviewSuccess"
 StartPreviewSuccess event. The event is fired if a preview started successfully.
 
 **Kind**: event emitted by [<code>RtcUser</code>](#RtcUser)  
 **Typeof**: [<code>StartPreviewSuccessEvent</code>](#StartPreviewSuccessEvent)  
 <a name="RtcUser+event_StartPreviewError"></a>
 
-### "StartPreviewError"
+## "StartPreviewError"
 StartPreviewError event. The event is fired if a preview failed to start.
 
 **Kind**: event emitted by [<code>RtcUser</code>](#RtcUser)  
 **Typeof**: [<code>ErrorEvent</code>](#ErrorEvent)  
 <a name="RtcUser+event_StopPreviewSuccess"></a>
 
-### "StopPreviewSuccess"
+## "StopPreviewSuccess"
 StopPreviewSuccess event. The event is fired if a preview stopped successfully.
 
 **Kind**: event emitted by [<code>RtcUser</code>](#RtcUser)  
 **Typeof**: [<code>SuccessEvent</code>](#SuccessEvent)  
 <a name="RtcUser+event_StopPreviewError"></a>
 
-### "StopPreviewError"
+## "StopPreviewError"
 StopPreviewError event. The event is fired if a preview failed to stop. Note: the preview is guaranteed to stop before the event is fired.
 
 **Kind**: event emitted by [<code>RtcUser</code>](#RtcUser)  
 **Typeof**: [<code>ErrorEvent</code>](#ErrorEvent)  
 <a name="RtcUser+event_MuteDeviceError"></a>
 
-### "MuteDeviceError"
+## "MuteDeviceError"
 MuteDeviceError event. The event is fired if a video/audio device mute/unmute failed.
 
 **Kind**: event emitted by [<code>RtcUser</code>](#RtcUser)  
@@ -1138,7 +1195,7 @@ MuteDeviceError event. The event is fired if a video/audio device mute/unmute fa
 ## Type Definitions
 <a name="ErrorEvent"></a>
 
-### ErrorEvent : <code>object</code>
+## ErrorEvent : <code>object</code>
 **Kind**: global typedef  
 **Properties**
 
@@ -1214,7 +1271,7 @@ MuteDeviceError event. The event is fired if a video/audio device mute/unmute fa
 
 <a name="SuccessEvent"></a>
 
-### SuccessEvent : <code>object</code>
+## SuccessEvent : <code>object</code>
 **Kind**: global typedef  
 **Properties**
 
@@ -1242,7 +1299,7 @@ MuteDeviceError event. The event is fired if a video/audio device mute/unmute fa
 
 <a name="StatusEvent"></a>
 
-### StatusEvent : <code>object</code>
+## StatusEvent : <code>object</code>
 **Kind**: global typedef  
 **Properties**
 
@@ -1285,7 +1342,7 @@ MuteDeviceError event. The event is fired if a video/audio device mute/unmute fa
 
 <a name="DevicesReceivedEvent"></a>
 
-### DevicesReceivedEvent : <code>object</code>
+## DevicesReceivedEvent : <code>object</code>
 **Kind**: global typedef  
 **Properties**
 
@@ -1328,7 +1385,7 @@ MuteDeviceError event. The event is fired if a video/audio device mute/unmute fa
 
 <a name="StartPreviewSuccessEvent"></a>
 
-### StartPreviewSuccessEvent : <code>object</code>
+## StartPreviewSuccessEvent : <code>object</code>
 **Kind**: global typedef  
 **Properties**
 
@@ -1401,7 +1458,7 @@ MuteDeviceError event. The event is fired if a video/audio device mute/unmute fa
 
 <a name="SignInSuccessEvent"></a>
 
-### SignInSuccessEvent : <code>object</code>
+## SignInSuccessEvent : <code>object</code>
 **Kind**: global typedef  
 **Properties**
 
@@ -1426,7 +1483,7 @@ MuteDeviceError event. The event is fired if a video/audio device mute/unmute fa
 
 <a name="ServerStatsEvent"></a>
 
-### ServerStatsEvent : <code>object</code>
+## ServerStatsEvent : <code>object</code>
 **Kind**: global typedef  
 **Properties**
 
@@ -1505,7 +1562,7 @@ MuteDeviceError event. The event is fired if a video/audio device mute/unmute fa
 
 <a name="WebRTCStatsEvent"></a>
 
-### WebRTCStatsEvent : <code>object</code>
+## WebRTCStatsEvent : <code>object</code>
 **Kind**: global typedef  
 **Properties**
 
@@ -1566,7 +1623,7 @@ MuteDeviceError event. The event is fired if a video/audio device mute/unmute fa
 
 <a name="ErrorCode"></a>
 
-### ErrorCode : <code>number</code>
+## ErrorCode : <code>number</code>
 The possible client error codes in an ErrorEvent event.
 
 **Kind**: global typedef  

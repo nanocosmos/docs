@@ -5,12 +5,12 @@ sidebar_label: Device Selection
 ---
 
 The Webcaster API gives you the possibility to present all currently attached audio and video devices to your users.
-The API call to requrest the device list is [getDevices()](../nanostream_webrtc_api/#getdevices).<br>
-You will receive the list of devices in the [ReceivedDeviceList](../nanostream_webrtc_api/#RtcUser+event_ReceivedDeviceList) event. After that you can show this list to the user, so he can choose which devices he wants to be used for the Webcast.
+The API call to requrest the device list is [getDevices()](nanostream_webrtc_api/#rtcusergetdevices).<br>
+You will receive the list of devices in the [ReceivedDeviceList](nanostream_webrtc_api/#rtcuserRtcUser+event_ReceivedDeviceList) event. After that you can show this list to the user, so he can choose which devices he wants to be used for the Webcast.
 
 ## Preparation
 
-We will need two `<select>` tags in our HTML document, in order to display the attached audio & video devices in your HTML document. Also we will add a button to trigger the [startPreview(previewConfig)](../nanostream_webrtc_api/#startpreviewconfig) call after we made our device selection in the UI and a video element to show the preview in.
+We will need two `<select>` tags in our HTML document, in order to display the attached audio & video devices in your HTML document. Also we will add a button to trigger the [startPreview(previewConfig)](nanostream_webrtc_api/#rtcuserstartpreviewconfig) call after we made our device selection in the UI and a video element to show the preview in.
 
 ```js
 // in your html body
@@ -40,7 +40,7 @@ var createSelectOptions = function (elementId, devices) {
 
 ## Request and render devices
 
-Next we will create an instance of the Webcaster API and request attached devices with the [getDevices()](../nanostream_webrtc_api/#getdevices) call.
+Next we will create an instance of the Webcaster API and request attached devices with the [getDevices()](nanostream_webrtc_api/#rtcusergetdevices) call.
 
 ```js
 // create an instance of the API
