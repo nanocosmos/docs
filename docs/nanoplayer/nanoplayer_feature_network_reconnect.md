@@ -91,7 +91,7 @@ In case of loading timeout, the state is changed from loading to paused.
 ### Connection timeout
 
 Connection timeout is implemented within the time range of the loading timeout, which means that the `playback.timeouts.connecting` value should not be higher than the value of the loading timeout. 
-Connection timeout it is the time between establishing a connection and having it open. After successfully opening it, this timeout will be cleared.
+Connection timeout is the time between establishing a connection and having it open. After successfully opening it, this timeout will be cleared.
 
 The default value for `playback.timeouts.connecting` is **5 seconds**.
 If necessary, the default value can be changed to a value within a range (in seconds):
@@ -105,7 +105,7 @@ If necessary, the default value can be changed to a value within a range (in sec
 Buffering timeout happens when there is not enough received data within the desired time interval. As in previous examples, it is followed by an [`onError`](../nanoplayer_api/#onerror) and [`onPause`](../nanoplayer_api/#onpause) event.
  
 The default value for `playback.timeouts.buffering` is **20 seconds**. 
-If necessary, it can be changed to a value within a range (in seconds)::
+If necessary, it can be changed to a value within a range (in seconds):
 - min: 10
 - max: 60
 
