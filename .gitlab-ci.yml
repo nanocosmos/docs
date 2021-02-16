@@ -18,6 +18,7 @@ cache:
   paths:
     - node_modules/
     - website/node_modules/
+    - /app/website/node_modules
 
 .pages:
     stage: deploy
