@@ -1,0 +1,291 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>UI and customization · nanocosmos Documentation</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="Changing parameters is straightforward and easy. You can have a tailor-made design and a smooth appearance within seconds. **It is possible**, among others, **to adjust integrated player controls, icons, background color, add a poster, change the cursor** etc. Of course, you can also disable all built-in styles. In this manual, we will go through customizable elements so that  **H5Live Player** UI will suit all your needs."/><meta name="docsearch:language" content="en"/><meta property="og:title" content="UI and customization · nanocosmos Documentation"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.nanocosmos.de/"/><meta property="og:description" content="Changing parameters is straightforward and easy. You can have a tailor-made design and a smooth appearance within seconds. **It is possible**, among others, **to adjust integrated player controls, icons, background color, add a poster, change the cursor** etc. Of course, you can also disable all built-in styles. In this manual, we will go through customizable elements so that  **H5Live Player** UI will suit all your needs."/><meta property="og:image" content="https://docs.nanocosmos.de/img/docusaurus.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://docs.nanocosmos.de/img/docusaurus.png"/><link rel="shortcut icon" href="/img/favicon_nano.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script>
+              (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+              (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+              m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+              })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+              ga('create', 'UA-552140-1', 'auto');
+              ga('send', 'pageview');
+            </script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="/js/search.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/nanocosmos_header_logo.png" alt="nanocosmos Documentation"/><h2 class="headerTitleWithLogo">nanocosmos Documentation</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/docs/cloud/cloud_overview" target="_self">nanoStream Cloud</a></li><li class="siteNavGroupActive"><a href="/docs/nanoplayer/nanoplayer_introduction" target="_self">H5Live Player</a></li><li class=""><a href="/docs/webrtc/nanostream_webrtc_introduction" target="_self">nanoStream Webcaster</a></li><li class=""><a href="/docs/nanostream/nanostream" target="_self">nanoStream Apps and SDKs</a></li><li class=""><a href="/docs/samples/samples" target="_self">Samples</a></li><li class=""><a href="/docs/faq/faq_streaming" target="_self">FAQ</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Features</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">H5Live Player</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/nanoplayer/nanoplayer_introduction">Introduction</a></li><li class="navListItem"><a class="navItem" href="/docs/nanoplayer/nanoplayer_getting_started">Getting started</a></li><li class="navListItem"><a class="navItem" href="/docs/nanoplayer/nanoplayer_supported_browsers">Supported Browsers</a></li><li class="navListItem"><a class="navItem" href="/docs/nanoplayer/nanoplayer_player_metrics">Player Metrics</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Features</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/nanoplayer/nanoplayer_autoplay">Autoplay</a></li><li class="navListItem"><a class="navItem" href="/docs/nanoplayer/nanoplayer_token_security">Secure playback with H5Live</a></li><li class="navListItem"><a class="navItem" href="/docs/nanoplayer/nanoplayer_feature_stream_switching">Stream switching and ABR</a></li><li class="navListItem"><a class="navItem" href="/docs/nanoplayer/nanoplayer_feature_fullscreen_api">Fullscreen API</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/nanoplayer/nanoplayer_feature_customization">UI and customization</a></li><li class="navListItem"><a class="navItem" href="/docs/nanoplayer/nanoplayer_feature_network_reconnect">Network Reconnect</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">API</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/nanoplayer/nanoplayer_api">NanoPlayer</a></li><li class="navListItem"><a class="navItem" href="/docs/nanoplayer/nanoplayer_api_errors">NanoPlayer Status &amp; Error Codes</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Other</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/nanoplayer/nanoplayer_faq">FAQ</a></li><li class="navListItem"><a class="navItem" href="/docs/nanoplayer/nanoplayer_blogposts">Blog</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/nanocosmos/docs/tree/master/docs/nanoplayer/nanoplayer_feature_customization.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 id="__docusaurus" class="postHeaderTitle">UI and customization</h1></header><article><div><span><p>Changing parameters is straightforward and easy. You can have a tailor-made design and a smooth appearance within seconds. <strong>It is possible</strong>, among others, <strong>to adjust integrated player controls, icons, background color, add a poster, change the cursor</strong> etc. Of course, you can also disable all built-in styles. In this manual, we will go through customizable elements so that  <strong>H5Live Player</strong> UI will suit all your needs.</p>
+<p><img src="/img/nanoplayer/h5Live_view_with_poster.png" alt="PlayerManual"></p>
+<ol>
+<li><a href="#other-customizations"><strong>view</strong></a>: video overlayer including visible styles, controls and poster/background.</li>
+<li><a href="#other-customizations"><strong>center view</strong></a>: can include play button [see example above], loading animation, mute/volume icon.</li>
+<li><a href="#built-in-controls-animations-and-styles"><strong>controls</strong></a>: control bar with play/pause control, mute control, volume control (slider), playback time, fullscreen control.</li>
+<li><a href="#poster"><strong>poster</strong></a> / <a href="#background-color-of-the-player"><strong>background</strong></a>: a poster [image of your choice] that can be set and the background color can be changed.</li>
+</ol>
+<p>Below you have a short description of each property and how-to for adjusting styles.</p>
+<h2><a class="anchor" aria-hidden="true" id="built-in-controls-animations-and-styles"></a><a href="#built-in-controls-animations-and-styles" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Built-in controls, animations and styles</h2>
+<p>The <a href="https://www.nanocosmos.de/blog/2021/02/nanostream-player-4-9-1-introducing-a-new-design/"><strong>nanoStream H5Live Player Version 4.9.1</strong></a> is introducing new possibilities in terms of design. The control bar and control icons background colors are customizable. The player is more vivid due to additional button behavior: <code>buttonHighlighting</code>, <code>buttonAnimation</code> and a variety of available cursors with <code>buttonCursor</code>. See the <a href="../nanoplayer_api/#nanoplayerconfig--codeobjectcode">config</a> here.</p>
+<p><strong>The default style of the player:</strong></p>
+<p><img src="/img/nanoplayer/h5Live_view_nanoplayer_default.png" alt="Default"></p>
+<h3><a class="anchor" aria-hidden="true" id="symbolcolor-and-controlbarcolor"></a><a href="#symbolcolor-and-controlbarcolor" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>&quot;symbolColor&quot; and &quot;controlBarColor&quot;</h3>
+<p>In <code>config.style.symbolColor</code> you need to pass the value of the desired color. The default value is <code>&quot;rgba(244,233,233,1)&quot;</code>.
+The control bar color background is set by default to <code>&quot;rgba(0,0,0,0.5)&quot;</code>. To change it, insert the string with desired color value in <code>config.style.controlBarColor</code>.</p>
+<p>To change one of the colors, insert its value in one of the formats (all case insensitive):</p>
+<ul>
+<li>RGB e.g. <code>&quot;rgb(255,165,0)&quot;</code> and with alpha <code>&quot;rgba(255,165,0,0.5)&quot;</code></li>
+<li>HEX e.g. <code>&quot;#FFA500&quot;</code> or <code>&quot;#fa0&quot;</code> and with alpha <code>&quot;#FFA500AA&quot;</code> or <code>&quot;#fa0a&quot;</code></li>
+<li>HSL e.g. <code>&quot;hsl(39,100%,50%)&quot;</code> and with alpha <code>&quot;hsla(39,100%,50%,0.5)&quot;</code></li>
+<li>valid CSS Keyword (e.g. <code>&quot;pink&quot;</code>/<code>&quot;white&quot;</code>/<code>&quot;aquamarine&quot;</code>)</li>
+</ul>
+<p>Example with HEX color value for symbolColor and controlBarColor:</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-string">"style"</span>: {
+        <span class="hljs-string">"symbolColor"</span>     : <span class="hljs-string">"#ed7d0e"</span>,
+        <span class="hljs-string">"controlBarColor"</span> : <span class="hljs-string">"#000000FF"</span>
+}
+</code></pre>
+<p><img src="/img/nanoplayer/h5Live_view_symbolColororange.png" alt="Schema"></p>
+<p>Example with RGBA color value and transparency:</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-string">"style"</span>: {
+        <span class="hljs-string">"symbolColor"</span>     : <span class="hljs-string">"rgb(255,255,255)"</span>,
+        <span class="hljs-string">"controlBarColor"</span> : <span class="hljs-string">"rgba(237,125,14,0.8)"</span>
+}
+</code></pre>
+<p><img src="/img/nanoplayer/h5Live_view_colorBar.png" alt="Schema"></p>
+<h3><a class="anchor" aria-hidden="true" id="buttonhighlighting-and-buttonanimation"></a><a href="#buttonhighlighting-and-buttonanimation" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>&quot;buttonHighlighting&quot; and &quot;buttonAnimation&quot;</h3>
+<p>Both properties add the 3D effect to the player and make it more lively.</p>
+<ul>
+<li><code>buttonHighlighting</code> on hover activates a shadow container of the button</li>
+<li><code>buttonAnimation</code> on hover magnifies the button and bounces when clicked</li>
+</ul>
+<p>The  <code>config.style.buttonHighlighting</code> and <code>config.style.buttonAnimation</code> properties will either be:</p>
+<ul>
+<li><code>true</code> by default, means that they are displayed</li>
+<li><code>false</code> to have them disabled</li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="example"></a><a href="#example" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h4>
+<pre><code class="hljs css language-javascript"><span class="hljs-string">"style"</span>: {
+    <span class="hljs-string">"buttonHighlighting"</span> : <span class="hljs-literal">false</span>,
+    <span class="hljs-string">"buttonAnimation"</span>    : <span class="hljs-literal">false</span>
+}
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="buttoncursor"></a><a href="#buttoncursor" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>&quot;buttonCursor&quot;</h3>
+<p>To change the cursor, you can use any CSS cursor property, e.g:</p>
+<ul>
+<li><code>&quot;default&quot;</code></li>
+<li><code>&quot;pointer&quot;</code></li>
+<li><code>&quot;grab&quot;</code></li>
+</ul>
+<p>The default value is set to <code>&quot;pointer&quot;</code>. To change it, implement the string with the desirable CSS cursor in <code>config.style.buttonCursor</code></p>
+<h4><a class="anchor" aria-hidden="true" id="example-1"></a><a href="#example-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h4>
+<pre><code class="hljs css language-javascript"><span class="hljs-string">"style"</span>: {
+    <span class="hljs-string">"buttonCursor"</span>: <span class="hljs-string">"default"</span>
+}
+</code></pre>
+<p>Changing the default value to <code>&quot;default&quot;</code>, resolves in a switch from the pointing finger to an arrow while hovering over a clickable element.</p>
+<h3><a class="anchor" aria-hidden="true" id="poster"></a><a href="#poster" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Poster</h3>
+<p>Poster images, which are displayed while the video element is loading, are supported and can be added in the <code>config.style.poster</code>. The string has to be a relative or absolute path to a valid image source like <code>&quot;./assets/poster.png&quot;</code> or image URL.</p>
+<h4><a class="anchor" aria-hidden="true" id="example-2"></a><a href="#example-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h4>
+<pre><code class="hljs css language-javascript"><span class="hljs-string">"style"</span>: {
+    <span class="hljs-string">"poster"</span>: <span class="hljs-string">"https://[yourdomain]/assets/niceimage.png"</span>
+}
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="background-color-of-the-player"></a><a href="#background-color-of-the-player" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Background color of the player</h3>
+<p>To change the background color of the player set the backgroundColor parameter in <code>config.style.backgroundColor</code> to the desired color. By default, it is set to <code>&quot;black&quot;</code>.</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-string">"style"</span>: {
+    <span class="hljs-string">"backgroundColor"</span>: <span class="hljs-string">"white"</span>
+}
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="responsiveness"></a><a href="#responsiveness" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Responsiveness</h2>
+<p>To make the player responsive and preserve the aspect ratio, you need to set up player configuration and the CSS of playerDiv.</p>
+<h3><a class="anchor" aria-hidden="true" id="player-configuration"></a><a href="#player-configuration" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Player configuration</h3>
+<p>Set the <code>style.width</code> and <code>style.height</code> properties inside the player config to <code>auto</code> to  keep the size of the parent container.</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-comment">// player config </span>
+    <span class="hljs-keyword">var</span> config = {
+        <span class="hljs-string">"style"</span>: {
+            <span class="hljs-string">"width"</span>  : <span class="hljs-string">"auto"</span>,
+            <span class="hljs-string">"height"</span> : <span class="hljs-string">"auto"</span>
+        },
+        ...
+    }
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="playerdiv-css"></a><a href="#playerdiv-css" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>playerDiv CSS</h3>
+<p>Set a percentage value for <code>padding-bottom</code> to maintain the aspect ratio of the players <code>&lt;div&gt;</code> element.
+For a 16:9 aspect ratio: <strong>(9 / 16 = 0.5625) = 56.25%</strong></p>
+<pre><code class="hljs css language-html">    <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"playerDiv"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"width:100%;padding-bottom:56.25%"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="other-aspect-ratios"></a><a href="#other-aspect-ratios" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Other aspect ratios</h3>
+<table>
+<thead>
+<tr><th>Aspect ratio</th><th>padding-bottom</th></tr>
+</thead>
+<tbody>
+<tr><td>1:1</td><td>100%</td></tr>
+<tr><td>16:9</td><td>56.25%</td></tr>
+<tr><td>4:3</td><td>75%</td></tr>
+</tbody>
+</table>
+<h2><a class="anchor" aria-hidden="true" id="other-customizations"></a><a href="#other-customizations" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Other Customizations</h2>
+<p>To disable all custom properties in the player, e.g. in case you want to build your controls or display the video as a background without any icons, you can simply set the <code>view</code> to false in <code>config.style.controls</code>. In this way, you receive a plain video element.</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-string">"style"</span>: {
+    <span class="hljs-string">"view"</span>: <span class="hljs-literal">false</span>
+}
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="disable-built-in-controls"></a><a href="#disable-built-in-controls" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Disable built-in controls</h3>
+<p>Inline controls are set by default. However, it is possible to disable them by changing the value to <code>false</code> in <code>config.style.controls</code>.</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-string">"style"</span>: {
+    <span class="hljs-string">"controls"</span>: <span class="hljs-literal">false</span>
+}
+</code></pre>
+<blockquote>
+<p><strong>Important</strong>
+If you create custom controls or other overlay elements make sure to set the z-index value &gt; 10 to ensure they are positioned on top of the video layer.</p>
+</blockquote>
+<h3><a class="anchor" aria-hidden="true" id="style-as-an-audio-only-player"></a><a href="#style-as-an-audio-only-player" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Style as an audio-only player</h3>
+<p>To style the player as audio-only (without displaying the video element), it is enough to set the audioPlayer value to <code>true</code> in <code>config.style.audioPlayer</code>.</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-string">"style"</span>: {
+    <span class="hljs-string">"audioPlayer"</span>: <span class="hljs-literal">true</span>
+}
+</code></pre>
+<p><img src="/img/nanoplayer/h5Live_view_audioOnly.png" alt="Schema"></p>
+<p>To customize audio-only control bar follow <a href="#built-in-controls-animations-and-styles">built-in controls customization</a>.</p>
+<h3><a class="anchor" aria-hidden="true" id="display-audio-only-stream"></a><a href="#display-audio-only-stream" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Display audio-only stream</h3>
+<p>For audio-only stream, when there is no video, you can style the player to have a black background in the video frame and audio controls.</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-string">"style"</span>: {
+    <span class="hljs-string">"displayAudioOnly"</span>: <span class="hljs-literal">true</span>
+}
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="hide-fullscreen-control"></a><a href="#hide-fullscreen-control" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Hide fullscreen control</h3>
+<p>To hide fulscreen control icon set the fullscreen control to <code>false</code> in <code>config.style.fullScreenControl</code>.</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-string">"style"</span>: {
+    <span class="hljs-string">"fullScreenControl"</span>: <span class="hljs-literal">false</span>
+}
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="other-customizable-parameters-with-a-boolean-value"></a><a href="#other-customizable-parameters-with-a-boolean-value" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Other customizable parameters with a boolean value</h3>
+<p>It is possible to customize other parameters as well by setting them to <code>true</code> or <code>false</code> in <code>config.style.[parameter]</code>, e.g.:</p>
+<ul>
+<li><code>interactive</code></li>
+<li><code>view</code></li>
+<li><code>keepFrame</code></li>
+<li><code>centerView</code></li>
+</ul>
+<p>A list of all parameters available for styling can be found in <a href="../nanoplayer_api/#nanoplayerconfig--codeobjectcode">NanoPlayer API</a> in the <code>config.style</code> object.</p>
+<h2><a class="anchor" aria-hidden="true" id="example-code-snippet-with-customization"></a><a href="#example-code-snippet-with-customization" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example code snippet with customization</h2>
+<p>In this example we want to change <code>controlBarColor</code> and <code>symbolColor</code>, replace the default <code>buttonCursor</code> and disable the <code>buttonAnimation</code>. In addition the <code>playerDiv</code> is styled responsive. For presentation, we insert all other customizable parameters within the <code>style</code> object. To try it out simply copy the snippet and paste it into a body of any HTML file (replace the streamname <code>[your_streamname]</code> with yours).</p>
+<pre><code class="hljs css language-html">    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"playerDiv"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"width:100%;padding-bottom: 56.25%"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"//demo.nanocosmos.de/nanoplayer/api/release/nanoplayer.4.min.js?20210127"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+    <span class="hljs-keyword">var</span> player;
+    <span class="hljs-keyword">var</span> defaultUrl = <span class="hljs-string">"rtmp://bintu-play.nanocosmos.de/play"</span>; 
+    <span class="hljs-keyword">var</span> defaultServer = {
+        <span class="hljs-string">"websocket"</span>: <span class="hljs-string">"wss://bintu-h5live.nanocosmos.de:443/h5live/stream"</span>,
+        <span class="hljs-string">"hls"</span>: <span class="hljs-string">"https://bintu-h5live.nanocosmos.de:443/h5live/http/playlist.m3u8"</span>,
+        <span class="hljs-string">"progressive"</span>: <span class="hljs-string">"https://bintu-h5live.nanocosmos.de:443/h5live/http/stream.mp4"</span>
+    }; 
+    <span class="hljs-keyword">var</span> streamNames = [ 
+        <span class="hljs-string">"[your_streamname]"</span>
+    ]; 
+    <span class="hljs-keyword">var</span> config = {
+        <span class="hljs-string">"source"</span>: {
+            <span class="hljs-string">"startIndex"</span>: <span class="hljs-number">0</span>,
+            <span class="hljs-string">"entries"</span>: [
+                {
+                    <span class="hljs-string">"index"</span>: <span class="hljs-number">0</span>,
+                    <span class="hljs-string">"h5live"</span>: {
+                        <span class="hljs-string">"server"</span>: defaultServer,
+                        <span class="hljs-string">"rtmp"</span>: {
+                            <span class="hljs-string">"url"</span>        : defaultUrl,
+                            <span class="hljs-string">"streamname"</span> : streamNames[<span class="hljs-number">0</span>]
+                        }
+                    }
+                }
+            ]
+        },
+        <span class="hljs-string">"playback"</span>: {
+            <span class="hljs-string">"autoplay"</span> : <span class="hljs-literal">true</span>,
+            <span class="hljs-string">"automute"</span> : <span class="hljs-literal">true</span>,
+            <span class="hljs-string">"muted"</span>    : <span class="hljs-literal">false</span>
+        },
+        <span class="hljs-string">"style"</span>: {
+            <span class="hljs-string">"width"</span>                : <span class="hljs-string">"auto"</span>,
+            <span class="hljs-string">"height"</span>               : <span class="hljs-string">"auto"</span>,
+            <span class="hljs-string">"controls"</span>             : <span class="hljs-literal">true</span>,
+            <span class="hljs-string">"interactive"</span>          : <span class="hljs-literal">true</span>,
+            <span class="hljs-string">"view"</span>                 : <span class="hljs-literal">true</span>,
+            <span class="hljs-string">"scaling"</span>              : <span class="hljs-string">"letterbox"</span>,
+            <span class="hljs-string">"keepFrame"</span>            : <span class="hljs-literal">true</span>,
+            <span class="hljs-string">"displayAudioOnly"</span>     : <span class="hljs-literal">true</span>,
+            <span class="hljs-string">"audioPlayer"</span>          : <span class="hljs-literal">false</span>,
+            <span class="hljs-string">"displayMutedAutoplay"</span> : <span class="hljs-literal">true</span>,
+            <span class="hljs-string">"backgroundColor"</span>      : <span class="hljs-string">"rgb(237,125,14)"</span>,
+            <span class="hljs-string">"fullScreenControl"</span>    : <span class="hljs-literal">true</span>,
+            <span class="hljs-string">"centerView"</span>           : <span class="hljs-literal">true</span>,
+            <span class="hljs-string">"symbolColor"</span>          : <span class="hljs-string">"#FFF"</span>,
+            <span class="hljs-string">"controlBarColor"</span>      : <span class="hljs-string">"rgba(237,125,14,0.8)"</span>,
+            <span class="hljs-string">"buttonAnimation"</span>      : <span class="hljs-literal">false</span>,
+            <span class="hljs-string">"buttonHighlighting"</span>   : <span class="hljs-literal">true</span>,
+            <span class="hljs-string">"buttonCursor"</span>         : <span class="hljs-string">"grab"</span>,
+            <span class="hljs-string">"poster"</span>               : <span class="hljs-string">""</span>
+        },
+    };
+    <span class="hljs-built_in">document</span>.addEventListener(<span class="hljs-string">"DOMContentLoaded"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+        player = <span class="hljs-keyword">new</span> NanoPlayer(<span class="hljs-string">"playerDiv"</span>);
+        player.setup(config).then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">config</span>) </span>{
+            <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"setup success"</span>);
+            <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"config: "</span> + <span class="hljs-built_in">JSON</span>.stringify(config, <span class="hljs-literal">undefined</span>, <span class="hljs-number">4</span>));
+        }, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">error</span>) </span>{
+            alert(error.message);
+        });
+    });
+    </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 2/16/2021</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/nanoplayer/nanoplayer_feature_fullscreen_api"><span class="arrow-prev">← </span><span>Fullscreen API</span></a><a class="docs-next button" href="/docs/nanoplayer/nanoplayer_feature_network_reconnect"><span>Network Reconnect</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#built-in-controls-animations-and-styles">Built-in controls, animations and styles</a><ul class="toc-headings"><li><a href="#symbolcolor-and-controlbarcolor">&quot;symbolColor&quot; and &quot;controlBarColor&quot;</a></li><li><a href="#buttonhighlighting-and-buttonanimation">&quot;buttonHighlighting&quot; and &quot;buttonAnimation&quot;</a></li><li><a href="#buttoncursor">&quot;buttonCursor&quot;</a></li><li><a href="#poster">Poster</a></li><li><a href="#background-color-of-the-player">Background color of the player</a></li></ul></li><li><a href="#responsiveness">Responsiveness</a><ul class="toc-headings"><li><a href="#player-configuration">Player configuration</a></li><li><a href="#playerdiv-css">playerDiv CSS</a></li><li><a href="#other-aspect-ratios">Other aspect ratios</a></li></ul></li><li><a href="#other-customizations">Other Customizations</a><ul class="toc-headings"><li><a href="#disable-built-in-controls">Disable built-in controls</a></li><li><a href="#style-as-an-audio-only-player">Style as an audio-only player</a></li><li><a href="#display-audio-only-stream">Display audio-only stream</a></li><li><a href="#hide-fullscreen-control">Hide fullscreen control</a></li><li><a href="#other-customizable-parameters-with-a-boolean-value">Other customizable parameters with a boolean value</a></li></ul></li><li><a href="#example-code-snippet-with-customization">Example code snippet with customization</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><div><h5>Contact</h5><a href="https://www.nanocosmos.de/">Homepage</a><a href="https://www.nanocosmos.de/contact">Contact</a><a href="https://www.nanocosmos.de/support">Support</a><a href="https://www.nanocosmos.de/terms">Legal Terms</a></div><div><h5>Products</h5><a href="https://www.nanocosmos.de/cloud">Nanostream Cloud with Bintu.Live</a><a href="https://www.nanocosmos.de/h5live">H5Live Low Latency HTML5-Player</a><a href="https://www.nanocosmos.de/webrtc">nanoStream Webcaster</a><a href="https://www.nanocosmos.de/#nanostream">Nanostream Apps and SDK</a></div><div><h5>More</h5><a href="https://www.nanocosmos.de/blog/">Blog</a><a href="https://twitter.com/nanovideo">Twitter</a><a href="https://www.facebook.com/nanocosmos.net/">Facebook</a><a href="https://www.linkedin.com/company/nanocosmos-gmbh">LinkedIn</a><a href="https://github.com/nanocosmos/docs">GitHub</a><a class="github-button" href="https://github.com/nanocosmos/docs" data-icon="octicon-star" data-count-href="/nanocosmos/docs/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://nanocosmos.de/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/footer_logo.png" alt="nanocosmos GmbH" width="170" height="45"/></a><section class="copyright">Copyright © 2021 nanocosmos GmbH - doc version Tue Feb 16 2021 18:03:04 GMT+0000 (Coordinated Universal Time)</section></footer></div></body></html>
