@@ -2558,7 +2558,7 @@ The config object to pass as param for the 'setup' call.
     <td>[style.scaling]</td><td><code>string</code></td><td><code>&quot;letterbox&quot;</code></td><td><p>Set&#39;s the display mode for the video inside the player - possible values: &quot;letterbox&quot;, &quot;fill&quot;, &quot;crop&quot;, &quot;original&quot;, &quot;resize&quot;.</p>
 </td>
     </tr><tr>
-    <td>[style.keepFrame]</td><td><code>boolean</code></td><td><code>false</code></td><td><p>If true the last played frame will be displayed after a pause.</p>
+    <td>[style.keepFrame]</td><td><code>boolean</code></td><td><code>true</code></td><td><p>If true the last played frame will be displayed after a pause.</p>
 </td>
     </tr><tr>
     <td>[style.displayAudioOnly]</td><td><code>boolean</code></td><td><code>true</code></td><td><p>If true a audio symbol will be shown in case of a stream with audio only.</p>
