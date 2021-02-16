@@ -90,14 +90,16 @@ You can find more information regarding config properties in our API docs [here]
 
 <details><summary><strong>Can I customize the inline controls?</strong></summary>
 
-No, but you can disable them by passing:
+Yes, of course. To adjust the inline controls please follow our customization guideline [here](../../nanoplayer/nanoplayer_feature_customization/#built-in-controls-animations-and-styles)
+
+In case you would like to disable them, it is enough to pass false in `config.style.controls`.
 
 ```
 config.style.controls = false;
 ```
 
 > **Important:**
-> If you create custom controls or other overlay elements make sure to set the `z-index` value > 1 to ensure they are positioned on top of the video layer.
+> If you create custom controls or other overlay elements make sure to set the `z-index` value > 10 to ensure they are positioned on top of the video layer.
 
 </details>
 
@@ -172,8 +174,7 @@ Poster images, which are displayed while the video element is loading, are suppo
 }
 ```
 
-
-However, if you prefer to use other version of H5Live Player, you cannot set poster in this way. Alternatively, you can use a workaround by passing the id of an existing video tag with poster through the config (`config.playback.videoId`). This video element would be used by the player instead of creating a new one. See [here](../../nanoplayer/nanoplayer_api).
+However, if you prefer to use other version of H5Live Player, you cannot set poster in this way. Alternatively, you can use a workaround by passing the id of an existing video tag with poster through the config (`config.playback.videoId`). This video element would be used by the player instead of creating a new one. See [here](../../nanoplayer/nanoplayer_api#nanoplayerconfig--codeobjectcode).
 
 Another possibility can be that you grab the video element from the DOM after successful setup and then modify the poster attribute.
 
@@ -186,7 +187,7 @@ video.poster = ....;
 
 <details><summary><strong>Can I change the background color of the player?</strong></summary>
 
-Of course, the **nanoStream H5Live Player Version 4.9.1** introduced this possibility. To change the background color of the player set the backgroundColor parameter in `config.style.backgroundColor` to the desired color. By default it is set to black.
+To change the background color of the player set the backgroundColor parameter in `config.style.backgroundColor` to the desired color. By default it is set to black.
 
 #### Code example with changed background color
 
