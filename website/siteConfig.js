@@ -19,7 +19,7 @@ var configName   = process.env.DOCS_ENV;
 if(!configName || configName.length==0) {
   //configName = "docs1";
   //configName = "gitlab";
-  configName = "github";
+  configName = "default";
   console.log("Default config: " + configName);
 }
 
@@ -32,6 +32,8 @@ if(configName=="github") {
   myConfig.baseUrl = '/docs/docs/';
 } else if(configName=="gitlab") {
   myConfig.url = 'https://docs-gitlab.nanocosmos.de';
+} else if(configName=="gitlab-develop") {
+  myConfig.url = 'https://docs-develop.k8s-dev.nanocosmos.de';
 } else if(configName=="docs1") {
   myConfig.url = 'https://docs1.nanocosmos.de';
 } else if(configName=="docs-dev") {
