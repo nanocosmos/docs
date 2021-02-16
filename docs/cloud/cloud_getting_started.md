@@ -24,6 +24,10 @@ See our introduction videos and tutorials for step-by-step instructions!
 
 ### Create a nanoStream Cloud account (bintu.live)
 
+NOTE: The following information is about the bintu dashboard v1. 
+
+You can use the new [bintu dashboard](https://bintu-cloud-frontend.nanocosmos.de/) ,
+
 Click [bintu.nanocosmos.de](https://bintu.nanocosmos.de/signup) to sign up and create a new user account
 
 ![Screen Shot 2016-07-19 at 13.45.00](https://i2.wp.com/www.nanocosmos.de/blog/wp-content/uploads/Screen-Shot-2016-07-19-at-13.45.00.png?resize=600%2C448&ssl=1)

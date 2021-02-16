@@ -8,61 +8,46 @@
 // See https://docusaurus.io/docs/site-config for all the possible
 // site configuration options.
 
-var configs = [];
-var configGithub = {
+var myConfig = {
   url: 'https://docs.nanocosmos.de', // Your website URL
   baseUrl: '/', // Base URL for your project - should be absolute */
-
-  // For github.io type URLs, you would set the url and baseUrl like:
-  //url: 'https://nanocosmos.github.io', // Your website URL
-  //baseUrl: '/docs/', // Base URL for your project */
-
-  //   url: 'https://facebook.github.io',
-  //   baseUrl: '/test-site/',
-
-// cname: 'nanocosmos.github.io'
-  cname: 'docs.nanocosmos.de'
 };
-
-const configGitlab = {
-  url: 'https://doc.pages.nanocosmos.de', // Your website URL
-  baseUrl: '/docs/docs/', // Base URL for your project - should be absolute */
-  cname: 'nanocosmos.github.io',
-};
-
-const configDocs1 = {
-  url: 'https://docs1.nanocosmos.de', // Your website URL
-  baseUrl: '/', // Base URL for your project - should be absolute */
-  //cname: 'nanocosmos.github.io',
-};
-
-const configDocsDev = {
-  url: 'https://docs-dev.nanocosmos.de', // Your website URL
-  baseUrl: '/', // Base URL for your project - should be absolute */
-  //cname: 'nanocosmos.github.io',
-};
-
-var configs = [];
-configs["gitlab"] = configGitlab;
-configs["github"] = configGithub;
-configs["docs1"] = configDocs1;
-configs["docs-dev"] = configDocsDev;
 
 // override from environment variable
 // example: DOCS_ENV=github && docusaurus-build
 var configName   = process.env.DOCS_ENV;
 if(!configName || configName.length==0) {
   //configName = "docs1";
-  //configName = "docs-dev";
   //configName = "gitlab";
   configName = "github";
+  console.log("Default config: " + configName);
 }
 
-console.log("Using config " + configName);
-var myConfig = configs[configName];
+
+if(configName=="github") {
+  myConfig.url = 'https://docs.nanocosmos.de';
+  myConfig.cname = 'nanocosmos.github.io';
+} else if(configName=="gitlab-pages") {
+  myConfig.url = 'https://doc.pages.nanocosmos.de';
+  myConfig.baseUrl = '/docs/docs/';
+} else if(configName=="gitlab") {
+  myConfig.url = 'https://docs-gitlab.nanocosmos.de';
+} else if(configName=="docs1") {
+  myConfig.url = 'https://docs1.nanocosmos.de';
+} else if(configName=="docs-dev") {
+  myConfig.url = 'https://docs-dev.nanocosmos.de';
+}
+
+if(process.env.DOCS_URL && process.env.DOCS_URL.length>1) {
+  myConfig.url = process.env.DOCS_URL;
+  console.log("Override process.env.DOCS_URL: " + myConfig.url)
+}
+
+console.log("Using config " + configName + " " + myConfig.url);
+console.log(JSON.stringify(myConfig));
 
 const siteConfig = {
-  title: 'nanocosmos Documentation', // Title for your website.	
+  title: 'nanocosmos Documentation', // Title for your website. 
   tagline: 'nanoStream Cloud & H5Live Player - Around The World in 1 Second',
   title: 'nanocosmos Documentation',  
 
@@ -151,6 +136,6 @@ const siteConfig = {
      editUrl: 'https://github.com/nanocosmos/docs/tree/master/docs/'
 };
 
-console.log("Using config " + configName + "  URL: " + siteConfig.url);
+console.log("siteConfig: " + configName + "  URL: " + siteConfig.url + " " + siteConfig.baseUrl);
 
 module.exports = siteConfig;
