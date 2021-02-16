@@ -55,10 +55,10 @@ include:
 review:
   environment:
     name: review/$CI_COMMIT_REF_NAME
-    url: http://$CI_COMMIT_REF_SLUG.$KUBE_INGRESS_BASE_DOMAIN
+    url: http://$CI_PROJECT_NAME-$CI_COMMIT_REF_SLUG.$KUBE_INGRESS_BASE_DOMAIN
     #url: http://$CI_PROJECT_NAME-$CI_ENVIRONMENT_SLUG-$CI_COMMIT_REF_SLUG.$KUBE_INGRESS_BASE_DOMAIN
   variables:
-    DOCS_URL: http://$CI_COMMIT_REF_SLUG.$KUBE_INGRESS_BASE_DOMAIN
+    DOCS_URL: http://$CI_PROJECT_NAME-$CI_COMMIT_REF_SLUG.$KUBE_INGRESS_BASE_DOMAIN
 
 # production: master/main branch
 # example URL: https://projectname-review.k8s-prod.nanocosmos.de/
