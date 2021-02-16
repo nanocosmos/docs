@@ -17,6 +17,7 @@ variables:
 cache:
   paths:
     - node_modules/
+    - website/node_modules/
 
 .pages:
     stage: deploy
