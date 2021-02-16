@@ -93,6 +93,8 @@ If necessary, the default value can be changed to a value within a range (in sec
 
 ### Loading timeout
 
+Loading timeout includes the time that it takes to establish the connection (`playback.timeouts.connecting`).
+
 The default value for `playback.timeouts.loading` is **20 seconds**.
 If necessary, the default value can be changed to a value within a range (in seconds):
 - min: 10
