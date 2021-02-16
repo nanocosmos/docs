@@ -20,7 +20,7 @@ Screen sharing is a built-in feature in modern desktop browsers. For early Googl
 
 ## Setup Screen Sharing
 
-Screen sharing is enabled by setting video source to `screen` in the configuration object passed to [startPreview(config)](./nanostream_webrtc_api/#rtcuserstartpreviewconfig). Note that the default video source's value is `camera`.<br>
+Screen sharing is enabled by setting video source to `screen` in the configuration object passed to [startPreview(config)](/docs/webrtc/nanostream_webrtc_api/#rtcuserstartpreviewconfig). Note that the default video source's value is `camera`.<br>
 
 ```javascript
 // to enable Screen Sharing, we pass "screen" as a source to the video device configuration
