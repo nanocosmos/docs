@@ -73,20 +73,11 @@ var config = {
 ## Timeouts
 
 > **Important:** <br>
-> Changing the default timeout values is not recommended.
+> Applying custom timeout values should be handled with care.
 
 In case of a timeout, an [`onError`](../nanoplayer_api/#onerror) event is fired with a related [`errorcode`](../nanoplayer_api/#nanoplayererrorcode--codenumbercode), followed by an [`onPause`](../nanoplayer_api/#onpause) event. 
 
 A timeout can be terminated either by receiving a playback or when the player is paused manually while loading.
-
-### Loading timeout
-
-The default value for `playback.timeouts.loading` is **20 seconds**.
-If necessary, the default value can be changed to a value within a range (in seconds):
-- min: 10
-- max: 60
-
-In case of loading timeout, the state is changed from loading to paused. 
 
 ### Connection timeout
 
@@ -99,6 +90,15 @@ If necessary, the default value can be changed to a value within a range (in sec
 - max: 30
 
 **Should not be higher than the loading timeout value**.
+
+### Loading timeout
+
+The default value for `playback.timeouts.loading` is **20 seconds**.
+If necessary, the default value can be changed to a value within a range (in seconds):
+- min: 10
+- max: 60
+
+In case of loading timeout, the state is changed from loading to paused. 
 
 ### Buffering timeout
  
