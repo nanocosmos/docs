@@ -5,8 +5,8 @@ sidebar_label: Device Selection
 ---
 
 The Webcaster API gives you the possibility to present all currently attached audio and video devices to your users.
-The API call to requrest the device list is [getDevices()](nanostream_webrtc_api/#rtcusergetdevices).<br>
-You will receive the list of devices in the [ReceivedDeviceList](nanostream_webrtc_api/#rtcuserRtcUser+event_ReceivedDeviceList) event. After that you can show this list to the user, so he can choose which devices he wants to be used for the Webcast.
+The API call to requrest the device list is [getDevices()](../webrtc/nanostream_webrtc_api#rtcusergetdevices).<br>
+You will receive the list of devices in the [ReceivedDeviceList](nanostream_webrtc_api#rtcuserRtcUser+event_ReceivedDeviceList) event. After that you can show this list to the user, so he can choose which devices he wants to be used for the Webcast.
 
 ## Preparation
 
