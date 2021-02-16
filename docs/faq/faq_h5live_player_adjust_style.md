@@ -161,7 +161,19 @@ Yes. Fullscreen is available over the public [fullscreen API](../../nanoplayer/n
 
 <details><summary><strong>Can I use a poster as placeholder for the video?</strong></summary>
 
-But you can use a workaround by passing the id of an existing video tag with poster through the config (`config.playback.videoId`). This video element would be used by the player instead of creating a new one. See [here](../../nanoplayer/nanoplayer_api).
+Since the **nanoStream H5Live Player Version 4.9.1** it is possible.
+Poster images, which are displayed while the video element is loading, are supported and can be added in the `config.style.poster`. The string has to be a relative or absolute path to a valid image source like `"./assets/poster.png"` or image URL.
+
+#### Example
+
+```javascript
+"style": {
+    "poster": "https://[yourdomain]/assets/niceimage.png"
+}
+```
+
+
+However, if you prefer to use other version of H5Live Player, you cannot set poster in this way. Alternatively, you can use a workaround by passing the id of an existing video tag with poster through the config (`config.playback.videoId`). This video element would be used by the player instead of creating a new one. See [here](../../nanoplayer/nanoplayer_api).
 
 Another possibility can be that you grab the video element from the DOM after successful setup and then modify the poster attribute.
 
