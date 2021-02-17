@@ -12,7 +12,7 @@
           "nanoplayer/nanoplayer_feature_stream_switching",
           "nanoplayer/nanoplayer_feature_fullscreen_api",
           "nanoplayer/nanoplayer_feature_customization",
-          "nanoplayer/nanoplayer_feature_network_reconnect"
+          "nanoplayer/nanoplayer_feature_reconnect_timeouts"
       ],
       "API": [
            "nanoplayer/nanoplayer_api",

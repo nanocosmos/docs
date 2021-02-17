@@ -24,18 +24,18 @@ See our introduction videos and tutorials for step-by-step instructions!
 
 ### Create a nanoStream Cloud account (bintu.live)
 
-NOTE: The following information is about the bintu dashboard v1. 
-
 You can use the new [bintu dashboard](https://bintu-cloud-frontend.nanocosmos.de/) ,
 
-Click [bintu.nanocosmos.de](https://bintu.nanocosmos.de/signup) to sign up and create a new user account
+NOTE: The following screenshots is about the former simplified [bintu dashboard v.1](https://bintu.nanocosmos.de/). 
+
+Click [bintu-cloud-frontend.nanocosmos.de](https://bintu-cloud-frontend.nanocosmos.de/signup) to sign up and create a new user account
 
 ![Screen Shot 2016-07-19 at 13.45.00](https://i2.wp.com/www.nanocosmos.de/blog/wp-content/uploads/Screen-Shot-2016-07-19-at-13.45.00.png?resize=600%2C448&ssl=1)
 <br>
 > Your email account will be part of an *organisation*. All streams associated with your organisation or company will be filed under this account.
 
 <br>
-After signing up, you can click [here](https://bintu.nanocosmos.de) to login to your bintu.live stream account.
+After signing up, you can click [here](https://bintu-cloud-frontend.nanocosmos.de) to login to your bintu.live stream account.
 
 ![Screen Shot 2016-07-19 at 13.44.40](https://i2.wp.com/www.nanocosmos.de/blog/wp-content/uploads/Screen-Shot-2016-07-19-at-13.44.40.png?resize=300%2C234&ssl=1)
 
@@ -55,9 +55,9 @@ Create your first live stream: In the top menu select `Stream`, then `create`
 
 ### Start a live stream broadcast
 
-To start a live stream broadcast, you need a live encoder software, either based on an `RTMP Live Encoder application`, or the browser-based [nanoStream Webcaster broadcaster](../../webrtc/nanostream_webrtc_introduction).
+To start a live stream broadcast, you need a live encoder software, either based on an `RTMP Live Encoder application`, or the browser-based [nanoStream Webcaster broadcaster](../webrtc/nanostream_webrtc_introduction).
 
-You can use [nanoStream Apps](../../nanostream/nanostream), or 3rd part software like [OBS (Open Broadcaster)](https://obsproject.com/) or professional Live Encoders like [Elemental Live](https://www.elemental.com/products/aws-elemental-live).
+You can use [nanoStream Apps](../nanostream/nanostream), or 3rd part software like [OBS (Open Broadcaster)](https://obsproject.com/) or professional Live Encoders like [Elemental Live](https://www.elemental.com/products/aws-elemental-live).
 
 > The primary ingest protocol is RTMP.
 
@@ -149,7 +149,7 @@ Every tag added to a stream is directly displayed in the Stream Info.
 
 *See more info about tagging and how it is used in our Bintu Encoder and Player sample apps on our* [*blog*](https://www.nanocosmos.de/blog/2016/06/new-bintu-live-grouping-and-tagging-feature-for-streams/)*.*
 
-The Bintu Encoder and Player sample apps are part of our [*mobile nanoStream SDKs*](../../nanostream/android/nanostream-android-sdk) *for iOS and Android.*
+The Bintu Encoder and Player sample apps are part of our [*mobile nanoStream SDKs*](../nanostream/android/nanostream-android-sdk) *for iOS and Android.*
 
 -----
 
@@ -190,7 +190,7 @@ For secure playback with the nanoStream H5Live Player you need to have your acco
 
 #### More information:
 
-- [bintu.live dashboard](https://bintu.nanocosmos.de)
+- [bintu.live dashboard](https://bintu-cloud-frontend.nanocosmos.de)
 - [bintu.live API documentation](https://bintu.nanocosmos.de/doc/)
 - [Create a live streaming app in 5 minutes](cloud_ios_streaming_app)
 - [nanoStream and bintu.live](https://www.nanocosmos.de/blog/2016/07/nanostream-and-bintu-live/)
