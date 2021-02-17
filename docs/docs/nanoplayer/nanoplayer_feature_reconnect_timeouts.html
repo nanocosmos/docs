@@ -1,0 +1,181 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Reconnect and Timeouts · nanocosmos Documentation</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="## Reconnect on unexpected connection close"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Reconnect and Timeouts · nanocosmos Documentation"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.nanocosmos.de/"/><meta property="og:description" content="## Reconnect on unexpected connection close"/><meta property="og:image" content="https://docs.nanocosmos.de/img/docusaurus.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://docs.nanocosmos.de/img/docusaurus.png"/><link rel="shortcut icon" href="/img/favicon_nano.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script>
+              (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+              (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+              m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+              })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+              ga('create', 'UA-552140-1', 'auto');
+              ga('send', 'pageview');
+            </script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="/js/search.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/nanocosmos_header_logo.png" alt="nanocosmos Documentation"/><h2 class="headerTitleWithLogo">nanocosmos Documentation</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/docs/cloud/cloud_overview" target="_self">nanoStream Cloud</a></li><li class="siteNavGroupActive"><a href="/docs/nanoplayer/nanoplayer_introduction" target="_self">H5Live Player</a></li><li class=""><a href="/docs/webrtc/nanostream_webrtc_introduction" target="_self">nanoStream Webcaster</a></li><li class=""><a href="/docs/nanostream/nanostream" target="_self">nanoStream Apps and SDKs</a></li><li class=""><a href="/docs/samples/samples" target="_self">Samples</a></li><li class=""><a href="/docs/faq/faq_streaming" target="_self">FAQ</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Features</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">H5Live Player</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/nanoplayer/nanoplayer_introduction">Introduction</a></li><li class="navListItem"><a class="navItem" href="/docs/nanoplayer/nanoplayer_getting_started">Getting started</a></li><li class="navListItem"><a class="navItem" href="/docs/nanoplayer/nanoplayer_supported_browsers">Supported Browsers</a></li><li class="navListItem"><a class="navItem" href="/docs/nanoplayer/nanoplayer_player_metrics">Player Metrics</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Features</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/nanoplayer/nanoplayer_autoplay">Autoplay</a></li><li class="navListItem"><a class="navItem" href="/docs/nanoplayer/nanoplayer_token_security">Secure playback with H5Live</a></li><li class="navListItem"><a class="navItem" href="/docs/nanoplayer/nanoplayer_feature_stream_switching">Stream switching and ABR</a></li><li class="navListItem"><a class="navItem" href="/docs/nanoplayer/nanoplayer_feature_fullscreen_api">Fullscreen API</a></li><li class="navListItem"><a class="navItem" href="/docs/nanoplayer/nanoplayer_feature_customization">UI and customization</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/nanoplayer/nanoplayer_feature_reconnect_timeouts">Reconnect and Timeouts</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">API</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/nanoplayer/nanoplayer_api">NanoPlayer</a></li><li class="navListItem"><a class="navItem" href="/docs/nanoplayer/nanoplayer_api_errors">NanoPlayer Status &amp; Error Codes</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Other</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/nanoplayer/nanoplayer_faq">FAQ</a></li><li class="navListItem"><a class="navItem" href="/docs/nanoplayer/nanoplayer_blogposts">Blog</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/nanocosmos/docs/tree/master/docs/nanoplayer/nanoplayer_feature_reconnect_timeouts.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 id="__docusaurus" class="postHeaderTitle">Reconnect and Timeouts</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="reconnect-on-unexpected-connection-close"></a><a href="#reconnect-on-unexpected-connection-close" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Reconnect on unexpected connection close</h2>
+<p>The <strong>nanoStream H5Live Player</strong> can use an internal reconnect in case the network connection is broke up.</p>
+<p>Internal network reconnect is <strong>supported on all platforms except iOS</strong>. iOS media stream connections cannot be managed by the player, but by the browser and system.
+For the supported platforms automatic network reconnect is handling two main cases:</p>
+<ul>
+<li>Initial connect failing</li>
+<li>Connection break up during streaming</li>
+</ul>
+<p>The handling is optional and can be disabled. The reconnect is enabled by default with a suggested <a href="#reconnect-configuration">configuration</a>.</p>
+<p>During a reconnect no <a href="../nanoplayer_api/#onerror"><code>onError</code></a> event is being fired.
+The reconnect will be notified by an <a href="../nanoplayer_api/#onpause"><code>onPause</code></a> event with <a href="../nanoplayer_api/#nanoplayerpausereason--codestringcode"><code>reason</code></a> 'reconnectionimminent'.</p>
+<p>If the number of maximum consecutive reconnect attemps is exceeded,
+the player will fire an <a href="../nanoplayer_api/#onerror"><code>onError</code></a> event with the related <a href="../nanoplayer_api/#nanoplayererrorcode--codenumbercode"><code>errorcode</code></a> followed by an <a href="../nanoplayer_api/#onpause"><code>onPause</code></a> event.</p>
+<p><br>
+<br></p>
+<blockquote>
+<p><strong>Important:</strong> <br>
+The internal reconnect handles network connection break up only! It doesn't handle non network related stream break ups or pause reasons different then 'normal'.</p>
+</blockquote>
+<blockquote>
+<p><strong>Important:</strong> <br>
+Reconnect is not supported on iOS!</p>
+</blockquote>
+<hr>
+<h3><a class="anchor" aria-hidden="true" id="configuration"></a><a href="#configuration" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Configuration</h3>
+<p>The internal reconnect behaviour can be configured via <code>config.playback.reconnect</code> object during the initial <code>setup</code> call.</p>
+<blockquote>
+<p><strong>Note:</strong> You can find more information on how to configure the player in our <a href="../nanoplayer_api/#nanoplayerconfig--codeobjectcode">API documentation</a>.</p>
+</blockquote>
+<p>The reconnect object has multiple parameters to adjust the behaviour. The parameters are:</p>
+<ul>
+<li><code>minDelay</code> (default: 2) - The minimum time between reconnect attempts in seconds. The lowest possible value is 1 sec.</li>
+<li><code>maxDelay</code> (default: 10) - The maximum time between reconnect attempts in seconds.</li>
+<li><code>delaySteps</code> (default: 10) - The number of steps till the maximum delay should reached.</li>
+<li><code>maxRetries</code> (default: 10) - The maximum count of reconnect tries. If set to zero no reconnect will be done.</li>
+</ul>
+<blockquote>
+<p><strong>Important:</strong> <br>
+Disable reconnect by setting <code>maxRetries</code> to 0.</p>
+</blockquote>
+<h3><a class="anchor" aria-hidden="true" id="example"></a><a href="#example" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h3>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">var</span> config = {
+    <span class="hljs-string">"source"</span>: {
+        ...
+    },
+    <span class="hljs-string">"playback"</span> : {
+        ...,
+        <span class="hljs-string">"reconnect"</span> : {
+            <span class="hljs-string">"minDelay"</span>   : <span class="hljs-number">2</span>,
+            <span class="hljs-string">"maxDelay"</span>   : <span class="hljs-number">10</span>,
+            <span class="hljs-string">"delaySteps"</span> : <span class="hljs-number">10</span>,
+            <span class="hljs-string">"maxRetries"</span> : <span class="hljs-number">10</span>
+        }
+    },
+    <span class="hljs-string">"style"</span> : {
+        ...
+    }
+};
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="timeouts"></a><a href="#timeouts" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Timeouts</h2>
+<blockquote>
+<p><strong>Important:</strong> <br>
+Applying custom timeout values should be handled with care.</p>
+</blockquote>
+<p>In case of a timeout, an <a href="../nanoplayer_api/#onerror"><code>onError</code></a> event is fired with a related <a href="../nanoplayer_api/#nanoplayererrorcode--codenumbercode"><code>errorcode</code></a>, followed by an <a href="../nanoplayer_api/#onpause"><code>onPause</code></a> event.</p>
+<p>Timeouts will be terminated by player state changes like playback starting / resuming or a externally triggered pause.</p>
+<h3><a class="anchor" aria-hidden="true" id="connection-timeout"></a><a href="#connection-timeout" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Connection timeout</h3>
+<p>The connection time is the time between opening the connection and having it established. Is the connection established, the timeout will be cleared. The connection time is part of the <code>LOADING</code> phase.</p>
+<p>The default value for <code>playback.timeouts.connecting</code> is <strong>5 seconds</strong>.
+It can be changed to a value within a range (in seconds):</p>
+<ul>
+<li>min: 5</li>
+<li>max: 30</li>
+</ul>
+<blockquote>
+<p><strong>Note:</strong> <br>
+The <strong>connection timeout</strong> value should <strong>not</strong> be <strong>higher than</strong> the <strong>loading timeout</strong> value.</p>
+</blockquote>
+<p>In case the connection timeout is expired, the player state is changing from <code>LOADING</code> to <code>PAUSED</code>.</p>
+<h3><a class="anchor" aria-hidden="true" id="loading-timeout"></a><a href="#loading-timeout" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Loading timeout</h3>
+<p>The loading time starts with a <code>play</code> call and includes the time it takes to establish the connection (<code>playback.timeouts.connecting</code>) and receiving media data over the connection until the playback has started successfully. Related events are <a href="../nanoplayer_api/#onloading"><code>onLoading</code></a> and <a href="../nanoplayer_api/#onplay"><code>onPlay</code></a>. The timeout will be cleared if the <code>PLAYING</code> state has been entered indecated by the <a href="../nanoplayer_api/#onplay"><code>onPlay</code></a> event.</p>
+<p>The default value for <code>playback.timeouts.loading</code> is <strong>20 seconds</strong>.
+It can be changed to a value within a range (in seconds):</p>
+<ul>
+<li>min: 10</li>
+<li>max: 60</li>
+</ul>
+<p>In case the loading timeout is expired, the player state is changing from <code>LOADING</code> to <code>PAUSED</code>.</p>
+<h3><a class="anchor" aria-hidden="true" id="buffering-timeout"></a><a href="#buffering-timeout" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Buffering timeout</h3>
+<p>The buffering time starts if the player state changes from <code>PLAYING</code> to <code>BUFFERING</code> in case not enough media data for playback is being received. Related events are <a href="../nanoplayer_api/#onstartbuffering"><code>onStartBuffering</code></a> and <a href="../nanoplayer_api/#onstopbuffering"><code>onStopBuffering</code></a>. The timeout will be cleared if the playback resumes indecated by the <a href="../nanoplayer_api/#onstopbuffering"><code>onStopBuffering</code></a> event.</p>
+<p>The default value for <code>playback.timeouts.buffering</code> is <strong>20 seconds</strong>.
+It can be changed to a value within a range (in seconds):</p>
+<ul>
+<li>min: 10</li>
+<li>max: 60</li>
+</ul>
+<p>In case the buffering timeout is expired, the player state is changing from <code>BUFFERING</code> to <code>PAUSED</code>.</p>
+<h3><a class="anchor" aria-hidden="true" id="example-1"></a><a href="#example-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h3>
+<pre><code class="hljs css language-javascript"><span class="hljs-comment">// with default values:</span>
+<span class="hljs-keyword">var</span> config = {
+    <span class="hljs-string">"source"</span>: {
+        ...
+    },
+    <span class="hljs-string">"playback"</span> : {
+        ...,
+        <span class="hljs-string">"timeouts"</span> : {
+            <span class="hljs-string">"connecting"</span> : <span class="hljs-number">5</span>,
+            <span class="hljs-string">"loading"</span>    : <span class="hljs-number">20</span>,
+            <span class="hljs-string">"buffering"</span>  : <span class="hljs-number">20</span>
+        }
+    },
+    <span class="hljs-string">"style"</span> : {
+        ...
+    }
+};
+</code></pre>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 2/17/2021</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/nanoplayer/nanoplayer_feature_customization"><span class="arrow-prev">← </span><span>UI and customization</span></a><a class="docs-next button" href="/docs/nanoplayer/nanoplayer_api"><span class="function-name-prevnext">NanoPlayer</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#reconnect-on-unexpected-connection-close">Reconnect on unexpected connection close</a><ul class="toc-headings"><li><a href="#configuration">Configuration</a></li><li><a href="#example">Example</a></li></ul></li><li><a href="#timeouts">Timeouts</a><ul class="toc-headings"><li><a href="#connection-timeout">Connection timeout</a></li><li><a href="#loading-timeout">Loading timeout</a></li><li><a href="#buffering-timeout">Buffering timeout</a></li><li><a href="#example-1">Example</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><div><h5>Contact</h5><a href="https://www.nanocosmos.de/">Homepage</a><a href="https://www.nanocosmos.de/contact">Contact</a><a href="https://www.nanocosmos.de/support">Support</a><a href="https://www.nanocosmos.de/terms">Legal Terms</a></div><div><h5>Products</h5><a href="https://www.nanocosmos.de/cloud">Nanostream Cloud with Bintu.Live</a><a href="https://www.nanocosmos.de/h5live">H5Live Low Latency HTML5-Player</a><a href="https://www.nanocosmos.de/webrtc">nanoStream Webcaster</a><a href="https://www.nanocosmos.de/#nanostream">Nanostream Apps and SDK</a></div><div><h5>More</h5><a href="https://www.nanocosmos.de/blog/">Blog</a><a href="https://twitter.com/nanovideo">Twitter</a><a href="https://www.facebook.com/nanocosmos.net/">Facebook</a><a href="https://www.linkedin.com/company/nanocosmos-gmbh">LinkedIn</a><a href="https://github.com/nanocosmos/docs">GitHub</a><a class="github-button" href="https://github.com/nanocosmos/docs" data-icon="octicon-star" data-count-href="/nanocosmos/docs/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://nanocosmos.de/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/footer_logo.png" alt="nanocosmos GmbH" width="170" height="45"/></a><section class="copyright">Copyright © 2021 nanocosmos GmbH - doc version Wed Feb 17 2021 12:40:01 GMT+0000 (Coordinated Universal Time)</section></footer></div></body></html>
