@@ -80,7 +80,7 @@ Example to disable inline controls:
     },
 ```
 
-You can find more information regarding config properties in our API docs [here](../../nanoplayer/nanoplayer_api/#nanoplayerconfig--codeobjectcode).
+You can find more information regarding config properties in our API docs [here](../nanoplayer/nanoplayer_api/#nanoplayerconfig--codeobjectcode).
 
 
 > **Important:**
@@ -90,7 +90,7 @@ You can find more information regarding config properties in our API docs [here]
 
 <details><summary><strong>Can I customize the inline controls?</strong></summary>
 
-Yes, of course. To adjust the inline controls please follow our customization guideline [here](../../nanoplayer/nanoplayer_feature_customization/#built-in-controls-animations-and-styles)
+Yes, of course. To adjust the inline controls please follow our customization guideline [here](../nanoplayer/nanoplayer_feature_customization/#built-in-controls-animations-and-styles)
 
 In case you would like to disable them, it is enough to pass false in `config.style.controls`.
 
@@ -145,7 +145,7 @@ Yes, by passing the `id` attribute of an existing html5 video element through th
 > - if 0 Ids are provided 2 video elements will be created internally
 > - if 1 Id is provided the other video element will be created internally
 > 
-> You can find more information regarding the `playback.videoId` and other config properties in our [API docs](../../nanoplayer/nanoplayer_api#nanoplayerconfig--codeobjectcode).
+> You can find more information regarding the `playback.videoId` and other config properties in our [API docs](../nanoplayer/nanoplayer_api#nanoplayerconfig--codeobjectcode).
 
 </details>
 
@@ -157,7 +157,7 @@ Yes, by executing the player’s function `updateSource` with an updated `config
 
 <details><summary><strong>Is a fullscreen functionality available?</strong></summary>
 
-Yes. Fullscreen is available over the public [fullscreen API](../../nanoplayer/nanoplayer_feature_fullscreen_api) or over the bottom right fullscreen button in the built-in H5live player control bar.
+Yes. Fullscreen is available over the public [fullscreen API](../nanoplayer/nanoplayer_feature_fullscreen_api) or over the bottom right fullscreen button in the built-in H5live player control bar.
 
 </details>
 
@@ -174,7 +174,7 @@ Poster images, which are displayed while the video element is loading, are suppo
 }
 ```
 
-However, if you prefer to use other version of H5Live Player, you cannot set poster in this way. Alternatively, you can use a workaround by passing the id of an existing video tag with poster through the config (`config.playback.videoId`). This video element would be used by the player instead of creating a new one. See [here](../../nanoplayer/nanoplayer_api#nanoplayerconfig--codeobjectcode).
+However, if you prefer to use other version of H5Live Player, you cannot set poster in this way. Alternatively, you can use a workaround by passing the id of an existing video tag with poster through the config (`config.playback.videoId`). This video element would be used by the player instead of creating a new one. See [here](../nanoplayer/nanoplayer_api#nanoplayerconfig--codeobjectcode).
 
 Another possibility can be that you grab the video element from the DOM after successful setup and then modify the poster attribute.
 

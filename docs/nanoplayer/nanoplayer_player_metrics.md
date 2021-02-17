@@ -6,7 +6,7 @@ sidebar_label: Player Metrics
 
 ## How to use 
 
-Player metrics are providing additional insights for our cloud support team and our [nanoStream Cloud Analytics](../../cloud/analytics) service. The player metrics can be enabled by adding the `metrics` object to the player config as shown below.
+Player metrics are providing additional insights for our cloud support team and our [nanoStream Cloud Analytics](../cloud/analytics) service. The player metrics can be enabled by adding the `metrics` object to the player config as shown below.
 
 **Important** <br>
 If you don't have metrics account information for your organisation yet please reach out to [sales@nanocosmos.de](mailto:sales@nanocosmos.de).
@@ -37,4 +37,4 @@ var config = {
 ```
 
 
-> **Note:** For more information on the metrics configuration object see our [API documentation](../nanoplayer_api/#nanoplayerconfig--codeobjectcode). More detailed information around nanoStream Cloud Analytics can be found in our [blog](https://www.nanocosmos.de/blog/2019/09/nanostream-analytics-get-insights-in-your-nanostream-cloud-service-and-h5live-player-performance/) and [docs](../../cloud/analytics).
+> **Note:** For more information on the metrics configuration object see our [API documentation](nanoplayer_api/#nanoplayerconfig--codeobjectcode). More detailed information around nanoStream Cloud Analytics can be found in our [blog](https://www.nanocosmos.de/blog/2019/09/nanostream-analytics-get-insights-in-your-nanostream-cloud-service-and-h5live-player-performance/) and [docs](../cloud/analytics).
