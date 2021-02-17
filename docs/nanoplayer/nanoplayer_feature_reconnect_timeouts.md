@@ -15,11 +15,11 @@ For the supported platforms automatic network reconnect is handling two main cas
 
 The handling is optional and can be disabled. The reconnect is enabled by default with a suggested [configuration](#reconnect-configuration).
 
-During a reconnect no [`onError`](../nanoplayer_api/#onerror) event is being fired. 
-The reconnect will be notified by an [`onPause`](../nanoplayer_api/#onpause) event with [`reason`](../nanoplayer_api/#nanoplayerpausereason--codestringcode) 'reconnectionimminent'.
+During a reconnect no [`onError`](nanoplayer_api/#onerror) event is being fired. 
+The reconnect will be notified by an [`onPause`](nanoplayer_api/#onpause) event with [`reason`](nanoplayer_api/#nanoplayerpausereason--codestringcode) 'reconnectionimminent'.
 
 If the number of maximum consecutive reconnect attemps is exceeded, 
-the player will fire an [`onError`](../nanoplayer_api/#onerror) event with the related [`errorcode`](../nanoplayer_api/#nanoplayererrorcode--codenumbercode) followed by an [`onPause`](../nanoplayer_api/#onpause) event. 
+the player will fire an [`onError`](nanoplayer_api/#onerror) event with the related [`errorcode`](nanoplayer_api/#nanoplayererrorcode--codenumbercode) followed by an [`onPause`](nanoplayer_api/#onpause) event. 
 
 <br>
 <br>
@@ -36,7 +36,7 @@ the player will fire an [`onError`](../nanoplayer_api/#onerror) event with the r
 
 The internal reconnect behaviour can be configured via `config.playback.reconnect` object during the initial `setup` call.
 
-> **Note:** You can find more information on how to configure the player in our [API documentation](../nanoplayer_api/#nanoplayerconfig--codeobjectcode).
+> **Note:** You can find more information on how to configure the player in our [API documentation](nanoplayer_api/#nanoplayerconfig--codeobjectcode).
 
 The reconnect object has multiple parameters to adjust the behaviour. The parameters are:
 
@@ -75,7 +75,7 @@ var config = {
 > **Important:** <br>
 > Applying custom timeout values should be handled with care.
 
-In case of a timeout, an [`onError`](../nanoplayer_api/#onerror) event is fired with a related [`errorcode`](../nanoplayer_api/#nanoplayererrorcode--codenumbercode), followed by an [`onPause`](../nanoplayer_api/#onpause) event.
+In case of a timeout, an [`onError`](nanoplayer_api/#onerror) event is fired with a related [`errorcode`](nanoplayer_api/#nanoplayererrorcode--codenumbercode), followed by an [`onPause`](nanoplayer_api/#onpause) event.
 
 Timeouts will be terminated by player state changes like playback starting / resuming or a externally triggered pause.
 
@@ -96,7 +96,7 @@ In case the connection timeout is expired, the player state is changing from `LO
 
 ### Loading timeout
 
-The loading time starts with a `play` call and includes the time it takes to establish the connection (`playback.timeouts.connecting`) and receiving media data over the connection until the playback has started successfully. Related events are [`onLoading`](../nanoplayer_api/#onloading) and [`onPlay`](../nanoplayer_api/#onplay). The timeout will be cleared if the `PLAYING` state has been entered indecated by the [`onPlay`](../nanoplayer_api/#onplay) event.
+The loading time starts with a `play` call and includes the time it takes to establish the connection (`playback.timeouts.connecting`) and receiving media data over the connection until the playback has started successfully. Related events are [`onLoading`](nanoplayer_api/#onloading) and [`onPlay`](nanoplayer_api/#onplay). The timeout will be cleared if the `PLAYING` state has been entered indecated by the [`onPlay`](nanoplayer_api/#onplay) event.
 
 The default value for `playback.timeouts.loading` is **20 seconds**.
 It can be changed to a value within a range (in seconds):
@@ -108,7 +108,7 @@ In case the loading timeout is expired, the player state is changing from `LOADI
 
 ### Buffering timeout
 
-The buffering time starts if the player state changes from `PLAYING` to `BUFFERING` in case not enough media data for playback is being received. Related events are [`onStartBuffering`](../nanoplayer_api/#onstartbuffering) and [`onStopBuffering`](../nanoplayer_api/#onstopbuffering). The timeout will be cleared if the playback resumes indecated by the [`onStopBuffering`](../nanoplayer_api/#onstopbuffering) event.
+The buffering time starts if the player state changes from `PLAYING` to `BUFFERING` in case not enough media data for playback is being received. Related events are [`onStartBuffering`](nanoplayer_api/#onstartbuffering) and [`onStopBuffering`](nanoplayer_api/#onstopbuffering). The timeout will be cleared if the playback resumes indecated by the [`onStopBuffering`](nanoplayer_api/#onstopbuffering) event.
 
 The default value for `playback.timeouts.buffering` is **20 seconds**.
 It can be changed to a value within a range (in seconds):
