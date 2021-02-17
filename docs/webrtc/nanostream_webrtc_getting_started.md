@@ -196,7 +196,7 @@ Within your HTML:
 
 ## Streaming only audio or video
 
-[Features > Audio- / Video-Only](../nanostream_webrtc_audio_video_only/)
+[Features > Audio- / Video-Only](../nanostream_webrtc_audio_video_only)
 
 
 ## nanoStream Cloud End-To-End Workflow
