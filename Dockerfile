@@ -3,7 +3,7 @@ FROM node:14-slim as build
 
 WORKDIR /app
 COPY . /app
-ENV DOCS_ENV gitlab
+ENV DOCS_ENV gitlab-develop
 ENV PATH /app/website/node_modules/.bin:$PATH
 WORKDIR /app/website
 RUN npm i
