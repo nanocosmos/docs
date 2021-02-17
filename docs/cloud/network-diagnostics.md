@@ -7,7 +7,7 @@ sidebar_label: Network Diagnostics
 ## Network Diagnostics
 
 In this section, we'll review some basic commands that will help you assess and diagnose network problems. 
-If you suspect connectivity issues, adding the output from the relevant commands to your [support ticket](../support) can help our staff diagnose your issue. This is particularly helpful in cases where networking issues are intermittent.
+If you suspect connectivity issues, adding the output from the relevant commands to your [support ticket](support) can help our staff diagnose your issue. This is particularly helpful in cases where networking issues are intermittent.
 
 ### TL;DR
 
@@ -30,9 +30,9 @@ and
 
 "ping bintu-play.nanocosmos.de"
 
-You can also directly connect to specific geo locations, see our [support document](../support).
+You can also directly connect to specific geo locations, see our [support document](support).
 
-Adding `ping`, `mtr` or `traceroute` output to [support](/docs/platform/billing-and-support/support/) tickets is sometimes useful when trying to diagnose network issues. You may also want to forward `traceroute` information to your Internet Service Provider (ISP) if you suspect that the connectivity issue is with your ISP's network. Recording `traceroute` information is particularly useful if you are experiencing an intermittent issue.
+Adding `ping`, `mtr` or `traceroute` output to [support](support) tickets is sometimes useful when trying to diagnose network issues. You may also want to forward `traceroute` information to your Internet Service Provider (ISP) if you suspect that the connectivity issue is with your ISP's network. Recording `traceroute` information is particularly useful if you are experiencing an intermittent issue.
 
 ### IP Addresses
 
@@ -114,7 +114,7 @@ Like the `ping` command, `mtr` tracks the speed of the connection in real time u
 
 Be aware that `mtr` will pause for a few moments while generating output. 
 
-For more information regarding `mtr` consider our [diagnosing network issues with mtr](../network-diagnostics-mtr) guide.
+For more information regarding `mtr` consider our [diagnosing network issues with mtr](network-diagnostics-mtr) guide.
 
 ### The dig command
 
