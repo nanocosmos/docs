@@ -191,12 +191,12 @@ Within your HTML:
 
 ## Screen Sharing 
 
-[Features > Screen Sharing](../nanostream_webrtc_screen_sharing/)
+[Features > Screen Sharing](nanostream_webrtc_screen_sharing)
 
 
 ## Streaming only audio or video
 
-[Features > Audio- / Video-Only](../nanostream_webrtc_audio_video_only)
+[Features > Audio- / Video-Only](nanostream_webrtc_audio_video_only)
 
 
 ## nanoStream Cloud End-To-End Workflow
