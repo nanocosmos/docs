@@ -41,8 +41,8 @@ The internal reconnect behaviour can be configured via `config.playback.reconnec
 The reconnect object has multiple parameters to adjust the behaviour. The parameters are:
 
 * `minDelay` (default: 2) - The minimum time between reconnect attempts in seconds. The lowest possible value is 1 sec.
-* `maxDelay` (default: 10)- The maximum time between reconnect attempts in seconds.
-* `delaySteps` (default: 10)- The number of steps till the maximum delay should reached.
+* `maxDelay` (default: 10) - The maximum time between reconnect attempts in seconds.
+* `delaySteps` (default: 10) - The number of steps till the maximum delay should reached.
 * `maxRetries` (default: 10) - The maximum count of reconnect tries. If set to zero no reconnect will be done.
 
 > **Important:** <br>
@@ -75,41 +75,48 @@ var config = {
 > **Important:** <br>
 > Applying custom timeout values should be handled with care.
 
-In case of a timeout, an [`onError`](../nanoplayer_api/#onerror) event is fired with a related [`errorcode`](../nanoplayer_api/#nanoplayererrorcode--codenumbercode), followed by an [`onPause`](../nanoplayer_api/#onpause) event. 
+In case of a timeout, an [`onError`](../nanoplayer_api/#onerror) event is fired with a related [`errorcode`](../nanoplayer_api/#nanoplayererrorcode--codenumbercode), followed by an [`onPause`](../nanoplayer_api/#onpause) event.
 
-A timeout can be terminated either by receiving a playback or when the player is paused manually while loading.
+Timeouts will be terminated by player state changes like playback starting / resuming or a externally triggered pause.
 
 ### Connection timeout
 
-Connection timeout is implemented within the time range of the loading timeout, which means that the `playback.timeouts.connecting` value should not be higher than the value of the loading timeout. 
-Connection timeout is the time between establishing a connection and having it open. After successfully opening it, this timeout will be cleared.
+The connection time is the time between opening the connection and having it established. Is the connection established, the timeout will be cleared. The connection time is part of the `LOADING` phase.
 
 The default value for `playback.timeouts.connecting` is **5 seconds**.
-If necessary, the default value can be changed to a value within a range (in seconds):
-- min: 5
-- max: 30
+It can be changed to a value within a range (in seconds):
 
-**Should not be higher than the loading timeout value**.
+* min: 5
+* max: 30
+
+> **Note:** <br>
+> The **connection timeout** value should **not** be **higher than** the **loading timeout** value.
+
+In case the connection timeout is expired, the player state is changing from `LOADING` to `PAUSED`.
 
 ### Loading timeout
 
-Loading timeout includes the time that it takes to establish the connection (`playback.timeouts.connecting`).
+The loading time starts with a `play` call and includes the time it takes to establish the connection (`playback.timeouts.connecting`) and receiving media data over the connection until the playback has started successfully. Related events are [`onLoading`](../nanoplayer_api/#onloading) and [`onPlay`](../nanoplayer_api/#onplay). The timeout will be cleared if the `PLAYING` state has been entered indecated by the [`onPlay`](../nanoplayer_api/#onplay) event.
 
 The default value for `playback.timeouts.loading` is **20 seconds**.
-If necessary, the default value can be changed to a value within a range (in seconds):
-- min: 10
-- max: 60
+It can be changed to a value within a range (in seconds):
 
-In case of loading timeout, the state is changed from loading to paused. 
+* min: 10
+* max: 60
+
+In case the loading timeout is expired, the player state is changing from `LOADING` to `PAUSED`.
 
 ### Buffering timeout
- 
-Buffering timeout happens when there is not enough received data within the desired time interval. As in previous examples, it is followed by an [`onError`](../nanoplayer_api/#onerror) and [`onPause`](../nanoplayer_api/#onpause) event.
- 
-The default value for `playback.timeouts.buffering` is **20 seconds**. 
-If necessary, it can be changed to a value within a range (in seconds):
-- min: 10
-- max: 60
+
+The buffering time starts if the player state changes from `PLAYING` to `BUFFERING` in case not enough media data for playback is being received. Related events are [`onStartBuffering`](../nanoplayer_api/#onstartbuffering) and [`onStopBuffering`](../nanoplayer_api/#onstopbuffering). The timeout will be cleared if the playback resumes indecated by the [`onStopBuffering`](../nanoplayer_api/#onstopbuffering) event.
+
+The default value for `playback.timeouts.buffering` is **20 seconds**.
+It can be changed to a value within a range (in seconds):
+
+* min: 10
+* max: 60
+
+In case the buffering timeout is expired, the player state is changing from `BUFFERING` to `PAUSED`.
 
 ### Example
 
@@ -122,8 +129,8 @@ var config = {
     "playback" : {
         ...,
         "timeouts" : {
-            "loading"    : 20,
             "connecting" : 5,
+            "loading"    : 20,
             "buffering"  : 20
         }
     },
