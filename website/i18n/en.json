@@ -178,9 +178,9 @@
         "title": "Fullscreen API",
         "sidebar_label": "Fullscreen API"
       },
-      "nanoplayer/nanoplayer_feature_network_reconnect": {
-        "title": "Network Reconnect",
-        "sidebar_label": "Network Reconnect"
+      "nanoplayer/nanoplayer_feature_reconnect_timeouts": {
+        "title": "Reconnect and Timeouts",
+        "sidebar_label": "Reconnect and Timeouts"
       },
       "nanoplayer/nanoplayer_feature_stream_switching": {
         "title": "Stream switching and ABR",
