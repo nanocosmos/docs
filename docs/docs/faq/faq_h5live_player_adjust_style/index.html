@@ -117,14 +117,14 @@ Disabling the view will disable these features as well which is why this is reco
         <span class="hljs-attr">"controls":</span> <span class="hljs-literal">false</span>
     <span class="hljs-string">},</span>
 </code></pre>
-<p>You can find more information regarding config properties in our API docs <a href="../../nanoplayer/nanoplayer_api/#nanoplayerconfig--codeobjectcode">here</a>.</p>
+<p>You can find more information regarding config properties in our API docs <a href="../nanoplayer/nanoplayer_api/#nanoplayerconfig--codeobjectcode">here</a>.</p>
 <blockquote>
 <p><strong>Important:</strong>
 If you create custom controls or other overlay elements make sure to set the <code>z-index</code> value &gt; 1 to ensure they are positioned on top of the video layer.</p>
 </blockquote>
 <p></details></p>
 <p><details><summary><strong>Can I customize the inline controls?</strong></summary></p>
-<p>Yes, of course. To adjust the inline controls please follow our customization guideline <a href="../../nanoplayer/nanoplayer_feature_customization/#built-in-controls-animations-and-styles">here</a></p>
+<p>Yes, of course. To adjust the inline controls please follow our customization guideline <a href="../nanoplayer/nanoplayer_feature_customization/#built-in-controls-animations-and-styles">here</a></p>
 <p>In case you would like to disable them, it is enough to pass false in <code>config.style.controls</code>.</p>
 <pre><code class="hljs"><span class="hljs-attr">config.style.controls</span> = <span class="hljs-literal">false</span><span class="hljs-comment">;</span>
 </code></pre>
@@ -162,14 +162,14 @@ Since introducing player version <strong>4.4</strong> with seamless stream switc
 <li>if 0 Ids are provided 2 video elements will be created internally</li>
 <li>if 1 Id is provided the other video element will be created internally</li>
 </ul>
-<p>You can find more information regarding the <code>playback.videoId</code> and other config properties in our <a href="../../nanoplayer/nanoplayer_api#nanoplayerconfig--codeobjectcode">API docs</a>.</p>
+<p>You can find more information regarding the <code>playback.videoId</code> and other config properties in our <a href="../nanoplayer/nanoplayer_api#nanoplayerconfig--codeobjectcode">API docs</a>.</p>
 </blockquote>
 <p></details></p>
 <p><details><summary><strong>Can I update the source?</strong></summary></p>
 <p>Yes, by executing the player’s function <code>updateSource</code> with an updated <code>config.source</code> object.</p>
 <p></details></p>
 <p><details><summary><strong>Is a fullscreen functionality available?</strong></summary></p>
-<p>Yes. Fullscreen is available over the public <a href="../../nanoplayer/nanoplayer_feature_fullscreen_api">fullscreen API</a> or over the bottom right fullscreen button in the built-in H5live player control bar.</p>
+<p>Yes. Fullscreen is available over the public <a href="../nanoplayer/nanoplayer_feature_fullscreen_api">fullscreen API</a> or over the bottom right fullscreen button in the built-in H5live player control bar.</p>
 <p></details></p>
 <p><details><summary><strong>Can I use a poster as placeholder for the video?</strong></summary></p>
 <p>Since the <strong>nanoStream H5Live Player Version 4.9.1</strong> it is possible.
@@ -179,7 +179,7 @@ Poster images, which are displayed while the video element is loading, are suppo
     <span class="hljs-string">"poster"</span>: <span class="hljs-string">"https://[yourdomain]/assets/niceimage.png"</span>
 }
 </code></pre>
-<p>However, if you prefer to use other version of H5Live Player, you cannot set poster in this way. Alternatively, you can use a workaround by passing the id of an existing video tag with poster through the config (<code>config.playback.videoId</code>). This video element would be used by the player instead of creating a new one. See <a href="../../nanoplayer/nanoplayer_api#nanoplayerconfig--codeobjectcode">here</a>.</p>
+<p>However, if you prefer to use other version of H5Live Player, you cannot set poster in this way. Alternatively, you can use a workaround by passing the id of an existing video tag with poster through the config (<code>config.playback.videoId</code>). This video element would be used by the player instead of creating a new one. See <a href="../nanoplayer/nanoplayer_api#nanoplayerconfig--codeobjectcode">here</a>.</p>
 <p>Another possibility can be that you grab the video element from the DOM after successful setup and then modify the poster attribute.</p>
 <pre><code class="hljs css language-javascript"><span class="hljs-keyword">var</span> video = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">"#playerDiv video"</span>);
 video.poster = ....;
@@ -248,4 +248,4 @@ Android: setMediaPlaybackRequiresUserGesture</p>
 <p><details><summary><strong>Can I have multiple player instances in one page?</strong></summary></p>
 <p>Yes. Please check out the nanoplayer-multi sample in the player package.</p>
 <p></details></p>
-</span></div></article></div><div class="docLastUpdate"><em>Last updated on 2/17/2021</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/faq/faq_h5live_player_bintu"><span class="arrow-prev">← </span><span>bintu</span></a><a class="docs-next button" href="/docs/faq/faq_h5live_player_metrics"><span>Metrics</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><div><h5>Contact</h5><a href="https://www.nanocosmos.de/">Homepage</a><a href="https://www.nanocosmos.de/contact">Contact</a><a href="https://www.nanocosmos.de/support">Support</a><a href="https://www.nanocosmos.de/terms">Legal Terms</a></div><div><h5>Products</h5><a href="https://www.nanocosmos.de/cloud">Nanostream Cloud with Bintu.Live</a><a href="https://www.nanocosmos.de/h5live">H5Live Low Latency HTML5-Player</a><a href="https://www.nanocosmos.de/webrtc">nanoStream Webcaster</a><a href="https://www.nanocosmos.de/#nanostream">Nanostream Apps and SDK</a></div><div><h5>More</h5><a href="https://www.nanocosmos.de/blog/">Blog</a><a href="https://twitter.com/nanovideo">Twitter</a><a href="https://www.facebook.com/nanocosmos.net/">Facebook</a><a href="https://www.linkedin.com/company/nanocosmos-gmbh">LinkedIn</a><a href="https://github.com/nanocosmos/docs">GitHub</a><a class="github-button" href="https://github.com/nanocosmos/docs" data-icon="octicon-star" data-count-href="/nanocosmos/docs/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://nanocosmos.de/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/footer_logo.png" alt="nanocosmos GmbH" width="170" height="45"/></a><section class="copyright">Copyright © 2021 nanocosmos GmbH - doc version Wed Feb 17 2021 12:40:01 GMT+0000 (Coordinated Universal Time)</section></footer></div></body></html>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 2/17/2021</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/faq/faq_h5live_player_bintu"><span class="arrow-prev">← </span><span>bintu</span></a><a class="docs-next button" href="/docs/faq/faq_h5live_player_metrics"><span>Metrics</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><div><h5>Contact</h5><a href="https://www.nanocosmos.de/">Homepage</a><a href="https://www.nanocosmos.de/contact">Contact</a><a href="https://www.nanocosmos.de/support">Support</a><a href="https://www.nanocosmos.de/terms">Legal Terms</a></div><div><h5>Products</h5><a href="https://www.nanocosmos.de/cloud">Nanostream Cloud with Bintu.Live</a><a href="https://www.nanocosmos.de/h5live">H5Live Low Latency HTML5-Player</a><a href="https://www.nanocosmos.de/webrtc">nanoStream Webcaster</a><a href="https://www.nanocosmos.de/#nanostream">Nanostream Apps and SDK</a></div><div><h5>More</h5><a href="https://www.nanocosmos.de/blog/">Blog</a><a href="https://twitter.com/nanovideo">Twitter</a><a href="https://www.facebook.com/nanocosmos.net/">Facebook</a><a href="https://www.linkedin.com/company/nanocosmos-gmbh">LinkedIn</a><a href="https://github.com/nanocosmos/docs">GitHub</a><a class="github-button" href="https://github.com/nanocosmos/docs" data-icon="octicon-star" data-count-href="/nanocosmos/docs/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://nanocosmos.de/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/footer_logo.png" alt="nanocosmos GmbH" width="170" height="45"/></a><section class="copyright">Copyright © 2021 nanocosmos GmbH - doc version Wed Feb 17 2021 13:27:30 GMT+0000 (Coordinated Universal Time)</section></footer></div></body></html>
