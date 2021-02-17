@@ -6,7 +6,7 @@ sidebar_label: NanoPlayer Status & Error Codes
 
 ## General
 
-In case something went wrong at setup, startup or playback an error will be thrown over the [`onError`](../nanoplayer_api/#onerror) event if registered with an error handler function over [`config.events.onError`](../nanoplayer_api/#nanoplayerconfig--codeobjectcode).
+In case something went wrong at setup, startup or playback an error will be thrown over the [`onError`](nanoplayer_api/#onerror) event if registered with an error handler function over [`config.events.onError`](nanoplayer_api/#nanoplayerconfig--codeobjectcode).
 
 There are five error groups:
 
@@ -16,7 +16,7 @@ There are five error groups:
 * [**network connection errors**](#network-errors) `4000-4999`
 * [**setup errors**](#setup-errors) `5000-5999`
 
-Following some of the most frequent errors will be described.<br /> To see all errors please have a look at the possible [`errorcodes`](../nanoplayer_api/#nanoplayererrorcode--codenumbercode).
+Following some of the most frequent errors will be described.<br /> To see all errors please have a look at the possible [`errorcodes`](nanoplayer_api/#nanoplayererrorcode--codenumbercode).
 
 ## Player Errors
 
@@ -102,7 +102,7 @@ The websocket server is not available or not present, a timeout for establishing
 
 ### 4006 The source request was aborted by timeout.
 
-An [`updateSource`](../nanoplayer_api/#nanoplayerupdatesourcesource) or a [`switchStream`](../nanoplayer_api/#nanoplayerswitchstreamindex) request was run into a timeout.
+An [`updateSource`](nanoplayer_api/#nanoplayerupdatesourcesource) or a [`switchStream`](nanoplayer_api/#nanoplayerswitchstreamindex) request was run into a timeout.
 
 ## Setup Errors
 
@@ -113,7 +113,7 @@ In most cases it makes sense to check the configuration that has been used.
 
 ### 5001 "?javascript error?"
 
-A javascript error occured during setup promise execution. Most often the is reason an 'undefined' error within the setup promise resolve or triggered events (e.g. [`onReady`](../nanoplayer_api/#onready), [`onMute`](../nanoplayer_api/#onmute) or [`onVolumeChange`](../nanoplayer_api/#onvolumechange)) during setup.<br />
+A javascript error occured during setup promise execution. Most often the is reason an 'undefined' error within the setup promise resolve or triggered events (e.g. [`onReady`](nanoplayer_api/#onready), [`onMute`](nanoplayer_api/#onmute) or [`onVolumeChange`](nanoplayer_api/#onvolumechange)) during setup.<br />
 
 Example: 
 * "undefined is not an object"

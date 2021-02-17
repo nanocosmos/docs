@@ -15,9 +15,9 @@ It contains
 
 - **nanoStream CDN** - a powerful ULL CDN with a global scalable network for any audiences worldwide
 
-- [nanoStream H5Live player for all HTML5 web browsers](../../nanoplayer/nanoplayer_introduction)
+- [nanoStream H5Live player for all HTML5 web browsers](../nanoplayer/nanoplayer_introduction)
 
-- [nanoStream Webcaster for all HTML5 web browsers](../../webrtc/nanostream_webrtc_introduction)
+- [nanoStream Webcaster for all HTML5 web browsers](../webrtc/nanostream_webrtc_introduction)
 
 - Live Transcoding and Adaptive Bitrate (ABR) 
 
