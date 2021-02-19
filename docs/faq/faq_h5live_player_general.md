@@ -102,7 +102,7 @@ The operating systems need to support both H264 video and AAC audio formats for 
 
 <details><summary><strong>Is there an API documentation available?</strong></summary>
 
-Yes, you can find it [here](../../nanoplayer/nanoplayer_api).
+Yes, you can find it [here](../nanoplayer/nanoplayer_api).
 
 </details>
 

@@ -203,18 +203,18 @@ With the release of the `updateSource` method there are also **4** events you sh
 <br>
 
 ### start event
-- **[onUpdateSourceInit](../nanoplayer_api/#onupdatesourceinit)**: This event signals an initialized update source request. This always **only** a start event! Another completion event will follow.
+- **[onUpdateSourceInit](nanoplayer_api/#onupdatesourceinit)**: This event signals an initialized update source request. This always **only** a start event! Another completion event will follow.
 <br>
 
 ### completion events
-- **[onUpdateSourceSuccess](../nanoplayer_api/#onupdatesourcesuccess)**: This event signals a successful update source request and fires if the source is updated. 
-- **[onUpdateSourceFail](../nanoplayer_api/#onupdatesourcefail)**: This event signals a failed update source request. Fired if an error occurs during the source update.
-- **[onUpdateSourceAbort](../nanoplayer_api/#onupdatesourceabort)**: This event signals an aborted update source request. Possible reasons are an equal source (**'equalsource'**), a superseding (**'superseded'**) or the time difference between two following `updateSource` calls that is too small  (**'frequency'**). 
+- **[onUpdateSourceSuccess](nanoplayer_api/#onupdatesourcesuccess)**: This event signals a successful update source request and fires if the source is updated. 
+- **[onUpdateSourceFail](nanoplayer_api/#onupdatesourcefail)**: This event signals a failed update source request. Fired if an error occurs during the source update.
+- **[onUpdateSourceAbort](nanoplayer_api/#onupdatesourceabort)**: This event signals an aborted update source request. Possible reasons are an equal source (**'equalsource'**), a superseding (**'superseded'**) or the time difference between two following `updateSource` calls that is too small  (**'frequency'**). 
 
 <br>
-**Also, keep in mind...** there will be an [`onStreamInfo`](../nanoplayer_api/#onstreaminfo) event indicating that the first image of the new stream is getting played out.
+**Also, keep in mind...** there will be an [`onStreamInfo`](nanoplayer_api/#onstreaminfo) event indicating that the first image of the new stream is getting played out.
 
 > **Note:** 
-> You can find more specific information on all player events [here](../nanoplayer_api/#nanoplayerupdatesourcesource-options-code-promise-lt-config-error-gt-code).
+> You can find more specific information on all player events [here](nanoplayer_api/#nanoplayerupdatesourcesource-options-code-promise-lt-config-error-gt-code).
 
 

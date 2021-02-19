@@ -7,7 +7,8 @@ ENV DOCS_ENV gitlab-develop
 ENV PATH /app/website/node_modules/.bin:$PATH
 WORKDIR /app/website
 RUN npm i
-RUN npm run build
+#RUN npm run build
+RUN npm run build-quick
 RUN ls -l .
 #CMD [ "npm", "start"]
 
