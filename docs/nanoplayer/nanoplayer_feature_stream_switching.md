@@ -729,7 +729,7 @@ With the release of the `switchStream` API there are also **4** new events you s
 ### Difference switchStream API / updateSource API
 The switchStream API allows to only choose between the pre-configured stream list (`config.source.entries`) by referencing the index of the entry while the updateSource API replaces the entire source (`config.source`) with a new source.
 
-> Click here to get more information on the [updateSource API](../nanoplayer_update_source)
+> Click here to get more information on the [updateSource API](nanoplayer/nanoplayer_update_source.md)
 
 ## setAdaption API
 The `setAdaption` feature enables the application/viewer to change the adaption rule eg. from manually controlled to automatic switching behavior.

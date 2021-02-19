@@ -3290,7 +3290,7 @@ The possible error codes in a onError event.
     <td>1009</td><td></td><td><p>Playback failed because the player was in visibility state &#39;hidden&#39; at load start.</p>
 </td>
     </tr><tr>
-    <td>1010</td><td></td><td><p>The given stream entry index is not valid. (see <a href="NanoPlayer+switchStream">switchStream</a>)</p>
+    <td>1010</td><td></td><td><p>The given stream entry index is not valid. (see <a href="#NanoPlayer+switchStream">switchStream</a>)</p>
 </td>
     </tr><tr>
     <td>2000-2999</td><td><code>StreamError</code></td><td></td>
