@@ -15,9 +15,9 @@ It contains
 
 - **nanoStream CDN** - a powerful ULL CDN with a global scalable network for any audiences worldwide
 
-- [nanoStream H5Live player for all HTML5 web browsers](../nanoplayer/nanoplayer_introduction)
+- [nanoStream H5Live player for all HTML5 web browsers](nanoplayer/nanoplayer_introduction.md)
 
-- [nanoStream Webcaster for all HTML5 web browsers](../webrtc/nanostream_webrtc_introduction)
+- [nanoStream Webcaster for all HTML5 web browsers](webrtc/nanostream_webrtc_introduction.md)
 
 - Live Transcoding and Adaptive Bitrate (ABR) 
 
@@ -25,8 +25,8 @@ It contains
 
 - REST API for easy integration into custom products and web sites
 
-all managed by our [bintu dashboard and API](bintu_api)  
-
+all managed by our [bintu dashboard and API](cloud/bintu_api.md)  
+ 
 nanoStream Cloud is available worldwide with server locations in US East/West, Europe, Asia, Australia, etc. 
 The system is operating 24/7 for instant live streaming. 
 Expected default latency end-to-end (glass-to-glass) is around 1 second. 
