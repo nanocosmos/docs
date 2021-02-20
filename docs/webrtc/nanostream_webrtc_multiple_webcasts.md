@@ -39,7 +39,7 @@ var screenUser = new window.nanowebrtc.user();
 #### 2) Starting the previews
 
 We have to start the previews after the device lists have been emitted.<br>
-Therefore, we start the previews within [ReceivedDeviceList](nanostream_webrtc_api/#RtcUser+event_ReceivedDeviceList) event listeners for both API instances.<br>
+Therefore, we start the previews within [ReceivedDeviceList](nanostream_webrtc_api.md#RtcUser+event_ReceivedDeviceList) event listeners for both API instances.<br>
 Requesting devices will be done in the next step.
 
 ```js
@@ -103,9 +103,9 @@ We will now:
 - request the device lists for both instances
 - start the webcasts once we have a preview (prepared in last step)
 
-After we signed in successfully, we can call [getDevices()](nanostream_webrtc_api/#rtcusergetdevices),<br>
-this will emit the [ReceivedDeviceList](nanostream_webrtc_api/#RtcUser+event_ReceivedDeviceList) event when succeeding.<br>
-In this example we simply start the broadcasts immediately once the [StartPreviewSuccess()](nanostream_webrtc_api/#RtcUser+event_StartPreviewSuccess) events have been fired.
+After we signed in successfully, we can call [getDevices()](nanostream_webrtc_api.md#rtcusergetdevices),<br>
+this will emit the [ReceivedDeviceList](nanostream_webrtc_api.md#RtcUser+event_ReceivedDeviceList) event when succeeding.<br>
+In this example we simply start the broadcasts immediately once the [StartPreviewSuccess()](nanostream_webrtc_api.md#RtcUser+event_StartPreviewSuccess) events have been fired.
 
 ```js
 camUser.on('SignInSuccess', function(event) {
