@@ -6,13 +6,13 @@ sidebar_label: External Streams / Mixing
 
 Since Webcaster version 5.11.0 you can use sources based on HTML5 canvas or other stream sources to enable user-generated live sources, separate to live camera or device screens.
 
-To use this feature, a new API call was added, [setMediaStream()](webrtc/nanostream_webrtc_api.md#rtcusersetmediastreamconfig).
-It works without using video and audio sources from [startPreview()](webrtc/nanostream_webrtc_api.md#rtcuserstartpreviewconfig).
+To use this feature, a new API call was added, [setMediaStream()](nanostream_webrtc_api.md#rtcusersetmediastreamconfig).
+It works without using video and audio sources from [startPreview()](nanostream_webrtc_api.md#rtcuserstartpreviewconfig).
 
 #### notes:
 
 If you simply intent to utilize a combination of camera, microphone or screen share sources:
-   - please use the [startPreview()](webrtc/nanostream_webrtc_api.md#rtcuserstartpreviewconfig) call.
+   - please use the [startPreview()](nanostream_webrtc_api.md#rtcuserstartpreviewconfig) call.
 
 ## use cases
 

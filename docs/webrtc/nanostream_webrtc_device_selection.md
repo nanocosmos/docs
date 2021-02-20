@@ -10,7 +10,7 @@ You will receive the list of devices in the [ReceivedDeviceList](nanostream_webr
 
 ## Preparation
 
-We will need two `<select>` tags in our HTML document, in order to display the attached audio & video devices in your HTML document. Also we will add a button to trigger the [startPreview(previewConfig)](webrtc/nanostream_webrtc_api.md#rtcuserstartpreviewconfig) call after we made our device selection in the UI and a video element to show the preview in.
+We will need two `<select>` tags in our HTML document, in order to display the attached audio & video devices in your HTML document. Also we will add a button to trigger the [startPreview(previewConfig)](nanostream_webrtc_api.md#rtcuserstartpreviewconfig) call after we made our device selection in the UI and a video element to show the preview in.
 
 ```js
 // in your html body
@@ -40,7 +40,7 @@ var createSelectOptions = function (elementId, devices) {
 
 ## Request and render devices
 
-Next we will create an instance of the Webcaster API and request attached devices with the [getDevices()](webrtc/nanostream_webrtc_api.md#rtcusergetdevices) call.
+Next we will create an instance of the Webcaster API and request attached devices with the [getDevices()](nanostream_webrtc_api.md#rtcusergetdevices) call.
 
 ```js
 // create an instance of the API
