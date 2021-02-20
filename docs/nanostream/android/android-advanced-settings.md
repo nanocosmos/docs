@@ -184,7 +184,7 @@ public class MainActivity extends Activity {
   }
 }
 ```
-{!doc/nanostream/android/android_stream_type.md!}
+{!docs/nanostream/android/android_stream_type.md!}
 
 Local Recording
 ---------------
