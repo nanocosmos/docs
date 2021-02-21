@@ -5,6 +5,51 @@
     "previous": "Previous",
     "tagline": "nanoStream Cloud & H5Live Player - Around The World in 1 Second",
     "docs": {
+      "cloud-frontend/getting_started": {
+        "title": "Getting started",
+        "sidebar_label": "Getting started"
+      },
+      "cloud-frontend/How_to_Delete_a_Stream": {
+        "title": "cloud-frontend/How_to_Delete_a_Stream"
+      },
+      "cloud-frontend/How_to_Find_Metrics": {
+        "title": "cloud-frontend/How_to_Find_Metrics"
+      },
+      "cloud-frontend/How_to_Log_in_to_the_nanoStream_Cloud": {
+        "title": "cloud-frontend/How_to_Log_in_to_the_nanoStream_Cloud"
+      },
+      "cloud-frontend/How_to_Start_a_Stream": {
+        "title": "How to start a stream",
+        "sidebar_label": "Start streaming"
+      },
+      "cloud-frontend/cloud-playback-tokens": {
+        "title": "Secure Playback Tokens",
+        "sidebar_label": "Secure Playback Tokens"
+      },
+      "cloud-frontend/cloud-tags": {
+        "title": "nanoStream Cloud Tags",
+        "sidebar_label": "nanoStream Cloud Tags"
+      },
+      "cloud-frontend/nanoplayer-snippet": {
+        "title": "How to Embed nanoPlayer on your own web page",
+        "sidebar_label": "Embed Player Code"
+      },
+      "cloud-frontend/How_to_Use_the_nanoStream_Webcaster": {
+        "title": "nanoStream Webcaster",
+        "sidebar_label": "nanoStream Webcaster"
+      },
+      "cloud-frontend/stream-list": {
+        "title": "bintu stream live",
+        "sidebar_label": "Stream List"
+      },
+      "cloud-frontend/transcoding-abr": {
+        "title": "Adaptive Bitrate",
+        "sidebar_label": "Adaptive Bitrate"
+      },
+      "cloud-frontend/cloud-readme": {
+        "title": "Cloud Dashboard Overview (Readme)",
+        "sidebar_label": "Cloud Dashboard Overview"
+      },
       "cloud/analytics": {
         "title": "nanoStream Cloud Analytics",
         "sidebar_label": "Analytics"
@@ -645,6 +690,7 @@
       "Other": "Other",
       "nanoStream Webcaster": "nanoStream Webcaster",
       "nanoStream Cloud": "nanoStream Cloud",
+      "cloud frontend": "cloud frontend",
       "bintu api": "bintu api",
       "Support": "Support",
       "nanoStream SDKs/Apps": "nanoStream SDKs/Apps",
