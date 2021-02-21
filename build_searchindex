@@ -1,0 +1,61 @@
+#!/bin/bash 
+
+build_searchindex()
+{
+    baseURL="https://docs.nanocosmos.de/docs"
+    #baseURL=$1
+    DEST=../website/build/docs/
+    cd ./docs
+
+    echo "creating searchindex"
+
+    # Find Headings
+    egrep "^#{1,2} .*$" -R | cat >> tmp_headings
+ 
+    echo -n "[" >> tmp_idx
+
+    cat tmp_headings | \
+    while read line
+    do
+        url=$(echo $line | cut -d ":" -f 1 | cut -d "." -f 1)
+        text=$(echo $line | cut -d ":" -f 2 | sed 's/^#* //g' | tr -d "\n\r")
+
+        if [ "$text" ]
+        then
+            if [[ $text == *"\""* ]]
+            then :
+            elif [[ $text == *"<"* ]]
+            then :
+            elif [[ $text == *"define"* ]]
+            then :
+            elif [[ $text == *".png"* ]]
+            then :
+            elif [[ $text == *".jpg"* ]]
+            then :
+            elif [[ $text == *".jpeg"* ]]
+            then :
+            elif [[ $text == *"mkdocs"* ]]
+            then :
+            elif [[ $url == *"mkdocs"* ]]
+            then :
+            elif [[ $url == *"sidebar"* ]]
+            then :
+
+            else
+                echo -n "{\"url\":\"$baseURL/$url\",\"title\": \"$text\"}," >> tmp_idx
+            fi
+        fi
+    done
+    echo -n "]" >> tmp_idx
+
+    sed 's/,]/]/g' tmp_idx > searchindex.json
+    mkdir -p $DEST
+    cp searchindex.json $DEST
+    echo "created searchindex.json: $DEST"
+
+    rm tmp_idx 
+    rm tmp_headings
+    rm searchindex.json
+}
+
+build_searchindex $1 $2 $3 $4
