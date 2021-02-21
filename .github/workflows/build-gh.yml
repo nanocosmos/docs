@@ -29,7 +29,9 @@ jobs:
         run: |
           cd website
           npm install
-          npm run build
+          npm run build-quick
+          cd ..
+          bash build_searchindex
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@3.7.1
