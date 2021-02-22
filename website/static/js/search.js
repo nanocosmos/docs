@@ -32,6 +32,10 @@ document.addEventListener('DOMContentLoaded', function () {
 		 * @param {String} query search query
 		 */
         var filterDocsLinksForSearchQuery = function (query) {
+            if(!docsLinks) {
+              addLinkToDropdownList("search not available");
+              return -1;
+            }
             for (i = 0; i < docsLinks.length; i++) {
                 const title = docsLinks[i].title.toLowerCase()
                 if (title.includes(query.toLowerCase())) {
@@ -59,7 +63,7 @@ document.addEventListener('DOMContentLoaded', function () {
             // builds path 
             var locationHref = link.url;
             a.setAttribute('href', locationHref);
-
+            if(!query) return;
             // highlights matched query
 	    var index = link.title.toLowerCase().indexOf(query.toLowerCase());
 	    var offset = (index + query.length)
