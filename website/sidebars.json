@@ -45,7 +45,7 @@
     ],
     "Other": [ 
       "webrtc/nanostream_webrtc_faq"
-]
+    ]
   },
   "cloud": {
     "nanoStream Cloud": [
@@ -56,6 +56,24 @@
       "cloud/live-recording-vod",
       "cloud/security",
       "cloud/analytics"
+    ],
+    "cloud frontend": [
+      "cloud-frontend/getting_started",
+      "cloud-frontend/cloud-readme",
+      {
+        "type": "subcategory",
+        "label": "How-to",
+        "ids": [
+          "cloud-frontend/How_to_Start_a_Stream",
+          "cloud-frontend/stream-list",
+          "cloud-frontend/How_to_Use_the_Stream_List",
+          "cloud-frontend/transcoding-abr",
+          "cloud-frontend/cloud-playback-tokens",
+          "cloud-frontend/cloud-tags",
+          "cloud-frontend/nanoplayer-snippet",
+          "cloud-frontend/How_to_Use_the_nanoStream_Webcaster"
+        ]
+      }
     ],
     "bintu api": [
       "cloud/bintu_api",

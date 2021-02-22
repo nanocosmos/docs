@@ -4,6 +4,7 @@
     "start": "docusaurus-start",
     "build": "docusaurus-build",
     "build-quick": "docusaurus-build --skip-image-compression --skip-next-release",
+    "prepare-assets": "bash prepare-assets.sh",
     "local": "docusaurus-build & docusaurus-start",
     "publish-gh-pages": "docusaurus-publish",
     "write-translations": "docusaurus-write-translations",

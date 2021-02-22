@@ -9,6 +9,8 @@ WORKDIR /app/website
 RUN npm i
 #RUN npm run build
 RUN npm run build-quick
+WORKDIR /app
+RUN bash build_searchindex
 RUN ls -l .
 #CMD [ "npm", "start"]
 

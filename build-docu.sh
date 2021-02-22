@@ -1,5 +1,6 @@
 #!/bin/bash
+./prepare-assets.sh
 cd website
-npm install
-npm run build
+[ ! -d "node_modules/docusaurus" ] && npm install
+npm run build-quick
 
