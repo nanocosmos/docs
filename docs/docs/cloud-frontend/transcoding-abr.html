@@ -1,0 +1,127 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Adaptive Bitrate · nanocosmos Documentation</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="# How to Use Live Transcoding and Adaptive Bitrate Playback"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Adaptive Bitrate · nanocosmos Documentation"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.nanocosmos.de/"/><meta property="og:description" content="# How to Use Live Transcoding and Adaptive Bitrate Playback"/><meta property="og:image" content="https://docs.nanocosmos.de/img/docusaurus.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://docs.nanocosmos.de/img/docusaurus.png"/><link rel="shortcut icon" href="/img/favicon_nano.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script>
+              (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+              (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+              m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+              })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+              ga('create', 'UA-552140-1', 'auto');
+              ga('send', 'pageview');
+            </script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="/js/search.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/nanocosmos_header_logo.png" alt="nanocosmos Documentation"/><h2 class="headerTitleWithLogo">nanocosmos Documentation</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/docs/cloud/cloud_overview" target="_self">nanoStream Cloud</a></li><li class=""><a href="/docs/nanoplayer/nanoplayer_introduction" target="_self">H5Live Player</a></li><li class=""><a href="/docs/webrtc/nanostream_webrtc_introduction" target="_self">nanoStream Webcaster</a></li><li class=""><a href="/docs/nanostream/nanostream" target="_self">nanoStream Apps and SDKs</a></li><li class=""><a href="/docs/samples/samples" target="_self">Samples</a></li><li class=""><a href="/docs/faq/faq_streaming" target="_self">FAQ</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>How-to</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">nanoStream Cloud</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/cloud/cloud_overview">Overview</a></li><li class="navListItem"><a class="navItem" href="/docs/cloud/cloud_introduction">Introduction</a></li><li class="navListItem"><a class="navItem" href="/docs/cloud/cloud_getting_started">Getting started</a></li><li class="navListItem"><a class="navItem" href="/docs/cloud/live_encoding">Live Encoding</a></li><li class="navListItem"><a class="navItem" href="/docs/cloud/live-recording-vod">Live Recording and VOD</a></li><li class="navListItem"><a class="navItem" href="/docs/cloud/security">nanoStream Cloud Security</a></li><li class="navListItem"><a class="navItem" href="/docs/cloud/analytics">Analytics</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">cloud frontend</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/cloud-frontend/getting_started">Getting started</a></li><li class="navListItem"><a class="navItem" href="/docs/cloud-frontend/cloud-readme">Cloud Dashboard Overview</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">How-to</h4><ul><li class="navListItem"><a class="navItem" href="/docs/cloud-frontend/How_to_Start_a_Stream">Start streaming</a></li><li class="navListItem"><a class="navItem" href="/docs/cloud-frontend/stream-list">Stream List</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/cloud-frontend/transcoding-abr">Adaptive Bitrate</a></li><li class="navListItem"><a class="navItem" href="/docs/cloud-frontend/cloud-playback-tokens">Secure Playback Tokens</a></li><li class="navListItem"><a class="navItem" href="/docs/cloud-frontend/cloud-tags">nanoStream Cloud Tags</a></li><li class="navListItem"><a class="navItem" href="/docs/cloud-frontend/nanoplayer-snippet">Embed Player Code</a></li><li class="navListItem"><a class="navItem" href="/docs/cloud-frontend/How_to_Use_the_nanoStream_Webcaster">nanoStream Webcaster</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">bintu api</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/cloud/bintu_api">bintu api</a></li><li class="navListItem"><a class="navItem" href="/docs/cloud/bintu_custom_webhooks">bintu custom web hooks</a></li><li class="navListItem"><a class="navItem" href="/docs/cloud/bintu_stream_tags">bintu.live Stream Tags</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Support</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/cloud/network-diagnostics">Network Diagnostics</a></li><li class="navListItem"><a class="navItem" href="/docs/cloud/support">Support</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/nanocosmos/docs/tree/master/docs/cloud-frontend/How_to_Use_Transcoding.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 id="__docusaurus" class="postHeaderTitle">Adaptive Bitrate</h1></header><article><div><span><h1><a class="anchor" aria-hidden="true" id="how-to-use-live-transcoding-and-adaptive-bitrate-playback"></a><a href="#how-to-use-live-transcoding-and-adaptive-bitrate-playback" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>How to Use Live Transcoding and Adaptive Bitrate Playback</h1>
+<h3><a class="anchor" aria-hidden="true" id="what-is-adaptive-bitrate-playback"></a><a href="#what-is-adaptive-bitrate-playback" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>What is Adaptive Bitrate Playback?</h3>
+<p>Live Playback of a live stream requires a certain network bandwidth.
+If the bandwidth is not available at the viewer, the stream may start buffering at the viewer device.
+To avoid buffering, the stream quality can be reduced by switching to a lower quality stream encoded with a lower bitrate.
+With Adaptive Bitrate Playback (ABR), the live player automatically adjusts to the live stream with the best quality for the available network.</p>
+<p>A live stream for ABR needs to be available with several quality levels, to adjust to viewer's network bandwidth.</p>
+<p>Example: a live stream is available with high quality Full HD 1920x1080 with 3 Mbits/s,
+and a Lower resolution stream with 640x360 with 500 kBits/s.</p>
+<h3><a class="anchor" aria-hidden="true" id="what-is-live-transcoding"></a><a href="#what-is-live-transcoding" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>What is Live Transcoding?</h3>
+<p>Live Transcoding converts a live stream from a high quality input stream into different lower quality output streams.
+You only need to send a single stream from your live encoder / broadcaster, and the live transcoder creates the additional formats, for distribution and playback at the player.</p>
+<h3><a class="anchor" aria-hidden="true" id="functionality"></a><a href="#functionality" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Functionality</h3>
+<p>Transcoding and ABR is based on a group of streams. On the customer/viewer side, the stream switch is happening seemlessly in the background, dependent on the internet connection. A typical setup is a single ingest (input) and 3 outputs, with 1 &quot;passthrough&quot; (same input quality) and 2 lower resolution streams.</p>
+<p>Example:</p>
+<ul>
+<li>Ingest/Input and highest quality: 1920x1080 3 Mbit/s</li>
+<li>Output 1 (High/Passthrough): 1920x1080 3000 Kbit/s (= 3 Mbit/s)</li>
+<li>Transcode 1 (Medium): 852x480 800 Kbit/s</li>
+<li>Transcode 2 (Low): 640x360 400 Kbit/s</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="how-to-enable-adaptive-bitrate"></a><a href="#how-to-enable-adaptive-bitrate" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>How to Enable Adaptive Bitrate</h3>
+<p>Adaptive Bitrate Playback with nanoPlayer does not require server-generated live transcoding. You can also create 3 live streams with the same content but different bitrates from your live encoder.
+Typically, live transcoding is done on the server to avoid sending 3 separate streams.</p>
+<h3><a class="anchor" aria-hidden="true" id="how-to-enable-live-transcoding"></a><a href="#how-to-enable-live-transcoding" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>How to Enable Live Transcoding</h3>
+<p>Live Transcoding with nanoStream Cloud can be enabled when creating a new stream. In the <em>Create new Stream</em> preferences, click <em>Add Transcoding</em> to adjust your transcoding profiles.</p>
+<p>NOTE: Your account needs to be enabled for live transcoding to use this feature.</p>
+<p><img src="/docs/assets/transcoding.png" alt="transcoding"></p>
+<h4><a class="anchor" aria-hidden="true" id="setting-up-live-transcoding"></a><a href="#setting-up-live-transcoding" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Setting up live transcoding</h4>
+<ul>
+<li>Click on <code>ADD TRANSCODING</code> to add transcoding functionality to your ingest setup.</li>
+<li>You should now be able <code>choose your transcoding profiles</code>.</li>
+<li>To add the first transcoded stream, select <code>Add 1. Transcoding Profile</code>. It is prefilled with our recommended default selection. You can select another setting, but the bitrate needs to be lower than the ingest/passthrough bitrate.</li>
+<li>To add a second transcoded stream, select <code>Add 2. Transcoding Profile</code>. You can choose another selection, but the bitrate needs to be lower than the 1st transcoded stream bitrate.</li>
+<li>To add a third transcoded stream, select <code>Add 3. Transcoding Profile</code>. You can choose another selection, but the bitrate needs to be lower than the 2nd transcoded stream bitrate.</li>
+</ul>
+<p>Add or remove profiles depending on your needs. Select the first version that should be loaded to the playout.</p>
+<p>Copy the ingest URL and stream name to your live encoder.</p>
+<p>Press <em>Create New Stream</em> to create the stream with your chosen transcoding profiles.</p>
+<p>Click <em>Start Broadcast</em> on your live encoder or webcaster.</p>
+<p><img src="/docs/assets/created-abr-stream.png" alt="created abr stream"></p>
+<h3><a class="anchor" aria-hidden="true" id="create-abr-streams"></a><a href="#create-abr-streams" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><strong>Create ABR-Streams</strong></h3>
+<p>Once all settings have been done, press the <code>CREATE NEW STREAM</code> button.<br>
+After the custom stream configuration has been created, a new webpage will be displayed that shows all the important information regarding the new stream/streams created.</p>
+<h3><a class="anchor" aria-hidden="true" id="live-player"></a><a href="#live-player" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Live Player</h3>
+<p>Scroll down and click the link under <em>Access ABR playout</em> to access the playout of your transcoded stream.</p>
+<p><img src="/docs/assets/access-abr-playout.png" alt="access-abr-playout"></p>
+<h4><a class="anchor" aria-hidden="true" id="choosing-a-playback-stream-to-start"></a><a href="#choosing-a-playback-stream-to-start" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><strong>Choosing a playback stream to start</strong></h4>
+<p>This enables the selection of which stream quality the playback starts with.</p>
+<ul>
+<li><p>Starting with the <code>Highest quality</code> will start with the <code>Passthrough Stream</code> = quality from your live encoder ingest. This will always work for the viewers but on bad network conditions, the ABR player will auto-switch to a lower quality and enable a seamless live playback without bufferings.</p></li>
+<li><p>When starting with lower stream quality (<code>1st or 2nd or 3rd transcode</code>, depends on choosen transcoding streams), the viewer starts with lower quality, and switches to higher quality levels after some seconds.</p></li>
+</ul>
+<blockquote>
+<p><strong>Attention!</strong> Please save your <em>Web Playout URL</em> at this point. It's not accessible from the <em>Stream Overviews</em> of the single transcoded streams and can't be restored later.</p>
+</blockquote>
+<p>On the playback side, <em>Adaptive Bitrate Controls</em> allows you to choose whether the stream version should be switched automatically or manually. If <em>Manual</em> is ticked, you can choose one of the quality versions yourself.</p>
+<p><img src="/docs/assets/abr-controls.png" alt="abr-controls"></p>
+<p>The <em>Full Stream Info</em> displays all information on your different transcoded stream versions.</p>
+<p><img src="/docs/assets/full-stream-info.png" alt="abr-stream-info"></p>
+<p>[To learn more about creating streams with the nanoStream Cloud, click here.]</p>
+<p>I hope that this tutorial was helpful for you. For further assistance, check our <a href="https://docs.nanocosmos.de/">support page</a>, browse the <a href="https://docs.nanocosmos.de/docs/faq/faq_streaming/">FAQs</a> or contact us.</p>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 2/22/2021</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/cloud-frontend/How_to_Use_the_Stream_List"><span class="arrow-prev">← </span><span>Previous</span></a><a class="docs-next button" href="/docs/cloud-frontend/cloud-playback-tokens"><span>Secure Playback Tokens</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><div><h5>Contact</h5><a href="https://www.nanocosmos.de/">Homepage</a><a href="https://www.nanocosmos.de/contact">Contact</a><a href="https://www.nanocosmos.de/support">Support</a><a href="https://www.nanocosmos.de/terms">Legal Terms</a></div><div><h5>Products</h5><a href="https://www.nanocosmos.de/cloud">Nanostream Cloud with Bintu.Live</a><a href="https://www.nanocosmos.de/h5live">H5Live Low Latency HTML5-Player</a><a href="https://www.nanocosmos.de/webrtc">nanoStream Webcaster</a><a href="https://www.nanocosmos.de/#nanostream">Nanostream Apps and SDK</a></div><div><h5>More</h5><a href="https://www.nanocosmos.de/blog/">Blog</a><a href="https://twitter.com/nanovideo">Twitter</a><a href="https://www.facebook.com/nanocosmos.net/">Facebook</a><a href="https://www.linkedin.com/company/nanocosmos-gmbh">LinkedIn</a><a href="https://github.com/nanocosmos/docs">GitHub</a><a class="github-button" href="https://github.com/nanocosmos/docs" data-icon="octicon-star" data-count-href="/nanocosmos/docs/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://nanocosmos.de/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/footer_logo.png" alt="nanocosmos GmbH" width="170" height="45"/></a><section class="copyright">Copyright © 2021 nanocosmos GmbH - doc version Mon Feb 22 2021 19:03:29 GMT+0000 (Coordinated Universal Time)</section></footer></div></body></html>

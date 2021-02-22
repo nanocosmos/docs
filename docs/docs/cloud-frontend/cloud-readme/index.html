@@ -1,0 +1,260 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Cloud Dashboard Overview (Readme) · nanocosmos Documentation</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="# nanoStream Cloud Dashboard v2"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Cloud Dashboard Overview (Readme) · nanocosmos Documentation"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.nanocosmos.de/"/><meta property="og:description" content="# nanoStream Cloud Dashboard v2"/><meta property="og:image" content="https://docs.nanocosmos.de/img/docusaurus.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://docs.nanocosmos.de/img/docusaurus.png"/><link rel="shortcut icon" href="/img/favicon_nano.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script>
+              (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+              (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+              m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+              })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+              ga('create', 'UA-552140-1', 'auto');
+              ga('send', 'pageview');
+            </script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="/js/search.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/nanocosmos_header_logo.png" alt="nanocosmos Documentation"/><h2 class="headerTitleWithLogo">nanocosmos Documentation</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/docs/cloud/cloud_overview" target="_self">nanoStream Cloud</a></li><li class=""><a href="/docs/nanoplayer/nanoplayer_introduction" target="_self">H5Live Player</a></li><li class=""><a href="/docs/webrtc/nanostream_webrtc_introduction" target="_self">nanoStream Webcaster</a></li><li class=""><a href="/docs/nanostream/nanostream" target="_self">nanoStream Apps and SDKs</a></li><li class=""><a href="/docs/samples/samples" target="_self">Samples</a></li><li class=""><a href="/docs/faq/faq_streaming" target="_self">FAQ</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>cloud frontend</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">nanoStream Cloud</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/cloud/cloud_overview">Overview</a></li><li class="navListItem"><a class="navItem" href="/docs/cloud/cloud_introduction">Introduction</a></li><li class="navListItem"><a class="navItem" href="/docs/cloud/cloud_getting_started">Getting started</a></li><li class="navListItem"><a class="navItem" href="/docs/cloud/live_encoding">Live Encoding</a></li><li class="navListItem"><a class="navItem" href="/docs/cloud/live-recording-vod">Live Recording and VOD</a></li><li class="navListItem"><a class="navItem" href="/docs/cloud/security">nanoStream Cloud Security</a></li><li class="navListItem"><a class="navItem" href="/docs/cloud/analytics">Analytics</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">cloud frontend</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/cloud-frontend/getting_started">Getting started</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/cloud-frontend/cloud-readme">Cloud Dashboard Overview</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">How-to</h4><ul><li class="navListItem"><a class="navItem" href="/docs/cloud-frontend/How_to_Start_a_Stream">Start streaming</a></li><li class="navListItem"><a class="navItem" href="/docs/cloud-frontend/stream-list">Stream List</a></li><li class="navListItem"><a class="navItem" href="/docs/cloud-frontend/transcoding-abr">Adaptive Bitrate</a></li><li class="navListItem"><a class="navItem" href="/docs/cloud-frontend/cloud-playback-tokens">Secure Playback Tokens</a></li><li class="navListItem"><a class="navItem" href="/docs/cloud-frontend/cloud-tags">nanoStream Cloud Tags</a></li><li class="navListItem"><a class="navItem" href="/docs/cloud-frontend/nanoplayer-snippet">Embed Player Code</a></li><li class="navListItem"><a class="navItem" href="/docs/cloud-frontend/How_to_Use_the_nanoStream_Webcaster">nanoStream Webcaster</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">bintu api</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/cloud/bintu_api">bintu api</a></li><li class="navListItem"><a class="navItem" href="/docs/cloud/bintu_custom_webhooks">bintu custom web hooks</a></li><li class="navListItem"><a class="navItem" href="/docs/cloud/bintu_stream_tags">bintu.live Stream Tags</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Support</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/cloud/network-diagnostics">Network Diagnostics</a></li><li class="navListItem"><a class="navItem" href="/docs/cloud/support">Support</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/nanocosmos/docs/tree/master/docs/cloud-frontend/README.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 id="__docusaurus" class="postHeaderTitle">Cloud Dashboard Overview (Readme)</h1></header><article><div><span><h1><a class="anchor" aria-hidden="true" id="nanostream-cloud-dashboard-v2"></a><a href="#nanostream-cloud-dashboard-v2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>nanoStream Cloud Dashboard v2</h1>
+<h3><a class="anchor" aria-hidden="true" id="what-is-this"></a><a href="#what-is-this" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>What is this?</h3>
+<p>nanoStream Cloud is releasing a new Stream Management Dashboard to help you improve your streaming workflow. It will help you to create, customize and manage streams in a new intuitive way.</p>
+<p>The cloud dashboard is the frontend for the bintu API for stream management.
+Every stream has at least:</p>
+<ul>
+<li><p>one ingest stream which is used by your live encoder connected to a live source (camera)</p></li>
+<li><p>one playout stream which can be played with nanoPlayer on all browsers</p></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="whats-new"></a><a href="#whats-new" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>What's new</h3>
+<ul>
+<li>Create transcoded streams (depending on business agreement)</li>
+<li>Create secured streams</li>
+<li>See playback immediately</li>
+<li>Intuitive way of creating and customizing a new stream</li>
+<li>New Stream Overview</li>
+<li>Steps to playout (from Ingest to Playout)</li>
+<li>Dashboard with compact overview</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="getting-started"></a><a href="#getting-started" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Getting started</h2>
+<h3><a class="anchor" aria-hidden="true" id="sign-up-sign-inhttpsbintu-cloud-frontendnanocosmosdeauth"></a><a href="#sign-up-sign-inhttpsbintu-cloud-frontendnanocosmosdeauth" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><a href="https://bintu-cloud-frontend.nanocosmos.de/auth">Sign Up/ Sign In</a></h3>
+<p>If you do not have a bintu account yet please click <a href="https://bintu-cloud-frontend.nanocosmos.de/auth?signup">here</a> to create a new account.</p>
+<p><img src="/docs/assets/sign-up.png" alt="Sign Up"></p>
+<p>To <a href="https://bintu-cloud-frontend.nanocosmos.de/auth?login">sign in</a> use the credentials you usually use to sign in to bintu.</p>
+<p><img src="/docs/assets/sign-in.png" alt="Sign In"></p>
+<h3><a class="anchor" aria-hidden="true" id="dashboardhttpsbintu-cloud-frontendnanocosmosde"></a><a href="#dashboardhttpsbintu-cloud-frontendnanocosmosde" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><a href="https://bintu-cloud-frontend.nanocosmos.de/">Dashboard</a></h3>
+<p>After logging in successfully you will be redirected to the <a href="https://bintu-cloud-frontend.nanocosmos.de/">dashboard</a>.</p>
+<p><img src="/docs/assets/dashboard.png" alt="Dashboard"></p>
+<p>The overview shows your total streams, your total live streams, all users and tags of your organisation. By clicking on the boxes you will be redirected to the page that includes the full overview.
+Below your 5 latest live streams are shown. To see all, click on the &quot;<a href="https://bintu-cloud-frontend.nanocosmos.de/stream">See all streams</a>&quot; button.</p>
+<h3><a class="anchor" aria-hidden="true" id="create-streamhttpsbintu-cloud-frontendnanocosmosdestreamcreate"></a><a href="#create-streamhttpsbintu-cloud-frontendnanocosmosdestreamcreate" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><a href="https://bintu-cloud-frontend.nanocosmos.de/stream/create">Create Stream</a></h3>
+<p>Only one click (&quot;<a href="https://bintu-cloud-frontend.nanocosmos.de/stream/create">Create new stream</a>&quot;) is required to create a new stream. If you want to customize the stream, there are two possibilities to do that (Add tags, Add Transcoding). They are all optional.</p>
+<p><img src="/docs/assets/create-stream-2.png" alt="Create Stream"></p>
+<ol>
+<li><strong>Add Stream Tags</strong></li>
+</ol>
+<p>To add <code>stream tags</code> you can either type them manually in or choose from your existing ones.</p>
+<p><img src="/docs/assets/create-stream-add-tags-2.png" alt="Create Stream: Add Tags"></p>
+<ol start="2">
+<li><strong>Add Transcoding Profiles</strong>
+If your organisation has been enabled our &quot;transcoding&quot; feature, your are able to set <code>transcoding profiles</code> to create a transcoded stream. You can choose from several profiles and add tags to the profile.</li>
+</ol>
+<p><img src="/docs/assets/create-stream-add-transcoding-2.png" alt="Create Stream: Add Transcoding"></p>
+<h3><a class="anchor" aria-hidden="true" id="new-stream"></a><a href="#new-stream" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>New stream</h3>
+<p>After creating a new stream, you see an overview with all information you need to start a stream.</p>
+<p><img src="/docs/assets/new-stream.png" alt="New Stream"></p>
+<ol>
+<li><strong>Start the Ingest</strong>
+In this section the ingest informations are placed including <code>RTMP streamname</code> and <code>RTMP URL</code>. You can copy them by clicking on the copy icon on the right end of the row.</li>
+</ol>
+<p><img src="/docs/assets/start-ingest.png" alt="New Stream: Start the Ingest"></p>
+<ol start="2">
+<li><strong>Access the Playout</strong>
+In this section you can see the <code>live playout URL</code>. <strong>By clicking on it, you can also see a code snippet which is all you need to embed the H5Live Player with your stream into your web page</strong>. To get more informations see our <a href="https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_getting_started/">documentation</a>.</li>
+</ol>
+<p><img src="/docs/assets/access-playout.png" alt="New Stream: Access Playout"></p>
+<p>If your organisation has enabled our &quot;secure&quot; feature you will be able to click on the <code>live playout URL</code> without having to create a new token. This is going to happen in the background. The token will be valid for an hour.
+If you want to create a customized token, you can do that by clicking on the &quot;Create Secure Token&quot; Button next to the Header. There you can set up an <code>expiration date</code> and specific options like the <code>IP</code> or <code>referer</code> and a <code>single tag</code>.</p>
+<p><img src="/docs/assets/new-stream-secure-token.png" alt="New Stream: Create Secure Token"></p>
+<p>After creating it, you will see a new <code>playout URL</code> you can share. <strong>Please copy the URL before refreshing or closing the window</strong>. After doing that you can not access to this specific token again and will have to create a new one.</p>
+<p><img src="/docs/assets/new-stream-playout-url.png" alt="New Stream: Secure Playout URL"></p>
+<ol start="3">
+<li><strong>Stream Overview</strong>
+This section lists all created stream. If you created a stream without transcoding, there will be only one. If not, there will be up to three. By clicking on the URL you can see the whole stream overview including several other informations.</li>
+</ol>
+<p><img src="/docs/assets/new-stream-stream-overview.png" alt="New Stream: Overview"></p>
+<h3><a class="anchor" aria-hidden="true" id="stream-overview"></a><a href="#stream-overview" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Stream Overview</h3>
+<p>The stream overview shows all informations the stream is providing, including the stream info (<code>state</code>, <code>streamid</code>, <code>created at</code>, <code>stream tags</code>, <code>timecode</code>, <code>transcoding</code>, <code>push url</code>), the ingest informations (<code>RTMP streamname</code>, <code>RTMP url</code>) and the playout informations (H5Live (Ultra-low latency), H5Live config object, RTMP Playout, HLS Playout). You can copy properties to the clipboard by clicking on the copy button on the right.</p>
+<p><img src="/docs/assets/stream-info-2.png" alt="Stream Info"></p>
+<p><img src="/docs/assets/stream-overview-playouts.png" alt="Stream Overview Playout"></p>
+<p>You are able to update the stream tags, after creating a stream. To do that, you need to click on the button on the top called &quot;Update tags&quot;.</p>
+<p><img src="/docs/assets/stream-overview-interaction.png" alt="Stream Overview: Interactions"></p>
+<p>After clicking on &quot;update&quot; the tags you added will be visibile in the overview and the tags you removed will be deleted.</p>
+<p><img src="/docs/assets/update-tags.png" alt="Stream Overview: Update Tags"></p>
+<p>By clicking on the &quot;Delete stream&quot; button you will be asked if you are sure about that. After confirming, you will be redirected to the stream list.</p>
+<p><img src="/docs/assets/delete-stream.png" alt="Stream Overview: Delete Stream"></p>
+<p>If your organisation has enabled our &quot;secure&quot; feature, your are able to create a customized secure token aswell.
+If you want to create one, you can do that by clicking on the &quot;Create Secure Token&quot; button. On this way you can set up an <code>expiration date</code> and specific options like the <code>IP</code> or <code>referer</code> and a <code>single tag</code> for the stream.</p>
+<p><img src="/docs/assets/new-stream-secure-token.png" alt="Stream Overview: Create Token"></p>
+<h3><a class="anchor" aria-hidden="true" id="all-streamshttpsbintu-cloud-frontendnanocosmosdestream"></a><a href="#all-streamshttpsbintu-cloud-frontendnanocosmosdestream" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><a href="https://bintu-cloud-frontend.nanocosmos.de/stream">All Streams</a></h3>
+<p>The stream list shows all streams of your organisation. By clicking on one stream, you will be able to see the stream overview. The pagination on the bottom gives you the oportunity to browse through your streams.</p>
+<p><img src="/docs/assets/streams.png" alt="All Streams"></p>
+<p>Streams that are live have an &quot;Open Playout&quot; Button at the end of the table row. By clicking on it, the playout will be opened in a new tab. Otherwise you will be redirected to the stream overview.</p>
+<p><img src="/docs/assets/streams-open-in-new.png" alt="All Streams"></p>
+<p>You can filter them by clicking on the &quot;Search&quot; Button and search for stream tags, specific states, such as <code>created</code>, <code>live</code>, <code>ended</code>, <code>deleted</code> and specific start and end dates.</p>
+<p><img src="/docs/assets/streams-filter.png" alt="All Streams: Filter"></p>
+<h3><a class="anchor" aria-hidden="true" id="metricshttpsbintu-cloud-frontendnanocosmosdemetrics"></a><a href="#metricshttpsbintu-cloud-frontendnanocosmosdemetrics" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><a href="https://bintu-cloud-frontend.nanocosmos.de/metrics">Metrics</a></h3>
+<p>By clicking on the menu item &quot;<a href="https://bintu-cloud-frontend.nanocosmos.de/metrics">Metrics</a>&quot; you will be able to choose between two buttons called &quot;<a href="https://metrics.nanocosmos.de/#/login">Login</a>&quot; and &quot;<a href="https://docs.nanocosmos.de/docs/cloud/analytics/">Learn more</a>&quot;. By clicking on the first button the nanoStream Analytics tool will be opened in another tab, while clicking on second button opens the nanocosmos blog.</p>
+<h3><a class="anchor" aria-hidden="true" id="organisationhttpsbintu-cloud-frontendnanocosmosdeorganisation"></a><a href="#organisationhttpsbintu-cloud-frontendnanocosmosdeorganisation" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><a href="https://bintu-cloud-frontend.nanocosmos.de/organisation">Organisation</a></h3>
+<p>This page gives you an overview about your organisation, informations depending on that and your enabled features.</p>
+<p><img src="/docs/assets/organisation-2.png" alt="Organisation"></p>
+<p>The features are visible on the top of this page. If they are orange, your organisation enables them. If they are grey it does not and you need to contact the <a href="mailto:sales@nanocosmos.de">sales</a> team, if you would like to change that.</p>
+<p><img src="/docs/assets/enabled-features-2.png" alt="Organisation: Enabled Features"></p>
+<p>Underneath that you can see your organisation name and its hash. The Organisation hash is the part of every stream name you create.</p>
+<p><img src="/docs/assets/organisation-info-2.png" alt="Organisation: Informations"></p>
+<p>By clicking on the dropdown item under the title &quot;Keys&quot; you will be able to see your API key. Please keep it private.
+&quot;All user&quot; gives you an overview about the user your organisation has. They can be sorted (asc/desc) by the date they are created at or by emails.</p>
+<p>Below that you can see &quot;All tags&quot;. You have the oportunity to create a new one or scroll through existing ones.</p>
+<p><img src="/docs/assets/organisation-all-tags-2.png" alt="Organisation: All Tags"></p>
+<h3><a class="anchor" aria-hidden="true" id="create-secure-tokenhttpsbintu-cloud-frontendnanocosmosdesecuretoken"></a><a href="#create-secure-tokenhttpsbintu-cloud-frontendnanocosmosdesecuretoken" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><a href="https://bintu-cloud-frontend.nanocosmos.de/secure/token">Create Secure Token</a></h3>
+<p>If your organisation enables our feature &quot;secure&quot; you will be able to see this menu item. You can create a custom token for a specific stream or the whole organisation.</p>
+<p><img src="/docs/assets/create-secure-token.png" alt="Create Secure Token"></p>
+<p>Thank you for being our valued partner and we appreciate your feedback on how we can improve and optimize your streaming workflow.</p>
+<p>Your nanocosmos-Team.</p>
+<p style="page-break-before: always">
+<h2><a class="anchor" aria-hidden="true" id="release-notes"></a><a href="#release-notes" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Release Notes</h2>
+<h3><a class="anchor" aria-hidden="true" id="21"></a><a href="#21" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>[2.1]</h3>
+<p><strong>New features</strong></p>
+<ul>
+<li><p><strong>Create Stream</strong></p>
+<ul>
+<li>Creating a stream lets you choose between &quot;RTMP&quot; and &quot;Webcaster&quot;.</li>
+<li>For the nanoStream Webcaster you can set the specific resolution and bitrate for broadcasting.</li>
+</ul></li>
+</ul>
+<ul>
+<li><p><strong>Stream Overview</strong></p>
+<ul>
+<li>Now you can directly share the nanoStream H5Live playout with third parties or colleagues.</li>
+</ul></li>
+<li><p>Secure organisations: You can see a content overview of the token used for the playback URL and the code snippet.</p></li>
+</ul>
+<ul>
+<li><p><strong>nanoStream H5Live Player</strong></p>
+<ul>
+<li><p>For secured streams: Displayed countdown allows you to see the remaining time the applied token is valid.</p></li>
+<li><p>For transcoded streams:</p>
+<ul>
+<li>Auto or manual mode for switching stream qualities.</li>
+<li>Overview of all streams that are part of the transcode group, including bitrate, frame rate, resolution.</li>
+</ul></li>
+</ul></li>
+</ul>
+<p><strong>Updates</strong></p>
+<ul>
+<li><p>A consolidated stream overview has been added to the dashboard.</p></li>
+<li><p>Updated the external playout URL for streams with transcoding profiles.</p></li>
+<li><p><strong>Once transcoded streams have been created, copy the URL for future retrieval.</strong></p></li>
+<li><p>The nanoStream H5Live code snippet, which can be directly embedded on any website, is now part of the Stream Overview/Playouts section.</p></li>
+<li><p><strong>Playback token</strong></p>
+<ul>
+<li>For authorized organisations and their standard token: The previously applied single hour has been extended to 24 hours.</li>
+<li>Simplified process to create custom token and customize playback URL as well as code snippet.</li>
+</ul></li>
+</ul>
+<p><strong>Fixes</strong></p>
+<ul>
+<li>Firefox: Transcoded streams are now sorted correctly.</li>
+<li>Applied search filter now consider the total amount of matching streams.</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="202"></a><a href="#202" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>[2.0.2]</h3>
+<p><strong>New features</strong></p>
+<ul>
+<li>New H5Live Player Widget can be accessed from within the dashboard now.
+More intuitive and easy-to-use.</li>
+<li>Faster implementation of the H5Live Player code into your webpage.
+Code snippets are available in all single stream overviews, newly created streams and all playout. (Also for transcoded and secured streams)</li>
+<li>Recent tags are shown when filtering through all streams.</li>
+</ul>
+<p><strong>Updates</strong></p>
+<ul>
+<li>H5Live playback with the icon at the end of the row of every live stream.</li>
+<li>Shortening of the playback- and newly created streams URLs.</li>
+</ul>
+<p><strong>Fixes</strong></p>
+<ul>
+<li>Filter are now still applied after updating the amount of &quot;rows in a page&quot;.</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="201"></a><a href="#201" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>[2.0.1]</h3>
+<p><strong>New features</strong></p>
+<ul>
+<li>Show up to 150 streams per page</li>
+<li>Standard: every new stream created is supported  by the nanoStream Webcaster</li>
+<li>Filter tags by regex in &quot;Streams&quot;, &quot;Create new Stream&quot;</li>
+<li>Create Invite Token for a new user and signing up using the invite token</li>
+</ul>
+<p><strong>Updates</strong></p>
+<ul>
+<li>None</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="200"></a><a href="#200" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>[2.0.0]</h3>
+<p><strong>New features</strong></p>
+<ul>
+<li>Create transcoded streams (depending on business agreement)</li>
+<li>Create secured streams</li>
+<li>See playback immediately</li>
+<li>Intuitive way of creating and customizing a new stream</li>
+<li>New Stream Overview</li>
+<li>Steps to playout (from Ingest to Playout)</li>
+<li>Dashboard with compact overview</li>
+</ul>
+<p><strong>Changed</strong></p>
+<ul>
+<li>None</li>
+</ul>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 2/22/2021</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/cloud-frontend/getting_started"><span class="arrow-prev">← </span><span>Getting started</span></a><a class="docs-next button" href="/docs/cloud-frontend/How_to_Start_a_Stream"><span>Start streaming</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#getting-started">Getting started</a><ul class="toc-headings"><li><a href="#sign-up-sign-inhttpsbintu-cloud-frontendnanocosmosdeauth"><a href="https://bintu-cloud-frontend.nanocosmos.de/auth">Sign Up/ Sign In</a></a></li><li><a href="#dashboardhttpsbintu-cloud-frontendnanocosmosde"><a href="https://bintu-cloud-frontend.nanocosmos.de/">Dashboard</a></a></li><li><a href="#create-streamhttpsbintu-cloud-frontendnanocosmosdestreamcreate"><a href="https://bintu-cloud-frontend.nanocosmos.de/stream/create">Create Stream</a></a></li><li><a href="#new-stream">New stream</a></li><li><a href="#stream-overview">Stream Overview</a></li><li><a href="#all-streamshttpsbintu-cloud-frontendnanocosmosdestream"><a href="https://bintu-cloud-frontend.nanocosmos.de/stream">All Streams</a></a></li><li><a href="#metricshttpsbintu-cloud-frontendnanocosmosdemetrics"><a href="https://bintu-cloud-frontend.nanocosmos.de/metrics">Metrics</a></a></li><li><a href="#organisationhttpsbintu-cloud-frontendnanocosmosdeorganisation"><a href="https://bintu-cloud-frontend.nanocosmos.de/organisation">Organisation</a></a></li><li><a href="#create-secure-tokenhttpsbintu-cloud-frontendnanocosmosdesecuretoken"><a href="https://bintu-cloud-frontend.nanocosmos.de/secure/token">Create Secure Token</a></a></li></ul></li><li><a href="#release-notes">Release Notes</a><ul class="toc-headings"><li><a href="#21">[2.1]</a></li><li><a href="#202">[2.0.2]</a></li><li><a href="#201">[2.0.1]</a></li><li><a href="#200">[2.0.0]</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><div><h5>Contact</h5><a href="https://www.nanocosmos.de/">Homepage</a><a href="https://www.nanocosmos.de/contact">Contact</a><a href="https://www.nanocosmos.de/support">Support</a><a href="https://www.nanocosmos.de/terms">Legal Terms</a></div><div><h5>Products</h5><a href="https://www.nanocosmos.de/cloud">Nanostream Cloud with Bintu.Live</a><a href="https://www.nanocosmos.de/h5live">H5Live Low Latency HTML5-Player</a><a href="https://www.nanocosmos.de/webrtc">nanoStream Webcaster</a><a href="https://www.nanocosmos.de/#nanostream">Nanostream Apps and SDK</a></div><div><h5>More</h5><a href="https://www.nanocosmos.de/blog/">Blog</a><a href="https://twitter.com/nanovideo">Twitter</a><a href="https://www.facebook.com/nanocosmos.net/">Facebook</a><a href="https://www.linkedin.com/company/nanocosmos-gmbh">LinkedIn</a><a href="https://github.com/nanocosmos/docs">GitHub</a><a class="github-button" href="https://github.com/nanocosmos/docs" data-icon="octicon-star" data-count-href="/nanocosmos/docs/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://nanocosmos.de/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/footer_logo.png" alt="nanocosmos GmbH" width="170" height="45"/></a><section class="copyright">Copyright © 2021 nanocosmos GmbH - doc version Mon Feb 22 2021 19:03:29 GMT+0000 (Coordinated Universal Time)</section></footer></div></body></html>
