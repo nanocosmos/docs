@@ -20,7 +20,7 @@ One potential combined use case is a video quality selection offering options au
 ### Stream configuration
 Whether you want to configure a [single stream](#single-stream-configuration) or [multiple streams](#multi-stream-configuration) you need to configure them inside the `config.source.entries` object during the initial `setup` call. 
 
-> **Note:** You can find more information on how to configure the player in our [API documentation](nanoplayer_api/#nanoplayerconfig--codeobjectcode).
+> **Note:** You can find more information on how to configure the player in our [API documentation](nanoplayer_api.md#nanoplayerconfig--codeobjectcode).
 
 ### Single Stream configuration
 The [old pattern](#example-old-single-stream-configuration-deprecated) to configure a single stream is **deprecated** with this version! Please follow this [new example](#example-new-single-stream-configuration) to configure a single stream.
@@ -536,10 +536,10 @@ There are multiple possible switch options that can be set directly over the `co
     - Possible values are **false** and **true** (default) 
 - `timeout`: 
     - The maximal time to wait in **seconds** before running into a timeout
-    - If the time limit is reached the **error 4006** will be thrown inside the [`onSwitchStreamFail`](nanoplayer_api/#onswitchstreamfail) event
+    - If the time limit is reached the **error 4006** will be thrown inside the [`onSwitchStreamFail`](nanoplayer_api.md#onswitchstreamfail) event
     - The default value is **10** seconds and the possible range is between **5** and **30** seconds
 - `tag`: 
-    - This custom field can be any **string** you like and will be returned in all of the switchStream completion events. ([`onSwitchStreamSuccess`](nanoplayer_api/#onswitchstreamsuccess), [`onSwitchStreamFail`](nanoplayer_api/#onswitchstreamfail) and [`onSwitchStreamAbort`](nanoplayer_api/#onswitchstreamabort))
+    - This custom field can be any **string** you like and will be returned in all of the switchStream completion events. ([`onSwitchStreamSuccess`](nanoplayer_api.md#onswitchstreamsuccess), [`onSwitchStreamFail`](nanoplayer_api.md#onswitchstreamfail) and [`onSwitchStreamAbort`](nanoplayer_api.md#onswitchstreamabort))
 
 > **Note:** 
 > You can find more specific information on the possible options [here](nanoplayer_api#nanoplayerupdatesourcesource-⇒-codepromiseltconfigerrorgtcode).
@@ -678,7 +678,7 @@ var config = {
 ## switchStream API
 The `switchStream` feature enables the application/viewer to perform stream switches on the pre-configured stream list by referencing the index property of the target stream entry. 
 
-> **Note:** You can find more information on the switchStream API in our [API documentation](nanoplayer_api/#nanoplayerswitchstreamindex-⇒-codepromiseltconfigerrorgtcode).
+> **Note:** You can find more information on the switchStream API in our [API documentation](nanoplayer_api.md#nanoplayerswitchstreamindex-⇒-codepromiseltconfigerrorgtcode).
 
 ### How to use
 * Configuration of two or more streams in `config.source.entries`
@@ -713,17 +713,17 @@ With the release of the `switchStream` API there are also **4** new events you s
 
 #### start event
 
-- **[onSwitchStreamInit](nanoplayer_api/#onswitchstreaminit)**: This event signals an initialized switch stream request. This is **only** a start event that will be followed by one of the completion events.
+- **[onSwitchStreamInit](nanoplayer_api.md#onswitchstreaminit)**: This event signals an initialized switch stream request. This is **only** a start event that will be followed by one of the completion events.
 
 #### completion events
 
-- **[onSwitchStreamSuccess](nanoplayer_api/#onswitchstreamsuccess)**: This event signals a successful switch stream request and fires if the stream was switched. 
-- **[onSwitchStreamFail](nanoplayer_api/#onswitchstreamfail)**: This event signals a failed switch stream request. Fired if an error occurs during the stream switch.
-- **[onSwitchStreamAbort](nanoplayer_api/#onswitchstreamabort)**: This event signals an aborted switch stream request. Possible reasons are an equal source (**'equalsource'**), a superseding (**'superseded'**) or the time difference between two following `switchStream` calls that is too small  (**'frequency'**). 
+- **[onSwitchStreamSuccess](nanoplayer_api.md#onswitchstreamsuccess)**: This event signals a successful switch stream request and fires if the stream was switched. 
+- **[onSwitchStreamFail](nanoplayer_api.md#onswitchstreamfail)**: This event signals a failed switch stream request. Fired if an error occurs during the stream switch.
+- **[onSwitchStreamAbort](nanoplayer_api.md#onswitchstreamabort)**: This event signals an aborted switch stream request. Possible reasons are an equal source (**'equalsource'**), a superseding (**'superseded'**) or the time difference between two following `switchStream` calls that is too small  (**'frequency'**). 
 
 <br>
 
-> **Also, keep in mind...** there will be an [`onStreamInfo`](nanoplayer_api/#onstreaminfo) event indicating that the first image of the new stream is getting played out.	
+> **Also, keep in mind...** there will be an [`onStreamInfo`](nanoplayer_api.md#onstreaminfo) event indicating that the first image of the new stream is getting played out.	
 
 
 ### Difference switchStream API / updateSource API
@@ -740,7 +740,7 @@ Currently available adaption rules are:
   * `deviationOfMean2` - Enhanced buffer based bitrate adaption rule (added in v4.5)
 
  
-> **Note:** You can find more information on the setAdaption API in our [API documentation](nanoplayer_api/#nanoplayersetadaptionadaption).
+> **Note:** You can find more information on the setAdaption API in our [API documentation](nanoplayer_api.md#nanoplayersetadaptionadaption).
 
 #### Example to set automatic adaption
 
