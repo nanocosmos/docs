@@ -40,6 +40,10 @@ addr: 'xxx.yyy.zzz.aaa',
 clientid: '123456' }
 ```
 
+> NOTE: using web hooks is the recommended way to protect your ingest workflow. Ask us for account upgrades to help with implementations or hosting
+
+> NOTE: using web hooks for playback is not recommended and not always enabled. Use nanoPlayer Token Security instead.
+
 **For the publish\_done webhook, the request body also contains the keys bytes\_in and bytes\_out. The unit of the values is byte.**
 
 ## Custom data
