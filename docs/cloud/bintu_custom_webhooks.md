@@ -6,8 +6,12 @@ sidebar_label: bintu custom web hooks
 
 It's possible to use a custom web hook for custom based authentication. 
 
-Note: this is primarily used for initial rtmp calls to the nanoStream servers.
-For H5Live authentication, a token based approach is recommended. Contact us for details.
+
+> NOTE: using web hooks is the recommended way to protect your ingest workflow. Ask us for account upgrades to help with implementations or hosting
+
+> NOTE: using web hooks for playback is not recommended and not always enabled. Use nanoPlayer Token Security instead.
+
+### API 
 
 Set the custom web hook via this api call (linux notation): 
 

@@ -6,9 +6,13 @@ sidebar_label: Secure playback with H5Live
 
 ## Encrypted playback
 
-When using H5Live player, all playback is done with SSL-Encrypted URLs over `HTTPS`.
+When using H5Live player, all playback is encrypted by default over `HTTPS`.
 
 ## Token Security for nanoStream H5Live Player
+
+> **Note:**
+>
+> Token Security for nanoPlayer is not enabled by default and requires a separate account and business agreement.
 
 H5Live Player supports signed URLs with tokens to restrict playback to a specific time or / and domain. To use token security, you need a security enabled [Bintu](../cloud/bintu_api.md) organization in nanoStream Cloud.
 
