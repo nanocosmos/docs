@@ -14,7 +14,7 @@ nanoMeet is a browser-based live video and collaboration platform connected to n
 It allows you to create your own branded video meeting rooms in the browser to engage and interact with your audience. 
 nanoMeet is based on a custom version of [Jitsi Meet](https://github.com/jitsi/jitsi-meet) and integrated with [nanoStream Cloud](https://info.nanocosmos.de)
 
-![meeting](assets/nanomeet-meeting.jpg)
+![nanoMeet Meeting](assets/nanomeet-meeting.jpg)
 
 ## Key features
 
@@ -42,7 +42,7 @@ There are various usecases for nanoMeet:
 - Watchparties, e.g. watch a live stream together and discuss
 
 
-# What is part of nanoMeet?
+## What is part of nanoMeet?
 
 - Web services for usage 24/7 anywhere in the world
 - Sample pages for setting up and using nanoMeet rooms
@@ -58,6 +58,8 @@ You need a nanoStream Cloud/Bintu account with nanoMeet enabled.
 > *If you do not have an account or nanoMeet enabled yet, please contact our sales team via [contact form](https://www.nanocosmos.de/contact) or sales(at)nanocosmos.de.*
 >
 > To check if your organisation enables nanoMeet, check your [organisation overview](https://bintu-cloud-frontend.nanocosmos.de/organisation).
+>
+>  ![nanoMeet enabled](assets/enable-nanomeet.jpg)
 
 
 
@@ -69,13 +71,13 @@ For developer and API info see [README](README.md) / [HTML Version](readme)
 
 To create a room you need a valid bintu api key.
 
-1. open the nanomeet-helper [Token Creator](https://nanomeet.pages.nanocosmos.de/nanomeet-frontend/nanomeet-helper.html?bintu.apikey=YOUR-API-KEY&nanomeet.room=YOUR-ROOM-NAME) - [source code here](nanomeet-helper.html) 
+1. Open the [nanomeet-helper](https://nanomeet.pages.nanocosmos.de/nanomeet-frontend/nanomeet-helper.html?bintu.apikey=YOUR-API-KEY&nanomeet.room=YOUR-ROOM-NAME) to create a token.  - (See [source code](nanomeet-helper.html)) 
 2. Insert your API key from [nanoStream Cloud/Bintu Organisation](https://bintu-cloud-frontend.nanocosmos.de/organisation).
 3. Name the room you want to create.
 4. Set a time frame in which your secure token will be valid for the participants to join the nanoMeet room.
 5. Click on "create".
-   - Full Stream Overview: See the full stream overview in the nanoStream Cloud dashboard, including a code snippet, the playout URL and the stream names.
-   - Open room: Use the invite link to launch your created room in the second sample (nanomeet-sample.html) we provide.
+   - Full Stream Overview: See the full stream overview in the [nanoStream Cloud dashboard](https://bintu-cloud-frontend.nanocosmos.de/), including a code snippet, the playout URL and the stream names.
+   - Open room: Use the invite link to launch your created room in the [nanomeet-sample](https://nanomeet.pages.nanocosmos.de/nanomeet-frontend/nanomeet-sample.html?token=) we provide.  - (See [source code](nanomeet-sample.html))
 
 
 
@@ -98,7 +100,7 @@ Enabling **nanoMeet** for your organisation gives you access to create, use and 
 
 This nanomeet.js file lets you access all nanoMeet functions and procedures.
 
-   > The usage is described in the [nanoMeet documenation](README.md).
+   > The usage is described in the [nanoMeet API documentation](README.md).
 
 
 
@@ -182,7 +184,7 @@ To start a watchparty click on the three dots right on the toolbar. Toggle "Star
 
 
 
-### Support
+## Support
 
 Please use https://www.nanocosmos.de/support or support(at)nanocosmos.de for further assistance.
 

@@ -73,7 +73,7 @@ NanoMeet Public Web API Class 1.0.0.
 
 
 
-**Integration**
+### Integration
 
 To integrate nanoMeet in your web page you need to load our nanoMeet Web API.
 
@@ -86,7 +86,7 @@ To integrate nanoMeet in your web page you need to load our nanoMeet Web API.
 
 
 
-**new NanoMeet()**
+### new NanoMeet()
 
 The instance of the NanoMeet web API. The source can be loaded via script tag.
 
@@ -98,7 +98,7 @@ var nanoMeet = new NanoMeet();
 
 
 
-**nanoMeet.createNanoMeetRoom(apiKey, roomSetUp) => `Promise.<success|error>`**
+### nanoMeet.createNanoMeetRoom(apiKey, roomSetUp) => `Promise.<success|error>`
 
 Creates a secure token that is needed to initialize and use nanoMeet.
 
@@ -156,7 +156,7 @@ data: {
 
 
 
-**nanoMeet.createInviteToken(token, tokenSetup) => `Promise.<success|error>`**
+### nanoMeet.createInviteToken(token, tokenSetup) => `Promise.<success|error>`
 
 Creates an invite token for the nanoMeet room.
 
@@ -204,7 +204,7 @@ data: {
 
 
 
-**nanoMeet.init(config) => `Promise.<(success|error)>`**
+### nanoMeet.init(config) => `Promise.<(success|error)>`
 
 Initializes nanoMeet with the provided config object.
 
@@ -253,7 +253,7 @@ data: {
 
 
 
-**nanoMeet.startBroadcast(isVOD) => `Promise.<(success|error)>`**
+### nanoMeet.startBroadcast(isVOD) => `Promise.<(success|error)>`
 
 Starts a new broadcast. Can only be used if the `nanoMeet.init(config)` method was called before.
 
@@ -289,7 +289,7 @@ data: {
 
 
 
-**nanoMeet.stopBroadcast() => `Promise.<(success|error)>`**
+### nanoMeet.stopBroadcast() => `Promise.<(success|error)>`
 
 Stops a running broadcast. 
 
@@ -309,7 +309,7 @@ nanoMeet.stopBroadcast()
 
 
 
-### Support
+## Support
 
 Please use https://www.nanocosmos.de/support or support(at)nanocosmos.de for further assistance.
 
