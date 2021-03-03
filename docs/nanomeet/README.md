@@ -17,7 +17,7 @@ Embedding nanoMeet into your web page, using our Web API enables you to provide 
 
 
 
-**nanoMeet online samples:**
+### nanoMeet online samples
 
 [Token Creator](https://nanomeet.pages.nanocosmos.de/nanomeet-frontend/nanomeet-helper.html?bintu.apikey=YOUR-API-KEY&nanomeet.room=YOUR-ROOM-NAME) - Click [here](nanomeet-helper.html) to find the code.
 
