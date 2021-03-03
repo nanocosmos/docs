@@ -47,6 +47,12 @@
       "webrtc/nanostream_webrtc_faq"
     ]
   },
+  "nanomeet": {
+    "nanoMeet": [
+      "nanomeet/nanomeet-index",
+      "nanomeet/nanomeet-dev"
+    ]
+  },
   "cloud": {
     "nanoStream Cloud": [
       "cloud/cloud_overview",

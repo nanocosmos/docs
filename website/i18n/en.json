@@ -195,6 +195,14 @@
         "title": "Programming / SDK / API",
         "sidebar_label": "Programming / SDK / API"
       },
+      "nanomeet/nanomeet-index": {
+        "title": "Introduction",
+        "sidebar_label": "Introduction"
+      },
+      "nanomeet/nanomeet-dev": {
+        "title": "nanoMeet API",
+        "sidebar_label": "API"
+      },
       "nanoplayer/nanoplayer_api_errors": {
         "title": "NanoPlayer Status & Error Codes",
         "sidebar_label": "NanoPlayer Status & Error Codes"
@@ -679,6 +687,7 @@
       "nanoStream Cloud": "nanoStream Cloud",
       "H5Live Player": "H5Live Player",
       "nanoStream Webcaster": "nanoStream Webcaster",
+      "nanoMeet": "nanoMeet",
       "nanoStream Apps and SDKs": "nanoStream Apps and SDKs",
       "Samples": "Samples",
       "FAQ": "FAQ"
@@ -689,6 +698,7 @@
       "API": "API",
       "Other": "Other",
       "nanoStream Webcaster": "nanoStream Webcaster",
+      "nanoMeet": "nanoMeet",
       "nanoStream Cloud": "nanoStream Cloud",
       "cloud frontend": "cloud frontend",
       "bintu api": "bintu api",
