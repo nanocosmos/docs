@@ -15,18 +15,19 @@ Nearly all options to increase coding efficiency require additional computation 
 
 **H.264 profile and entropy coding mode**
 
-`H.264` Baseline profile only allows the basic entropy coding mode `CAVLC. H.264 Main and High profiles` in addition provide a more efficient entropy coding mode called `CABAC`. If your application allows to use these profiles, choosing `CABAC` can significantly increase coding efficiency and quality.
+`H.264` Baseline profile supports a sub-set of H264, like no b-frame and lower complexity encoding modes (CAVLC). 
+`H.264 Main and High profiles` in addition provide a more efficient encoding in forms of B-Frames, and entropy coding mode called `CABAC`. If your application allows to use these profiles, choosing `CABAC` can significantly increase coding efficiency and quality.
 
 **H.264 profile and frame types**
 
 `H.264 Baseline profile` only supports coding `frame types I and P`. 
 `H.264 Main and High profiles` in addition support `B frames` which allow a much more efficient compression.
 
-The key frame distance determines how many `P or B frames` are encoded between `I/key frames`. Commonly used are key frame distances between `2 and 5 seconds`, at `25 frames` per second `50-250 frames`. Short key frame distances can decrease the quality due to the lower coding efficiency.
+The key frame distance also called GOP Size (Group of pictures) determines how many `P or B frames` are encoded between `I/key frames`. Commonly used are key frame distances between `2 and 5 seconds`, at `25 frames` per second `50-250 frames`. We recommend 2 seconds.
 
 The `P frame distance` determines how many `B frames` are encoded between `I and P frames`. Commonly used are P frame distances between `2 and 4`.
 
-> **A P frame distance setting of X will result in `X-1 B frames` encoded between I and P frames.**
+> **A P frame distance setting of X may result in `X-1 B frames` encoded between I and P frames.**
 
 **IDR Frame Distance**
 
@@ -39,7 +40,7 @@ IDR frames are points in the video stream where a decoder can start instant deco
 
 **Frame Distance Modes**
 
-nanocosmos `H.264 Encoder` supports two frame distance modes. This mode determines if `H.264 I and P frame distance settings` are applied as variable/maximum or fix/constant values. In variable mode the encoder can decide which frame type to use based on how efficient the encoding will be, and e.g. switch from `B` to `I` or `P` on a scene cut. Multiple bitrate streams often require constant frame distances.
+nanocosmos `H.264 Encoder` and other encoders support two frame distance modes. This mode determines if `H.264 I and P frame distance settings` are applied as variable/maximum or fix/constant values. In variable mode the encoder can decide which frame type to use based on how efficient the encoding will be, and e.g. switch from `B` to `I` or `P` on a scene cut. Multiple bitrate streams often require constant frame distances.
 
 **GOP Structure Examples (decoding order)**
 
@@ -63,7 +64,13 @@ During the encoding of P and B frames a defined number of frames is used to find
 
 **H.264 quality/speed setting**
 
-The H.264 quality/speed setting is implicitely controlling advanced H.264 encoding parameters like block types, search range and search algorithms used. The goal is to provide an easy to use parameter allowing to balance video quality and performance. The parameter range is from 0 (maximum speed) to 6 (maximum quality). nanoStream API is using the value 3 (balanced) as a default.
+The H.264 quality/speed setting is implicitely controlling advanced H.264 encoding parameters like block types, search range and search algorithms used. The goal is to provide an easy to use parameter allowing to balance video quality and performance, to not overload the encoder machine CPU. 
+
+Dependent on the encoder vendor and brand, there are different configurations available.
+
+For open-source based encoders like ffmpeg and OBS, the quality/speed tradeoff setting is called preset and as options like ultrafast, veryfast, fast, slow. We recommend "veryfast".
+
+For nanoStream Encoders, the parameter range is from 0 (maximum speed) to 6 (maximum quality). nanoStream API is using the value 3 (balanced) as a default.
 
 > Example for SD video with limiting factor bandwidth: 
 > - H264Profile: Main
@@ -88,7 +95,18 @@ The H.264 Deblocking Filter is an important tool to reduce annoying blocking art
 <details><summary><strong>How do the H.264 rate control mode and minimum/maximum quantization settings interact?</strong></summary>
 ##### Rate Control Mode
 
-The Rate Control Mode determines the strictness/tolerance that is used by the bitrate control. `CBR Strict 1` is the most strict setting. Tolerance is increasing from `Constant Bitrate `(CBR) to `Average Bitrate` (ABR) to `Variable Bitrate` (VBR). nanoStream API is using the CBR Stream setting as a default.
+The Rate Control Mode determines the strictness/tolerance that is used by the bitrate control. 
+
+- Constant bitrate (CBR) is trying to keep the bitrate constant over time
+- Variable bitrate (VBR) will allow variations of the bitrate dependent on the content complexity
+
+There is a range of options between strict CBR and VBR, as both options have tradeoffs.
+CBR is usually used in live streaming, as any network as limits of possible bandwidth.
+VBR us more used in live recording and VOD playback, as this can use larger buffers to allow bandwidth variations.
+Some encoders have options like ABR (average bitrate)
+We recommend using CBR for live streaming.
+ 
+`CBR Strict 1` is the most strict setting. Tolerance is increasing from `Constant Bitrate `(CBR) to `Average Bitrate` (ABR) to `Variable Bitrate` (VBR). nanoStream API is using the CBR Stream setting as a default.
 
 >Values: 
 > 0 = Auto (CBR Stream)
