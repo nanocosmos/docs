@@ -176,6 +176,8 @@ nanoStream Cloud can be used as a low-latency CDN for your interactive live stre
 
 Yes, you can either record to a file instead of streaming to a server or stream and record simultaneously. Supported file formats depend on the platform you are working. Usually `MP4` is supported and recommended on all platforms.
 
+</details>
+
 <details><summary><strong>Does the software automatically adjust the Bitrate - Adaptive Bitrate?</strong></summary>
 
 Yes! nanoPlayer now supports Adaptive Bitrate Playback (ABR).
