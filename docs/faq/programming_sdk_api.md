@@ -8,25 +8,15 @@ sidebar_label: Programming / SDK / API
 
 Supported programming languages are dependent on the OS.
 
-#### WebRTC and H5Live
+- `HTML/JS (Javascript)` works for all modern HTML5 browsers. Based on this, you can use frameworks like Typescript, React, VueJS etc.
 
-- `HTML/Javascript` works for all modern HTML5 browsers.
+HTML/JS is supported on all devices and platforms nowadays.
 
-#### iOS
+For native apps, We recommend using Web Views to embed the nanoStream JS API.
 
-- `ObjC` and `Swift`
+If you are working on a platform without HTML/JS support, you can use fallback URLs provided by nanoPlayer. 
+Please contact us for details.
 
-#### Android
-
-- `Java`
-
-#### Windows
-
-Any programming language which supports ActiveX, for example:
-
-- `Visual C / C++`
-- `C#`
-- `VisualBasic.NET`
 
 </details>
 
