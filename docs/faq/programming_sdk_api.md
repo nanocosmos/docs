@@ -6,9 +6,12 @@ sidebar_label: Programming / SDK / API
 
 <details><summary><strong>Which programming languages can I use for the API?</strong></summary>
 
-Supported programming languages are dependent on the OS.
+nanoStream Cloud provides dashboards and application programming interfaces (API), but also code snippets and web pages which do not require programming skills.
 
-- `HTML/JS (Javascript)` works for all modern HTML5 browsers. Based on this, you can use frameworks like Typescript, React, VueJS etc.
+nanoPlayer and Webcaster are based on HTML and JS (Javascript) libraries
+nanoStream Cloud's bintu management service is available as dashboard and REST API
+
+`HTML/JS (Javascript)` works for all modern HTML5 browsers. Based on this, you can use frameworks like Typescript, React, VueJS etc.
 
 HTML/JS is supported on all devices and platforms nowadays.
 
