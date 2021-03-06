@@ -4,7 +4,7 @@ title: Programming / SDK / API
 sidebar_label: Programming / SDK / API
 ---
 
-<details><summary><strong>How do I the API or SDK?</strong></summary>
+<details><summary><strong>How do I use the API or SDK?</strong></summary>
 
 nanoStream Cloud provides dashboards and application programming interfaces (API), but also code snippets and web pages which do not require programming skills.
 
