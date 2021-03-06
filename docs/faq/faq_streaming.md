@@ -4,12 +4,29 @@ title: FAQ nanoStream Live Streaming
 sidebar_label: Live Streaming
 ---
 
+
+<details><summary><strong>What is nanoStream Cloud?</strong></summary>
+
+nanoStream Cloud is a combination of software and services to enable interactive live streaming Live at a global scale.
+
+You can connect a live source (camera) to a live encoder, and send your stream to nanoStream Cloud
+nanoStream H5Live Player then works on all browsers to play this live stream with ultra-low-latency.
+
+nanoStream Cloud provides a global CDN to ingest and playback your live streams with high quality anywhere in the world.
+
+Easy to use dashboards, code snippets and APIs enable easy integration into custom applications.
+
+
+</details>
+
 <details><summary><strong>What is ultra low latency live streaming?</strong></summary>
 
 Live streaming latency is the time between the video leaves the camera and shown on the player device.
 Ultra-low-latency live streaming means near-realtime latency values of around 1 seconds.
 
 nanoStream Cloud supports ultra-low latency live streaming, on any HTML5 browser with a global scale.
+
+ULL Live Streaming enables interactive applications for audience engagement.
 
 > **NOTES** 
 > - End-to-end latency is dependent on all components in the workflow: capture, live encoder, upstream, server/cloud, downstream, player.
