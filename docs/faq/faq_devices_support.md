@@ -4,33 +4,28 @@ title: Capture Devices and Camera Support
 sidebar_label: Capture Devices and Camera Support
 ---
 
-<details><summary><strong>Which capture cards are compatible with the nanoStream product?</strong></summary>
+<details><summary><strong>Which cameras and capture cards are compatible with nanoStream?</strong></summary>
 
-Basically every capture card should be compatible dependent on the driver architecture. `Blackmagic design cards` proved to be working well with our product.
+Basically every camera connected to a live encoder hardware or software can be used.
 
->For Windows, the driver needs to be `DirectShow` compatible which is usually the case.
+The connection to nanoStream Cloud is the RTMP protocol, with the H264/AAC video audio codecs.
 
->For MacOS, either `AVFoundation` or `Quicktime` compatible drivers can be used.
+Most live encoder hard- and software support this protocol.
 
-!!! Todo: Please contact us for details and specific support. !! CONTACT LINK
-</details>
-
-<details><summary><strong>Which cameras are compatible with the nanoStream product?</strong></summary>
-
-Basically every camera which has a compatible driver installed can be used.
+nanoStream Webcaster and nanoMeet use the browser-builtin architecture to connect a camera and encoder,
+based on HTML technologies and WebRTC. If your camera works with the browser, it should also work with nanoStream Cloud.
 
 There is a range of cameras which are tested in our lab and verified.
 
 **Our recommendations**:
 - Web cams: `Logitech` or `Microsoft`
-- Studio based encoding `Blackmagic Decklink` and `Intensity Osprey`
+- Studio based encoding `Blackmagic Decklink`, Videon, Teradek 
 </details>
-
 
 <details><summary><strong>Can I stream from an IP camera?</strong></summary>
 
-It depends, if the drivers for the IP camera supports `directshow`. For instance IP cameras from axis are supported.
-We can also provide custom development for unsupported IP cameras.
+It depends. You may need to connect the IP cam to a PC as a live source and stream with RTMP,
+We can also provide custom support for specific IP cameras.
 </details>
 
 <details><summary><strong>Devices and cameras supported for Android and iOS?</strong></summary>
@@ -60,32 +55,11 @@ All iOS devices running `iOS8 and higher` should be compatible with nanoStream L
 
 **nanoStream native SDK for Android**
 
-min. required Android version is `4.1` Recommended Android version is `4.4`
+Recommended Android version is `5.x or higher`
 
 **Compatible devices for Android:**
 
-There is a wide range of Android devices known to work with nanoStream Live Encoder. Here is a small excerpt:
-
-- Samsung Galaxy S
-- Google/HTC/LG Nexus
-- Samsung Galaxy Tab
-- Sony XPeria Z1 mini and higher (Z3, etc)
-- Asus Iconia Tab
-- Amazon Fire HD
-- LG G3
-- HTC One
-
->**There is specific support for region specific devices (e.g. East Asia), dependent on your >support level agreement. Please contact us for details.**
+There is a wide range of Android devices known to work with nanoStream, e.g. Samsung Galaxy S and Tab, Google/HTC/LG Nexus/Pixel, Sony XPeria 
 
 </details>
 
-<details><summary><strong>Are there any drawbacks when using deinterlacing for non-interlaced material?</strong></summary>
-
-The drawbacks of having deinterlacing turned on all the time are:
-
-- degraded picture quality for non-interlaced material (The picture quality degration is dependent on the deinterlacer algorithm. Using a good algorithm, quality should not be affected.)
-- higher cpu load (the amount of extra cpu time required depends on the algorithm used for deinterlacing - algorithm requiring more cpu time produce better results)
-
-For detailed explanation [click here](http://www.100fps.com/video_resolution_vs_fluidity.htm)
-
-</details>
