@@ -61,3 +61,24 @@ You can embed the following code snippet to test nanoMeet on your page in no tim
    ![nanoMeet Meeting](assets/nanomeet-meeting.jpg)
 
 
+## Start a live stream ...
+
+> To start a live stream you need to have the "moderator" [role](introduction#roles).
+
+### ... (a) via *"Broadcast Settings"* (nanoMeet Sample)
+
+To start a live stream to the nanoStream Cloud you can click the button "Start stream" in the "Broadcast Settings". You will see a live playback URL which you can share with your audience (e.g. https://demo.nanocosmos.de/nanoplayer/release/nanoplayer.html?..) and a vod playback URL if you choose to record the live stream.
+
+![nanoMeet Sample Settings](assets/nanomeet-ui-settings.jpg)
+
+### ... (b) via nanoMeet UI
+
+To start a live stream via the nanoMeet UI you need to click on the three dots on the right and click on the "Start nanoStream Cloud live stream". The dialog will ask you to insert the ingest informations. You should provide it using this format: `rtmp://rtmp-bintu-ingest-url:1935/rec/XXXXX-YYYYY`.
+
+
+## Watch a live stream within nanoMeet (Watchparty)
+
+To start a watchparty click on the three dots right on the toolbar. Toggle "Start watchparty" and insert a nanoStream Cloud streamname (e.g. `HX26g-1Qs78`). You can also paste ABR streamnames following this format (e.g. `XXXXX-YYYY1,XXXXX-YYYY2,XXXXX-YYYY3`). The nanoPlayer will be shown within the meeting room and can be controlled by the [moderator](introduction#roles).
+
+![nanoMeet Watchparty](assets/nanomeet-watchparty.jpg)
+
