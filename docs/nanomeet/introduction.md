@@ -4,7 +4,7 @@ title: nanoMeet
 sidebar_label: Introduction
 ---
 
-&copy; 2021 [nanocosmos](info.nanocosmos.de)
+&copy; 2021 <a href="https://info.nanocosmos.de/" target="_blank">nanocosmos</a>
 
 ## What is nanoMeet?
 
@@ -12,7 +12,7 @@ nanoMeet is a browser-based live video and collaboration platform connected to n
 It allows you to create your own branded video meeting rooms in the browser to engage and interact with your audience. 
 nanoMeet is based on a custom version of [Jitsi Meet](https://github.com/jitsi/jitsi-meet) and integrated with [nanoStream Cloud](https://info.nanocosmos.de).
 
-![nanoMeet Meeting](assets/nanomeet-meeting.jpg)
+![nanoMeet Meeting](assets/nanomeet-ui.jpg)
 
 
 ### Key features
@@ -103,8 +103,9 @@ Find the source code of our samples [here](source-code).
 Read our [developers documentation](api) 
 
 
+## Features
 
-## Participant Roles
+### Roles
 
 There are two main Roles
 
@@ -112,9 +113,9 @@ There are two main Roles
 - Participant: Is able to join a nanoMeet room.
 
 
-## Start a live stream ...
+### Start a live stream ...
 
-> To start a live stream you need to have the "moderator" [role](#participant-roles).
+> To start a live stream you need to have the "moderator" [role](#roles).
 
 ### ... (a) via nanoMeet Sample
 
@@ -129,7 +130,7 @@ To start a live stream via the nanoMeet UI you need to click on the three dots o
 
 
 
-## Watch a live stream within nanoMeet (Watchparty)
+### Watch a live stream within nanoMeet (Watchparty)
 
 To start a watchparty click on the three dots right on the toolbar. Toggle "Start watchparty" and insert a nanoStream Cloud streamname (e.g. `HX26g-1Qs78`). You can also paste ABR streamnames following this format (e.g. `XXXXX-YYYY1,XXXXX-YYYY2,XXXXX-YYYY3`). The nanoPlayer will be shown within the meeting room and can be controlled by the [moderator](#roles).
 

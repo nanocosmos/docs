@@ -711,6 +711,7 @@
       "Other": "Other",
       "nanoStream Webcaster": "nanoStream Webcaster",
       "nanoMeet": "nanoMeet",
+      "Samples": "Samples",
       "nanoStream Cloud": "nanoStream Cloud",
       "cloud frontend": "cloud frontend",
       "bintu api": "bintu api",
@@ -721,8 +722,7 @@
       "Windows": "Windows",
       "DirectShow": "DirectShow",
       "Live Streaming": "Live Streaming",
-      "Purchase and License": "Purchase and License",
-      "Samples": "Samples"
+      "Purchase and License": "Purchase and License"
     }
   },
   "pages-strings": {

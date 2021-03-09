@@ -15,6 +15,9 @@ You need a nanoStream Cloud/Bintu account with nanoMeet enabled.
 >
 >  ![nanoMeet enabled](assets/enable-nanomeet.jpg)
 
+## Github Repository
+
+Find our project on Github <a href="https://github.com/nanostream/nanomeet-frontend" target="_blank">here</a>.
 
 ## nanoMeet Token Creator Source Code
 

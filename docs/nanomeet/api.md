@@ -77,7 +77,7 @@ Creates a secure token that is needed to initialize and use nanoMeet.
 | roomSetUp.streamname | `String`  | A passthrough streamname.                                    |
 | roomSetUp.server     | `String`  | The server URL.                                              |
 | roomSetUp.room       | `String`  | The room name. Valid Charset: a-z, A-Z, 0-9, _               |
-| roomSetUp.moderator  | `Boolean` | If true the token gives the user permissions to create invite token, kick participants out and start the broadcast. |
+| roomSetUp.moderator  | `Boolean` | If true the token gives the user permissions to create invite token, kick participants out and start the broadcast. Read [here](introduction#roles) about the different roles. |
 
 **Example `roomSetUp` Properties**
 
@@ -129,7 +129,7 @@ Creates an invite token for the nanoMeet room.
 | Param                | Type      | Description                                                  |
 | -------------------- | --------- | ------------------------------------------------------------ |
 | token                | `String`  | A valid token with moderator rights for the room.            |
-| tokenSetup.moderator | `Boolean` | If true the token gives the user permissions to create invite token, kick participants out and start the broadcast. |
+| tokenSetup.moderator | `Boolean` | If true the token gives the user permissions to create invite token, kick participants out and start the broadcast. Read [here](introduction#roles) about the different roles. |
 | [tokenSetup.nbf]     | `String`  | The not before date for the secure token in ISO format. If it is not provided it will be the same as the date passed to the token. |
 | [tokenSetup.exp]     | `String`  | The expiration date for the secure token in ISO format. If it is not provided it will be the same as the date passed to the token. |
 

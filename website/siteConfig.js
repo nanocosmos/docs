@@ -15,8 +15,8 @@ var myConfig = {
 
 // override from environment variable
 // example: DOCS_ENV=github && docusaurus-build
-var configName   = process.env.DOCS_ENV;
-if(!configName || configName.length==0) {
+var configName = process.env.DOCS_ENV;
+if (!configName || configName.length == 0) {
   //configName = "docs1";
   //configName = "gitlab";
   configName = "default";
@@ -24,23 +24,23 @@ if(!configName || configName.length==0) {
 }
 
 
-if(configName=="github") {
+if (configName == "github") {
   myConfig.url = 'https://docs.nanocosmos.de';
   myConfig.cname = 'nanocosmos.github.io';
-} else if(configName=="gitlab-pages") {
+} else if (configName == "gitlab-pages") {
   myConfig.url = 'https://doc.pages.nanocosmos.de';
   myConfig.baseUrl = '/docs/docs/';
-} else if(configName=="gitlab") {
+} else if (configName == "gitlab") {
   myConfig.url = 'https://docs-gitlab.nanocosmos.de';
-} else if(configName=="gitlab-develop") {
+} else if (configName == "gitlab-develop") {
   myConfig.url = 'https://docs-develop.k8s-dev.nanocosmos.de';
-} else if(configName=="docs1") {
+} else if (configName == "docs1") {
   myConfig.url = 'https://docs1.nanocosmos.de';
-} else if(configName=="docs-dev") {
+} else if (configName == "docs-dev") {
   myConfig.url = 'https://docs-dev.nanocosmos.de';
 }
 
-if(process.env.DOCS_URL && process.env.DOCS_URL.length>1) {
+if (process.env.DOCS_URL && process.env.DOCS_URL.length > 1) {
   myConfig.url = process.env.DOCS_URL;
   console.log("Override process.env.DOCS_URL: " + myConfig.url)
 }
@@ -51,11 +51,11 @@ console.log(JSON.stringify(myConfig));
 const siteConfig = {
   title: 'nanocosmos Documentation', // Title for your website. 
   tagline: 'nanoStream Cloud & H5Live Player - Around The World in 1 Second',
-  title: 'nanocosmos Documentation',  
+  title: 'nanocosmos Documentation',
 
   url: myConfig.url, // Your website URL
   baseUrl: myConfig.baseUrl, // Base URL for your project - should be absolute */
-  
+
   cname: myConfig.cname,
 
   // Used for publishing and more
@@ -67,14 +67,14 @@ const siteConfig = {
 
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
-    {doc: 'cloud/cloud_overview', label: 'nanoStream Cloud'},
+    { doc: 'cloud/cloud_overview', label: 'nanoStream Cloud' },
     //{doc: 'cloud', label: 'Cloud'},
-    {doc: 'nanoplayer/nanoplayer_introduction', label: 'H5Live Player'},
-    {doc: 'webrtc/nanostream_webrtc_introduction', label: 'nanoStream Webcaster'},
-    {doc: 'nanomeet/introduction', label: 'nanoMeet'},
-    {doc: 'nanostream/nanostream', label: 'nanoStream Apps and SDKs'},
-    {doc: 'samples/samples', label: 'Samples'},
-    {doc: 'faq/faq_streaming', label: 'FAQ'}
+    { doc: 'nanoplayer/nanoplayer_introduction', label: 'H5Live Player' },
+    { doc: 'webrtc/nanostream_webrtc_introduction', label: 'nanoStream Webcaster' },
+    { doc: 'nanomeet/introduction', label: 'nanoMeet' },
+    { doc: 'nanostream/nanostream', label: 'nanoStream Apps and SDKs' },
+    { doc: 'samples/samples', label: 'Samples' },
+    { doc: 'faq/faq_streaming', label: 'FAQ' }
   ],
 
   gaTrackingId: 'UA-552140-1',
@@ -114,7 +114,14 @@ const siteConfig = {
   },
 
   // Add custom scripts here that would be placed in <script> tags.
-  scripts: ['https://buttons.github.io/buttons.js', '/js/search.js'],
+  scripts: [
+    'https://buttons.github.io/buttons.js',
+    'https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js',
+    '/js/copy-button.js',
+    'https://buttons.github.io/buttons.js',
+    '/js/search.js'
+  ],
+  stylesheets: ['/css/copy-button.css'],
 
   // On page navigation for the current documentation page.
   onPageNav: 'separate',
@@ -133,9 +140,9 @@ const siteConfig = {
 
   // You may provide arbitrary config keys to be used as needed by your
   // template. For example, if you need your repo's URL...
-     repoUrl: 'https://github.com/nanocosmos/docs',
+  repoUrl: 'https://github.com/nanocosmos/docs',
 
-     editUrl: 'https://github.com/nanocosmos/docs/tree/master/docs/'
+  editUrl: 'https://github.com/nanocosmos/docs/tree/master/docs/'
 };
 
 console.log("siteConfig: " + configName + "  URL: " + siteConfig.url + " " + siteConfig.baseUrl);
