@@ -195,13 +195,25 @@
         "title": "Programming / SDK / API",
         "sidebar_label": "Programming / SDK / API"
       },
-      "nanomeet/nanomeet-index": {
-        "title": "Introduction",
+      "nanomeet/api": {
+        "title": "nanoMeet Web API",
+        "sidebar_label": "API"
+      },
+      "nanomeet/getting-started": {
+        "title": "Getting Started",
+        "sidebar_label": "Getting Started"
+      },
+      "nanomeet/introduction": {
+        "title": "nanoMeet",
         "sidebar_label": "Introduction"
       },
-      "nanomeet/nanomeet-dev": {
-        "title": "nanoMeet API",
-        "sidebar_label": "API"
+      "nanomeet/samples": {
+        "title": "nanoMeet Samples",
+        "sidebar_label": "nanoMeet Samples"
+      },
+      "nanomeet/source-code": {
+        "title": "nanoMeet Sample Code Snippets",
+        "sidebar_label": "nanoMeet Source Code"
       },
       "nanoplayer/nanoplayer_api_errors": {
         "title": "NanoPlayer Status & Error Codes",

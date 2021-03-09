@@ -1,66 +1,31 @@
 ---
-id: nanomeet-dev
-title: nanoMeet API
+id: api
+title: nanoMeet Web API
 sidebar_label: API
 ---
 
-# nanoMeet Developer Guide
-
 &copy; 2021 [nanocosmos](www.nanocosmos.de)
 
-
-
-## Getting started
-
 This guide will help you to integrate nanoMeet into your development environment. 
-Embedding nanoMeet into your web page, using our Web API enables you to provide secure video meetings and broadcast them around the world in 1 second.
+Use the nanoMeet web API to to provide secure video meetings and broadcast them around the world in 1 second.
+
+We also provide the following online samples: 
+
+- [Token Creator](https://nanomeet.pages.nanocosmos.de/nanomeet-frontend/nanomeet-helper.html?bintu.apikey=YOUR-API-KEY&nanomeet.room=YOUR-ROOM-NAME) - Click [here](source-code#nanomeet-token-creator-source-code) to find the code.
+
+- [NanoMeet Sample](https://nanomeet.pages.nanocosmos.de/nanomeet-frontend/nanomeet-sample.html?token=YOUR-INVITE-TOKEN) - Click [here](source-code#nanomeet-sample-source-code) to find the code.
 
 
+nanoMeet is part of [nanoStream Cloud](https://bintu-cloud-frontend.nanocosmos.de). 
+You need a nanoStream Cloud/Bintu account with nanoMeet enabled.
 
-### nanoMeet online samples
+> *If you do not have an account or nanoMeet enabled yet, please contact our sales team via [contact form](https://www.nanocosmos.de/contact) or sales(at)nanocosmos.de.*
+>
+> To check if your organisation enables nanoMeet, check your [organisation overview](https://bintu-cloud-frontend.nanocosmos.de/organisation).
+>
+>  ![nanoMeet enabled](assets/enable-nanomeet.jpg)
 
-[Token Creator](https://nanomeet.pages.nanocosmos.de/nanomeet-frontend/nanomeet-helper.html?bintu.apikey=YOUR-API-KEY&nanomeet.room=YOUR-ROOM-NAME) - Click [here](nanomeet-helper.html) to find the code.
-
-[NanoMeet Sample](https://nanomeet.pages.nanocosmos.de/nanomeet-frontend/nanomeet-sample.html?token=YOUR-INVITE-TOKEN) - Click [here](nanomeet-sample.html) to find the code.
-
-
-
-### Embedding nanoMeet on your own web page
-
-You can embed the following code snippet to test nanoMeet on your page in no time. It is a recommended example and runs on any web page. 
-
-
-
-> **Note**: To make this code snippet run, you need to **create a new nanoMeet room first**. When executing this step via the [nanoMeet web API](#createNanoMeetRoom) method or our [sample](https://nanomeet.pages.nanocosmos.de/nanomeet-frontend/nanomeet-helper.html?bintu.apikey=YOUR-API-KEY&nanomeet.room=YOUR-ROOM-NAME) a **new secure invite token** is generated that can be used to enter a nanoMeet room.
-
-
-
-```html
-// Code to embed a nanoMeet meeting room on a web page
-<div id="nanoStream-meet"></div>
-<script src="https://nanomeet.pages.nanocosmos.de/nanomeet-frontend/js/nanomeet.js"></script>
-<script src="https://nanomeet-eu.nanocosmos.de/external_api.js"></script>
-<!-- The div element the nanoMeet room will be embedded into -->
-<script>
-    var nanoMeet = new NanoMeet(); // Instance of the nanoMeet web API
-    var token = "SECURE-TOKEN" // Your secure invite token
-
-    // Initialization of the nanoMeet player
-    document.addEventListener('DOMContentLoaded', function () {
-        nanoMeet.init({ token, id: "nanoStream-meet" })
-            .then((success) => {
-                console.log("nanoMeet setted up...", success);
-            }).catch((error) => {
-                console.log("Error setting up nanoMeet", error);
-            });
-    })
-</script>
-```
-
-
-
-## NanoMeet Web API
-
+## nanoMeet Developers Guide
 
 
 ### NanoMeet
@@ -81,7 +46,6 @@ To integrate nanoMeet in your web page you need to load our nanoMeet Web API.
 
 ```html
 <script src="https://nanomeet.pages.nanocosmos.de/nanomeet-frontend/js/nanomeet.js"></script>
-<script src="https://nanomeet-eu.nanocosmos.de/external_api.js"></script>
 ```
 
 
@@ -306,8 +270,6 @@ nanoMeet.stopBroadcast()
     console.log("Error in stopping broadcast.");
 });
 ```
-
-
 
 ## Support
 

@@ -49,8 +49,15 @@
   },
   "nanomeet": {
     "nanoMeet": [
-      "nanomeet/nanomeet-index",
-      "nanomeet/nanomeet-dev"
+      "nanomeet/introduction",
+      "nanomeet/getting-started"
+    ],
+    "Features": [
+      "nanomeet/samples",
+      "nanomeet/source-code"
+    ],
+    "API": [
+      "nanomeet/api"
     ]
   },
   "cloud": {
