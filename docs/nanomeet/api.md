@@ -25,10 +25,7 @@ You need a nanoStream Cloud/Bintu account with nanoMeet enabled.
 >
 >  ![nanoMeet enabled](assets/enable-nanomeet.jpg)
 
-## nanoMeet Developers Guide
-
-
-### NanoMeet
+## NanoMeet
 
 NanoMeet Public Web API Class 1.0.0.
 
