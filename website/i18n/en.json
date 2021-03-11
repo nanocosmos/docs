@@ -31,23 +31,23 @@
         "sidebar_label": "nanoStream Cloud Tags"
       },
       "cloud-frontend/nanoplayer-snippet": {
-        "title": "How to Embed nanoPlayer on your own web page",
-        "sidebar_label": "Embed Player Code"
+        "title": "Embed nanoPlayer Code",
+        "sidebar_label": "Embed nanoPlayer Code"
       },
       "cloud-frontend/How_to_Use_the_nanoStream_Webcaster": {
         "title": "nanoStream Webcaster",
         "sidebar_label": "nanoStream Webcaster"
       },
       "cloud-frontend/stream-list": {
-        "title": "bintu stream live",
+        "title": "How to use the Stream List",
         "sidebar_label": "Stream List"
       },
       "cloud-frontend/transcoding-abr": {
-        "title": "Adaptive Bitrate",
+        "title": "Live Transcoding and Adaptive Bitrate Playback",
         "sidebar_label": "Adaptive Bitrate"
       },
       "cloud-frontend/cloud-readme": {
-        "title": "Cloud Dashboard Overview (Readme)",
+        "title": "Cloud Dashboard Overview",
         "sidebar_label": "Cloud Dashboard Overview"
       },
       "cloud/analytics": {
