@@ -10,7 +10,7 @@ sidebar_label: Webcaster
 nanoStream Webcaster Public API Class
 
 **Kind**: global class  
-**Version**: 5.11.0  
+**Version**: 5.11.1  
 
 -----
 
@@ -1570,28 +1570,64 @@ MuteDeviceError event. The event is fired if a video/audio device mute/unmute fa
     <td>data.message</td><td><code>string</code></td><td><p>The connection state message (expected value: &#39;broadcasting&#39;).</p>
 </td>
     </tr><tr>
-    <td>data.stats.results</td><td><code>object</code></td><td><p>The results object.</p>
+    <td>data.stats.results</td><td><code>object</code></td><td><p>The results object. It contains the stats key/value pairs. All stats in the result object are optional and are present based on the capabilities of the currently used browser.</p>
 </td>
     </tr><tr>
-    <td>[data.stats.results.audioBitrate]</td><td><code>string</code></td><td><p>The audio bitrate in kbps. Note: the property is optional, therefore, its presence is not guaranteed.</p>
+    <td>[data.stats.results.audioBitrate]</td><td><code>number</code></td><td><p>The audio bitrate in kbps.</p>
 </td>
     </tr><tr>
-    <td>[data.stats.results.audioCodec]</td><td><code>string</code></td><td><p>The audio codec. Note: the property is optional, therefore, its presence is not guaranteed.</p>
+    <td>[data.stats.results.audioBitrateMin]</td><td><code>number</code></td><td><p>Minimum &#39;audioBitrate&#39; during past 10 seconds.</p>
 </td>
     </tr><tr>
-    <td>[data.stats.results.frameHeight]</td><td><code>number</code></td><td><p>The video frame height. Note: the property is optional, therefore, its presence is not guaranteed.</p>
+    <td>[data.stats.results.audioBitrateMax]</td><td><code>number</code></td><td><p>Maximum &#39;audioBitrate&#39; during past 10 seconds.</p>
 </td>
     </tr><tr>
-    <td>[data.stats.results.frameWidth]</td><td><code>number</code></td><td><p>The video frame width. Note: the property is optional, therefore, its presence is not guaranteed.</p>
+    <td>[data.stats.results.audioBitrateAverage]</td><td><code>number</code></td><td><p>Average &#39;audioBitrate&#39; during past 10 seconds.</p>
 </td>
     </tr><tr>
-    <td>[data.stats.results.framerate]</td><td><code>number</code></td><td><p>The video frame rate in fps. Note: the property is optional, therefore, its presence is not guaranteed.</p>
+    <td>[data.stats.results.audioCodec]</td><td><code>string</code></td><td><p>The audio codec.</p>
 </td>
     </tr><tr>
-    <td>[data.stats.results.videoBitrate]</td><td><code>number</code></td><td><p>The video bitrate in kbps. Note: the property is optional, therefore, its presence is not guaranteed.</p>
+    <td>[data.stats.results.frameHeight]</td><td><code>number</code></td><td><p>The video frame height  in pixels.</p>
 </td>
     </tr><tr>
-    <td>[data.stats.results.videoCodec]</td><td><code>string</code></td><td><p>The video codec. Note: the property is optional, therefore, its presence is not guaranteed.</p>
+    <td>[data.stats.results.frameWidth]</td><td><code>number</code></td><td><p>The video frame width in pixels.</p>
+</td>
+    </tr><tr>
+    <td>[data.stats.results.framerate]</td><td><code>number</code></td><td><p>The video frame rate in frames per second.</p>
+</td>
+    </tr><tr>
+    <td>[data.stats.results.framerateMin]</td><td><code>number</code></td><td><p>Minimum &#39;framerate&#39; during past 10 seconds.</p>
+</td>
+    </tr><tr>
+    <td>[data.stats.results.framerateMax]</td><td><code>number</code></td><td><p>Maximum &#39;framerate&#39; during past 10 seconds.</p>
+</td>
+    </tr><tr>
+    <td>[data.stats.results.framerateAverage]</td><td><code>number</code></td><td><p>Average &#39;framerate&#39; during past 10 seconds.</p>
+</td>
+    </tr><tr>
+    <td>[data.stats.results.videoBitrate]</td><td><code>number</code></td><td><p>The video bitrate in kbps.</p>
+</td>
+    </tr><tr>
+    <td>[data.stats.results.videoBitrateMin]</td><td><code>number</code></td><td><p>Minimum &#39;videoBitrate&#39; during past 10 seconds.</p>
+</td>
+    </tr><tr>
+    <td>[data.stats.results.videoBitrateMax]</td><td><code>number</code></td><td><p>Maximum &#39;videoBitrate&#39; during past 10 seconds.</p>
+</td>
+    </tr><tr>
+    <td>[data.stats.results.videoBitrateAverage]</td><td><code>number</code></td><td><p>Average &#39;videoBitrate&#39; during past 10 seconds.</p>
+</td>
+    </tr><tr>
+    <td>[data.stats.results.videoCodec]</td><td><code>string</code></td><td><p>The video codec.</p>
+</td>
+    </tr><tr>
+    <td>[data.stats.results.videoSendDelay]</td><td><code>number</code></td><td><p>An indication for video packet delay.</p>
+</td>
+    </tr><tr>
+    <td>[data.stats.results.videoSendDelayMax]</td><td><code>number</code></td><td><p>Maximum &#39;videoSendDelay&#39; during past 10 seconds.</p>
+</td>
+    </tr><tr>
+    <td>[data.stats.results.videoSendDelayAverage]</td><td><code>number</code></td><td><p>Average &#39;videoSendDelay&#39; during past 10 seconds.</p>
 </td>
     </tr><tr>
     <td>data.stats.state</td><td><code>number</code></td><td><p>The connection state. The expected value: 6 = &#39;broadcasting&#39;.</p>
