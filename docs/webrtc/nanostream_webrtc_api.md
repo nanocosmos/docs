@@ -304,19 +304,9 @@ Parameters in braces "[ ]" are optional.
 ```js
 // rtcUser instance of RtcUser
 rtcUser.enableStats();
-```
-**Example**  
-```js
-// rtcUser instance of RtcUser
-var enable = false;
-rtcUser.enableStats(enable);
-```
-**Example**  
-```js
-// rtcUser instance of RtcUser
-var enable = true;
-var interval = 5000;
-rtcUser.enableStats(enable, interval);
+rtcUser.on('ReceivedWebRTCStats', function(event) {
+     console.log(JSON.stringify(event.data.results));
+});
 ```
 <a name="RtcUser+startBroadcast"></a>
 
