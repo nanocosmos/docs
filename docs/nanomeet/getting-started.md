@@ -80,6 +80,22 @@ You can customize it in the "Invite participant" section by setting the followin
 
 ![nanoMeet Sample Settings](assets/nanomeet-ui-settings.jpg)
 
+## Customize a nanoMeet room
+
+You can customize your nanoMeet room with your branding easily.
+For that you need to set up a JSON file. Every property in this object is optional, when nothing is set, the default, our nanocosmos branding, will be used.
+
+**Example branding set up**
+
+```json
+{
+    "backgroundColor": "#ed7d0e",
+    "backgroundImageUrl": "https://nanomeet.pages.nanocosmos.de/nanomeet-frontend/img/bg.png",
+    "logoClickUrl": "https://nanocosmos.de/v6/",
+    "logoImageUrl": "https://nanocosmos.de/v6/images/logo-nav.png"
+}
+```
+
 ## Start a live stream ...
 
 > To start a live stream you need to have the "moderator" [role](introduction#roles).
@@ -94,7 +110,6 @@ To start a live stream to the nanoStream Cloud you can click the button "Start s
 ### ... (b) via nanoMeet UI
 
 To start a live stream via the nanoMeet UI you need to click on the three dots on the right and click on the "Start nanoStream Cloud live stream". The dialog will ask you to insert the ingest informations. You should provide it using this format: `rtmp://rtmp-bintu-ingest-url:1935/rec/XXXXX-YYYYY`.
-
 
 ## Turn on/off the "Lobby" ...
 

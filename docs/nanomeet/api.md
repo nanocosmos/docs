@@ -178,7 +178,7 @@ Initializes nanoMeet with the provided config object.
 | config.id         | `String` | The ID of the div element the nanoMeet window will be embedded into. |
 | [config.height]   | `Number` | The height of the nanoMeet window. Default is 100%. <br />**Note:** The height you initialized can not be updated after you set it in the config. For dynamic changes regarding the height use the *config.id* selector (e.g. #nanoStream-meet { height: 500px; }). |
 | [config.width]    | `Number` | The width of the nanoMeet window. Default is 100%.<br />**Note:** The width you initialized can not be updated after you set it in the config. For dynamic changes regarding the width use the *config.id* selector (e.g. #nanoStream-meet { width: 500px; }). |
-| [config.branding] | `String` | The branding URL that refers to a JSON file that brands nanoMeet. Default is nanocosmos branding. |
+| [config.branding] | `String` | The branding URL that refers to a JSON file that brands nanoMeet. Default is nanocosmos branding. Read more [here](getting-started#customize-a-nanomeet-room). |
 
 **Example `config` Properties**
 
@@ -254,7 +254,7 @@ data: {
 
 Stops a running broadcast. 
 
-**Kind:** Instance of the  `NanoMeet
+**Kind:** Instance of the  `NanoMeet`
 
 **Example**
 

@@ -6,6 +6,8 @@ sidebar_label: nanoMeet Source Code
 
 To create your own token helper you can use our way of implementation. Find here working code snippets and use our approach to create new nanoMeet rooms or use the [nanoMeet web API](api) to do it on your own.
 
+> You can find online samples [here](samples).
+
 nanoMeet is part of [nanoStream Cloud](https://bintu-cloud-frontend.nanocosmos.de). 
 You need a nanoStream Cloud/Bintu account with nanoMeet enabled.
 

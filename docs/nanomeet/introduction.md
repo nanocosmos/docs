@@ -8,8 +8,10 @@ sidebar_label: Introduction
 
 ## About the nanoMeet documentation
 
+The following content we provide is divided in 3 main parts:
+
 - [User Guide](samples): Working online samples that can be used immediately with all features and functions we provide.
-- [User/Deverloper Guide](source-code): The source code of our samples that can be copied easily.
+- [User/Developer Guide](source-code): The source code of our samples that can be copied easily.
 - [Developer Guide](api): The documentation of our web API that provides all features and functions of nanoMeet.
 
 ## What is nanoMeet?
@@ -110,12 +112,17 @@ Find the source code of our samples [here](source-code).
 Read our [developers documentation](api) 
 
 
+### Customization
+
+You are able to customize your nanoMeet room using your own branding! Read more [here](#nanomeetinitconfig--promisesuccesserror).
+
+
 ### Roles
 
 There are two main Roles
 
-- Moderator: Is able to create invite tokens for participants and moderators, start live streams and customize the nanoMeet room.
-- Participant: Is able to join a nanoMeet room.
+- **Moderator**: Is able to create invite tokens for participants and moderators, start live streams and customize the nanoMeet room.
+- **Participant**: Is able to join a nanoMeet room.
 
 ## Support
 

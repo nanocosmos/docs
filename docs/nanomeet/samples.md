@@ -6,6 +6,8 @@ sidebar_label: nanoMeet Samples
 
 The nanoMeet online samples utilize the [nanoMeet web API](api).
 
+> You can find source codes for the samples [here](source-code).
+
 ## How to use nanoMeet Samples?
 
 nanoMeet is part of [nanoStream Cloud](https://bintu-cloud-frontend.nanocosmos.de). 
@@ -18,7 +20,6 @@ You need a nanoStream Cloud/Bintu account with nanoMeet enabled.
 >  ![nanoMeet enabled](assets/enable-nanomeet.jpg)
 
 ### **nanoMeet Token Creator (Online Sample)** - *Create a room and secure invite token*
-
 
 1. Open the [nanoMeet Token Creator](https://nanomeet.pages.nanocosmos.de/nanomeet-frontend/nanomeet-helper.html?bintu.apikey=YOUR-API-KEY&nanomeet.room=YOUR-ROOM-NAME).
 
