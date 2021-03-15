@@ -16,11 +16,11 @@ In order to display client side statistics that are visible directly in your Web
 - enable stats via the [enableStats()](nanostream_webrtc_api.md#rtcuserenablestatsenable-interval) API call
 - listen to the ["ReceivedWebRTCStats"](nanostream_webrtc_api#RtcUser+event_ReceivedWebRTCStats) Event
 
-
 ### Stats Example
 
 The following snipped will enable stats reporting on the client side.
 Please find a list of available stats [here](nanostream_webrtc_api#WebRTCStatsEvent).
+Also note that most of the stats are available in Chrome. The other browsers, e.g. Firefox, may not provide all the documented stats.
 
 ```js
 // rtcUser: instance of RtcUser
