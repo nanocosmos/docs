@@ -4,29 +4,22 @@ title: Programming / SDK / API
 sidebar_label: Programming / SDK / API
 ---
 
-<details><summary><strong>Which programming languages can I use for the API?</strong></summary>
+<details><summary><strong>How do I use the API or SDK?</strong></summary>
 
-Supported programming languages are dependent on the OS.
+nanoStream Cloud provides dashboards and application programming interfaces (API), but also code snippets and web pages which do not require programming skills.
 
-#### WebRTC and H5Live
+nanoPlayer and Webcaster are based on HTML and JS (Javascript) libraries
+nanoStream Cloud's bintu management service is available as dashboard and REST API
 
-- `HTML/Javascript` works for all modern HTML5 browsers.
+`HTML/JS (Javascript)` works for all modern HTML5 browsers. Based on this, you can use frameworks like Typescript, React, VueJS etc.
 
-#### iOS
+HTML/JS is supported on all devices and platforms nowadays.
 
-- `ObjC` and `Swift`
+For native apps, We recommend using Web Views to embed the nanoStream JS API.
 
-#### Android
+If you are working on a platform without HTML/JS support, you can use fallback URLs provided by nanoPlayer. 
+Please contact us for details.
 
-- `Java`
-
-#### Windows
-
-Any programming language which supports ActiveX, for example:
-
-- `Visual C / C++`
-- `C#`
-- `VisualBasic.NET`
 
 </details>
 

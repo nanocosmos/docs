@@ -47,6 +47,19 @@
       "webrtc/nanostream_webrtc_faq"
     ]
   },
+  "nanomeet": {
+    "nanoMeet": [
+      "nanomeet/introduction",
+      "nanomeet/getting-started"
+    ],
+    "Samples": [
+      "nanomeet/samples",
+      "nanomeet/source-code"
+    ],
+    "API": [
+      "nanomeet/api"
+    ]
+  },
   "cloud": {
     "nanoStream Cloud": [
       "cloud/cloud_overview",
@@ -57,7 +70,7 @@
       "cloud/security",
       "cloud/analytics"
     ],
-    "cloud frontend": [
+    "Cloud Dashboard": [
       "cloud-frontend/getting_started",
       "cloud-frontend/cloud-readme",
       {
@@ -74,7 +87,7 @@
         ]
       }
     ],
-    "bintu api": [
+    "Bintu API": [
       "cloud/bintu_api",
       "cloud/bintu_custom_webhooks",
       "cloud/bintu_stream_tags"

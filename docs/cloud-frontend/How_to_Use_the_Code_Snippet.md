@@ -1,14 +1,12 @@
 ---
 id: nanoplayer-snippet
-title: How to Embed nanoPlayer on your own web page
-sidebar_label: Embed Player Code
+title: Embed nanoPlayer Code
+sidebar_label: Embed nanoPlayer Code
 ---
-
-# How to Embed a nanoStream on Your Website
 
 Embedding a live stream into your own website is really simple. Every nanoStream has its unique code snippet that is updated automatically to your setup - you only have to copy and paste it to the right place.
 
-### Finding the nanoPlayer Code Snippet
+## Finding the nanoPlayer Code Snippet
 
 The nanoStream H5Live Player Code Snippet can be found in the *Stream Overview* of the stream that you want to embed. You can find the *Stream Overview* from your stream list. Click on *Streams* on the left side of the homepage to find a list with all of your created streams.
 
@@ -28,7 +26,7 @@ Now click :arrow_down_small: and press *Copy* to copy the code snippet.
 
 Now you can insert the code snippet on your own website. 
 
-### Inserting the Code Snippet on a Wordpress Website
+## Inserting the Code Snippet on a Wordpress Website
 
 Create a new post on Wordpress and Click on *Text*.
 
@@ -47,3 +45,7 @@ Now check out your new post.
 ![wp-finish](assets/wp-finish.png)
 
 Your stream goes around the world in one second!
+
+## Support
+
+Hopefully, this tutorial was helpful for you. For further assistance, use our [contact form](https://www.nanocosmos.de/support), browse the [FAQs](https://docs.nanocosmos.de/docs/faq/faq_streaming/) or contact us via support(at)nanocosmos.de

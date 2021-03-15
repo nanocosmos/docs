@@ -4,11 +4,9 @@ title: Secure Playback Tokens
 sidebar_label: Secure Playback Tokens
 ---
 
-# How to Use Secure Playback Tokens
-
 *Secure Playback Tokens* are a tool that ensures highest security standards for your stream. With tokens you can decide who is able to playback your stream. The mere *playout URL* won't allow your stream to be played out.
 
-#### **Creating secure tokens**
+## Create secure tokens
 
 If your organisation has the `secure` option `enabled`, then you will be able to see `CREATE SECURE PLAYBACK TOKEN` option.
 
@@ -67,8 +65,11 @@ Press *Streams* in the menu bar on the left side of the home page to see all you
 
 ![spbt-stream-overview](assets/spbt-stream-overview.png)
 
-Go to *Playouts* and press *Create Secure Playback Token*. Then follow the instructions given above (see: Enabling Security Tokens when Creating a new Stream).
+Go to *Playouts* and press *Create Secure Playback Token*. Then follow the instructions given above (see: [Enabling Security Tokens](#enabling-security-tokens-when-creating-a-new-stream) when [Creating a new Stream](How_to_Start_a_Stream.md).
 
-Please also check the nanoPlayer Documentation for further information.
+> To get more informations about the H5Live Player and its implementation, see our [documentation](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_getting_started/).
 
-If you are in need of more assistance, reach out to [support](https://www.nanocosmos.de/support)
+
+## Support
+
+Hopefully, this tutorial was helpful for you. For further assistance, use our [contact form](https://www.nanocosmos.de/support), browse the [FAQs](https://docs.nanocosmos.de/docs/faq/faq_streaming/) or contact us via support(at)nanocosmos.de

@@ -31,23 +31,23 @@
         "sidebar_label": "nanoStream Cloud Tags"
       },
       "cloud-frontend/nanoplayer-snippet": {
-        "title": "How to Embed nanoPlayer on your own web page",
-        "sidebar_label": "Embed Player Code"
+        "title": "Embed nanoPlayer Code",
+        "sidebar_label": "Embed nanoPlayer Code"
       },
       "cloud-frontend/How_to_Use_the_nanoStream_Webcaster": {
         "title": "nanoStream Webcaster",
         "sidebar_label": "nanoStream Webcaster"
       },
       "cloud-frontend/stream-list": {
-        "title": "bintu stream live",
+        "title": "How to use the Stream List",
         "sidebar_label": "Stream List"
       },
       "cloud-frontend/transcoding-abr": {
-        "title": "Adaptive Bitrate",
+        "title": "Live Transcoding and Adaptive Bitrate Playback",
         "sidebar_label": "Adaptive Bitrate"
       },
       "cloud-frontend/cloud-readme": {
-        "title": "Cloud Dashboard Overview (Readme)",
+        "title": "Cloud Dashboard Overview",
         "sidebar_label": "Cloud Dashboard Overview"
       },
       "cloud/analytics": {
@@ -194,6 +194,26 @@
       "faq/programming_sdk_api": {
         "title": "Programming / SDK / API",
         "sidebar_label": "Programming / SDK / API"
+      },
+      "nanomeet/api": {
+        "title": "nanoMeet Web API",
+        "sidebar_label": "API"
+      },
+      "nanomeet/getting-started": {
+        "title": "Getting Started",
+        "sidebar_label": "Getting Started"
+      },
+      "nanomeet/introduction": {
+        "title": "nanoMeet",
+        "sidebar_label": "Introduction"
+      },
+      "nanomeet/samples": {
+        "title": "nanoMeet Samples",
+        "sidebar_label": "nanoMeet Samples"
+      },
+      "nanomeet/source-code": {
+        "title": "nanoMeet Sample Code Snippets",
+        "sidebar_label": "nanoMeet Source Code"
       },
       "nanoplayer/nanoplayer_api_errors": {
         "title": "NanoPlayer Status & Error Codes",
@@ -679,6 +699,7 @@
       "nanoStream Cloud": "nanoStream Cloud",
       "H5Live Player": "H5Live Player",
       "nanoStream Webcaster": "nanoStream Webcaster",
+      "nanoMeet": "nanoMeet",
       "nanoStream Apps and SDKs": "nanoStream Apps and SDKs",
       "Samples": "Samples",
       "FAQ": "FAQ"
@@ -689,9 +710,11 @@
       "API": "API",
       "Other": "Other",
       "nanoStream Webcaster": "nanoStream Webcaster",
+      "nanoMeet": "nanoMeet",
+      "Samples": "Samples",
       "nanoStream Cloud": "nanoStream Cloud",
-      "cloud frontend": "cloud frontend",
-      "bintu api": "bintu api",
+      "Cloud Dashboard": "Cloud Dashboard",
+      "Bintu API": "Bintu API",
       "Support": "Support",
       "nanoStream SDKs/Apps": "nanoStream SDKs/Apps",
       "Android": "Android",
@@ -699,8 +722,7 @@
       "Windows": "Windows",
       "DirectShow": "DirectShow",
       "Live Streaming": "Live Streaming",
-      "Purchase and License": "Purchase and License",
-      "Samples": "Samples"
+      "Purchase and License": "Purchase and License"
     }
   },
   "pages-strings": {
