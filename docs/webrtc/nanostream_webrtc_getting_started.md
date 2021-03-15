@@ -67,7 +67,7 @@ Within your HTML:
 ```xml
 <body>
   <!-- videoelement to preview your video device (camera) -->
-  <video id="video-local" autoplay playsinline style="width:800;height:600"></video>
+  <video id="video-local" muted autoplay playsinline style="width:800;height:600"></video>
 
   <!-- buttons for start/stop of broadcast -->
   <button id="btn-startbroadcast">broadcast</button>
