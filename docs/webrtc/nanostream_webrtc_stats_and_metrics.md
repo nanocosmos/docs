@@ -18,7 +18,7 @@ In order to display client side statistics that are visible directly in your Web
 
 ### Stats Example
 
-The following snipped will enable stats reporting on the client side.
+The following snippet will enable stats reporting on the client side.
 Please find a list of available stats [here](nanostream_webrtc_api#WebRTCStatsEvent).
 Also note that most of the stats are available in Chrome. The other browsers, e.g. Firefox, may not provide all the documented stats.
 
