@@ -1,0 +1,97 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>nanoMeet Samples · nanocosmos Documentation</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="The nanoMeet online samples utilize the [nanoMeet web API](api)."/><meta name="docsearch:language" content="en"/><meta property="og:title" content="nanoMeet Samples · nanocosmos Documentation"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.nanocosmos.de/"/><meta property="og:description" content="The nanoMeet online samples utilize the [nanoMeet web API](api)."/><meta property="og:image" content="https://docs.nanocosmos.de/img/docusaurus.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://docs.nanocosmos.de/img/docusaurus.png"/><link rel="shortcut icon" href="/img/favicon_nano.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script>
+              (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+              (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+              m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+              })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+              ga('create', 'UA-552140-1', 'auto');
+              ga('send', 'pageview');
+            </script><link rel="stylesheet" href="/css/copy-button.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/js/copy-button.js"></script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="/js/search.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/nanocosmos_header_logo.png" alt="nanocosmos Documentation"/><h2 class="headerTitleWithLogo">nanocosmos Documentation</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/docs/cloud/cloud_overview" target="_self">nanoStream Cloud</a></li><li class=""><a href="/docs/nanoplayer/nanoplayer_introduction" target="_self">H5Live Player</a></li><li class=""><a href="/docs/webrtc/nanostream_webrtc_introduction" target="_self">nanoStream Webcaster</a></li><li class="siteNavGroupActive"><a href="/docs/nanomeet/introduction" target="_self">nanoMeet</a></li><li class=""><a href="/docs/nanostream/nanostream" target="_self">nanoStream Apps and SDKs</a></li><li class=""><a href="/docs/samples/samples" target="_self">Samples</a></li><li class=""><a href="/docs/faq/faq_streaming" target="_self">FAQ</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Samples</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">nanoMeet</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/nanomeet/introduction">Introduction</a></li><li class="navListItem"><a class="navItem" href="/docs/nanomeet/getting-started">Getting Started</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Samples</h3><ul class=""><li class="navListItem navListItemActive"><a class="navItem" href="/docs/nanomeet/samples">nanoMeet Samples</a></li><li class="navListItem"><a class="navItem" href="/docs/nanomeet/source-code">nanoMeet Source Code</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">API</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/nanomeet/api">API</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/nanocosmos/docs/tree/master/docs/nanomeet/samples.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 id="__docusaurus" class="postHeaderTitle">nanoMeet Samples</h1></header><article><div><span><p>The nanoMeet online samples utilize the <a href="api">nanoMeet web API</a>.</p>
+<blockquote>
+<p>You can find source codes for the samples <a href="source-code">here</a>.</p>
+</blockquote>
+<h2><a class="anchor" aria-hidden="true" id="how-to-use-nanomeet-samples"></a><a href="#how-to-use-nanomeet-samples" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>How to use nanoMeet Samples?</h2>
+<p>nanoMeet is part of <a href="https://bintu-cloud-frontend.nanocosmos.de">nanoStream Cloud</a>.
+You need a nanoStream Cloud/Bintu account with nanoMeet enabled.</p>
+<blockquote>
+<p><em>If you do not have an account or nanoMeet enabled yet, please contact our sales team for a personal demo via <a href="https://www.nanocosmos.de/contact">contact form</a> or sales(at)nanocosmos.de.</em></p>
+<p>To check if your organisation enables nanoMeet, check your <a href="https://bintu-cloud-frontend.nanocosmos.de/organisation">organisation overview</a>.</p>
+<p><img src="/docs/assets/enable-nanomeet.jpg" alt="nanoMeet enabled"></p>
+</blockquote>
+<h3><a class="anchor" aria-hidden="true" id="nanomeet-token-creator-online-sample---create-a-room-and-secure-invite-token"></a><a href="#nanomeet-token-creator-online-sample---create-a-room-and-secure-invite-token" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><strong>nanoMeet Token Creator (Online Sample)</strong> - <em>Create a room and secure invite token</em></h3>
+<ol>
+<li><p>Open the <a href="https://nanomeet.pages.nanocosmos.de/nanomeet-frontend/nanomeet-helper.html?bintu.apikey=YOUR-API-KEY&amp;nanomeet.room=YOUR-ROOM-NAME">nanoMeet Token Creator</a>.</p></li>
+<li><p>Insert your <a href="https://bintu-cloud-frontend.nanocosmos.de/organisation">nanoStream Cloud/Bintu API key</a>.</p></li>
+<li><p>Name the room you want to create.</p></li>
+<li><p>Choose the server location.</p></li>
+<li><p>Set a time frame in which the secure token will be valid for the invitees to join the nanoMeet room.</p></li>
+<li><p>Click on &quot;create&quot;.</p>
+<ul>
+<li><strong>Full Stream Overview</strong>: See the full stream overview in your <a href="https://bintu-cloud-frontend.nanocosmos.de/">nanoStream Cloud dashboard</a>, including a code snippet, the playout URL and the stream names.</li>
+<li><strong>Open room</strong>: Use the invite link to launch your created and secure nanoMeet room in our <a href="https://nanomeet.pages.nanocosmos.de/nanomeet-frontend/nanomeet-sample.html?token=YOUR-INVITE-TOKEN">nanoMeet Sample</a>. <em>See instructions below.</em></li>
+</ul></li>
+</ol>
+<h3><a class="anchor" aria-hidden="true" id="nanomeet-sample-online-sample---host-nanomeet-meetings"></a><a href="#nanomeet-sample-online-sample---host-nanomeet-meetings" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><strong>nanoMeet Sample (Online Sample)</strong> - <em>Host nanoMeet meetings</em></h3>
+<blockquote>
+<p><strong>Required</strong>: A valid secure invite token for a nanoMeet room.
+(Use our <a href="https://nanomeet.pages.nanocosmos.de/nanomeet-frontend/nanomeet-helper.html?bintu.apikey=YOUR-API-KEY&amp;nanomeet.room=YOUR-ROOM-NAME">nanoMeet Token Creator</a> to create a new secure token. <em>See instructions above.)</em></p>
+</blockquote>
+<p>This sample lets you intialize your created nanoMeet room. If you dont use this sample as a moderator but as a participant you will not be able to see the &quot;Moderator Functions&quot; like &quot;Invite Participant&quot;, &quot;Security Options&quot; and &quot;Broadcast Settings&quot;.</p>
+<p><img src="/docs/assets/nanomeet-meeting.jpg" alt="nanoMeet Meeting"></p>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 3/15/2021</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/nanomeet/getting-started"><span class="arrow-prev">← </span><span>Getting Started</span></a><a class="docs-next button" href="/docs/nanomeet/source-code"><span class="function-name-prevnext">nanoMeet Source Code</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#how-to-use-nanomeet-samples">How to use nanoMeet Samples?</a><ul class="toc-headings"><li><a href="#nanomeet-token-creator-online-sample---create-a-room-and-secure-invite-token"><strong>nanoMeet Token Creator (Online Sample)</strong> - <em>Create a room and secure invite token</em></a></li><li><a href="#nanomeet-sample-online-sample---host-nanomeet-meetings"><strong>nanoMeet Sample (Online Sample)</strong> - <em>Host nanoMeet meetings</em></a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><div><h5>Contact</h5><a href="https://www.nanocosmos.de/">Homepage</a><a href="https://www.nanocosmos.de/contact">Contact</a><a href="https://www.nanocosmos.de/support">Support</a><a href="https://www.nanocosmos.de/terms">Legal Terms</a></div><div><h5>Products</h5><a href="https://www.nanocosmos.de/cloud">Nanostream Cloud with Bintu.Live</a><a href="https://www.nanocosmos.de/h5live">H5Live Low Latency HTML5-Player</a><a href="https://www.nanocosmos.de/webrtc">nanoStream Webcaster</a><a href="https://www.nanocosmos.de/#nanostream">Nanostream Apps and SDK</a></div><div><h5>More</h5><a href="https://www.nanocosmos.de/blog/">Blog</a><a href="https://twitter.com/nanovideo">Twitter</a><a href="https://www.facebook.com/nanocosmos.net/">Facebook</a><a href="https://www.linkedin.com/company/nanocosmos-gmbh">LinkedIn</a><a href="https://github.com/nanocosmos/docs">GitHub</a><a class="github-button" href="https://github.com/nanocosmos/docs" data-icon="octicon-star" data-count-href="/nanocosmos/docs/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://nanocosmos.de/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/footer_logo.png" alt="nanocosmos GmbH" width="170" height="45"/></a><section class="copyright">Copyright © 2021 nanocosmos GmbH - doc version Mon Mar 15 2021 14:25:03 GMT+0000 (Coordinated Universal Time)</section></footer></div></body></html>

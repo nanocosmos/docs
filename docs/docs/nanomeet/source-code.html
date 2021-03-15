@@ -1,0 +1,378 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>nanoMeet Sample Code Snippets · nanocosmos Documentation</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="To create your own token helper you can use our way of implementation. Find here working code snippets and use our approach to create new nanoMeet rooms or use the [nanoMeet web API](api) to do it on your own."/><meta name="docsearch:language" content="en"/><meta property="og:title" content="nanoMeet Sample Code Snippets · nanocosmos Documentation"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.nanocosmos.de/"/><meta property="og:description" content="To create your own token helper you can use our way of implementation. Find here working code snippets and use our approach to create new nanoMeet rooms or use the [nanoMeet web API](api) to do it on your own."/><meta property="og:image" content="https://docs.nanocosmos.de/img/docusaurus.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://docs.nanocosmos.de/img/docusaurus.png"/><link rel="shortcut icon" href="/img/favicon_nano.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script>
+              (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+              (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+              m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+              })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+              ga('create', 'UA-552140-1', 'auto');
+              ga('send', 'pageview');
+            </script><link rel="stylesheet" href="/css/copy-button.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/js/copy-button.js"></script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="/js/search.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/nanocosmos_header_logo.png" alt="nanocosmos Documentation"/><h2 class="headerTitleWithLogo">nanocosmos Documentation</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/docs/cloud/cloud_overview" target="_self">nanoStream Cloud</a></li><li class=""><a href="/docs/nanoplayer/nanoplayer_introduction" target="_self">H5Live Player</a></li><li class=""><a href="/docs/webrtc/nanostream_webrtc_introduction" target="_self">nanoStream Webcaster</a></li><li class="siteNavGroupActive"><a href="/docs/nanomeet/introduction" target="_self">nanoMeet</a></li><li class=""><a href="/docs/nanostream/nanostream" target="_self">nanoStream Apps and SDKs</a></li><li class=""><a href="/docs/samples/samples" target="_self">Samples</a></li><li class=""><a href="/docs/faq/faq_streaming" target="_self">FAQ</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Samples</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">nanoMeet</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/nanomeet/introduction">Introduction</a></li><li class="navListItem"><a class="navItem" href="/docs/nanomeet/getting-started">Getting Started</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Samples</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/nanomeet/samples">nanoMeet Samples</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/nanomeet/source-code">nanoMeet Source Code</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">API</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/nanomeet/api">API</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/nanocosmos/docs/tree/master/docs/nanomeet/source-code.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 id="__docusaurus" class="postHeaderTitle">nanoMeet Sample Code Snippets</h1></header><article><div><span><p>To create your own token helper you can use our way of implementation. Find here working code snippets and use our approach to create new nanoMeet rooms or use the <a href="api">nanoMeet web API</a> to do it on your own.</p>
+<blockquote>
+<p>You can find online samples <a href="samples">here</a>.</p>
+</blockquote>
+<p>nanoMeet is part of <a href="https://bintu-cloud-frontend.nanocosmos.de">nanoStream Cloud</a>.
+You need a nanoStream Cloud/Bintu account with nanoMeet enabled.</p>
+<blockquote>
+<p><em>If you do not have an account or nanoMeet enabled yet, please contact our sales team for a personal demo via <a href="https://www.nanocosmos.de/contact">contact form</a> or sales(at)nanocosmos.de.</em></p>
+<p>To check if your organisation enables nanoMeet, check your <a href="https://bintu-cloud-frontend.nanocosmos.de/organisation">organisation overview</a>.</p>
+<p><img src="/docs/assets/enable-nanomeet.jpg" alt="nanoMeet enabled"></p>
+</blockquote>
+<h2><a class="anchor" aria-hidden="true" id="github-repository"></a><a href="#github-repository" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Github Repository</h2>
+<p>Find our project on Github <a href="https://github.com/nanostream/nanomeet-frontend" target="_blank">here</a>.</p>
+<h2><a class="anchor" aria-hidden="true" id="nanomeet-token-creator-source-code"></a><a href="#nanomeet-token-creator-source-code" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>nanoMeet Token Creator Source Code</h2>
+<p>The following code lets you create a secure token with moderator rights with which you can join and invite people in to a nanoMeet room.</p>
+<pre><code class="hljs css language-html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://nanomeet.pages.nanocosmos.de/nanomeet-frontend/js/nanomeet.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"apikey-input"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Insert the API Key from your <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">target</span>=<span class="hljs-string">"blank"</span>
+            <span class="hljs-attr">href</span>=<span class="hljs-string">"https://bintu-cloud-frontend.nanocosmos.de/organisation"</span>&gt;</span>nanoStream Cloud/Bintu
+            Organisation<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"apikey"</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"Type in API Key"</span> <span class="hljs-attr">onchange</span>=<span class="hljs-string">"onAPIKeyChanged()"</span> /&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"room-input"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Choose a name for your nanoMeet-room <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"roomname"</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"Type in room name"</span> <span class="hljs-attr">onchange</span>=<span class="hljs-string">"onRoomNameChanged()"</span> /&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"server-input"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Choose a location where you want to host your nanoMeet-room.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"eu"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"server"</span> <span class="hljs-attr">onchange</span>=<span class="hljs-string">"onServerChange(this)"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"eu"</span>&gt;</span>EU<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"us"</span>&gt;</span>US<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"date-input"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Choose the time frame where the secure token should be valid.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"nbf"</span>&gt;</span>Not before date<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"datetime-local"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"nbf"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"not-before"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">""</span> <span class="hljs-attr">min</span>=<span class="hljs-string">""</span> <span class="hljs-attr">max</span>=<span class="hljs-string">""</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"exp"</span>&gt;</span>Expiration date<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"datetime-local"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"exp"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"expiration"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">""</span> <span class="hljs-attr">min</span>=<span class="hljs-string">""</span> <span class="hljs-attr">max</span>=<span class="hljs-string">""</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"display: none;"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"response-wrapper"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>You created a new nanoMeet room:<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Part of it is the creation of a nanoStream Cloud live stream incl. ABR Playback.<span class="hljs-tag">&lt;<span class="hljs-name">br</span> /&gt;</span>
+        Click/Copy the link below to see
+        the stream overview in the nanoStream Cloud, including playout URLs and code snippet, to share with
+        larger audiences.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"full-stream-overview"</span>&gt;</span>nanoStream Live Stream Overview<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Click/Copy the link below to open your nanoMeet room.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"initial-invite-link"</span>&gt;</span>Open nanoMeet room<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">"cancel()"</span>&gt;</span>Cancel<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">"createNanoMeet()"</span>&gt;</span>Create<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+
+    <span class="hljs-comment">// Validate API Key</span>
+    <span class="hljs-keyword">const</span> validate = <span class="hljs-function">(<span class="hljs-params">apikey</span>) =&gt;</span> {
+        nanoMeet.validateAPIKey(apikey).then(<span class="hljs-function">(<span class="hljs-params">success</span>) =&gt;</span> {
+            <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Valid nanoStream Cloud API key..."</span>)
+        }).catch(<span class="hljs-function">(<span class="hljs-params">error</span>) =&gt;</span> {
+            <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Invalid nanoStream Cloud / bintu API key"</span>)
+        });
+    }
+
+    <span class="hljs-comment">// Create new nanoMeet room</span>
+    <span class="hljs-keyword">const</span> createNanoMeet = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+        <span class="hljs-keyword">var</span> streamname, streamData, cloudDashboardLink;
+
+        <span class="hljs-comment">// 1. create nanoStream Cloud live streams (including ABR)</span>
+        nanoMeet.createNanoStreams(apikey)
+            .then(<span class="hljs-function">(<span class="hljs-params">success</span>) =&gt;</span> {
+                <span class="hljs-keyword">let</span> setup = {
+                    <span class="hljs-attr">exp</span>: exp.value,     <span class="hljs-comment">// Customized expiration value</span>
+                    <span class="hljs-attr">nbf</span>: nbf.value,     <span class="hljs-comment">// Customized not before value</span>
+                    <span class="hljs-attr">room</span>: roomname,     <span class="hljs-comment">// Customized room name</span>
+                    <span class="hljs-attr">moderator</span>: <span class="hljs-literal">true</span>,    <span class="hljs-comment">// Moderator or participant</span>
+                    <span class="hljs-attr">server</span>: <span class="hljs-string">`nanomeet-<span class="hljs-subst">${serverInput}</span>.nanocosmos.de`</span>,     <span class="hljs-comment">// Server Location</span>
+                    <span class="hljs-attr">streamname</span>: success.data.streamInfo.ingest.rtmp.streamname <span class="hljs-comment">// Passthrough streamname</span>
+                }
+                cloudDashboardLink = success.data.cloudDashboardLink <span class="hljs-comment">// Link to access the stream informations via dashboard</span>
+
+                <span class="hljs-comment">// 2. Create nanoMeet room with customized set up</span>
+                nanoMeet.createNanoMeetRoom(apikey, setup)
+                    .then(<span class="hljs-function">(<span class="hljs-params">success</span>) =&gt;</span> {
+                        streamOverview = cloudDashboardLink;
+                        success.data.cloudDashboardLink = streamOverview
+
+                        <span class="hljs-keyword">const</span> inviteLink = <span class="hljs-string">`https://nanomeet.pages.nanocosmos.de/nanomeet-frontend/nanomeet-sample.html?token=<span class="hljs-subst">${success.data.token}</span>`</span>;
+                        <span class="hljs-built_in">document</span>.getElementsByClassName(<span class="hljs-string">"response-wrapper"</span>)[<span class="hljs-number">0</span>].style.display = <span class="hljs-string">"block"</span>;
+                        <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"initial-invite-link"</span>).innerHTML = <span class="hljs-string">`&lt;a class="link" href=<span class="hljs-subst">${inviteLink}</span> target="_blank"&gt;Open nanoMeet room&lt;/a&gt;`</span>;
+                        <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"full-stream-overview"</span>).innerHTML = <span class="hljs-string">`&lt;a class="link" href=<span class="hljs-subst">${streamOverview}</span> target="_blank"&gt;Full stream overview&lt;/a&gt;`</span>;
+                    }).catch(<span class="hljs-function">(<span class="hljs-params">error</span>) =&gt;</span> {
+                        <span class="hljs-built_in">console</span>.log(error)
+                    })
+
+            }).catch(<span class="hljs-function">(<span class="hljs-params">error</span>) =&gt;</span> {
+                <span class="hljs-built_in">console</span>.log(error)
+            })
+    }
+
+    <span class="hljs-keyword">let</span> nanoMeet = <span class="hljs-keyword">new</span> <span class="hljs-built_in">window</span>.NanoMeet(); <span class="hljs-comment">// Instance of the nanoMeet web API</span>
+
+    <span class="hljs-keyword">let</span> apikeyInput = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"apikey"</span>);
+    <span class="hljs-keyword">let</span> roomNameInput = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"roomname"</span>);
+    <span class="hljs-keyword">let</span> serverInput = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"server"</span>).value;
+    <span class="hljs-keyword">let</span> nbfInput = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"nbf"</span>);
+    <span class="hljs-keyword">let</span> expInput = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"exp"</span>);
+
+    <span class="hljs-comment">// Date set up</span>
+    <span class="hljs-keyword">let</span> today = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>().toISOString().slice(<span class="hljs-number">0</span>, <span class="hljs-number">16</span>); <span class="hljs-comment">// Todays date</span>
+    <span class="hljs-keyword">let</span> expDate = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>().setDate(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>().getDate() + <span class="hljs-number">14</span>)).toISOString().slice(<span class="hljs-number">0</span>, <span class="hljs-number">16</span>); <span class="hljs-comment">// Default 2 weeks from today</span>
+    <span class="hljs-keyword">let</span> maxTime = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>().setFullYear(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>().getFullYear() + <span class="hljs-number">1</span>)).toISOString().slice(<span class="hljs-number">0</span>, <span class="hljs-number">16</span>); <span class="hljs-comment">// Token can't be longer valid as a year</span>
+
+    nbf.value = today;
+    nbf.min = today;
+    nbf.max = maxTime;
+
+    exp.value = expDate;
+    exp.min = today;
+    exp.max = maxTime
+
+    <span class="hljs-comment">// Helper method to update the nanoMeet player based on changed input value</span>
+    <span class="hljs-keyword">const</span> onAPIKeyChanged = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+        apikey = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"apikey"</span>).value;
+        validate(apikey);
+    }
+
+    <span class="hljs-comment">// Helper method to update the room name based on changed input value</span>
+    <span class="hljs-keyword">const</span> onRoomNameChanged = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+        roomname = roomNameInput.value;
+    }
+
+    <span class="hljs-comment">// Helper method to update the server based on changed input value</span>
+    <span class="hljs-keyword">const</span> onServerChange = <span class="hljs-function">(<span class="hljs-params">setServer</span>) =&gt;</span> {
+        serverInput = setServer.value;
+    }
+
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="nanomeet-sample-source-code"></a><a href="#nanomeet-sample-source-code" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>nanoMeet Sample Source Code</h2>
+<p>The following code lets you use nanoMeet with a valid secure token. Using this sample in a moderator role lets you invite people, set up security options and start a broadcast incl. recording.</p>
+<pre><code class="hljs css language-html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://nanomeet.pages.nanocosmos.de/nanomeet-frontend/js/nanomeet.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"invite-section"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Insert invite token<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"token"</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"Type in token"</span> <span class="hljs-attr">onchange</span>=<span class="hljs-string">"onInviteTokenChange()"</span> /&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"display: none;"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"moderator-access"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"invite-token-input"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Create Invite Token<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"nbf"</span>&gt;</span>Not before date<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"datetime-local"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"nbf"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"not-before"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">""</span> <span class="hljs-attr">min</span>=<span class="hljs-string">""</span> <span class="hljs-attr">max</span>=<span class="hljs-string">""</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"exp"</span>&gt;</span>Expiration date<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"datetime-local"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"exp"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"expiration"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">""</span> <span class="hljs-attr">min</span>=<span class="hljs-string">""</span> <span class="hljs-attr">max</span>=<span class="hljs-string">""</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"checkbox"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"moderator"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"moderator"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"moderator"</span>&gt;</span>is Moderator<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">"createInviteToken()"</span>&gt;</span>Create Invite Token<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"invited"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"invite-link-url"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">hr</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"security-section"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Security Settings<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"checkbox"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"lobby"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"lobby"</span> <span class="hljs-attr">onclick</span>=<span class="hljs-string">"toggleLobby()"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"lobby"</span>&gt;</span>Enable Lobby<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"password"</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"Type in password"</span> /&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">"changePassword()"</span>&gt;</span>Set password<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">hr</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"broadcast-section"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Broadcast Settings<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"checkbox"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"vod"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"vod"</span> <span class="hljs-attr">checked</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"vod"</span>&gt;</span>Live Stream Recording<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">"startBroadcast()"</span>&gt;</span>Start Stream<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">"stopBroadcast()"</span>&gt;</span>Stop Stream<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"broadcasted"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"live-playout-url"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"vod-playout-url"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"play-section"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"nanoMeet-wrapper"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"nanoStream-meet"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+    <span class="hljs-keyword">let</span> nanoMeetIdentifier = <span class="hljs-string">"nanoStream-meet"</span> <span class="hljs-comment">// ID of the nanoMeet div</span>
+    <span class="hljs-keyword">let</span> nanoMeet = <span class="hljs-keyword">new</span> <span class="hljs-built_in">window</span>.NanoMeet(); <span class="hljs-comment">// Instance of the nanoMeet web API</span>
+    <span class="hljs-keyword">var</span> roomUrl = <span class="hljs-string">"https://nanomeet.pages.nanocosmos.de/nanomeet-frontend/nanomeet-helper.html"</span> <span class="hljs-comment">// URL to the nanoMeet room creator </span>
+
+    <span class="hljs-keyword">let</span> tokenInput = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"token"</span>);
+    <span class="hljs-comment">// Date set up</span>
+    <span class="hljs-keyword">let</span> today = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>().toISOString().slice(<span class="hljs-number">0</span>, <span class="hljs-number">16</span>); <span class="hljs-comment">// Todays date</span>
+    <span class="hljs-keyword">let</span> expDate = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>().setDate(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>().getDate() + <span class="hljs-number">14</span>)).toISOString().slice(<span class="hljs-number">0</span>, <span class="hljs-number">16</span>); <span class="hljs-comment">// Default 2 weeks from today</span>
+    <span class="hljs-keyword">let</span> maxTime = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>().setFullYear(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>().getFullYear() + <span class="hljs-number">1</span>)).toISOString().slice(<span class="hljs-number">0</span>, <span class="hljs-number">16</span>); <span class="hljs-comment">// Token can't be longer valid as a year</span>
+
+    nbf.value = today;
+    nbf.min = today;
+    nbf.max = maxTime;
+
+    exp.value = expDate;
+    exp.min = today;
+    exp.max = maxTime
+
+    <span class="hljs-comment">// Initializes the nanoMeet player</span>
+    <span class="hljs-keyword">const</span> init = <span class="hljs-function">(<span class="hljs-params">token, id</span>) =&gt;</span> {
+
+        nanoMeet.init({ token, id })
+            .then(<span class="hljs-function">(<span class="hljs-params">success</span>) =&gt;</span> {
+                <span class="hljs-keyword">if</span> (success.data.moderator) {
+                    <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"moderator-access"</span>).style.display = <span class="hljs-string">"block"</span>;
+                }
+                <span class="hljs-keyword">if</span> (!success.data.moderator) {
+                    <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"moderator-access"</span>).style.display = <span class="hljs-string">"none"</span>;
+                }
+                <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Init nanoMeet. Moderator: <span class="hljs-subst">${success.data.moderator}</span>`</span>);
+            }).catch(<span class="hljs-function">(<span class="hljs-params">error</span>) =&gt;</span> {
+                <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"moderator-access"</span>).style.display = <span class="hljs-string">"none"</span>;
+                <span class="hljs-built_in">console</span>.log(error);
+            });
+    }
+
+    <span class="hljs-comment">// Creates invite token for the nanoMeet room</span>
+    <span class="hljs-keyword">const</span> createInviteToken = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+        <span class="hljs-keyword">let</span> moderator = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"moderator"</span>).checked
+        <span class="hljs-keyword">let</span> expDate = exp.value;
+        <span class="hljs-keyword">let</span> nbfDate = nbf.value;
+        nanoMeet.createInviteToken(token, { moderator, <span class="hljs-attr">exp</span>: expDate, <span class="hljs-attr">nbf</span>: nbfDate })
+            .then(<span class="hljs-function">(<span class="hljs-params">success</span>) =&gt;</span> {
+                <span class="hljs-keyword">var</span> inviteUrl = <span class="hljs-string">`https://nanomeet.pages.nanocosmos.de/nanomeet-frontend/nanomeet-sample.html?token=<span class="hljs-subst">${success.data.token}</span>`</span>;
+                <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"invite-link-url"</span>).innerHTML = <span class="hljs-string">`&lt;a class="link" href=<span class="hljs-subst">${inviteUrl}</span> target="_blank"&gt;<span class="hljs-subst">${moderator ? <span class="hljs-string">"Moderator"</span> : <span class="hljs-string">"Participant"</span>}</span> Invite Link&lt;/a&gt;`</span>;
+                <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Invite token result"</span>, success.data.token);
+            }).catch(<span class="hljs-function">(<span class="hljs-params">error</span>) =&gt;</span> {
+                <span class="hljs-built_in">console</span>.log(error);
+            });
+    }
+
+    <span class="hljs-comment">// Starts the broadcast</span>
+    <span class="hljs-keyword">const</span> startBroadcast = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+        <span class="hljs-keyword">let</span> isVOD = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"vod"</span>).checked;
+        nanoMeet.startBroadcast(isVOD)
+            .then(<span class="hljs-function">(<span class="hljs-params">success</span>) =&gt;</span> {
+                <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"live-playout-url"</span>).innerHTML = <span class="hljs-string">`&lt;a class="link" href=<span class="hljs-subst">${success.data.playback.live}</span> target="_blank"&gt;Live Playout URL&lt;/a&gt;`</span>;
+
+                <span class="hljs-keyword">if</span> (isVOD) {
+                    <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"vod-playout-url"</span>).innerHTML = <span class="hljs-string">`&lt;a class="link" href=<span class="hljs-subst">${success.data.playback.vod}</span> target="_blank"&gt;VOD Playout URL&lt;/a&gt;`</span>;
+
+                } <span class="hljs-keyword">else</span> {
+                    <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"vod-playout-url"</span>).innerHTML = <span class="hljs-string">""</span>;
+                }
+                <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Started nanoStream Cloud live stream`</span>, success.data);
+            }).catch(<span class="hljs-function">(<span class="hljs-params">error</span>) =&gt;</span> {
+                <span class="hljs-built_in">console</span>.log(error);
+            })
+    }
+
+    <span class="hljs-comment">// Stops the broadcast</span>
+    <span class="hljs-keyword">const</span> stopBroadcast = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+        nanoMeet.stopBroadcast()
+            .then(<span class="hljs-function">(<span class="hljs-params">success</span>) =&gt;</span> {
+                <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Stopped nanoStream Cloud live stream."</span>);
+            }).catch(<span class="hljs-function">(<span class="hljs-params">error</span>) =&gt;</span> {
+                <span class="hljs-built_in">console</span>.log(error);
+            })
+    }
+
+    <span class="hljs-comment">// Helper method to update the nanoMeet player based on changed input value</span>
+    <span class="hljs-keyword">const</span> onInviteTokenChange = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+        token = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"token"</span>).value;
+        <span class="hljs-keyword">if</span> (token) {
+            init(token, nanoMeetIdentifier);
+        }
+    }
+
+    <span class="hljs-comment">// Helper method to open in new tab</span>
+    <span class="hljs-keyword">const</span> openInNew = <span class="hljs-function">(<span class="hljs-params">link</span>) =&gt;</span> {
+        <span class="hljs-built_in">window</span>.open(link, <span class="hljs-string">'_target'</span>);
+    }
+
+    <span class="hljs-comment">// Changes the password of the nanoMeet room</span>
+    <span class="hljs-keyword">const</span> changePassword = <span class="hljs-function">(<span class="hljs-params">e</span>) =&gt;</span> {
+        <span class="hljs-keyword">let</span> password = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"password"</span>).value;
+        nanoMeet.setPassword(password)
+            .then(<span class="hljs-function">(<span class="hljs-params">success</span>) =&gt;</span> {
+                <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"lobby"</span>).value = success.data.lobby
+                <span class="hljs-built_in">console</span>.log(success.data);
+            }).catch(<span class="hljs-function">(<span class="hljs-params">error</span>) =&gt;</span> {
+                <span class="hljs-built_in">console</span>.log(error);
+            })
+    }
+
+    <span class="hljs-comment">// Toggles the lobby of the nanoMeet room</span>
+    <span class="hljs-keyword">const</span> toggleLobby = <span class="hljs-function">(<span class="hljs-params">e</span>) =&gt;</span> {
+        <span class="hljs-keyword">let</span> lobbyOn = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"lobby"</span>).checked
+        nanoMeet.setLobby(lobbyOn)
+            .then(<span class="hljs-function">(<span class="hljs-params">success</span>) =&gt;</span> {
+                <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"password"</span>).value = success.data.password
+                <span class="hljs-built_in">console</span>.log(success.data);
+            }).catch(<span class="hljs-function">(<span class="hljs-params">error</span>) =&gt;</span> {
+                <span class="hljs-built_in">console</span>.log(error);
+            })
+    }
+
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 3/15/2021</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/nanomeet/samples"><span class="arrow-prev">← </span><span class="function-name-prevnext">nanoMeet Samples</span></a><a class="docs-next button" href="/docs/nanomeet/api"><span>API</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#github-repository">Github Repository</a></li><li><a href="#nanomeet-token-creator-source-code">nanoMeet Token Creator Source Code</a></li><li><a href="#nanomeet-sample-source-code">nanoMeet Sample Source Code</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><div><h5>Contact</h5><a href="https://www.nanocosmos.de/">Homepage</a><a href="https://www.nanocosmos.de/contact">Contact</a><a href="https://www.nanocosmos.de/support">Support</a><a href="https://www.nanocosmos.de/terms">Legal Terms</a></div><div><h5>Products</h5><a href="https://www.nanocosmos.de/cloud">Nanostream Cloud with Bintu.Live</a><a href="https://www.nanocosmos.de/h5live">H5Live Low Latency HTML5-Player</a><a href="https://www.nanocosmos.de/webrtc">nanoStream Webcaster</a><a href="https://www.nanocosmos.de/#nanostream">Nanostream Apps and SDK</a></div><div><h5>More</h5><a href="https://www.nanocosmos.de/blog/">Blog</a><a href="https://twitter.com/nanovideo">Twitter</a><a href="https://www.facebook.com/nanocosmos.net/">Facebook</a><a href="https://www.linkedin.com/company/nanocosmos-gmbh">LinkedIn</a><a href="https://github.com/nanocosmos/docs">GitHub</a><a class="github-button" href="https://github.com/nanocosmos/docs" data-icon="octicon-star" data-count-href="/nanocosmos/docs/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://nanocosmos.de/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/footer_logo.png" alt="nanocosmos GmbH" width="170" height="45"/></a><section class="copyright">Copyright © 2021 nanocosmos GmbH - doc version Mon Mar 15 2021 14:25:03 GMT+0000 (Coordinated Universal Time)</section></footer></div></body></html>

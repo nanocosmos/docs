@@ -1,0 +1,262 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>nanoMeet Web API · nanocosmos Documentation</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&amp;copy; 2021 [nanocosmos](www.nanocosmos.de)"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="nanoMeet Web API · nanocosmos Documentation"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.nanocosmos.de/"/><meta property="og:description" content="&amp;copy; 2021 [nanocosmos](www.nanocosmos.de)"/><meta property="og:image" content="https://docs.nanocosmos.de/img/docusaurus.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://docs.nanocosmos.de/img/docusaurus.png"/><link rel="shortcut icon" href="/img/favicon_nano.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script>
+              (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+              (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+              m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+              })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+              ga('create', 'UA-552140-1', 'auto');
+              ga('send', 'pageview');
+            </script><link rel="stylesheet" href="/css/copy-button.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/js/copy-button.js"></script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="/js/search.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/nanocosmos_header_logo.png" alt="nanocosmos Documentation"/><h2 class="headerTitleWithLogo">nanocosmos Documentation</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/docs/cloud/cloud_overview" target="_self">nanoStream Cloud</a></li><li class=""><a href="/docs/nanoplayer/nanoplayer_introduction" target="_self">H5Live Player</a></li><li class=""><a href="/docs/webrtc/nanostream_webrtc_introduction" target="_self">nanoStream Webcaster</a></li><li class="siteNavGroupActive"><a href="/docs/nanomeet/introduction" target="_self">nanoMeet</a></li><li class=""><a href="/docs/nanostream/nanostream" target="_self">nanoStream Apps and SDKs</a></li><li class=""><a href="/docs/samples/samples" target="_self">Samples</a></li><li class=""><a href="/docs/faq/faq_streaming" target="_self">FAQ</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>API</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">nanoMeet</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/nanomeet/introduction">Introduction</a></li><li class="navListItem"><a class="navItem" href="/docs/nanomeet/getting-started">Getting Started</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Samples</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/nanomeet/samples">nanoMeet Samples</a></li><li class="navListItem"><a class="navItem" href="/docs/nanomeet/source-code">nanoMeet Source Code</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">API</h3><ul class=""><li class="navListItem navListItemActive"><a class="navItem" href="/docs/nanomeet/api">API</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/nanocosmos/docs/tree/master/docs/nanomeet/api.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 id="__docusaurus" class="postHeaderTitle">nanoMeet Web API</h1></header><article><div><span><p>© 2021 <a href="www.nanocosmos.de">nanocosmos</a></p>
+<p>This guide will help you to integrate nanoMeet into your development environment.
+Use the nanoMeet web API to to provide secure video meetings and broadcast them around the world in 1 second.</p>
+<p>We also provide the following online samples:</p>
+<ul>
+<li><p><a href="https://nanomeet.pages.nanocosmos.de/nanomeet-frontend/nanomeet-helper.html?bintu.apikey=YOUR-API-KEY&amp;nanomeet.room=YOUR-ROOM-NAME">Token Creator</a> - Click <a href="source-code#nanomeet-token-creator-source-code">here</a> to find the code.</p></li>
+<li><p><a href="https://nanomeet.pages.nanocosmos.de/nanomeet-frontend/nanomeet-sample.html?token=YOUR-INVITE-TOKEN">NanoMeet Sample</a> - Click <a href="source-code#nanomeet-sample-source-code">here</a> to find the code.</p></li>
+</ul>
+<p>nanoMeet is part of <a href="https://bintu-cloud-frontend.nanocosmos.de">nanoStream Cloud</a>.
+You need a nanoStream Cloud/Bintu account with nanoMeet enabled.</p>
+<blockquote>
+<p><em>If you do not have an account or nanoMeet enabled yet, please contact our sales team for a personal demo via <a href="https://www.nanocosmos.de/contact">contact form</a> or sales(at)nanocosmos.de.</em></p>
+<p>To check if your organisation enables nanoMeet, check your <a href="https://bintu-cloud-frontend.nanocosmos.de/organisation">organisation overview</a>.</p>
+<p><img src="/docs/assets/enable-nanomeet.jpg" alt="nanoMeet enabled"></p>
+</blockquote>
+<h2><a class="anchor" aria-hidden="true" id="nanomeet"></a><a href="#nanomeet" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>NanoMeet</h2>
+<p>NanoMeet Public Web API Class 1.0.0.</p>
+<p><strong>Kind:</strong> global class</p>
+<p><strong>Version:</strong> 1.0.0.</p>
+<h3><a class="anchor" aria-hidden="true" id="integration"></a><a href="#integration" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Integration</h3>
+<p>To integrate nanoMeet in your web page you need to load our nanoMeet Web API.</p>
+<p><strong>Example</strong></p>
+<pre><code class="hljs css language-html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://nanomeet.pages.nanocosmos.de/nanomeet-frontend/js/nanomeet.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="new-nanomeet"></a><a href="#new-nanomeet" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>new NanoMeet()</h3>
+<p>The instance of the NanoMeet web API. The source can be loaded via script tag.</p>
+<p><strong>Example</strong></p>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">var</span> nanoMeet = <span class="hljs-keyword">new</span> NanoMeet();
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="nanomeetcreatenanomeetroomapikey-roomsetup--promisesuccesserror"></a><a href="#nanomeetcreatenanomeetroomapikey-roomsetup--promisesuccesserror" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>nanoMeet.createNanoMeetRoom(apiKey, roomSetUp) =&gt; <code>Promise.&lt;success|error&gt;</code></h3>
+<p>Creates a secure token that is needed to initialize and use nanoMeet.</p>
+<p><strong>Kind:</strong> Instance of the  <code>NanoMeet</code></p>
+<table>
+<thead>
+<tr><th>Param</th><th>Type</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>apiKey</td><td><code>String</code></td><td>Your nanoStream Cloud/bintu API key.</td></tr>
+<tr><td>roomSetUp</td><td><code>Object</code></td><td>The custom configuration for your custom nanoMeet room.</td></tr>
+<tr><td>roomSetUp.nbf</td><td><code>String</code></td><td>The not before date for the secure token in ISO format.</td></tr>
+<tr><td>roomSetUp.exp</td><td><code>String</code></td><td>The expiration date for the secure token in ISO format.</td></tr>
+<tr><td>roomSetUp.streamname</td><td><code>String</code></td><td>A passthrough streamname.</td></tr>
+<tr><td>roomSetUp.server</td><td><code>String</code></td><td>The server URL.</td></tr>
+<tr><td>roomSetUp.room</td><td><code>String</code></td><td>The room name. Valid Charset: a-z, A-Z, 0-9, _</td></tr>
+<tr><td>roomSetUp.moderator</td><td><code>Boolean</code></td><td>If true the token gives the user permissions to create invite token, kick participants out and start the broadcast. Read <a href="introduction#roles">here</a> about the different roles.</td></tr>
+</tbody>
+</table>
+<p><strong>Example <code>roomSetUp</code> Properties</strong></p>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">var</span> roomSetUp = {
+    <span class="hljs-attr">nbf</span>: <span class="hljs-string">"2021-01-22T06:00:01.000Z"</span>,
+    <span class="hljs-attr">exp</span>: <span class="hljs-string">"2021-01-29T06:00:01.000Z"</span>,
+    <span class="hljs-attr">streamname</span>: <span class="hljs-string">"XXXXX-YYYYY"</span>,
+    <span class="hljs-attr">room</span>: <span class="hljs-string">"my_nanoMeet_room"</span>,
+    <span class="hljs-attr">server</span>: <span class="hljs-string">"nanomeet-eu.nanocosmos.de"</span>,
+    <span class="hljs-attr">moderator</span>: <span class="hljs-literal">true</span>
+}
+</code></pre>
+<p><strong>Example</strong></p>
+<pre><code class="hljs css language-js"><span class="hljs-comment">// Creation of a nanoMeet room</span>
+nanoMeet.createNanoMeetRoom(apikey, roomSetUp)
+.then(<span class="hljs-function">(<span class="hljs-params">success</span>) =&gt;</span> {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"nanoMeet room:"</span>, success)
+}).catch(<span class="hljs-function">(<span class="hljs-params">error</span>) =&gt;</span> {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Error in creating a nanoMeet room:"</span>, error)
+})
+</code></pre>
+<p><strong>Success Response</strong></p>
+<pre><code class="hljs css language-js">data: {
+    <span class="hljs-attr">expiration</span>: <span class="hljs-string">"2021-01-29T06:00:01.000Z"</span>,
+  <span class="hljs-attr">moderator</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">notbefore</span>: <span class="hljs-string">"2021-01-22T06:00:01.000Z"</span>,
+  <span class="hljs-attr">room</span>: <span class="hljs-string">"my_nanoMeet_room"</span>,
+  <span class="hljs-attr">server</span>: <span class="hljs-string">"nanomeet-eu.nanocosmos.de"</span>,
+  <span class="hljs-attr">streamname</span>: <span class="hljs-string">"XXXXX-YYYYY"</span>,
+  <span class="hljs-attr">token</span>: <span class="hljs-string">"SECURE-TOKEN"</span> <span class="hljs-comment">// secure token that needs to be provided when initializing nanoMeet on your webpage or creating an invite token</span>
+}
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="nanomeetcreateinvitetokentoken-tokensetup--promisesuccesserror"></a><a href="#nanomeetcreateinvitetokentoken-tokensetup--promisesuccesserror" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>nanoMeet.createInviteToken(token, tokenSetup) =&gt; <code>Promise.&lt;success|error&gt;</code></h3>
+<p>Creates an invite token for the nanoMeet room.</p>
+<p><strong>Kind:</strong> Instance of the  <code>NanoMeet</code></p>
+<table>
+<thead>
+<tr><th>Param</th><th>Type</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>token</td><td><code>String</code></td><td>A valid token with moderator rights for the room.</td></tr>
+<tr><td>tokenSetup.moderator</td><td><code>Boolean</code></td><td>If true the token gives the user permissions to create invite token, kick participants out and start the broadcast. Read <a href="introduction#roles">here</a> about the different roles.</td></tr>
+<tr><td>[tokenSetup.nbf]</td><td><code>String</code></td><td>The not before date for the secure token in ISO format. If it is not provided it will be the same as the date passed to the token.</td></tr>
+<tr><td>[tokenSetup.exp]</td><td><code>String</code></td><td>The expiration date for the secure token in ISO format. If it is not provided it will be the same as the date passed to the token.</td></tr>
+</tbody>
+</table>
+<p><strong>Example <code>tokenSetup</code> Properties</strong></p>
+<pre><code class="hljs css language-js">tokenSetup: {
+  <span class="hljs-attr">token</span>: <span class="hljs-string">"SECURE-TOKEN"</span>,
+  <span class="hljs-attr">moderator</span>: <span class="hljs-literal">false</span>,
+  <span class="hljs-attr">exp</span>: <span class="hljs-string">"2021-01-29T06:00:01.000Z"</span>,
+  <span class="hljs-attr">nbf</span>: <span class="hljs-string">"2021-01-22T06:00:01.000Z"</span>,
+}
+</code></pre>
+<p><strong>Example</strong></p>
+<pre><code class="hljs css language-js"><span class="hljs-comment">// Creation of an invite token</span>
+nanoMeet.createInviteToken(token, tokenSetup)
+.then(<span class="hljs-function">(<span class="hljs-params">success</span>) =&gt;</span> {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Successful creation of a nanoMeet secure invite token:"</span>, success);
+}).catch(<span class="hljs-function">(<span class="hljs-params">error</span>) =&gt;</span> {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Error in creating a nanoMeet invite token:"</span>, error);
+});
+</code></pre>
+<p><strong>Success Response</strong></p>
+<pre><code class="hljs css language-js">data: {
+  <span class="hljs-attr">moderator</span>: <span class="hljs-literal">false</span>,
+  <span class="hljs-attr">token</span>: <span class="hljs-string">"SECURE-TOKEN"</span>, <span class="hljs-comment">// secure token that needs to be provided to the invitee</span>
+  <span class="hljs-attr">inviteLink</span>: <span class="hljs-string">"https://nanomeet.pages.nanocosmos.de/nanomeet-frontend/nanomeet-sample.html?token=token"</span> <span class="hljs-comment">// invite link to our nanoMeet sample</span>
+}
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="nanomeetinitconfig--promisesuccesserror"></a><a href="#nanomeetinitconfig--promisesuccesserror" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>nanoMeet.init(config) =&gt; <code>Promise.&lt;(success|error)&gt;</code></h3>
+<p>Initializes nanoMeet with the provided config object.</p>
+<p><strong>Kind:</strong> Instance of the  <code>NanoMeet</code></p>
+<table>
+<thead>
+<tr><th>Param</th><th>Type</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>config</td><td><code>Object</code></td><td>The config object for nanoMeet including the secure token, id and styles.</td></tr>
+<tr><td>config.token</td><td><code>String</code></td><td>A valid secure token.</td></tr>
+<tr><td>config.id</td><td><code>String</code></td><td>The ID of the div element the nanoMeet window will be embedded into.</td></tr>
+<tr><td>[config.height]</td><td><code>Number</code></td><td>The height of the nanoMeet window. Default is 100%. <br /><strong>Note:</strong> The height you initialized can not be updated after you set it in the config. For dynamic changes regarding the height use the <em>config.id</em> selector (e.g. #nanoStream-meet { height: 500px; }).</td></tr>
+<tr><td>[config.width]</td><td><code>Number</code></td><td>The width of the nanoMeet window. Default is 100%.<br /><strong>Note:</strong> The width you initialized can not be updated after you set it in the config. For dynamic changes regarding the width use the <em>config.id</em> selector (e.g. #nanoStream-meet { width: 500px; }).</td></tr>
+<tr><td>[config.branding]</td><td><code>String</code></td><td>The branding URL that refers to a JSON file that brands nanoMeet. Default is nanocosmos branding. Read more <a href="getting-started#customize-a-nanomeet-room">here</a>.</td></tr>
+</tbody>
+</table>
+<p><strong>Example <code>config</code> Properties</strong></p>
+<pre><code class="hljs css language-js">config: {
+  <span class="hljs-attr">token</span>: <span class="hljs-string">"SECURE-TOKEN"</span>,
+  <span class="hljs-attr">id</span>: <span class="hljs-string">"nanoStream-meet"</span>,
+  <span class="hljs-attr">height</span>: <span class="hljs-number">500</span>,
+  <span class="hljs-attr">width</span>: <span class="hljs-number">500</span>,
+  <span class="hljs-attr">branding</span>: <span class="hljs-string">"https://nanomeet.pages.nanocosmos.de/nanomeet-frontend/nanomeet-branding.json"</span>
+}
+</code></pre>
+<p><strong>Example</strong></p>
+<pre><code class="hljs css language-js"><span class="hljs-comment">// Initialization of nanoMeet</span>
+nanoMeet.init(config)
+    .then(<span class="hljs-function">(<span class="hljs-params">success</span>) =&gt;</span> {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"nanoMeet setted up:"</span>, success);
+}).catch(<span class="hljs-function">(<span class="hljs-params">error</span>) =&gt;</span> {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Error setting up nanoMeet:"</span>, error);
+});
+</code></pre>
+<p><strong>Success Response</strong></p>
+<pre><code class="hljs css language-js">data: {
+    <span class="hljs-attr">moderator</span>: <span class="hljs-literal">true</span> 
+}
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="nanomeetstartbroadcastisvod--promisesuccesserror"></a><a href="#nanomeetstartbroadcastisvod--promisesuccesserror" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>nanoMeet.startBroadcast(isVOD) =&gt; <code>Promise.&lt;(success|error)&gt;</code></h3>
+<p>Starts a new broadcast. Can only be used if the <code>nanoMeet.init(config)</code> method was called before.</p>
+<p><strong>Kind:</strong> Instance of the  <code>NanoMeet</code></p>
+<table>
+<thead>
+<tr><th>Param</th><th>Type</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>isVOD</td><td><code>Boolean</code></td><td>If true, the live stream will be available as VOD after stopping.</td></tr>
+</tbody>
+</table>
+<p><strong>Example</strong></p>
+<pre><code class="hljs css language-js"><span class="hljs-comment">// Initialization of nanoMeet</span>
+nanoMeet.startBroadcast(isVOD)
+    .then(<span class="hljs-function">(<span class="hljs-params">success</span>) =&gt;</span> {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Starting broadcast of nanoMeet conference:"</span>, success);
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Recording nanoMeet live stream:"</span>, isVOD);
+}).catch(<span class="hljs-function">(<span class="hljs-params">error</span>) =&gt;</span> {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Error starting broadcast:"</span>, error);
+});
+</code></pre>
+<p><strong>Success Response</strong></p>
+<pre><code class="hljs css language-js">data: {
+  <span class="hljs-attr">playout</span>: {
+    <span class="hljs-attr">live</span>: <span class="hljs-string">"https://demo.nanocosmos.de/nanoplayer/...."</span>,
+    <span class="hljs-attr">vod</span>: <span class="hljs-string">"https://bintu-vod.nanocosmos.de...."</span>
+  }
+}
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="nanomeetstopbroadcast--promisesuccesserror"></a><a href="#nanomeetstopbroadcast--promisesuccesserror" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>nanoMeet.stopBroadcast() =&gt; <code>Promise.&lt;(success|error)&gt;</code></h3>
+<p>Stops a running broadcast.</p>
+<p><strong>Kind:</strong> Instance of the  <code>NanoMeet</code></p>
+<p><strong>Example</strong></p>
+<pre><code class="hljs css language-js"><span class="hljs-comment">// Initialization of nanoMeet</span>
+nanoMeet.stopBroadcast()
+    .then(<span class="hljs-function">(<span class="hljs-params">success</span>) =&gt;</span> {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Stopped broadcast"</span>);
+}).catch(<span class="hljs-function">(<span class="hljs-params">error</span>) =&gt;</span> {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Error in stopping broadcast."</span>);
+});
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="support"></a><a href="#support" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Support</h2>
+<p>Please use <a href="https://www.nanocosmos.de/support">https://www.nanocosmos.de/support</a> or support(at)<a href="http://nanocosmos.de">nanocosmos.de</a> for further assistance.</p>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 3/15/2021</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/nanomeet/source-code"><span class="arrow-prev">← </span><span class="function-name-prevnext">nanoMeet Source Code</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#nanomeet">NanoMeet</a><ul class="toc-headings"><li><a href="#integration">Integration</a></li><li><a href="#new-nanomeet">new NanoMeet()</a></li><li><a href="#nanomeetcreatenanomeetroomapikey-roomsetup--promisesuccesserror">nanoMeet.createNanoMeetRoom(apiKey, roomSetUp) =&gt; <code>Promise.&lt;success|error&gt;</code></a></li><li><a href="#nanomeetcreateinvitetokentoken-tokensetup--promisesuccesserror">nanoMeet.createInviteToken(token, tokenSetup) =&gt; <code>Promise.&lt;success|error&gt;</code></a></li><li><a href="#nanomeetinitconfig--promisesuccesserror">nanoMeet.init(config) =&gt; <code>Promise.&lt;(success|error)&gt;</code></a></li><li><a href="#nanomeetstartbroadcastisvod--promisesuccesserror">nanoMeet.startBroadcast(isVOD) =&gt; <code>Promise.&lt;(success|error)&gt;</code></a></li><li><a href="#nanomeetstopbroadcast--promisesuccesserror">nanoMeet.stopBroadcast() =&gt; <code>Promise.&lt;(success|error)&gt;</code></a></li></ul></li><li><a href="#support">Support</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><div><h5>Contact</h5><a href="https://www.nanocosmos.de/">Homepage</a><a href="https://www.nanocosmos.de/contact">Contact</a><a href="https://www.nanocosmos.de/support">Support</a><a href="https://www.nanocosmos.de/terms">Legal Terms</a></div><div><h5>Products</h5><a href="https://www.nanocosmos.de/cloud">Nanostream Cloud with Bintu.Live</a><a href="https://www.nanocosmos.de/h5live">H5Live Low Latency HTML5-Player</a><a href="https://www.nanocosmos.de/webrtc">nanoStream Webcaster</a><a href="https://www.nanocosmos.de/#nanostream">Nanostream Apps and SDK</a></div><div><h5>More</h5><a href="https://www.nanocosmos.de/blog/">Blog</a><a href="https://twitter.com/nanovideo">Twitter</a><a href="https://www.facebook.com/nanocosmos.net/">Facebook</a><a href="https://www.linkedin.com/company/nanocosmos-gmbh">LinkedIn</a><a href="https://github.com/nanocosmos/docs">GitHub</a><a class="github-button" href="https://github.com/nanocosmos/docs" data-icon="octicon-star" data-count-href="/nanocosmos/docs/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://nanocosmos.de/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/footer_logo.png" alt="nanocosmos GmbH" width="170" height="45"/></a><section class="copyright">Copyright © 2021 nanocosmos GmbH - doc version Mon Mar 15 2021 14:25:03 GMT+0000 (Coordinated Universal Time)</section></footer></div></body></html>

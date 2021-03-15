@@ -1,0 +1,186 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Getting Started · nanocosmos Documentation</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="nanoMeet is part of [nanoStream Cloud](https://bintu-cloud-frontend.nanocosmos.de). "/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Getting Started · nanocosmos Documentation"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.nanocosmos.de/"/><meta property="og:description" content="nanoMeet is part of [nanoStream Cloud](https://bintu-cloud-frontend.nanocosmos.de). "/><meta property="og:image" content="https://docs.nanocosmos.de/img/docusaurus.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://docs.nanocosmos.de/img/docusaurus.png"/><link rel="shortcut icon" href="/img/favicon_nano.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script>
+              (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+              (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+              m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+              })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+              ga('create', 'UA-552140-1', 'auto');
+              ga('send', 'pageview');
+            </script><link rel="stylesheet" href="/css/copy-button.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/js/copy-button.js"></script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="/js/search.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/nanocosmos_header_logo.png" alt="nanocosmos Documentation"/><h2 class="headerTitleWithLogo">nanocosmos Documentation</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/docs/cloud/cloud_overview" target="_self">nanoStream Cloud</a></li><li class=""><a href="/docs/nanoplayer/nanoplayer_introduction" target="_self">H5Live Player</a></li><li class=""><a href="/docs/webrtc/nanostream_webrtc_introduction" target="_self">nanoStream Webcaster</a></li><li class="siteNavGroupActive"><a href="/docs/nanomeet/introduction" target="_self">nanoMeet</a></li><li class=""><a href="/docs/nanostream/nanostream" target="_self">nanoStream Apps and SDKs</a></li><li class=""><a href="/docs/samples/samples" target="_self">Samples</a></li><li class=""><a href="/docs/faq/faq_streaming" target="_self">FAQ</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>nanoMeet</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">nanoMeet</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/nanomeet/introduction">Introduction</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/nanomeet/getting-started">Getting Started</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Samples</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/nanomeet/samples">nanoMeet Samples</a></li><li class="navListItem"><a class="navItem" href="/docs/nanomeet/source-code">nanoMeet Source Code</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">API</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/nanomeet/api">API</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/nanocosmos/docs/tree/master/docs/nanomeet/getting-started.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 id="__docusaurus" class="postHeaderTitle">Getting Started</h1></header><article><div><span><p>nanoMeet is part of <a href="https://bintu-cloud-frontend.nanocosmos.de">nanoStream Cloud</a>.
+You need a nanoStream Cloud/Bintu account with nanoMeet enabled.</p>
+<blockquote>
+<p><em>If you do not have an account or nanoMeet enabled yet, please contact our sales team for a personal demo via <a href="https://www.nanocosmos.de/contact">contact form</a> or sales(at)nanocosmos.de.</em></p>
+<p>To check if your organisation enables nanoMeet, check your <a href="https://bintu-cloud-frontend.nanocosmos.de/organisation">organisation overview</a>.</p>
+<p><img src="/docs/assets/enable-nanomeet.jpg" alt="nanoMeet enabled"></p>
+</blockquote>
+<h2><a class="anchor" aria-hidden="true" id="embedding-nanomeet-on-your-own-web-page"></a><a href="#embedding-nanomeet-on-your-own-web-page" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Embedding nanoMeet on your own web page</h2>
+<p>You can embed the following code snippet to test nanoMeet on your page in no time. It is a recommended example and runs on any web page.</p>
+<blockquote>
+<p><strong>Note</strong>: To make this code snippet run, you need to <strong>create a new nanoMeet room first</strong>. <br/>
+Execute this step via the nanoMeet web API using the method <a href="api#nanomeetcreatenanomeetroomapikey-roomsetup--promisesuccesserror">createNanoMeetRoom</a> or using our <a href="(https://nanomeet.pages.nanocosmos.de/nanomeet-frontend/nanomeet-helper.html?bintu.apikey=YOUR-API-KEY&amp;nanomeet.room=YOUR-ROOM-NAME)">nanoMeet Token Creator (Online Sample)</a>. <br/>
+Both approaches will generate a <strong>new secure invite token</strong> that can be used to enter a nanoMeet room.</p>
+</blockquote>
+<pre><code class="hljs css language-html">// Code to embed a nanoMeet meeting room on a web page
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"nanoStream-meet"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://nanomeet.pages.nanocosmos.de/nanomeet-frontend/js/nanomeet.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-comment">&lt;!-- The div element the nanoMeet room will be embedded into --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+    <span class="hljs-keyword">var</span> nanoMeet = <span class="hljs-keyword">new</span> NanoMeet(); <span class="hljs-comment">// Instance of the nanoMeet web API</span>
+    <span class="hljs-keyword">var</span> token = <span class="hljs-string">"SECURE-TOKEN"</span> <span class="hljs-comment">// Your secure invite token</span>
+
+    <span class="hljs-comment">// Initialization of the nanoMeet player</span>
+    <span class="hljs-built_in">document</span>.addEventListener(<span class="hljs-string">'DOMContentLoaded'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+        nanoMeet.init({ token, <span class="hljs-attr">id</span>: <span class="hljs-string">"nanoStream-meet"</span> })
+            .then(<span class="hljs-function">(<span class="hljs-params">success</span>) =&gt;</span> {
+                <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"nanoMeet setted up..."</span>, success);
+            }).catch(<span class="hljs-function">(<span class="hljs-params">error</span>) =&gt;</span> {
+                <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Error setting up nanoMeet"</span>, error);
+            });
+    })
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="online-samples"></a><a href="#online-samples" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Online Samples</h2>
+<ol>
+<li>Open the <a href="https://nanomeet.pages.nanocosmos.de/nanomeet-frontend/nanomeet-helper.html?bintu.apikey=YOUR-API-KEY&amp;nanomeet.room=YOUR-ROOM-NAME">nanoMeet Token Creator</a> to create a new secure token.  - (See <a href="source-code#nanomeet-token-creator-source-code">source code</a>)</li>
+</ol>
+<p><img src="/docs/assets/nanomeet-helper.jpg" alt="nanoMeet Token Creator"></p>
+<ol start="2">
+<li><p>Insert your API key from <a href="https://bintu-cloud-frontend.nanocosmos.de/organisation">nanoStream Cloud/Bintu Organisation</a>.</p></li>
+<li><p>Name the room you want to create.</p></li>
+<li><p>Choose the server location.</p></li>
+<li><p>Set a time frame in which your secure token will be valid for the participants to join the nanoMeet room.</p></li>
+<li><p>Click on &quot;create&quot;.</p>
+<ul>
+<li>Full Stream Overview: See the full stream overview in the <a href="https://bintu-cloud-frontend.nanocosmos.de/">nanoStream Cloud dashboard</a>, including a code snippet, the playout URL and the stream names.</li>
+<li>Open room: Use the invite link to launch your created room in the <a href="https://nanomeet.pages.nanocosmos.de/nanomeet-frontend/nanomeet-sample.html?token=">nanomeet Sample</a> we provide.  - (See <a href="source-code#nanomeet-sample-source-code">source code</a>). If you have the <a href="introduction#roles">role of a &quot;moderator&quot;</a> you can also see settings with several functions like <a href="#create-an-invite-token-via-nanomeet-sample">creating an invite token</a>,  <a href="#start-a-live-stream-">starting a live stream</a> or <a href="#turn-onoff-the-lobby-">turning on the lobby</a></li>
+</ul>
+<p><img src="/docs/assets/nanomeet-meeting.jpg" alt="nanoMeet Meeting"></p></li>
+</ol>
+<h2><a class="anchor" aria-hidden="true" id="create-a-nanomeet-room-via-nanomeet-token-creator"></a><a href="#create-a-nanomeet-room-via-nanomeet-token-creator" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Create a nanoMeet room via nanoMeet Token Creator</h2>
+<p>To create a room you need to provide the following informations</p>
+<ul>
+<li>Bintu API key</li>
+<li>nanoMeet room</li>
+<li>nanoMeet geolocation</li>
+<li>Exipration time frame</li>
+<li>Not Before Date</li>
+<li>Expiration Date</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="create-an-invite-token-via-nanomeet-sample"></a><a href="#create-an-invite-token-via-nanomeet-sample" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Create an invite token via nanoMeet Sample</h2>
+<p>You can create an invite token via the <a href="https://nanomeet.pages.nanocosmos.de/nanomeet-frontend/nanomeet-sample.html?token=">nanomeet Sample</a> with the <a href="introduction#roles">role of a &quot;moderator&quot;</a>.
+You can customize it in the &quot;Invite participant&quot; section by setting the following informations:</p>
+<ul>
+<li>Not Before Date</li>
+<li>Expiration Date</li>
+<li>isModerator</li>
+</ul>
+<p><img src="/docs/assets/nanomeet-ui-settings.jpg" alt="nanoMeet Sample Settings"></p>
+<h2><a class="anchor" aria-hidden="true" id="customize-a-nanomeet-room-"></a><a href="#customize-a-nanomeet-room-" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Customize a nanoMeet room ...</h2>
+<p>You can customize your nanoMeet room with your branding easily.
+For that you need to set up a JSON file that is publicly available. That means that you need to <strong>host the JSON file</strong> on a platform like, Github or your own webserver etc..</p>
+<p><strong>Example branding set up</strong></p>
+<pre><code class="hljs css language-json">{
+    <span class="hljs-attr">"backgroundColor"</span>: <span class="hljs-string">"#ed7d0e"</span>,
+    <span class="hljs-attr">"backgroundImageUrl"</span>: <span class="hljs-string">"https://nanomeet.pages.nanocosmos.de/nanomeet-frontend/img/bg.png"</span>,
+    <span class="hljs-attr">"logoClickUrl"</span>: <span class="hljs-string">"https://nanocosmos.de/v6/"</span>,
+    <span class="hljs-attr">"logoImageUrl"</span>: <span class="hljs-string">"https://nanocosmos.de/v6/images/logo-nav.png"</span>
+}
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="-a-via-config-object-nanomeet-api"></a><a href="#-a-via-config-object-nanomeet-api" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>... (a) via Config Object (nanoMeet API)</h3>
+<blockquote>
+<p>This is the preferred way to set up your branding.</p>
+</blockquote>
+<p>You can set up the branding URL via the config when initilizing your nanoMeet room. Read more <a href="api#nanomeetinitconfig--promisesuccesserror">here</a>.</p>
+<h3><a class="anchor" aria-hidden="true" id="-b-via-url-parameter-nanomeet-sample"></a><a href="#-b-via-url-parameter-nanomeet-sample" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>... (b) via URL parameter (nanoMeet Sample)</h3>
+<p>You are able to pass your branding file via the query parameter <code>nanomeet.branding</code>.</p>
+<blockquote>
+<p><strong>Attention</strong>: Be aware that this query parameter is needed to provide the branding. If it is not part of the URL or malformed the branding will not be applied.</p>
+</blockquote>
+<p><strong>Example</strong>: <code>https://nanomeet.pages.nanocosmos.de/nanomeet-frontend/nanomeet-sample.html?token=YOUR-INVITE-TOKEN&amp;nanomeet.branding=YOUR-BRANDING-URL</code></p>
+<h2><a class="anchor" aria-hidden="true" id="start-a-live-stream-"></a><a href="#start-a-live-stream-" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Start a live stream ...</h2>
+<blockquote>
+<p>To start a live stream you need to have the &quot;moderator&quot; <a href="introduction#roles">role</a>.</p>
+</blockquote>
+<p>You can stream your nanoMeet room around the world in 1 second.</p>
+<h3><a class="anchor" aria-hidden="true" id="-a-via-broadcast-settings-nanomeet-sample"></a><a href="#-a-via-broadcast-settings-nanomeet-sample" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>... (a) via <em>&quot;Broadcast Settings&quot;</em> (nanoMeet Sample)</h3>
+<p>To start a live stream to the nanoStream Cloud you can click the button &quot;Start stream&quot; in the &quot;Broadcast Settings&quot;. You will see a live playback URL which you can share with your audience (e.g. <a href="https://demo.nanocosmos.de/nanoplayer/release/nanoplayer.html?..">https://demo.nanocosmos.de/nanoplayer/release/nanoplayer.html?..</a>) and a vod playback URL if you choose to record the live stream.</p>
+<h3><a class="anchor" aria-hidden="true" id="-b-via-nanomeet-ui"></a><a href="#-b-via-nanomeet-ui" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>... (b) via nanoMeet UI</h3>
+<p>To start a live stream via the nanoMeet UI you need to click on the three dots on the right and click on the &quot;Start nanoStream Cloud live stream&quot;. The dialog will ask you to insert the ingest informations. You should provide it using this format: <code>rtmp://rtmp-bintu-ingest-url:1935/rec/XXXXX-YYYYY</code>.</p>
+<h2><a class="anchor" aria-hidden="true" id="turn-onoff-the-lobby-"></a><a href="#turn-onoff-the-lobby-" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Turn on/off the &quot;Lobby&quot; ...</h2>
+<blockquote>
+<p>To turn on/off the &quot;Lobby&quot; you need to have the &quot;moderator&quot; <a href="introduction#roles">role</a>.</p>
+</blockquote>
+<p>The Lobby is a waiting room where particiapnts have to wait until the moderator of the room accepts  them to join the meeting. Its turnt off per default.</p>
+<h3><a class="anchor" aria-hidden="true" id="-a-via-security-options-nanomeet-sample"></a><a href="#-a-via-security-options-nanomeet-sample" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>... (a) via <em>&quot;Security Options&quot;</em> (nanoMeet Sample)</h3>
+<p>To turn on the lobby via the nanoMeet Sample you can click on the &quot;Enable Lobby&quot; checkbox in the &quot;Security Options&quot;.
+<a href="introduction#roles">Participants</a>. that want to join will have to wait until the <a href="introduction#roles">moderator</a> accepts them.</p>
+<blockquote>
+<p>Turning on the lobby sets a password &quot;changeme&quot; per default. <strong>Change it!</strong> <br/>
+This password lets you join the meeting by entering it in the textfield displayed in the lobby&quot;.
+It's helpful if you e.g. accidentally leave the meeting and want to join again or want someone else to join without the need to let them in by hand.</p>
+</blockquote>
+<h3><a class="anchor" aria-hidden="true" id="-b-via-nanomeet-ui-1"></a><a href="#-b-via-nanomeet-ui-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>... (b) via nanoMeet UI</h3>
+<p>The nanoMeet UI provides an orange &quot;Guardian Icon&quot; on the right side of its window. Clicking on it the security dialog will open and give you the opportunity to activate the lobby. The &quot;Guardian Icon&quot; turns green by activating the lobby.</p>
+<blockquote>
+<p>Please be aware that in this case there will be no default password! If you e.g. accidentally leave this nanoMeet room you can't join if you are the <a href="introduction#roles">moderator</a>.</p>
+</blockquote>
+<h2><a class="anchor" aria-hidden="true" id="watch-a-live-stream-within-nanomeet-watchparty"></a><a href="#watch-a-live-stream-within-nanomeet-watchparty" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Watch a live stream within nanoMeet (Watchparty)</h2>
+<p>To start a watchparty click on the three dots right on the toolbar. Toggle &quot;Start watchparty&quot; and insert a nanoStream Cloud streamname (e.g. <code>HX26g-1Qs78</code>). You can also paste ABR streamnames following this format (e.g. <code>XXXXX-YYYY1,XXXXX-YYYY2,XXXXX-YYYY3</code>). The nanoPlayer will be shown within the meeting room and can be controlled by the <a href="introduction#roles">moderator</a>.</p>
+<p><img src="/docs/assets/nanomeet-watchparty.jpg" alt="nanoMeet Watchparty"></p>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 3/15/2021</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/nanomeet/introduction"><span class="arrow-prev">← </span><span>Introduction</span></a><a class="docs-next button" href="/docs/nanomeet/samples"><span class="function-name-prevnext">nanoMeet Samples</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#embedding-nanomeet-on-your-own-web-page">Embedding nanoMeet on your own web page</a></li><li><a href="#online-samples">Online Samples</a></li><li><a href="#create-a-nanomeet-room-via-nanomeet-token-creator">Create a nanoMeet room via nanoMeet Token Creator</a></li><li><a href="#create-an-invite-token-via-nanomeet-sample">Create an invite token via nanoMeet Sample</a></li><li><a href="#customize-a-nanomeet-room-">Customize a nanoMeet room ...</a><ul class="toc-headings"><li><a href="#-a-via-config-object-nanomeet-api">... (a) via Config Object (nanoMeet API)</a></li><li><a href="#-b-via-url-parameter-nanomeet-sample">... (b) via URL parameter (nanoMeet Sample)</a></li></ul></li><li><a href="#start-a-live-stream-">Start a live stream ...</a><ul class="toc-headings"><li><a href="#-a-via-broadcast-settings-nanomeet-sample">... (a) via <em>&quot;Broadcast Settings&quot;</em> (nanoMeet Sample)</a></li><li><a href="#-b-via-nanomeet-ui">... (b) via nanoMeet UI</a></li></ul></li><li><a href="#turn-onoff-the-lobby-">Turn on/off the &quot;Lobby&quot; ...</a><ul class="toc-headings"><li><a href="#-a-via-security-options-nanomeet-sample">... (a) via <em>&quot;Security Options&quot;</em> (nanoMeet Sample)</a></li><li><a href="#-b-via-nanomeet-ui-1">... (b) via nanoMeet UI</a></li></ul></li><li><a href="#watch-a-live-stream-within-nanomeet-watchparty">Watch a live stream within nanoMeet (Watchparty)</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><div><h5>Contact</h5><a href="https://www.nanocosmos.de/">Homepage</a><a href="https://www.nanocosmos.de/contact">Contact</a><a href="https://www.nanocosmos.de/support">Support</a><a href="https://www.nanocosmos.de/terms">Legal Terms</a></div><div><h5>Products</h5><a href="https://www.nanocosmos.de/cloud">Nanostream Cloud with Bintu.Live</a><a href="https://www.nanocosmos.de/h5live">H5Live Low Latency HTML5-Player</a><a href="https://www.nanocosmos.de/webrtc">nanoStream Webcaster</a><a href="https://www.nanocosmos.de/#nanostream">Nanostream Apps and SDK</a></div><div><h5>More</h5><a href="https://www.nanocosmos.de/blog/">Blog</a><a href="https://twitter.com/nanovideo">Twitter</a><a href="https://www.facebook.com/nanocosmos.net/">Facebook</a><a href="https://www.linkedin.com/company/nanocosmos-gmbh">LinkedIn</a><a href="https://github.com/nanocosmos/docs">GitHub</a><a class="github-button" href="https://github.com/nanocosmos/docs" data-icon="octicon-star" data-count-href="/nanocosmos/docs/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://nanocosmos.de/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/footer_logo.png" alt="nanocosmos GmbH" width="170" height="45"/></a><section class="copyright">Copyright © 2021 nanocosmos GmbH - doc version Mon Mar 15 2021 14:25:03 GMT+0000 (Coordinated Universal Time)</section></footer></div></body></html>
