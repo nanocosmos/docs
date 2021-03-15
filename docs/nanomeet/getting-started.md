@@ -80,10 +80,10 @@ You can customize it in the "Invite participant" section by setting the followin
 
 ![nanoMeet Sample Settings](assets/nanomeet-ui-settings.jpg)
 
-## Customize a nanoMeet room
+## Customize a nanoMeet room ...
 
 You can customize your nanoMeet room with your branding easily.
-For that you need to set up a JSON file. Every property in this object is optional, when nothing is set, the default, our nanocosmos branding, will be used.
+For that you need to set up a JSON file that is publicly available. That means that you need to **host the JSON file** on a platform like, Github or your own webserver etc..
 
 **Example branding set up**
 
@@ -95,6 +95,19 @@ For that you need to set up a JSON file. Every property in this object is option
     "logoImageUrl": "https://nanocosmos.de/v6/images/logo-nav.png"
 }
 ```
+### ... (a) via Config Object (nanoMeet API)
+
+> This is the preferred way to set up your branding.
+
+You can set up the branding URL via the config when initilizing your nanoMeet room. Read more [here](api#nanomeetinitconfig--promisesuccesserror).
+
+### ... (b) via URL parameter (nanoMeet Sample)
+
+You are able to pass your branding file via the query parameter `nanomeet.branding`.
+
+> **Attention**: Be aware that this query parameter is needed to provide the branding. If it is not part of the URL or malformed the branding will not be applied.
+
+**Example**: `https://nanomeet.pages.nanocosmos.de/nanomeet-frontend/nanomeet-sample.html?token=YOUR-INVITE-TOKEN&nanomeet.branding=YOUR-BRANDING-URL`
 
 ## Start a live stream ...
 

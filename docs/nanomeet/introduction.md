@@ -114,7 +114,7 @@ Read our [developers documentation](api)
 
 ### Customization
 
-You are able to customize your nanoMeet room using your own branding! Read more [here](#nanomeetinitconfig--promisesuccesserror).
+You are able to customize your nanoMeet room using your own branding! Read more [here](getting-started#customize-a-nanomeet-room).
 
 
 ### Roles
