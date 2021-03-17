@@ -690,6 +690,10 @@
         "title": "Speech / Music Streaming",
         "sidebar_label": "Speech / Music Streaming"
       },
+      "webrtc/nanostream_webrtc_stats_and_metrics": {
+        "title": "Stats and Metrics",
+        "sidebar_label": "Stats and Metrics"
+      },
       "webrtc/nanostream_webrtc_support": {
         "title": "Support",
         "sidebar_label": "Support"
