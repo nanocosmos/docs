@@ -8,19 +8,17 @@ sidebar_label: Introduction
 
 ## About the nanoMeet documentation
 
-The following content we provide is divided in 3 main parts:
+The following provided content is divided into three parts:
 
-- [User Guide](samples): Working online samples that can be used immediately with all features and functions we provide.
-- [User/Developer Guide](source-code): The source code of our samples that can be copied easily.
-- [Developer Guide](api): The documentation of our web API that provides all features and functions of nanoMeet.
+- [User Guide](samples): Online samples for immediate use with all provided features and functions.
+- [User/Developer Guide](source-code): Source code of our samples that can be copied easily.
+- [Developer Guide](api): The documentation of our web API which provides all features and functions of nanoMeet.
 
 ## What is nanoMeet?
 
 nanoMeet is a browser-based live video and collaboration platform connected to nanoStream Cloud, for interactive live streaming.
 It allows you to create your own branded video meeting rooms in the browser to engage and interact with your audience. 
-nanoMeet is based on a custom version of [Jitsi Meet](https://github.com/jitsi/jitsi-meet) and integrated with [nanoStream Cloud](https://info.nanocosmos.de).
-
-The following content we provide is divided in 3 main parts:
+nanoMeet is based on a custom version of [Jitsi Meet](https://github.com/jitsi/jitsi-meet) and integrated into [nanoStream Cloud](https://info.nanocosmos.de).
 
 ![nanoMeet Meeting](assets/nanomeet-ui.jpg)
 
@@ -29,32 +27,29 @@ The following content we provide is divided in 3 main parts:
 With nanoMeet you can create, host and broadcast online video meetings on you own web page:
 
 - Host online video meetings embedded on your own web page
-- Web browser based applications and web services
-- Live streaming integration with nanoStream Cloud
+- Web-browser based applications and web services
+- Live streaming integration into nanoStream Cloud
 - Enable audience interaction with large audiences (1000s of participants anywhere in the world)
 - Invite participants with secure tokens
 - nanoMeet web API and code examples for easy white-label integration into custom branded environments
 - „Watch party“: Watch a live stream together in a video meeting
-- Run everything under your own brand (white label)
 
 
 ### Example applications
 
-There are various usecases for nanoMeet:
-
-- Town Hall Meetings, e.g. company webcasts
-- Podium Discussions, e.g. expert sessions
-- Interviews and announcements with Q&A, e.g. press briefings
-- Live events, e.g. music, comedy, …
-- Fan engagement, e.g. meet and greet
-- Watchparties, e.g. watch a live stream together and discuss
+- Town hall meetings e.g. company webcasts
+- Podium discussions e.g. expert sessions
+- Interviews and announcements with Q&A e.g. press briefings
+- Live events e.g. music, comedy, …
+- Fan engagement e.g. meet and greet
+- Watchparties e.g. watch a live stream together and discuss
 
 ![nanoMeet Infographic](assets/nanomeet-infografik.jpg)
 
 ## What is part of nanoMeet?
 
-- Web services for usage 24/7 anywhere in the world
-- Sample pages for setting up and using nanoMeet rooms
+- Web services for 24/7 usage anywhere in the world
+- Sample pages to set up and use nanoMeet rooms
 - Web API with code snippets/example implementations
 - Live Streaming: Integration into nanoStream Cloud (Bintu)
 
@@ -79,14 +74,14 @@ For that you can either use our samples that utilize our nanoMeet web API, copy 
 
 
 1. **nanoMeet Token Creator (Online Sample)** - *Create a room and secure invite token* <br/>
-   Lets you create a secure token with moderator rights with which you can join and invite people in to a nanoMeet room.
+   You can create a secure token with moderator rights to join and invite people into a nanoMeet room.
    
 > Available as [online web page](https://nanomeet.pages.nanocosmos.de/nanomeet-frontend/nanomeet-helper.html?bintu.apikey=YOUR-API-KEY&nanomeet.room=YOUR-ROOM-NAME) and [source code](source-code#nanomeet-token-creator-source-code) to integrate.
 
 ![nanoMeet Token Creator](assets/nanomeet-helper.jpg)
 
 2. **nanoMeet sample (Online Sample)** - *Host nanoMeet meetings* <br/>
-   Lets you use nanoMeet with a valid secure token. Using this sample in a moderator role lets you invite people, set up security options and start a broadcast incl. recording.
+   You can use nanoMeet with a valid secure token. Using this sample in a moderator role lets you invite people, set up security options and start a broadcast incl. recording.
 > Available as [online web page](https://nanomeet.pages.nanocosmos.de/nanomeet-frontend/nanomeet-sample.html?token=YOUR-INVITE-TOKEN) and [source code](source-code#nanomeet-sample-source-code) to integrate.
 
 ![nanoMeet Meeting](assets/nanomeet-meeting.jpg)
