@@ -65,7 +65,7 @@ If there are statistics about the valid IP / UID within the stated time period, 
    
    > **Note**, a ratio of 0% means no buffering and a ratio of 100% means no playback was possible.
 
-   - Statistics - Events
+   - Statistics - Events:
    The 5 oldest called events within the defined time period. (These are always equal to the 5 furthest left events in the chart)
 
 ![Screenshot](/img/cloud/analytics/troubleshooting/statistics_playout.png)
@@ -111,7 +111,7 @@ Ingests using Web Real Time Communication are providing additional insights to f
    
    > **Note**, that a high ratio is an indicator for high encoder workload, which can lead to ingest problems. 
 
-   - Statistics - Count of packet loss detections
+   - Statistics - Count of packet loss detections:
    Amount of WebRTC notifications about lost data packages.
 
    > **Note**, a high count of lost packages at a time can lead to issues with the video representation on the side of the end user.
