@@ -30,7 +30,7 @@ The Copy URL button copies the exact options regarding the affected playout and 
 
 After selecting a specific time period you are asked to enter an IP address or an user ID to access playout statistics about all streams that this user retrieved. You will then be able to select one out of the 5 newest playouts based on their start date. To view more than these 5 results you need to adjust the time range accordingly. We also implemented support for current running playouts.
 
-> **Note**, only playouts that have metric option enabled are visible, which are based on the player metrics.  
+> **Note**, only playouts that have metric option enabled are visible.  
     
    - Search by IP
    The IP address which requested access to a stream.
