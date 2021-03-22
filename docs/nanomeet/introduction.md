@@ -24,7 +24,7 @@ nanoMeet is based on a custom version of [Jitsi Meet](https://github.com/jitsi/j
 
 ### Key features
 
-With nanoMeet you can create, host and broadcast online video meetings on your own web page:
+With nanoMeet you can create, host and broadcast online video meetings and events on your own web page using your own coporate design and interact with a large audience.
 
 - Host online video meetings embedded on your own web page
 - Web-browser based applications and web services
@@ -42,7 +42,7 @@ There are various usecases for nanoMeet:
 - Podium discussions e.g. expert sessions
 - Interviews and announcements with Q&A e.g. press briefings
 - Live events e.g. music, comedy, …
-- Fan engagement e.g. meet and greet
+- Education e.g.remote learning
 - Watchparties e.g. watch a live stream together and discuss
 
 ![nanoMeet Infographic](assets/nanomeet-infografik.jpg)
@@ -60,7 +60,7 @@ There are various usecases for nanoMeet:
 nanoMeet is part of [nanoStream Cloud](https://bintu-cloud-frontend.nanocosmos.de). 
 You need a nanoStream Cloud/Bintu account with nanoMeet enabled.
 
-> *If you do not have an account or nanoMeet enabled yet, please contact our sales team for a personal demo via [contact form](https://www.nanocosmos.de/contact) or sales(at)nanocosmos.de.*
+> *If you do not have an account or nanoMeet enabled yet, please contact our sales team for a personal demo via [contact form](https://www.nanocosmos.de/nanomeet/?demo&utm_source=nanoMeet_Docs&utm_medium=nanocosmos&utm_campaign=nanoMeet&utm_content=CTA_Requirements) or sales(at)nanocosmos.de.*
 >
 > To check if your organisation enables nanoMeet, check your [organisation overview](https://bintu-cloud-frontend.nanocosmos.de/organisation).
 >

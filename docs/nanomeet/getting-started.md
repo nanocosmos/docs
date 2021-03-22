@@ -7,7 +7,7 @@ sidebar_label: Getting Started
 nanoMeet is part of [nanoStream Cloud](https://bintu-cloud-frontend.nanocosmos.de). 
 You need a nanoStream Cloud/Bintu account with nanoMeet enabled.
 
-> *If you do not have an account or nanoMeet enabled yet, please contact our sales team for a personal demo via [contact form](https://www.nanocosmos.de/contact) or sales(at)nanocosmos.de.*
+> *If you do not have an account or nanoMeet enabled yet, please contact our sales team for a personal demo via [contact form](https://www.nanocosmos.de/nanomeet/?demo&utm_source=nanoMeet_Docs&utm_medium=nanocosmos&utm_campaign=nanoMeet&utm_content=CTA_Requirements) or sales(at)nanocosmos.de.*
 >
 > To check if your organisation enables nanoMeet, check your [organisation overview](https://bintu-cloud-frontend.nanocosmos.de/organisation).
 >
