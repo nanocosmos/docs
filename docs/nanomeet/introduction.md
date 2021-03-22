@@ -24,7 +24,7 @@ nanoMeet is based on a custom version of [Jitsi Meet](https://github.com/jitsi/j
 
 ### Key features
 
-With nanoMeet you can create, host and broadcast online video meetings on you own web page:
+With nanoMeet you can create, host and broadcast online video meetings and events on your own web page using your own coporate design and interact with a large audience.
 
 - Host online video meetings embedded on your own web page
 - Web-browser based applications and web services
@@ -34,14 +34,15 @@ With nanoMeet you can create, host and broadcast online video meetings on you ow
 - nanoMeet web API and code examples for easy white-label integration into custom branded environments
 - „Watch party“: Watch a live stream together in a video meeting
 
-
 ### Example applications
+
+There are various usecases for nanoMeet:
 
 - Town hall meetings e.g. company webcasts
 - Podium discussions e.g. expert sessions
 - Interviews and announcements with Q&A e.g. press briefings
 - Live events e.g. music, comedy, …
-- Fan engagement e.g. meet and greet
+- Education e.g.remote learning
 - Watchparties e.g. watch a live stream together and discuss
 
 ![nanoMeet Infographic](assets/nanomeet-infografik.jpg)
