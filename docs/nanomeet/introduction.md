@@ -8,7 +8,7 @@ sidebar_label: Introduction
 
 ## About the nanoMeet documentation
 
-The following provided content is divided in 3 main parts:
+The following provided content is divided into three parts:
 
 - [User Guide](samples): Online samples for immediate use with all provided features and functions.
 - [User/Developer Guide](source-code): Source code of our samples that can be copied easily.
