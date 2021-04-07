@@ -4,15 +4,15 @@ title: nanoStream Cloud Analytics
 sidebar_label: Troubleshooting
 ---
 
-## Troubleshooting Page
+# Troubleshooting Page
 
 The trouble shooting page helps to investigate stream or user specific metrics across the streaming experience from stream ingest to the playout at the enduser. With this feature you have a complete transparent view at your streams, which helps you to find potential problems and be more capable of solving them faster.
     
-### Access
+## Access
 
 To access the trouble shooting page you have to enable metrics on your business plan.
 
-### Time Picker
+## Time Picker
 
 The time picker declares the time period in which you will query for available metric results. Use to " Set to Now" button the to automatically update to the current time.
 
@@ -20,33 +20,74 @@ The time picker declares the time period in which you will query for available m
 
 ![Screenshot](assets/tp-time_picker.png)
 
-### Copy URL Button
+## Copy URL Button
 
 The Copy URL button copies the exact options regarding the affected playout and ingest that you are currently want to investigate from the URL. Pasting the information into a support ticket helps to synchronize our support team with your issue and accelerates the solution process.
 
 ![Screenshot](assets/tp-copy_URL.png)
 
-### Playouts
+## Playouts
 
-After selecting a specific time period you are asked to enter an IP address or an user ID to access playout statistics about all streams that this user retrieved. You will then be able to select one out of the 5 newest playouts based on their start date. To view more than these 5 results you need to adjust the time range accordingly. We also implemented support for current running playouts.
+The ***Playout*** tab selects the playout data group with all items described in detail next.\
 
-> **Note**, only playouts that have metric option enabled are visible.  
-    
-   - Search by IP
-   The IP address which requested access to a stream.
-    
-   - Search by UserID
-   The unique user ID of your customer. 
+> **Note**, only organizations with player metrics option enabled will be able to see the items in this data group.
+
+![Playout](assets/tp-playout.png)
+
+&#9398;
+`From (UTC Time)` indicates the start time period to search.
+&#9399;
+`To (UTC Time)` indicates the end time period.
+&#9400;
+`By` indicates the time interval granularity. It can be 30 seconds or 1 minute.
+&#9401;
+`Playout` tab which selects to view playout statistics. Playout statistics for all streams in the selected time period are retrieved.
+&#9402;
+`End to End` tab which selects to view both playout and ingest statistics in the same page. Playout and ingest statistics for all streams in the selected time period are retrieved.
+&#9403;
+`Ingest` tab which selects to view ingest statistics. Ingest statistics for all streams in the selected time period are retrieved.
+&#9404;
+`Copy URL to share` will copy the current page setup to clipboard. Users can send this URL link information to nanoCosmos support for further troubleshooting help.
+&#9405;
+`IP address/user ID` indicates using either the IP address used in client playouts or user IDs to search for related streams.
 
 > **Note**, to make this work with UIDs, you have to assign IDs to your users beforehand and also transmit that to the [player API](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_player_metrics/#how-to-use).
 
-![Screenshot](assets/tp-playouts.png)
+&#9406;
+`Select a stream` shows all streams that has a playout related to the IP address or user ID set earlier.
     
-#### Navigation
+### Stream Playout Information
 
 If there are statistics about the valid IP / UID within the stated time period, you will have a selection of streams that this user entered. Select the desired stream name and you will see a list of all playouts that user had in combination with the selected stream name. After you selected a playout you can access meta data information and also more detailed statistics below. Define the time interval with the slider to zoom into streams with a longer duration or to focus on specific parts of the stream. At this point you can synchronize with the corresponding ingest data of the playout on the right side.
 
-![Screenshot](assets/tp-metadata.png)
+![Playout Stream Information](assets/tp-po1.png)
+
+&#9398;
+`Playouts of stream` indicates the selected stream name to check.
+
+&#9399;
+`Start` indicates the start time.\
+`End` indicates the end time.\
+`Duration` indicates the active time.
+
+&#9400;
+Groups of meta-data information are shown related to the stream. The meta-data includes :\
+`User ID` - user defined data setup using the nanoPlayer API.\
+`IP` - client IP address used for playout.\
+`Event ID` - user defined data setup using the nanoPlayer API.\
+`Custom field 1` - user defined data setup using the nanoPlayer API.\
+`Playout ID` - internal generated unique ID.\
+`H5Live player version` - version of nanoplayer used.\
+`Device` - type of device used.\
+`Referrer` - webpage that hosts the nanoPlayer.\
+`Country` - country in which playout was initiated.\
+`City` - city in which playout was initiated.\
+`Resolution width` - width of video stream in pixels.\
+`Resolution height` - height of video stream in pixels.\
+`OS` - OS used.\
+`OS version` - OS version.\
+`Browser` - web browser used.\
+`Browser version` - browser version.
 
 > **Note**, if an user reloads the page of a stream, it will be accounted as a new playout. 
 
@@ -54,69 +95,103 @@ If there are statistics about the valid IP / UID within the stated time period, 
 
 ![Screenshot](assets/tp-raw_mode.png)
 
-   - Statistics - Bitrate [kBits/s]:
-   The corresponding retrieved bitrate on client side at a specific time. Purple lines symbolize event calls which are also listed under the Events table.
+### Visualizations
 
-   - Statistics - Latency [s]:
-   The latency from ingest to playout. Purple lines symbolize event calls which are also listed under the Events table.
+This part of the playout data group shows the graphical view of various media statistics.
 
-   - Statistics - Buffering Totaltime Ratio [%]:
-   The ratio between buffer and playback duration. 
+![Playout Media Information](assets/tp-po2.png)
+
+`Bitrate` [kBits/s]:
+The corresponding retrieved bitrate on client side at a specific time. Purple lines symbolize event calls which are also listed under the Events table.
+
+`Latency` [s]:
+The latency from ingest to playout. Purple lines symbolize event calls which are also listed under the Events table.
+
+`Buffering Totaltime Ratio` [%]:
+The ratio between buffer and playback duration. 
    
-   > **Note**, a ratio of 0% means no buffering and a ratio of 100% means no playback was possible.
+> **Note**, a ratio of 0% means no buffering and a ratio of 100% means no playback was possible.
 
-   - Statistics - Events:
-   The 5 oldest called events within the defined time period. (These are always equal to the 5 furthest left events in the chart)
+`Events`:
+The 5 oldest called events within the defined time period. (These are always equal to the 5 furthest left events in the chart)
 
-![Screenshot](assets/tp-statistics_playout.png)
-        
+## Ingests
 
-### Ingests
+The ***Ingest*** tab selects the ingest data group with all items described in detail next. Whether you have synchronized a corresponding playout or entered a valid, in the time period available stream name yourself, you will have access to ingest specific data, depending on the used protocol WebRTC or RTMP. You can see which protocol was used after entering a stream name right below the selection. We also implemented support for current running ingests. Ingests with metric option disabled are also shown, but will not contain data.
 
-Whether you have synchronized a corresponding playout or entered a valid, in the time period available stream name yourself, you will have access to ingest specific data, depending on the used protocol WebRTC or RTMP. You can see which protocol was used after entering a stream name right below the selection. We also implemented support for current running ingests. Ingests with metric option disabled are also shown, but will not contain data.
+![Ingest](assets/tp-ingest1.png)
 
-![Screenshot](assets/tp-ingests.png)
+&#9398;
+`Stream name` indicates the stream name of interest.
 
-#### Navigation
+&#9399;
+`Start` indicates the start time.\
+`End` indicates the end time.\
+`Duration` indicates the active time.\
+`Drops` indicates streaming was stopped unexpectedly.
+
+&#9400;
+Groups of meta-data information are shown related to the stream. The meta-data includes :\
+`Protocol` - streaming protocol used.\
+`Data center` - specific data center used for this ingest.\
+`Server` - specific server in the data center used.\
+`IP` - client IP address in which ingest was initiated.\
+`Country` - country in which ingest was initiated.\
+`City` - city in which ingest was initiated.\
+`Resolution width` - width of video stream in pixels.\
+`Resolution height` - height of video stream in pixels.
+
+&#9401;
+This tab shows which group of meta-data information is being shown at the moment and how many groups are available.
+
+&#9402; &#9403;
+This area allows changing between different groups of meta-data information for viewing.
+
+&#9404;
+This time slider can be used to define the time interval, allowing to zoom into streams with a longer duration or to focus on specific parts of the stream.
+
+### Visualizations 
 
 After the overview of the meta data you can define a specific time period within the stream duration. Therefore you can use the slider or type the time in manually, in which case the time gets rounded respective to the selected time interval to insure correct data aggregation. The results you get for the ingest stream name are also sorted by newest first as for the playouts. Selecting a time period auto-refreshes the statistics below.
-
-![Screenshot](assets/tp-statistics_ingest_interval.png)
 
 #### RTMP Ingests
 
 Ingests using RTMP only provide metrics about video and audio bitrates.
 
-   - Statistics - Video bitrate [kBits/s]:
-   The uploaded bitrate of video data.
+![Screenshot](assets/tp-ingest2.png)
 
-   - Statistics - Audio bitrate [kBits/s]:
-   The uploaded bitrate of audio data.
+`Video bitrate` [kBits/s]:
+The uploaded bitrate of video data.
+
+`Audio bitrate` [kBits/s]:
+The uploaded bitrate of audio data.
 
 #### WebRTC Ingests
 
 Ingests using Web Real Time Communication are providing additional insights to framerate, encoding and package delivery.
 
-   - Statistics - Video bitrate [kBits/s]:
-   The uploaded bitrate of video data.
+![Screenshot](assets/tp-webrtc.png)
 
-   - Statistics - Audio bitrate [kBits/s]:
-   The uploaded bitrate of audio data.
+`Video bitrate` [kBits/s]:
+The uploaded bitrate of video data.
 
-   - Statistics - Framerate [1/s]:
-   Amount of uploaded video frames.
+`Audio bitrate` [kBits/s]:
+The uploaded bitrate of audio data.
 
-   - Statistics - Encode time - total time - ratio [%]:
-   The Ratio between the time needed to encode video data and the actual video play time. 
+`Framerate` [1/s]:
+Amount of uploaded video frames.
+
+`Encode time - total time - ratio` [%]:
+The Ratio between the time needed to encode video data and the actual video play time. 
    
-   > **Note**, that a high ratio is an indicator for high encoder workload, which can lead to ingest problems. 
+> **Note**, that a high ratio is an indicator for high encoder workload, which can lead to ingest problems. 
 
-   - Statistics - Count of packet loss detections:
-   Amount of WebRTC notifications about lost data packages.
+`Count of packet loss detections`:
+Amount of WebRTC notifications about lost data packages.
 
-   > **Note**, a high count of lost packages at a time can lead to issues with the video representation on the side of the end user.
+> **Note**, a high count of lost packages at a time can lead to issues with the video representation on the side of the end user.
 
-### Workflow Examples 
+## Workflow Examples 
 
 #### Video only ingest workflow
 
