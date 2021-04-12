@@ -10,7 +10,9 @@ The trouble shooting page helps to investigate stream or user specific metrics a
     
 ## Access
 
-To access the trouble shooting page you have to enable metrics on your business plan.
+Access to the Trouble Shooting page is available for every nanoStream Cloud customer.
+
+> **Note**, displaying Stream Playout information will require a business upgrade to sent your H5Live Player metrics to our Analytics backend. Please contact sales@nanocosmos.de for business details.
 
 ## Time Picker
 
@@ -36,18 +38,25 @@ The ***Playout*** tab selects the playout data group with all items described in
 
 &#9398;
 `From (UTC Time)` indicates the start time period to search.
+
 &#9399;
 `To (UTC Time)` indicates the end time period.
+
 &#9400;
 `By` indicates the time interval granularity. It can be 30 seconds or 1 minute.
+
 &#9401;
 `Playout` tab which selects to view playout statistics. Playout statistics for all streams in the selected time period are retrieved.
+
 &#9402;
 `End to End` tab which selects to view both playout and ingest statistics in the same page. Playout and ingest statistics for all streams in the selected time period are retrieved.
+
 &#9403;
 `Ingest` tab which selects to view ingest statistics. Ingest statistics for all streams in the selected time period are retrieved.
+
 &#9404;
 `Copy URL to share` will copy the current page setup to clipboard. Users can send this URL link information to nanoCosmos support for further troubleshooting help.
+
 &#9405;
 `IP address/user ID` indicates using either the IP address used in client playouts or user IDs to search for related streams.
 
@@ -88,6 +97,18 @@ Groups of meta-data information are shown related to the stream. The meta-data i
 `OS version` - OS version.\
 `Browser` - web browser used.\
 `Browser version` - browser version.
+
+&#9401;
+This tab shows which group of meta-data information is being shown at the moment and how many groups are available.
+
+&#9402; &#9403;
+This area allows changing between different groups of meta-data information for viewing.
+
+&#9404;
+This time slider can be used to define the time interval, allowing to zoom into streams with a longer duration or to focus on specific parts of the stream.
+
+&#9405;
+`Synchronize ingest` gives the ability to synchronize the current selected playout with the corresponding ingest data group that provided the playout. In this selection, the playout data group is shown on the left side while the ingest data group is shown on the right side. This is same as selecting the ***End to End*** data group.
 
 > **Note**, if an user reloads the page of a stream, it will be accounted as a new playout. 
 
@@ -219,6 +240,6 @@ As can be observed, the average video bitrate is about 1.2Mbps while audio bitra
 #### Audio/Video ingest workflow with network issues
 
 The figure below shows the graphical representation.\
-As can be observed, the average video bitrate is about 2Mbps while audio bitrate is about 150Kbps. Towards the end of the graph as highlighted by the red box, the video and audio bitrates fluctuates by more than 50% of the average. This signifies some issues with the ingest from the encoder to nanoCosmos CDN. Some causes of these could be ISP related network degradation or encoding anamalies. If this issue is not rectified quickly, then it will cause overflow or underflow of buffers resulting in buffering, connection issues, etc.
+As can be observed, the average video bitrate is about 2Mbps while audio bitrate is about 150Kbps. Towards the end of the graph as highlighted by the red box, the video and audio bitrates fluctuates by more than 50% of the average. This signifies some issues with the ingest from the encoder to nanoCosmos CDN. Some causes of these could be ISP related network degradation or encoding anomalies. If this issue is not rectified quickly, then it will cause overflow or underflow of buffers resulting in buffering, connection issues, etc.
 
 ![AV Bad](assets/tp-ingestNG.png)
