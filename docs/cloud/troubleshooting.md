@@ -22,12 +22,6 @@ The time picker declares the time period in which you will query for available m
 
 ![Screenshot](assets/tp-time_picker.png)
 
-## Copy URL Button
-
-The Copy URL button copies the exact options regarding the affected playout and ingest that you are currently want to investigate from the URL. Pasting the information into a support ticket helps to synchronize our support team with your issue and accelerates the solution process.
-
-![Screenshot](assets/tp-copy_URL.png)
-
 ## Playouts
 
 The ***Playout*** tab selects the playout data group with all items described in detail next.\
@@ -138,7 +132,7 @@ The 5 oldest called events within the defined time period. (These are always equ
 
 ## Ingests
 
-The ***Ingest*** tab selects the ingest data group with all items described in detail next. Whether you have synchronized a corresponding playout or entered a valid, in the time period available stream name yourself, you will have access to ingest specific data, depending on the used protocol WebRTC or RTMP. You can see which protocol was used after entering a stream name right below the selection. We also implemented support for current running ingests. Ingests with metric option disabled are also shown, but will not contain data.
+The ***Ingest*** tab selects the ingest data group with all items described in detail next. Whether you have synchronized a corresponding playout or entered a valid, in the time period available stream name yourself, you will have access to ingest specific data, depending on the used protocol WebRTC or RTMP. You can see which protocol was used after entering a stream name right below the selection. We also implemented support for current running ingests.
 
 ![Ingest](assets/tp-ingest1.png)
 
@@ -148,8 +142,7 @@ The ***Ingest*** tab selects the ingest data group with all items described in d
 &#9399;
 `Start` indicates the start time.\
 `End` indicates the end time.\
-`Duration` indicates the active time.\
-`Drops` indicates streaming was stopped unexpectedly.
+`Duration` indicates the active time.
 
 &#9400;
 Groups of meta-data information are shown related to the stream. The meta-data includes :\
@@ -202,8 +195,8 @@ The uploaded bitrate of audio data.
 `Framerate` [1/s]:
 Amount of uploaded video frames.
 
-`Encode time - total time - ratio` [%]:
-The Ratio between the time needed to encode video data and the actual video play time. 
+`Average frame encode time` [ms]:
+The average time needed to encode one frame of the stream.
    
 > **Note**, that a high ratio is an indicator for high encoder workload, which can lead to ingest problems. 
 
