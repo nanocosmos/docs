@@ -69,27 +69,6 @@ It is possible to use the following filter options to get a more fine-grained ov
 The filter option are available directly at the top of each sub-dashboard.
 When switching to another sub-dashboard, already selected filter options will be applied there as well.
 
-### World map
-
-![Screenshot](/img/cloud/analytics/analytics-worldmap.png)
-
-The selected filter options affect all availabe metrics.
-
-The world map gives an overview where your customers are located and shows statistics per country.
-You can choose from the following categories:
-
--  Playout/Ingests: how many streams where ingested and played back
--  Buffering Play Ratio (only available with [H5Live metrics](#h5live) enabled): the ratio between buffer and playback duration over all playouts for a country
-   -  a ratio of 0% means no buffering
-   -  a ratio of 100% means no playback was possible
-   -  for countries like India with a high number of mobile connections and unstable internet connection, a higher buffering/play ratio compared to other countries is expected
--  Latency (only available with [H5Live metrics](#h5live) enabled): the average playback latency over all playbacks for a country
--  Playtime average (only available with [H5Live metrics](#h5live) enabled): the average playback duration of a playback event, shows how long a viewer will watch a stream
--  Usage (received/sent): the ingest and playback usage (in gigabytes) for a country
-
-A table directly below the world map shows a top ten country list for the selected category.
-The top ten countries are also highlighted on the world map.
-
 ### Home
 
 ![Screenshot](/img/cloud/analytics/analytics-home.png)
