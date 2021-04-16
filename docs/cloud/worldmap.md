@@ -19,9 +19,12 @@ You can choose from the following categories:
 -  Latency (only available with [H5Live metrics](#h5live) enabled): the average playback latency over all playbacks for a country
 -  Playtime average (only available with [H5Live metrics](#h5live) enabled): the average playback duration of a playback event, shows how long a viewer will watch a stream
 -  Usage (received/sent): the ingest and playback usage (in gigabytes) for a country
+-  ABR playtime: the playback duration of streams with activated **"adaptive bitrate"** option enabled
+-  ABR viewer: the total viewer count of country/region
+-  ABR switches: the total amount of stream quality level switches for both - "upgrading" and "downgrading" 
+-  Quality of Experience: user rated stream quality evaluation score 
 
-A table directly below the world map shows a top ten country list for the selected category.
-The top ten countries are also highlighted on the world map.
+The area directly below the world map shows either a top ten country tabular list for the selected category or a region comparison chart when in region view.
 
 ## Country View
 In the **Country View** you can investigate the TOP 50 countries that apply to your set filter options. These are ranked by the chosen metric, which can be selected right below the View Switch.
