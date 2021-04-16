@@ -29,11 +29,10 @@ The default number of recoveries is `3`. If the threshold is reached, an error w
 
 ## Warnings
 
-When enabling the media error recovery, each recovery will be indicated by 
-[`onWarning`](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_api#onwarning) event.
+When enabling the media error recovery, each recovery will be indicated by the [`onWarning`](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_api#onwarning) event.
 
 A sample message which you might see in the console when a warning is thrown:
-* `'Recovering from media error 3003, recovery 1/3 within the last 60 seconds (1 total).'`
+* `'Recovering from media error 3003, recovery 1/3 within the last 60 seconds (12 total).'`
 
-Read more about playback section in: [config](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_api#nanoplayerconfig--codeobjectcode)
+Read more about playback section in [config](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_api#nanoplayerconfig--codeobjectcode)
 
