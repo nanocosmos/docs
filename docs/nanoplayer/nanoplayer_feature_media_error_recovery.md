@@ -4,7 +4,7 @@ title: Media Error Recovery
 sidebar_label: Media Error Recovery
 ---
 
-With the **nanoStream H5Live Player Version 4.10.2** an automatic recovery workflow was introduced, meaning that for certain media errors (`3003`, `3100`, `1008`) which might occur during playback, the recovery will be triggered. In this way, even if there is a disturbance during media decoding, instead of throwing an error and stopping the playback, recovery will start with ongoing playback. This feature brings a smooth experience for users even if there are slight issues with the media element.
+With the **nanoStream H5Live Player Version 4.10.2** an automatic recovery workflow was introduced, meaning that for certain media errors (`1008`,`3003`,`3100`) which might occur during playback, the recovery will be triggered.  In this way, even if there is a disturbance during media decoding, playback resumes automatically. This feature brings a better experience for users.
 
 ## Errors covered by automatic recovery
 
@@ -14,17 +14,17 @@ With the **nanoStream H5Live Player Version 4.10.2** an automatic recovery workf
 
 ## Configuration parameter
 
-You can adjust the allowed maximum number of recoveries which would be triggered within **60 seconds**. To do so, use a new config parameter: 
-`playback.mediaErrorRecoveries`, by setting the value to the desired number. Remember that the default: `3` which is recommended to use.
-To disable the parameter set the `playback.mediaErrorRecoveries` value to `0`.
+You can adjust the maximum number of recoveries allowed within **60 seconds**. To do so, use the config parameter 
+`playback.mediaErrorRecoveries`, by setting the value to the desired number. Remember that the default value is `3`, which is recommended to use. To disable the recovery feature set the `playback.mediaErrorRecoveries` value to `0`.
 
-## 60 seconds time span
+## 60 seconds time frame
 
-**Important:** <br>
-It is important to note, that the recoveries are counted in the span of **60 seconds**. After that time, if no error occurred but there was another disturbance in i.e. media decoding, the count will start again from 0. The number of allowed recoveries can be customized.
+> **Important:** <br>
+>It is important to note, that the recoveries are counted in the frame of **60 seconds**. 
+When a recovery is triggered, the last 60 seconds of playback are checked for the total number of recoveries which were set off. If the number (of recoveries) is higher than the allowed maximum number within this time frame, an error is thrown. If no error occured and there were no issues in i.e. media decoding in the last 60 seconds, the count will start again from 0. The number of allowed recoveries can be customized.
 <br>
 
-The default number of recoveries is `3`. If the threshold was reached, an error will be thrown and followed by a pause with message: `'playbackerror'`.
+The default number of recoveries is `3`. If the threshold is reached, an error will be thrown and followed by a pause with message: `'playbackerror'`.
 
 
 ## Warnings
@@ -33,8 +33,7 @@ When enabling the media error recovery, each recovery will be indicated by
 [`onWarning`](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_api#onwarning) event.
 
 A sample message which you might see in the console when a warning is thrown:
-* `'Recovering from media error 3003, recovery number 2 within the last 60 seconds (3 allowed).'`
+* `'Recovering from media error 3003, recovery 1/3 within the last 60 seconds (1 total).'`
 
-  As already mentioned, if the threshold was reached, an error will be thrown and followed by a pause with message: `'playbackerror'`
+Read more about playback section in: [config](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_api#nanoplayerconfig--codeobjectcode)
 
-Read more about playback section in:[config](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_api#nanoplayerconfig--codeobjectcode)
