@@ -24,7 +24,7 @@ You can adjust the maximum number of recoveries allowed within **60 seconds**. T
 When a recovery is triggered, the last 60 seconds of playback are checked for the total number of recoveries which were set off. If the number (of recoveries) is higher than the allowed maximum number within this time frame, an error is thrown. If no error occured and there were no issues in i.e. media decoding in the last 60 seconds, the count will start again from 0. The number of allowed recoveries can be customized.
 <br>
 
-The default number of recoveries is `3`. If the threshold is reached, an error will be thrown and followed by a pause with reason: `'playbackerror'`.
+The default number of recoveries is `3`. When the threshold is reached, an error is thrown, followed by a pause with a reason: `'playbackerror'`.
 
 
 ## Warnings
