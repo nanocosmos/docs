@@ -22,7 +22,7 @@ You can choose from the following categories:
 -  ABR playtime: the playback duration of streams with activated **"adaptive bitrate"** option enabled
 -  ABR viewer: the total viewer count of country/region
 -  ABR switches: the total amount of stream quality level switches for both - "upgrading" and "downgrading" 
--  Quality of Experience: user rated stream quality evaluation score 
+-  Quality of Experience: average user rated stream quality evaluation score 
 
 The area directly below the world map shows either a top ten country tabular list for the selected category or a region comparison chart when in region view.
 
@@ -31,16 +31,19 @@ In the **Country View** you can investigate the TOP 50 countries that apply to y
 ![Screenshot](assets/analytics-worldmap-country-view.png)
 
 &#9398;
-`View Switch`
+`View Switch` lets you change between country and region view.
 
 &#9399;
-`Metric Selection`
+`Metric Selection` lets you pick a metric to view statistics of in the corresponding time range.
 
 &#9400;
-`CDN Options`
+`CDN Options` lets you specify the content delivery network.
 
 &#9401;
-`Metric Subswitch`
+`Metric Subswitch` lets you choose a **sub-metric** if the current selected metric has more than one.
+
+&#9402;
+`Legend` is available only in country view mode and describes the data in more detail.
 
 ## Regions View
 In the **Region View** all countries belong to there continental region. The functionalites are basically the same than on the **Country View**, but the corresponding data is shown in the **Region Comparison** bar chart below the **Worldmap**.
@@ -53,13 +56,13 @@ In this visualization is shown the current selected metric data while in **Regio
 ![Screenshot](assets/analytics-region-comparison1.png)
 
 &#9398;
-`World Regions`
+`World Regions` - each of the 7 world regions, classified by our server structure. **(not continents)**
 
 &#9399;
-`Bar Tooltip Description`
+`Bar Tooltip Description` opens up when hovering over one bar of the chart. It gives more detailed information based on the chosen metric.
 
 &#9400;
-`Metric Unit`
+`Metric Unit` is always located at the x-axis and changes accordingly to the selected metric and the corresponding data.
 
 If a metric consists of more than 1 metric property, which are uniform, you can select this within the **Metric Subswitch** to show the relation of these properties within a **stacked bar chart**. For example the **ABR Switch Metric**, which indicates the count of stream quality related "up" and "down" switches:
 
