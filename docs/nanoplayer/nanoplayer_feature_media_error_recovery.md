@@ -24,12 +24,12 @@ You can adjust the maximum number of recoveries allowed within **60 seconds**. T
 When a recovery is triggered, the last 60 seconds of playback are checked for the total number of recoveries which were set off. If the number (of recoveries) is higher than the allowed maximum number within this time frame, an error is thrown. If no error occured and there were no issues in i.e. media decoding in the last 60 seconds, the count will start again from 0. The number of allowed recoveries can be customized.
 <br>
 
-The default number of recoveries is `3`. If the threshold is reached, an error will be thrown and followed by a pause with message: `'playbackerror'`.
+The default number of recoveries is `3`. If the threshold is reached, an error will be thrown and followed by a pause with reason: `'playbackerror'`.
 
 
 ## Warnings
 
-When enabling the media error recovery, each recovery will be indicated by the [`onWarning`](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_api#onwarning) event.
+When enabling the media error recovery, each recovery will be indicated by an [`onWarning`](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_api#onwarning) event.
 
 A sample message which you might see in the console when a warning is thrown:
 * `'Recovering from media error 3003, recovery 1/3 within the last 60 seconds (12 total).'`
