@@ -24,17 +24,17 @@ The time picker declares the time period in which you will query for available m
 
 ## Playouts
 
-The ***Playout*** tab selects the playout data group with all items described in detail next.\
+After selecting a specific time period you are asked to enter an IP address or an user ID to access playout statistics about all streams that this user retrieved. You will then be able to select one out of the 5 newest playouts based on their start date. To view more than these 5 results you need to adjust the time range accordingly. We also implemented support for current running playouts.
 
 > **Note**, only organizations with player metrics option enabled will be able to see the items in this data group.
 
 ![Playout](assets/tp-playout.png)
 
 &#9398;
-`From (UTC Time)` indicates the start time period to search.
+`From (UTC Time)` the **start** of the time range to search in.
 
 &#9399;
-`To (UTC Time)` indicates the end time period.
+`To (UTC Time)` the **end** of the time range to search in.
 
 &#9400;
 `By` indicates the time interval granularity. It can be 30 seconds or 1 minute.
@@ -49,7 +49,7 @@ The ***Playout*** tab selects the playout data group with all items described in
 `Ingest` tab which selects to view ingest statistics. Ingest statistics for all streams in the selected time period are retrieved.
 
 &#9404;
-`Copy URL to share` will copy the current page setup to clipboard. Users can send this URL link information to nanoCosmos support for further troubleshooting help.
+`Copy URL to share` will copy the current page setup to clipboard. Users can send this URL link information to nanocosmos support for further troubleshooting help.
 
 &#9405;
 `IP address/user ID` indicates using either the IP address used in client playouts or user IDs to search for related streams.
