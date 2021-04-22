@@ -24,34 +24,31 @@ You can choose from the following categories:
 -  ABR switches: the total amount of stream quality level switches for both - "upgrading" and "downgrading" 
 -  Quality of Experience: average user rated stream quality evaluation score 
 
-The area directly below the world map shows either a top ten country tabular list for the selected category or a region comparison chart when in region view.
+The area directly below the world map shows either a Top 10 country tabular list for the selected category or a region comparison chart when in **World Regions View**.
 
 ## Country View
 In the **Country View** you can investigate the TOP 50 countries that apply to your set filter options. These are ranked by the chosen metric, which can be selected right below the View Switch.
 ![Screenshot](assets/analytics-worldmap-country-view.png)
 
 &#9398;
-`View Switch` lets you change between country and region view.
+`View Switch` lets you change between country and **World Regions View**.
 
 &#9399;
 `Metric Selection` lets you pick a metric to view statistics of in the corresponding time range.
 
 &#9400;
-`CDN Options` lets you specify the content delivery network.
-
-&#9401;
 `Metric Subswitch` lets you choose a **sub-metric** if the current selected metric has more than one.
 
-&#9402;
-`Legend` is available only in country view mode and describes the data in more detail.
+&#9401;
+`Legend` describes the visible metric data in more detail.
 
-## Regions View
-In the **Region View** all countries belong to there continental region. The functionalites are basically the same than on the **Country View**, but the corresponding data is shown in the **Region Comparison** bar chart below the **Worldmap**.
+## World Regions View
+In the **World Regions View** all countries belong to their continental region. The functionalites are basically the same as on **Country View**, but the corresponding data is shown in the **Region Comparison** bar chart below the **Worldmap**.
 
 ![Screenshot](assets/analytics-worldmap-regions-view.png)
 
 ### Regions Comparison
-In this visualization is shown the current selected metric data while in **Region View**. For example, this diagram displays the **buffering ratio metric**, which consists of one metric property. The regions are always ranked from "best" to "worst" based on the selected metric.
+When the **World Regions View** is selected, in this visualization the current selected metric data is shown. The regions are always ranked from "best" to "worst" based on the selected metric.
 
 ![Screenshot](assets/analytics-region-comparison1.png)
 
@@ -69,9 +66,8 @@ If a metric consists of more than 1 metric property, which are uniform, you can 
 ![Screenshot](assets/analytics-region-comparison2.png)
 
 ### Zoom Country View
-Clicking on a region in the worldregion view, lets you zoom in and shows country data of the Top 50 countries within the selected region. The region comparison bar chart also changes to the Top 10 countries ranking of the selected region.   
+Clicking on a region in the **World Regions View**, lets you zoom in and shows country data of all countries within the selected region. The region comparison bar chart also changes to the Top 10 countries ranking of the selected region.   
 
 ![Screenshot](assets/analytics-region-zoom-view.png) 
 
 ![Screenshot](assets/analytics-zoom-view-Top10.png)
-
