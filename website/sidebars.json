@@ -74,6 +74,7 @@
         "label": "Analytics",
         "ids":[
           "cloud/analytics",
+          "cloud/worldmap",
           "cloud/troubleshooting"
         ] 
       }
