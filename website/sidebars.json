@@ -69,7 +69,15 @@
       "cloud/live_encoding",
       "cloud/live-recording-vod",
       "cloud/security",
-      "cloud/analytics"
+      {
+        "type": "subcategory",
+        "label": "Analytics",
+        "ids":[
+          "cloud/analytics",
+          "cloud/worldmap",
+          "cloud/troubleshooting"
+        ] 
+      }
     ],
     "Cloud Dashboard": [
       "cloud-frontend/getting_started",
