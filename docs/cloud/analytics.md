@@ -1,7 +1,7 @@
 ---
 id: analytics
 title: nanoStream Cloud Analytics
-sidebar_label: Analytics
+sidebar_label: General
 ---
 
 ![Screenshot](/img/cloud/analytics/analytics.png)

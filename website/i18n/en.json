@@ -52,7 +52,7 @@
       },
       "cloud/analytics": {
         "title": "nanoStream Cloud Analytics",
-        "sidebar_label": "Analytics"
+        "sidebar_label": "General"
       },
       "cloud/bintu_api": {
         "title": "nanoStream Cloud - bintu",
@@ -104,6 +104,10 @@
       "cloud/support": {
         "title": "Support",
         "sidebar_label": "Support"
+      },
+      "cloud/troubleshooting": {
+        "title": "nanoStream Cloud Analytics",
+        "sidebar_label": "Troubleshooting"
       },
       "faq/faq_3d_stereo_vr": {
         "title": "3D / Stereo / VR / 360",
