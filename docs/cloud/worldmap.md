@@ -61,7 +61,7 @@ When the **World Regions View** is selected, in this visualization the current s
 &#9400;
 `Metric Unit` is always located at the x-axis and changes accordingly to the selected metric and the corresponding data.
 
-If a metric consists of more than 1 metric property, which are uniform, you can select this within the **Metric Subswitch** to show the relation of these properties within a **stacked bar chart**. For example the **ABR Switch Metric**, which indicates the count of stream quality related "up" and "down" switches:
+If a metric consists of **multiple properties**, the bar chart adjusts to a stacked bar chart. Hover over a bar to see more detailed information.
 
 ![Screenshot](assets/wm-region-comparison2.png)
 
