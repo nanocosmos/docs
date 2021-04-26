@@ -4,7 +4,7 @@ title: Media Error Recovery
 sidebar_label: Media Error Recovery
 ---
 
-With the **nanoStream H5Live Player Version 4.10.2** an automatic recovery workflow was introduced, meaning that for certain media errors (`1008`,`3003`,`3100`) which might occur during playback, the recovery will be triggered.  In this way, even if there is a disturbance during media decoding, playback resumes automatically. This feature brings a better experience for users.
+With the **nanoStream H5Live Player Version 4.10.4** an automatic recovery workflow was introduced, meaning that for certain media errors (`1008`,`3003`,`3100`) which might occur during playback, the recovery will be triggered.  In this way, even if there is a disturbance during media decoding, playback resumes automatically. This feature brings a better experience for users.
 
 ## Errors covered by automatic recovery
 
@@ -24,7 +24,7 @@ You can adjust the maximum number of recoveries allowed within **60 seconds**. T
 When a recovery is triggered, the last 60 seconds of playback are checked for the total number of recoveries which were set off. If the number (of recoveries) is higher than the allowed maximum number within this time frame, an error is thrown. If no error occured and there were no issues in i.e. media decoding in the last 60 seconds, the count will start again from 0. The number of allowed recoveries can be customized.
 <br>
 
-The default number of recoveries is `3`. When the threshold is reached, an error is thrown, followed by a pause with a reason: `'playbackerror'`.
+The default number of recoveries is `3`. When the threshold is reached, an error is thrown, followed by a pause with reason: `'playbackerror'`.
 
 
 ## Warnings
