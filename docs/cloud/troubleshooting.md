@@ -184,7 +184,7 @@ Audio bitrate of the ingested stream.
 
 Ingests using Web Real Time Communication are providing additional insights to framerate, encoding and package delivery.
 
-> **Note**, to have WebRTC metric data available for the Troubleshooting page, you need to be enabled for [H5Live player metrics](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_player_metrics).
+> **Note**, to have [WebRTC metric](https://docs.nanocosmos.de/docs/cloud/analytics#webcaster) data available for the Troubleshooting page, they need to be enabled.
 
 ![Screenshot](assets/tp-webrtc.png)
 
