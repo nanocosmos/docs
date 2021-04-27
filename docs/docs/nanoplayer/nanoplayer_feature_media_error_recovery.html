@@ -1,0 +1,90 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Media Error Recovery · nanocosmos Documentation</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="With the **nanoStream H5Live Player Version 4.10.4** an automatic recovery workflow was introduced, meaning that for certain media errors (`1008`,`3003`,`3100`) which might occur during playback, the recovery will be triggered.  In this way, even if there is a disturbance during media decoding, playback resumes automatically. This feature brings a better experience for users."/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Media Error Recovery · nanocosmos Documentation"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.nanocosmos.de/"/><meta property="og:description" content="With the **nanoStream H5Live Player Version 4.10.4** an automatic recovery workflow was introduced, meaning that for certain media errors (`1008`,`3003`,`3100`) which might occur during playback, the recovery will be triggered.  In this way, even if there is a disturbance during media decoding, playback resumes automatically. This feature brings a better experience for users."/><meta property="og:image" content="https://docs.nanocosmos.de/img/docusaurus.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://docs.nanocosmos.de/img/docusaurus.png"/><link rel="shortcut icon" href="/img/favicon_nano.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script>
+              (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+              (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+              m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+              })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+              ga('create', 'UA-552140-1', 'auto');
+              ga('send', 'pageview');
+            </script><link rel="stylesheet" href="/css/copy-button.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/js/copy-button.js"></script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="/js/search.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/nanocosmos_header_logo.png" alt="nanocosmos Documentation"/><h2 class="headerTitleWithLogo">nanocosmos Documentation</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/docs/cloud/cloud_overview" target="_self">nanoStream Cloud</a></li><li class="siteNavGroupActive"><a href="/docs/nanoplayer/nanoplayer_introduction" target="_self">H5Live Player</a></li><li class=""><a href="/docs/webrtc/nanostream_webrtc_introduction" target="_self">nanoStream Webcaster</a></li><li class=""><a href="/docs/nanomeet/introduction" target="_self">nanoMeet</a></li><li class=""><a href="/docs/nanostream/nanostream" target="_self">nanoStream Apps and SDKs</a></li><li class=""><a href="/docs/samples/samples" target="_self">Samples</a></li><li class=""><a href="/docs/faq/faq_streaming" target="_self">FAQ</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Features</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">H5Live Player</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/nanoplayer/nanoplayer_introduction">Introduction</a></li><li class="navListItem"><a class="navItem" href="/docs/nanoplayer/nanoplayer_getting_started">Getting started</a></li><li class="navListItem"><a class="navItem" href="/docs/nanoplayer/nanoplayer_supported_browsers">Supported Browsers</a></li><li class="navListItem"><a class="navItem" href="/docs/nanoplayer/nanoplayer_player_metrics">Player Metrics</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Features</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/nanoplayer/nanoplayer_autoplay">Autoplay</a></li><li class="navListItem"><a class="navItem" href="/docs/nanoplayer/nanoplayer_token_security">Secure playback with H5Live</a></li><li class="navListItem"><a class="navItem" href="/docs/nanoplayer/nanoplayer_feature_stream_switching">Stream switching and ABR</a></li><li class="navListItem"><a class="navItem" href="/docs/nanoplayer/nanoplayer_feature_fullscreen_api">Fullscreen API</a></li><li class="navListItem"><a class="navItem" href="/docs/nanoplayer/nanoplayer_feature_customization">UI and customization</a></li><li class="navListItem"><a class="navItem" href="/docs/nanoplayer/nanoplayer_feature_reconnect_timeouts">Reconnect and Timeouts</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/nanoplayer/nanoplayer_feature_media_error_recovery">Media Error Recovery</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">API</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/nanoplayer/nanoplayer_api">NanoPlayer</a></li><li class="navListItem"><a class="navItem" href="/docs/nanoplayer/nanoplayer_api_errors">NanoPlayer Status &amp; Error Codes</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Other</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/nanoplayer/nanoplayer_faq">FAQ</a></li><li class="navListItem"><a class="navItem" href="/docs/nanoplayer/nanoplayer_blogposts">Blog</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/nanocosmos/docs/tree/master/docs/nanoplayer/nanoplayer_feature_media_error_recovery.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 id="__docusaurus" class="postHeaderTitle">Media Error Recovery</h1></header><article><div><span><p>With the <strong>nanoStream H5Live Player Version 4.10.4</strong> an automatic recovery workflow was introduced, meaning that for certain media errors (<code>1008</code>,<code>3003</code>,<code>3100</code>) which might occur during playback, the recovery will be triggered.  In this way, even if there is a disturbance during media decoding, playback resumes automatically. This feature brings a better experience for users.</p>
+<h2><a class="anchor" aria-hidden="true" id="errors-covered-by-automatic-recovery"></a><a href="#errors-covered-by-automatic-recovery" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Errors covered by automatic recovery</h2>
+<ul>
+<li><code>1008</code> (HLS playback error)</li>
+<li><code>3003</code> (media decode error)</li>
+<li><code>3100</code> (media source ended)</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="configuration-parameter"></a><a href="#configuration-parameter" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Configuration parameter</h2>
+<p>You can adjust the maximum number of recoveries allowed within <strong>60 seconds</strong>. To do so, use the config parameter
+<code>playback.mediaErrorRecoveries</code>, by setting the value to the desired number. Remember that the default value is <code>3</code>, which is recommended to use. To disable the recovery feature set the <code>playback.mediaErrorRecoveries</code> value to <code>0</code>.</p>
+<h2><a class="anchor" aria-hidden="true" id="60-seconds-time-frame"></a><a href="#60-seconds-time-frame" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>60 seconds time frame</h2>
+<blockquote>
+<p><strong>Important:</strong> <br>
+It is important to note, that the recoveries are counted in the frame of <strong>60 seconds</strong>.
+When a recovery is triggered, the last 60 seconds of playback are checked for the total number of recoveries which were set off. If the number (of recoveries) is higher than the allowed maximum number within this time frame, an error is thrown. If no error occured and there were no issues in i.e. media decoding in the last 60 seconds, the count will start again from 0. The number of allowed recoveries can be customized.
+<br></p>
+</blockquote>
+<p>The default number of recoveries is <code>3</code>. When the threshold is reached, an error is thrown, followed by a pause with reason: <code>'playbackerror'</code>.</p>
+<h2><a class="anchor" aria-hidden="true" id="warnings"></a><a href="#warnings" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Warnings</h2>
+<p>When enabling the media error recovery, each recovery will be indicated by an <a href="https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_api#onwarning"><code>onWarning</code></a> event.</p>
+<p>A sample message which you might see in the console when a warning is thrown:</p>
+<ul>
+<li><code>'Recovering from media error 3003, recovery 1/3 within the last 60 seconds (12 total).'</code></li>
+</ul>
+<p>Read more about playback section in <a href="https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_api#nanoplayerconfig--codeobjectcode">config</a></p>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 4/27/2021</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/nanoplayer/nanoplayer_feature_reconnect_timeouts"><span class="arrow-prev">← </span><span>Reconnect and Timeouts</span></a><a class="docs-next button" href="/docs/nanoplayer/nanoplayer_api"><span class="function-name-prevnext">NanoPlayer</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#errors-covered-by-automatic-recovery">Errors covered by automatic recovery</a></li><li><a href="#configuration-parameter">Configuration parameter</a></li><li><a href="#60-seconds-time-frame">60 seconds time frame</a></li><li><a href="#warnings">Warnings</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><div><h5>Contact</h5><a href="https://www.nanocosmos.de/">Homepage</a><a href="https://www.nanocosmos.de/contact">Contact</a><a href="https://www.nanocosmos.de/support">Support</a><a href="https://www.nanocosmos.de/terms">Legal Terms</a></div><div><h5>Products</h5><a href="https://www.nanocosmos.de/cloud">Nanostream Cloud with Bintu.Live</a><a href="https://www.nanocosmos.de/h5live">H5Live Low Latency HTML5-Player</a><a href="https://www.nanocosmos.de/webrtc">nanoStream Webcaster</a><a href="https://www.nanocosmos.de/#nanostream">Nanostream Apps and SDK</a></div><div><h5>More</h5><a href="https://www.nanocosmos.de/blog/">Blog</a><a href="https://twitter.com/nanovideo">Twitter</a><a href="https://www.facebook.com/nanocosmos.net/">Facebook</a><a href="https://www.linkedin.com/company/nanocosmos-gmbh">LinkedIn</a><a href="https://github.com/nanocosmos/docs">GitHub</a><a class="github-button" href="https://github.com/nanocosmos/docs" data-icon="octicon-star" data-count-href="/nanocosmos/docs/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://nanocosmos.de/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/footer_logo.png" alt="nanocosmos GmbH" width="170" height="45"/></a><section class="copyright">Copyright © 2021 nanocosmos GmbH - doc version Tue Apr 27 2021 09:17:28 GMT+0000 (Coordinated Universal Time)</section></footer></div></body></html>
