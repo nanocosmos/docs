@@ -70,4 +70,41 @@ Clicking on a region in the **World Regions View**, lets you zoom in and shows c
 
 ![Screenshot](assets/wm-region-zoom-view.png) 
 
-![Screenshot](assets/wm-zoom-view-Top10.png)
+Depending on the current view (**Zoomed Region View** or **Country View**) there is a Top 50 ranking of all included countries. A Top 50 country is marked by a colored indicator, where the Top 10 is explicitly nummerated to give a quick overview of the most popular locations.
+
+&#9398;
+`Country` - The Top 50 countries (ranked by metric results) provide more in-depth information. **Hovering** over the ranking shows country specific details, while **Clicking** opens up a **Breakdown Menu** of this countrys streaming activity.
+
+> **Note**, the USA (as a special case) are seperated in different regions, where each region counts individually.
+
+&#9399;
+`Country Overview` is shown when hovering over one of the Top 50 ranked countries.
+
+## Breakdown Menu
+
+This menu is shown when clicking on a marked country in the **Zoomed Region View** or **Country View**. It represents a more detailed overview of this countrys Top 10 results by the selected metric and filter option.
+
+![Screenshot](assets/wm-breakdown.png)
+
+&#9398;
+`Chosen Metric` indicates the selected metric. The viewed metric can be changed on the world map view. 
+
+&#9399;
+`Filters` are used to switch between the metric data to evulate the results under different points of view.
+
+All metrics have these main filters:
+   - IP
+   - Stream name
+   - City
+   - Referrer
+
+while `Buffering Ratio`, `Latency`, `Playtime Average`, `ABR Viewers`, `ABR Playtime` and `ABR Switches` metrics **also** contain filters for:
+   - OS
+   - Player version
+   - Browser
+
+&#9400;
+`Table Columns` represent the chosen filter and show the corresponding data. You can sort all entries by clicking on a header column.
+
+&#9401;
+`Selected Time Range` displays the `start` and `end` of the selected period of time. This can be changed on top of the world map view.
