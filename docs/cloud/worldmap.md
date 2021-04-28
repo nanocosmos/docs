@@ -76,7 +76,7 @@ Clicking on a region in the **World Regions View**, lets you zoom in and shows c
 In **Country View** the Top 50 ranked countries are marked by a small indicator, while in **Zoom Region View** all countries are marked. The Top 10 in both cases is explicitly numerated to give a quick overview of the most popular locations.
 
 &#9398;
-`Country` - The Top 50 countries (ranked by metric results) provide more in-depth information. **Hovering** over the ranking shows country specific details, while **Clicking** opens up a **Breakdown Menu** of this countrys streaming activity.
+`Country` - **Hovering** over the indicator shows country specific details, while **Clicking** opens up a **Breakdown Menu** of this countrys streaming activity.
 
 &#9399;
 `Country Overview` is shown when hovering over one of the Top 50 ranked countries.
