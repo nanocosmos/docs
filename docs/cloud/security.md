@@ -25,8 +25,8 @@ Encrypted ingest (RTMPS): rtmps://bintu-stream.nanocosmos.de:1936/live/STREAM
 
 ## Client authorization
 
-- RTMP Ingest can be authorized with [web hooks](bintu_custom_webhooks) with our bintu REST API.
+- RTMP Ingest can be authorized with [web hooks](bintu_custom_webhooks.md) with our bintu REST API.
 
-- nanoStream H5Live Player clients can be authorized with nanoPlayer [secure tokens](../nanoplayer/nanoplayer_token_security)
+- nanoStream H5Live Player clients can be authorized with nanoPlayer [secure tokens](../nanoplayer/nanoplayer_token_security.md)
 
 [Contact us](https://www.nanocosmos.de/support) for additional options or any further questions.
