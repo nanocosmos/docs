@@ -160,8 +160,7 @@
       "faq/faq_devices_support",
       "faq/faq_adv_codec_config",
       "faq/programming_sdk_api",
-      "faq/faq_nanostream_sdk_win",
-      "faq/programming"
+      "faq/faq_nanostream_sdk_win"
     ],
     "Purchase and License": ["faq/faq_purchase_and_license"]
   },
