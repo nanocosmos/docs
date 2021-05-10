@@ -14,11 +14,11 @@ variables:
 
 # This folder is cached between builds
 # http://docs.gitlab.com/ee/ci/yaml/README.html#cache
-cache:
-  paths:
-    - node_modules/
-    - website/node_modules/
-    - /app/website/node_modules
+#cache:
+  #paths:
+    #- node_modules/
+    #- website/node_modules/
+    #- /app/website/node_modules
 
 .pages:
     stage: deploy

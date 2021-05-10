@@ -12,7 +12,8 @@
           "nanoplayer/nanoplayer_feature_stream_switching",
           "nanoplayer/nanoplayer_feature_fullscreen_api",
           "nanoplayer/nanoplayer_feature_customization",
-          "nanoplayer/nanoplayer_feature_reconnect_timeouts"
+          "nanoplayer/nanoplayer_feature_reconnect_timeouts",
+          "nanoplayer/nanoplayer_feature_media_error_recovery"
       ],
       "API": [
            "nanoplayer/nanoplayer_api",
@@ -69,7 +70,15 @@
       "cloud/live_encoding",
       "cloud/live-recording-vod",
       "cloud/security",
-      "cloud/analytics"
+      {
+        "type": "subcategory",
+        "label": "Analytics",
+        "ids":[
+          "cloud/analytics",
+          "cloud/worldmap",
+          "cloud/troubleshooting"
+        ] 
+      }
     ],
     "Cloud Dashboard": [
       "cloud-frontend/getting_started",
@@ -151,8 +160,7 @@
       "faq/faq_devices_support",
       "faq/faq_adv_codec_config",
       "faq/programming_sdk_api",
-      "faq/faq_nanostream_sdk_win",
-      "faq/programming"
+      "faq/faq_nanostream_sdk_win"
     ],
     "Purchase and License": ["faq/faq_purchase_and_license"]
   },

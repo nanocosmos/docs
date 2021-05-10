@@ -4,7 +4,7 @@ title: nanoMeet Web API
 sidebar_label: API
 ---
 
-&copy; 2021 [nanocosmos](www.nanocosmos.de)
+&copy; 2021 [nanocosmos](https://www.nanocosmos.de)
 
 This guide will help you to integrate nanoMeet into your development environment. 
 Use the nanoMeet web API to to provide secure video meetings and broadcast them around the world in 1 second.

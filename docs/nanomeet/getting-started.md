@@ -19,7 +19,7 @@ You need a nanoStream Cloud/Bintu account with nanoMeet enabled.
 You can embed the following code snippet to test nanoMeet on your page in no time. It is a recommended example and runs on any web page. 
 
 > **Note**: To make this code snippet run, you need to **create a new nanoMeet room first**. <br/>
-> Execute this step via the nanoMeet web API using the method [createNanoMeetRoom](api#nanomeetcreatenanomeetroomapikey-roomsetup--promisesuccesserror) or using our [nanoMeet Token Creator (Online Sample)]((https://nanomeet.pages.nanocosmos.de/nanomeet-frontend/nanomeet-helper.html?bintu.apikey=YOUR-API-KEY&nanomeet.room=YOUR-ROOM-NAME)). <br/>
+> Execute this step via the nanoMeet web API using the method [createNanoMeetRoom](api#nanomeetcreatenanomeetroomapikey-roomsetup--promisesuccesserror) or using our [nanoMeet Token Creator (Online Sample)](https://nanomeet.pages.nanocosmos.de/nanomeet-frontend/nanomeet-helper.html?bintu.apikey=YOUR-API-KEY&nanomeet.room=YOUR-ROOM-NAME). <br/>
 > Both approaches will generate a **new secure invite token** that can be used to enter a nanoMeet room.
 
 
