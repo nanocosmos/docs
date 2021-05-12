@@ -10,7 +10,7 @@ build_searchindex()
     echo "creating searchindex"
 
     # Find Headings
-    egrep "^#{1,2} .*$" -R | cat >> tmp_headings
+    egrep -R "^#{1,2} .*$" .| cat >> tmp_headings
  
     echo -n "[" >> tmp_idx
 
