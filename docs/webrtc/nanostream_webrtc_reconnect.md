@@ -7,7 +7,17 @@ sidebar_label: Automatic Reconnection
 This feature allows configuration of the reconnection behaviour on API level.
 Once the webcaster will register any connection loss, it will attempt to reconnect the current webcast.
 
-## Reconnect configuration
+When enabled, the feature will trigger a reconnect attempt in one of the following cases:
+
+- Change of network:
+  - On mobile devices, e.g. when switching from wifi to mobile network
+  - Switching between multiple wifi endpoints
+
+- Broadcaster’s brief internet interruptions
+- Unexpected issues on the network side
+
+
+## Automatic Reconnection Configuration
 
 To enable the feature, the [setConfig()](https://docs.nanocosmos.de/docs/webrtc/nanostream_webrtc_api#rtcusersetconfigconfig) API call now provides additional options:
 
@@ -18,7 +28,7 @@ To enable the feature, the [setConfig()](https://docs.nanocosmos.de/docs/webrtc/
 
 
 ```javascript
-
+// add reconnection settings to your config
 var config = {
   reconnect: {
     minDelay: 2,
