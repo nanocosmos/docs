@@ -10,7 +10,7 @@ sidebar_label: Webcaster
 nanoStream Webcaster Public API Class
 
 **Kind**: global class  
-**Version**: 5.11.1  
+**Version**: 5.12.0  
 
 -----
 
@@ -160,6 +160,18 @@ Parameters in braces "[ ]" are optional.
     <td>[config.metrics.customField*]</td><td><code>string</code></td><td></td><td><p>A custom field. * can be replaced with 1 - 10 e.g. &#39;customField3&#39;. Possible from &#39;customField1&#39; to &#39;customField10&#39;.</p>
 </td>
     </tr><tr>
+    <td>[config.reconnect]</td><td><code>object</code></td><td></td><td><p>The reconnect configuration object.</p>
+</td>
+    </tr><tr>
+    <td>[config.reconnect.minDelay]</td><td><code>number</code></td><td><code>1</code></td><td><p>Minimum delay for a reconnect attempt in seconds. Minimum value: 1.</p>
+</td>
+    </tr><tr>
+    <td>[config.reconnect.maxDelay]</td><td><code>number</code></td><td><code>8</code></td><td><p>Maximum delay for a reconnect attempt in seconds. Minimum value: 1.</p>
+</td>
+    </tr><tr>
+    <td>[config.reconnect.maxRetries]</td><td><code>number</code></td><td><code>10</code></td><td><p>Maximum amount of successive attempts to reconnect a broken webcast before failure. Setting this to 0 will disable reconnection.</p>
+</td>
+    </tr><tr>
     <td>[config.bitrates]</td><td><code>object</code></td><td></td><td><p>The codec configuration object.</p>
 </td>
     </tr><tr>
@@ -183,12 +195,14 @@ var config = {
         accountId: 'YOUR_ACCOUNT_ID',
         accountKey: 'YOUR_ACCOUNT_KEY'
     },
-    codecs: {
-        videoCodec: 'H264'
-    },
     bitrates: {
         videoSendInitialBitrate: 500,
         videoSendBitrate: 1000
+    },
+    reconnect: {
+        minDelay: 2,
+        maxDelay: 8,
+        maxRetries: 10
     }
 };
 rtcUser.setConfig(config);

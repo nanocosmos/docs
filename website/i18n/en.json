@@ -686,6 +686,10 @@
         "title": "Quality Settings",
         "sidebar_label": "Quality Settings"
       },
+      "webrtc/nanostream_webrtc_reconnect": {
+        "title": "Automatic Reconnection",
+        "sidebar_label": "Automatic Reconnection"
+      },
       "webrtc/nanostream_webrtc_screen_sharing": {
         "title": "Screen Sharing",
         "sidebar_label": "Screen Sharing"
