@@ -1318,7 +1318,7 @@ MuteDeviceError event. The event is fired if a video/audio device mute/unmute fa
     <td>data</td><td><code>object</code></td><td><p>The data object.</p>
 </td>
     </tr><tr>
-    <td>data.message</td><td><code>&#x27;signalling&#x27;</code> | <code>&#x27;connected&#x27;</code> | <code>&#x27;reconnecting&#x27;</code> | <code>&#x27;broadcasting&#x27;</code></td><td><p>The connection state message.</p>
+    <td>data.message</td><td><code>&#x27;signalling&#x27;</code> | <code>&#x27;connected&#x27;</code> | <code>&#x27;reconnecting&#x27;</code> | <code>&#x27;broadcasting&#x27;</code> | <code>&#x27;reconnecting_broadcast&#x27;</code></td><td><p>The connection state message. Note that &#39;reconnecting&#39; implies an RTMP reconnect on server side and &#39;reconnecting_broadcast&#39; means a client side reconnect.</p>
 </td>
     </tr><tr>
     <td>[data.number]</td><td><code>object</code></td><td><p>Reserverd for internal developer&#39;s use. Note: the property is optional, therefore, its presence is not guaranteed - Deprecated: will be removed in nanoStream Webcaster v.6.</p>
@@ -1331,9 +1331,6 @@ MuteDeviceError event. The event is fired if a video/audio device mute/unmute fa
 </td>
     </tr><tr>
     <td>data.streamname</td><td><code>object</code></td><td><p>The RTMP ingest streamname.</p>
-</td>
-    </tr><tr>
-    <td>data.text</td><td><code>&#x27;signalling&#x27;</code> | <code>&#x27;connected&#x27;</code> | <code>&#x27;reconnecting&#x27;</code></td><td><p>The connection state text.</p>
 </td>
     </tr><tr>
     <td>[name]</td><td><code>object</code></td><td><p>The name of the event. Note: the property is optional, therefore, its presence is not guaranteed.</p>
