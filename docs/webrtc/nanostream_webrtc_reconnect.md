@@ -16,6 +16,8 @@ When enabled, the feature will trigger a reconnect attempt in one of the followi
 - Broadcaster’s brief internet interruptions
 - Unexpected issues on the network side
 
+You will be notified through the [BroadcastStatus](nanostream_webrtc_api.md#RtcUser+event_BroadcastStatus) Event once a reconnection takes place.
+Please read on how to get notified about a reconnect [below](#notice-when-a-reconnect-happens).
 
 ## Automatic Reconnection Configuration
 
@@ -38,4 +40,28 @@ var config = {
 };
 
 rtcuser.setConfig(config);
+```
+
+## Notice when a reconnect happens
+
+A reconnect will be notified through the [BroadcastStatus](nanostream_webrtc_api.md#RtcUser+event_BroadcastStatus) Event.
+
+Connection loss (from client to server) is notified with a status of <b>'reconnecting_broadcast'</b>.
+
+```javascript
+rtcuser.on('BroadcastStatus', function(event) {
+
+  if(event.data && event.data.message === 'reconnecting_broadcast') {
+    console.log('Broadcast is reconnecting');
+  }
+  
+  // the status (event.data.message) will be one of:
+
+  // 'signalling': a connection is being established
+  // 'connected': the stream has connected to the server successfully
+  // 'broadcasting': the broadcast is running
+  // 'reconnecting_broadcast': the client is reconnecting
+  // 'reconnecting': the RTMP connection is reconnecting on server side
+    
+});
 ```
