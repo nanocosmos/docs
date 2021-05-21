@@ -22,18 +22,19 @@ build_searchindex()
         ## drop lines with markup
         ## remove unwanted chars
         ## get titles and subtitles
-        ## remove #s and add \n
+        ## remove #s and add # at eol for line splitting 
         text=$(cat $fname \
                    | grep -ve "[</>]" \
                    | tr -d '"[]\r' \
                    | egrep "^#{1,2} .*$" \
-                   | sed "s/^#\{1,2\} \(.*\)$/\1\n/g" )
+                   | sed "s/^#\{1,2\} \(.*\)$/\1#/g" )
 
-        echo $text| while read w
+        # split lines on '#' character
+        echo $text| while read -d '#' w
         do
             # when not empty
             [[ -n $w ]] && \
-            echo -n "{\"url\":\"$BASE_URL$url\",\"title\": \"$w\"}," >> tmp_idx
+            echo -n "{\"url\":\"${BASE_URL}${url}\",\"title\": \"${w}\"}," >> tmp_idx
         done
     done
     # finalize and remove trailing ,
@@ -43,10 +44,10 @@ build_searchindex()
     mkdir -p $DEST_DIR
 
     cp searchindex.json $DEST_DIR
+    
+    echo "Created searchindex.json: ${DEST_DIR}/searchindex.json"
 
-    echo "Created searchindex.json: $DEST_DIR/searchindex.json"
-
-    rm tmp_idx 
+    rm tmp_idx
     rm searchindex.json
 }
 
