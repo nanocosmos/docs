@@ -1,60 +1,53 @@
 #!/bin/bash 
 
+BASE_URL="https://docs.nanocosmos.de/docs"
+
+DEST_DIR=../website/build/docs/
+
 build_searchindex()
 {
-    baseURL="https://docs.nanocosmos.de/docs"
-    #baseURL=$1
-    DEST=../website/build/docs/
+    
     cd ./docs
 
     echo "creating searchindex"
 
-    # Find Headings
-    egrep -R "^#{1,2} .*$" .| cat >> tmp_headings
- 
     echo -n "[" >> tmp_idx
 
-    cat tmp_headings | \
-    while read line
+    # operate on source .md files
+    find . -type f -name \*.md -print | while read fname
     do
-        url=$(echo $line | cut -d ":" -f 1 | cut -d "." -f 1)
-        text=$(echo $line | cut -d ":" -f 2 | sed 's/^#* //g' | tr -d "\n\r")
+        url=$(echo $fname | sed 's/^\.\(.*\)\.md$/\1/g') # strip file name dot and file extension
 
-        if [ "$text" ]
-        then
-            if [[ $text == *"\""* ]]
-            then :
-            elif [[ $text == *"<"* ]]
-            then :
-            elif [[ $text == *"define"* ]]
-            then :
-            elif [[ $text == *".png"* ]]
-            then :
-            elif [[ $text == *".jpg"* ]]
-            then :
-            elif [[ $text == *".jpeg"* ]]
-            then :
-            elif [[ $text == *"mkdocs"* ]]
-            then :
-            elif [[ $url == *"mkdocs"* ]]
-            then :
-            elif [[ $url == *"sidebar"* ]]
-            then :
+        # sanitize:
+        ## drop lines with markup
+        ## remove unwanted chars
+        ## get titles and subtitles
+        ## remove #s and add # at eol for line splitting 
+        text=$(cat $fname \
+                   | grep -ve "[</>]" \
+                   | tr -d '"[]\r' \
+                   | egrep "^#{1,2} .*$" \
+                   | sed "s/^#\{1,2\} \(.*\)$/\1#/g" )
 
-            else
-                echo -n "{\"url\":\"$baseURL/$url\",\"title\": \"$text\"}," >> tmp_idx
-            fi
-        fi
+        # split lines on '#' character
+        echo $text| while read -d '#' w
+        do
+            # when not empty
+            [[ -n $w ]] && \
+            echo -n "{\"url\":\"${BASE_URL}${url}\",\"title\": \"${w}\"}," >> tmp_idx
+        done
     done
+    # finalize and remove trailing ,
     echo -n "]" >> tmp_idx
-
     sed 's/,]/]/g' tmp_idx > searchindex.json
-    mkdir -p $DEST
-    cp searchindex.json $DEST
-    echo "created searchindex.json: $DEST"
 
-    rm tmp_idx 
-    rm tmp_headings
+    mkdir -p $DEST_DIR
+
+    cp searchindex.json $DEST_DIR
+    
+    echo "Created searchindex.json: ${DEST_DIR}/searchindex.json"
+
+    rm tmp_idx
     rm searchindex.json
 }
 
