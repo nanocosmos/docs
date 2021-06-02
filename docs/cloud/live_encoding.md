@@ -47,6 +47,36 @@ Encoder Software/Hardware:
 
 Other formats like RTSP or SRT are available on request.
 
+### Required RTMP configuration metadata
+
+> **Important note:**
+>
+> RTMP encoders/broadcasters are required to send proper RTMP configuration metadata (onMetaData) during the start of the ingest. 
+
+#### Values/fields
+
+If a video stream is present:
+
+- videocodecid ('avc1')
+- width (640)
+- height (480) 
+
+If an audio stream is present:
+
+- audiocodecid ('mp4a')
+- audiosamplerate (44100) 
+
+Further recommended:
+
+- hasVideo [0 or 1]
+- hasAudio [0 or 1] to indicate the present streams and
+- framerate (30)
+- audiochannels (2)
+
+> Note:
+>
+> The values in the brackets ( ) are examples and will change based on different encoder configuration settings.
+
 ## Encoder Configuration
 
 ### Resolution and bitrate settings
