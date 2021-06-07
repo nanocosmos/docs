@@ -58,13 +58,13 @@ Please reach out to [sales@nanocosmos.de](mailto:sales@nanocosmos.de) if access 
 In general you will see metrics for all of the streams available for your organization.
 It is possible to use the following filter options to get a more fine-grained overview:
 
--  Country: let you select one or more countries
--  Tag: can be used to filter for specifc stream names
-   -  you need to assign [tags in Bintu](bintu_stream_tags.md) to your stream(s) to be able to use them for filtering, this is described in our [Blog post about Analytics](https://www.nanocosmos.de/blog/2019/09/nanostream-analytics-get-insights-in-your-nanostream-cloud-service-and-h5live-player-performance/) (search for "Tagging").
-   -  **Important:** tag selection works like an `AND` filter, only metrics for streams are shown, which have all of the selected tags assigned
--  Time range: to select specific points in time or different time ranges like "last month", "last 24 hours", etc.
--  Event (only available for H5Live): let you filter for events you have labeled your streams with
-   -  you need to configure the 'eventId' at the H5Live Player to be able to use that filter (see [Player Metrics doc](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_player_metrics/))
+- Country: let you select one or more countries
+- Tag: can be used to filter for specifc stream names
+  - you need to assign [tags in Bintu](bintu_stream_tags.md) to your stream(s) to be able to use them for filtering, this is described in our [Blog post about Analytics](https://www.nanocosmos.de/blog/2019/09/nanostream-analytics-get-insights-in-your-nanostream-cloud-service-and-h5live-player-performance/) (search for "Tagging").
+  - **Important:** tag selection works like an `AND` filter, only metrics for streams are shown, which have all of the selected tags assigned
+- Time range: to select specific points in time or different time ranges like "last month", "last 24 hours", etc.
+- Event (only available for H5Live): let you filter for events you have labeled your streams with
+  - you need to configure the 'eventId' at the H5Live Player to be able to use that filter (see [Player Metrics doc](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_player_metrics/))
 
 The filter option are available directly at the top of each sub-dashboard.
 When switching to another sub-dashboard, already selected filter options will be applied there as well.
@@ -85,8 +85,8 @@ By clicking on a bar in one of the metrics 'Usage Playout/Ingest', 'Usage Playou
 There you can gain more insight about that specific bar by doing your own research. The table shows the TOP 10 (highest) usage for your selected search parameters.
 You can set two parameters:
 
--  vertical bar (blue): choose a data feature you are interested in (e.g. streamname)
--  horizontal bar (orange): choose Playout/Ingest or a specific transfer protocol you are interested in (e.g. H5Live)
+- vertical bar (blue): choose a data feature you are interested in (e.g. streamname)
+- horizontal bar (orange): choose Playout/Ingest or a specific transfer protocol you are interested in (e.g. H5Live)
 
 ![Screenshot](/img/cloud/analytics/analytics-zoom.png)
 
@@ -102,17 +102,19 @@ The total traffic per month. Can be used to compare the current month with the p
 
 The total playout traffic for each playout method.
 
--  H5Live: the standard low latency playback method
--  RTMP: less scalable
--  HLS: long latency playback
--  H5Live Token: in case you have your own (RTMP) ingest server, from which the streams are pulled and then distributed in the nanoStream cloud to your viewers
+- H5Live: the standard low latency playback method
+- RTMP: less scalable
+- HLS: long latency playback
+- H5Live Token: in case you have your own (RTMP) ingest server, from which the streams are pulled and then distributed in the nanoStream cloud to your viewers
 
 #### Usage Ingest
 
 The total ingest traffic for each ingest method.
 
--  RTMP: generic ingest method
--  Webcaster: plugin-free stream ingest via Browser
+- RTMP: generic ingest method
+- Webcaster: plugin-free stream ingest via Browser
+
+### Breakdown
 
 #### GBytes per Streamname
 
