@@ -101,6 +101,8 @@ The concurrent viewer count over all streams (dependent on the filter options) f
 
 The total traffic per month. Can be used to compare the current month with the previous month.
 
+![Screenshot](/img/cloud/analytics/analytics-widget-month-to-date.png)
+
 1. row: shows the total usage that occurred in the previous month
 2. row: shows the usage that occurred from the beginning of the previous month until the current moment (day and time) one month ago
 3. row: shows the usage that occurred from the beginning of the current month until the current moment (day and time)
