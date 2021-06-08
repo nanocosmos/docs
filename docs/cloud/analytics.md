@@ -77,26 +77,35 @@ The selected filter options affect all availabe metrics.
 
 #### Usage switch
 
-Switch all metrics in Home between data traffic and playtime
+Switch all metrics in Home between data traffic and playtime.
 
-#### Zoom in for more insight
+#### Usage Playout/Ingest Overview
 
-By clicking on a bar in one of the metrics 'Usage Playout/Ingest', 'Usage Playout' and 'Usage Ingest' an overlay window is being opened.
-There you can gain more insight about that specific bar by doing your own research. The table shows the TOP 10 (highest) usage for your selected search parameters.
-You can set two parameters:
+The total traffic of playout and ingest data for the selected time period in comparison.
+
+> **Zoom in for more insight**:
+> By clicking on a bar in one of the metrics **'Usage Playout/Ingest'**, **'Usage Playout'** and **'Usage Ingest'** an overlay window is being opened.
+> There you can gain more insight about that specific bar by doing your own research. The table shows the TOP 10 (highest) usage for your selected search parameters.
+> You can set two parameters:
 
 - vertical bar (blue): choose a data feature you are interested in (e.g. streamname)
 - horizontal bar (orange): choose Playout/Ingest or a specific transfer protocol you are interested in (e.g. H5Live)
 
 ![Screenshot](/img/cloud/analytics/analytics-zoom.png)
 
-#### Data sent/received
+#### Maximum concurrent H5Live viewers
 
-The total traffic per day/hour/minute (depending on the selected time range) for your organization.
+The concurrent viewer count over all streams (dependent on the filter options) for a point in time.
 
 #### Month to Date
 
 The total traffic per month. Can be used to compare the current month with the previous month.
+
+1. row: shows the total usage that occurred in the previous month
+2. row: shows the usage that occurred from the beginning of the previous month until the current moment (day and time) one month ago
+3. row: shows the usage that occurred from the beginning of the current month until the current moment (day and time)
+
+> **Note**, comparing the second and third row can help to find a performance trend for the current month.
 
 #### Usage Playout
 
@@ -114,6 +123,16 @@ The total ingest traffic for each ingest method.
 - RTMP: generic ingest method
 - Webcaster: plugin-free stream ingest via Browser
 
+#### Unique Playouts
+
+The amount of unique playback sessions.
+
+> **Note**, this does not correlate with the unique viewers that are watching, instead it represents the count of complete playback sessions from the start until the player or page gets closed.
+
+#### Countries
+
+A pie-chart which shows the percentage distribution of total traffic for countries.
+
 ### Breakdown
 
 #### GBytes per Streamname
@@ -128,9 +147,7 @@ Playback (sent) traffic for each client (referrer).
 
 Ingest (received) and playback (sent) traffic for each IP.
 
-#### Countries
-
-A pie-chart which shows the percentage distribution of total traffic for countries.
+#### GBytes per Streamname
 
 ### H5Live
 
@@ -146,10 +163,6 @@ Percentage distribution of playbacks on operating systems (OS).
 #### H5Live play count per browser
 
 Percentage distribution of playbacks in Browsers.
-
-#### Maximum concurrent H5Live viewers
-
-The concurrent viewer count over all streams (dependent on the filter options) for a point in time.
 
 #### Reasons for stopping
 

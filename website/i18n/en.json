@@ -251,6 +251,10 @@
         "title": "Fullscreen API",
         "sidebar_label": "Fullscreen API"
       },
+      "nanoplayer/nanoplayer_feature_media_error_recovery": {
+        "title": "Media Error Recovery",
+        "sidebar_label": "Media Error Recovery"
+      },
       "nanoplayer/nanoplayer_feature_reconnect_timeouts": {
         "title": "Reconnect and Timeouts",
         "sidebar_label": "Reconnect and Timeouts"
