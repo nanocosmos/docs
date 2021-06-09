@@ -87,15 +87,15 @@ The total traffic of playout and ingest data for the selected time period in com
 > By clicking on a bar in one of the metrics **'Usage Playout/Ingest'**, **'Usage Playout'** and **'Usage Ingest'** an overlay window is being opened.
 > There you can gain more insight about that specific bar by doing your own research. The table shows the TOP 10 (highest) usage for your selected search parameters.
 > You can set two parameters:
-
-- vertical bar (blue): choose a data feature you are interested in (e.g. streamname)
-- horizontal bar (orange): choose Playout/Ingest or a specific transfer protocol you are interested in (e.g. H5Live)
+>
+> - vertical bar (blue): choose a data feature you are interested in (e.g. streamname)
+> - horizontal bar (orange): choose Playout/Ingest or a specific transfer protocol you are interested in (e.g. H5Live)
 
 ![Screenshot](/img/cloud/analytics/analytics-zoom.png)
 
 #### Maximum concurrent H5Live viewers
 
-The concurrent viewer count over all streams (dependent on the filter options) for a point in time.
+The maximum concurrent viewer count over all streams (dependent on the filter options) for a point in time.
 
 #### Month to Date
 
@@ -137,19 +137,17 @@ A pie-chart which shows the percentage distribution of total traffic for countri
 
 ### Breakdown
 
-#### GBytes per Streamname
+#### GBytes per stream name
 
 Ingest (received) and playback (sent) traffic for each stream.
 
-#### GBytes per Client
+#### GBytes per client
 
 Playback (sent) traffic for each client (referrer).
 
 #### GBytes per IP
 
 Ingest (received) and playback (sent) traffic for each IP.
-
-#### GBytes per Streamname
 
 ### H5Live
 
