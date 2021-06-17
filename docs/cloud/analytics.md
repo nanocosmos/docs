@@ -97,6 +97,10 @@ The total traffic of playout and ingest data for the selected time period in com
 
 The maximum concurrent viewer count over all streams (dependent on the filter options) for a point in time.
 
+On the top right you can find the amount of unique playback sessions occurred in the time range.
+
+> **Note**, this does not correlate with the unique viewers that are watching, instead it represents the count of complete playback sessions from the start until the player or page gets closed.
+
 #### Month to Date
 
 The total traffic per month. Can be used to compare the current month with the previous month.
@@ -124,12 +128,6 @@ The total ingest traffic for each ingest method.
 
 - RTMP: generic ingest method
 - Webcaster: plugin-free stream ingest via Browser
-
-#### Unique Playouts
-
-The amount of unique playback sessions.
-
-> **Note**, this does not correlate with the unique viewers that are watching, instead it represents the count of complete playback sessions from the start until the player or page gets closed.
 
 #### Countries
 
