@@ -97,6 +97,9 @@ The total traffic of playout and ingest data for the selected time period in com
 
 The maximum concurrent viewer count over all streams (dependent on the filter options) for a point in time.
 
+- absolute: the absolute amount of maximum concurrent viewer
+- delta: the difference of maximum concurrent viewers to the previous day/month
+
 On the top right you can find the amount of unique playback sessions occurred in the time range.
 
 > **Note**, this does not correlate with the unique viewers that are watching, instead it represents the count of complete playback sessions from the start until the player or page gets closed.
