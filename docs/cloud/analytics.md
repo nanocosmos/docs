@@ -103,7 +103,7 @@ The maximum concurrent viewer count for a time interval.
 On the top right you can find the amount of unique playback sessions occurred in the time range.
 
 > The H5Live player generates a unique ID for each viewer, when a viewer opens a website and starts playing back a stream. The unique ID will not change as long as the viewer stays at the website.
-> We use the "player" ID to identify and distinguish between playback sessions.
+> We use the "player" ID to identify and distinguish between unique viewers.
 
 #### Month to Date
 
