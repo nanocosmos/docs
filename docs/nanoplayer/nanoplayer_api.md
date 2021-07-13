@@ -7,10 +7,10 @@ sidebar_label: NanoPlayer
 <a name="NanoPlayer"></a>
 
 ## NanoPlayer
-NanoPlayer (H5Live) Public API Class 4.11.0
+NanoPlayer (H5Live) Public API Class 4.11.3
 
 **Kind**: global class  
-**Version**: 4.11.0  
+**Version**: 4.11.3  
 <a name="new_NanoPlayer_new"></a>
 
 ### new NanoPlayer(playerDivId)
@@ -305,7 +305,7 @@ Updates the source of the player.
     <td>[source.entries]</td><td><code><a href="#NanoPlayer..entry">Array.&lt;entry&gt;</a></code></td><td></td><td><p>The source entries array for a set of streams. USE INSTEAD OF SOURCE.H5LIVE. Used to configure stream entries. Can have one to many &#39;entry&#39; objects. Only one existing entry is similar than a single source. In this case no entries options are needed.</p>
 </td>
     </tr><tr>
-    <td>[source.startIndex]</td><td><code>string</code></td><td><code>0</code></td><td><p>The index of the entry to start playback with. Can be in the range from 0 to &#39;entries.length-1&#39;.</p>
+    <td>[source.startIndex]</td><td><code>number</code></td><td><code>0</code></td><td><p>The index of the entry to start playback with. Can be in the range from 0 to &#39;entries.length-1&#39;.</p>
 </td>
     </tr><tr>
     <td>[source.options]</td><td><code>object</code></td><td></td><td><p>The object to configure the source entries options.</p>
@@ -3645,4 +3645,3 @@ The possible pause reason in a onPause event.
 </td>
     </tr>  </tbody>
 </table>
-
