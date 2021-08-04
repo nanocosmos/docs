@@ -60,7 +60,7 @@
           "cloud/analytics",
           "cloud/worldmap",
           "cloud/troubleshooting",
-          "cloud/metrics-api"
+          "cloud/analytics-api"
         ]
       }
     ],
