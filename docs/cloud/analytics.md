@@ -106,11 +106,11 @@ The total traffic per month. Can be used to compare the current month with the p
 
 ![Screenshot](/img/cloud/analytics/analytics-widget-month-to-date.png)
 
-1. row: shows the total usage that occurred in the previous month
-2. row: shows the usage that occurred from the beginning of the previous month until the current moment (day and time) one month ago
-3. row: shows the usage that occurred from the beginning of the current month until the current moment (day and time)
+- First row: shows the total usage from the previous month
+- Second row: shows the usage from the beginning of the previous month until the current moment (day and time) one month ago
+- Third row: shows the usage from the beginning of the current month until the current moment (day and time)
 
-> **Note**, comparing the second and third row can help to find a performance trend for the current month.
+> **Note**, comparing the second and third row can help to see a trend for the current month.
 
 #### Usage Playout
 
