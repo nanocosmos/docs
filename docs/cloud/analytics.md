@@ -58,13 +58,13 @@ Please reach out to [sales@nanocosmos.de](mailto:sales@nanocosmos.de) if access 
 In general you will see metrics for all of the streams available for your organization.
 It is possible to use the following filter options to get a more fine-grained overview:
 
--  Country: let you select one or more countries
--  Tag: can be used to filter for specifc stream names
-   -  you need to assign [tags in Bintu](bintu_stream_tags.md) to your stream(s) to be able to use them for filtering, this is described in our [Blog post about Analytics](https://www.nanocosmos.de/blog/2019/09/nanostream-analytics-get-insights-in-your-nanostream-cloud-service-and-h5live-player-performance/) (search for "Tagging").
-   -  **Important:** tag selection works like an `AND` filter, only metrics for streams are shown, which have all of the selected tags assigned
--  Time range: to select specific points in time or different time ranges like "last month", "last 24 hours", etc.
--  Event (only available for H5Live): let you filter for events you have labeled your streams with
-   -  you need to configure the 'eventId' at the H5Live Player to be able to use that filter (see [Player Metrics doc](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_player_metrics/))
+- Country: let you select one or more countries
+- Tag: can be used to filter for specifc stream names
+  - you need to assign [tags in Bintu](bintu_stream_tags.md) to your stream(s) to be able to use them for filtering, this is described in our [Blog post about Analytics](https://www.nanocosmos.de/blog/2019/09/nanostream-analytics-get-insights-in-your-nanostream-cloud-service-and-h5live-player-performance/) (search for "Tagging").
+  - **Important:** tag selection works like an `AND` filter, only metrics for streams are shown, which have all of the selected tags assigned
+- Time range: to select specific points in time or different time ranges like "last month", "last 24 hours", etc.
+- Event (only available for H5Live): let you filter for events you have labeled your streams with
+  - you need to configure the 'eventId' at the H5Live Player to be able to use that filter (see [Player Metrics doc](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_player_metrics/))
 
 The filter option are available directly at the top of each sub-dashboard.
 When switching to another sub-dashboard, already selected filter options will be applied there as well.
@@ -77,58 +77,74 @@ The selected filter options affect all availabe metrics.
 
 #### Usage switch
 
-Switch all metrics in Home between data traffic and playtime
+Switch all metrics in Home between data traffic and playtime.
 
-#### Zoom in for more insight
+#### Usage Playout/Ingest Overview
 
-By clicking on a bar in one of the metrics 'Usage Playout/Ingest', 'Usage Playout' and 'Usage Ingest' an overlay window is being opened.
-There you can gain more insight about that specific bar by doing your own research. The table shows the TOP 10 (highest) usage for your selected search parameters.
-You can set two parameters:
+The total traffic of playout and ingest data for the selected time period in comparison.
 
--  vertical bar (blue): choose a data feature you are interested in (e.g. streamname)
--  horizontal bar (orange): choose Playout/Ingest or a specific transfer protocol you are interested in (e.g. H5Live)
+> **Zoom in for more insight**:
+> By clicking on a bar in one of the metrics **'Usage Playout/Ingest'**, **'Usage Playout'** and **'Usage Ingest'** an overlay window is being opened.
+> There you can gain more insight about that specific bar by doing your own research. The table shows the TOP 10 (highest) usage for your selected search parameters.
+> You can set two parameters:
+>
+> - vertical bar (blue): choose a data feature you are interested in (e.g. streamname)
+> - horizontal bar (orange): choose Playout/Ingest or a specific transfer protocol you are interested in (e.g. H5Live)
 
 ![Screenshot](/img/cloud/analytics/analytics-zoom.png)
 
-#### Data sent/received
+#### Maximum concurrent H5Live viewers
 
-The total traffic per day/hour/minute (depending on the selected time range) for your organization.
+The maximum concurrent viewer count for a time interval.
+
+- absolute: the absolute amount of maximum concurrent viewer
+- delta: the difference of maximum concurrent viewers to the previous time interval
 
 #### Month to Date
 
 The total traffic per month. Can be used to compare the current month with the previous month.
 
+![Screenshot](/img/cloud/analytics/analytics-widget-month-to-date.png)
+
+- First row: shows the total usage from the previous month
+- Second row: shows the usage from the beginning of the previous month until the current moment (day and time) one month ago
+- Third row: shows the usage from the beginning of the current month until the current moment (day and time)
+
+> **Note**, comparing the second and third row can help to see a trend for the current month.
+
 #### Usage Playout
 
 The total playout traffic for each playout method.
 
--  H5Live: the standard low latency playback method
--  RTMP: less scalable
--  HLS: long latency playback
--  H5Live Token: in case you have your own (RTMP) ingest server, from which the streams are pulled and then distributed in the nanoStream cloud to your viewers
+- H5Live: the standard low latency playback method
+- RTMP: less scalable
+- HLS: long latency playback
+- H5Live Token: in case you have your own (RTMP) ingest server, from which the streams are pulled and then distributed in the nanoStream cloud to your viewers
 
 #### Usage Ingest
 
 The total ingest traffic for each ingest method.
 
--  RTMP: generic ingest method
--  Webcaster: plugin-free stream ingest via Browser
+- RTMP: generic ingest method
+- Webcaster: plugin-free stream ingest via Browser
 
-#### GBytes per Streamname
+#### Countries
+
+A pie-chart which shows the percentage distribution of total traffic for countries.
+
+### Breakdown
+
+#### GBytes per stream name
 
 Ingest (received) and playback (sent) traffic for each stream.
 
-#### GBytes per Client
+#### GBytes per client
 
 Playback (sent) traffic for each client (referrer).
 
 #### GBytes per IP
 
 Ingest (received) and playback (sent) traffic for each IP.
-
-#### Countries
-
-A pie-chart which shows the percentage distribution of total traffic for countries.
 
 ### H5Live
 
@@ -144,10 +160,6 @@ Percentage distribution of playbacks on operating systems (OS).
 #### H5Live play count per browser
 
 Percentage distribution of playbacks in Browsers.
-
-#### Maximum concurrent H5Live viewers
-
-The concurrent viewer count over all streams (dependent on the filter options) for a point in time.
 
 #### Reasons for stopping
 
