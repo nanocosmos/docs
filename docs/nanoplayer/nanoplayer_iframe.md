@@ -8,6 +8,7 @@ sidebar_label: iframe Embeds
 
 
 **How to embed the player into an iframe element?**
+
 For most use cases the implementation of the player directly into the page is the best option. We recommend embedding the player within an iframe element only when the use case requires it.
 
 ### Creating the embedded page including the player on your side
