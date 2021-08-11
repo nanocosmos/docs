@@ -4,7 +4,8 @@
       "nanoplayer/nanoplayer_introduction",
       "nanoplayer/nanoplayer_getting_started",
       "nanoplayer/nanoplayer_supported_browsers",
-      "nanoplayer/nanoplayer_player_metrics"
+      "nanoplayer/nanoplayer_player_metrics",
+      "nanoplayer/nanoplayer_iframe"
     ],
     "Features": [
       "nanoplayer/nanoplayer_autoplay",
