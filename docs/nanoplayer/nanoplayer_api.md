@@ -2501,7 +2501,7 @@ The config object to pass as param for the 'setup' call.
     <td>[playback.videoId]</td><td><code>string</code> | <code>Array.string</code></td><td></td><td><p>One or two element ids of existing video tags that should be used for playback. No new element(s) will be created and after destroy it/they will be kept. Can be a string (old, only one element) or a string array with one or two (iOS ONLY!) element ids. Two video elements are required only for stream switching on iOS, MSE playback uses only one video tag. If only one element id is given on iOS the second video tag will be created by the player.</p>
 </td>
     </tr><tr>
-    <td>[playback.keepConnection]</td><td><code>boolean</code></td><td><code>false</code></td><td><p>If enabled the player will have always a connection to the h5live server.</p>
+    <td>[playback.keepConnection]</td><td><code>boolean</code></td><td><code>false</code></td><td><p>If enabled the player will have always a connection to the h5live server. NOTE: not recommended for general use</p>
 </td>
     </tr><tr>
     <td>[playback.allowSafariHlsFallback]</td><td><code>boolean</code></td><td><code>false</code></td><td><p>If enabled the player will select the playback method in Safari Mac OS X and utilize H5Live low latency HLS if appropriate.</p>
@@ -2842,9 +2842,10 @@ var config = {
     },
     // playback is completely optional
     "playback": {
-        "autoplay": false,
+        "autoplay": true,
+        "automute": true,
+        "muted": false,
         "metadata": true,
-        "keepConnection": true,
         "reconnect": {
             "minDelay": 2.5,
             "maxDelay": 12.5,
@@ -2869,11 +2870,6 @@ var config = {
             "max": 8.0,
             "target": 1.2,
             "limit": 1.7
-        },
-        "bufferDynamic": {
-            "offsetThreshold": 2,
-            "offsetStep": 0.5,
-            "cooldownTime": 10
         }
     },
     // metrics/analytics (requires account)
