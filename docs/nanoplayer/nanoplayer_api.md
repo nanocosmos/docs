@@ -2425,7 +2425,7 @@ The config object to pass as param for the 'setup' call.
     <td>[source.options.adaption.rule]</td><td><code>string</code></td><td><code>&quot;none&quot;</code></td><td><p>The switch rule if multiple entries are defined. Possible values are &#39;deviationOfMean&#39; (ABR automatic), &#39;deviationOfMean2&#39; (ABR automatic) and &#39;none&#39; (default, means only manual stream switch via &#39;switchStream&#39; possible).</p>
 </td>
     </tr><tr>
-    <td>[source.options.adaption.downStep]</td><td><code>string</code></td><td><code>1</code></td><td><p>The minimum number of steps during a ABR down switch (&#39;deviationOfMean&#39; and &#39;deviationOfMean2&#39; only).</p>
+    <td>[source.options.adaption.downStep]</td><td><code>number</code></td><td><code>1</code></td><td><p>The minimum number of steps during a ABR down switch (&#39;deviationOfMean&#39; and &#39;deviationOfMean2&#39; only).</p>
 </td>
     </tr><tr>
     <td>[source.h5live]</td><td><code>object</code></td><td></td><td><p>DEPRECATED. PLEASE USE ENTRIES!!! WILL BE OVERWRITTEN IN CASE AT LEAST ONE &#39;ENTRY&#39; IS DEFINED IN &#39;ENTRIES&#39; ARRAY. The h5live object to configure the h5live connection.</p>
