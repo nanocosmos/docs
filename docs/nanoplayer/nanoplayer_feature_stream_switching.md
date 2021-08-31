@@ -104,7 +104,7 @@ Depending on the intended use case these can be:
 > **Note:** The nanoStream transcoding service allows a single stream to be delivered in different multi-bitrate qualities eg. high (original) transcoded in medium and low quality. 
 
 <br>
-The entries need to be ordered by bitrate with **index zero** holding the **highest bitrate**. Each entry has an `index` property that determinds the overall order of the entries, **not** the position in the `config.source.entries` list.
+The entries need to be ordered by bitrate with **index zero** holding the **highest bitrate**.
 The initial stream/rendition can be selected by assigning `config.source.startIndex` to the index of an entry.
 
 > **Important**: Multi stream configuration is **required** for both the integrated **ABR** and also the **switchStream** feature!
@@ -195,7 +195,7 @@ var config = {
         ],
         "options": {
             "adaption": {
-                "rule": "deviationOfMean" // enable ABR
+                "rule": "deviationOfMean2" // enable ABR
             },
             "switch": {
                 'method': 'server',
@@ -323,7 +323,7 @@ var config = {
         ],
         "options": {
             "adaption": {
-                "rule": "deviationOfMean" // enable ABR
+                "rule": "deviationOfMean2" // enable ABR
             },
             "switch": {
                 'method': 'server',
@@ -397,7 +397,7 @@ var config = {
         ],
         "options": {
             "adaption": {
-                "rule": "deviationOfMean" // enable ABR
+                "rule": "deviationOfMean2" // enable ABR
             },
             "switch": {
                 'method': 'server',
@@ -498,7 +498,7 @@ var config = {
         ],
         "options": {
             "adaption": {
-                "rule": "deviationOfMean" // enable ABR
+                "rule": "deviationOfMean2" // enable ABR
             },
             "switch": {
                 'method': 'server',
@@ -649,7 +649,7 @@ var config = {
         ],
         "options": {
             "adaption": {
-                "rule": "deviationOfMean" // enable ABR
+                "rule": "deviationOfMean2" // enable ABR
             },
             "switch": {
                 'method': 'server',
@@ -747,7 +747,7 @@ Currently available adaption rules are:
 ```javascript
 // player instance of NanoPlayer
 var adaption = {
-    "rule": "deviationOfMean"
+    "rule": "deviationOfMean2"
 }
 
 player.setAdaption(adaption);
@@ -756,4 +756,4 @@ player.setAdaption(adaption);
 ### Combined ABR and manual switching
 In case the nanoStream H5Live Player is configured to use ABR and a manual switch gets initialized via the switchStream API the automatic adaption is stopped. From this moment on the switching behavior is manually controlled.
 
-To again reinitialize the automatic adaption use the [setAdaption API](#setadaption-api) with the name of the rule you want to set (eg. `deviationOfMean`).
+To again reinitialize the automatic adaption use the [setAdaption API](#setadaption-api) with the name of the rule you want to set (eg. `deviationOfMean2`).
