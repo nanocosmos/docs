@@ -10,7 +10,7 @@ sidebar_label: Webcaster
 nanoStream Webcaster Public API Class
 
 **Kind**: global class  
-**Version**: 5.12.0  
+**Version**: 5.14.0  
 
 -----
 
@@ -266,29 +266,20 @@ rtcUser.setIceServers(iceServers);
 ```
 <a name="RtcUser+checkServer"></a>
 
-## rtcUser.checkServer(server)
+## rtcUser.checkServer()
 Checks the state of a WebRTC server.
 
 **Kind**: instance method of [<code>RtcUser</code>](#RtcUser)  
 **Emits**: [<code>ReceivedServerStats</code>](#RtcUser+event_ReceivedServerStats)  
-<table>
-  <thead>
-    <tr>
-      <th>Param</th><th>Type</th><th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-<tr>
-    <td>server</td><td><code>string</code></td><td><p>The URL of the server - Deprecated: will be removed in nanoStream Webcaster v.6; the function will check the WebRTC server specified in the signIn() call.</p>
-</td>
-    </tr>  </tbody>
-</table>
-
 **Example**  
 ```js
 // rtcUser instance of RtcUser
-var server = 'https://rtc-lb.nanocosmos.de/p/webrtc'
-rtcUser.checkServer(server);
+rtcUser.checkServer();
+rtcUser.on('ReceivedServerStats', function(event) {
+     if (event.data) {
+         console.log('server version: ' + event.data.stats.server_version);
+     {
+});
 ```
 <a name="RtcUser+enableStats"></a>
 
@@ -1318,7 +1309,7 @@ MuteDeviceError event. The event is fired if a video/audio device mute/unmute fa
     <td>data</td><td><code>object</code></td><td><p>The data object.</p>
 </td>
     </tr><tr>
-    <td>data.message</td><td><code>&#x27;signalling&#x27;</code> | <code>&#x27;connected&#x27;</code> | <code>&#x27;reconnecting&#x27;</code> | <code>&#x27;broadcasting&#x27;</code> | <code>&#x27;reconnecting_broadcast&#x27;</code></td><td><p>The connection state message. Note that &#39;reconnecting&#39; implies an RTMP reconnect on server side and &#39;reconnecting_broadcast&#39; means a client side reconnect.</p>
+    <td>data.message</td><td><code>&#x27;signalling&#x27;</code> | <code>&#x27;connected&#x27;</code> | <code>&#x27;reconnecting&#x27;</code> | <code>&#x27;broadcasting&#x27;</code> | <code>&#x27;reconnecting_broadcast&#x27;</code></td><td><p>The connection state. Note that &#39;reconnecting&#39; implies an RTMP reconnect on server side and &#39;reconnecting_broadcast&#39; means a client side reconnect.</p>
 </td>
     </tr><tr>
     <td>[data.number]</td><td><code>object</code></td><td><p>Reserverd for internal developer&#39;s use. Note: the property is optional, therefore, its presence is not guaranteed - Deprecated: will be removed in nanoStream Webcaster v.6.</p>
@@ -1511,19 +1502,19 @@ MuteDeviceError event. The event is fired if a video/audio device mute/unmute fa
     <td>data.stats.active_transcoders</td><td><code>number</code></td><td><p>The number of active connections with transcoding enabled to the WebRTC server.</p>
 </td>
     </tr><tr>
-    <td>data.stats.cpu_load</td><td><code>number</code></td><td><p>The WebRTC server CPU load.</p>
+    <td>data.stats.cpu_load</td><td><code>number</code></td><td><p>Server CPU load.</p>
 </td>
     </tr><tr>
-    <td>data.stats.disk_space</td><td><code>number</code></td><td><p>The WebRTC server disk space.</p>
+    <td>data.stats.disk_space</td><td><code>number</code></td><td><p>Server disk space.</p>
 </td>
     </tr><tr>
-    <td>data.stats.domainname</td><td><code>string</code></td><td><p>The WebRTC server domain name.</p>
+    <td>data.stats.domainname</td><td><code>string</code></td><td><p>Server domain name.</p>
 </td>
     </tr><tr>
-    <td>data.stats.hostname</td><td><code>string</code></td><td><p>The WebRTC server host name.</p>
+    <td>data.stats.hostname</td><td><code>string</code></td><td><p>Server host name.</p>
 </td>
     </tr><tr>
-    <td>data.stats.license</td><td><code>object</code></td><td><p>The WebRTC server license.</p>
+    <td>data.stats.license</td><td><code>object</code></td><td><p>Server license.</p>
 </td>
     </tr><tr>
     <td>data.stats.license.end</td><td><code>string</code></td><td><p>The license expiration date.</p>
@@ -1541,10 +1532,10 @@ MuteDeviceError event. The event is fired if a video/audio device mute/unmute fa
     <td>data.stats.license.valid</td><td><code>boolean</code></td><td><p>A flag to indicate that the license is valid.</p>
 </td>
     </tr><tr>
-    <td>data.stats.max_cpu_load</td><td><code>number</code></td><td><p>The WebRTC server maximum CPU load.</p>
+    <td>data.stats.max_cpu_load</td><td><code>number</code></td><td><p>Server maximum CPU load.</p>
 </td>
     </tr><tr>
-    <td>data.stats.max_transcoders</td><td><code>number</code></td><td><p>The WebRTC server maximum number of transcoders.</p>
+    <td>data.stats.max_transcoders</td><td><code>number</code></td><td><p>Server maximum number of transcoders.</p>
 </td>
     </tr><tr>
     <td>data.stats.server_version</td><td><code>string</code></td><td><p>The version of the WebRTC server.</p>
@@ -1692,7 +1683,10 @@ The possible client error codes in an ErrorEvent event.
     <td>1004</td><td></td><td><p>An object does not exist.</p>
 </td>
     </tr><tr>
-    <td>1005</td><td></td><td><p>A functions is not defined.</p>
+    <td>1005</td><td></td><td><p>A function is not defined.</p>
+</td>
+    </tr><tr>
+    <td>1006</td><td></td><td><p>An operation is not allowed to be executed.</p>
 </td>
     </tr><tr>
     <td>2000-2999</td><td><code>RequestError</code></td><td></td>
