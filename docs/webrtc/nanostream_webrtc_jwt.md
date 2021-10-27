@@ -38,10 +38,12 @@ Use data from the previously created stream to create a JWT. The Webcaster token
 "RTMP Ingest Streamname" and "RTMP Ingest URL" from the bintu cloud frontend.
 
 ```js
-https://bintu-cloud-token.k8s-prod.nanocosmos.de/webcaster
-```
+url: https://bintu-cloud-token.k8s-prod.nanocosmos.de/webcaster
+method: POST
+content-type: application/json
+headers: X-BINTU-APIKEY (mandatory)
 
-```js
+data example:
 {
   "streamname": "YOUR_RTMP_STREAMNAME", // string
   "ingesturl": "YOUR_RTMP_INGEST_URL", // string
@@ -49,9 +51,17 @@ https://bintu-cloud-token.k8s-prod.nanocosmos.de/webcaster
 }
 ```
 
+```js
+curl sample:
+```
 
 3) Use the JWT in the Webcaster
 
 ## Parsing information from JWT
 
 If you want to display information contained in a JWT you can do that by decoding the token.
+The token has its payload encoded in base64.
+
+```js
+decode sample:
+```
