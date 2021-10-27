@@ -28,7 +28,7 @@
       "webrtc/nanostream_webrtc_support"
     ],
     "Features": [
-      "webrtc/nanostream_webrtc_jwt",
+      "webrtc/nanostream_webrtc_secure_ingest",
       "webrtc/nanostream_webrtc_screen_sharing",
       "webrtc/nanostream_webrtc_multiple_webcasts",
       "webrtc/nanostream_webrtc_quality",

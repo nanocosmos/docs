@@ -1,15 +1,19 @@
 ---
-id: nanostream_webrtc_jwt
-title: JWT
-sidebar_label: JWT
+id: nanostream_webrtc_secure_ingest
+title: Secure ingest with Webcaster
+sidebar_label: Secure ingest with Webcaster
 ---
+
+We enable secure ingest with the Webcaster with JWT.<br>
+
+## What is JWT
 
 The JWT feature enables security and transparency for your end users in a simple way.<br>
 By using JWT you can omit the Bintu API key when using the Webcster API.<br>
 Also JWT will contain ingest information, so your customers will not need to see ingest urls
 and ingest stream names.
 
-## About Webcaster and JWT
+### About Webcaster and JWT
 
 The Webcaster API can now utilize JWT for signing in to the servers and for sharing ingest information. Please see the following workflow on how to get started.
 
