@@ -31,7 +31,13 @@ You can create JWT by calling the REST interface of the JWT endpoint of the Webc
 You will need a Bintu API key for creating token.
 The endpoint needs the follwoing fields set as JSON data.
 
-### Steps
+### Nanocosmos Token Creator
+
+Feel free to create JWT through our [Webcaster Token Creator
+](https://bintu-helpers.nanocosmos.de/webcaster-helper) and test the feature immediately.<br>
+All you need to get started is a bintu API key.
+
+### JWT creation steps
 
 1) Create a bintu stream
 
