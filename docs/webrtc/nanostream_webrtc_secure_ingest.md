@@ -35,7 +35,7 @@ The endpoint needs the follwoing fields set as JSON data.
 
 1) Create a bintu stream
 
-Create a bintu stream either through the bintu cloud frontend or with help of the bintu REST API.
+Create a bintu stream either through the [bintu cloud frontend](https://bintu-cloud-frontend.nanocosmos.de/) or with help of the bintu REST API,<br>see the [bintu docs](../cloud/bintu_api).
 
 2) Create the JWT
 
@@ -43,30 +43,72 @@ Use data from the previously created stream to create a JWT. The Webcaster token
 "RTMP Ingest Streamname" and "RTMP Ingest URL" from the bintu cloud frontend.
 
 ```js
-url: https://bintu-cloud-token.k8s-prod.nanocosmos.de/webcaster
-method: POST
+url for token creation: https://bintu-cloud-token.k8s-prod.nanocosmos.de/webcaster
+HTTP method: POST
 content-type: application/json
 headers: X-BINTU-APIKEY (mandatory)
 
 data example:
 {
-  "streamname": "YOUR_RTMP_STREAMNAME", // string
-  "ingesturl": "YOUR_RTMP_INGEST_URL", // string
-  "exp": UTC_TIMESTAMP // integer
+  'streamname': 'YOUR_RTMP_STREAMNAME', // string
+  'ingesturl': 'YOUR_RTMP_INGEST_URL', // string
+  'exp': UTC_TIMESTAMP // integer
 }
 ```
 
+<br>
+Find a curl example below:
+
 ```js
-curl sample:
+curl --request POST \
+  --url https://bintu-cloud-token.k8s-prod.nanocosmos.de/webcaster \
+  --header 'Accept: application/json' \
+  --header 'Content-Type: application/json' \
+  --header 'x-bintu-apikey: YOUR-APIKEY' \
+  --data '{
+    "streamname": "YOUR_RTMP_STREAMNAME",
+    "ingesturl": "YOUR_RTMP_INGEST_URL"
+  }'
 ```
 
 3) Use the JWT in the Webcaster
 
+```js
+var yourJWT = 'YOUR_JWT'; // obtain the JWT by the previous step
+
+// 1) the JWT is used for signing into the server
+
+rtcuser.signIn({
+  server: 'wss://bintu-webrtc.nanocosmos.de/p/webrtcws',
+  jwt: yourJWT
+});
+
+...
+
+// 2) pass the JWT on startBroadcast()
+
+rtcuser.startBroadcast({jwt: yourJWT });
+```
+
 ## Parsing information from JWT
 
-If you want to display information contained in a JWT you can do that by decoding the token.
+If you want to read the public information contained in a JWT you can do that by decoding the token.<br>
 The token has its payload encoded in base64.
 
 ```js
-decode sample:
+var base64Url = yourJWT.split('.')[1];
+var base64 = base64Url.replace('-', '+').replace('_', '/');
+
+console.log(JSON.parse(atob(base64)));
+
+/* example log:
+{
+  exp: 1636648020,
+  iat: 1635434867,
+  ingesturl: "YOUR_RTMP_INGEST_URL",
+  iss: "nanocosmos",
+  nbf: 1635434867,
+  streamname: "YOUR_RTMP_STREAMNAME",
+}
+*/
 ```
