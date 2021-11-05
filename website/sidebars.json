@@ -14,7 +14,8 @@
       "nanoplayer/nanoplayer_feature_fullscreen_api",
       "nanoplayer/nanoplayer_feature_customization",
       "nanoplayer/nanoplayer_feature_reconnect_timeouts",
-      "nanoplayer/nanoplayer_feature_media_error_recovery"
+      "nanoplayer/nanoplayer_feature_media_error_recovery",
+      "nanoplayer/nanoplayer_feature_source_defaults"
     ],
     "API": ["nanoplayer/nanoplayer_api", "nanoplayer/nanoplayer_api_errors"],
     "Other": ["nanoplayer/nanoplayer_faq", "nanoplayer/nanoplayer_blogposts"]
