@@ -250,22 +250,10 @@ Parameters in braces "[ ]" are optional.
 var iceServers = [
     {
         urls: [
-            'turn:turn.myTurnServer.net:80?transport=udp'
+            'turn:turn.nanocosmos.de:80?transport=udp'
         ],
         username: 'username',
         credential: 'password'
-    },
-    {
-        urls: [
-            'turn:turn.myTurnServer.net:80?transport=udp'
-        ],
-        username: 'username',
-        credential: 'password'
-    },
-    {
-        urls: [
-            'stun:stun.l.google.com:19302'
-        ]
     }
 ];
 rtcUser.setIceServers(iceServers);
