@@ -16,7 +16,13 @@ It enables security and transparency for your end users in a simple way.<br>
 By using JWT you can now omit the Bintu API key when using the Webcster.<br>
 Also JWT will contain ingest information, so your customers will not need to see ingest urls
 and ingest stream names.
-The Webcaster API can now utilize JWT for signing in to the servers and for sharing ingest information. Please see the following workflow on how to get started.
+The Webcaster API can now utilize JWT for signing in to the servers and for sharing ingest information.
+You can pass JWT in the two follwoing API calls:<br>
+
+- [signIn(config)](nanostream_webrtc_api.md#RtcUser+signIn) - for authorizing with the Webcaster server
+- [startBroadcast(config)](nanostream_webrtc_api.md#RtcUser+startBroadcast) - for starting the Webcast & passing ingest information
+
+Please see the following workflow on how to get started.
 
 ## Creating JWT for the Webcaster
 
@@ -36,7 +42,7 @@ Feel free to create JWT through our [Webcaster Token Creator
 ](https://bintu-helpers.nanocosmos.de/webcaster-helper) and test the feature immediately.<br>
 All you need to get started is a bintu API key.
 
-### JWT creation steps
+### Using JWT with the Webcaster
 
 1) Create a bintu stream
 
@@ -77,7 +83,12 @@ curl --request POST \
 The JWT will be contained in "data.token"
 
 ```js
-{"success":true,"data":{"token": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJuYW5vY29zbW9zIiwiZXhwIjoxMjM0NTY3ODksIm5iZiI6MTIzNDU2Nzg5LCJpbmdlc3R1cmwiOiJydG1wOi8vYmludHUtc3RyZWFtLm5hbm9jb3Ntb3MuZGU6MTkzNS9saXZlIiwic3RyZWFtbmFtZSI6ImFiYy1kZWYiLCJpYXQiOjE2MzU4NzEwOTN9.0BrnTUmu0A8yrcVHXj4OZU23sKpAHIQekALgW5jnZAo"}}
+{
+    "success": true,
+    "data": {
+        "token": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJuYW5vY29zbW9zIiwiZXhwIjoxMjM0NTY3ODksIm5iZiI6MTIzNDU2Nzg5LCJpbmdlc3R1cmwiOiJydG1wOi8vYmludHUtc3RyZWFtLm5hbm9jb3Ntb3MuZGU6MTkzNS9saXZlIiwic3RyZWFtbmFtZSI6ImFiYy1kZWYiLCJpYXQiOjE2MzU4NzEwOTN9.0BrnTUmu0A8yrcVHXj4OZU23sKpAHIQekALgW5jnZAo"
+    }
+}
 ```
 
 3) Use JWT in the Webcaster
@@ -101,9 +112,33 @@ rtcuser.startBroadcast({jwt: yourJWT });
 
 ## Verify a JWT
 
-You can verify a JWT by calling the verification url:
+You can verify a JWT by passing it when calling the verification url:
 
-- https://cts.nanocosmos.de/webcaster/verify
+- url: https://cts.nanocosmos.de/webcaster/verify
+- method: POST
+- content-type: application/json
+- JSON data:
+  - 'token': A (JWT)Token-String.
+
+```js
+curl --request POST \ 
+--url https://cts.nanocosmos.de/webcaster/verify \ 
+--header 'Content-Type: application/json' \ 
+--data '{"token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Im5hbm9jb3Ntb3MifQ..."}'
+```
+
+```js
+{
+
+    "success": true,
+    "data": 
+
+    {
+        "token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Im5hbm9jb3Ntb3MifQ..."
+    }
+
+}
+```
 
 
 ## Parsing information from JWT
