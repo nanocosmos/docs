@@ -129,14 +129,10 @@ curl --request POST \
 
 ```js
 {
-
     "success": true,
-    "data": 
-
-    {
+    "data": {
         "token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Im5hbm9jb3Ntb3MifQ..."
     }
-
 }
 ```
 
@@ -147,6 +143,8 @@ If you want to read the public information contained in a JWT you can do that by
 The token has its payload encoded in base64.
 
 ```js
+var yourJWT = 'YOUR_JWT';
+
 var base64Url = yourJWT.split('.')[1];
 var base64 = base64Url.replace('-', '+').replace('_', '/');
 
