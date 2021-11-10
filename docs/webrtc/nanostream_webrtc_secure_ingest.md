@@ -14,11 +14,11 @@ For more information about JWT [click here](https://en.wikipedia.org/wiki/JSON_W
 
 ### About Webcaster and web tokens
 
-By using web tokens you can now omit the Bintu API key when using the Webcster.<br>
+By using web tokens you can now omit the Bintu API key when using the Webcaster.<br>
 Also the tokens will contain ingest information, so your customers will not need to see RTMP ingest urls
 and RTMP ingest stream names.
 The Webcaster API can now utilize web tokens for signing in to the servers and for sharing ingest information.
-You can pass the tokens in the two follwoing API calls:<br>
+You can pass the tokens in the two following API calls:<br>
 
 - [signIn(config)](nanostream_webrtc_api.md#RtcUser+signIn) - for authorizing with the Webcaster server
 - [startBroadcast(config)](nanostream_webrtc_api.md#RtcUser+startBroadcast) - for starting the Webcast & passing ingest information
@@ -27,7 +27,7 @@ Please see the following workflow on how to get started.
 
 ## Creating web tokens for the Webcaster
 
-In order to create a web token for the Webcaster you will need the follwing data:
+In order to create a web token for the Webcaster you will need the following data:
 
 - your bintu API key
 - a RTMP stream name
@@ -80,7 +80,7 @@ curl --request POST \
 ```
 
 <br>
-<b>CURL</b> response example:<br>
+<b>CURL</b> response:<br>
 The token will be contained in "data.token"
 
 ```js
@@ -127,6 +127,10 @@ curl --request POST \
 --header 'Content-Type: application/json' \ 
 --data '{"token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Im5hbm9jb3Ntb3MifQ..."}'
 ```
+
+<br>
+<b>CURL</b> response:<br>
+`"success": true` indicates token validity.
 
 ```js
 {
