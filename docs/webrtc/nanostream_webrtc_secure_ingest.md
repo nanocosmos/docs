@@ -47,12 +47,44 @@ All you need to get started is a bintu API key.
 
 1) Create a bintu stream
 
-Create a bintu stream either through the [bintu cloud frontend](https://bintu-cloud-frontend.nanocosmos.de/) or with help of the bintu REST API,<br>see the [bintu docs](../cloud/bintu_api).
+Create a bintu stream either through the [bintu cloud frontend](https://bintu-cloud-frontend.nanocosmos.de/) or with help of the bintu REST API.
+
+Find a <b>CURL</b> example below:
+
+```js
+ curl --request POST \
+    --url "https://bintu.nanocosmos.de/stream" \
+    --header 'Content-Type: application/json' \
+    --header 'x-bintu-apikey: YOUR-APIKEY'
+```
+
+<br>
+<b>CURL</b> response:<br>
+The ingest information for the created stream will be contained in the JSON response, you will need:
+
+- ingest.rtmp.url
+- ingest.rtmp.streamname
+
+
+```js
+// response from CURL command
+
+{
+    ...
+    "ingest":{
+      "rtmp":{
+         "url":"rtmp://bintu-stream.nanocosmos.de:1935/live",
+         "streamname":"meAno-9mn57"
+      }
+    },
+    ...
+}
+```
+
 
 2) Create a web token
 
-Use data from the previously created stream to create a web token. The Webcaster token endpoint needs
-"RTMP Ingest Streamname" and "RTMP Ingest URL" from the bintu cloud frontend.
+Use the data (ingest RTMP url and ingest RTMP streamname) from the previously created stream to create a web token.
 
 - url: https://cts.nanocosmos.de/webcaster
 - method: POST
@@ -120,6 +152,9 @@ You can verify a web token by passing it when calling the verification url:
 - content-type: application/json
 - JSON data:
   - 'token': A (JWT)Token-String.
+
+<br>
+Find a <b>CURL</b> example below:
 
 ```js
 curl --request POST \ 
