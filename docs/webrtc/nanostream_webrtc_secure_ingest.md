@@ -9,7 +9,7 @@ We enable secure ingest with the Webcaster by using <b>JWT (JSON Web Token)</b>.
 ## What is JWT
 
 JWT is an open standard for securely transmitting information between two parties.
-It enables security and transparency for your end users in a simple way.<br>
+It simplifies the workflow and increases security for your end users in a simple way.<br>
 For more information about JWT [click here](https://en.wikipedia.org/wiki/JSON_Web_Token).
 
 ### About Webcaster and web tokens
