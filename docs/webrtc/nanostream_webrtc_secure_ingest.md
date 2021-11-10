@@ -14,8 +14,8 @@ It enables security and transparency for your end users in a simple way.<br>
 ### About Webcaster and JWT
 
 By using JWT you can now omit the Bintu API key when using the Webcster.<br>
-Also JWT will contain ingest information, so your customers will not need to see ingest urls
-and ingest stream names.
+Also JWT will contain ingest information, so your customers will not need to see RTMP ingest urls
+and RTMP ingest stream names.
 The Webcaster API can now utilize JWT for signing in to the servers and for sharing ingest information.
 You can pass JWT in the two follwoing API calls:<br>
 
@@ -26,11 +26,11 @@ Please see the following workflow on how to get started.
 
 ## Creating JWT for the Webcaster
 
-In order to use JWT with the Webcaster you will need the follwing data:
+In order to create a JWT for the Webcaster you will need the follwing data:
 
 - your bintu API key
-- a stream name
-- an ingest url
+- a RTMP stream name
+- an RTMP ingest url
 - an expiration date (this is optional, a JWT will expire after 1 week by default)
 
 You can create JWT by calling the REST interface of the JWT endpoint of the Webcaster.
