@@ -160,7 +160,7 @@ Parameters in braces "[ ]" are optional.
     <td>[config.metrics.eventId]</td><td><code>string</code></td><td></td><td><p>An id of an event a stream is related to.</p>
 </td>
     </tr><tr>
-    <td>[config.metrics.statsInterval]</td><td><code>number</code></td><td><code>10</code></td><td><p>The interval how often the stats should be collected in seconds. Allowed values: 1 - 10 second(s).</p>
+    <td>[config.metrics.statsInterval]</td><td><code>number</code></td><td><code>10</code></td><td><p>The interval how often the stats should be collected in seconds. Allowed values: 5 - 10 second(s).</p>
 </td>
     </tr><tr>
     <td>[config.metrics.customField*]</td><td><code>string</code></td><td></td><td><p>A custom field. * can be replaced with 1 - 10 e.g. &#39;customField3&#39;. Possible from &#39;customField1&#39; to &#39;customField10&#39;.</p>
