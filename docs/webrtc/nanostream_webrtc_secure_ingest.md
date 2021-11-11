@@ -54,7 +54,7 @@ Find a <b>CURL</b> example below:
 ```js
  curl --request POST \
     --url "https://bintu.nanocosmos.de/stream" \
-    --header 'Content-Type: application/json' \
+    --header 'content-type: application/json' \
     --header 'x-bintu-apikey: YOUR-APIKEY'
 ```
 
@@ -74,7 +74,7 @@ The ingest information for the created stream will be contained in the JSON resp
     "ingest":{
       "rtmp":{
          "url":"rtmp://bintu-stream.nanocosmos.de:1935/live",
-         "streamname":"meAno-9mn57"
+         "streamname":"xAuOp-IaIYi"
       }
     },
     ...
@@ -89,7 +89,7 @@ Use the data (ingest RTMP url and ingest RTMP streamname) from the previously cr
 - url: https://cts.nanocosmos.de/webcaster
 - method: POST
 - content-type: application/json
-- headers: X-BINTU-APIKEY (mandatory)
+- headers: x-bintu-apikey (mandatory)
 - JSON data:
   - 'streamname': 'YOUR_RTMP_STREAMNAME' (string)
   - 'ingesturl': 'YOUR_RTMP_INGEST_URL' (string)
@@ -102,8 +102,8 @@ Find a <b>CURL</b> example below:
 ```js
 curl --request POST \
   --url https://cts.nanocosmos.de/webcaster \
-  --header 'Accept: application/json' \
-  --header 'Content-Type: application/json' \
+  --header 'accept: application/json' \
+  --header 'content-type: application/json' \
   --header 'x-bintu-apikey: YOUR-APIKEY' \
   --data '{
     "streamname": "YOUR_RTMP_STREAMNAME",
@@ -159,7 +159,7 @@ Find a <b>CURL</b> example below:
 ```js
 curl --request POST \ 
 --url https://cts.nanocosmos.de/webcaster/verify \ 
---header 'Content-Type: application/json' \ 
+--header 'content-type: application/json' \ 
 --data '{"token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Im5hbm9jb3Ntb3MifQ..."}'
 ```
 
