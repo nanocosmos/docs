@@ -1,0 +1,231 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Secure ingest with Webcaster · nanocosmos Documentation</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="We enable secure ingest with the Webcaster by using &lt;b&gt;JWT (JSON Web Token)&lt;/b&gt;.&lt;br&gt;"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Secure ingest with Webcaster · nanocosmos Documentation"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.nanocosmos.de/"/><meta property="og:description" content="We enable secure ingest with the Webcaster by using &lt;b&gt;JWT (JSON Web Token)&lt;/b&gt;.&lt;br&gt;"/><meta property="og:image" content="https://docs.nanocosmos.de/img/docusaurus.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://docs.nanocosmos.de/img/docusaurus.png"/><link rel="shortcut icon" href="/img/favicon_nano.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script>
+              (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+              (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+              m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+              })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+              ga('create', 'UA-552140-1', 'auto');
+              ga('send', 'pageview');
+            </script><link rel="stylesheet" href="/css/copy-button.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/js/copy-button.js"></script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="/js/search.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/nanocosmos_header_logo.png" alt="nanocosmos Documentation"/><h2 class="headerTitleWithLogo">nanocosmos Documentation</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/docs/cloud/cloud_overview" target="_self">nanoStream Cloud</a></li><li class=""><a href="/docs/nanoplayer/nanoplayer_introduction" target="_self">H5Live Player</a></li><li class="siteNavGroupActive"><a href="/docs/webrtc/nanostream_webrtc_introduction" target="_self">nanoStream Webcaster</a></li><li class=""><a href="/docs/nanomeet/introduction" target="_self">nanoMeet</a></li><li class=""><a href="/docs/nanostream/nanostream" target="_self">nanoStream Apps and SDKs</a></li><li class=""><a href="/docs/samples/samples" target="_self">Samples</a></li><li class=""><a href="/docs/faq/faq_streaming" target="_self">FAQ</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Features</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">nanoStream Webcaster</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/webrtc/nanostream_webrtc_introduction">Introduction</a></li><li class="navListItem"><a class="navItem" href="/docs/webrtc/nanostream_webrtc_getting_started">Getting started</a></li><li class="navListItem"><a class="navItem" href="/docs/webrtc/nanostream_webrtc_demos">Browser Demos</a></li><li class="navListItem"><a class="navItem" href="/docs/webrtc/nanostream_webrtc_support">Support</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Features</h3><ul class=""><li class="navListItem navListItemActive"><a class="navItem" href="/docs/webrtc/nanostream_webrtc_secure_ingest">Secure ingest with Webcaster</a></li><li class="navListItem"><a class="navItem" href="/docs/webrtc/nanostream_webrtc_screen_sharing">Screen Sharing</a></li><li class="navListItem"><a class="navItem" href="/docs/webrtc/nanostream_webrtc_multiple_webcasts">Multiple Webcasts</a></li><li class="navListItem"><a class="navItem" href="/docs/webrtc/nanostream_webrtc_quality">Quality Settings</a></li><li class="navListItem"><a class="navItem" href="/docs/webrtc/nanostream_webrtc_device_selection">Device Selection</a></li><li class="navListItem"><a class="navItem" href="/docs/webrtc/nanostream_webrtc_audio_video_only">Audio- / Video-Only</a></li><li class="navListItem"><a class="navItem" href="/docs/webrtc/nanostream_webrtc_speech_music">Speech / Music Streaming</a></li><li class="navListItem"><a class="navItem" href="/docs/webrtc/nanostream_webrtc_set_mediastream">External Streams / Mixing</a></li><li class="navListItem"><a class="navItem" href="/docs/webrtc/nanostream_webrtc_stats_and_metrics">Stats and Metrics</a></li><li class="navListItem"><a class="navItem" href="/docs/webrtc/nanostream_webrtc_reconnect">Automatic Reconnection</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">API</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/webrtc/nanostream_webrtc_api">Webcaster</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Other</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/webrtc/nanostream_webrtc_faq">FAQ</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/nanocosmos/docs/tree/master/docs/webrtc/nanostream_webrtc_secure_ingest.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 id="__docusaurus" class="postHeaderTitle">Secure ingest with Webcaster</h1></header><article><div><span><p>We enable secure ingest with the Webcaster by using <b>JWT (JSON Web Token)</b>.<br></p>
+<h2><a class="anchor" aria-hidden="true" id="what-is-jwt"></a><a href="#what-is-jwt" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>What is JWT</h2>
+<p>JWT is an open standard for securely transmitting information between two parties.
+It simplifies the workflow and increases security for your end users in a simple way.<br>
+For more information about JWT <a href="https://en.wikipedia.org/wiki/JSON_Web_Token">click here</a>.</p>
+<h3><a class="anchor" aria-hidden="true" id="about-webcaster-and-web-tokens"></a><a href="#about-webcaster-and-web-tokens" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>About Webcaster and web tokens</h3>
+<p>By using web tokens you can now omit the Bintu API key when using the Webcaster.<br>
+Also the tokens will contain ingest information, so your customers will not need to see RTMP ingest urls
+and RTMP ingest stream names.
+The Webcaster API can now utilize web tokens for signing in to the servers and for sharing ingest information.
+You can pass the tokens in the two following API calls:<br></p>
+<ul>
+<li><a href="/docs/webrtc/nanostream_webrtc_api#RtcUser+signIn">signIn(config)</a> - for authorizing with the Webcaster server</li>
+<li><a href="/docs/webrtc/nanostream_webrtc_api#RtcUser+startBroadcast">startBroadcast(config)</a> - for starting the Webcast &amp; passing ingest information</li>
+</ul>
+<p>Please see the following workflow on how to get started.</p>
+<h2><a class="anchor" aria-hidden="true" id="creating-web-tokens-for-the-webcaster"></a><a href="#creating-web-tokens-for-the-webcaster" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Creating web tokens for the Webcaster</h2>
+<p>In order to create a web token for the Webcaster you will need the following data:</p>
+<ul>
+<li>your bintu API key</li>
+<li>a RTMP stream name</li>
+<li>an RTMP ingest url</li>
+<li>an expiration date (this is optional, a web token will expire after 1 week by default)</li>
+</ul>
+<p>You can create web tokens by calling the REST interface of the <b>nanocosmos Cloud Token Service (CTS)</b> endpoint of the Webcaster.
+You will need a Bintu API key for creating tokens.</p>
+<h3><a class="anchor" aria-hidden="true" id="nanocosmos-token-creator"></a><a href="#nanocosmos-token-creator" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Nanocosmos Token Creator</h3>
+<p>Feel free to create web token through our <a href="https://bintu-helpers.nanocosmos.de/webcaster-helper">Webcaster Token Creator
+</a> and test the feature immediately.<br>
+All you need to get started is a bintu API key.</p>
+<h3><a class="anchor" aria-hidden="true" id="using-web-tokens-with-the-webcaster"></a><a href="#using-web-tokens-with-the-webcaster" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Using web tokens with the Webcaster</h3>
+<ol>
+<li>Create a bintu stream</li>
+</ol>
+<p>Create a bintu stream either through the <a href="https://bintu-cloud-frontend.nanocosmos.de/">bintu cloud frontend</a> or with help of the bintu REST API.</p>
+<p>Find a <b>CURL</b> example below:</p>
+<pre><code class="hljs css language-js"> curl --request POST \
+    --url <span class="hljs-string">"https://bintu.nanocosmos.de/stream"</span> \
+    --header <span class="hljs-string">'content-type: application/json'</span> \
+    --header <span class="hljs-string">'x-bintu-apikey: YOUR-APIKEY'</span>
+</code></pre>
+<p><br>
+<b>CURL</b> response:<br>
+The ingest information for the created stream will be contained in the JSON response, you will need:</p>
+<ul>
+<li>ingest.rtmp.url</li>
+<li>ingest.rtmp.streamname</li>
+</ul>
+<pre><code class="hljs css language-js"><span class="hljs-comment">// response from CURL command</span>
+
+{
+    ...
+    <span class="hljs-string">"ingest"</span>:{
+      <span class="hljs-string">"rtmp"</span>:{
+         <span class="hljs-string">"url"</span>:<span class="hljs-string">"rtmp://bintu-stream.nanocosmos.de:1935/live"</span>,
+         <span class="hljs-string">"streamname"</span>:<span class="hljs-string">"xAuOp-IaIYi"</span>
+      }
+    },
+    ...
+}
+</code></pre>
+<ol start="2">
+<li>Create a web token</li>
+</ol>
+<p>Use the data (ingest RTMP url and ingest RTMP streamname) from the previously created stream to create a web token.</p>
+<ul>
+<li>url: <a href="https://cts.nanocosmos.de/webcaster">https://cts.nanocosmos.de/webcaster</a></li>
+<li>method: POST</li>
+<li>content-type: application/json</li>
+<li>headers: x-bintu-apikey (mandatory)</li>
+<li>JSON data:
+<ul>
+<li>'streamname': 'YOUR_RTMP_STREAMNAME' (string)</li>
+<li>'ingesturl': 'YOUR_RTMP_INGEST_URL' (string)</li>
+<li>'exp': UTC_TIMESTAMP (integer)</li>
+</ul></li>
+</ul>
+<p><br>
+Find a <b>CURL</b> example below:</p>
+<pre><code class="hljs css language-js">curl --request POST \
+  --url https://cts.nanocosmos.de/webcaster \
+  --header 'accept: application/json' \
+  --header 'content-type: application/json' \
+  --header 'x-bintu-apikey: YOUR-APIKEY' \
+  --data '{
+    "streamname": "YOUR_RTMP_STREAMNAME",
+    "ingesturl": "YOUR_RTMP_INGEST_URL"
+  }'
+</code></pre>
+<p><br>
+<b>CURL</b> response:<br>
+The token will be contained in &quot;data.token&quot;</p>
+<pre><code class="hljs css language-js">{
+    <span class="hljs-string">"success"</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-string">"data"</span>: {
+        <span class="hljs-string">"token"</span>: <span class="hljs-string">"eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJuYW5vY29zbW9zIiwiZXhwIjoxMjM0NTY3ODksIm5iZiI6MTIzNDU2Nzg5LCJpbmdlc3R1cmwiOiJydG1wOi8vYmludHUtc3RyZWFtLm5hbm9jb3Ntb3MuZGU6MTkzNS9saXZlIiwic3RyZWFtbmFtZSI6ImFiYy1kZWYiLCJpYXQiOjE2MzU4NzEwOTN9.0BrnTUmu0A8yrcVHXj4OZU23sKpAHIQekALgW5jnZAo"</span>
+    }
+}
+</code></pre>
+<ol start="3">
+<li>Use the web token in the Webcaster</li>
+</ol>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">var</span> yourJWT = <span class="hljs-string">'YOUR_JWT'</span>; <span class="hljs-comment">// obtain the web token by the previous step</span>
+
+<span class="hljs-comment">// 1) the JWT is used for signing into the server</span>
+
+rtcuser.signIn({
+  <span class="hljs-attr">server</span>: <span class="hljs-string">'wss://bintu-webrtc.nanocosmos.de/p/webrtcws'</span>,
+  <span class="hljs-attr">jwt</span>: yourJWT
+});
+
+...
+
+<span class="hljs-comment">// 2) pass the web token on startBroadcast()</span>
+
+rtcuser.startBroadcast({<span class="hljs-attr">jwt</span>: yourJWT });
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="verify-a-web-token"></a><a href="#verify-a-web-token" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Verify a web token</h2>
+<p>You can verify a web token by passing it when calling the verification url:</p>
+<ul>
+<li>url: <a href="https://cts.nanocosmos.de/webcaster/verify">https://cts.nanocosmos.de/webcaster/verify</a></li>
+<li>method: POST</li>
+<li>content-type: application/json</li>
+<li>JSON data:
+<ul>
+<li>'token': A (JWT)Token-String.</li>
+</ul></li>
+</ul>
+<p><br>
+Find a <b>CURL</b> example below:</p>
+<pre><code class="hljs css language-js">curl --request POST \ 
+--url https:<span class="hljs-comment">//cts.nanocosmos.de/webcaster/verify \ </span>
+--header <span class="hljs-string">'content-type: application/json'</span> \ 
+--data <span class="hljs-string">'{"token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Im5hbm9jb3Ntb3MifQ..."}'</span>
+</code></pre>
+<p><br>
+<b>CURL</b> response:<br>
+<code>&quot;success&quot;: true</code> indicates token validity.</p>
+<pre><code class="hljs css language-js">{
+    <span class="hljs-string">"success"</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-string">"data"</span>: {
+        <span class="hljs-string">"token"</span>: <span class="hljs-string">"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Im5hbm9jb3Ntb3MifQ..."</span>
+    }
+}
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="parsing-information-from-a-web-token"></a><a href="#parsing-information-from-a-web-token" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Parsing information from a web token</h2>
+<p>If you want to read the public information contained in a web token you can do that by decoding the token.<br>
+The token has its payload encoded in base64.</p>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">var</span> yourJWT = <span class="hljs-string">'YOUR_JWT'</span>;
+
+<span class="hljs-keyword">var</span> base64Url = yourJWT.split(<span class="hljs-string">'.'</span>)[<span class="hljs-number">1</span>];
+<span class="hljs-keyword">var</span> base64 = base64Url.replace(<span class="hljs-string">'-'</span>, <span class="hljs-string">'+'</span>).replace(<span class="hljs-string">'_'</span>, <span class="hljs-string">'/'</span>);
+
+<span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">JSON</span>.parse(atob(base64)));
+
+<span class="hljs-comment">/* example log:
+{
+  exp: 1636648020,
+  iat: 1635434867,
+  ingesturl: "YOUR_RTMP_INGEST_URL",
+  iss: "nanocosmos",
+  nbf: 1635434867,
+  streamname: "YOUR_RTMP_STREAMNAME",
+}
+*/</span>
+</code></pre>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 11/17/2021</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/webrtc/nanostream_webrtc_support"><span class="arrow-prev">← </span><span>Support</span></a><a class="docs-next button" href="/docs/webrtc/nanostream_webrtc_screen_sharing"><span>Screen Sharing</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#what-is-jwt">What is JWT</a><ul class="toc-headings"><li><a href="#about-webcaster-and-web-tokens">About Webcaster and web tokens</a></li></ul></li><li><a href="#creating-web-tokens-for-the-webcaster">Creating web tokens for the Webcaster</a><ul class="toc-headings"><li><a href="#nanocosmos-token-creator">Nanocosmos Token Creator</a></li><li><a href="#using-web-tokens-with-the-webcaster">Using web tokens with the Webcaster</a></li></ul></li><li><a href="#verify-a-web-token">Verify a web token</a></li><li><a href="#parsing-information-from-a-web-token">Parsing information from a web token</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><div><h5>Contact</h5><a href="https://www.nanocosmos.de/">Homepage</a><a href="https://www.nanocosmos.de/contact">Contact</a><a href="https://www.nanocosmos.de/support">Support</a><a href="https://www.nanocosmos.de/terms">Legal Terms</a></div><div><h5>Products</h5><a href="https://www.nanocosmos.de/cloud">Nanostream Cloud with Bintu.Live</a><a href="https://www.nanocosmos.de/h5live">H5Live Low Latency HTML5-Player</a><a href="https://www.nanocosmos.de/webrtc">nanoStream Webcaster</a><a href="https://www.nanocosmos.de/#nanostream">Nanostream Apps and SDK</a></div><div><h5>More</h5><a href="https://www.nanocosmos.de/blog/">Blog</a><a href="https://twitter.com/nanovideo">Twitter</a><a href="https://www.facebook.com/nanocosmos.net/">Facebook</a><a href="https://www.linkedin.com/company/nanocosmos-gmbh">LinkedIn</a><a href="https://github.com/nanocosmos/docs">GitHub</a><a class="github-button" href="https://github.com/nanocosmos/docs" data-icon="octicon-star" data-count-href="/nanocosmos/docs/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://nanocosmos.de/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/footer_logo.png" alt="nanocosmos GmbH" width="170" height="45"/></a><section class="copyright">Copyright © 2021 nanocosmos GmbH - doc version Wed Nov 17 2021 11:46:07 GMT+0000 (Coordinated Universal Time)</section></footer></div></body></html>
