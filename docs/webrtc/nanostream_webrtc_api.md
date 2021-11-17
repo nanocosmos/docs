@@ -10,7 +10,7 @@ sidebar_label: Webcaster
 nanoStream Webcaster Public API Class
 
 **Kind**: global class  
-**Version**: 5.12.0  
+**Version**: 5.15.0  
 
 -----
 
@@ -46,7 +46,7 @@ var supportLevel = RtcUser.checkSupport();
 
 ## rtcUser.signIn(options)
 Signs in to the server.
-After signIn succeeded you will have a session with the WebRTC server until reloading the browser or calling [signOut](#RtcUser+signOut).
+After signIn succeeded you will have a session with the Webcaster server until reloading the browser or calling [signOut](#RtcUser+signOut).
 Parameters in braces "[ ]" are optional.
 
 **Kind**: instance method of [<code>RtcUser</code>](#RtcUser)  
@@ -62,34 +62,40 @@ Parameters in braces "[ ]" are optional.
     <td>options</td><td><code>object</code></td><td><p>The options object.</p>
 </td>
     </tr><tr>
-    <td>options.server</td><td><code>string</code></td><td><p>The URL to the WebRTC server.</p>
+    <td>options.server</td><td><code>string</code></td><td><p>The URL to the Webcaster server.</p>
 </td>
     </tr><tr>
-    <td>[options.userName]</td><td><code>string</code></td><td><p>The name of the RtcUser (no spaces) - Deprecated: will be removed in nanoStream Webcaster v.6.</p>
-</td>
-    </tr><tr>
-    <td>[options.room]</td><td><code>string</code></td><td><p>The room to join (no spaces) - Deprecated: will be removed in nanoStream Webcaster v.6.</p>
-</td>
-    </tr><tr>
-    <td>[options.token]</td><td><code>string</code></td><td><p>The access token for authentication.</p>
-</td>
-    </tr><tr>
-    <td>[options.jwt]</td><td><code>string</code></td><td><p>The JWT access token for authentication.</p>
+    <td>[options.jwt]</td><td><code>string</code></td><td><p>The JWT access token for authentication. The JWT contains the ingest information, please also pass it in <a href="#RtcUser+startBroadcast">startBroadcast</a></p>
 </td>
     </tr><tr>
     <td>[options.bintuApiKey]</td><td><code>string</code></td><td><p>The bintu API key for authentication.</p>
 </td>
+    </tr><tr>
+    <td>[options.token]</td><td><code>string</code></td><td><p>The access token for authentication - Deprecated: Please migrate to use JWT for authentication.</p>
+</td>
     </tr>  </tbody>
 </table>
 
-**Example**  
+**Example** *(sign in with JWT)*  
 ```js
-// rtcUser instance of RtcUser
+// rtcUser: instance of RtcUser
+
 var options = {
     server : 'https://bintu-webrtc.nanocosmos.de/p/webrtcws',
-    token : 'token-123',
-    bintuApiKey : 'awdegfq3490puerg2w54zj2p0w4h46zphm694i0796'
+    jwt : 'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Im5hbm9jb3Ntb3MifQ...'
 };
+
+rtcUser.signIn(options);
+```
+**Example** *(sign in with bintu API key)*  
+```js
+// rtcUser: instance of RtcUser
+
+var options = {
+    server : 'https://bintu-webrtc.nanocosmos.de/p/webrtcws',
+    bintuApiKey : 'awdegfq3490puerg2w54zj2p0w4h46zphm694i0796...'
+};
+
 rtcUser.signIn(options);
 ```
 <a name="RtcUser+signOut"></a>
@@ -101,18 +107,18 @@ Signs out from the server. The current session and a broadcast (if running) will
 **Emits**: [<code>SignOutSuccess</code>](#RtcUser+event_SignOutSuccess), [<code>SignOutError</code>](#RtcUser+event_SignOutError)  
 **Example**  
 ```js
-// rtcUser instance of RtcUser
+// rtcUser: instance of RtcUser
 rtcUser.signOut();
 ```
 <a name="RtcUser+isSignedIn"></a>
 
 ## rtcUser.isSignedIn() ⇒ <code>boolean</code>
-Checks if the RtcUser is connected with the WebRTC server and signed in (see [signIn](#RtcUser+signIn)).
+Checks if the RtcUser is connected with the Webcaster server and signed in (see [signIn](#RtcUser+signIn)).
 
 **Kind**: instance method of [<code>RtcUser</code>](#RtcUser)  
 **Example**  
 ```js
-// rtcUser instance of RtcUser
+// rtcUser: instance of RtcUser
 if (rtcUser.isSignedIn()) {
     console.log('signed in');
 } else {
@@ -154,7 +160,7 @@ Parameters in braces "[ ]" are optional.
     <td>[config.metrics.eventId]</td><td><code>string</code></td><td></td><td><p>An id of an event a stream is related to.</p>
 </td>
     </tr><tr>
-    <td>[config.metrics.statsInterval]</td><td><code>number</code></td><td><code>10</code></td><td><p>The interval how often the stats should be collected in seconds. Allowed values: 1 - 10 second(s).</p>
+    <td>[config.metrics.statsInterval]</td><td><code>number</code></td><td><code>10</code></td><td><p>The interval how often the stats should be collected in seconds. Allowed values: 5 - 10 second(s).</p>
 </td>
     </tr><tr>
     <td>[config.metrics.customField*]</td><td><code>string</code></td><td></td><td><p>A custom field. * can be replaced with 1 - 10 e.g. &#39;customField3&#39;. Possible from &#39;customField1&#39; to &#39;customField10&#39;.</p>
@@ -188,7 +194,7 @@ Parameters in braces "[ ]" are optional.
 
 **Example**  
 ```js
-// rtcUser instance of RtcUser
+// rtcUser: instance of RtcUser
 var config = {
     logLevel: 2,
     metrics: {
@@ -240,55 +246,32 @@ Parameters in braces "[ ]" are optional.
 
 **Example**  
 ```js
-// rtcUser instance of RtcUser
+// rtcUser: instance of RtcUser
 var iceServers = [
     {
         urls: [
-            'turn:turn.myTurnServer.net:80?transport=udp'
+            'turn:turn.nanocosmos.de:80?transport=udp'
         ],
         username: 'username',
         credential: 'password'
-    },
-    {
-        urls: [
-            'turn:turn.myTurnServer.net:80?transport=udp'
-        ],
-        username: 'username',
-        credential: 'password'
-    },
-    {
-        urls: [
-            'stun:stun.l.google.com:19302'
-        ]
     }
 ];
 rtcUser.setIceServers(iceServers);
 ```
 <a name="RtcUser+checkServer"></a>
 
-## rtcUser.checkServer(server)
-Checks the state of a WebRTC server.
+## rtcUser.checkServer()
+Checks the state of a Webcaster server.
 
 **Kind**: instance method of [<code>RtcUser</code>](#RtcUser)  
 **Emits**: [<code>ReceivedServerStats</code>](#RtcUser+event_ReceivedServerStats)  
-<table>
-  <thead>
-    <tr>
-      <th>Param</th><th>Type</th><th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-<tr>
-    <td>server</td><td><code>string</code></td><td><p>The URL of the server - Deprecated: will be removed in nanoStream Webcaster v.6; the function will check the WebRTC server specified in the signIn() call.</p>
-</td>
-    </tr>  </tbody>
-</table>
-
 **Example**  
 ```js
-// rtcUser instance of RtcUser
-var server = 'https://rtc-lb.nanocosmos.de/p/webrtc'
-rtcUser.checkServer(server);
+// rtcUser: instance of RtcUser
+rtcUser.checkServer();
+rtcUser.on('ReceivedServerStats', function(event) {
+     console.log(event.data);
+});
 ```
 <a name="RtcUser+enableStats"></a>
 
@@ -316,7 +299,7 @@ Parameters in braces "[ ]" are optional.
 
 **Example**  
 ```js
-// rtcUser instance of RtcUser
+// rtcUser: instance of RtcUser
 rtcUser.enableStats();
 rtcUser.on('ReceivedWebRTCStats', function(event) {
      console.log(JSON.stringify(event.data.results));
@@ -354,26 +337,36 @@ Parameters in braces "[ ]" are optional.
     <td>[config.transcodingTargets.audiobitrate]</td><td><code>number</code></td><td><code>0</code></td><td><p>The RTMP audio transcoded bitrate in bps, eg 64000.</p>
 </td>
     </tr><tr>
-    <td>[config.transcodingTargets.rtmpconnectinfo]</td><td><code>string</code></td><td><code>null</code></td><td><p>Data to be send with the RTMP streams &quot;onconnect&quot;. Pass flat object with key value pairs, hierarchies are not supported.</p>
+    <td>[config.transcodingTargets.rtmpconnectinfo]</td><td><code>object</code></td><td><code></code></td><td><p>Data to be send with the RTMP streams &quot;onconnect&quot;. Pass flat object with key value pairs, hierarchies are not supported.</p>
 </td>
     </tr><tr>
-    <td>[config.encoding]</td><td><code>string</code></td><td></td><td><p>The encoding config object.</p>
+    <td>[config.encoding]</td><td><code>object</code></td><td></td><td><p>The encoding config object.</p>
 </td>
     </tr><tr>
     <td>[config.encoding.h264Profile]</td><td><code>&#x27;cbp&#x27;</code></td><td></td><td><p>The H264 profile. Note: the H264 profile should only be set to &#39;cbp&#39; in desktop Chrome (Windows).</p>
 </td>
     </tr><tr>
-    <td>[config.jwt]</td><td><code>string</code></td><td></td><td><p>The JWT access token for authorization.</p>
+    <td>[config.jwt]</td><td><code>string</code></td><td></td><td><p>A JWT containing ingest information can be passed. This will replace usage of transcodingTargets.streamname &amp; transcodingTargets.output. Note that the JWT can be passed in <a href="#RtcUser+signIn">signIn</a> as authorization method.</p>
 </td>
     </tr>  </tbody>
 </table>
 
-**Example**  
+**Example** *(Start a webcast with a JWT)*  
 ```js
-// rtcUser instance of RtcUser
+// rtcUser: instance of RtcUser
+
+rtcUser.startBroadcast({
+           jwt: 'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Im5hbm9jb3Ntb3MifQ...' 
+});
+```
+**Example** *(Start a webcast with rtmp url and rtmp stream name)*  
+```js
+// rtcUser: instance of RtcUser
+
 var config = {
     transcodingTargets: {
-        output: 'rtmp://myIngestServer.com:1935/live/webrtcBroadcast',
+        output: 'rtmp://bintu-stream.nanocosmos.de:1935/live',
+        streamname: 'xAuOp-IaIYi',
         audiobitrate: 64000,
         rtmpconnectinfo: {
             'key1': 'value1',
@@ -382,6 +375,7 @@ var config = {
         }
     }
 };
+
 rtcUser.startBroadcast(config);
 ```
 <a name="RtcUser+stopBroadcast"></a>
@@ -393,7 +387,7 @@ Stops a running broadcast.
 **Emits**: [<code>StopBroadcastSuccess</code>](#RtcUser+event_StopBroadcastSuccess), [<code>BroadcastError</code>](#RtcUser+event_BroadcastError)  
 **Example**  
 ```js
-// rtcUser instance of RtcUser
+// rtcUser: instance of RtcUser
 rtcUser.stopBroadcast();
 ```
 <a name="RtcUser+sendMetaData"></a>
@@ -421,7 +415,7 @@ Adds live meta data to a broadcast stream.
 
 **Example**  
 ```js
-// rtcUser instance of RtcUser
+// rtcUser: instance of RtcUser
 rtcUser.sendMetaData('onMetaData', {myString: 'hello', myInteger: 1234});
 ```
 <a name="RtcUser+addScreenCaptureExtension"></a>
@@ -447,7 +441,7 @@ Adds a Screen Capture Extension to the RtcUser for Chrome. Only needed in Chrome
 
 **Example**  
 ```js
-// rtcUser instance of RtcUser
+// rtcUser: instance of RtcUser
 var name = 'nanoScreenCapture';
 rtcUser.addScreenCaptureExtension(name);
 ```
@@ -459,7 +453,7 @@ Checks if a Screen Capture Extension was added via addScreenCaptureExtension().
 **Kind**: instance method of [<code>RtcUser</code>](#RtcUser)  
 **Example**  
 ```js
-// rtcUser instance of RtcUser
+// rtcUser: instance of RtcUser
 var name = 'nanoScreenCapture';
 rtcUser.addScreenCaptureExtension(name);
 // wait until api has registered extension:
@@ -476,7 +470,7 @@ Gets all connected input video and audio devices.
 **Emits**: [<code>ReceivedDeviceList</code>](#RtcUser+event_ReceivedDeviceList), [<code>GetDevicesError</code>](#RtcUser+event_GetDevicesError)  
 **Example**  
 ```js
-// rtcUser instance of RtcUser
+// rtcUser: instance of RtcUser
 rtcUser.getDevices();
 ```
 <a name="RtcUser+setVideoDevice"></a>
@@ -515,7 +509,7 @@ Parameters in braces "[ ]" are optional.
 
 **Example**  
 ```js
-// rtcUser instance of RtcUser
+// rtcUser: instance of RtcUser
 var config = {
     device: 0,
     width: 640,
@@ -526,7 +520,7 @@ rtcUser.setVideoDevice(config);
 ```
 **Example**  
 ```js
-// rtcUser instance of RtcUser
+// rtcUser: instance of RtcUser
 var config = {
     device: 0
 };
@@ -534,7 +528,7 @@ rtcUser.setVideoDevice(config);
 ```
 **Example**  
 ```js
-// rtcUser instance of RtcUser
+// rtcUser: instance of RtcUser
 var config = {
     device: true // auto device
 };
@@ -542,7 +536,7 @@ rtcUser.setVideoDevice(config);
 ```
 **Example**  
 ```js
-// rtcUser instance of RtcUser
+// rtcUser: instance of RtcUser
 var config = {
     device: false // no video
 };
@@ -574,7 +568,7 @@ Sets the input audio device.
 
 **Example**  
 ```js
-// rtcUser instance of RtcUser
+// rtcUser: instance of RtcUser
 var config = {
     device: 0
 };
@@ -582,7 +576,7 @@ rtcUser.setAudioDevice(config);
 ```
 **Example**  
 ```js
-// rtcUser instance of RtcUser
+// rtcUser: instance of RtcUser
 var config = {
     device: 0
 };
@@ -590,7 +584,7 @@ rtcUser.setAudioDevice(config);
 ```
 **Example**  
 ```js
-// rtcUser instance of RtcUser
+// rtcUser: instance of RtcUser
 var config = {
     device: true // auto device
 };
@@ -598,7 +592,7 @@ rtcUser.setAudioDevice(config);
 ```
 **Example**  
 ```js
-// rtcUser instance of RtcUser
+// rtcUser: instance of RtcUser
 var config = {
     device: false // no video
 };
@@ -614,7 +608,7 @@ Gets the current input video device.
 **Kind**: instance method of [<code>RtcUser</code>](#RtcUser)  
 **Example**  
 ```js
-// rtcUser instance of RtcUser
+// rtcUser: instance of RtcUser
 var device = rtcUser.getSelectedVideoDevice();
 ```
 <a name="RtcUser+getSelectedAudioDevice"></a>
@@ -627,7 +621,7 @@ Gets the current input audio device.
 **Kind**: instance method of [<code>RtcUser</code>](#RtcUser)  
 **Example**  
 ```js
-// rtcUser instance of RtcUser
+// rtcUser: instance of RtcUser
 var device = rtcUser.getSelectedAudioDevice();
 ```
 <a name="RtcUser+getSelectedDevice"></a>
@@ -655,7 +649,7 @@ Gets the current input video/audio device.
 
 **Example**  
 ```js
-// rtcUser instance of RtcUser
+// rtcUser: instance of RtcUser
 var config = {
     kind: 'videoinput'
 };
@@ -723,7 +717,7 @@ Parameters in braces "[ ]" are optional.
 
 **Example** *(Audio &amp; video.)*  
 ```js
-// rtcUser instance of RtcUser
+// rtcUser: instance of RtcUser
 var config = {
     videoDeviceConfig : {
          device: 0, // video is enabled using specific device
@@ -742,7 +736,7 @@ rtcUser.startPreview(config);
 ```
 **Example** *(Audio &amp; screen capture.)*  
 ```js
-// rtcUser instance of RtcUser
+// rtcUser: instance of RtcUser
 var config = {
     videoDeviceConfig : {
          width: 640,
@@ -760,7 +754,7 @@ rtcUser.startPreview(config);
 ```
 **Example** *(Video only.)*  
 ```js
-// rtcUser instance of RtcUser
+// rtcUser: instance of RtcUser
 var config = {
     videoDeviceConfig : {
          device: 0, // video is enabled using specific device
@@ -779,7 +773,7 @@ rtcUser.startPreview(config);
 ```
 **Example** *(Audio only.)*  
 ```js
-// rtcUser instance of RtcUser
+// rtcUser: instance of RtcUser
 var config = {
     videoDeviceConfig : {
          device: false // no video; audio-only preview
@@ -794,7 +788,7 @@ rtcUser.startPreview(config);
 ```
 **Example** *(Audio only with all preprocessing disabled.)*  
 ```js
-// rtcUser instance of RtcUser
+// rtcUser: instance of RtcUser
 var config = {
     videoDeviceConfig : {
          device: false // no video; audio-only preview
@@ -819,7 +813,7 @@ Stops the preview.
 **Emits**: [<code>StopPreviewSuccess</code>](#RtcUser+event_StopPreviewSuccess), [<code>StopPreviewError</code>](#RtcUser+event_StopPreviewError)  
 **Example**  
 ```js
-// rtcUser instance of RtcUser
+// rtcUser: instance of RtcUser
 rtcUser.stopPreview();
 ```
 <a name="RtcUser+muteVideo"></a>
@@ -845,7 +839,7 @@ Mutes/unmutes the video.
 
 **Example**  
 ```js
-// rtcUser instance of RtcUser
+// rtcUser: instance of RtcUser
 var mute = true;
 rtcUser.muteVideo(mute);
 ```
@@ -872,7 +866,7 @@ Mutes/unmutes the audio.
 
 **Example**  
 ```js
-// rtcUser instance of RtcUser
+// rtcUser: instance of RtcUser
 var mute = true;
 rtcUser.muteAudio(mute);
 ```
@@ -904,7 +898,7 @@ Mutes/unmutes a video/audio device.
 
 **Example**  
 ```js
-// rtcUser instance of RtcUser
+// rtcUser: instance of RtcUser
 var config = {
     kind: 'videoinput',
     mute: true
@@ -938,7 +932,7 @@ Mixes tracks (currently only audio) of an external MediaStream into the currentl
 
 **Example**  
 ```js
-// rtcUser instance of RtcUser
+// rtcUser: instance of RtcUser
 // externalStream instance of MediaStream (https://developer.mozilla.org/de/docs/Web/API/MediaStream)
 var data = {stream: externalStream, tracks: ['audio']};
 rtcUser.injectExternalMediaStream(data);
@@ -1004,7 +998,7 @@ When utilizing this API call, application developers are responsible for the ext
 
 **Example**  
 ```js
-// rtcUser instance of RtcUser
+// rtcUser: instance of RtcUser
 // pass an MediaStream to the API
 
 var canvasWidth = 1280;
@@ -1318,7 +1312,7 @@ MuteDeviceError event. The event is fired if a video/audio device mute/unmute fa
     <td>data</td><td><code>object</code></td><td><p>The data object.</p>
 </td>
     </tr><tr>
-    <td>data.message</td><td><code>&#x27;signalling&#x27;</code> | <code>&#x27;connected&#x27;</code> | <code>&#x27;reconnecting&#x27;</code> | <code>&#x27;broadcasting&#x27;</code> | <code>&#x27;reconnecting_broadcast&#x27;</code></td><td><p>The connection state message. Note that &#39;reconnecting&#39; implies an RTMP reconnect on server side and &#39;reconnecting_broadcast&#39; means a client side reconnect.</p>
+    <td>data.message</td><td><code>&#x27;signalling&#x27;</code> | <code>&#x27;connected&#x27;</code> | <code>&#x27;reconnecting&#x27;</code> | <code>&#x27;broadcasting&#x27;</code> | <code>&#x27;reconnecting_broadcast&#x27;</code></td><td><p>The connection state. Note that &#39;reconnecting&#39; implies an RTMP reconnect on server side and &#39;reconnecting_broadcast&#39; means a client side reconnect.</p>
 </td>
     </tr><tr>
     <td>[data.number]</td><td><code>object</code></td><td><p>Reserverd for internal developer&#39;s use. Note: the property is optional, therefore, its presence is not guaranteed - Deprecated: will be removed in nanoStream Webcaster v.6.</p>
@@ -1474,10 +1468,10 @@ MuteDeviceError event. The event is fired if a video/audio device mute/unmute fa
     <td>data</td><td><code>object</code></td><td><p>The data object.</p>
 </td>
     </tr><tr>
-    <td>data.server</td><td><code>string</code></td><td><p>The URL of the WebRTC server</p>
+    <td>data.server</td><td><code>string</code></td><td><p>The URL of the Webcaster server</p>
 </td>
     </tr><tr>
-    <td>data.userId</td><td><code>string</code></td><td><p>The user id of the WebRTC server.</p>
+    <td>data.userId</td><td><code>string</code></td><td><p>The user id of the Webcaster server.</p>
 </td>
     </tr>  </tbody>
 </table>
@@ -1502,28 +1496,28 @@ MuteDeviceError event. The event is fired if a video/audio device mute/unmute fa
     <td>data.stats</td><td><code>object</code></td><td><p>The stats object.</p>
 </td>
     </tr><tr>
-    <td>data.stats.active_connections</td><td><code>number</code></td><td><p>The total number of active connections to the WebRTC server.</p>
+    <td>data.stats.active_connections</td><td><code>number</code></td><td><p>The total number of active connections to the Webcaster server.</p>
 </td>
     </tr><tr>
-    <td>data.stats.active_passthroughs</td><td><code>number</code></td><td><p>The number of active connections with passthrough enabled to the WebRTC server.</p>
+    <td>data.stats.active_passthroughs</td><td><code>number</code></td><td><p>The number of active connections with passthrough enabled to the Webcaster server.</p>
 </td>
     </tr><tr>
-    <td>data.stats.active_transcoders</td><td><code>number</code></td><td><p>The number of active connections with transcoding enabled to the WebRTC server.</p>
+    <td>data.stats.active_transcoders</td><td><code>number</code></td><td><p>The number of active connections with transcoding enabled to the Webcaster server.</p>
 </td>
     </tr><tr>
-    <td>data.stats.cpu_load</td><td><code>number</code></td><td><p>The WebRTC server CPU load.</p>
+    <td>data.stats.cpu_load</td><td><code>number</code></td><td><p>Server CPU load.</p>
 </td>
     </tr><tr>
-    <td>data.stats.disk_space</td><td><code>number</code></td><td><p>The WebRTC server disk space.</p>
+    <td>data.stats.disk_space</td><td><code>number</code></td><td><p>Server disk space.</p>
 </td>
     </tr><tr>
-    <td>data.stats.domainname</td><td><code>string</code></td><td><p>The WebRTC server domain name.</p>
+    <td>data.stats.domainname</td><td><code>string</code></td><td><p>Server domain name.</p>
 </td>
     </tr><tr>
-    <td>data.stats.hostname</td><td><code>string</code></td><td><p>The WebRTC server host name.</p>
+    <td>data.stats.hostname</td><td><code>string</code></td><td><p>Server host name.</p>
 </td>
     </tr><tr>
-    <td>data.stats.license</td><td><code>object</code></td><td><p>The WebRTC server license.</p>
+    <td>data.stats.license</td><td><code>object</code></td><td><p>Server license.</p>
 </td>
     </tr><tr>
     <td>data.stats.license.end</td><td><code>string</code></td><td><p>The license expiration date.</p>
@@ -1541,13 +1535,13 @@ MuteDeviceError event. The event is fired if a video/audio device mute/unmute fa
     <td>data.stats.license.valid</td><td><code>boolean</code></td><td><p>A flag to indicate that the license is valid.</p>
 </td>
     </tr><tr>
-    <td>data.stats.max_cpu_load</td><td><code>number</code></td><td><p>The WebRTC server maximum CPU load.</p>
+    <td>data.stats.max_cpu_load</td><td><code>number</code></td><td><p>Server maximum CPU load.</p>
 </td>
     </tr><tr>
-    <td>data.stats.max_transcoders</td><td><code>number</code></td><td><p>The WebRTC server maximum number of transcoders.</p>
+    <td>data.stats.max_transcoders</td><td><code>number</code></td><td><p>Server maximum number of transcoders.</p>
 </td>
     </tr><tr>
-    <td>data.stats.server_version</td><td><code>string</code></td><td><p>The version of the WebRTC server.</p>
+    <td>data.stats.server_version</td><td><code>string</code></td><td><p>The version of the Webcaster server.</p>
 </td>
     </tr><tr>
     <td>data.stats.transcoder_version</td><td><code>string</code></td><td><p>The version of the transcoder.</p>
@@ -1692,7 +1686,10 @@ The possible client error codes in an ErrorEvent event.
     <td>1004</td><td></td><td><p>An object does not exist.</p>
 </td>
     </tr><tr>
-    <td>1005</td><td></td><td><p>A functions is not defined.</p>
+    <td>1005</td><td></td><td><p>A function is not defined.</p>
+</td>
+    </tr><tr>
+    <td>1006</td><td></td><td><p>An operation is not allowed to be executed.</p>
 </td>
     </tr><tr>
     <td>2000-2999</td><td><code>RequestError</code></td><td></td>
@@ -1788,6 +1785,12 @@ The possible client error codes in an ErrorEvent event.
 </td>
     </tr><tr>
     <td>103002</td><td></td><td><p>Access to a feature is forbidden (features: &#39;webrtc&#39;).</p>
+</td>
+    </tr><tr>
+    <td>103003</td><td></td><td><p>JWT authentication failed.</p>
+</td>
+    </tr><tr>
+    <td>103004</td><td></td><td><p>JWT contains an invalid stream.</p>
 </td>
     </tr><tr>
     <td>104000-104999</td><td><code>BintuError</code></td><td><p>Server-side bintu related errors.</p>
