@@ -4,6 +4,7 @@
       "nanoplayer/nanoplayer_introduction",
       "nanoplayer/nanoplayer_getting_started",
       "nanoplayer/nanoplayer_supported_browsers",
+      "nanoplayer/nanoplayer_release_history",
       "nanoplayer/nanoplayer_player_metrics",
       "nanoplayer/nanoplayer_iframe"
     ],
@@ -17,8 +18,14 @@
       "nanoplayer/nanoplayer_feature_media_error_recovery",
       "nanoplayer/nanoplayer_feature_source_defaults"
     ],
-    "API": ["nanoplayer/nanoplayer_api", "nanoplayer/nanoplayer_api_errors"],
-    "Other": ["nanoplayer/nanoplayer_faq", "nanoplayer/nanoplayer_blogposts"]
+    "API": [
+      "nanoplayer/nanoplayer_api",
+      "nanoplayer/nanoplayer_api_errors"
+    ],
+    "Other": [
+      "nanoplayer/nanoplayer_faq",
+      "nanoplayer/nanoplayer_blogposts"
+    ]
   },
   "webrtc": {
     "nanoStream Webcaster": [
@@ -40,13 +47,25 @@
       "webrtc/nanostream_webrtc_stats_and_metrics",
       "webrtc/nanostream_webrtc_reconnect"
     ],
-    "API": ["webrtc/nanostream_webrtc_api"],
-    "Other": ["webrtc/nanostream_webrtc_faq"]
+    "API": [
+      "webrtc/nanostream_webrtc_api"
+    ],
+    "Other": [
+      "webrtc/nanostream_webrtc_faq"
+    ]
   },
   "nanomeet": {
-    "nanoMeet": ["nanomeet/introduction", "nanomeet/getting-started"],
-    "Samples": ["nanomeet/samples", "nanomeet/source-code"],
-    "API": ["nanomeet/api"]
+    "nanoMeet": [
+      "nanomeet/introduction",
+      "nanomeet/getting-started"
+    ],
+    "Samples": [
+      "nanomeet/samples",
+      "nanomeet/source-code"
+    ],
+    "API": [
+      "nanomeet/api"
+    ]
   },
   "cloud": {
     "nanoStream Cloud": [
@@ -89,10 +108,15 @@
       "cloud/bintu_custom_webhooks",
       "cloud/bintu_stream_tags"
     ],
-    "Support": ["cloud/network-diagnostics", "cloud/support"]
+    "Support": [
+      "cloud/network-diagnostics",
+      "cloud/support"
+    ]
   },
   "nanostream": {
-    "nanoStream SDKs/Apps": ["nanostream/nanostream"],
+    "nanoStream SDKs/Apps": [
+      "nanostream/nanostream"
+    ],
     "Android": [
       "nanostream/android/nanostream_android_getting_started",
       "nanostream/android/nanostream_android_developer_manual_playback",
@@ -146,9 +170,13 @@
       "faq/programming_sdk_api",
       "faq/faq_nanostream_sdk_win"
     ],
-    "Purchase and License": ["faq/faq_purchase_and_license"]
+    "Purchase and License": [
+      "faq/faq_purchase_and_license"
+    ]
   },
   "samples": {
-    "Samples": ["samples/samples"]
+    "Samples": [
+      "samples/samples"
+    ]
   }
 }

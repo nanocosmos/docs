@@ -7,10 +7,10 @@ sidebar_label: NanoPlayer
 <a name="NanoPlayer"></a>
 
 ## NanoPlayer
-NanoPlayer (H5Live) Public API Class 4.13.0
+NanoPlayer (H5Live) Public API Class 4.13.1
 
 **Kind**: global class  
-**Version**: 4.13.0  
+**Version**: 4.13.1  
 <a name="new_NanoPlayer_new"></a>
 
 ### new NanoPlayer(playerDivId)
@@ -2737,7 +2737,7 @@ The config object to pass as param for the 'setup' call.
     <td>[metrics.eventId]</td><td><code>string</code></td><td></td><td><p>Application event id. If the stream is related to a certain event, e.g. webinar, auction or sports event, providing this information enables you to filter or aggregate data by this event.</p>
 </td>
     </tr><tr>
-    <td>[metrics.statsInterval]</td><td><code>number</code></td><td><code>10</code></td><td><p>The interval how often the stats should be collected in seconds. The minimum is 5 seconds.</p>
+    <td>[metrics.statsInterval]</td><td><code>number</code></td><td><code>10</code></td><td><p>The interval how often the stats should be collected in seconds. The minimum is 5 seconds..</p>
 </td>
     </tr><tr>
     <td>[metrics.customField*]</td><td><code>string</code></td><td></td><td><p>Custom field. * can be replaced with 1 - 10 e.g. &#39;customField3&#39;. Possible from &#39;customField1&#39; to &#39;customField10&#39;.</p>
