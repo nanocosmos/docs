@@ -4,7 +4,6 @@
       "nanoplayer/nanoplayer_introduction",
       "nanoplayer/nanoplayer_getting_started",
       "nanoplayer/nanoplayer_supported_browsers",
-      "nanoplayer/nanoplayer_release_history",
       "nanoplayer/nanoplayer_player_metrics",
       "nanoplayer/nanoplayer_iframe"
     ],
@@ -17,6 +16,10 @@
       "nanoplayer/nanoplayer_feature_reconnect_timeouts",
       "nanoplayer/nanoplayer_feature_media_error_recovery",
       "nanoplayer/nanoplayer_feature_source_defaults"
+    ],
+    "Releases": [
+      "nanoplayer/nanoplayer_release_latest",
+      "nanoplayer/nanoplayer_release_history"
     ],
     "API": [
       "nanoplayer/nanoplayer_api",
