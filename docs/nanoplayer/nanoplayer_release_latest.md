@@ -24,7 +24,7 @@ Further an issue with `updateSource` in `PAUSED` state with `source.options.swit
 - `style.scaling` with non-default value will be preserved during `updateSource` with server-side switch to the same stream
 - initial switch up interval with ABR configured `source` will be prevented from starting in `PAUSED` state
 
-### **Release Package 4.13.1**
+### **Release Packages**
 
 - [4.13.1](https://files.nanocosmos.de/index.php/s/yd9Py2zznJqJL68)
 - [latest 4.x](https://files.nanocosmos.de/index.php/s/4nndC45mcB6oSa6)
