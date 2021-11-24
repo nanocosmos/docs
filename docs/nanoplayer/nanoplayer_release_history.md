@@ -1,7 +1,7 @@
 ---
 id: nanoplayer_release_history
 title: Release History
-sidebar_label: Release History
+sidebar_label: History
 ---
 
 ## Please find more about the **source defaults** feature in our [documentation](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_feature_source_defaults/).
