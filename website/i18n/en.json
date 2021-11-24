@@ -284,7 +284,11 @@
       },
       "nanoplayer/nanoplayer_release_history": {
         "title": "Release History",
-        "sidebar_label": "Release History"
+        "sidebar_label": "History"
+      },
+      "nanoplayer/nanoplayer_release_latest": {
+        "title": "Latest Release",
+        "sidebar_label": "Latest"
       },
       "nanoplayer/nanoplayer_supported_browsers": {
         "title": "Support Browsers",
