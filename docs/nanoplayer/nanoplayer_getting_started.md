@@ -6,7 +6,7 @@ sidebar_label: Getting started
 
 ## Embedding H5Live player on your own web page
 
-There are a few options when it comes to implementing H5Live player on your web page, we will walk you through each of them, however, we highly recommend the simplest solution by using supported bintu cloud: [**simplified RTMP config with default service bintu**](#Option 1)).
+There are a few options when it comes to implementing H5Live player on your web page, we will walk you through each of them, however, we highly recommend the simplest solution by using supported bintu cloud: [**simplified RTMP config with default service bintu**](#Option-1)).
 
 In each case, it is necessary to load minified player `nanoplayer.4.min.js` script:
 ```html
@@ -72,6 +72,7 @@ The configuration with `source.defaults.service` allows for combinations with cu
 
 In most cases the simplified RTMP configuration is sufficient but in case of enhanced flexibility needed or usage of older version of nanoplayer (until 4.13.0), this is a recommended configuration.
 
+```html
 <div id='playerDiv'></div>
 <script src='https://demo.nanocosmos.de/nanoplayer/api/release/nanoplayer.4.min.js?20200806'></script>
 <script>
@@ -114,6 +115,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 </script>
+```
 
 ### Option 3: configuration with bintu stream id 
 
