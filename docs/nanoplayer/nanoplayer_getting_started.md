@@ -10,11 +10,11 @@ There are a few options when it comes to implementing H5Live player on your web 
 
 **Basically, there are 3 options for configuration:**
 * configuration via RTMP streamname
- 1. [**simple RTMP (since v4.13.0)**](#Option-1-simple-rtmp-config-with-default-service-bintu)
- 2. [**custom RTMP**](#Option-2-custom-rtmp)
+ 1. [**simple RTMP (since v4.13.0)**](#option-1-simple-rtmp-config-with-default-service-bintu)
+ 2. [**custom RTMP**](#option-2-custom-rtmp)
 
 * configuration via bintu stream id
- 3. [**bintu stream id**](#Option-3-configuration-with-bintu-stream-id)
+ 3. [**bintu stream id**](#option-3-configuration-with-bintu-stream-id)
 
 ### Option 1: simple RTMP config with default service bintu
 
