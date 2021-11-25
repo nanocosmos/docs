@@ -8,13 +8,13 @@ sidebar_label: Getting started
 
 There are a few options when it comes to implementing H5Live player on your web page depending on your needs, we will walk you through each of them.
 
-Basically, there are 3 options for configuration:
+**Basically, there are 3 options for configuration:**
 * configuration via RTMP streamname
- 1. simple RTMP (since v4.13.0)
- 2. custom RTMP 
+ 1. [**simple RTMP (since v4.13.0)**](#Option-1)
+ 2. [**custom RTMP**](#Option-2)
 
 * configuration via bintu stream id
- 3. bintu stream id
+ 3. [**bintu stream id**](#Option-3)
 
 ### Option 1: simple RTMP config with default service bintu
 
@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', function () {
 The configuration with `source.defaults.service` allows for combinations with custom server or RTMP urls. More examples and full documentation of the source defaults feature can be found here: [Source defaults](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_feature_source_defaults).
 
 
-### Option 2:  custom RTMP
+### Option 2: custom RTMP
 
 In most cases the simple RTMP configuration is sufficient but in case of enhanced flexibility needed or usage of older version of nanoplayer (until 4.13.0), this is a recommended configuration.
 
