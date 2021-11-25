@@ -6,26 +6,24 @@ sidebar_label: Getting started
 
 ## Embedding H5Live player on your own web page
 
-There are a few options when it comes to implementing H5Live player on your web page, we will walk you through each of them, however, we highly recommend the simplest solution by using supported bintu cloud: [**simplified RTMP config with default service bintu**](#Option-1)).
+There are a few options when it comes to implementing H5Live player on your web page depending on your needs, we will walk you through each of them.
 
-In each case, it is necessary to load minified player `nanoplayer.4.min.js` script:
-```html
-<script  src='https://demo.nanocosmos.de/nanoplayer/api/release/nanoplayer.4.min.js?20191114'></script>
-```
+Basically, there are 3 options for configuration:
+* configuration via RTMP streamname
+ 1. simple RTMP (since v4.13.0)
+ 2. custom RTMP 
 
-For the basic configuration there are 3 options: 
-* simplified RTMP (since v4.13.0) - highly recommended;
-* regular RTMP - recommended;
-* bintu stream id;
+* configuration via bintu stream id
+ 3. bintu stream id
 
-### Option 1: simplified RTMP config with default service bintu
+### Option 1: simple RTMP config with default service bintu
 
 Using source defaults with standard nanoStream Cloud was introduced in **nanoStream H5Live Player Version 4.13.0**. By passing `defaults.service` with the value `'bintu'`, the bintu defaults values for `h5live.server` and `h5live.rtmp.url` will be applied which means that adding it on your side is not needed.
 
 
 ```html
 <div id='playerDiv'></div>
-<script src='https://demo.nanocosmos.de/nanoplayer/api/release/nanoplayer.4.min.js?20200806'></script>
+<script src='https://demo.nanocosmos.de/nanoplayer/api/release/nanoplayer.4.min.js'></script>
 <script>
 var player;
 var config = {
@@ -47,11 +45,8 @@ var config = {
     'playback': {
         'autoplay': true,
         'automute': true,
-        'muted': true
+        'muted': false
     },
-    'style': {
-        'displayMutedAutoplay': true
-    }
 };
 document.addEventListener('DOMContentLoaded', function () {
     player = new NanoPlayer('playerDiv');
@@ -68,13 +63,13 @@ document.addEventListener('DOMContentLoaded', function () {
 The configuration with `source.defaults.service` allows for combinations with custom server or RTMP urls. More examples and full documentation of the source defaults feature can be found here: [Source defaults](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_feature_source_defaults).
 
 
-### Option 2:  regular RTMP
+### Option 2:  custom RTMP
 
-In most cases the simplified RTMP configuration is sufficient but in case of enhanced flexibility needed or usage of older version of nanoplayer (until 4.13.0), this is a recommended configuration.
+In most cases the simple RTMP configuration is sufficient but in case of enhanced flexibility needed or usage of older version of nanoplayer (until 4.13.0), this is a recommended configuration.
 
 ```html
 <div id='playerDiv'></div>
-<script src='https://demo.nanocosmos.de/nanoplayer/api/release/nanoplayer.4.min.js?20200806'></script>
+<script src='https://demo.nanocosmos.de/nanoplayer/api/release/nanoplayer.4.min.js'></script>
 <script>
 var player;
 var streamName = 'XXXXX-YYYYY'; // your bintu stream name (not the stream ID)
@@ -99,11 +94,8 @@ var config = {
     'playback': {
         'autoplay': true,
         'automute': true,
-        'muted': true
+        'muted': false
     },
-    'style': {
-        'displayMutedAutoplay': true
-    }
 };
 document.addEventListener('DOMContentLoaded', function () {
     player = new NanoPlayer('playerDiv');
@@ -129,7 +121,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 ```html
 <div id='playerDiv'></div>
-<script src='https://demo.nanocosmos.de/nanoplayer/api/release/nanoplayer.4.min.js?20200227'></script>
+<script src='https://demo.nanocosmos.de/nanoplayer/api/release/nanoplayer.4.min.js'></script>
 <script>
 var player;
 var streamIdValue = '1111-2222-3333-4444-5555'; // your bintu stream ID (not the stream name)
@@ -148,9 +140,6 @@ var config = {
         'autoplay': true,
         'automute': true,
         'muted': false
-    },
-    'style': {
-        'controls': true
     }
 };
 document.addEventListener('DOMContentLoaded', function () {
@@ -177,7 +166,7 @@ Embedding the H5LivePlayer in your Vue.js project is simple:
 1. Include the provided `nanoplayer.4.min.js` script within your `index.html` in your `root` directory
 
 ```html
-<script src='https://demo.nanocosmos.de/nanoplayer/api/release/nanoplayer.4.min.js?20200227'></script>
+<script src='https://demo.nanocosmos.de/nanoplayer/api/release/nanoplayer.4.min.js'></script>
 ```
 
 <br>
@@ -191,7 +180,7 @@ Example `index.html`
     <meta charset='utf-8'>
     <meta name='viewport' content='width=device-width,initial-scale=1.0'>
     <title>h5-live-player</title>
-    <script src='https://demo.nanocosmos.de/nanoplayer/api/release/nanoplayer.4.min.js?20200227'></script>
+    <script src='https://demo.nanocosmos.de/nanoplayer/api/release/nanoplayer.4.min.js'></script>
   </head>
   <body>
     <div id='app'></div>
@@ -235,11 +224,7 @@ Example `index.html`
             'playback': {
                 'autoplay': true,
                 'automute': true,
-                'muted': false,
-                'flashplayer': '//demo.nanocosmos.de/nanoplayer/nano.player.swf'
-            },
-            'style': {
-                'controls': true
+                'muted': false
             }
           }
         }
@@ -287,7 +272,7 @@ Now you should see the player running in your browser's window.
 1. Import your minified nanoplayer version within your `index.html` in your `public` directory
 
 ```html
-<script  src='https://demo.nanocosmos.de/nanoplayer/api/release/nanoplayer.4.min.js?20191114'></script>
+<script  src='https://demo.nanocosmos.de/nanoplayer/api/release/nanoplayer.4.min.js'></script>
 ```
 
 Example:
@@ -298,7 +283,7 @@ Example:
   <head>
     <meta charset='utf-8' />
     <meta name='viewport' content='width=device-width, initial-scale=1' />
-    <script src='https://demo.nanocosmos.de/nanoplayer/api/release/nanoplayer.4.min.js?20200326'></script>
+    <script src='https://demo.nanocosmos.de/nanoplayer/api/release/nanoplayer.4.min.js'></script>
     <title>H5Live Player</title>
   </head>
   <body>
@@ -335,11 +320,7 @@ let config = {
     'playback': {
         'autoplay': true,
         'automute': true,
-        'muted': false,
-        'flashplayer': '//demo.nanocosmos.de/nanoplayer/nano.player.swf'
-    },
-    'style': {
-        'controls': true
+        'muted': false
     }
 };
 ```
@@ -385,7 +366,7 @@ componentDidMount() {
 - It is important to add a wrapper around the `playerDiv` element, otherwise you won't see the nanoStream H5Live Player
 
 ```html
-<script src='https://demo.nanocosmos.de/nanoplayer/api/release/nanoplayer.4.min.js?20200302'></script>
+<script src='https://demo.nanocosmos.de/nanoplayer/api/release/nanoplayer.4.min.js'></script>
 <div style='width: 480px; height: 360px; overflow: hidden; position: absolute; margin: 0; padding: 0;'>
 <div id='playerDiv'></div>
 </div>
@@ -412,10 +393,7 @@ componentDidMount() {
             'playback': {
                 'autoplay': true,
                 'automute': true,
-                'muted': true
-            },
-            'style': {
-                'displayMutedAutoplay': true
+                'muted': false
             }
         };
         player = new NanoPlayer('playerDiv');
