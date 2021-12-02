@@ -9,14 +9,10 @@ sidebar_label: Getting started
 There are a few options when it comes to implementing H5Live player on your web page depending on your needs, we will walk you through each of them.
 
 **Basically, there are 3 options for configuration:**
-* configuration via RTMP streamname
- 1. [**simple RTMP (since v4.13.0)**](#option-1-simple-rtmp-config-with-default-service-bintu)
- 2. [**custom RTMP**](#option-2-custom-rtmp)
+ 1. [**Simple configuration with RTMP streamname (since v4.13.0)**](#option-1-simple-configuration-with-RTMP-streamname)
+ 2. [**Custom configuration with RTMP streamname**](#option-2-custom-configuration-with-RTMP-streamname)
 
-* configuration via bintu stream id
- 3. [**bintu stream id**](#option-3-configuration-with-bintu-stream-id)
-
-### Option 1: simple RTMP config with default service bintu
+### Option 1: simple configuration with RTMP streamname
 
 Using source defaults with standard nanoStream Cloud was introduced in **nanoStream H5Live Player Version 4.13.0**. By passing `defaults.service` with the value `'bintu'`, the bintu defaults values for `h5live.server` and `h5live.rtmp.url` will be applied which means that adding it on your side is not needed.
 
@@ -63,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function () {
 The configuration with `source.defaults.service` allows for combinations with custom server or RTMP urls. More examples and full documentation of the source defaults feature can be found here: [Source defaults](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_feature_source_defaults).
 
 
-### Option 2: custom RTMP
+### Option 2: custom configuration with RTMP streamname
 
 In most cases the simple RTMP configuration is sufficient but in case of enhanced flexibility needed or usage of older version of nanoplayer (until 4.13.0), this is a recommended configuration.
 
@@ -108,52 +104,6 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 </script>
 ```
-
-### Option 3: configuration with bintu stream id 
-
-**Important**: replace the value of `streamid` with your own `streamiIdValue` value
-
-   <br>
-
-   > **Note: ** 
-   >
-   > If you don't know how to get your custom `streamid` click [here](../cloud/cloud_getting_started) .
-
-```html
-<div id='playerDiv'></div>
-<script src='https://demo.nanocosmos.de/nanoplayer/api/release/nanoplayer.4.min.js'></script>
-<script>
-var player;
-var streamIdValue = '1111-2222-3333-4444-5555'; // your bintu stream ID (not the stream name)
-var config = {
-    'source': {
-        'entries': [
-            {
-                'bintu': {
-                    'apiurl': 'https://bintu.nanocosmos.de',
-                    'streamid': streamIdValue
-                }
-            }
-        ]
-    },
-    'playback': {
-        'autoplay': true,
-        'automute': true,
-        'muted': false
-    }
-};
-document.addEventListener('DOMContentLoaded', function () {
-    player = new NanoPlayer('playerDiv');
-    player.setup(config).then(function (config) {
-        console.log('setup success');
-        console.log('config: ' + JSON.stringify(config, undefined, 4));
-    }, function (error) {
-        alert(error.message);
-    });
-});
-</script>
-```
-
 
 ## Frameworks
 
