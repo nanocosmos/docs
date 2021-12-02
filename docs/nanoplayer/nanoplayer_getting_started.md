@@ -8,7 +8,7 @@ sidebar_label: Getting started
 
 There are a few options when it comes to implementing H5Live player on your web page depending on your needs, we will walk you through each of them.
 
-**Basically, there are 3 options for configuration:**
+**Basically, there are 2 options for configuration:**
  1. [**Simple configuration with RTMP streamname (since v4.13.0)**](#option-1-simple-configuration-with-RTMP-streamname)
  2. [**Custom configuration with RTMP streamname**](#option-2-custom-configuration-with-RTMP-streamname)
 
