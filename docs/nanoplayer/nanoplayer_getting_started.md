@@ -6,55 +6,99 @@ sidebar_label: Getting started
 
 ## Embedding H5Live player on your own web page
 
-You can embed this code snippet to test the H5Live player on your page in no time. 
+There are a few options when it comes to implementing H5Live player on your web page depending on your needs, we will walk you through each of them.
 
-**Important:** replace `CUSTOM-STREAMID`  with your own `streamid`.
+**Basically, there are 3 options for configuration:**
+ 1. [**Simple configuration with RTMP streamname (since v4.13.0)**](#option-1-simple-configuration-with-RTMP-streamname)
+ 2. [**Custom configuration with RTMP streamname**](#option-2-custom-configuration-with-RTMP-streamname)
+ 3. [**Configuration with bintu stream id**](#option-3-configuration-with-bintu-stream-id)
 
-> **Note:** 
->
-> If you don't know how to get your custom bintu.live `streamid` click [here](../cloud/cloud_getting_started.md) .
+### Option 1: simple configuration with RTMP streamname
 
-You find a code sample on the demo player on the bintu dashboard. 
-Here is an recommended example configuration and code which runs on any web page:
+Using source defaults with standard nanoStream Cloud was introduced in **nanoStream H5Live Player Version 4.13.0**. By passing `defaults.service` with the value `'bintu'`, the bintu defaults values for `h5live.server` and `h5live.rtmp.url` will be applied which means that adding it on your side is not needed.
+
 
 ```html
-<div id="playerDiv"></div>
-<script src="https://demo.nanocosmos.de/nanoplayer/api/release/nanoplayer.4.min.js?20200806"></script>
+<div id='playerDiv'></div>
+<script src='https://demo.nanocosmos.de/nanoplayer/api/release/nanoplayer.4.min.js'></script>
 <script>
 var player;
-var streamName = "XXXXX-YYYYY"; // your bintu stream name (not the stream ID)
 var config = {
-    "source": {
-        "entries": [
+   'source': {
+            'defaults': {
+                'service': 'bintu'
+            },
+            'entries': [
+                    {
+                        'h5live': {
+                             // your rtmp streamname
+                            'rtmp': {
+                                'streamname': 'XXXXX-YYYYY'
+                            }
+                        }
+                    }
+            ]
+        },
+    'playback': {
+        'autoplay': true,
+        'automute': true,
+        'muted': false
+    },
+};
+document.addEventListener('DOMContentLoaded', function () {
+    player = new NanoPlayer('playerDiv');
+    player.setup(config).then(function (config) {
+        console.log('setup success');
+        console.log('config: ' + JSON.stringify(config, undefined, 4));
+    }, function (error) {
+        alert(error.message);
+    });
+});
+</script>
+```
+
+The configuration with `source.defaults.service` allows for combinations with custom server or RTMP urls. More examples and full documentation of the source defaults feature can be found here: [Source defaults](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_feature_source_defaults).
+
+
+### Option 2: custom configuration with RTMP streamname
+
+In most cases the simple RTMP configuration is sufficient but in case of enhanced flexibility needed or usage of older version of nanoplayer (until 4.13.0), this is a recommended configuration.
+
+```html
+<div id='playerDiv'></div>
+<script src='https://demo.nanocosmos.de/nanoplayer/api/release/nanoplayer.4.min.js'></script>
+<script>
+var player;
+var streamName = 'XXXXX-YYYYY'; // your bintu stream name (not the stream ID)
+var config = {
+    'source': {
+        'entries': [
             {
-                "h5live": {
-                    "rtmp": {
-                        "url": "rtmp://bintu-play.nanocosmos.de:80/play",
-                        "streamname": streamName
+                'h5live': {
+                    'rtmp': {
+                        'url': 'rtmp://bintu-play.nanocosmos.de:80/play',
+                        'streamname': streamName
                     },
-                    "server": {
-                        "websocket": "wss://bintu-h5live.nanocosmos.de:443/h5live/stream/stream.mp4",
-                        "hls": "https://bintu-h5live.nanocosmos.de:443/h5live/http/playlist.m3u8",
-                        "progressive": "https://bintu-h5live.nanocosmos.de:443/h5live/http/stream.mp4"
+                    'server': {
+                        'websocket': 'wss://bintu-h5live.nanocosmos.de:443/h5live/stream/stream.mp4',
+                        'hls': 'https://bintu-h5live.nanocosmos.de:443/h5live/http/playlist.m3u8',
+                        'progressive': 'https://bintu-h5live.nanocosmos.de:443/h5live/http/stream.mp4'
                     }
                 }
             }
         ]
     },
-    "playback": {
-        "autoplay": true,
-        "automute": true,
-        "muted": true
+    'playback': {
+        'autoplay': true,
+        'automute': true,
+        'muted': false
     },
-    "style": {
-        "displayMutedAutoplay": true
-    }
 };
 document.addEventListener('DOMContentLoaded', function () {
-    player = new NanoPlayer("playerDiv");
+    player = new NanoPlayer('playerDiv');
     player.setup(config).then(function (config) {
-        console.log("setup success");
-        console.log("config: " + JSON.stringify(config, undefined, 4));
+        console.log('setup success');
+        console.log('config: ' + JSON.stringify(config, undefined, 4));
     }, function (error) {
         alert(error.message);
     });
@@ -62,39 +106,35 @@ document.addEventListener('DOMContentLoaded', function () {
 </script>
 ```
 
-### Alternative configuration with bintu stream id 
+### Option 3: configuration with bintu stream id
 
 ```html
-<div id="playerDiv"></div>
-<script src="https://demo.nanocosmos.de/nanoplayer/api/release/nanoplayer.4.min.js?20200227"></script>
+<div id='playerDiv'></div>
+<script src='https://demo.nanocosmos.de/nanoplayer/api/release/nanoplayer.4.min.js'></script>
 <script>
 var player;
-var streamId = "1111-2222-3333-4444-5555"; // your bintu stream ID (not the stream name)
+var streamId = '1111-2222-3333-4444-5555'; // your bintu stream ID (not the stream name)
 var config = {
-    "source": {
-        "entries": [
+    'source': {
+        'entries': [
             {
-                "bintu": {
-                    "apiurl": "https://bintu.nanocosmos.de",
-                    "streamid": streamId
+                'bintu': {
+                    'streamid': streamId
                 }
             }
         ]
     },
-    "playback": {
-        "autoplay": true,
-        "automute": true,
-        "muted": false
-    },
-    "style": {
-        "controls": true
+    'playback': {
+        'autoplay': true,
+        'automute': true,
+        'muted': false
     }
 };
 document.addEventListener('DOMContentLoaded', function () {
-    player = new NanoPlayer("playerDiv");
+    player = new NanoPlayer('playerDiv');
     player.setup(config).then(function (config) {
-        console.log("setup success");
-        console.log("config: " + JSON.stringify(config, undefined, 4));
+        console.log('setup success');
+        console.log('config: ' + JSON.stringify(config, undefined, 4));
     }, function (error) {
         alert(error.message);
     });
@@ -103,10 +143,9 @@ document.addEventListener('DOMContentLoaded', function () {
 ```
 
 
-
 ## Frameworks
 
-
+A few examples of player implementation for different frameworks:
 
 ### Vue.js 
 
@@ -115,7 +154,7 @@ Embedding the H5LivePlayer in your Vue.js project is simple:
 1. Include the provided `nanoplayer.4.min.js` script within your `index.html` in your `root` directory
 
 ```html
-<script src="https://demo.nanocosmos.de/nanoplayer/api/release/nanoplayer.4.min.js?20200227"></script>
+<script src='https://demo.nanocosmos.de/nanoplayer/api/release/nanoplayer.4.min.js'></script>
 ```
 
 <br>
@@ -126,13 +165,13 @@ Example `index.html`
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width,initial-scale=1.0'>
     <title>h5-live-player</title>
-    <script src="https://demo.nanocosmos.de/nanoplayer/api/release/nanoplayer.4.min.js?20200227"></script>
+    <script src='https://demo.nanocosmos.de/nanoplayer/api/release/nanoplayer.4.min.js'></script>
   </head>
   <body>
-    <div id="app"></div>
+    <div id='app'></div>
   </body>
 </html>
 ```
@@ -142,45 +181,38 @@ Example `index.html`
 2. Create a new Vue Component with a simple div as a placeholder that will contain player the content.
 
 ```html
-<div id="playerDiv"></div>
+<div id='playerDiv'></div>
 ```
 
 <br>
 
 3. Add a new variable called `config` to your `data() method` inside your component
 
-   **Important**: replace `CUSTOM-STREAMID`  with your own `streamid`
-
-   <br>
-
-   > **Note: ** 
-   >
-   > If you don't know how to get your custom `streamid` click [here](../cloud/cloud_getting_started) .
-
 ```html
 <script>
     export default {
       data() {
         return {
-          "config": {
-            "source": {
-              "entries": [
-                {
-                  "bintu": {
-                      "apiurl": "https://bintu.nanocosmos.de",
-                      "streamid": "CUSTOM-STREAMID"
-                  }
-                }
-              ]
+          'config': {
+            'source': {
+            'defaults': {
+                'service': 'bintu'
             },
-            "playback": {
-                "autoplay": true,
-                "automute": true,
-                "muted": false,
-                "flashplayer": "//demo.nanocosmos.de/nanoplayer/nano.player.swf"
+                'entries': [
+                    {
+                        'h5live': {
+                             // your rtmp streamname
+                            'rtmp': {
+                                'streamname': 'XXXXX-YYYYY'
+                            }
+                        }
+                    }
+                ]
             },
-            "style": {
-                "controls": true
+            'playback': {
+                'autoplay': true,
+                'automute': true,
+                'muted': false
             }
           }
         }
@@ -206,10 +238,10 @@ Example `index.html`
   export default {
     data() { ... },
     mounted: function(){
-      var nanoPlayer = new NanoPlayer("playerDiv");
+      var nanoPlayer = new NanoPlayer('playerDiv');
       nanoPlayer.setup(this.config).then(function (config) {
-          console.log("setup success");
-          console.log("config: " + JSON.stringify(config, undefined, 4));
+          console.log('setup success');
+          console.log('config: ' + JSON.stringify(config, undefined, 4));
       }, function (error) {
           alert(error.message);
       });
@@ -219,7 +251,7 @@ Example `index.html`
 ```
 
 <br>
-Now you should see the player running in your browser window.
+Now you should see the player running in your browser's window.
 
 
 
@@ -228,7 +260,7 @@ Now you should see the player running in your browser window.
 1. Import your minified nanoplayer version within your `index.html` in your `public` directory
 
 ```html
-<script  src="https://demo.nanocosmos.de/nanoplayer/api/release/nanoplayer.4.min.js?20191114"></script>
+<script  src='https://demo.nanocosmos.de/nanoplayer/api/release/nanoplayer.4.min.js'></script>
 ```
 
 Example:
@@ -237,58 +269,59 @@ Example:
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <script src="https://demo.nanocosmos.de/nanoplayer/api/release/nanoplayer.4.min.js?20200326"></script>
+    <meta charset='utf-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1' />
+    <script src='https://demo.nanocosmos.de/nanoplayer/api/release/nanoplayer.4.min.js'></script>
     <title>H5Live Player</title>
   </head>
   <body>
-    <div id="root"></div>
+    <div id='root'></div>
   </body>
 </html>
 ```
 
-1. Create a React Component with a `div` tag, to create a entrypoint for the player
+1. Create a React Component with a `div` tag, to create an entry point for the player
 
 ```jsx
-<div id="playerDiv" />
+<div id='playerDiv' />
 ```
 
 2. Add a `config` object to your `state`
 
 ```js
 let config = {
-    "source": {
-        "entries": [
-            {
-                "bintu": {
-                    "apiurl": "https://bintu.nanocosmos.de",
-                    "streamid": "CUSTOM-STREAMID"
+    'source': {
+        'defaults': {
+            'service': 'bintu'
+        },
+        'entries': [
+                {
+                    'h5live': {
+                         // your rtmp streamname
+                        'rtmp': {
+                            'streamname': 'XXXXX-YYYYY'
+                        }
+                    }
                 }
-            }
         ]
     },
-    "playback": {
-        "autoplay": true,
-        "automute": true,
-        "muted": false,
-        "flashplayer": "//demo.nanocosmos.de/nanoplayer/nano.player.swf"
-    },
-    "style": {
-        "controls": true
+    'playback': {
+        'autoplay': true,
+        'automute': true,
+        'muted': false
     }
 };
 ```
 
-3. setup the player 
+3. Setup the player 
 
 ```js
 function setupNanoplayer(config) {
-    var nanoPlayer = new window.NanoPlayer("playerDiv");
+    var nanoPlayer = new window.NanoPlayer('playerDiv');
 
     nanoPlayer.setup(config).then(function (config) {
-        console.log("setup success");
-        console.log("config: " + JSON.stringify(config, undefined, 4));
+        console.log('setup success');
+        console.log('config: ' + JSON.stringify(config, undefined, 4));
     }, function (error) {
         alert(error.message);
     });
@@ -318,48 +351,43 @@ componentDidMount() {
 
 2. Embed the Player
 
-- It is important to add a wrapper around the `playerDiv` Element, otherwise you wont see the nanoStream H5Live Player
+- It is important to add a wrapper around the `playerDiv` element, otherwise you won't see the nanoStream H5Live Player
 
 ```html
-<script src="https://demo.nanocosmos.de/nanoplayer/api/release/nanoplayer.4.min.js?20200302"></script>
-<div style="width: 480px; height: 360px; overflow: hidden; position: absolute; margin: 0; padding: 0;">
-<div id="playerDiv"></div>
+<script src='https://demo.nanocosmos.de/nanoplayer/api/release/nanoplayer.4.min.js'></script>
+<div style='width: 480px; height: 360px; overflow: hidden; position: absolute; margin: 0; padding: 0;'>
+<div id='playerDiv'></div>
 </div>
 
 <script>
         var player;
-        var streamName = "XXXXX-YYYYY"; // your bintu stream name (not the stream ID)
+        var streamName = 'XXXXX-YYYYY'; // your bintu stream name (not the stream ID)
         var config = {
-            "source": {
-                "entries": [
+            'source': {
+                'defaults': {
+                    'service': 'bintu'
+                },
+                'entries': [
                     {
-                        "h5live": {
-                            "rtmp": {
-                                "url": "rtmp://bintu-play.nanocosmos.de:80/play",
-                                "streamname": streamName
-                            },
-                            "server": {
-                                "websocket": "wss://bintu-h5live.nanocosmos.de:443/h5live/stream/stream.mp4",
-                                "hls": "https://bintu-h5live.nanocosmos.de:443/h5live/http/playlist.m3u8",
-                                "progressive": "https://bintu-h5live.nanocosmos.de:443/h5live/http/stream.mp4"
+                        'h5live': {
+                             // your rtmp streamname
+                            'rtmp': {
+                                'streamname': 'XXXXX-YYYYY'
                             }
                         }
                     }
                 ]
             },
-            "playback": {
-                "autoplay": true,
-                "automute": true,
-                "muted": true
-            },
-            "style": {
-                "displayMutedAutoplay": true
+            'playback': {
+                'autoplay': true,
+                'automute': true,
+                'muted': false
             }
         };
-        player = new NanoPlayer("playerDiv");
+        player = new NanoPlayer('playerDiv');
         player.setup(config).then(function (config) {
-            console.log("setup success");
-            console.log("config: " + JSON.stringify(config, undefined, 4));
+            console.log('setup success');
+            console.log('config: ' + JSON.stringify(config, undefined, 4));
         }, function (error) {
             alert(error.message);
         });
