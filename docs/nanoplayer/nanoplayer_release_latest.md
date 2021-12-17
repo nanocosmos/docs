@@ -6,26 +6,30 @@ sidebar_label: Latest
 
 ## Please find more about the **source defaults** feature in our [documentation](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_feature_source_defaults/).
 
-## **[4.13.1]**
+## **[4.13.2]**
 
 ### **Release Notes**
 
-This version includes a patch regarding the player's `style.scaling` configuration and `updateSource`. If `style.scaling` is set to a different value as default `'letterbox'` e.g. `'crop'` or `'fill'`
-this setting will now always be preserved during an `updateSource` call.
-Before the player styling was
-falling back to default values after an server-side updateSource call if the new target stream name
-and the previous stream name were the same.
-Further an issue with `updateSource` in `PAUSED` state with `source.options.switch.forcePlay` set to `false` and ABR enabled is solved, preventing unintended switching in `PAUSED` state.
+This version provides an improvement for iOS metadata processing. The new mode is preventing occasionally delayed metadata on iOS and is enabled by default.
+To go back to legacy mode it can be disabled by setting the new parameter `config.playback.metadataLowDelay` to `false`.
+Also an issue with changing the metadata connection at stream switch on iOS with switch method `'client'` has been solved.
+Further this patch includes a fix for a potential css related layout issue in iOS fullscreen mode.
 
 ### **Changelog**
 
+### Improved
+
+- modified metadata processing to prevent occasionally delayed metadata on iOS
+  - can be disabled via new parameter `config.playback.metadataLowDelay` set to `false`
+  - default: `true`
+
 ### Fixed
 
-- `style.scaling` with non-default value will be preserved during `updateSource` with server-side switch to the same stream
-- initial switch up interval with ABR configured `source` will be prevented from starting in `PAUSED` state
+- change metadata connection on iOS at stream switch with switch method `'client'`
+- prevent iOS fullscreen layout issue by adding `!important` flag to position
 
-### **Release Packages**
+### **Release Package**
 
-- [4.13.1](https://files.nanocosmos.de/index.php/s/yd9Py2zznJqJL68)
+- [4.13.2](https://files.nanocosmos.de/index.php/s/w4BRJmsqAKEZmQe)
 - [latest 4.x](https://files.nanocosmos.de/index.php/s/4nndC45mcB6oSa6)
 - [latest](https://files.nanocosmos.de/index.php/s/2tpCzgRjNEZDzeP)
