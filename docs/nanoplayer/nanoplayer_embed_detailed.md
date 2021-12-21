@@ -31,7 +31,7 @@ Link: `https://demo.nanocosmos.de/nanoplayer/embed/1.1.0/nanoplayer.html?entry.r
 
 ```
 
-**Sample links for v1.1.0 implementation:**
+**Example URLs for embed player v1.1.0:**
 
 * single stream minimal:
     * https://demo.nanocosmos.de/nanoplayer/embed/1.1.0/nanoplayer.html?entry.rtmp.streamname=HX26g-NRbx9
@@ -39,7 +39,7 @@ Link: `https://demo.nanocosmos.de/nanoplayer/embed/1.1.0/nanoplayer.html?entry.r
 * abr (entries):
     * https://demo.nanocosmos.de/nanoplayer/embed/1.1.0/nanoplayer.html?entry.rtmp.streamname=HX26g-NRbx9&entry.info.bitrate=1500&entry2.rtmp.streamname=HX26g-uVn3M&entry2.info.bitrate=800&entry3.rtmp.streamname=HX26g-VbAxm&entry3.info.bitrate=200&options.rule=deviationOfMean2&startIndex=2
 
-* autoplay/mute settings:
+* adding `muted` setting:
     * https://demo.nanocosmos.de/nanoplayer/embed/1.1.0/nanoplayer.html?entry.rtmp.streamname=HX26g-NRbx9&playback.autoplay=true&playback.automute=false
 
 * UI related: fullScreenControl, displayMutedAutoplay, backgroundColor and poster
@@ -75,5 +75,5 @@ Supported query params:
 
 Player config which is not supported in embed:
 
-* metrics
+* player metrics configuration
 * secure playback with referer binding
