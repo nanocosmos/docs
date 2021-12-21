@@ -20,7 +20,7 @@ Link: `https://demo.nanocosmos.de/nanoplayer/embed/1.1.0/nanoplayer.html?entry.r
 
 ```
 
-iFrame src has to direct to the embedded player ( `https://demo.nanocosmos.de/nanoplayer/embed/1.1.0/nanoplayer.html?entry.rtmp.streamname=XXXXX-YYYYY` ). It is necessary to add the query (like `entry.rtmp` or `bintu` with `streamname` or `id`, else the embedded player will be set but won't run without the stream)!
+iFrame src has to direct to the embedded player ( `https://demo.nanocosmos.de/nanoplayer/embed/1.1.0/nanoplayer.html?entry.rtmp.streamname=XXXXX-YYYYY` ). It is necessary to add the query (like `entry.rtmp` with `streamname`, else the embedded player will be set but won't run without the stream)!
 
 **Example with Nanocosmos Test Stream** 
 Test stream is `streamname=HX26g-NRbx9`
@@ -32,52 +32,48 @@ Link: `https://demo.nanocosmos.de/nanoplayer/embed/1.1.0/nanoplayer.html?entry.r
 ```
 
 **Sample links for v1.1.0 implementation:**
-* default:
+
+* single stream minimal:
     * https://demo.nanocosmos.de/nanoplayer/embed/1.1.0/nanoplayer.html?entry.rtmp.streamname=HX26g-NRbx9
-    * https://demo.nanocosmos.de/nanoplayer/embed/1.1.0/nanoplayer.html?entry.rtmp.streamname=HX26g-NRbx9&playback.autoplay=true&playback.automute=true&playback.muted=false&style.displayMutedAutoplay=true&style.fullScreenControl=true
 
-* !displayMutedAutoplay
-    * https://demo.nanocosmos.de/nanoplayer/embed/1.1.0/nanoplayer.html?entry.rtmp.streamname=HX26g-NRbx9&playback.autoplay=true&playback.automute=true&style.displayMutedAutoplay=false&style.fullScreenControl=false
+* abr (entries):
+    * https://demo.nanocosmos.de/nanoplayer/embed/1.1.0/nanoplayer.html?entry.rtmp.streamname=HX26g-NRbx9&entry.info.bitrate=1500&entry2.rtmp.streamname=HX26g-uVn3M&entry2.info.bitrate=800&entry3.rtmp.streamname=HX26g-VbAxm&entry3.info.bitrate=200&options.rule=deviationOfMean2&startIndex=2
 
-* !autoplay + muted + !fullscreen + poster:
-    * https://demo.nanocosmos.de/nanoplayer/embed/1.1.0/nanoplayer.html?entry.rtmp.streamname=HX26g-NRbx9&playback.autoplay=false&playback.muted=true&style.fullScreenControl=false&style.poster=https://demo1.nanocosmos.de/assets/around720.png
+* autoplay/mute settings:
+    * https://demo.nanocosmos.de/nanoplayer/embed/1.1.0/nanoplayer.html?entry.rtmp.streamname=HX26g-NRbx9&playback.autoplay=true&playback.automute=false
 
-* abr
-    * https://demo.nanocosmos.de/nanoplayer/embed/1.1.0/nanoplayer.html?audioPlayer=0&entry.rtmp.streamname=HX26g-NRbx9&entry.info.bitrate=1500&entry2.rtmp.streamname=HX26g-uVn3M&entry2.info.bitrate=800&entry3.rtmp.streamname=HX26g-VbAxm&entry3.info.bitrate=200&options.rule=deviationOfMean2&startIndex=2
+* UI related: fullScreenControl, displayMutedAutoplay, backgroundColor and poster
+    * https://demo.nanocosmos.de/nanoplayer/embed/1.1.0/nanoplayer.html?entry.rtmp.streamname=HX26g-NRbx9&playback.autoplay=true&playback.automute=false&style.displayMutedAutoplay=false&style.fullScreenControl=true&style.backgroundColor=black&style.poster=https://demo1.nanocosmos.de/assets/around720.png
 
 
 ### Configuration via URL parameters:
 
-For embedded player the configuration is set via URL parameters. 
-The config object's values are reached with a dot notation. As it is already set to be IN the source object, the `source` and `source.entries` should be skipped. Instead, we immediately access values within the object by simply passing in the URL e.g. `startIndex=2`, `options.adaption.rule=deviationOfMean2`. 
-Additionally, there is no need to first access the entries object, values can be reached by i.e: `entry2.info.bitrate`, `playback`.`keepConnection=true` and so on.
-The structure and data types for config object is explicitly explained in docs [https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_api#nanoplayerconfig--codeobjectcode ]
+For embedded player the configuration is set via URL parameters. These params are mapped with the Player [config](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_api#nanoplayerconfig--codeobjectcode) params, however in URL  the dot notation is being used for object values. For all objects the object name has to be included, expect from `config.source`. 
 
 Supported query params:
 * general parameters from `config.source` object (without `source` as prefix) e.g.:
     * `startIndex=2`
-    * `options.adaption.rule=deviationOfMean`
-    * `options.switch.method=client`
+    * `options.adaption.rule=deviationOfMean2`
 * entries from `config.source.entries` array (except `info`, `label` & `tag`) e.g.:
     * `entry.rtmp.streamname=**here the streamname**`
-    * `entry2.bintu.streamid=**here the streamid**`
+    * `entry1.rtmp.streamname=**here the streamname**`
+    * `entry2.rtmp.streamname=**here the streamname**`
 * all playback parameters from `config.playback` e.g.:
-    * `playback.autoplay=false`
-    * `playback.muted=true`
+    * `playback.autoplay=true`
+    * `playback.muted=false`
     * `playback.automute=false`
-    * `playback.timeouts.buffering=60`
+    * `playback.timeouts.buffering=20`
 * all style parameters from `config.style` e.g.:
-    * `style.fullScreenControl=false`
-    * `style.displayMutedAutoplay=false`
-    * `style.backgroundColor=white`
+    * `style.fullScreenControl=true`
+    * `style.displayMutedAutoplay=true`
+    * `style.backgroundColor=black`
 * all tweaks parameters from `config.tweaks` (have to be given in a complete set) e.g.:
     * `tweaks.buffer.limit=1.7`
 
 
-**Important!** Passing params to the URL is slightly different than in a regular nanoplayer example - values can be reached by pointing at them with dot notation (ie entry.info.bitrate, style.controls). While accessing the object, the `source` should be skipped. 
-Note: using rtmp is preferred (entry.rtmp).
+### Not supported
 
+Player config which is not supported in embed:
 
-Not supported:
 * metrics
 * secure playback with referer binding
