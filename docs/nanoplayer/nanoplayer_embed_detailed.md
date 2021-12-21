@@ -40,10 +40,10 @@ Link: `https://demo.nanocosmos.de/nanoplayer/embed/1.1.0/nanoplayer.html?entry.r
     * https://demo.nanocosmos.de/nanoplayer/embed/1.1.0/nanoplayer.html?entry.rtmp.streamname=HX26g-NRbx9&entry.info.bitrate=1500&entry2.rtmp.streamname=HX26g-uVn3M&entry2.info.bitrate=800&entry3.rtmp.streamname=HX26g-VbAxm&entry3.info.bitrate=200&options.rule=deviationOfMean2&startIndex=2
 
 * adding `muted` setting:
-    * https://demo.nanocosmos.de/nanoplayer/embed/1.1.0/nanoplayer.html?entry.rtmp.streamname=HX26g-NRbx9&playback.autoplay=true&playback.automute=false
+    * https://demo.nanocosmos.de/nanoplayer/embed/1.1.0/nanoplayer.html?entry.rtmp.streamname=HX26g-NRbx9&playback.autoplay=true&playback.automute=true
 
 * UI related: fullScreenControl, displayMutedAutoplay, backgroundColor and poster
-    * https://demo.nanocosmos.de/nanoplayer/embed/1.1.0/nanoplayer.html?entry.rtmp.streamname=HX26g-NRbx9&playback.autoplay=true&playback.automute=false&style.displayMutedAutoplay=false&style.fullScreenControl=true&style.backgroundColor=black&style.poster=https://demo1.nanocosmos.de/assets/around720.png
+    * https://demo.nanocosmos.de/nanoplayer/embed/1.1.0/nanoplayer.html?entry.rtmp.streamname=HX26g-NRbx9&playback.autoplay=true&playback.automute=true&style.displayMutedAutoplay=false&style.fullScreenControl=true&style.backgroundColor=black&style.poster=https://demo1.nanocosmos.de/assets/around720.png
 
 
 ### Configuration via URL parameters:
@@ -61,7 +61,7 @@ Supported query params:
 * all playback parameters from `config.playback` e.g.:
     * `playback.autoplay=true`
     * `playback.muted=false`
-    * `playback.automute=false`
+    * `playback.automute=true`
     * `playback.timeouts.buffering=20`
 * all style parameters from `config.style` e.g.:
     * `style.fullScreenControl=true`
