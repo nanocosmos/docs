@@ -36,7 +36,7 @@ Link: `https://demo.nanocosmos.de/nanoplayer/embed/1.1.0/nanoplayer.html?entry.r
 * single stream minimal:
     * https://demo.nanocosmos.de/nanoplayer/embed/1.1.0/nanoplayer.html?entry.rtmp.streamname=HX26g-NRbx9
 
-* abr (entries):
+* abr/multi stream:
     * https://demo.nanocosmos.de/nanoplayer/embed/1.1.0/nanoplayer.html?entry.rtmp.streamname=HX26g-NRbx9&entry.info.bitrate=1500&entry2.rtmp.streamname=HX26g-uVn3M&entry2.info.bitrate=800&entry3.rtmp.streamname=HX26g-VbAxm&entry3.info.bitrate=200&options.rule=deviationOfMean2&startIndex=2
 
 * autoplay/mute setting:
@@ -56,8 +56,8 @@ Supported query params:
     * `options.adaption.rule=deviationOfMean2`
 * entries from `config.source.entries` array (except `info`, `label` & `tag`) e.g.:
     * `entry.rtmp.streamname=**here the streamname**`
-    * `entry1.rtmp.streamname=**here the streamname**`
     * `entry2.rtmp.streamname=**here the streamname**`
+    * `entry3.rtmp.streamname=**here the streamname**`
 * all playback parameters from `config.playback` e.g.:
     * `playback.autoplay=true`
     * `playback.muted=false`
