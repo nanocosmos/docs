@@ -1626,7 +1626,7 @@ MuteDeviceError event. The event is fired if a video/audio device mute/unmute fa
     <td>[data.stats.results.videoCodec]</td><td><code>string</code></td><td><p>The video codec.</p>
 </td>
     </tr><tr>
-    <td>[data.stats.results.videoSendDelay]</td><td><code>number</code></td><td><p>An indication for video packet delay.</p>
+    <td>[data.stats.results.videoSendDelay]</td><td><code>number</code></td><td><p>An indication for video packet delay, before packets are send to the server.</p>
 </td>
     </tr><tr>
     <td>[data.stats.results.videoSendDelayMax]</td><td><code>number</code></td><td><p>Maximum &#39;videoSendDelay&#39; during past 10 seconds.</p>
