@@ -61,6 +61,10 @@ see if there are things that can be improved.
 A packet loss of less than 5% still results good playback experience. Greater than 10% of lost packages will degrade viewer experience, 
 especially for streams with higher bitrates (2Mb and above). Above 10% of packet loss, we observed that streams can get chunky and your users should take action then.
 
+<br>
+Sample for a simple traffic light implementation:
+
+
 ```js
 // rtcUser: instance of RtcUser
 rtcUser.enableStats();
