@@ -73,14 +73,74 @@
 <li>enable stats via the <a href="/docs/webrtc/nanostream_webrtc_api#rtcuserenablestatsenable-interval">enableStats()</a> API call</li>
 <li>listen to the <a href="nanostream_webrtc_api#RtcUser+event_ReceivedWebRTCStats">&quot;ReceivedWebRTCStats&quot;</a> Event</li>
 </ul>
-<h3><a class="anchor" aria-hidden="true" id="stats-example"></a><a href="#stats-example" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Stats Example</h3>
-<p>The following snippet will enable stats reporting on the client side.
-Please find a list of available stats <a href="nanostream_webrtc_api#WebRTCStatsEvent">here</a>.
+<p>Please find a list of available stats <a href="nanostream_webrtc_api#WebRTCStatsEvent">here</a>.<br>
 Also note that most of the stats are available in Chrome. The other browsers, e.g. Firefox, may not provide all the documented stats.</p>
+<h3><a class="anchor" aria-hidden="true" id="stats-example"></a><a href="#stats-example" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Stats Example</h3>
+<p>The following snippet will enable stats reporting on the client side:</p>
 <pre><code class="hljs css language-js"><span class="hljs-comment">// rtcUser: instance of RtcUser</span>
 rtcUser.enableStats();
+
 rtcUser.on(<span class="hljs-string">'ReceivedWebRTCStats'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">event</span>) </span>{
-     <span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">JSON</span>.stringify(event.data.results));
+    <span class="hljs-keyword">var</span> results = event.data.results;
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">JSON</span>.stringify(results));
+});
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="ingest-quality-indicators"></a><a href="#ingest-quality-indicators" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Ingest Quality Indicators</h3>
+<p>Bad network is the major reason for bad end to end user experience.
+In case of bad network conditions you can warn your users and they will be able to take further steps in order to improve the situation.</p>
+<p>There are specific stats that indicate the current upstream quality:</p>
+<ul>
+<li><b>roundTripTime</b> - Current time in milliseconds that data takes from the client to the webcaster server and back.</li>
+<li><b>packetLoss</b> - Percentage of packets lost during past 10 seconds.</li>
+<li><b>videoSendDelay</b> (Chromium based browsers only) - Delay before video frames are send to the server.</li>
+</ul>
+<p>Those statitics will allow you to show a <b>traffic light</b> to your webcasters, that indicates the current ingest quality. This regards the upstream network conditions from your customers browsers to our webcast servers.</p>
+<h3><a class="anchor" aria-hidden="true" id="traffic-light-recommendations"></a><a href="#traffic-light-recommendations" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Traffic Light Recommendations</h3>
+<p>Based upon our analysis, we have gathered recommendations for indicating bad streaming conditions to the end users.<br></p>
+<p><b>Round Trip Time</b></p>
+<p>We concider an rtt of 150 or less as acceptable. We observed RTT values going up to 150, with still good playback experience.
+Above 150 and below 250 the viewer experience will degrade slighly. Above 250 milliseconds users should check their network and
+see if there are things that can be improved.</p>
+<p><b>Packet Loss</b></p>
+<p>A packet loss of less than 5% still results good playback experience. Greater than 10% of lost packages will degrade viewer experience,
+especially for streams with higher bitrates (2Mb and above). Above 10% of packet loss, we observed that streams can get chunky and your users should take action then.</p>
+<p><br>
+Sample for a simple traffic light implementation:</p>
+<pre><code class="hljs css language-js"><span class="hljs-comment">// rtcUser: instance of RtcUser</span>
+rtcUser.enableStats();
+
+rtcUser.on(<span class="hljs-string">'ReceivedWebRTCStats'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">event</span>) </span>{
+    
+    <span class="hljs-keyword">var</span> results = event.data.results;
+    <span class="hljs-keyword">var</span> roundTripTime = results.roundTripTime;
+    <span class="hljs-keyword">var</span> packetLoss = results.packetLoss;
+
+    <span class="hljs-keyword">if</span> (!roundTripTime || !packetLoss) <span class="hljs-keyword">return</span>; <span class="hljs-comment">// values can be undefined</span>
+
+    <span class="hljs-comment">// thresholds</span>
+    <span class="hljs-keyword">var</span> quality = <span class="hljs-string">'good'</span>;
+    <span class="hljs-keyword">var</span> packetLossLowerBound = <span class="hljs-number">5</span>;
+    <span class="hljs-keyword">var</span> packetLossUpperBound = <span class="hljs-number">10</span>;
+    <span class="hljs-keyword">var</span> rttLowerBound = <span class="hljs-number">150</span>;
+    <span class="hljs-keyword">var</span> rttUpperBound = <span class="hljs-number">250</span>;
+
+    <span class="hljs-keyword">if</span>(packetLoss &lt; packetLossLowerBound &amp;&amp; roundTripTime &lt; rttLowerBound) {
+        quality = <span class="hljs-string">'good'</span>;
+    } 
+    
+    <span class="hljs-keyword">if</span> ((packetLoss &gt; packetLossLowerBound &amp;&amp; packetLoss &lt; packetLossUpperBound) 
+        || (roundTripTime &gt; rttLowerBound &amp;&amp; roundTripTime &lt; rttUpperBound)) {
+        quality = <span class="hljs-string">'medium'</span>;
+    }
+
+    <span class="hljs-keyword">if</span> (packetLoss &gt; packetLossUpperBound || roundTripTime &gt; rttUpperBound) {
+        quality = <span class="hljs-string">'bad'</span>;
+    }
+
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'roundTripTime: '</span>, roundTripTime);
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'packetLoss: '</span>, packetLoss);
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'quality: '</span>, quality);
+
 });
 </code></pre>
 <h2><a class="anchor" aria-hidden="true" id="metrics"></a><a href="#metrics" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Metrics</h2>
@@ -99,4 +159,4 @@ rtcUser.on(<span class="hljs-string">'ReceivedWebRTCStats'</span>, <span class="
 rtcUser.setConfig(rtcConfig);
 
 </code></pre>
-</span></div></article></div><div class="docLastUpdate"><em>Last updated on 1/6/2022</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/webrtc/nanostream_webrtc_set_mediastream"><span class="arrow-prev">← </span><span>External Streams / Mixing</span></a><a class="docs-next button" href="/docs/webrtc/nanostream_webrtc_reconnect"><span>Automatic Reconnection</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#stats">Stats</a><ul class="toc-headings"><li><a href="#stats-example">Stats Example</a></li></ul></li><li><a href="#metrics">Metrics</a><ul class="toc-headings"><li><a href="#metrics-configuration">Metrics configuration</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><div><h5>Contact</h5><a href="https://www.nanocosmos.de/">Homepage</a><a href="https://www.nanocosmos.de/contact">Contact</a><a href="https://www.nanocosmos.de/support">Support</a><a href="https://www.nanocosmos.de/terms">Legal Terms</a></div><div><h5>Products</h5><a href="https://www.nanocosmos.de/cloud">Nanostream Cloud with Bintu.Live</a><a href="https://www.nanocosmos.de/h5live">H5Live Low Latency HTML5-Player</a><a href="https://www.nanocosmos.de/webrtc">nanoStream Webcaster</a><a href="https://www.nanocosmos.de/#nanostream">Nanostream Apps and SDK</a></div><div><h5>More</h5><a href="https://www.nanocosmos.de/blog/">Blog</a><a href="https://twitter.com/nanovideo">Twitter</a><a href="https://www.facebook.com/nanocosmos.net/">Facebook</a><a href="https://www.linkedin.com/company/nanocosmos-gmbh">LinkedIn</a><a href="https://github.com/nanocosmos/docs">GitHub</a><a class="github-button" href="https://github.com/nanocosmos/docs" data-icon="octicon-star" data-count-href="/nanocosmos/docs/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://nanocosmos.de/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/footer_logo.png" alt="nanocosmos GmbH" width="170" height="45"/></a><section class="copyright">Copyright © 2022 nanocosmos GmbH - doc version Thu Jan 06 2022 13:58:10 GMT+0000 (Coordinated Universal Time)</section></footer></div></body></html>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 2/4/2022</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/webrtc/nanostream_webrtc_set_mediastream"><span class="arrow-prev">← </span><span>External Streams / Mixing</span></a><a class="docs-next button" href="/docs/webrtc/nanostream_webrtc_reconnect"><span>Automatic Reconnection</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#stats">Stats</a><ul class="toc-headings"><li><a href="#stats-example">Stats Example</a></li><li><a href="#ingest-quality-indicators">Ingest Quality Indicators</a></li><li><a href="#traffic-light-recommendations">Traffic Light Recommendations</a></li></ul></li><li><a href="#metrics">Metrics</a><ul class="toc-headings"><li><a href="#metrics-configuration">Metrics configuration</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><div><h5>Contact</h5><a href="https://www.nanocosmos.de/">Homepage</a><a href="https://www.nanocosmos.de/contact">Contact</a><a href="https://www.nanocosmos.de/support">Support</a><a href="https://www.nanocosmos.de/terms">Legal Terms</a></div><div><h5>Products</h5><a href="https://www.nanocosmos.de/cloud">Nanostream Cloud with Bintu.Live</a><a href="https://www.nanocosmos.de/h5live">H5Live Low Latency HTML5-Player</a><a href="https://www.nanocosmos.de/webrtc">nanoStream Webcaster</a><a href="https://www.nanocosmos.de/#nanostream">Nanostream Apps and SDK</a></div><div><h5>More</h5><a href="https://www.nanocosmos.de/blog/">Blog</a><a href="https://twitter.com/nanovideo">Twitter</a><a href="https://www.facebook.com/nanocosmos.net/">Facebook</a><a href="https://www.linkedin.com/company/nanocosmos-gmbh">LinkedIn</a><a href="https://github.com/nanocosmos/docs">GitHub</a><a class="github-button" href="https://github.com/nanocosmos/docs" data-icon="octicon-star" data-count-href="/nanocosmos/docs/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://nanocosmos.de/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/footer_logo.png" alt="nanocosmos GmbH" width="170" height="45"/></a><section class="copyright">Copyright © 2022 nanocosmos GmbH - doc version Fri Feb 04 2022 09:49:34 GMT+0000 (Coordinated Universal Time)</section></footer></div></body></html>
