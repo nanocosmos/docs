@@ -10,7 +10,7 @@ sidebar_label: Webcaster
 nanoStream Webcaster Public API Class
 
 **Kind**: global class  
-**Version**: 5.15.0  
+**Version**: 5.16.0  
 
 -----
 
@@ -1626,13 +1626,19 @@ MuteDeviceError event. The event is fired if a video/audio device mute/unmute fa
     <td>[data.stats.results.videoCodec]</td><td><code>string</code></td><td><p>The video codec.</p>
 </td>
     </tr><tr>
-    <td>[data.stats.results.videoSendDelay]</td><td><code>number</code></td><td><p>An indication for video packet delay.</p>
+    <td>[data.stats.results.videoSendDelay]</td><td><code>number</code></td><td><p>An indication for video packet delay, before packets are send to the server.</p>
 </td>
     </tr><tr>
     <td>[data.stats.results.videoSendDelayMax]</td><td><code>number</code></td><td><p>Maximum &#39;videoSendDelay&#39; during past 10 seconds.</p>
 </td>
     </tr><tr>
     <td>[data.stats.results.videoSendDelayAverage]</td><td><code>number</code></td><td><p>Average &#39;videoSendDelay&#39; during past 10 seconds.</p>
+</td>
+    </tr><tr>
+    <td>[data.stats.results.packetLoss]</td><td><code>number</code></td><td><p>Percentage of packets lost during past 10 seconds.</p>
+</td>
+    </tr><tr>
+    <td>[data.stats.results.roundTripTime]</td><td><code>number</code></td><td><p>Current time in milliseconds that data takes from the client to the webcaster server and back.</p>
 </td>
     </tr><tr>
     <td>data.stats.state</td><td><code>number</code></td><td><p>The connection state. The expected value: 6 = &#39;broadcasting&#39;.</p>
