@@ -1,0 +1,30 @@
+name: Search Index Scraper
+
+on:
+  push:
+    branches:
+      - develop  
+  workflow_dispatch:
+  # 
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Get DocSearch configuration
+        id: docsearch-config
+        run: echo "::set-output name=json::$(cat docsearch.json | jq -r tostring)"
+      - name: Get docsearch scraper docker image
+        run: docker pull typesense/docsearch-scraper:latest
+      - name: Run DocSearch Scraper
+        run: |
+          docker run -e CONFIG -e TZ -e TYPESENSE -e TYPESENSE_HOST -e TYPESENSE_PORT -e TYPESENSE_PROTO  typesense/docsearch-scraper
+        env:
+          TZ: UTC
+          TYPESENSE_API_KEY: ${{ secrets.TYPESENSE_API_KEY }}
+          TYPESENSE_HOST: ${{ secrets.TYPESENSE_HOST }}
+          TYPESENSE_PROTOCOL: https
+          TYPESENSE_PORT: 443
+          CONFIG: ${{ steps.docsearch-config.outputs.json }}
+          
