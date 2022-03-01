@@ -1,11 +1,12 @@
 name: Search Index Scraper
 
 on:
-  push:
-    branches:
-      - develop  
   workflow_dispatch:
-  # 
+  # run manually
+# uncomment to run action on push
+#  push:
+#    branches:
+#      - develop  
 
 jobs:
   scrape:
