@@ -20,7 +20,8 @@ jobs:
         run: docker pull typesense/docsearch-scraper:latest
       - name: Run DocSearch Scraper
         run: |
-          docker run -e CONFIG -e TZ -e TYPESENSE -e TYPESENSE_HOST -e TYPESENSE_PORT -e TYPESENSE_PROTO  typesense/docsearch-scraper
+          echo "CONFIG=$CONFIG"
+          docker run -e CONFIG -e TZ -e TYPESENSE_API_KEY -e TYPESENSE_HOST -e TYPESENSE_PORT -e TYPESENSE_PROTO  typesense/docsearch-scraper
         env:
           TZ: UTC
           TYPESENSE_API_KEY: ${{ secrets.TYPESENSE_API_KEY }}
