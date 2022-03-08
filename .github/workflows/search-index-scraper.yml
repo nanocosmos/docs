@@ -3,10 +3,10 @@ name: Search Index Scraper
 on:
   workflow_dispatch:
   # run manually
-# uncomment to run action on push
-#  push:
-#    branches:
-#      - master  
+
+  push:
+    branches:
+      - master  
 
 jobs:
   scrape:
