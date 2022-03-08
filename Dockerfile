@@ -1,6 +1,7 @@
 # stage1 - build app first 
 FROM node:14-slim as build
 
+USER node
 WORKDIR /app
 COPY . /app
 ENV DOCS_ENV gitlab-develop
@@ -10,8 +11,7 @@ RUN npm i
 #RUN npm run build
 RUN npm run build-quick
 WORKDIR /app
-RUN bash build_searchindex
-RUN ls -l .
+
 #CMD [ "npm", "start"]
 
 # stage 2 - build the final image and copy the react build files

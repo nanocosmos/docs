@@ -6,7 +6,7 @@ on:
 # uncomment to run action on push
 #  push:
 #    branches:
-#      - develop  
+#      - master  
 
 jobs:
   scrape:
@@ -20,7 +20,10 @@ jobs:
         run: docker pull typesense/docsearch-scraper:latest
       - name: Run DocSearch Scraper
         run: |
-          docker run -e CONFIG -e TZ -e TYPESENSE -e TYPESENSE_HOST -e TYPESENSE_PORT -e TYPESENSE_PROTO  typesense/docsearch-scraper
+          docker run -e CONFIG -e TZ \
+          -e TYPESENSE_HOST -e TYPESENSE_API_KEY \
+          -e TYPESENSE_PORT -e TYPESENSE_PROTOCOL \
+          typesense/docsearch-scraper
         env:
           TZ: UTC
           TYPESENSE_API_KEY: ${{ secrets.TYPESENSE_API_KEY }}

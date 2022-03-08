@@ -49,9 +49,8 @@ console.log("Using config " + configName + " " + myConfig.url);
 console.log(JSON.stringify(myConfig));
 
 const siteConfig = {
-  title: 'nanocosmos Documentation', // Title for your website. 
+  title: 'nanocosmos Documentation', // Title for your website.
   tagline: 'nanoStream Cloud & H5Live Player - Around The World in 1 Second',
-  title: 'nanocosmos Documentation',
 
   url: myConfig.url, // Your website URL
   baseUrl: myConfig.baseUrl, // Base URL for your project - should be absolute */
@@ -117,9 +116,7 @@ const siteConfig = {
   scripts: [
     'https://buttons.github.io/buttons.js',
     'https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js',
-    '/js/copy-button.js',
-    'https://buttons.github.io/buttons.js',
-    '/js/search.js'
+    '/js/copy-button.js'
   ],
   stylesheets: ['/css/copy-button.css'],
 
@@ -142,7 +139,21 @@ const siteConfig = {
   // template. For example, if you need your repo's URL...
   repoUrl: 'https://github.com/nanocosmos/docs',
 
-  editUrl: 'https://github.com/nanocosmos/docs/tree/master/docs/'
+  editUrl: 'https://github.com/nanocosmos/docs/tree/master/docs/',
+  typesense: {
+    typesenseCollectionName: 'nanocosmos', // Should match the collection name you mention in the docsearch scraper config.js
+    typesenseServerConfig: {
+      nodes: [{
+        host: 'typesense.nanostream.cloud', // For Typesense Cloud use xxx.a1.typesense.net
+        port: '443',      // For Typesense Cloud use 443
+        protocol: 'https'   // For Typesense Cloud use https
+      }],
+      apiKey: 'VXsRNvH2cHHs5uVOk74gX8jDtWTTVKsV', // Use API Key with only Search permissions
+    },
+    typesenseSearchParams: { // Optional.
+        per_page: 20,
+    },
+  }
 };
 
 console.log("siteConfig: " + configName + "  URL: " + siteConfig.url + " " + siteConfig.baseUrl);
