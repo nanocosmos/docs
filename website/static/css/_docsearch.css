@@ -1,0 +1,22 @@
+/* typesense docsearch partial */
+
+.algolia-autocomplete .ds-dropdown-menu .ds-suggestions {
+    max-height: 80vh;
+}
+
+/* .ds-cursor .algolia-docsearch-suggestion--content to style the selected suggestion for example. */
+.ds-cursor .typesense-docsearch-suggestion--content {
+    color: darkgray;
+}
+
+
+.algolia-autocomplete .typesense-docsearch-suggestion {
+    white-space: normal;
+    line-height: 1.2em;
+    height: auto !important;
+}
+
+/* Highlighted text */
+.algolia-autocomplete .typesense-docsearch-suggestion--highlight {
+    color: rgb(237, 125, 14) !important;
+}
