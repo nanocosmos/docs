@@ -1,0 +1,90 @@
+diff --git a/node_modules/docusaurus/lib/core/Head.js b/node_modules/docusaurus/lib/core/Head.js
+index 53633d2..3a9efce 100644
+--- a/node_modules/docusaurus/lib/core/Head.js
++++ b/node_modules/docusaurus/lib/core/Head.js
+@@ -71,6 +71,12 @@ class Head extends React.Component {
+           rel="shortcut icon"
+           href={this.props.config.baseUrl + this.props.config.favicon}
+         />
++        {this.props.config.typesense && (
++          <link
++            rel="stylesheet"
++            href="https://cdn.jsdelivr.net/npm/typesense-docsearch.js@latest/dist/cdn/docsearch.min.css"
++          />
++        )}
+         {this.props.config.algolia && (
+           <link
+             rel="stylesheet"
+diff --git a/node_modules/docusaurus/lib/core/Site.js b/node_modules/docusaurus/lib/core/Site.js
+index 0d1ee85..3685171 100644
+--- a/node_modules/docusaurus/lib/core/Site.js
++++ b/node_modules/docusaurus/lib/core/Site.js
+@@ -90,6 +90,12 @@ class Site extends React.Component {
+               src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"
+             />
+           )}
++          {this.props.config.typesense && (
++            <script
++              type="text/javascript"
++              src="https://cdn.jsdelivr.net/npm/typesense-docsearch.js@latest/dist/cdn/docsearch.min.js"
++            />
++          )}
+           {this.props.config.facebookAppId && (
+             <script
+               dangerouslySetInnerHTML={{
+@@ -123,7 +129,7 @@ class Site extends React.Component {
+               }}
+             />
+           )}
+-          {this.props.config.algolia && (
++          {this.props.config.algolia || this.props.config.typesense && (
+             <script
+               dangerouslySetInnerHTML={{
+                 __html: `
+@@ -141,6 +147,21 @@ class Site extends React.Component {
+               }}
+             />
+           )}
++          {this.props.config.typesense && (
++              <script 
++                dangerouslySetInnerHTML={{
++                  __html: `
++              var search = docsearch({
++                inputSelector: '#search_input_react',
++                typesenseServerConfig: ${JSON.stringify(this.props.config.typesense.typesenseServerConfig)},
++                typesenseCollectionName: ${JSON.stringify(this.props.config.typesense.typesenseCollectionName)},
++                typesenseSearchParams: ${JSON.stringify(this.props.config.typesense.typesenseSearchParams)},
++                debug: true,
++              });
++              `,
++                }}
++              />
++          )}
+           {this.props.config.algolia &&
+             (this.props.config.algolia.algoliaOptions ? (
+               <script
+diff --git a/node_modules/docusaurus/lib/core/nav/HeaderNav.js b/node_modules/docusaurus/lib/core/nav/HeaderNav.js
+index 4075b87..a9c83a5 100644
+--- a/node_modules/docusaurus/lib/core/nav/HeaderNav.js
++++ b/node_modules/docusaurus/lib/core/nav/HeaderNav.js
+@@ -132,9 +132,9 @@ class HeaderNav extends React.Component {
+     let href;
+     let docItemActive = false;
+     let docGroupActive = false;
+-    if (link.search && this.props.config.algolia) {
++    if (link.search && (this.props.config.typesense || this.props.config.algolia) ) {
+       // return algolia search bar
+-      const placeholder = this.props.config.algolia.placeholder || 'Search';
++      const placeholder = this.props.config.algolia && this.props.config.algolia.placeholder || 'Search';
+       return (
+         <li className="navSearchWrapper reactNavSearchWrapper" key="search">
+           <input
+@@ -274,7 +274,7 @@ class HeaderNav extends React.Component {
+         search = true;
+       }
+     });
+-    if (!search && this.props.config.algolia) {
++    if (!search && (this.props.config.typesense || this.props.config.algolia )) {
+       headerLinks.push({search: true});
+     }
+     return (

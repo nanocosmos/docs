@@ -9,9 +9,13 @@
     "publish-gh-pages": "docusaurus-publish",
     "write-translations": "docusaurus-write-translations",
     "version": "docusaurus-version",
-    "rename-version": "docusaurus-rename-version"
+    "rename-version": "docusaurus-rename-version",
+    "postinstall": "patch-package"
   },
   "devDependencies": {
-    "docusaurus": "^1.14.6"
+    "docusaurus": "^1.14.7"
+  },
+  "dependencies": {
+    "patch-package": "^6.4.7"
   }
 }
