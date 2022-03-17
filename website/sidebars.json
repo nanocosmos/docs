@@ -9,14 +9,14 @@
     ],
     "Features": [
       "nanoplayer/nanoplayer_autoplay",
+      "nanoplayer/nanoplayer_feature_latency_control_modes",
       "nanoplayer/nanoplayer_token_security",
       "nanoplayer/nanoplayer_feature_stream_switching",
       "nanoplayer/nanoplayer_feature_fullscreen_api",
       "nanoplayer/nanoplayer_feature_customization",
       "nanoplayer/nanoplayer_feature_reconnect_timeouts",
       "nanoplayer/nanoplayer_feature_media_error_recovery",
-      "nanoplayer/nanoplayer_feature_source_defaults",
-      "nanoplayer/nanoplayer_feature_latency_control_modes"
+      "nanoplayer/nanoplayer_feature_source_defaults"
     ],
     "Releases": [
       "nanoplayer/nanoplayer_release_latest",
