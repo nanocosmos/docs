@@ -4,24 +4,31 @@ title: Latest Release
 sidebar_label: Latest
 ---
 
-## Please find more about the **source defaults** feature in our [documentation](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_feature_source_defaults/).
+## Please find more about the **latency control modes** feature in our [documentation](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_feature_latency_control_modes/).
 
-## **[4.13.3]**
+## **[4.14.1]**
 
 ### **Release Notes**
 
-This version includes a fix for a potential CSS layout issue in iOS fullscreen mode,
-that could lead to page elements unintendedly being displayed above the video layer.
-The issue has been introduced in version 4.13.2.
+This release introduces two new latency control modes targeting especially lowest latency use cases like live auctioning.
+The latency control mode can be selected via the added `config.playback.latencyControlMode` configuration parameter.
+The established latency control mode is available as the `'classic'` option which remains to be the default mode.
+Furthermore, the new `'balancedadaptive'` and `'fastadaptive'`  latency control modes have been added which are capable of adjusting the latency adaptively according to the current stream and network conditions to achieve lower latency while keeping the playback experience smooth. Please find further information in the [feature description](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_feature_latency_control_modes/) of our documentation.
 
 ### **Changelog**
 
-### Fixed
+### Added
 
-- CSS layout issue in iOS fullscreen mode
+- added latency control modes and related configuration parameter
+  - configuration parameter: `config.playback.latencyControlMode`
+  - string values: `'classic'`, `'balancedadaptive'`, `'fastadaptive'`
+
+### Improved
+
+- improved handling in case of video frames being dropped by the browser
 
 ### **Release Package**
 
-- [4.13.3](https://files.nanocosmos.de/index.php/s/p43kd7DJwXGX8o7)
+- [4.14.1](https://files.nanocosmos.de/index.php/s/3cKSNC9XnWpLfgJ)
 - [latest 4.x](https://files.nanocosmos.de/index.php/s/4nndC45mcB6oSa6)
 - [latest](https://files.nanocosmos.de/index.php/s/2tpCzgRjNEZDzeP)
