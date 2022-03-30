@@ -31,6 +31,21 @@ Link: `https://demo.nanocosmos.de/nanoplayer/embed/1.2.0/nanoplayer.html?entry.r
 
 ```
 
+### New in v1.2.0
+
+Following the nanoStream H5Live Player Version 4.14.x release where two new [latency control modes](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_feature_latency_control_modes/) have been added, it is possible to use them within Player Embed since v1.2.0. The default value is set to `"classic"` and doesn't require passing any parameter. To change to any of the adaptive modes, it is necessary to pass the desired value in the `playback.latencyControlMode` object via URL params. 
+
+Values: `"classic"`, `"balancedadaptive"`, `"fastadaptive"`.
+
+**URLs with latency control modes:**
+* latency control mode set to balancedadaptive:
+    * https://demo.nanocosmos.de/nanoplayer/embed/1.2.0/nanoplayer.html?entry.rtmp.streamname=HX26g-NRbx9&playback.latencyControlMode=balancedadaptive
+* latency control mode set to fastadaptive:
+    * https://demo.nanocosmos.de/nanoplayer/embed/1.2.0/nanoplayer.html?entry.rtmp.streamname=HX26g-NRbx9&playback.latencyControlMode=fastadaptive
+
+**Important:** Latency control modes are not available in Player Embed v.1.1.0.
+
+
 **Example URLs for embed player v1.2.0:**
 
 * single stream minimal:
@@ -66,7 +81,7 @@ Supported query params:
     * `playback.muted=false`
     * `playback.automute=true`
     * `playback.timeouts.buffering=20`
-    * `playback.latencyControlMode=classic`
+    * `playback.latencyControlMode=classic` (v1.2.0)
 * all style parameters from `config.style` e.g.:
     * `style.fullScreenControl=true`
     * `style.displayMutedAutoplay=true`
