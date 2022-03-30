@@ -43,7 +43,7 @@ Values: `"classic"`, `"balancedadaptive"`, `"fastadaptive"`.
 * latency control mode set to fastadaptive:
     * https://demo.nanocosmos.de/nanoplayer/embed/1.2.0/nanoplayer.html?entry.rtmp.streamname=HX26g-NRbx9&playback.latencyControlMode=fastadaptive
 
-**Important:** Latency control modes are not available in Player Embed v.1.1.0.
+**Important:** Latency control modes are not available in Player Embed v1.1.0.
 
 
 **Example URLs for embed player v1.2.0:**
