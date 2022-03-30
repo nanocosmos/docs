@@ -36,7 +36,7 @@ Values: `"classic"`, `"balancedadaptive"`, `"fastadaptive"`
 var config = {
         "playback": {
             ...
-            "latencyControlMode" : "classc",
+            "latencyControlMode" : "classic",
             ...
         }
 }
