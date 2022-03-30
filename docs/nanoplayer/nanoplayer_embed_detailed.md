@@ -38,12 +38,14 @@ Following the nanoStream H5Live Player Version 4.14.x release where two new [lat
 Values: `"classic"`, `"balancedadaptive"`, `"fastadaptive"`.
 
 **URLs with latency control modes:**
-* latency control mode set to balancedadaptive:
+* default mode:
+    * https://demo.nanocosmos.de/nanoplayer/embed/1.2.0/nanoplayer.html?entry.rtmp.streamname=HX26g-NRbx9&playback.latencyControlMode=classic
+* latency control mode set to `"balancedadaptive"`:
     * https://demo.nanocosmos.de/nanoplayer/embed/1.2.0/nanoplayer.html?entry.rtmp.streamname=HX26g-NRbx9&playback.latencyControlMode=balancedadaptive
-* latency control mode set to fastadaptive:
+* latency control mode set to `"fastadaptive"`:
     * https://demo.nanocosmos.de/nanoplayer/embed/1.2.0/nanoplayer.html?entry.rtmp.streamname=HX26g-NRbx9&playback.latencyControlMode=fastadaptive
 
-**Important:** Latency control modes are not available in Player Embed v1.1.0.
+**Important:** Latency control modes are not available in Player Embed prior to v1.2.0.
 
 
 **Example URLs for embed player v1.2.0:**
@@ -52,7 +54,7 @@ Values: `"classic"`, `"balancedadaptive"`, `"fastadaptive"`.
     * https://demo.nanocosmos.de/nanoplayer/embed/1.2.0/nanoplayer.html?entry.rtmp.streamname=HX26g-NRbx9
 
 * latency control mode:
-    * https://demo.nanocosmos.de/nanoplayer/embed/1.2.0/nanoplayer.html?entry.rtmp.streamname=HX26g-NRbx9&playback.latencyControlMode=fastadaptive
+    * https://demo.nanocosmos.de/nanoplayer/embed/1.2.0/nanoplayer.html?entry.rtmp.streamname=HX26g-NRbx9&playback.latencyControlMode=balancedadaptive
 
 * abr/multi stream:
     * https://demo.nanocosmos.de/nanoplayer/embed/1.2.0/nanoplayer.html?entry.rtmp.streamname=HX26g-NRbx9&entry.info.bitrate=1500&entry2.rtmp.streamname=HX26g-uVn3M&entry2.info.bitrate=800&entry3.rtmp.streamname=HX26g-VbAxm&entry3.info.bitrate=200&options.rule=deviationOfMean2&startIndex=2
