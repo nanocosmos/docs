@@ -4,27 +4,28 @@ title: Latest Release
 sidebar_label: Latest
 ---
 
-## Please find more about the **latency control modes** feature in our [documentation](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_feature_latency_control_modes/).
-
-## **[4.14.2]**
+## **[4.15.0]**
 
 ### **Release Notes**
 
-This release is solving issues related to the center view player controls and the layout in fullscreen mode.
-Previously in case the bottom control bar was disabled, the center view player control did not trigger related actions. It occured after a resize of the player e.g. upon entering the fullscreen mode or mobile device rotation.
-Furthermore a fullscreen layout issue has been resolved. Before, parts of the player were not being rendered inside of the display area under following circumstances: If CSS padding was set on the player div and the player's aspect ratio did not match the form factor of the screen.
+This version is adding improvements for ABR playback. It implements a cooldown mechanism to control the next up-switch.
+Too frequent up- & down-switches will be prevented. This improves the user experience especially in case of slight but frequent buffer impacts e.g. in case of limited network ressources.
+Furthermore this release includes an improvement for classic playback on iOS 15 to avoid buffer impacts after adjusting latency.
+Also the visual switching behaviour on iOS has been improved to prevent a possible black frame effect.
 
 ### **Changelog**
 
-### Fixed
+### Added
 
-- center view player controls not triggering related actions if the bottom control bar was disabled
-  - the issue occurred after a resize of the player (e.g. mobile device rotation or entering fullscreen mode)
-- potential layout issue in fullscreen mode
-  - if CSS padding was set on the player div and the player's aspect ratio did not match the form factor of the screen
+- ABR upswitch cooldown mechanism to avoid too frequent up- & down-switches in certain scenarios
+
+### Improved
+
+- playback speed ~1.0 on iOS 15 as standard to reduce rebuffering effects after latency adjustment
+- z-index only for video element switch on iOS to avoid black frame effect
 
 ### **Release Package**
 
-- [4.14.2](https://files.nanocosmos.de/index.php/s/774Ntq6stFc7KLr)
+- [4.15.0](https://files.nanocosmos.de/index.php/s/H72dYkCwiP7Zj7r)
 - [latest 4.x](https://files.nanocosmos.de/index.php/s/4nndC45mcB6oSa6)
 - [latest](https://files.nanocosmos.de/index.php/s/2tpCzgRjNEZDzeP)
