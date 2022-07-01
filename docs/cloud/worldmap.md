@@ -15,12 +15,12 @@ The world map gives an overview where your customers are located and shows stati
 You can choose from the following categories:
 
 - Playout/Ingests: how many streams where ingested and played back
-- Buffering Play Ratio (only available with [H5Live metrics](#h5live) enabled): the ratio between buffer and playback duration over all playouts for a country
+- Buffering Play Ratio (only available with [H5Live metrics](analytics.md#h5live) enabled): the ratio between buffer and playback duration over all playouts for a country
   - a ratio of 0% means no buffering
   - a ratio of 100% means no playback was possible
   - for countries like India with a high number of mobile connections and unstable internet connection, a higher buffering/play ratio compared to other countries is expected
-- Latency (only available with [H5Live metrics](#h5live) enabled): the average playback latency over all playbacks for a country
-- Playtime average (only available with [H5Live metrics](#h5live) enabled): the average playback duration of a playback event, shows how long a viewer will watch a stream
+- Latency (only available with [H5Live metrics](analytics.md#h5live) enabled): the average playback latency over all playbacks for a country
+- Playtime average (only available with [H5Live metrics](analytics.md#h5live) enabled): the average playback duration of a playback event, shows how long a viewer will watch a stream
 - Usage (received/sent): the ingest and playback usage (in gigabytes) for a country
 - ABR playtime: the playback duration of streams with activated **"adaptive bitrate"** option enabled
 - ABR viewer: the total viewer count of country/region
@@ -80,40 +80,7 @@ Clicking on a region in the **World Regions View**, lets you zoom in and shows c
 In **Country View** the Top 50 ranked countries are marked by a small indicator, while in **Zoom Region View** all countries are marked. The Top 10 in both cases is explicitly numerated to give a quick overview of the most popular locations.
 
 &#9398;
-`Country` - **Hovering** over the indicator shows country specific details, while **Clicking** opens up a **Breakdown Menu** of this countrys streaming activity.
+`Country` - **Hovering** over the indicator shows country specific details, while **Clicking** opens up a [**Breakdown Menu**](analytics-zoom.md#zoom-on-worldmap) of this countrys streaming activity.
 
 &#9399;
 `Country Overview` is shown when hovering over one of the Top 50 ranked countries.
-
-## Breakdown Menu
-
-This menu is shown when clicking on a marked country in the **Zoom Region View** or **Country View**. It represents a more detailed overview of this countrys Top 10 results by the selected metric and filter option.
-
-![Screenshot](assets/wm-breakdown.png)
-
-&#9398;
-`Chosen Metric` indicates the selected metric. The viewed metric can be changed on the world map view. Some metrics offer a more defined view on the results, like the `ABR Switches` metric:
-
-![Screenshot](assets/wm-breakdown-metric-switch.png)
-
-&#9399;
-`Filters` are used to switch between the metric data to evaluate the results under different points of view.
-
-All metrics have these main filters:
-
-- IP
-- Stream name
-- City
-- Referrer
-
-while `Buffering Ratio`, `Latency`, `Playtime Average`, `ABR Viewers`, `ABR Playtime` and `ABR Switches` metrics also contain filters for:
-
-- OS
-- Player version
-- Browser
-
-&#9400;
-`Table Columns` represent the chosen filter and show the corresponding data. You can sort all entries by clicking on a header column.
-
-&#9401;
-`Selected Time Range` displays the `start` and `end` of the selected time range.

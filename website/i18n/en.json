@@ -54,6 +54,10 @@
         "title": "nanoStream Cloud Analytics",
         "sidebar_label": "Analytics API"
       },
+      "cloud/analytics-zoom": {
+        "title": "nanoStream Cloud Analytics",
+        "sidebar_label": "Zoom/Breakdown"
+      },
       "cloud/analytics": {
         "title": "nanoStream Cloud Analytics",
         "sidebar_label": "General"
