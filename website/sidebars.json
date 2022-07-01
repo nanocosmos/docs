@@ -85,6 +85,7 @@
         "ids": [
           "cloud/analytics",
           "cloud/worldmap",
+          "cloud/analytics-zoom",
           "cloud/troubleshooting",
           "cloud/analytics-api"
         ]
