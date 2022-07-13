@@ -35,8 +35,8 @@ At the moment the available service is `'bintu'` for using the standard nanoStre
 ```javascript
 var config = {
         "source": {
-            'defaults': {
-                'service': 'bintu'
+            "defaults": {
+                "service": "bintu"
             },
             "entries": [
                     {
@@ -85,8 +85,8 @@ Default service fills up gaps for params that were not given, however, it doesn'
 ```javascript
 var config = {
         "source": {
-            'defaults': {
-                'service': 'bintu'
+            "defaults": {
+                "service": "bintu"
             },
             "entries": [
                     {
@@ -107,8 +107,8 @@ var config = {
 ```javascript
 var config = {
         "source": {
-            'defaults': {
-                'service': 'bintu'
+            "defaults": {
+                "service": "bintu"
             },
             "entries": [
                     {
@@ -124,6 +124,55 @@ var config = {
                             }
                         }
                     }
+            ]
+        }
+    };
+```
+
+
+**Applying a custom h5live server domain**
+
+Introduced in **nanoStream H5Live Player Version 4.16.0** the general h5live server domain makes the `source.defaults` configuration even easier. Due to the fact, that general server domain has the highest priority, it will override (modify) all h5live server domains. To use it, it is necessary to add `config.source.general.serverDomain` with its value, i.e `bintu-play-eu.nanocosmos.de`. Values vary depending on the server as these configurations are using the standard geo-loadbalanced domain names by default. Please find the list here: [nanoStream Cloud Public Standard and geo-loadbalanced URLs](https://docs.nanocosmos.de/docs/cloud/support#geo-region-override)
+
+
+#### Config example using service defaults, custom h5live server domain and RTMP streamname: 
+```javascript
+var config = {
+        "source": {
+            "defaults": {
+                "service": "bintu"
+            },
+            "general": {
+                "serverDomain": "bintu-play-eu.nanocosmos.de"
+            },
+            "entries": [
+                {
+                    "h5live": {
+                        // your rtmp stream
+                        "rtmp": {
+                            "streamname": "XXXXX-YYYYY"
+                        }
+                    }
+                }
+            ]
+        }
+    };
+```
+
+#### Config example using service defaults, custom h5live server domain and bintu stream id: 
+```javascript
+var config = {
+        "source": {
+            "general": {
+                "serverDomain": "bintu-play-eu.nanocosmos.de"
+            },
+            "entries": [
+                {
+                    // your bintu stream id
+                    "bintu": {
+                        "streamid": "XXXX-YYYY-ZZZZ-AAAA-BBBB"
+                    }
+                }
             ]
         }
     };
