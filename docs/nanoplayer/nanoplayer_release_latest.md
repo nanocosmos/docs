@@ -4,28 +4,27 @@ title: Latest Release
 sidebar_label: Latest
 ---
 
-## **[4.15.0]**
+## **[4.16.0]**
 
 ### **Release Notes**
 
-This version is adding improvements for ABR playback. It implements a cooldown mechanism to control the next up-switch.
-Too frequent up- & down-switches will be prevented. This improves the user experience especially in case of slight but frequent buffer impacts e.g. in case of limited network ressources.
-Furthermore this release includes an improvement for classic playback on iOS 15 to avoid buffer impacts after adjusting latency.
-Also the visual switching behaviour on iOS has been improved to prevent a possible black frame effect.
+This version adds the possibility to set a general H5Live server domain. A domain can be applied via `config.source.general.serverDomain`. This can be especially useful with configurations via `source.defaults` or `bintu.streamid`. By default, these configurations are using the standard geo-load-balanced domain namest. Please find further information in our [documentation](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_feature_source_defaults#applying-a-custom-h5live-server-domain) regarding this feature.
+
+In addition an issue in relation to timed out stream switches has been fixed. Previously this could lead to a temporarily inconsistent internal stream state.
 
 ### **Changelog**
 
 ### Added
 
-- ABR upswitch cooldown mechanism to avoid too frequent up- & down-switches in certain scenarios
+- new config parameter `config.source.general.serverDomain`
+  - will override/modify all h5live server domains
 
-### Improved
+### Fixed
 
-- playback speed ~1.0 on iOS 15 as standard to reduce rebuffering effects after latency adjustment
-- z-index only for video element switch on iOS to avoid black frame effect
+- internal stream state after timed out stream switches
 
 ### **Release Package**
 
-- [4.15.0](https://files.nanocosmos.de/index.php/s/H72dYkCwiP7Zj7r)
+- [4.16.0](https://files.nanocosmos.de/index.php/s/4BbC7Xq6XcksCs5)
 - [latest 4.x](https://files.nanocosmos.de/index.php/s/4nndC45mcB6oSa6)
 - [latest](https://files.nanocosmos.de/index.php/s/2tpCzgRjNEZDzeP)
