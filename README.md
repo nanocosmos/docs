@@ -14,7 +14,7 @@ Generated from Markdown source code here.
 
 [nanoStream Webcaster](docs/webrtc)
 
-(c) 2021 nanocosmos gmbh
+(c) 2022 nanocosmos gmbh
 
 Contact: https://www.nanocosmos.de/contact
 
