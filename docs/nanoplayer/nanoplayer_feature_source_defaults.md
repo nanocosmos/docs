@@ -132,7 +132,7 @@ var config = {
 
 **Applying a custom h5live server domain**
 
-Introduced in **nanoStream H5Live Player Version 4.16.0** the general h5live server domain makes the `source.defaults` configuration even easier. Due to the fact, that general server domain has the highest priority, it will override (modify) all h5live server domains. To use it, it is necessary to add `config.source.general.serverDomain` with its value, i.e `bintu-play-eu.nanocosmos.de`. Values vary depending on the server as these configurations are using the standard geo-loadbalanced domain names by default. Please find the list here: [nanoStream Cloud Public Standard and geo-loadbalanced URLs](https://docs.nanocosmos.de/docs/cloud/support#geo-region-override)
+Introduced in **nanoStream H5Live Player Version 4.16.0** the general h5live server domain makes the `source.defaults` and `bintu.streamid` configuration even easier. Due to the fact, that general server domain has the highest priority, it will override (modify) all h5live server domains. To use it, it is necessary to add `config.source.general.serverDomain` with its value, i.e `bintu-play-eu.nanocosmos.de`. Values vary depending on the server as these configurations are using the standard geo-loadbalanced domain names by default. Please find the list here: [nanoStream Cloud Public Standard and geo-loadbalanced URLs](https://docs.nanocosmos.de/docs/cloud/support#geo-region-override)
 
 
 #### Config example using service defaults, custom h5live server domain and RTMP streamname: 
