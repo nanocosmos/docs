@@ -159,7 +159,7 @@ var config = {
     };
 ```
 
-#### Config example using service defaults, custom h5live server domain and bintu stream id: 
+#### Config example using custom h5live server domain and bintu stream id: 
 ```javascript
 var config = {
         "source": {
