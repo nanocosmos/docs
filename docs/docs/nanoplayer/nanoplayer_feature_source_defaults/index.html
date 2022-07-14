@@ -82,8 +82,8 @@
 <h4><a class="anchor" aria-hidden="true" id="config-example-with-service-defaults"></a><a href="#config-example-with-service-defaults" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Config example with service defaults:</h4>
 <pre><code class="hljs css language-javascript"><span class="hljs-keyword">var</span> config = {
         <span class="hljs-string">"source"</span>: {
-            <span class="hljs-string">'defaults'</span>: {
-                <span class="hljs-string">'service'</span>: <span class="hljs-string">'bintu'</span>
+            <span class="hljs-string">"defaults"</span>: {
+                <span class="hljs-string">"service"</span>: <span class="hljs-string">"bintu"</span>
             },
             <span class="hljs-string">"entries"</span>: [
                     {
@@ -126,8 +126,8 @@ Default service fills up gaps for params that were not given, however, it doesn'
 <h4><a class="anchor" aria-hidden="true" id="config-example-using-service-defaults-and-custom-rtmp-urls"></a><a href="#config-example-using-service-defaults-and-custom-rtmp-urls" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Config example using service defaults and custom RTMP urls:</h4>
 <pre><code class="hljs css language-javascript"><span class="hljs-keyword">var</span> config = {
         <span class="hljs-string">"source"</span>: {
-            <span class="hljs-string">'defaults'</span>: {
-                <span class="hljs-string">'service'</span>: <span class="hljs-string">'bintu'</span>
+            <span class="hljs-string">"defaults"</span>: {
+                <span class="hljs-string">"service"</span>: <span class="hljs-string">"bintu"</span>
             },
             <span class="hljs-string">"entries"</span>: [
                     {
@@ -146,8 +146,8 @@ Default service fills up gaps for params that were not given, however, it doesn'
 <h4><a class="anchor" aria-hidden="true" id="config-example-using-service-defaults-and-custom-server-urls"></a><a href="#config-example-using-service-defaults-and-custom-server-urls" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Config example using service defaults and custom server urls:</h4>
 <pre><code class="hljs css language-javascript"><span class="hljs-keyword">var</span> config = {
         <span class="hljs-string">"source"</span>: {
-            <span class="hljs-string">'defaults'</span>: {
-                <span class="hljs-string">'service'</span>: <span class="hljs-string">'bintu'</span>
+            <span class="hljs-string">"defaults"</span>: {
+                <span class="hljs-string">"service"</span>: <span class="hljs-string">"bintu"</span>
             },
             <span class="hljs-string">"entries"</span>: [
                     {
@@ -167,9 +167,50 @@ Default service fills up gaps for params that were not given, however, it doesn'
         }
     };
 </code></pre>
+<h2><a class="anchor" aria-hidden="true" id="applying-a-custom-h5live-server-domain"></a><a href="#applying-a-custom-h5live-server-domain" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Applying a custom h5live server domain</h2>
+<p>Introduced in <strong>nanoStream H5Live Player Version 4.16.0</strong> the general h5live server domain makes the <code>source.defaults</code> and <code>bintu.streamid</code> configuration more flexible. These configurations are using standard geo-loadbalanced domains by default. Due to the fact, that general server domain has the highest priority, it will override (modify) all h5live server domains. To use it, it is necessary to add <code>config.source.general.serverDomain</code> with its value, i.e <code>bintu-play-eu.nanocosmos.de</code>. Please find the list here: <a href="https://docs.nanocosmos.de/docs/cloud/support#geo-region-override">nanoStream Cloud Public Standard and geo-loadbalanced URLs</a>.</p>
+<h4><a class="anchor" aria-hidden="true" id="config-example-using-service-defaults-custom-h5live-server-domain-and-rtmp-streamname"></a><a href="#config-example-using-service-defaults-custom-h5live-server-domain-and-rtmp-streamname" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Config example using service defaults, custom h5live server domain and RTMP streamname:</h4>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">var</span> config = {
+        <span class="hljs-string">"source"</span>: {
+            <span class="hljs-string">"defaults"</span>: {
+                <span class="hljs-string">"service"</span>: <span class="hljs-string">"bintu"</span>
+            },
+            <span class="hljs-string">"general"</span>: {
+                <span class="hljs-string">"serverDomain"</span>: <span class="hljs-string">"bintu-play-eu.nanocosmos.de"</span>
+            },
+            <span class="hljs-string">"entries"</span>: [
+                {
+                    <span class="hljs-string">"h5live"</span>: {
+                        <span class="hljs-comment">// your rtmp stream</span>
+                        <span class="hljs-string">"rtmp"</span>: {
+                            <span class="hljs-string">"streamname"</span>: <span class="hljs-string">"XXXXX-YYYYY"</span>
+                        }
+                    }
+                }
+            ]
+        }
+    };
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="config-example-using-custom-h5live-server-domain-and-bintu-stream-id"></a><a href="#config-example-using-custom-h5live-server-domain-and-bintu-stream-id" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Config example using custom h5live server domain and bintu stream id:</h4>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">var</span> config = {
+        <span class="hljs-string">"source"</span>: {
+            <span class="hljs-string">"general"</span>: {
+                <span class="hljs-string">"serverDomain"</span>: <span class="hljs-string">"bintu-play-eu.nanocosmos.de"</span>
+            },
+            <span class="hljs-string">"entries"</span>: [
+                {
+                    <span class="hljs-comment">// your bintu stream id</span>
+                    <span class="hljs-string">"bintu"</span>: {
+                        <span class="hljs-string">"streamid"</span>: <span class="hljs-string">"XXXX-YYYY-ZZZZ-AAAA-BBBB"</span>
+                    }
+                }
+            ]
+        }
+    };
+</code></pre>
 <h3><a class="anchor" aria-hidden="true" id="more-about-the-player-configuration"></a><a href="#more-about-the-player-configuration" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>More about the player configuration</h3>
 <p>Please check examples on how to configure the player at the <a href="https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_getting_started/">Getting started</a> section.</p>
-</span></div></article></div><div class="docLastUpdate"><em>Last updated on 7/1/2022</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/nanoplayer/nanoplayer_feature_media_error_recovery"><span class="arrow-prev">← </span><span>Media Error Recovery</span></a><a class="docs-next button" href="/docs/nanoplayer/nanoplayer_release_latest"><span>Latest</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#using-source-defaults-with-standard-nanostream-cloud">Using source defaults with standard nanoStream Cloud</a><ul class="toc-headings"><li><a href="#more-about-the-player-configuration">More about the player configuration</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><div><h5>Contact</h5><a href="https://www.nanocosmos.de/">Homepage</a><a href="https://www.nanocosmos.de/contact">Contact</a><a href="https://www.nanocosmos.de/support">Support</a><a href="https://www.nanocosmos.de/terms">Legal Terms</a></div><div><h5>Products</h5><a href="https://www.nanocosmos.de/cloud">Nanostream Cloud with Bintu.Live</a><a href="https://www.nanocosmos.de/h5live">H5Live Low Latency HTML5-Player</a><a href="https://www.nanocosmos.de/webrtc">nanoStream Webcaster</a><a href="https://www.nanocosmos.de/#nanostream">Nanostream Apps and SDK</a></div><div><h5>More</h5><a href="https://www.nanocosmos.de/blog/">Blog</a><a href="https://twitter.com/nanovideo">Twitter</a><a href="https://www.facebook.com/nanocosmos.net/">Facebook</a><a href="https://www.linkedin.com/company/nanocosmos-gmbh">LinkedIn</a><a href="https://github.com/nanocosmos/docs">GitHub</a><a class="github-button" href="https://github.com/nanocosmos/docs" data-icon="octicon-star" data-count-href="/nanocosmos/docs/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://nanocosmos.de/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/footer_logo.png" alt="nanocosmos GmbH" width="170" height="45"/></a><section class="copyright">Copyright © 2022 nanocosmos GmbH - doc version Fri Jul 01 2022 02:08:45 GMT+0000 (Coordinated Universal Time)</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/typesense-docsearch.js@latest/dist/cdn/docsearch.min.js"></script><script>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 7/14/2022</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/nanoplayer/nanoplayer_feature_media_error_recovery"><span class="arrow-prev">← </span><span>Media Error Recovery</span></a><a class="docs-next button" href="/docs/nanoplayer/nanoplayer_release_latest"><span>Latest</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#using-source-defaults-with-standard-nanostream-cloud">Using source defaults with standard nanoStream Cloud</a></li><li><a href="#applying-a-custom-h5live-server-domain">Applying a custom h5live server domain</a><ul class="toc-headings"><li><a href="#more-about-the-player-configuration">More about the player configuration</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><div><h5>Contact</h5><a href="https://www.nanocosmos.de/">Homepage</a><a href="https://www.nanocosmos.de/contact">Contact</a><a href="https://www.nanocosmos.de/support">Support</a><a href="https://www.nanocosmos.de/terms">Legal Terms</a></div><div><h5>Products</h5><a href="https://www.nanocosmos.de/cloud">Nanostream Cloud with Bintu.Live</a><a href="https://www.nanocosmos.de/h5live">H5Live Low Latency HTML5-Player</a><a href="https://www.nanocosmos.de/webrtc">nanoStream Webcaster</a><a href="https://www.nanocosmos.de/#nanostream">Nanostream Apps and SDK</a></div><div><h5>More</h5><a href="https://www.nanocosmos.de/blog/">Blog</a><a href="https://twitter.com/nanovideo">Twitter</a><a href="https://www.facebook.com/nanocosmos.net/">Facebook</a><a href="https://www.linkedin.com/company/nanocosmos-gmbh">LinkedIn</a><a href="https://github.com/nanocosmos/docs">GitHub</a><a class="github-button" href="https://github.com/nanocosmos/docs" data-icon="octicon-star" data-count-href="/nanocosmos/docs/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://nanocosmos.de/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/footer_logo.png" alt="nanocosmos GmbH" width="170" height="45"/></a><section class="copyright">Copyright © 2022 nanocosmos GmbH - doc version Thu Jul 14 2022 11:41:54 GMT+0000 (Coordinated Universal Time)</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/typesense-docsearch.js@latest/dist/cdn/docsearch.min.js"></script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {
                     return;
