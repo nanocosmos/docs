@@ -98,7 +98,8 @@ Supported query params:
 * all metrics parameters from `config.metrics` e.g.:
     * `metrics.accountKey=**here the account key**`
     * `metrics.accountId=**here the account id**`
-    Read more about how to use: [metrics](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_player_metrics).
+
+Read more about how to use: [metrics](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_player_metrics).
 
 
 ### Not supported
