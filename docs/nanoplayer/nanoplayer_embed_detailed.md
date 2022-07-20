@@ -79,6 +79,8 @@ Supported query params:
     * `defaults.service=bintu`
     * `startIndex=2`
     * `options.adaption.rule=deviationOfMean2`
+    * `metrics.accountKey=**here the account key**`
+    * `metrics.accountId=**here the account id**`
 * entries from `config.source.entries` array (except `info`, `label` & `tag`) e.g.:
     * `entry.rtmp.streamname=**here the streamname**`
     * `entry2.rtmp.streamname=**here the streamname**`
