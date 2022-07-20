@@ -79,8 +79,6 @@ Supported query params:
     * `defaults.service=bintu`
     * `startIndex=2`
     * `options.adaption.rule=deviationOfMean2`
-    * `metrics.accountKey=**here the account key**`
-    * `metrics.accountId=**here the account id**`
 * entries from `config.source.entries` array (except `info`, `label` & `tag`) e.g.:
     * `entry.rtmp.streamname=**here the streamname**`
     * `entry2.rtmp.streamname=**here the streamname**`
@@ -97,6 +95,9 @@ Supported query params:
     * `style.backgroundColor=black`
 * all tweaks parameters from `config.tweaks` (have to be given in a complete set) e.g.:
     * `tweaks.buffer.limit=1.7`
+* all metrics parameters from `config.metrics` e.g.:
+    * `metrics.accountKey=**here the account key**`
+    * `metrics.accountId=**here the account id**`
 
 
 ### Not supported
