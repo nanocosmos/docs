@@ -13,10 +13,10 @@ If you don't have metrics account information for your organisation yet please r
 
 #### Example player configuration with metrics enabled
 
-```
+```js
 var config = {
-    "source" : {
-		...
+    "source": {
+        ...
     },
     "playback": {
         ...
@@ -24,14 +24,14 @@ var config = {
     "style": {
         ...
     },
-    metrics: {
-        accountId: 'YOUR-METRICS-ACCOUNT-ID',       // replace with your metrics account id
-        accountKey: 'YOUR-METRICS-ACCOUNT-KEY',     // replace with your metrics account key
-        userId: 'viewer1',                          // value can be changed per viewer
-        eventId: 'event1',                          // value can be changed per event
-        statsInterval: 10,                          // statistics interval in seconds
-        customField1: 'CustomInfo1'                 // value can be changed
-    },
+    "metrics": {
+        "accountId": "YOUR-METRICS-ACCOUNT-ID", // replace with your metrics account id
+        "accountKey": "YOUR-METRICS-ACCOUNT-KEY", // replace with your metrics account key
+        "userId": "viewer1", // value can be changed per viewer
+        "eventId": "event1", // value can be changed per event
+        "statsInterval": 10, // statistics interval in seconds
+        "customField1": "CustomInfo1" // value can be changed
+    },
     ...
 }
 ```
