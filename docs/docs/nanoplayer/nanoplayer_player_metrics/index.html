@@ -67,31 +67,31 @@
 <p><strong>Important</strong> <br>
 If you don't have metrics account information for your organisation yet please reach out to <a href="mailto:sales@nanocosmos.de">sales@nanocosmos.de</a>.</p>
 <h4><a class="anchor" aria-hidden="true" id="example-player-configuration-with-metrics-enabled"></a><a href="#example-player-configuration-with-metrics-enabled" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example player configuration with metrics enabled</h4>
-<pre><code class="hljs"><span class="hljs-built_in">var</span> config = {
-    <span class="hljs-string">"source"</span> : {
-        <span class="hljs-params">...</span>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">var</span> config = {
+    <span class="hljs-string">"source"</span>: {
+        ...
     },
     <span class="hljs-string">"playback"</span>: {
-        <span class="hljs-params">...</span>
+        ...
     },
     <span class="hljs-string">"style"</span>: {
-        <span class="hljs-params">...</span>
+        ...
     },
-    metrics: {
-        accountId: <span class="hljs-string">'YOUR-METRICS-ACCOUNT-ID'</span>,       <span class="hljs-comment">// replace with your metrics account id</span>
-        accountKey: <span class="hljs-string">'YOUR-METRICS-ACCOUNT-KEY'</span>,     <span class="hljs-comment">// replace with your metrics account key</span>
-        userId: <span class="hljs-string">'viewer1'</span>,                          <span class="hljs-comment">// value can be changed per viewer</span>
-        eventId: <span class="hljs-string">'event1'</span>,                          <span class="hljs-comment">// value can be changed per event</span>
-        statsInterval: <span class="hljs-number">10</span>,                          <span class="hljs-comment">// statistics interval in seconds</span>
-        customField1: <span class="hljs-string">'CustomInfo1'</span>                 <span class="hljs-comment">// value can be changed</span>
+    <span class="hljs-string">"metrics"</span>: {
+        <span class="hljs-string">"accountId"</span>: <span class="hljs-string">"YOUR-METRICS-ACCOUNT-ID"</span>, <span class="hljs-comment">// replace with your metrics account id</span>
+        <span class="hljs-string">"accountKey"</span>: <span class="hljs-string">"YOUR-METRICS-ACCOUNT-KEY"</span>, <span class="hljs-comment">// replace with your metrics account key</span>
+        <span class="hljs-string">"userId"</span>: <span class="hljs-string">"viewer1"</span>, <span class="hljs-comment">// value can be changed per viewer</span>
+        <span class="hljs-string">"eventId"</span>: <span class="hljs-string">"event1"</span>, <span class="hljs-comment">// value can be changed per event</span>
+        <span class="hljs-string">"statsInterval"</span>: <span class="hljs-number">10</span>, <span class="hljs-comment">// statistics interval in seconds</span>
+        <span class="hljs-string">"customField1"</span>: <span class="hljs-string">"CustomInfo1"</span> <span class="hljs-comment">// value can be changed</span>
     },
-    <span class="hljs-params">...</span>
+    ...
 }
 </code></pre>
 <blockquote>
 <p><strong>Note:</strong> For more information on the metrics configuration object see our <a href="nanoplayer_api/#nanoplayerconfig--codeobjectcode">API documentation</a>. More detailed information around nanoStream Cloud Analytics can be found in our <a href="https://www.nanocosmos.de/blog/2019/09/nanostream-analytics-get-insights-in-your-nanostream-cloud-service-and-h5live-player-performance/">blog</a> and <a href="../cloud/analytics">docs</a>.</p>
 </blockquote>
-</span></div></article></div><div class="docLastUpdate"><em>Last updated on 7/20/2022</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/nanoplayer/nanoplayer_supported_browsers"><span class="arrow-prev">← </span><span>Supported Browsers</span></a><a class="docs-next button" href="/docs/nanoplayer/nanoplayer_iframe"><span>iframe Embeds</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#how-to-use">How to use</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><div><h5>Contact</h5><a href="https://www.nanocosmos.de/">Homepage</a><a href="https://www.nanocosmos.de/contact">Contact</a><a href="https://www.nanocosmos.de/support">Support</a><a href="https://www.nanocosmos.de/terms">Legal Terms</a></div><div><h5>Products</h5><a href="https://www.nanocosmos.de/cloud">Nanostream Cloud with Bintu.Live</a><a href="https://www.nanocosmos.de/h5live">H5Live Low Latency HTML5-Player</a><a href="https://www.nanocosmos.de/webrtc">nanoStream Webcaster</a><a href="https://www.nanocosmos.de/#nanostream">Nanostream Apps and SDK</a></div><div><h5>More</h5><a href="https://www.nanocosmos.de/blog/">Blog</a><a href="https://twitter.com/nanovideo">Twitter</a><a href="https://www.facebook.com/nanocosmos.net/">Facebook</a><a href="https://www.linkedin.com/company/nanocosmos-gmbh">LinkedIn</a><a href="https://github.com/nanocosmos/docs">GitHub</a><a class="github-button" href="https://github.com/nanocosmos/docs" data-icon="octicon-star" data-count-href="/nanocosmos/docs/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://nanocosmos.de/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/footer_logo.png" alt="nanocosmos GmbH" width="170" height="45"/></a><section class="copyright">Copyright © 2022 nanocosmos GmbH - doc version Wed Jul 20 2022 14:57:13 GMT+0000 (Coordinated Universal Time)</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/typesense-docsearch.js@latest/dist/cdn/docsearch.min.js"></script><script>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 8/1/2022</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/nanoplayer/nanoplayer_supported_browsers"><span class="arrow-prev">← </span><span>Supported Browsers</span></a><a class="docs-next button" href="/docs/nanoplayer/nanoplayer_iframe"><span>iframe Embeds</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#how-to-use">How to use</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><div><h5>Contact</h5><a href="https://www.nanocosmos.de/">Homepage</a><a href="https://www.nanocosmos.de/contact">Contact</a><a href="https://www.nanocosmos.de/support">Support</a><a href="https://www.nanocosmos.de/terms">Legal Terms</a></div><div><h5>Products</h5><a href="https://www.nanocosmos.de/cloud">Nanostream Cloud with Bintu.Live</a><a href="https://www.nanocosmos.de/h5live">H5Live Low Latency HTML5-Player</a><a href="https://www.nanocosmos.de/webrtc">nanoStream Webcaster</a><a href="https://www.nanocosmos.de/#nanostream">Nanostream Apps and SDK</a></div><div><h5>More</h5><a href="https://www.nanocosmos.de/blog/">Blog</a><a href="https://twitter.com/nanovideo">Twitter</a><a href="https://www.facebook.com/nanocosmos.net/">Facebook</a><a href="https://www.linkedin.com/company/nanocosmos-gmbh">LinkedIn</a><a href="https://github.com/nanocosmos/docs">GitHub</a><a class="github-button" href="https://github.com/nanocosmos/docs" data-icon="octicon-star" data-count-href="/nanocosmos/docs/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://nanocosmos.de/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/footer_logo.png" alt="nanocosmos GmbH" width="170" height="45"/></a><section class="copyright">Copyright © 2022 nanocosmos GmbH - doc version Mon Aug 01 2022 21:41:18 GMT+0000 (Coordinated Universal Time)</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/typesense-docsearch.js@latest/dist/cdn/docsearch.min.js"></script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {
                     return;
