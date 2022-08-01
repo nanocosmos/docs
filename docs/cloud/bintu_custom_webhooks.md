@@ -33,15 +33,10 @@ NOTES:
 - The customer api hook needs to reply with http status code 200, otherwise the bintu api will reject this stream and it's not possible to publish or play the stream. 
 - The custom api server should response with 200 to accept a stream and with 403 to reject a stream.
 
-Bintu will send the request body below to the customer api (example):
+Bintu will send a POST request with header `Content-Type: application/x-www-form-urlencoded` and body will contain url encoded form data as in the following example:
 
 ```
-{ call: 'publish',
-name: 'CD6xx-123456',
-type: 'live',
-app: 'live',
-addr: 'xxx.yyy.zzz.aaa',
-clientid: '123456' }
+call=publish&name=CD6xx-123456&type=live&app=live&addr=xxx.yyy.zzz.aaa&clientid=123456
 ```
 
 **For the publish\_done webhook, the request body also contains the keys bytes\_in and bytes\_out. The unit of the values is byte.**
@@ -56,17 +51,10 @@ Its possible to amend this body with custom fields/data by adding the data as qu
 
 This stream name will result in the request body below:
 
-
-    { foo: 'bar',
-    batz: '12345',
-    call: 'publish',
-    name: 'CD6xx-123456',
-    type: 'live',
-    app: 'live',
-    tcurl: 'rtmp://bintu-stream.nanocosmos.de/live',
-    addr: 'xxx.yyy.zzz.aaa',
-    clientid: '123456' }
-    
+```
+foo=bar&batz=12345&call=publish&name=CD6xx-123456&type=live&app=live&tcurl=rtmp%3A%2F%2Fbintu-stream.nanocosmos.de%3A1935%2Flive
+&addr=xxx.yyy.zzz.aaa&clientid=123456    
+```    
 
 ### Example for play:
 
@@ -75,16 +63,8 @@ This stream name will result in the request body below:
 Which will result in the request body below:
 
 ```
-{ test: '123',
-    call: 'play',
-    name: 'fyXNd-WSrU1',
-    start: '0',
-    duration: '0',
-    reset: '0',
-    app: 'play',
-    addr: '94.130.122.88',
-    clientid: '5287356' }
-```
+test=123&call=play&name=CD6xx-123456&start=0&duration=0&reset=0&app=play&addr=xxx.yyy.zzz.aaa&clientid=123456    
+```    
 
 Note: you might need to url encode your parameters, e.g. `test=123` needs to be url encoded: `test%3D123`
 
