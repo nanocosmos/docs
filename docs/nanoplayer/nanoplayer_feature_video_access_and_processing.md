@@ -8,7 +8,10 @@ sidebar_label: Video Access and Processing
 
 Introduced in **nanoStream H5Live Player Version 4.17.0**, the new `onActiveVideoElementChange` event is providing access to the active video element. This is enabling video processing use cases such as canvas drawing, snapshoting and in similar occasions when the currently active video element is necessary. The event will be executed when the video element has been activated or changed. Find out more in our API events' section: [`onActiveVideoElementChange`](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_api#onactivevideoelementchange).
 
-Note: for functional reasons, on iOS there are 2 video elements. As the event will be fired always on switch/creation etc, there would be an indication which video element is currently displayed.
+> **Important:**
+> Video elements should be treated as read-only and not be altered via properties or method calls.
+
+For functional reasons, on iOS there are 2 video elements. As the event will be fired always on switch/creation etc, there would be an indication which video element is currently displayed.
 
 In case of iOS stream switching, please read more about the [stream switch feature](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_feature_stream_switching/).
 
