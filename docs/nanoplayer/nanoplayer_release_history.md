@@ -4,6 +4,25 @@ title: Release History
 sidebar_label: History
 ---
 
+## Please find more about the **video processing** feature in our [documentation](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_feature_video_processing/).
+
+## **[4.17.0]**
+
+### **Release Notes**
+
+This version is adding a new public event to the player. The event `onActiveVideoElementChange` is emitted when the active video element for playback has been created and if the element has been changed in case of a stream switch on iOS. The event data is providing the `activeVideoElement` and the complete `videoElementList`.
+Having a reference to the `activeVideoElement` simplifies use cases like drawing or rendering images to a canvas or saving snapshots from the video.
+See the [api description](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_api#onactivevideoelementchange) of the event and our [docs feature entry](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_feature_video_access_and_processing/) for more information.
+
+### **Changelog**
+
+### Added
+
+- new public event `onActiveVideoElementChange`
+  - is emitted when the active video element for playback has been created and if the element has been changed in case of a stream switch on iOS
+  - provides the `videoElementList` {Array.HTMLVideoElement} and the `activeVideoElement` {HTMLVideoElement} in the event data
+  - see the [api description](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_api#onactivevideoelementchange)
+
 ## **[4.16.0]**
 
 ### **Release Notes**
@@ -299,7 +318,7 @@ The control bar didn't appear by tap in `PAUSED` state with `keepFrame` disabled
 ### **Release Notes**
 
 This version provides a fix for an error related to the player view.
-The issue occured in case of a rejected setup call or if 
+The issue occured in case of a rejected setup call or if
 the `config.playback` object was not defined in the configuration.
 The player view is enabled by default (`config.style.view=true`).
 
