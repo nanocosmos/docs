@@ -4,6 +4,16 @@ title: How to start a stream
 sidebar_label: Start streaming
 ---
 
+<div class="video-wrap">
+    <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/om3cOpV0WKo" frameborder="0" allowfullscreen></iframe>
+    </div>
+</div>
+
+##### *Click `PLAY` button to start*
+
+>Tutorial : How To Set Up a Low Latency Stream by nanocosmos
+
 In this tutorial you'll get to know the basic functionality of the nanoStream Cloud:
 create, broadcast and watch a live stream with ultra-low-latency. 
 
