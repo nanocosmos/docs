@@ -117,7 +117,10 @@
     "Support": [
       "cloud/network-diagnostics",
       "cloud/support"
-    ]
+    ],
+    "Video Tutorials": [
+      "cloud-frontend/How_to_Setup_Low_Latency_Stream"
+    ]    
   },
   "nanostream": {
     "nanoStream SDKs/Apps": [
