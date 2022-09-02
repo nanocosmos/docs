@@ -153,7 +153,8 @@ Groups of meta-data information are shown related to the stream. The meta-data i
 `Country` - location of client IP.\
 `City` - location of client IP.\
 `Resolution width` - width of video stream in pixels.\
-`Resolution height` - height of video stream in pixels.
+`Resolution height` - height of video stream in pixels.\
+`webcaster ID` - ID of corresponding webcaster instance.\
 
 &#9401;
 This tab shows which group of meta-data information is being shown at the moment and how many groups are available.
@@ -163,6 +164,10 @@ Click to switch between meta-data information.
 
 &#9404;
 This time slider can be used to define the time interval, allowing to zoom into streams with a longer duration or to focus on specific parts of the stream.
+
+### Stream Ingest Information
+The list of ingests for the selected stream name contains both successful ingest tries and ingest failures within the chosen time range. You can click on a specific ingest to get more details, regarding error message, error codes or additional meta information.
+
 
 ### Visualizations 
 

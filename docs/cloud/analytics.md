@@ -136,6 +136,20 @@ Playback (sent) traffic for each client (referrer).
 
 Ingest (received) and playback (sent) traffic for each IP.
 
+#### IP/Referer Blocking
+
+![Screenshot](/docs/assets/IP-blocking.png)
+
+Ⓐ Lists the IP's/referer of playout/ingest.\
+Ⓑ Lists the Playout or Ingest in GB for the corresponding IP/referer.\
+Ⓒ Search bar and listing if IP/referer is blocked.\
+Ⓓ Toggle between playout metrics and ingest metrics.\
+Ⓔ Lists the playout/ingest of all IP's/referer in GB and the total number of IP's/referer found.\
+
+By clicking on the wrench symbol in the Ⓒ column, a prompt will show up asking to block the IP/referer. 
+
+> **Note**: The block only affects new connections or the next reconnect and takes max. 6 minutes to be effected. Blocking for a running playout requires a reconnect to take effect.
+
 ### H5Live
 
 ![Screenshot](/img/cloud/analytics/analytics-h5live.png)
