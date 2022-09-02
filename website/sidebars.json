@@ -17,7 +17,7 @@
       "nanoplayer/nanoplayer_feature_reconnect_timeouts",
       "nanoplayer/nanoplayer_feature_media_error_recovery",
       "nanoplayer/nanoplayer_feature_source_defaults",
-      "nanoplayer/nanoplayer_feature_streamgroup"
+      "nanoplayer/nanoplayer_feature_stream_group_configuration"
     ],
     "Releases": [
       "nanoplayer/nanoplayer_release_latest",

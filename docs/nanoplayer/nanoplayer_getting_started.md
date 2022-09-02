@@ -10,17 +10,15 @@ There are a few options when it comes to implementing H5Live player on your web 
 
 **Basically, there are 3 options for configuration:**
 
- 1. [**Configuration with bintu streamgroup (since v4.18.0)**](#option-1-configuration-with-bintu-streamgroup)
+ 1. [**Configuration with bintu stream group (since v4.18.0)**](#option-1-configuration-with-bintu-stream_group)
  2. [**Simple configuration with RTMP streamname (since v4.13.0)**](#option-2-simple-configuration-with-RTMP-streamname)
  3. [**Custom configuration with RTMP streamname**](#option-3-custom-configuration-with-RTMP-streamname)
  4. [**Configuration with bintu stream id**](#option-4-configuration-with-bintu-stream-id)
 
-### Option 1: Configuration with bintu streamgroup
+### Option 1: Configuration with bintu stream group
 
-Bintu streamgroup configuration is possible for a single and multiple streams. It is the simpliest player configuration available.
-For more than one stream it is necessary to add a startIndex and deviationOfMean
-// the simpliest config we have, add startIndex in case there are more streams?
-// should we point that this config is an abr config or is this clear? could we have it with a single stream? is it necessary to say? should we have a difference between single and multi?
+Bintu stream group configuration is possible for a single and multiple streams. It is the easiest player configuration available.
+For more than one stream it is necessary to add a `'startIndex'` or `'group.startQuality'`and `'deviationOfMean'`.
 
 ```html
 <div id='playerDiv'></div>
@@ -30,8 +28,25 @@ var player;
 var config = {
    'source': {
         'group': {
-            'id': 'xxxxxxxx-zzzz-yyy-aaaa-aaabbbcccddd' // your streamgroup id
-        }
+            'id': 'xxxxxxxx-zzzz-yyy-aaaa-aaabbbcccddd', // your streamgroup id
+            'security': {
+                'jwtoken': 'xxx' // your security token if applicable
+            },
+            'apiurl': 'https://bintu.nanocosmos.de', // optional
+            'startQuality': 'medium-low' // optional
+        },
+         "options": {
+            "adaption": {
+                "rule": "deviationOfMean2" // enable ABR
+            },
+            "switch": {
+                'method': 'server',
+                'pauseOnError': false,
+                'forcePlay': true,
+                'fastStart': false,
+                'timeout': 10,
+            }
+        },
     },
     'playback': {
         'autoplay': true,
