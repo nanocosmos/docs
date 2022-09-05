@@ -8,7 +8,7 @@ sidebar_label: Getting started
 
 There are a few options when it comes to implementing H5Live player on your web page depending on your needs, we will walk you through each of them.
 
-**Basically, there are 3 options for configuration:**
+**Basically, there are 4 options for configuration:**
 
  1. [**Configuration with bintu stream group (since v4.18.0)**](#option-1-configuration-with-bintu-stream_group)
  2. [**Simple configuration with RTMP streamname (since v4.13.0)**](#option-2-simple-configuration-with-RTMP-streamname)
@@ -17,8 +17,9 @@ There are a few options when it comes to implementing H5Live player on your web 
 
 ### Option 1: Configuration with bintu stream group
 
-Bintu stream group configuration is possible for a single and multiple streams. It is the easiest player configuration available.
-For more than one stream it is necessary to add a `'startIndex'` or `'group.startQuality'`and `'deviationOfMean'`.
+Bintu stream group configuration was introduced in **nanoStream H5Live Player Version 4.18.0** and is available a single and multiple streams. It is the easiest player configuration available especially for ABR setup.
+For more than one stream it is necessary to add a `'startIndex'` or `'group.startQuality'`and `'deviationOfMean'`. 
+More information about stream group configuration, can be found in the feature description: [Stream group configuration](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_feature_stream_group_configuration)
 
 ```html
 <div id='playerDiv'></div>
