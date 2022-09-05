@@ -168,6 +168,8 @@ This time slider can be used to define the time interval, allowing to zoom into 
 ### Stream Ingest Information
 The list of ingests for the selected stream name contains both successful ingest tries and ingest failures within the chosen time range. You can click on a specific ingest to get more details, regarding error message, error codes or additional meta information.
 
+![Screenshot](assets/webcaster-failure-metrics.png)
+
 
 ### Visualizations 
 
@@ -211,6 +213,8 @@ The average time needed to encode one frame of the stream.
 Amount of WebRTC notifications about lost data packages.
 
 > **Note**, a high count of lost packages at a time can lead to issues with the video representation on the side of the end user.
+
+
 
 ## Workflow Examples 
 
