@@ -142,11 +142,12 @@ Ingest (received) and playback (sent) traffic for each IP.
 
 Ⓐ Lists the IP's/referer of playout/ingest.\
 Ⓑ Lists the Playout or Ingest in GB for the corresponding IP/referer.\
-Ⓒ Search bar and listing if IP/referer is blocked.\
+Ⓒ Search bar.\
 Ⓓ Toggle between playout metrics and ingest metrics.\
 Ⓔ Lists the playout/ingest of all IP's/referer in GB and the total number of IP's/referer found.\
+Ⓕ Shows if IP/referer is blocked.
 
-By clicking on the wrench symbol in the Ⓒ column, a prompt will show up asking to block the IP/referer. 
+By clicking on the wrench symbol in the Ⓕ column, a prompt will show up asking to block the IP/referer. 
 
 > **Note**: The block only affects new connections or the next reconnect and takes max. 6 minutes to be effected. Blocking for a running playout requires a reconnect to take effect.
 
