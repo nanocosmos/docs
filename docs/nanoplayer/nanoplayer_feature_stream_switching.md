@@ -22,6 +22,10 @@ Whether you want to configure a [single stream](#single-stream-configuration) or
 
 > **Note:** You can find more information on how to configure the player in our [API documentation](nanoplayer_api.md#nanoplayerconfig--codeobjectcode).
 
+### ABR stream group configuration
+
+Please find more information about stream group configuration [`here`](nanoplayer_feature_stream_group_configuration.md).
+
 ### Single Stream configuration
 The [old pattern](#example-old-single-stream-configuration-deprecated) to configure a single stream is **deprecated** with this version! Please follow this [new example](#example-new-single-stream-configuration) to configure a single stream.
 
@@ -52,7 +56,7 @@ var config = {
 };
 ```
 
-#### Example NEW single stream configuration
+#### Example single stream configuration
 ```javascript
 var config = {
     "source" : {
