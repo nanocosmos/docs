@@ -56,7 +56,7 @@
       },
       "cloud/analytics-zoom": {
         "title": "nanoStream Cloud Analytics",
-        "sidebar_label": "Zoom/Breakdown"
+        "sidebar_label": "Zoom"
       },
       "cloud/analytics": {
         "title": "nanoStream Cloud Analytics",
@@ -247,6 +247,9 @@
         "title": "Other Information",
         "sidebar_label": "Blog"
       },
+      "nanoplayer/nanoplayer_feature_embed_detailed": {
+        "title": "Embed detailed"
+      },
       "nanoplayer/nanoplayer_faq": {
         "title": "FAQ",
         "sidebar_label": "FAQ"
@@ -259,6 +262,10 @@
         "title": "Fullscreen API",
         "sidebar_label": "Fullscreen API"
       },
+      "nanoplayer/nanoplayer_feature_latency_control_modes": {
+        "title": "Latency Control Modes",
+        "sidebar_label": "Latency control modes"
+      },
       "nanoplayer/nanoplayer_feature_media_error_recovery": {
         "title": "Media Error Recovery",
         "sidebar_label": "Media Error Recovery"
@@ -266,6 +273,14 @@
       "nanoplayer/nanoplayer_feature_reconnect_timeouts": {
         "title": "Reconnect and Timeouts",
         "sidebar_label": "Reconnect and Timeouts"
+      },
+      "nanoplayer/nanoplayer_feature_source_defaults": {
+        "title": "Source defaults",
+        "sidebar_label": "Source defaults"
+      },
+      "nanoplayer/nanoplayer_feature_stream_group_configuration": {
+        "title": "Stream group configuration",
+        "sidebar_label": "Stream group configuration"
       },
       "nanoplayer/nanoplayer_feature_stream_switching": {
         "title": "Stream switching and ABR",
@@ -297,6 +312,12 @@
       "nanoplayer/nanoplayer_release_latest": {
         "title": "Latest Release",
         "sidebar_label": "Latest"
+      },
+      "nanoplayer/nanoplayer_feature_security_jwt": {
+        "title": "Secure playback with JSON Web Token (JWT)"
+      },
+      "nanoplayer/nanoplayer_feature_security_sts": {
+        "title": "Secure playback with STS tokens"
       },
       "nanoplayer/nanoplayer_supported_browsers": {
         "title": "Support Browsers",
@@ -714,6 +735,10 @@
         "title": "Screen Sharing",
         "sidebar_label": "Screen Sharing"
       },
+      "webrtc/nanostream_webrtc_secure_ingest": {
+        "title": "Secure ingest with Webcaster",
+        "sidebar_label": "Secure ingest with Webcaster"
+      },
       "webrtc/nanostream_webrtc_set_mediastream": {
         "title": "External Streams / Mixing",
         "sidebar_label": "External Streams / Mixing"
@@ -743,6 +768,7 @@
     "categories": {
       "H5Live Player": "H5Live Player",
       "Features": "Features",
+      "Releases": "Releases",
       "API": "API",
       "Other": "Other",
       "nanoStream Webcaster": "nanoStream Webcaster",
