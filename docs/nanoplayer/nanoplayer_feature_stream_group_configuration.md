@@ -2,12 +2,11 @@
 id: nanoplayer_feature_stream_group_configuration
 title: Stream group configuration
 sidebar_label: Stream group configuration
-
 ---
 
 ## Using stream group configuration with standard nanoStream Cloud
 
-Introduced in **nanoStream H5Live Player Version 4.18.0**, *bintu stream group* makes the configuration easier, particularly in case of more than one stream. While the configuration via entries requires passing `rtmp.streamname` or `bintu.streamid` value for each entry in the source object, the stream group feature allows to pass once the `group.id` to have available all entries included in the stream group. Due to `group.id` response from the Bintu API being decoded to deliver expected entries, this solution makes a shorter and easier configuration.
+Introduced in **nanoStream H5Live Player Version 4.18.0**, part of nanoStream Cloud 2022, *bintu stream group* makes the configuration easier, particularly in case of more than one stream. While the configuration via entries requires passing `rtmp.streamname` or `bintu.streamid` value for each entry in the source object, the stream group feature allows to pass once the `group.id` to have available all entries included in the stream group. Due to `group.id` response from the Bintu API being decoded to deliver expected entries, this solution makes a shorter and easier configuration.
 
 The stream group supports both: standard and secure stream playback.
 
