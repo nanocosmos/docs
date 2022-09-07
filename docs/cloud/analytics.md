@@ -4,6 +4,16 @@ title: nanoStream Cloud Analytics
 sidebar_label: General
 ---
 
+<div class="video-wrap">
+    <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/F3SC3IK2cpg" frameborder="0" allowfullscreen></iframe>
+    </div>
+</div>
+
+##### *Click `PLAY` button to start*
+
+>Tutorial : Analytics for Low Latency Streams with nanocosomos
+
 ![Screenshot](/img/cloud/analytics/analytics.png)
 
 nanoStream Cloud Analytics offers a great way to monitor and analyze the performance and quality of service of your live streams.
