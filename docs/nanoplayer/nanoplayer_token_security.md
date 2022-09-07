@@ -22,7 +22,7 @@ Thus we recommend to use a second Bintu organization to not interfere with your 
 
 **There are 2 options for secure playback configuration:**
 
- 1. [**Simple configuration with JSON Web Token (JWT) (since v4.18.0)**](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_feature_security_jwt)
-    A standard security token, recommeneded for more than one stream, easy ABR configuration.
- 2. [**Configuration with STS**](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_feature_security_sts)
+ 1. [**Simple configuration with JSON Web Token (JWT) (since v4.18.0)**](nanoplayer_security_jwt.md)
+    A standard conform security token, recommended for more than one stream, easy ABR configuration.
+ 2. [**Configuration with STS token**](nanoplayer_security_sts.md)
     Proprietary security token with multi value format, commonly used before v4.18.0.
