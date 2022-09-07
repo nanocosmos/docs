@@ -7,10 +7,10 @@ Since **nanoStream H5Live Player Version 4.18.0** it is possible to use JSON Web
 
 ## How to create a JSON Web Token for secure playback in the Cloud Dashboard
 
-Since version 3 of the nanoStream Cloud Dashboard it is supported to create JSON Web Token for secure playback. 
+Since version 3 of the nanoStream Cloud Dashboard it is supported to create JSON Web Token for secure playback.  
 Dashboard URL: https://dashboard.nanostream.cloud 
 
-There are 2 location in the dashboard where tokens can be created 
+There are 2 locations in the dashboard where tokens can be created 
 * via the `Secure Playback Token` item in the sidebar 
 * via the `Create new token` button in the stream overview 
 
