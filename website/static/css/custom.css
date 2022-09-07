@@ -335,6 +335,8 @@ img.logo {
   overflow: hidden;
   height: 0;
   padding-bottom: 56.25%; /* creates a 16:9 aspect ratio */
+  border: 4px solid;
+  border-color: #d28130;
 }
 
 .video-container iframe,
@@ -350,5 +352,5 @@ img.logo {
 /* And set the max-width of the parent element */
 .video-wrap {
   width: 100%;
-  max-width: 600px;
+  max-width: 1200px;
 }
