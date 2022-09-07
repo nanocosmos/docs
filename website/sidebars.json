@@ -18,6 +18,7 @@
       "nanoplayer/nanoplayer_feature_media_error_recovery",
       "nanoplayer/nanoplayer_feature_source_defaults",
       "nanoplayer/nanoplayer_feature_stream_group_configuration"
+      "nanoplayer/nanoplayer_feature_video_access_and_processing"
     ],
     "Releases": [
       "nanoplayer/nanoplayer_release_latest",
@@ -117,7 +118,10 @@
     "Support": [
       "cloud/network-diagnostics",
       "cloud/support"
-    ]
+    ],
+    "Video Tutorials": [
+      "cloud-frontend/How_to_Setup_Low_Latency_Stream"
+    ]    
   },
   "nanostream": {
     "nanoStream SDKs/Apps": [

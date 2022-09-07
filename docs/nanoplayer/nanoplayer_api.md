@@ -7,10 +7,10 @@ sidebar_label: NanoPlayer
 <a name="NanoPlayer"></a>
 
 ## NanoPlayer
-NanoPlayer (H5Live) Public API Class 4.16.0
+NanoPlayer (H5Live) Public API Class 4.18.0
 
 **Kind**: global class  
-**Version**: 4.16.0  
+**Version**: 4.18.0  
 <a name="new_NanoPlayer_new"></a>
 
 ### new NanoPlayer(playerDivId)
@@ -2399,6 +2399,67 @@ player.setup(config).then(function (config) {
     console.log(error);
 });
 ```
+<a name="NanoPlayer..event_onActiveVideoElementChange"></a>
+
+### "onActiveVideoElementChange"
+The event that fires when the active video element for playback has been created and if the element has been changed in case of a stream switch on iOS (HLS playback on iOS requires two video elements for a smooth stream switch behaviour).
+
+**Kind**: event emitted by [<code>NanoPlayer</code>](#NanoPlayer)  
+**See**: [config](#NanoPlayer..config)  
+**Properties**
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th><th>Type</th><th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+<tr>
+    <td>name</td><td><code>string</code></td><td><p>The event name.</p>
+</td>
+    </tr><tr>
+    <td>player</td><td><code>string</code></td><td><p>The player name (id of the playerDiv).</p>
+</td>
+    </tr><tr>
+    <td>id</td><td><code>string</code></td><td><p>The unique id of the player instance.</p>
+</td>
+    </tr><tr>
+    <td>version</td><td><code>string</code></td><td><p>The version of the player.</p>
+</td>
+    </tr><tr>
+    <td>data</td><td><code>object</code></td><td><p>The data object.</p>
+</td>
+    </tr><tr>
+    <td>data.activeVideoElement</td><td><code>HTMLVideoElement</code></td><td><p>The current active video element. <br><b>IMPORTANT</b>: Video elements should be treated as read-only and not be altered via properties or method calls.</p>
+</td>
+    </tr><tr>
+    <td>data.videoElementList</td><td><code>Array.HTMLVideoElement</code></td><td><p>The list of available video elements. Has two elements in case of iOS playback. <br><b>IMPORTANT</b>: Video elements should be treated as read-only and not be altered via properties or method calls.</p>
+</td>
+    </tr>  </tbody>
+</table>
+
+**Example**  
+```js
+// player instance of NanoPlayer
+var onActiveVideoElementChange = function (event) {
+    var activeVideoElement = event.data.activeVideoElement;
+    var videoElementList = event.data.videoElementList;
+    // IMPORTANT: Video elements should be treated as read-only and not be altered via properties or method calls.
+    if (activeVideoElement) {
+        console.log('ActiveVideoElementChange: The current active video element has the id: \'' + activeVideoElement.id + '\'');
+    }
+    for (var i = 0; i < videoElementList.length; i += 1) {
+        console.log('ActiveVideoElementChange: The video element at index ' + i + ' has the id \'' + videoElementList[i].id + '\'');
+    }
+};
+config.events.onActiveVideoElementChange = onActiveVideoElementChange;
+player.setup(config).then(function (config) {
+    console.log('setup ok with config: ' + JSON.stringify(config));
+}, function (error) {
+    console.log(error);
+});
+```
 <a name="NanoPlayer..config"></a>
 
 ### NanoPlayer~config : <code>object</code>
@@ -2429,6 +2490,24 @@ The config object to pass as param for the 'setup' call.
 </td>
     </tr><tr>
     <td>[source.defaults.service]</td><td><code>string</code></td><td></td><td><p>The defaults service. If a service is set, the <code>h5live.server</code> object and the <code>h5live.rtmp.url</code> in each entry can be omitted. In this case defaults will be applied internally. Values for <code>h5live.server</code> and/or <code>h5live.rtmp.url</code> that are defined explicitly in the entry have priority. The available value for <code>defaults.service</code> is <code>&#39;bintu&#39;</code> for using the standard <strong>nanoStream Cloud</strong>.</p>
+</td>
+    </tr><tr>
+    <td>[source.group]</td><td><code>object</code></td><td></td><td><p>The object to configure a bintu stream group.</p>
+</td>
+    </tr><tr>
+    <td>[source.group.id]</td><td><code>string</code></td><td></td><td><p>The stream group id.</p>
+</td>
+    </tr><tr>
+    <td>[source.group.apiurl]</td><td><code>string</code></td><td></td><td><p>The bintu apiurl.</p>
+</td>
+    </tr><tr>
+    <td>[source.group.startQuality]</td><td><code>string</code></td><td></td><td><p>The start quality. Will be mapped to a valid <code>startIndex</code>. Possible values are: <code>&#39;high&#39;</code>, <code>&#39;medium-high&#39;</code>, <code>&#39;medium&#39;</code>, <code>&#39;medium-low&#39;</code>, <code>&#39;low&#39;</code>. If not set the general <code>startIndex</code> of the source will be used (default: <code>0</code> ~ <code>&#39;high&#39;</code>)</p>
+</td>
+    </tr><tr>
+    <td>[source.group.security]</td><td><code>object</code></td><td></td><td><p>The security object of the group.</p>
+</td>
+    </tr><tr>
+    <td>[source.group.security.jwtoken]</td><td><code>string</code></td><td></td><td><p>The JSON Web Token for security.</p>
 </td>
     </tr><tr>
     <td>[source.general]</td><td><code>object</code></td><td></td><td><p>The object to configure general values.</p>

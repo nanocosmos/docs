@@ -4,27 +4,41 @@ title: Latest Release
 sidebar_label: Latest
 ---
 
-## **[4.16.0]**
+## Please find more about the **stream group configuration** feature in our [documentation](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_feature_stream_group_configuration/).
+
+## Please find more about **secure playback with JWT** in our [documentation](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_token_security/).
+
+## **[4.18.0]**
 
 ### **Release Notes**
 
-This version adds the possibility to set a general H5Live server domain. A domain can be applied via `config.source.general.serverDomain`. This can be especially useful with configurations via `source.defaults` or `bintu.streamid`. By default, these configurations are using the standard geo-load-balanced domain namest. Please find further information in our [documentation](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_feature_source_defaults#applying-a-custom-h5live-server-domain) regarding this feature.
+This version is introducing two new features.
 
-In addition an issue in relation to timed out stream switches has been fixed. Previously this could lead to a temporarily inconsistent internal stream state.
+Utilizing the new bintu stream group feature, it is now possible to configure an entire set of ABR streams
+by passing only the corresponding bintu stream group id via the player source configuration.
+This allows a much easier configuration for ABR playback.
+All existing options that are part of the configuration remain unchanged.
+
+Please find more about the **stream group configuration** feature in our [documentation](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_feature_stream_group_configuration/).
+
+Furthermore, this version is adding support for the new secure playback using JSON Web Token (JWT).
+The new token type can contain playback permissions for one or more stream names.
+This way a single token can be used for all secure use cases.
+It can be applied with the current `entries` configuration and with the new `group` configuration.
+
+Please find more about **secure playback with JWT** in our [documentation](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_token_security/).
 
 ### **Changelog**
 
 ### Added
 
-- new config parameter `config.source.general.serverDomain`
-  - will override/modify all h5live server domains
-
-### Fixed
-
-- internal stream state after timed out stream switches
+- stream group configuration via `config.source.group` object
+  - see [feature](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_feature_stream_group_configuration/) description
+- support for secure playback using JSON Web Token (JWT)
+  - see [feature](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_token_security/) description
 
 ### **Release Package**
 
-- [4.16.0](https://files.nanocosmos.de/index.php/s/4BbC7Xq6XcksCs5)
+- [4.18.0](https://files.nanocosmos.de/index.php/s/HwdoADroF3QAc5s)
 - [latest 4.x](https://files.nanocosmos.de/index.php/s/4nndC45mcB6oSa6)
 - [latest](https://files.nanocosmos.de/index.php/s/2tpCzgRjNEZDzeP)
