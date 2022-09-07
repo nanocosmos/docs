@@ -18,12 +18,12 @@ There are a few options when it comes to implementing H5Live player on your web 
 ### Option 1: Configuration with bintu stream group
 
 Bintu stream group configuration was introduced in **nanoStream H5Live Player Version 4.18.0** and is available a single and multiple streams. It is the easiest player configuration available especially for ABR setup.
-For more than one stream it is necessary to add a `'startIndex'` or `'group.startQuality'`and `'deviationOfMean'`. 
+For more than one stream it is necessary to add a `'startIndex'` or `'group.startQuality'`. 
 More information about stream group configuration, can be found in the feature description: [Stream group configuration](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_feature_stream_group_configuration)
 
 ```html
 <div id='playerDiv'></div>
-<script src='https://demo.nanocosmos.de/nanoplayer/api/release/nanoplayer.4.min.js'></script>
+<script src='https://demo.nanocosmos.de/nanoplayer/api/release/nanoplayer.4.18.0.min.js'></script>
 <script>
 var player;
 var config = {
@@ -34,7 +34,7 @@ var config = {
                 'jwtoken': 'xxx' // your security token if applicable
             },
             'apiurl': 'https://bintu.nanocosmos.de', // optional
-            'startQuality': 'medium-low' // optional
+            'startQuality': 'medium' // optional
         },
          "options": {
             "adaption": {
