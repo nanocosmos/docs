@@ -5,6 +5,15 @@ title: Secure playback with JSON Web Token (JWT)
 
 Since **nanoStream H5Live Player Version 4.18.0** it is possible to use JSON Web Token (JWT) for a secure playback for all use cases. It can be applied with the `entries` configuration and with the `group` configuration. Contrary to the STS secure configuration, there can be single JWT token for all streams within the stream group. It is now easier than ever to use live transcoding and ABR with ultra-low-latency live streaming.
 
+## How to create a JSON Web Token for secure playback in the Cloud Dashboard
+
+Since version 3 of the nanoStream Cloud Dashboard it is supported to create JSON Web Token for secure playback. 
+Dashboard URL: https://dashboard.nanostream.cloud 
+
+There are 2 location in the dashboard where tokens can be created 
+* via the `Secure Playback Token` item in the sidebar 
+* via the `Create new token` button in the stream overview 
+
 ## How to create JSON Web Token for secure playback via API
 
 ### Request URL and method
@@ -113,15 +122,6 @@ Since **nanoStream H5Live Player Version 4.18.0** it is possible to use JSON Web
   * example body: `{"success": false,"errorCode": 1000,"message": "Parameter required: ..."}` 
 * `403`: forbidden 
   * example body: `{"success": false,"errorCode": 1001,"message": "Provided APIKey is not valid"}`
-
-## How to create a JSON Web Token for secure playback in the Cloud Dashboard
-
-Since version 3 of the nanoStream Cloud Dashboard it is supported to create JSON Web Token for secure playback. 
-Dashboard URL: https://dashboard.nanostream.cloud 
-
-There are 2 location in the dashboard where tokens can be created 
-* via the `Secure Playback Token` item in the sidebar 
-* via the `Create new token` button in the stream overview 
 
 ## How to verify JSON Web Token for secure playback via API
 
