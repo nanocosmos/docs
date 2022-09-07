@@ -105,6 +105,10 @@
         "title": "Network Diagnostics",
         "sidebar_label": "Network Diagnostics"
       },
+      "cloud/cloud_news": {
+        "title": "nanoStream Cloud Latest News",
+        "sidebar_label": "Latest News"
+      },
       "cloud/security": {
         "title": "nanoStream Cloud Security",
         "sidebar_label": "nanoStream Cloud Security"
