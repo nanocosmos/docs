@@ -1,0 +1,297 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Secure playback with JSON Web Token (JWT) · nanocosmos Documentation</title><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="generator" content="Docusaurus"/><meta name="description" content="Since **nanoStream H5Live Player Version 4.18.0** it is possible to use JSON Web Token (JWT) for a secure playback for all use cases. It can be applied with the `entries` configuration and with the `group` configuration. Contrary to the STS secure configuration, there can be single JWT token for all streams within the stream group. It is now easier than ever to use live transcoding and ABR with ultra-low-latency live streaming."/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Secure playback with JSON Web Token (JWT) · nanocosmos Documentation"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.nanocosmos.de/"/><meta property="og:description" content="Since **nanoStream H5Live Player Version 4.18.0** it is possible to use JSON Web Token (JWT) for a secure playback for all use cases. It can be applied with the `entries` configuration and with the `group` configuration. Contrary to the STS secure configuration, there can be single JWT token for all streams within the stream group. It is now easier than ever to use live transcoding and ABR with ultra-low-latency live streaming."/><meta property="og:image" content="https://docs.nanocosmos.de/img/docusaurus.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://docs.nanocosmos.de/img/docusaurus.png"/><link rel="shortcut icon" href="/img/favicon_nano.png"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typesense-docsearch.js@latest/dist/cdn/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script>
+              (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+              (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+              m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+              })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+              ga('create', 'UA-552140-1', 'auto');
+              ga('send', 'pageview');
+            </script><link rel="stylesheet" href="/css/copy-button.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/js/copy-button.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/nanocosmos_header_logo.png" alt="nanocosmos Documentation"/><h2 class="headerTitleWithLogo">nanocosmos Documentation</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/docs/cloud/cloud_overview" target="_self">nanoStream Cloud</a></li><li class=""><a href="/docs/nanoplayer/nanoplayer_introduction" target="_self">H5Live Player</a></li><li class=""><a href="/docs/webrtc/nanostream_webrtc_introduction" target="_self">nanoStream Webcaster</a></li><li class=""><a href="/docs/nanomeet/introduction" target="_self">nanoMeet</a></li><li class=""><a href="/docs/nanostream/nanostream" target="_self">nanoStream Apps and SDKs</a></li><li class=""><a href="/docs/samples/samples" target="_self">Samples</a></li><li class=""><a href="/docs/faq/faq_streaming" target="_self">FAQ</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/nanocosmos/docs/tree/master/docs/nanoplayer/nanoplayer_security_jwt.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 id="__docusaurus" class="postHeaderTitle">Secure playback with JSON Web Token (JWT)</h1></header><article><div><span><p>Since <strong>nanoStream H5Live Player Version 4.18.0</strong> it is possible to use JSON Web Token (JWT) for a secure playback for all use cases. It can be applied with the <code>entries</code> configuration and with the <code>group</code> configuration. Contrary to the STS secure configuration, there can be single JWT token for all streams within the stream group. It is now easier than ever to use live transcoding and ABR with ultra-low-latency live streaming.</p>
+<h2><a class="anchor" aria-hidden="true" id="how-to-create-a-json-web-token-for-secure-playback-in-the-cloud-dashboard"></a><a href="#how-to-create-a-json-web-token-for-secure-playback-in-the-cloud-dashboard" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>How to create a JSON Web Token for secure playback in the Cloud Dashboard</h2>
+<p>Since version 3 of the nanoStream Cloud Dashboard it is supported to create JSON Web Token for secure playback.<br>
+Dashboard URL: <a href="https://dashboard.nanostream.cloud">https://dashboard.nanostream.cloud</a></p>
+<p>There are 2 locations in the dashboard where tokens can be created</p>
+<ul>
+<li>via the <code>Secure Playback Token</code> item in the sidebar</li>
+<li>via the <code>Create new token</code> button in the stream overview</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="how-to-create-json-web-token-for-secure-playback-via-api"></a><a href="#how-to-create-json-web-token-for-secure-playback-via-api" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>How to create JSON Web Token for secure playback via API</h2>
+<h3><a class="anchor" aria-hidden="true" id="request-url-and-method"></a><a href="#request-url-and-method" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Request URL and method</h3>
+<ul>
+<li>URL : <code>https://token.nanostream.cloud/api/v1/splay</code></li>
+<li>Method: <code>POST</code></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="http-request-header"></a><a href="#http-request-header" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>HTTP request header</h3>
+<ul>
+<li><code>content-type</code> : <code>application/json</code></li>
+<li>Authentication via bintu API key or bintu token
+<ul>
+<li><code>X-BINTU-APIKEY</code> : Your API key. Can be obtained from the nanoStream Cloud dashboard.</li>
+<li><code>X-BINTU-TOKEN</code> : Your bintu token.</li>
+</ul></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="http-request-body"></a><a href="#http-request-body" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>HTTP request body</h3>
+<ul>
+<li>Format: JSON object containing the following fields</li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="stream-group-id-stream-names-or-entire-organisation"></a><a href="#stream-group-id-stream-names-or-entire-organisation" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Stream group id, stream names or entire organisation</h4>
+<ul>
+<li><p>There are 3 options available for identifying the streams included in the token</p></li>
+<li><p>One of the options must be included</p></li>
+<li><p>a) Create token for an entire stream group</p>
+<ul>
+<li>Key: <code>groupid</code></li>
+<li>Value: string, bintu streamgroup id</li>
+<li>Example: <code>&quot;groupid&quot;: &quot;xxxxxxxx-zzzz-yyy-aaaa-aaabbbcccddd&quot;</code></li>
+</ul></li>
+<li><p>b) Create token for one or more stream names</p>
+<ul>
+<li>Key: <code>streams</code></li>
+<li>Value: array, containing one or more stream names</li>
+<li>Example: <code>&quot;streams&quot;: [&quot;XXXXX-YYYY1&quot;,&quot;XXXXX-YYYY2&quot;,&quot;XXXXX-YYYY3&quot;]</code></li>
+</ul></li>
+<li><p>c) Create token for all streams of your organisation</p>
+<ul>
+<li>Key: <code>orgawide</code></li>
+<li>Value: boolean, true</li>
+<li>Example: <code>&quot;orgawide&quot;: true</code></li>
+</ul></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="time-range-restrictions"></a><a href="#time-range-restrictions" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Time range restrictions</h4>
+<ul>
+<li><p>Start time</p>
+<ul>
+<li>The parameter nbf stands for NotBefore and is the time in the future when the token becomes valid. It is not possible to use the token before this time is reached.</li>
+<li>optional</li>
+<li>Key: <code>nbf</code></li>
+<li>Value: number, UNIX timestamp in seconds</li>
+<li>Example: <code>&quot;nbf&quot;: 1686900000</code></li>
+</ul></li>
+<li><p>End time</p>
+<ul>
+<li>optional</li>
+<li>The parameter exp stands for expiration and is the time at which the token looses its validity. After the expiration, the token can no longer be used.</li>
+<li>Key: <code>exp</code></li>
+<li>Value: number, UNIX timestamp in seconds</li>
+<li>Example: <code>&quot;exp&quot;: 1686903652</code></li>
+</ul></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="web-application-domain-namereferer-restriction"></a><a href="#web-application-domain-namereferer-restriction" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Web application domain name/referer restriction</h4>
+<ul>
+<li>Web application domain
+<ul>
+<li>optional</li>
+<li>Key: <code>domain</code></li>
+<li>Value: string, domain name</li>
+<li>Example: <code>&quot;domain&quot;: &quot;example.domain.com&quot;</code></li>
+</ul></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="ip-address-restriction"></a><a href="#ip-address-restriction" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>IP address restriction</h4>
+<ul>
+<li>IP address
+<ul>
+<li>optional</li>
+<li>Key: <code>ip</code></li>
+<li>Value: string, IP address</li>
+<li>Example: <code>&quot;ip&quot;: &quot;123.45.67.89&quot;</code></li>
+</ul></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="tag"></a><a href="#tag" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Tag</h4>
+<ul>
+<li>Tag
+<ul>
+<li>optional</li>
+<li>Key: <code>tag</code></li>
+<li>Value: string, tag</li>
+<li>Example: <code>&quot;tag&quot;: &quot;table 7&quot;</code></li>
+</ul></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="user-identifier"></a><a href="#user-identifier" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>User identifier</h4>
+<ul>
+<li>User
+<ul>
+<li>optional</li>
+<li>Key: <code>user</code></li>
+<li>Value: string, user id, name or alias</li>
+<li>Example: <code>&quot;user&quot;: &quot;aaa-bbb-ccc-ddd&quot;</code></li>
+</ul></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="example-of-a-complete-json-object"></a><a href="#example-of-a-complete-json-object" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example of a complete JSON object</h4>
+<pre><code class="hljs">{
+  <span class="hljs-attr">"groupid"</span>: <span class="hljs-string">"xxxxxxxx-zzzz-yyy-aaaa-aaabbbcccddd"</span>,
+  <span class="hljs-attr">"exp"</span>: <span class="hljs-number">1686903652</span>,
+  <span class="hljs-attr">"domain"</span>: <span class="hljs-string">"example.domain.com"</span>,
+  <span class="hljs-attr">"ip"</span>: <span class="hljs-string">"123.45.67.89"</span>,
+  <span class="hljs-attr">"tag"</span>: <span class="hljs-string">"table 7"</span>,
+  <span class="hljs-attr">"user"</span>: <span class="hljs-string">"aaa-bbb-ccc-ddd"</span>
+}
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="http-response"></a><a href="#http-response" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>HTTP response</h3>
+<ul>
+<li>Content type: <code>application/json; charset=utf-8</code></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="http-response-codes"></a><a href="#http-response-codes" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>HTTP response codes</h4>
+<ul>
+<li><code>200</code>: success
+<ul>
+<li>example body: <code>{&quot;success&quot;: true,&quot;data&quot;: {&quot;token&quot;: &quot;eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Im5hbm9jb3Ntb3MifQ...&quot;}}</code></li>
+</ul></li>
+<li><code>400</code>: parameter required
+<ul>
+<li>example body: <code>{&quot;success&quot;: false,&quot;errorCode&quot;: 1000,&quot;message&quot;: &quot;Parameter required: ...&quot;}</code></li>
+</ul></li>
+<li><code>403</code>: forbidden
+<ul>
+<li>example body: <code>{&quot;success&quot;: false,&quot;errorCode&quot;: 1001,&quot;message&quot;: &quot;Provided APIKey is not valid&quot;}</code></li>
+</ul></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="how-to-verify-json-web-token-for-secure-playback-via-api"></a><a href="#how-to-verify-json-web-token-for-secure-playback-via-api" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>How to verify JSON Web Token for secure playback via API</h2>
+<h3><a class="anchor" aria-hidden="true" id="request-url-and-method-1"></a><a href="#request-url-and-method-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Request URL and method</h3>
+<ul>
+<li>URL : <code>https://token.nanostream.cloud/api/v1/splay/verify</code></li>
+<li>Method: <code>POST</code></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="http-request-header-1"></a><a href="#http-request-header-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>HTTP request header</h3>
+<ul>
+<li><code>content-type</code> : <code>application/json</code></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="http-request-body-1"></a><a href="#http-request-body-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>HTTP request body</h3>
+<ul>
+<li>Format: JSON object containing the following fields</li>
+<li>Token
+<ul>
+<li>Key: <code>token</code></li>
+<li>Value: string, JSON Web Token</li>
+</ul></li>
+<li>Example body: <code>{&quot;token&quot;: &quot;eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Im5hbm9jb3Ntb3MifQ...&quot;}</code></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="http-response-1"></a><a href="#http-response-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>HTTP response</h3>
+<ul>
+<li>Content type: <code>application/json; charset=utf-8</code></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="http-response-codes-1"></a><a href="#http-response-codes-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>HTTP response codes</h4>
+<ul>
+<li><code>200</code>: success, valid token
+<ul>
+<li>example body: <code>{&quot;success&quot;: true, &quot;data&quot;: {&quot;token&quot;: &quot;eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Im5hbm9jb3Ntb3MifQ...&quot;}}</code></li>
+</ul></li>
+<li><code>403</code>: error, invalid token
+<ul>
+<li>example body: <code>{&quot;success&quot;: false, &quot;errorCode&quot;: 1002,&quot;message&quot;: &quot;jwt expired&quot;}</code></li>
+</ul></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="how-to-integrate-secure-h5live-player-configuration-with-jwt"></a><a href="#how-to-integrate-secure-h5live-player-configuration-with-jwt" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>How to integrate secure H5Live player configuration with JWT</h2>
+<p><strong>Adding the secure <code>stream group</code> to the config</strong></p>
+<p>While passing the <code>group</code> object with nested <code>'id' : 'your_stream_group_id'</code> in the <code>source</code>, in case of a secure stream group, add <code>security</code> with JSON Web Token (JWT) <code>'jwtoken' : 'your_token'</code>.</p>
+<h4><a class="anchor" aria-hidden="true" id="json-representation-with-stream-group"></a><a href="#json-representation-with-stream-group" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>JSON representation with stream group</h4>
+<pre><code class="hljs css language-json">'config': {
+    'source': {
+        'group': {
+            'id': 'xxxxxxxx-zzzz-yyy-aaaa-aaabbbcccddd', // your stream group id
+            'security': {
+                'jwtoken': 'xxx' // your JSON Web Token
+            },
+        },
+        ...
+    },
+    ...
+}
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="config-example-with-stream-group-configuration"></a><a href="#config-example-with-stream-group-configuration" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Config example with stream group configuration</h4>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">var</span> config = {
+    <span class="hljs-string">"source"</span>: {
+        <span class="hljs-string">"group"</span>: {
+            <span class="hljs-string">"id"</span>: <span class="hljs-string">"xxxxxxxx-zzzz-yyy-aaaa-aaabbbcccddd"</span>, <span class="hljs-comment">// your stream group id</span>
+            <span class="hljs-string">"security"</span>: {
+                <span class="hljs-string">"jwtoken"</span>: <span class="hljs-string">"xxx"</span> <span class="hljs-comment">// your JSON Web Token</span>
+            },
+        },
+        ...
+    },
+    ...
+};
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="config-example-with-entries-configuration"></a><a href="#config-example-with-entries-configuration" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Config example with entries configuration</h4>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">var</span> config = {
+    <span class="hljs-string">"source"</span>: {
+        <span class="hljs-string">"entries"</span>: [
+            {
+                <span class="hljs-string">"h5live"</span>: {
+                    <span class="hljs-string">"rtmp"</span>: {
+                        <span class="hljs-string">"url"</span>: <span class="hljs-string">"rtmp://bintu-splay.nanocosmos.de/splay"</span>,
+                        <span class="hljs-string">"streamname"</span>: <span class="hljs-string">'XXXXX-YYYYY'</span> <span class="hljs-comment">// your streamname</span>
+                    },
+                    <span class="hljs-string">"server"</span>: {
+                        <span class="hljs-string">"websocket"</span>: <span class="hljs-string">"wss://bintu-h5live-secure.nanocosmos.de/h5live/authstream"</span>,
+                        <span class="hljs-string">"hls"</span>: <span class="hljs-string">"https://bintu-h5live-secure.nanocosmos.de/h5live/authhttp/playlist.m3u8"</span>
+                    },
+                    <span class="hljs-string">"security"</span>: {
+                        <span class="hljs-string">"jwtoken"</span>: <span class="hljs-string">"xxx"</span> <span class="hljs-comment">// your JSON Web Token</span>
+                    }                    
+                }                
+            }
+        ]
+        ...
+    },
+    ...
+};
+</code></pre>
+<p>Here are example code snippets to test the H5Live player with secure tokens.</p>
+<blockquote>
+<p><strong>Note:</strong></p>
+<p>Refer to the detailed example code in <a href="/docs/nanoplayer/nanoplayer_getting_started">Embedding H5Live player on your own web page</a> and modify the relevant sections to include playback security.</p>
+</blockquote>
+<h3><a class="anchor" aria-hidden="true" id="on-a-web-page"></a><a href="#on-a-web-page" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>On a web page</h3>
+<pre><code class="hljs css language-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"playerDiv"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://demo.nanocosmos.de/nanoplayer/api/release/nanoplayer.4.min.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+<span class="hljs-keyword">var</span> player;
+<span class="hljs-keyword">var</span> config = {
+    <span class="hljs-string">"source"</span>: {
+       <span class="hljs-string">"group"</span>: {
+            <span class="hljs-string">"id"</span>: <span class="hljs-string">"xxxxxxxx-zzzz-yyy-aaaa-aaabbbcccddd"</span>, <span class="hljs-comment">// your stream group id</span>
+            <span class="hljs-string">"security"</span>: {
+                <span class="hljs-string">"jwtoken"</span>: <span class="hljs-string">"xxx"</span> <span class="hljs-comment">// your JSON Web Token</span>
+            },
+        },
+    },
+    <span class="hljs-string">"playback"</span>: {
+        <span class="hljs-string">"autoplay"</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-string">"automute"</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-string">"muted"</span>: <span class="hljs-literal">true</span>
+    },
+    <span class="hljs-string">"style"</span>: {
+        <span class="hljs-string">"displayMutedAutoplay"</span>: <span class="hljs-literal">true</span>
+    }
+};
+<span class="hljs-built_in">document</span>.addEventListener(<span class="hljs-string">'DOMContentLoaded'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+    player = <span class="hljs-keyword">new</span> NanoPlayer(<span class="hljs-string">"playerDiv"</span>);
+    player.setup(config).then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">config</span>) </span>{
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"setup success"</span>);
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"config: "</span> + <span class="hljs-built_in">JSON</span>.stringify(config, <span class="hljs-literal">undefined</span>, <span class="hljs-number">4</span>));
+    }, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">error</span>) </span>{
+        alert(error.message);
+    });
+});
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 9/8/2022</em></div><div class="docs-prevnext"></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#how-to-create-a-json-web-token-for-secure-playback-in-the-cloud-dashboard">How to create a JSON Web Token for secure playback in the Cloud Dashboard</a></li><li><a href="#how-to-create-json-web-token-for-secure-playback-via-api">How to create JSON Web Token for secure playback via API</a><ul class="toc-headings"><li><a href="#request-url-and-method">Request URL and method</a></li><li><a href="#http-request-header">HTTP request header</a></li><li><a href="#http-request-body">HTTP request body</a></li><li><a href="#http-response">HTTP response</a></li></ul></li><li><a href="#how-to-verify-json-web-token-for-secure-playback-via-api">How to verify JSON Web Token for secure playback via API</a><ul class="toc-headings"><li><a href="#request-url-and-method-1">Request URL and method</a></li><li><a href="#http-request-header-1">HTTP request header</a></li><li><a href="#http-request-body-1">HTTP request body</a></li><li><a href="#http-response-1">HTTP response</a></li></ul></li><li><a href="#how-to-integrate-secure-h5live-player-configuration-with-jwt">How to integrate secure H5Live player configuration with JWT</a><ul class="toc-headings"><li><a href="#on-a-web-page">On a web page</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><div><h5>Contact</h5><a href="https://www.nanocosmos.de/">Homepage</a><a href="https://www.nanocosmos.de/contact">Contact</a><a href="https://www.nanocosmos.de/support">Support</a><a href="https://www.nanocosmos.de/terms">Legal Terms</a></div><div><h5>Products</h5><a href="https://www.nanocosmos.de/cloud">Nanostream Cloud with Bintu.Live</a><a href="https://www.nanocosmos.de/h5live">H5Live Low Latency HTML5-Player</a><a href="https://www.nanocosmos.de/webrtc">nanoStream Webcaster</a><a href="https://www.nanocosmos.de/#nanostream">Nanostream Apps and SDK</a></div><div><h5>More</h5><a href="https://www.nanocosmos.de/blog/">Blog</a><a href="https://twitter.com/nanovideo">Twitter</a><a href="https://www.facebook.com/nanocosmos.net/">Facebook</a><a href="https://www.linkedin.com/company/nanocosmos-gmbh">LinkedIn</a><a href="https://github.com/nanocosmos/docs">GitHub</a><a class="github-button" href="https://github.com/nanocosmos/docs" data-icon="octicon-star" data-count-href="/nanocosmos/docs/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://nanocosmos.de/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/footer_logo.png" alt="nanocosmos GmbH" width="170" height="45"/></a><section class="copyright">Copyright © 2022 nanocosmos GmbH - doc version Thu Sep 08 2022 16:53:51 GMT+0000 (Coordinated Universal Time)</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/typesense-docsearch.js@latest/dist/cdn/docsearch.min.js"></script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                inputSelector: '#search_input_react',
+                typesenseServerConfig: {"nodes":[{"host":"typesense.nanostream.cloud","port":"443","protocol":"https"}],"apiKey":"VXsRNvH2cHHs5uVOk74gX8jDtWTTVKsV"},
+                typesenseCollectionName: "nanocosmos",
+                typesenseSearchParams: {"per_page":20},
+                debug: true,
+              });
+              </script></body></html>
