@@ -284,7 +284,7 @@ The call to
 ```
 should give you all the info. The `state` value should be `live` when your broadcast is running.
 
-> You can find the full bintu.live documentation [here](https://bintu.nanocosmos.de/doc/#stream-stream-info).
+> You can find the full bintu.live documentation [here](https://doc.pages.nanocosmos.de/bintuapi-docs/#operation/Stream%20Info).
 
 Example:
 
