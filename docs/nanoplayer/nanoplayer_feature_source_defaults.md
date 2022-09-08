@@ -2,7 +2,6 @@
 id: nanoplayer_feature_source_defaults
 title: Source defaults
 sidebar_label: Source defaults
-
 ---
 
 ## Using source defaults with standard nanoStream Cloud

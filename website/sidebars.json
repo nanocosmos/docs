@@ -10,6 +10,7 @@
     "Features": [
       "nanoplayer/nanoplayer_autoplay",
       "nanoplayer/nanoplayer_feature_latency_control_modes",
+      "nanoplayer/nanoplayer_feature_stream_group_configuration",
       "nanoplayer/nanoplayer_token_security",
       "nanoplayer/nanoplayer_feature_stream_switching",
       "nanoplayer/nanoplayer_feature_fullscreen_api",
@@ -75,6 +76,7 @@
   "cloud": {
     "nanoStream Cloud": [
       "cloud/cloud_overview",
+	  "cloud/cloud_news",
       "cloud/cloud_introduction",
       "cloud/cloud_getting_started",
       "cloud/live_encoding",

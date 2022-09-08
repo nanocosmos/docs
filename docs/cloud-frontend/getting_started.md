@@ -4,7 +4,7 @@ title: Getting started
 sidebar_label: Getting started
 ---
 
-The nanoStream Cloud/Bintu dashboard is the frontend that mirrors all features and functions of the [bintu API](../cloud/bintu_api). 
+The nanoStream Cloud/Bintu dashboard is the frontend that mirrors all features and functions of the [bintu API](../cloud/bintu_api), the stream management backend of nanoStream Cloud. 
 
 
 To sign in you need a nanoStream Cloud/Bintu account.
@@ -12,12 +12,16 @@ To sign in you need a nanoStream Cloud/Bintu account.
 
 ## Use nanoStream Cloud
 
-You don't need a lot in order to use the nanoStream Cloud properly. The nanoStream Cloud includes the [nanoStream Webcaster](../webrtc/nanostream_webrtc_introduction) and the [nanoStream H5Live Player (nanoPlayer)](../nanoplayer/nanoplayer_introduction). The Webcaster facilitates streaming directly from the browser whereas the H5Live Player allows browser-based playback. Both of them work completely plug-in free on any browser.
+It is very easy to get started. You need a live source (camera) which you can connect to the nanoStream Cloud network (CDN). It will take care about the deliver of your live stream. 
+The [nanoStream H5Live Player (nanoPlayer)](../nanoplayer/nanoplayer_introduction) can be used to play your live stream on any web browser. 
 
 To create and broadcast a live stream, you need a live source.
 This can be either a webcam, external camera, streaming device, or even your PC desktop or laptop screen.
-To send a live stream to nanoStream Cloud, you need a streaming software or hardware (live encoder),
-or just your browser which directly can be used with nanoStream Webcaster to send a live stream to your audience.
+To send a live stream to nanoStream Cloud, you need a Live Encoder. It can either be a software like OBS or a hardware, or simply a web page with [nanoStream Webcaster](../webrtc/nanostream_webrtc_introduction).
+
+## New! nanoStream Cloud 2022
+
+With the release of nanoStream Cloud 2022, it is now even easier to create and manage live streams, especially for Adaptive Bitrate and secure streams!
 
 ## Quick Start
 

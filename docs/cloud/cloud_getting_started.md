@@ -191,7 +191,7 @@ For secure playback with the nanoStream H5Live Player you need to have your acco
 #### More information:
 
 - [bintu.live dashboard](https://bintu-cloud-frontend.nanocosmos.de)
-- [bintu.live API documentation](https://bintu.nanocosmos.de/doc/)
+- [bintu.live API documentation](https://doc.pages.nanocosmos.de/bintuapi-docs)
 - [Create a live streaming app in 5 minutes](cloud_ios_streaming_app)
 - [nanoStream and bintu.live](https://www.nanocosmos.de/blog/2016/07/nanostream-and-bintu-live/)
 - [Grouping & Tagging with bintu.live](https://www.nanocosmos.de/blog/2016/06/new-bintu-live-grouping-and-tagging-feature-for-streams/)

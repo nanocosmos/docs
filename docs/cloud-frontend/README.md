@@ -4,6 +4,10 @@ title: Cloud Dashboard Overview
 sidebar_label: Cloud Dashboard Overview
 ---
 
+## New! nanoStream Cloud 2022
+
+With the release of nanoStream Cloud 2022 and Dashboard V3, it is now even easier to create and manage live streams, especially for Adaptive Bitrate and secure streams!
+
 ## What is the nanoStream Cloud/Bintu Dashboard?
 
 The nanoStream Cloud/Bintu Dashboard is a Stream Management Dashboard that helps you improve your streaming workflow. It helps you to create, customize and manage streams in an intuitive way and mirrors all features and functions of the [bintu API](../cloud/bintu_api). 
@@ -14,43 +18,47 @@ Every stream has at least:
 
 - one playout stream which can be played with nanoPlayer on all browsers
 
+- "Stream Group" for Adaptive Bitrate: a single passthrough stream with the same quality as the incoming encoder stream, plus additional streams for adaptive bitrate
+
 
 ### Key features
 
 - Compact overview of your organization
 - Intuitive way of creating and customizing a new stream
-- Create transcoded streams (depending on business agreement)
-- Create secured streams 
+- Create transcoded streams for adaptive bitrate
+- Create secured streams (token security playback)
 - New Stream Overview
-- See playback immediately
+- Watch playback immediately
 - Easy steps to playout (from Ingest to Playout)
+- Code snippets to embed on your own web page
 
+
+## Dashboard URL
+
+The nanoStream Dashboard can be found at 
+
+- [nanoStream Cloud Dashboard V3](https://dashboard.nanostream.cloud/)
+- [nanoStream Cloud Dashboard V2](https://bintu-cloud-frontend.nanocosmos.de/)
+
+NOTE: This documentation still partly points to the old dashboard V2. The new dashboard V3 works accordingly.
 
 ## Authentication
 
-### Sign In
+### Sign In or Sign-Up
 
-To [sign in](https://bintu-cloud-frontend.nanocosmos.de/auth?login) use the credentials you usually use to sign in to bintu.
+Sign in or sign up at the cloud dashboard URL above!
 
 ![Sign In](assets/sign-in.png)
-
-### Sign Up
-
-If you do not have a bintu account yet please click [here](https://bintu-cloud-frontend.nanocosmos.de/auth?signup) to create a new account or contact our sales team via our [contact form](https://www.nanocosmos.de/contact) or sales(at)nanocosmos.de.
 
 ![Sign Up](assets/sign-up.png)
 
 
 ## Dashboard
 
-After logging in successfully you will be redirected to the [dashboard](https://bintu-cloud-frontend.nanocosmos.de/).
-
-The overview shows your total streams, your total live streams, all users and tags of your organisation. By clicking on the boxes you will be redirected to the page that includes the full overview. 
+The overview shows your total streams, your total live streams, all users and tags of your organisation. 
 Below your 5 latest live streams are shown. To see all, click on the ["See all streams"](https://bintu-cloud-frontend.nanocosmos.de/stream) button.
 
 ![Dashboard](assets/dashboard.png)
-
-
 
 
 ## Create Stream
