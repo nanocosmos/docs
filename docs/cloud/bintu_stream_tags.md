@@ -8,7 +8,7 @@ You can group and tag streams with bintu stream tags. These are human readable w
 
 API Documentation:
 
-https://bintu.nanocosmos.de/doc/#tag
+https://doc.pages.nanocosmos.de/bintuapi-docs/#tag/Tag
 
 Example:
 

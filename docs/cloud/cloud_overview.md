@@ -19,7 +19,7 @@ It contains
 
 - [nanoStream Webcaster for all HTML5 web browsers](../webrtc/nanostream_webrtc_introduction.md)
 
-- Live Transcoding and Adaptive Bitrate (ABR) 
+- Live Transcoding and Adaptive Bitrate (ABR) - new major update 2022 !
 
 - nanoStream Analytics for improved insights into the quality of service of your live streams
 
@@ -27,6 +27,10 @@ It contains
 
 all managed by our [bintu dashboard and API](bintu_api.md)  
  
+## New! nanoStream Cloud 2022
+
+With the release of nanoStream Cloud 2022, it is now even easier to create and manage live streams, especially for Adaptive Bitrate and secure streams!
+
 nanoStream Cloud is available worldwide with server locations in US East/West, Europe, Asia, Australia, etc. 
 The system is operating 24/7 for instant live streaming. 
 Expected default latency end-to-end (glass-to-glass) is around 1 second. 

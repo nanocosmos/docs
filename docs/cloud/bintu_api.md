@@ -35,7 +35,7 @@ When using the REST API, JSON objects are used.
 
 # bintu rest api documentation
 
-https://bintu.nanocosmos.de/doc/
+https://doc.pages.nanocosmos.de/bintuapi-docs/
 
 # Examples
 
