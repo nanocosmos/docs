@@ -54,7 +54,7 @@ var config = {
 
 ### Player Embed with stream group configuration
 
-For Player Embed the stream group feature is available since embed v1.3.0. It is necessary to configure it via URL parameters: `group.id`, `group.security.jwtoken`, `group.startQuality`.
+For Player Embed the stream group feature is available since embed v1.3.1. It is necessary to configure it via URL parameters: `group.id`, `group.security.jwtoken`, `group.startQuality`.
 
 ### `'group.startQuality'` parameter
 
