@@ -41,6 +41,10 @@ This will enable the nanoStream Player to properly initialize in the setup metho
 - support for secure playback using JSON Web Token (JWT)
   - see [feature](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_token_security/) description
 
+### Improved
+
+- player setup with bintu stream ID or bintu group ID if the stream in not `live`
+
 ## Please find more about the **video processing** feature in our [documentation](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_feature_video_processing/).
 
 ## **[4.17.0]**
