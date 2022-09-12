@@ -43,6 +43,10 @@ This will enable the nanoStream Player to properly initialize in the setup metho
 
 ## Please find more about the **video processing** feature in our [documentation](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_feature_video_processing/).
 
+### Improved
+
+- player setup with bintu stream ID or bintu group ID if the stream in not `live`
+
 ## **[4.17.0]**
 
 ### **Release Notes**
