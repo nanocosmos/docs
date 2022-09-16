@@ -4,6 +4,16 @@ title: nanoStream Cloud Latest News
 sidebar_label: Latest News
 ---
 
+<div class="video-wrap">
+    <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/NfHQoGwUTzc" frameborder="0" allowfullscreen></iframe>
+    </div>
+</div>
+
+##### *Click `PLAY` button to start*
+
+>Tutorial : How To Setup Streamgroups - Optimize Your Streams by nanoStream Cloud 2022
+
 ## New! nanoStream Cloud 2022
 
 With the release of nanoStream Cloud 2022, it is now even easier to create and manage live streams, especially for Adaptive Bitrate and secure streams!

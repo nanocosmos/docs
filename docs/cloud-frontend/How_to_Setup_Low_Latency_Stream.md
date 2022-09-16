@@ -1,7 +1,7 @@
 ---
 id: How_to_Setup_Low_Latency_Stream
-title: How to setup a low latency stream
-sidebar_label: Setup a low latency stream
+title: How to Setup a Low Latency Stream
+sidebar_label: How to Setup a Low Latency Stream
 ---
 
 <div class="video-wrap">
