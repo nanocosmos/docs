@@ -122,7 +122,8 @@
     ],
     "Video Tutorials": [
       "cloud-frontend/How_to_Setup_Low_Latency_Stream",
-      "cloud/analytics_for_low_latency_streams"
+      "cloud/analytics_for_low_latency_streams",
+      "cloud/how_to_setup_streamgroups"
     ]    
   },
   "nanostream": {
