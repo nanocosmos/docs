@@ -4,6 +4,14 @@ title: Latency Control Modes
 sidebar_label: Latency control modes
 ---
 
+<div class="video-wrap">
+    <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/65qfMRSSPjU" frameborder="0" allowfullscreen></iframe>
+    </div>
+</div>
+
+##### *Click `PLAY` button to start*
+
 Introduced in **nanoStream H5Live Player Version 4.14.x**, two new latency control modes have been added, targeting especially lowest latency use cases like live auctioning.
 The latency control mode can be selected via the added `playback.latencyControlMode` configuration parameter.
 The established latency control mode is available as the `classic` option which remains to be the default mode.
