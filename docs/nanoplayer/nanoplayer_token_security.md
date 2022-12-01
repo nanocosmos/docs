@@ -4,6 +4,14 @@ title: Secure playback with H5Live
 sidebar_label: Secure playback with H5Live
 ---
 
+<div class="video-wrap">
+    <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/nOmcvcgr6UI" frameborder="0" allowfullscreen></iframe>
+    </div>
+</div>
+
+##### *Click `PLAY` button to start*
+
 ## Encrypted playback
 
 When using H5Live player, all playback is encrypted by default over `HTTPS`.
