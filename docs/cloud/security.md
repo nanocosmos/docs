@@ -12,8 +12,6 @@ sidebar_label: nanoStream Cloud Security
 
 ##### *Click `PLAY` button to start*
 
-# nanoStream Cloud Security
-
 nanoStream Cloud ensures security on several levels:
 
 - reliability: our system works 24/7 on a global scale with automatic failover 
