@@ -1,5 +1,5 @@
 ---
-id: How_to_Setup_Ingest_Security_For_Your_Live_Streams
+id: how_to_setup_ingest_security
 title: How To Setup Ingest Security For Your Live Streams
 sidebar_label: How To Setup Ingest Security For Your Live Streams
 ---
