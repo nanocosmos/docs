@@ -4,9 +4,9 @@ on:
   workflow_dispatch:
   # run manually
 
-  push:
-    branches:
-      - master  
+  workflow_run:
+    workflows: ['Build and Deploy']
+    types: [completed]
 
 jobs:
   scrape:
