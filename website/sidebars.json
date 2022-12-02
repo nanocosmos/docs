@@ -124,7 +124,9 @@
       "cloud-frontend/How_to_Setup_Low_Latency_Stream",
       "cloud/analytics_for_low_latency_streams",
       "cloud/how_to_setup_streamgroups",
-      "nanoplayer/nanoplayer_tutorial_how_to_setup_latency_modes"
+      "nanoplayer/nanoplayer_tutorial_how_to_setup_latency_modes",
+      "cloud/how_to_setup_ingest_security",
+      "nanoplayer/nanoplayer_tutorial_how_to_setup_player_security"
     ]    
   },
   "nanostream": {
