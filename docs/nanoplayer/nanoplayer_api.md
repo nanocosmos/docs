@@ -7,13 +7,15 @@ sidebar_label: NanoPlayer
 <a name="NanoPlayer"></a>
 
 ## NanoPlayer
-NanoPlayer (H5Live) Public API Class 4.18.0
+
+NanoPlayer (H5Live) Public API Class 4.19.2
 
 **Kind**: global class  
-**Version**: 4.18.0  
+**Version**: 4.19.2  
 <a name="new_NanoPlayer_new"></a>
 
 ### new NanoPlayer(playerDivId)
+
 The constructor. The source can be loaded via script tag, AMD (requirejs) or CommonJS
 
 <table>
@@ -30,6 +32,7 @@ The constructor. The source can be loaded via script tag, AMD (requirejs) or Com
 </table>
 
 **Example**  
+
 ```xml
 {}
 <!-- Example: load player with new video element into playerDiv -->
@@ -71,7 +74,9 @@ The constructor. The source can be loaded via script tag, AMD (requirejs) or Com
     });
 </script>
 ```
+
 **Example**  
+
 ```xml
 {}
 <!-- Example: load player with existing html video element -->
@@ -118,7 +123,9 @@ The constructor. The source can be loaded via script tag, AMD (requirejs) or Com
     });
 </script>
 ```
+
 **Example**  
+
 ```xml
 {}
 <!-- Example: load player with require.js -->
@@ -139,45 +146,53 @@ The constructor. The source can be loaded via script tag, AMD (requirejs) or Com
     });
 </script>
 ```
+
 <a name="NanoPlayer+version"></a>
 
 ### nanoPlayer.version : <code>string</code>
+
 The version of the player.
 
 **Kind**: instance property of [<code>NanoPlayer</code>](#NanoPlayer)  
 <a name="NanoPlayer+coreversion"></a>
 
 ### nanoPlayer.coreversion : <code>string</code>
+
 The version of the core.
 
 **Kind**: instance property of [<code>NanoPlayer</code>](#NanoPlayer)  
 <a name="NanoPlayer+viewversion"></a>
 
 ### nanoPlayer.viewversion : <code>string</code>
+
 The version of the view.
 
 **Kind**: instance property of [<code>NanoPlayer</code>](#NanoPlayer)  
 <a name="NanoPlayer+type"></a>
 
 ### nanoPlayer.type : <code>string</code>
+
 The type of the player.
 
 **Kind**: instance property of [<code>NanoPlayer</code>](#NanoPlayer)  
 <a name="NanoPlayer+id"></a>
 
 ### nanoPlayer.id : <code>string</code>
+
 The unique id of the player.
 
 **Kind**: instance property of [<code>NanoPlayer</code>](#NanoPlayer)  
 <a name="NanoPlayer+capabilities"></a>
 
 ### nanoPlayer.capabilities : <code>Array.&lt;string&gt;</code>
+
 The supported tech names of the player.
 
 **Kind**: instance constant of [<code>NanoPlayer</code>](#NanoPlayer)  
 <a name="NanoPlayer+setup"></a>
 
 ### nanoPlayer.setup(config) ⇒ <code>Promise.&lt;(config\|error)&gt;</code>
+
 Initializes the player with a given config object.
 
 **Kind**: instance method of [<code>NanoPlayer</code>](#NanoPlayer)  
@@ -196,6 +211,7 @@ Initializes the player with a given config object.
 </table>
 
 **Example**  
+
 ```js
 // player instance of NanoPlayer
 player.setup(config).then(function (config) {
@@ -204,65 +220,82 @@ player.setup(config).then(function (config) {
     console.log(error);
 });
 ```
+
 <a name="NanoPlayer+destroy"></a>
 
 ### nanoPlayer.destroy()
+
 Cleans up the player and removes all nested elements from the container div.
 
 **Kind**: instance method of [<code>NanoPlayer</code>](#NanoPlayer)  
 **Example**  
+
 ```js
 // player instance of NanoPlayer
 player.destroy();
 player.setup(config);
 ```
+
 <a name="NanoPlayer+play"></a>
 
 ### nanoPlayer.play()
+
 Plays the player.
 
 **Kind**: instance method of [<code>NanoPlayer</code>](#NanoPlayer)  
 **Example**  
+
 ```js
 // player instance of NanoPlayer
 player.play();
 ```
+
 <a name="NanoPlayer+pause"></a>
 
 ### nanoPlayer.pause()
+
 Pauses the player.
 
 **Kind**: instance method of [<code>NanoPlayer</code>](#NanoPlayer)  
 **Example**  
+
 ```js
 // player instance of NanoPlayer
 player.pause();
 ```
+
 <a name="NanoPlayer+mute"></a>
 
 ### nanoPlayer.mute()
+
 Mutes the player.
 
 **Kind**: instance method of [<code>NanoPlayer</code>](#NanoPlayer)  
 **Example**  
+
 ```js
 // player instance of NanoPlayer
 player.mute();
 ```
+
 <a name="NanoPlayer+unmute"></a>
 
 ### nanoPlayer.unmute()
+
 Unmutes the player.
 
 **Kind**: instance method of [<code>NanoPlayer</code>](#NanoPlayer)  
 **Example**  
+
 ```js
 // player instance of NanoPlayer
 player.unmute();
 ```
+
 <a name="NanoPlayer+setVolume"></a>
 
 ### nanoPlayer.setVolume(volume)
+
 Sets the volume of the player.
 
 **Kind**: instance method of [<code>NanoPlayer</code>](#NanoPlayer)  
@@ -280,13 +313,16 @@ Sets the volume of the player.
 </table>
 
 **Example**  
+
 ```js
 // player instance of NanoPlayer
 player.setVolume(0.3);
 ```
+
 <a name="NanoPlayer+updateSource"></a>
 
 ### nanoPlayer.updateSource(source) ⇒ <code>Promise.&lt;(config\|error)&gt;</code>
+
 Updates the source of the player.
 
 **Kind**: instance method of [<code>NanoPlayer</code>](#NanoPlayer)  
@@ -401,6 +437,7 @@ Updates the source of the player.
 </table>
 
 **Example**  
+
 ```js
 var source = {
     "entries": [
@@ -505,7 +542,9 @@ player.updateSource(source).then(function (config) {
     console.log(error);
 });
 ```
+
 **Example**  
+
 ```js
 var source = {
     "entries": [
@@ -548,9 +587,11 @@ player.updateSource(source).then(function (config) {
     console.log(error);
 });
 ```
+
 <a name="NanoPlayer+switchStream"></a>
 
 ### nanoPlayer.switchStream(index) ⇒ <code>Promise.&lt;(config\|error)&gt;</code>
+
 Switch to a stream given over source entries.
 
 **Kind**: instance method of [<code>NanoPlayer</code>](#NanoPlayer)  
@@ -569,6 +610,7 @@ Switch to a stream given over source entries.
 </table>
 
 **Example**  
+
 ```js
 // player instance of NanoPlayer
 player.switchStream(1).then(function (config) {
@@ -577,9 +619,11 @@ player.switchStream(1).then(function (config) {
     console.log(error);
 });
 ```
+
 <a name="NanoPlayer+setAdaption"></a>
 
 ### nanoPlayer.setAdaption(adaption)
+
 Set a desired adaption rule or disable adaption on the fly.
 
 **Kind**: instance method of [<code>NanoPlayer</code>](#NanoPlayer)  
@@ -598,6 +642,7 @@ Set a desired adaption rule or disable adaption on the fly.
 </table>
 
 **Example**  
+
 ```js
 // player instance of NanoPlayer
 var adaption = {
@@ -609,13 +654,16 @@ if (!useAdaption) {
 }
 player.setAdaption(adaption);
 ```
+
 <a name="NanoPlayer+requestFullscreen"></a>
 
 ### nanoPlayer.requestFullscreen() ⇒ <code>Promise.&lt;(undefined\|error)&gt;</code>
+
 Request fullscreen mode for the player if not entered.
 
 **Kind**: instance method of [<code>NanoPlayer</code>](#NanoPlayer)  
 **Example**  
+
 ```js
 // player instance of NanoPlayer
 player.requestFullscreen()
@@ -627,13 +675,16 @@ player.requestFullscreen()
        console.log('requestFullscreen rejected: ' + err.reason);
    });
 ```
+
 <a name="NanoPlayer+exitFullscreen"></a>
 
 ### nanoPlayer.exitFullscreen() ⇒ <code>Promise.&lt;(undefined\|error)&gt;</code>
+
 Exit fullscreen mode if entered.
 
 **Kind**: instance method of [<code>NanoPlayer</code>](#NanoPlayer)  
 **Example**  
+
 ```js
 // player instance of NanoPlayer
 player.exitFullscreen()
@@ -645,9 +696,11 @@ player.exitFullscreen()
        console.log('exitFullscreen rejected: ' + err.reason);
    });
 ```
+
 <a name="NanoPlayer..event_onReady"></a>
 
 ### "onReady"
+
 The ready event to pass in the 'config.events' object at the setup call. Fires if the player is ready to play after successful setup.
 
 **Kind**: event emitted by [<code>NanoPlayer</code>](#NanoPlayer)  
@@ -686,6 +739,7 @@ The ready event to pass in the 'config.events' object at the setup call. Fires i
 </table>
 
 **Example**  
+
 ```js
 // player instance of NanoPlayer
 var onReady = function (event) {
@@ -698,9 +752,11 @@ player.setup(config).then(function (config) {
     console.log(error);
 });
 ```
+
 <a name="NanoPlayer..event_onPlay"></a>
 
 ### "onPlay"
+
 The play event to pass in the 'config.events' object at the setup call. Fires if playout is started.
 
 **Kind**: event emitted by [<code>NanoPlayer</code>](#NanoPlayer)  
@@ -757,6 +813,7 @@ The play event to pass in the 'config.events' object at the setup call. Fires if
 </table>
 
 **Example**  
+
 ```js
 // player instance of NanoPlayer
 var onPlay = function (event) {
@@ -770,9 +827,11 @@ player.setup(config).then(function (config) {
     console.log(error);
 });
 ```
+
 <a name="NanoPlayer..event_onPause"></a>
 
 ### "onPause"
+
 The pause event to pass in the 'config.events' object at the setup call. Fires if playout is paused.
 
 **Kind**: event emitted by [<code>NanoPlayer</code>](#NanoPlayer)  
@@ -811,6 +870,7 @@ The pause event to pass in the 'config.events' object at the setup call. Fires i
 </table>
 
 **Example**  
+
 ```js
 // player instance of NanoPlayer
 var onPause = function (event) {
@@ -826,9 +886,11 @@ player.setup(config).then(function (config) {
     console.log(error);
 });
 ```
+
 <a name="NanoPlayer..event_onLoading"></a>
 
 ### "onLoading"
+
 The load event to pass in the 'config.events' object at the setup call. Fires if playout was stopped or player is ready after setup and tries to play.
 
 **Kind**: event emitted by [<code>NanoPlayer</code>](#NanoPlayer)  
@@ -867,6 +929,7 @@ The load event to pass in the 'config.events' object at the setup call. Fires if
 </table>
 
 **Example**  
+
 ```js
 // player instance of NanoPlayer
 var onLoading = function (event) {
@@ -879,9 +942,11 @@ player.setup(config).then(function (config) {
     console.log(error);
 });
 ```
+
 <a name="NanoPlayer..event_onStartBuffering"></a>
 
 ### "onStartBuffering"
+
 The start buffering event to pass in the 'config.events' object at the setup call. Fires if playout is started but no media is available.
 
 **Kind**: event emitted by [<code>NanoPlayer</code>](#NanoPlayer)  
@@ -917,6 +982,7 @@ The start buffering event to pass in the 'config.events' object at the setup cal
 </table>
 
 **Example**  
+
 ```js
 // player instance of NanoPlayer
 var onStartBuffering = function (event) {
@@ -929,9 +995,11 @@ player.setup(config).then(function (config) {
     console.log(error);
 });
 ```
+
 <a name="NanoPlayer..event_onStopBuffering"></a>
 
 ### "onStopBuffering"
+
 The stop buffering event to pass in the 'config.events' object at the setup call. Fires if playout resumes after buffering.
 
 **Kind**: event emitted by [<code>NanoPlayer</code>](#NanoPlayer)  
@@ -967,6 +1035,7 @@ The stop buffering event to pass in the 'config.events' object at the setup call
 </table>
 
 **Example**  
+
 ```js
 // player instance of NanoPlayer
 var onStopBuffering = function (event) {
@@ -979,9 +1048,11 @@ player.setup(config).then(function (config) {
     console.log(error);
 });
 ```
+
 <a name="NanoPlayer..event_onError"></a>
 
 ### "onError"
+
 The error event to pass in the 'config.events' object at the setup call. Fires if any kind of error occures.
 
 **Kind**: event emitted by [<code>NanoPlayer</code>](#NanoPlayer)  
@@ -1023,6 +1094,7 @@ The error event to pass in the 'config.events' object at the setup call. Fires i
 </table>
 
 **Example**  
+
 ```js
 // player instance of NanoPlayer
 var onError = function (event) {
@@ -1035,9 +1107,11 @@ player.setup(config).then(function (config) {
     console.log(error);
 });
 ```
+
 <a name="NanoPlayer..event_onStats"></a>
 
 ### "onStats"
+
 The stats event to pass in the 'config.events' object at the setup call. Fires if the player has measured statistics.
 
 **Kind**: event emitted by [<code>NanoPlayer</code>](#NanoPlayer)  
@@ -1190,6 +1264,7 @@ The stats event to pass in the 'config.events' object at the setup call. Fires i
 </table>
 
 **Example**  
+
 ```js
 // player instance of NanoPlayer
 var onStats = function (event) {
@@ -1202,9 +1277,11 @@ player.setup(config).then(function (config) {
     console.log(error);
 });
 ```
+
 <a name="NanoPlayer..event_onMetaData"></a>
 
 ### "onMetaData"
+
 The metadata event to pass in the 'config.events' object at the setup call. The config param 'playback.metadata' have to be set to true. Fires if the player receives metadata.
 
 **Kind**: event emitted by [<code>NanoPlayer</code>](#NanoPlayer)  
@@ -1246,6 +1323,7 @@ The metadata event to pass in the 'config.events' object at the setup call. The 
 </table>
 
 **Example**  
+
 ```js
 // player instance of NanoPlayer
 var onMetaData = function (event) {
@@ -1258,9 +1336,11 @@ player.setup(config).then(function (config) {
     console.log(error);
 });
 ```
+
 <a name="NanoPlayer..event_onMute"></a>
 
 ### "onMute"
+
 The mute event to pass in the 'config.events' object at the setup call. Fires if the player is muted.
 
 **Kind**: event emitted by [<code>NanoPlayer</code>](#NanoPlayer)  
@@ -1296,6 +1376,7 @@ The mute event to pass in the 'config.events' object at the setup call. Fires if
 </table>
 
 **Example**  
+
 ```js
 // player instance of NanoPlayer
 var onMute = function (event) {
@@ -1308,9 +1389,11 @@ player.setup(config).then(function (config) {
     console.log(error);
 });
 ```
+
 <a name="NanoPlayer..event_onUnmute"></a>
 
 ### "onUnmute"
+
 The unmute event to pass in the 'config.events' object at the setup call. Fires if the player is unmuted.
 
 **Kind**: event emitted by [<code>NanoPlayer</code>](#NanoPlayer)  
@@ -1346,6 +1429,7 @@ The unmute event to pass in the 'config.events' object at the setup call. Fires 
 </table>
 
 **Example**  
+
 ```js
 // player instance of NanoPlayer
 var onUnmute = function (event) {
@@ -1358,9 +1442,11 @@ player.setup(config).then(function (config) {
     console.log(error);
 });
 ```
+
 <a name="NanoPlayer..event_onVolumeChange"></a>
 
 ### "onVolumeChange"
+
 The volume change event to pass in the 'config.events' object at the setup call. Fires if the player's volume has changed.
 
 **Kind**: event emitted by [<code>NanoPlayer</code>](#NanoPlayer)  
@@ -1396,6 +1482,7 @@ The volume change event to pass in the 'config.events' object at the setup call.
 </table>
 
 **Example**  
+
 ```js
 // player instance of NanoPlayer
 var onVolumeChange = function (event) {
@@ -1408,9 +1495,11 @@ player.setup(config).then(function (config) {
     console.log(error);
 });
 ```
+
 <a name="NanoPlayer..event_onStreamInfo"></a>
 
 ### "onStreamInfo"
+
 The stream info event to pass in the 'config.events' object at the setup call. Fires if informations about a stream is available right before playback starts.
 
 **Kind**: event emitted by [<code>NanoPlayer</code>](#NanoPlayer)  
@@ -1488,6 +1577,7 @@ The stream info event to pass in the 'config.events' object at the setup call. F
 </table>
 
 **Example**  
+
 ```js
 // player instance of NanoPlayer
 var onStreamInfo = function (event) {
@@ -1500,9 +1590,11 @@ player.setup(config).then(function (config) {
     console.log(error);
 });
 ```
+
 <a name="NanoPlayer..event_onStreamInfoUpdate"></a>
 
 ### "onStreamInfoUpdate"
+
 The stream info event to pass in the 'config.events' object at the setup call. Fires if the stream format has changed during playback.
 
 **Kind**: event emitted by [<code>NanoPlayer</code>](#NanoPlayer)  
@@ -1571,6 +1663,7 @@ The stream info event to pass in the 'config.events' object at the setup call. F
 </table>
 
 **Example**  
+
 ```js
 // player instance of NanoPlayer
 var onStreamInfoUpdate = function (event) {
@@ -1583,9 +1676,11 @@ player.setup(config).then(function (config) {
     console.log(error);
 });
 ```
+
 <a name="NanoPlayer..event_onWarning"></a>
 
 ### "onWarning"
+
 The error event to pass in the 'config.events' object at the setup call. Fires if something is not as expected, but functionality works.
 
 **Kind**: event emitted by [<code>NanoPlayer</code>](#NanoPlayer)  
@@ -1624,6 +1719,7 @@ The error event to pass in the 'config.events' object at the setup call. Fires i
 </table>
 
 **Example**  
+
 ```js
 // player instance of NanoPlayer
 var onWarning = function (event) {
@@ -1636,9 +1732,11 @@ player.setup(config).then(function (config) {
     console.log(error);
 });
 ```
+
 <a name="NanoPlayer..event_onDestroy"></a>
 
 ### "onDestroy"
+
 The destroy event to pass in the 'config.events' object at the setup call. Fires if the player is destroyed.
 
 **Kind**: event emitted by [<code>NanoPlayer</code>](#NanoPlayer)  
@@ -1674,6 +1772,7 @@ The destroy event to pass in the 'config.events' object at the setup call. Fires
 </table>
 
 **Example**  
+
 ```js
 // player instance of NanoPlayer
 var onDestroy = function (event) {
@@ -1686,9 +1785,11 @@ player.setup(config).then(function (config) {
     console.log(error);
 });
 ```
+
 <a name="NanoPlayer..event_onUpdateSourceInit"></a>
 
 ### "onUpdateSourceInit"
+
 The event to signal that the update source request is initialized. This is always the start event, an completion event will follow.
 
 **Kind**: event emitted by [<code>NanoPlayer</code>](#NanoPlayer)  
@@ -1748,6 +1849,7 @@ The event to signal that the update source request is initialized. This is alway
 </table>
 
 **Example**  
+
 ```js
 // player instance of NanoPlayer
 var onUpdateSourceInit = function (event) {
@@ -1762,9 +1864,11 @@ player.setup(config).then(function (config) {
     console.log(error);
 });
 ```
+
 <a name="NanoPlayer..event_onUpdateSourceSuccess"></a>
 
 ### "onUpdateSourceSuccess"
+
 The event to signal that the update source request is succeeded. Fires if the source is updated. This is an completion event that follows on an start event.
 
 **Kind**: event emitted by [<code>NanoPlayer</code>](#NanoPlayer)  
@@ -1821,6 +1925,7 @@ The event to signal that the update source request is succeeded. Fires if the so
 </table>
 
 **Example**  
+
 ```js
 // player instance of NanoPlayer
 var onUpdateSourceSuccess = function (event) {
@@ -1833,9 +1938,11 @@ player.setup(config).then(function (config) {
     console.log(error);
 });
 ```
+
 <a name="NanoPlayer..event_onUpdateSourceFail"></a>
 
 ### "onUpdateSourceFail"
+
 The event to signal that the update source request is failed. Fired if an error occure during the update. This is an completion event that follows on an start event.
 
 **Kind**: event emitted by [<code>NanoPlayer</code>](#NanoPlayer)  
@@ -1895,6 +2002,7 @@ The event to signal that the update source request is failed. Fired if an error 
 </table>
 
 **Example**  
+
 ```js
 // player instance of NanoPlayer
 var onUpdateSourceFail = function (event) {
@@ -1909,9 +2017,11 @@ player.setup(config).then(function (config) {
     console.log(error);
 });
 ```
+
 <a name="NanoPlayer..event_onUpdateSourceAbort"></a>
 
 ### "onUpdateSourceAbort"
+
 The event to signal that the update source request is aborted. Reasons can be an equal source ('equalsource'), a superseding ('superseded') or an to less time range between two 'updateSource' calls ('frequency'). This is an completion event that follows on an start event.
 
 **Kind**: event emitted by [<code>NanoPlayer</code>](#NanoPlayer)  
@@ -1971,6 +2081,7 @@ The event to signal that the update source request is aborted. Reasons can be an
 </table>
 
 **Example**  
+
 ```js
 // player instance of NanoPlayer
 var onUpdateSourceAbort = function (event) {
@@ -1985,9 +2096,11 @@ player.setup(config).then(function (config) {
     console.log(error);
 });
 ```
+
 <a name="NanoPlayer..event_onSwitchStreamInit"></a>
 
 ### "onSwitchStreamInit"
+
 The event to signal that an stream switch request is initialized. Can be triggered by an adaptive rule (ABR) request or via ['switchStream'](#NanoPlayer+switchStream). This is always the start event, an completion event will follow.
 
 **Kind**: event emitted by [<code>NanoPlayer</code>](#NanoPlayer)  
@@ -2047,6 +2160,7 @@ The event to signal that an stream switch request is initialized. Can be trigger
 </table>
 
 **Example**  
+
 ```js
 // player instance of NanoPlayer
 var onSwitchStreamInit = function (event) {
@@ -2061,9 +2175,11 @@ player.setup(config).then(function (config) {
     console.log(error);
 });
 ```
+
 <a name="NanoPlayer..event_onSwitchStreamSuccess"></a>
 
 ### "onSwitchStreamSuccess"
+
 The event to signal that the switch stream request is succeeded. Fires if the source is updated. This is an completion event that follows on an start event.
 
 **Kind**: event emitted by [<code>NanoPlayer</code>](#NanoPlayer)  
@@ -2120,6 +2236,7 @@ The event to signal that the switch stream request is succeeded. Fires if the so
 </table>
 
 **Example**  
+
 ```js
 // player instance of NanoPlayer
 var onSwitchStreamSuccess = function (event) {
@@ -2132,9 +2249,11 @@ player.setup(config).then(function (config) {
     console.log(error);
 });
 ```
+
 <a name="NanoPlayer..event_onSwitchStreamFail"></a>
 
 ### "onSwitchStreamFail"
+
 The event to signal that the switch stream request is failed. Fired if an error occure during the update. This is an completion event that follows on an start event.
 
 **Kind**: event emitted by [<code>NanoPlayer</code>](#NanoPlayer)  
@@ -2194,6 +2313,7 @@ The event to signal that the switch stream request is failed. Fired if an error 
 </table>
 
 **Example**  
+
 ```js
 // player instance of NanoPlayer
 var onSwitchStreamFail = function (event) {
@@ -2208,9 +2328,11 @@ player.setup(config).then(function (config) {
     console.log(error);
 });
 ```
+
 <a name="NanoPlayer..event_onSwitchStreamAbort"></a>
 
 ### "onSwitchStreamAbort"
+
 The event to signal that the switch stream request is aborted. Reasons can be an equal source ('equalsource'), a superseding ('superseded') or an to less time range between two 'switchStream' calls ('frequency'). This is an completion event that follows on an start event.
 
 **Kind**: event emitted by [<code>NanoPlayer</code>](#NanoPlayer)  
@@ -2270,6 +2392,7 @@ The event to signal that the switch stream request is aborted. Reasons can be an
 </table>
 
 **Example**  
+
 ```js
 // player instance of NanoPlayer
 var onSwitchStreamAbort = function (event) {
@@ -2284,9 +2407,11 @@ player.setup(config).then(function (config) {
     console.log(error);
 });
 ```
+
 <a name="NanoPlayer..event_onServerInfo"></a>
 
 ### "onServerInfo"
+
 The server info event to pass in the 'config.events' object at the setup call. Fires if informations about the connected h5live server is available.
 
 **Kind**: event emitted by [<code>NanoPlayer</code>](#NanoPlayer)  
@@ -2331,6 +2456,7 @@ The server info event to pass in the 'config.events' object at the setup call. F
 </table>
 
 **Example**  
+
 ```js
 // player instance of NanoPlayer
 var onServerInfo = function (event) {
@@ -2343,9 +2469,11 @@ player.setup(config).then(function (config) {
     console.log(error);
 });
 ```
+
 <a name="NanoPlayer..event_onFullscreenChange"></a>
 
 ### "onFullscreenChange"
+
 The fullscreen change event to pass in the 'config.events' object at the setup call. Fires if the fullscreen mode of the player has changed.
 
 **Kind**: event emitted by [<code>NanoPlayer</code>](#NanoPlayer)  
@@ -2384,6 +2512,7 @@ The fullscreen change event to pass in the 'config.events' object at the setup c
 </table>
 
 **Example**  
+
 ```js
 // player instance of NanoPlayer
 var onFullscreenChange = function (event) {
@@ -2399,9 +2528,11 @@ player.setup(config).then(function (config) {
     console.log(error);
 });
 ```
+
 <a name="NanoPlayer..event_onActiveVideoElementChange"></a>
 
 ### "onActiveVideoElementChange"
+
 The event that fires when the active video element for playback has been created and if the element has been changed in case of a stream switch on iOS (HLS playback on iOS requires two video elements for a smooth stream switch behaviour).
 
 **Kind**: event emitted by [<code>NanoPlayer</code>](#NanoPlayer)  
@@ -2440,6 +2571,7 @@ The event that fires when the active video element for playback has been created
 </table>
 
 **Example**  
+
 ```js
 // player instance of NanoPlayer
 var onActiveVideoElementChange = function (event) {
@@ -2460,9 +2592,11 @@ player.setup(config).then(function (config) {
     console.log(error);
 });
 ```
+
 <a name="NanoPlayer..config"></a>
 
 ### NanoPlayer~config : <code>object</code>
+
 The config object to pass as param for the 'setup' call.
 
 **Kind**: inner typedef of [<code>NanoPlayer</code>](#NanoPlayer)  
@@ -2705,7 +2839,7 @@ The config object to pass as param for the 'setup' call.
     <td>[style.displayAudioOnly]</td><td><code>boolean</code></td><td><code>true</code></td><td><p>If true a audio symbol will be shown in case of a stream with audio only.</p>
 </td>
     </tr><tr>
-    <td>[style.audioPlayer]</td><td><code>boolean</code></td><td><code>false</code></td><td><p>If true a player will be created as an audio player without video functionality. Controls can be enabled/disabled. The size can be customized via &#39;width&#39; and &#39;height&#39;. Default is 640px * 51px.</p>
+    <td>[style.audioPlayer]</td><td><code>boolean</code></td><td><code>false</code></td><td><p>If true a player will be created as an audio player without video functionality. Controls can be enabled/disabled. The size can be customized via &#39;width&#39; and &#39;height&#39;. Default is 640px *51px.</p>
 </td>
     </tr><tr>
     <td>[style.displayMutedAutoplay]</td><td><code>boolean</code></td><td><code>true</code></td><td><p>If true a muted audio symbol will be shown in case of muted autoplay.</p>
@@ -2861,12 +2995,13 @@ The config object to pass as param for the 'setup' call.
     <td>[metrics.statsInterval]</td><td><code>number</code></td><td><code>10</code></td><td><p>The interval how often the stats should be collected in seconds. The minimum is 5 seconds..</p>
 </td>
     </tr><tr>
-    <td>[metrics.customField*]</td><td><code>string</code></td><td></td><td><p>Custom field. * can be replaced with 1 - 10 e.g. &#39;customField3&#39;. Possible from &#39;customField1&#39; to &#39;customField10&#39;.</p>
+<td>[metrics.customField*]</td><td><code>string</code></td><td></td><td><p>Custom field.* can be replaced with 1 - 10 e.g. &#39;customField3&#39;. Possible from &#39;customField1&#39; to &#39;customField10&#39;.</p>
 </td>
     </tr>  </tbody>
 </table>
 
 **Example**  
+
 ```js
 var config = {
     source: {
@@ -2876,7 +3011,9 @@ var config = {
     }
 };
 ```
+
 **Example**  
+
 ```js
 // Complete config example
 var config = {
@@ -3021,7 +3158,9 @@ var config = {
     }
 };
 ```
+
 **Example**  
+
 ```js
 // example with source url params and events
 var config = {
@@ -3057,7 +3196,9 @@ var config = {
     }
 };
 ```
+
 **Example**  
+
 ```js
 var config = {
     "source" : {
@@ -3150,9 +3291,11 @@ var config = {
     }
 };
 ```
+
 <a name="NanoPlayer..entry"></a>
 
 ### NanoPlayer~entry : <code>object</code>
+
 An entry object to pass stream parameters like h5live config, stream informations etc. in the 'config.source.entries' array
 
 **Kind**: inner typedef of [<code>NanoPlayer</code>](#NanoPlayer)  
@@ -3251,6 +3394,7 @@ An entry object to pass stream parameters like h5live config, stream information
 </table>
 
 **Example**  
+
 ```js
 var source = {
     "entries": [
@@ -3349,7 +3493,9 @@ var source = {
     "startIndex": 2 // lowest
 };
 ```
+
 **Example**  
+
 ```js
 var source = {
     "entries": [
@@ -3386,9 +3532,11 @@ var source = {
     ]
 };
 ```
+
 <a name="NanoPlayer..errorcode"></a>
 
 ### NanoPlayer~errorcode : <code>number</code>
+
 The possible error codes in a onError event.
 
 **Kind**: inner typedef of [<code>NanoPlayer</code>](#NanoPlayer)  
@@ -3645,6 +3793,7 @@ The possible error codes in a onError event.
 <a name="NanoPlayer..state"></a>
 
 ### NanoPlayer~state : <code>number</code>
+
 The state of the player.
 
 **Kind**: inner typedef of [<code>NanoPlayer</code>](#NanoPlayer)  
@@ -3721,6 +3870,7 @@ The state of the player.
 <a name="NanoPlayer..pausereason"></a>
 
 ### NanoPlayer~pausereason : <code>string</code>
+
 The possible pause reason in a onPause event.
 
 **Kind**: inner typedef of [<code>NanoPlayer</code>](#NanoPlayer)  
@@ -3778,4 +3928,3 @@ The possible pause reason in a onPause event.
 </td>
     </tr>  </tbody>
 </table>
-
