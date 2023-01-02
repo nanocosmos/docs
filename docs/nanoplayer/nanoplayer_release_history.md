@@ -4,9 +4,33 @@ title: Release History
 sidebar_label: History
 ---
 
-## Please find more about the **stream group configuration** feature in our [documentation](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_feature_stream_group_configuration/).
+## **[4.19.2]**
 
-## Please find more about **secure playback with JWT** in our [documentation](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_token_security/).
+### **Release Notes**
+
+This version is introducing improvements for error handling and automatic recovery on iOS.
+Playback interruptions in context of stream switches in iOS low power mode have been fixed.
+Furthermore robustness for fullscreen handling in multi-player use cases has been increased.
+The improvement for classic playback on iOS 15 to avoid buffer impacts after adjusting latency has now been applied for iOS 16 as well.
+This was introduced in version 4.15.0.
+
+### **Changelog**
+
+### Improved
+
+- automatic error recovery during an ongoing stream switch on iOS
+- playback speed ~1.0 on iOS 16 as standard to reduce rebuffering effects after latency adjustment
+
+### Fixed
+
+- playback interruptions in context of stream switches in iOS low power mode
+- fullscreen handling with multiple player instances
+- unreasoned configuration warnings for event handlers `onServerInfo` and `onFullscreenChange`
+- added fields `id`, `player`, `version`, `state` in `onFullscreenChange` event object
+
+## Please find more about the **stream group configuration** feature in our [documentation](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_feature_stream_group_configuration/)
+
+## Please find more about **secure playback with JWT** in our [documentation](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_token_security/)
 
 ## **[4.18.0]**
 
@@ -45,7 +69,7 @@ This will enable the nanoStream Player to properly initialize in the setup metho
 
 - player setup with bintu stream ID or bintu group ID if the stream in not `live`
 
-## Please find more about the **video processing** feature in our [documentation](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_feature_video_processing/).
+## Please find more about the **video processing** feature in our [documentation](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_feature_video_processing/)
 
 ## **[4.17.0]**
 
@@ -103,7 +127,7 @@ Also the visual switching behaviour on iOS has been improved to prevent a possib
 - playback speed ~1.0 on iOS 15 as standard to reduce rebuffering effects after latency adjustment
 - z-index only for video element switch on iOS to avoid black frame effect
 
-## Please find more about the **latency control modes** feature in our [documentation](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_feature_latency_control_modes/).
+## Please find more about the **latency control modes** feature in our [documentation](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_feature_latency_control_modes/)
 
 ## **[4.14.2]**
 
@@ -146,7 +170,7 @@ Please find further information in our [feature description](https://docs.nanoco
 
 - improved handling in case of video frames being dropped by the browser
 
-## Please find more about the **source defaults** feature in our [documentation](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_feature_source_defaults/).
+## Please find more about the **source defaults** feature in our [documentation](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_feature_source_defaults/)
 
 ## **[4.13.3]**
 
@@ -359,7 +383,7 @@ The control bar didn't appear by tap in `PAUSED` state with `keepFrame` disabled
 ### **Release Notes**
 
 This version provides a fix for an error related to the player view.
-The issue occured in case of a rejected setup call or if 
+The issue occured in case of a rejected setup call or if
 the `config.playback` object was not defined in the configuration.
 The player view is enabled by default (`config.style.view=true`).
 
