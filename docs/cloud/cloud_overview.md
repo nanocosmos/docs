@@ -46,8 +46,9 @@ Live encoding/ingest is supported with:
 
 - ingest with your own **H264/AAC/RTMP Live Encoders** (e.g. OBS, Wirecast, Hardware Encoders)
 - ingest with plugin-free web based **nanoStream Webcaster** broadcaster incl. screen sharing
+- ingest via protocols RTMP and SRT.
 - ingest with our **nanoStream Apps/SDKs** (nanoStream Apps for Win/Mac/iOS/Android),
-- other formats like RTSP, SRT available upon request
+- other formats like RTSP available upon request
 
 ## Live Playback with H5Live
 Live Playback is supported with our unique H5Live player. The same player code runs on all browsers.

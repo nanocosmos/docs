@@ -18,6 +18,10 @@
       "cloud-frontend/How_to_Log_in_to_the_nanoStream_Cloud": {
         "title": "cloud-frontend/How_to_Log_in_to_the_nanoStream_Cloud"
       },
+      "cloud-frontend/How_to_Setup_Low_Latency_Stream": {
+        "title": "How to Setup a Low Latency Stream",
+        "sidebar_label": "How to Setup a Low Latency Stream"
+      },
       "cloud-frontend/How_to_Start_a_Stream": {
         "title": "How to start a stream",
         "sidebar_label": "Start streaming"
@@ -49,6 +53,10 @@
       "cloud-frontend/cloud-readme": {
         "title": "Cloud Dashboard Overview",
         "sidebar_label": "Cloud Dashboard Overview"
+      },
+      "cloud/analytics_for_low_latency_streams": {
+        "title": "Analytics For Low Latency Streams",
+        "sidebar_label": "Analytics For Low Latency Streams"
       },
       "cloud/analytics-api": {
         "title": "nanoStream Cloud Analytics",
@@ -86,9 +94,21 @@
         "title": "iOS Streaming App in 5 Minutes",
         "sidebar_label": "iOS Streaming App in 5 Minutes"
       },
+      "cloud/cloud_news": {
+        "title": "nanoStream Cloud Latest News",
+        "sidebar_label": "Latest News"
+      },
       "cloud/cloud_overview": {
         "title": "nanoStream Cloud Product and Services Overview",
         "sidebar_label": "Overview"
+      },
+      "cloud/how_to_setup_ingest_security": {
+        "title": "How To Setup Ingest Security For Your Live Streams",
+        "sidebar_label": "How To Setup Ingest Security For Your Live Streams"
+      },
+      "cloud/how_to_setup_streamgroups": {
+        "title": "How To Setup Streamgroups Through V3 Dashboard",
+        "sidebar_label": "How To Setup Streamgroups Through V3 Dashboard"
       },
       "cloud/live_encoding": {
         "title": "Live Encoding",
@@ -105,13 +125,13 @@
         "title": "Network Diagnostics",
         "sidebar_label": "Network Diagnostics"
       },
-      "cloud/cloud_news": {
-        "title": "nanoStream Cloud Latest News",
-        "sidebar_label": "Latest News"
-      },
       "cloud/security": {
         "title": "nanoStream Cloud Security",
         "sidebar_label": "nanoStream Cloud Security"
+      },
+      "cloud/srt_ingest": {
+        "title": "nanoStream Cloud SRT Ingest Guide",
+        "sidebar_label": "SRT Ingest"
       },
       "cloud/support": {
         "title": "Support",
@@ -290,6 +310,10 @@
         "title": "Stream switching and ABR",
         "sidebar_label": "Stream switching and ABR"
       },
+      "nanoplayer/nanoplayer_feature_video_access_and_processing": {
+        "title": "Video Access and Processing",
+        "sidebar_label": "Video Access and Processing"
+      },
       "nanoplayer/nanoplayer_getting_started": {
         "title": "Getting started",
         "sidebar_label": "Getting started"
@@ -330,6 +354,14 @@
       "nanoplayer/nanoplayer_token_security": {
         "title": "Secure playback with H5Live",
         "sidebar_label": "Secure playback with H5Live"
+      },
+      "nanoplayer/nanoplayer_tutorial_how_to_setup_latency_modes": {
+        "title": "How to Setup Optimal Latency Modes for Streaming",
+        "sidebar_label": "How to Setup Optimal Latency Modes for Streaming"
+      },
+      "nanoplayer/nanoplayer_tutorial_how_to_setup_player_security": {
+        "title": "Implement Playback Security For Your Live Streams",
+        "sidebar_label": "Implement Playback Security For Your Live Streams"
       },
       "nanoplayer/nanoplayer_update_source": {
         "title": "update source",
@@ -782,6 +814,7 @@
       "Cloud Dashboard": "Cloud Dashboard",
       "Bintu API": "Bintu API",
       "Support": "Support",
+      "Video Tutorials": "Video Tutorials",
       "nanoStream SDKs/Apps": "nanoStream SDKs/Apps",
       "Android": "Android",
       "iOS": "iOS",

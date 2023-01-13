@@ -76,10 +76,11 @@
   "cloud": {
     "nanoStream Cloud": [
       "cloud/cloud_overview",
-	  "cloud/cloud_news",
+      "cloud/cloud_news",
       "cloud/cloud_introduction",
       "cloud/cloud_getting_started",
       "cloud/live_encoding",
+      "cloud/srt_ingest",
       "cloud/live-recording-vod",
       "cloud/security",
       {
