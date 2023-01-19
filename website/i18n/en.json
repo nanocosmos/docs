@@ -18,10 +18,6 @@
       "cloud-frontend/How_to_Log_in_to_the_nanoStream_Cloud": {
         "title": "cloud-frontend/How_to_Log_in_to_the_nanoStream_Cloud"
       },
-      "cloud-frontend/How_to_Setup_Low_Latency_Stream": {
-        "title": "How to setup a low latency stream",
-        "sidebar_label": "Setup a low latency stream"
-      },
       "cloud-frontend/How_to_Start_a_Stream": {
         "title": "How to start a stream",
         "sidebar_label": "Start streaming"
@@ -60,7 +56,7 @@
       },
       "cloud/analytics-zoom": {
         "title": "nanoStream Cloud Analytics",
-        "sidebar_label": "Zoom"
+        "sidebar_label": "Zoom/Breakdown"
       },
       "cloud/analytics": {
         "title": "nanoStream Cloud Analytics",
@@ -251,9 +247,6 @@
         "title": "Other Information",
         "sidebar_label": "Blog"
       },
-      "nanoplayer/nanoplayer_feature_embed_detailed": {
-        "title": "Embed detailed"
-      },
       "nanoplayer/nanoplayer_faq": {
         "title": "FAQ",
         "sidebar_label": "FAQ"
@@ -266,10 +259,6 @@
         "title": "Fullscreen API",
         "sidebar_label": "Fullscreen API"
       },
-      "nanoplayer/nanoplayer_feature_latency_control_modes": {
-        "title": "Latency Control Modes",
-        "sidebar_label": "Latency control modes"
-      },
       "nanoplayer/nanoplayer_feature_media_error_recovery": {
         "title": "Media Error Recovery",
         "sidebar_label": "Media Error Recovery"
@@ -278,17 +267,9 @@
         "title": "Reconnect and Timeouts",
         "sidebar_label": "Reconnect and Timeouts"
       },
-      "nanoplayer/nanoplayer_feature_source_defaults": {
-        "title": "Source defaults",
-        "sidebar_label": "Source defaults"
-      },
       "nanoplayer/nanoplayer_feature_stream_switching": {
         "title": "Stream switching and ABR",
         "sidebar_label": "Stream switching and ABR"
-      },
-      "nanoplayer/nanoplayer_feature_video_access_and_processing": {
-        "title": "Video Access and Processing",
-        "sidebar_label": "Video Access and Processing"
       },
       "nanoplayer/nanoplayer_getting_started": {
         "title": "Getting started",
@@ -733,10 +714,6 @@
         "title": "Screen Sharing",
         "sidebar_label": "Screen Sharing"
       },
-      "webrtc/nanostream_webrtc_secure_ingest": {
-        "title": "Secure ingest with Webcaster",
-        "sidebar_label": "Secure ingest with Webcaster"
-      },
       "webrtc/nanostream_webrtc_set_mediastream": {
         "title": "External Streams / Mixing",
         "sidebar_label": "External Streams / Mixing"
@@ -766,7 +743,6 @@
     "categories": {
       "H5Live Player": "H5Live Player",
       "Features": "Features",
-      "Releases": "Releases",
       "API": "API",
       "Other": "Other",
       "nanoStream Webcaster": "nanoStream Webcaster",
@@ -776,7 +752,6 @@
       "Cloud Dashboard": "Cloud Dashboard",
       "Bintu API": "Bintu API",
       "Support": "Support",
-      "Video Tutorials": "Video Tutorials",
       "nanoStream SDKs/Apps": "nanoStream SDKs/Apps",
       "Android": "Android",
       "iOS": "iOS",
