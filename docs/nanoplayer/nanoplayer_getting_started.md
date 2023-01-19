@@ -293,6 +293,14 @@ Embedding the H5LivePlayer in your Vue.js project is simple:
 
 ### React.js
 
+*Usefull links:*
+
+ * [GitHub Repository](https://github.com/nanocosmos/nanoplayer-react-sample.git)
+
+ * [Sample app](https://demo.nanocosmos.de/nanoplayer/react/)
+   
+### Configuration steps
+
 1. Import your minified nanoplayer version within your `index.html` in your `public` directory
 
     ```html
