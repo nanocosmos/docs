@@ -56,9 +56,6 @@ var config = {
 
 ## Autoplay and iOS low power mode
 
-Due to iOS security policies implemented by Apple themselves, in low power mode, it is required to have a user interaction to start the playback. 
-As the playback is denied without it, the `1005` error is expected (Playback must be initialized by user gesture).
+Due to iOS security policies implemented by Apple themselves, in low power mode, it is required to have a user interaction to start the playback. This behavior is expected even if muted - there are no exceptions in low power mode.
+As the playback is denied without the user gesture, the `1005` error is thrown (Playback must be initialized by user gesture).
 It is recommended not to attempt a recovery for `1005` error but to find a workaround, i.e ask the user to "tap to play" instead.
-
-
-
