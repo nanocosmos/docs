@@ -27,7 +27,13 @@ The most frequent errors here are `1005`, `1007` and `1009`.
 
 ### 1005 Playback must be initialized by user gesture.
 
-This is related to autoplay. It is recommended to review the autoplay settings.<br />
+This is related to autoplay. There are two possible scenarios for this error occurrence:
+1. Unmuted playback is not able to start due to the browser policy
+2. iOS low power mode
+
+It is recommended to review the autoplay settings.<br />
+
+Read more about how to configure: [autoplay](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_autoplay)
 
 Please have a look at our blog entry [about autoplay policies](https://www.nanocosmos.de/blog/2018/03/autoplay-on-web-pages-with-h5live-player-for-ultra-low-latency-live-streams/).
 
