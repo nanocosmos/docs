@@ -199,6 +199,11 @@ A few examples of player implementation for different frameworks:
 
 ### Vue.js
 
+*Useful link:*
+
+ * [GitHub repository](https://github.com/nanocosmos/nanoplayer-vuejs-sample)
+
+
 Embedding the H5LivePlayer in your Vue.js project is simple:
 
 1. Include the provided `nanoplayer.4.min.js` script within your `index.html` in your `root` directory
@@ -232,35 +237,35 @@ Embedding the H5LivePlayer in your Vue.js project is simple:
 
 3. Add a new variable called `config` to your `data() method` inside your component
 
-    ```html
+   ```html
     <script>
-        export default {
+    export default {
         data() {
             return {
-            'config': {
-                'source': {
-                'defaults': {
-                    'service': 'bintu'
-                },
-                    'entries': [
-                        {
-                            'h5live': {
-                                'rtmp': {
-                                    'streamname': 'XXXXX-YYYYY' // your rtmp streamname
+                'config': {
+                    'source': {
+                        'defaults': {
+                            'service': 'bintu'
+                        },
+                        'entries': [
+                            {
+                                'h5live': {
+                                    'rtmp': {
+                                        'streamname': 'XXXXX-YYYYY' // your rtmp streamname
+                                    }
                                 }
                             }
-                        }
-                    ]
-                },
-                'playback': {
-                    'autoplay': true,
-                    'automute': true,
-                    'muted': false
+                        ]
+                    },
+                    'playback': {
+                        'autoplay': true,
+                        'automute': true,
+                        'muted': false
+                    }
                 }
             }
-            }
         }
-        }
+    }
     </script>
     ```
 
@@ -277,13 +282,13 @@ Embedding the H5LivePlayer in your Vue.js project is simple:
     export default {
         data() { ... },
         mounted: function(){
-        var nanoPlayer = new NanoPlayer('playerDiv');
-        nanoPlayer.setup(this.config).then(function (config) {
-            console.log('setup success');
-            console.log('config: ' + JSON.stringify(config, undefined, 4));
-        }, function (error) {
-            alert(error.message);
-        });
+            var nanoPlayer = new window.NanoPlayer('playerDiv');
+            nanoPlayer.setup(this.config).then(function (config) {
+                console.log('setup success');
+                console.log('config: ' + JSON.stringify(config, undefined, 4));
+            }, function (error) {
+                alert(error.message);
+            });
         }
     }
     </script>
