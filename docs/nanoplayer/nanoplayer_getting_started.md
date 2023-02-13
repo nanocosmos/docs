@@ -195,7 +195,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 ## Frameworks
 
-A few examples of player implementation for different frameworks:
+Please find more information about player integration with common web frameworks [here](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_getting_started#frameworks)
 
 ### Vue.js
 
