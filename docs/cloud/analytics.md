@@ -138,7 +138,7 @@ Ingest (received) and playback (sent) traffic for each IP.
 
 #### IP/Referer Blocking
 
-![Screenshot](/img/cloud/analytics/ip-blocking.png)
+![Screenshot](/img/cloud/analytics/analytics-ip-blocking.png)
 
 Ⓐ Lists the IP's/referer of playout/ingest.\
 Ⓑ Lists the Playout or Ingest in GB for the corresponding IP/referer.\
