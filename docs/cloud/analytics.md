@@ -234,9 +234,3 @@ The average and median duration a stream was live, over all ingested streams.
 #### Used webcaster versions
 
 Percentage distribution of ingests based on the used version of the Webcaster.
-
-### Reports
-
-Makes it possible to export metrics.
-Generates a PDF with usage values (data sent and received) for the selected time range.
-The PDF contains the total numbers and two histograms.
