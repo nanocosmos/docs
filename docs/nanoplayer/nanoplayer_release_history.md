@@ -29,6 +29,8 @@ The issue has been introduced in version 4.19.
 
 ### **Changelog**
 
+### Added
+
 - detection and automatic recovery of stalled video playback due to decoding issues on iOS
   - related error: `3005` - `'An error occurred while hls playback when decoding video.'`
 - detection and automatic recovery of buffering errors on iOS
