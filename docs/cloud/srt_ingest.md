@@ -35,6 +35,7 @@ The SRT setup will require creating a new stream or making use of an existing st
 
 | Global domain (preferred) | bintu-srt.nanocosmos.de    |
 |---------------------------|----------------------------|
+| **Asia domain**           | bintu-srt-as.nanocosmos.de |
 | **Europe domain**         | bintu-srt-eu.nanocosmos.de |
 | **North America domain**  | bintu-srt-us.nanocosmos.de |
 | **South America domain**  | bintu-srt-sa.nanocosmos.de |
