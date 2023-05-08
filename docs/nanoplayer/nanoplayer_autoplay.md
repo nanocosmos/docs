@@ -11,7 +11,7 @@ Does it improve or reduce user experience?
 
 > **Autoplay of video and audio streams is now only supported with _muted_ audio (silent)!**
 
-> **When auto is not muted, the video would just not play.**
+> **When audio is not muted, the video would just not play.**
 
 This is a restriction introduced by all large browser vendors, and it requires fine-tuned configuration for web developers.
 
