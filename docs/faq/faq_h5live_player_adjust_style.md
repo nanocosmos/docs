@@ -276,15 +276,16 @@ Yes. Please check out the nanoplayer-multi sample in the player package.
 
 ### 1. iOS
 
-Due to Apple policy, setting the volume internally is not possible at the moment.
+Due to Apple policy, setting the volume internally is not possible at the moment. See [here](https://developer.apple.com/library/archive/documentation/AudioVideo/Conceptual/Using_HTML5_Audio_Video/Device-SpecificConsiderations/Device-SpecificConsiderations.html#volume-control-in-javascript/) for more informations.
 
 ### 2. Others
 
-Set the volume with player method `'setVolume'` and passed value in range of 0 to 1.
+Set the volume with player method `'setVolume'` and pass a float value between 0.0 and 1.0.
 
 #### Code example with set volume to 50%
 
 ```javascript
 player.setVolume(0.5)
-</details>
 ```
+
+</details>
