@@ -22,7 +22,7 @@ and our blog posts
 Which browsers/plattforms do we support??
 </strong></summary>
 
-# H5Live browser support
+## Browser support
 
 The low-latency nanoStream h5Live Player runs on all full-featured HTML5 browsers including
 
@@ -36,7 +36,7 @@ For Internet Explorer 11 on Windows 7, H5Live player contains a Flash player fal
 
 ## Browser emulations
 
-Emulation of any browsers, including iOS might not be supported and could lead into unexpected behaviour.
+Browser emulation might not be supported. Using the player in a browser emulation mode could lead to unexpected behaviour due to mismatching conditions.
 It is highly recommended to use real devices for testing and display.
 
 ## Issues on specific systems
