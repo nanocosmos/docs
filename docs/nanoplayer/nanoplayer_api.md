@@ -296,7 +296,7 @@ player.unmute();
 
 ### nanoPlayer.setVolume(volume)
 
-Sets the volume of the player.
+Sets the volume of the player. NOT AVAILABLE FOR IOS, see <a href="https://developer.apple.com/library/archive/documentation/AudioVideo/Conceptual/Using_HTML5_Audio_Video/Device-SpecificConsiderations/Device-SpecificConsiderations.html#volume-control-in-javascript"><b>here</b></a> for more informations.</p>
 
 **Kind**: instance method of [<code>NanoPlayer</code>](#NanoPlayer)  
 <table>
