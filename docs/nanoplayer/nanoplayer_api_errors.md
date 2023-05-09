@@ -87,7 +87,7 @@ The stream was already playing, but the stream was unpublished.
 3xxx codes are related to media playback errors in the system/browser playback components,
 MediaElement and/or Media Source Extensions.<br />
 The most present errors here are `3003`, `3100` for MSE playback and `3005`, `3101` for HLS playback. This errors can be recovered.
-See [here](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_feature_media_error_recoveries) for more informations about the "media error recovery" feature.
+See [here](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_feature_media_error_recovery) for more informations about the "media error recovery" feature.
 
 ### 3003 An error occurred when decoding media
 
