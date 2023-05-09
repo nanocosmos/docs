@@ -14,15 +14,13 @@ nanoStream H5Live is a client-server delivery and playback solution based on HTM
 
 See the separate H5Live section in our docs,
 and our blog posts
-https://www.nanocosmos.de/blog/2017/05/nanostream-h5live-low-latency-faq/
-
+<https://www.nanocosmos.de/blog/2017/05/nanostream-h5live-low-latency-faq/>
 
 </details>
 
 <details><summary><strong>
 Which browsers/plattforms do we support??
 </strong></summary>
-
 
 # H5Live browser support
 
@@ -36,40 +34,45 @@ The low-latency nanoStream h5Live Player runs on all full-featured HTML5 browser
 
 For Internet Explorer 11 on Windows 7, H5Live player contains a Flash player fallback for RTMP.
 
+## Browser emulations
+
+Emulation of any browsers, including iOS might not be supported and could lead into unexpected behaviour.
+It is highly recommended to use real devices for testing and display.
+
 ## Issues on specific systems
 
-Generally nanoStream H5live player support in a certain browser depends on the 
-availability of the involved technologies, codecs and formats. 
-For Windows, macOS and Android: 
+Generally nanoStream H5live player support in a certain browser depends on the
+availability of the involved technologies, codecs and formats.
+For Windows, macOS and Android:
 
-- HTML5 Video 
-- Web Sockets 
-- Media Source Extensions 
-- Support for fMP4, H.264 Video, AAC Audio 
+- HTML5 Video
+- Web Sockets
+- Media Source Extensions
+- Support for fMP4, H.264 Video, AAC Audio
 
 On iOS, nanoStream H5Live uses a unique version of HLS which works plugin-free on all Safari versions starting iOS 10.
 
 On some Android-based mobile devices, the default browser is a stripped-down version not featuring all HTML5 elements.
-For example, the Samsung Internet browser is rather based on Chromium than Chrome. 
-This results in differences regarding the support of certain technologies, codecs and formats. 
-https://www.chromium.org/audio-video
+For example, the Samsung Internet browser is rather based on Chromium than Chrome.
+This results in differences regarding the support of certain technologies, codecs and formats.
+<https://www.chromium.org/audio-video>
 
 The Samsung Internet Android browser is one example, where the HTML5 Media Source Extension is missing or disabled, one of the key HTML5 technologies.
 
-We have been able to confirm that the MSE feature can be enabled through 
+We have been able to confirm that the MSE feature can be enabled through
 
     internet://flags 
 
-in version 6.4, while the default was 'disabled'. 
-In version 7(.2) this flag has been removed while the default 
+in version 6.4, while the default was 'disabled'.
+In version 7(.2) this flag has been removed while the default
 seems to be 'disabled' still. We are ongoing monitoring Samsung Internet progress.
 
-The nanoPlayer setup call is returning a specific error message in case that the 
+The nanoPlayer setup call is returning a specific error message in case that the
 browser does not support one of the required technologies.
 
-Setup Error: "This browser does not fully support HTML5 and H5Live. 
-Supported are: Chrome >=54 (Windows, macOS, Android), Firefox >=48 (Windows, macOS, Android), 
-Microsoft Edge (Windows), Microsoft Internet Explorer 11 (at least Windows 8), 
+Setup Error: "This browser does not fully support HTML5 and H5Live.
+Supported are: Chrome >=54 (Windows, macOS, Android), Firefox >=48 (Windows, macOS, Android),
+Microsoft Edge (Windows), Microsoft Internet Explorer 11 (at least Windows 8),
 Safari (macOS & at least iOS 10)."
 
     player.setup(config).then(function (config) {
@@ -77,11 +80,8 @@ Safari (macOS & at least iOS 10)."
     }, function (error) {
         alert(error.message);
     });
-    
 
 </details>
-
-
 
 <details><summary><strong>How can I check browser support?</strong></summary>
 
@@ -89,16 +89,14 @@ You can check the static capabilities array of the NanoPlayers class `NanoPlayer
 
 </details>
 
-
 <details><summary><strong>Is H5Live supported in native apps in a Webview on iOS and Android?</strong></summary>
 
 H5Live Player works on native browsers like Safari on iOS and Chrome on Android.
-For native apps, you can use WebView components in-app, which both operating systems support. 
-Example for iOS: https://developer.apple.com/documentation/webkit/wkwebview/
+For native apps, you can use WebView components in-app, which both operating systems support.
+Example for iOS: <https://developer.apple.com/documentation/webkit/wkwebview/>
 The operating systems need to support both H264 video and AAC audio formats for playback, which most platforms do.
 
 </details>
-
 
 <details><summary><strong>Is there an API documentation available?</strong></summary>
 
@@ -109,12 +107,14 @@ Yes, you can find it [here](../nanoplayer/nanoplayer_api).
 <details><summary><strong>Is there a recommended reconnect/replay event flow?</strong></summary>
 
 This is the recommended pattern for reconnect implementation:
+
 - Re-play can be applied for certain error codes and pause reasons
 - Last error code being stored in `onError` handler
 - Re-play decision and execution taking place in `onPause` handler
-- The number of consecutive replay attempts should be limited 
+- The number of consecutive replay attempts should be limited
 
 Please find a sample for reconnect logic below:
+
 ```
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -264,4 +264,3 @@ Please find a sample for reconnect logic below:
 ```
 
 </details>
-
