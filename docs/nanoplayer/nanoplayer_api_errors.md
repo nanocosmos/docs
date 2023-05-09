@@ -25,9 +25,10 @@ Following some of the most frequent errors will be described.<br /> To see all e
 1xxx codes represent general errors of the player on startup or playback.<br />
 The most frequent errors here are `1005`, `1007` and `1009`.
 
-### 1005 Playback must be initialized by user gesture.
+### 1005 Playback must be initialized by user gesture
 
 This is related to autoplay. There are two possible scenarios for this error occurrence:
+
 1. Unmuted playback is not able to start due to the browser policy
 2. iOS low power mode
 
@@ -37,22 +38,23 @@ Read more about how to configure: [autoplay](https://docs.nanocosmos.de/docs/nan
 
 Please have a look at our blog entry [about autoplay policies](https://www.nanocosmos.de/blog/2018/03/autoplay-on-web-pages-with-h5live-player-for-ultra-low-latency-live-streams/).
 
-### 1007 Playback suspended by external reason.
+### 1007 Playback suspended by external reason
 
 This is indicating a special condition on mobile devices when the playback has been stopped by an event in the browser or system on a mobile device.<br />
 
 >NOTE: This is a non critical error.<br />
 
 This includes:
+
 * Player tab going to background after a tab switch
 * Browser application being minimized or closed
 * Browser application being interrupted by the system, e.g. in case of an incoming call or device being locked
 
-### 1009 Playback failed because the player was in visibility state 'hidden' at load start.
+### 1009 Playback failed because the player was in visibility state 'hidden' at load start
 
 This is related to a policy in some browsers, e.g. Chrome, Chromium based and Safari preventing media playback start in a background tab, a tab that did not have focus/visibility yet.
 
-## Stream Errors 
+## Stream Errors
 
 >These errors have codes in a **range from 2000 to 2999**.<br />
 
@@ -62,19 +64,19 @@ which can be connected to the general availabilty of the stream, but as well to 
 on the player side.<br />
 The most frequent errors here are `2001`, `2002`, `2003` and `2004`.
 
-### 2001 The requested stream can not be found.
+### 2001 The requested stream can not be found
 
 No stream info and media data received.
 
-### 2002 No media available.
+### 2002 No media available
 
-The stream was already playing, but media data stopped receiving. 
+The stream was already playing, but media data stopped receiving.
 
-### 2003 Not enough media data received.
+### 2003 Not enough media data received
 
 Stream info is received, but no media data was fetched.
 
-### 2004 The source stream has been stopped.
+### 2004 The source stream has been stopped
 
 The stream was already playing, but the stream was unpublished.
 
@@ -84,15 +86,24 @@ The stream was already playing, but the stream was unpublished.
 
 3xxx codes are related to media playback errors in the system/browser playback components,
 MediaElement and/or Media Source Extensions.<br />
-The most present errors here are `3003` and `3100`.
+The most present errors here are `3003`, `3100` for MSE playback and `3005`, `3101` for HLS playback. This errors can be recovered.
+See [here](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_feature_media_error_recoveries) for more informations about the "media error recovery" feature.
 
-### 3003 An error occurred when decoding media.
+### 3003 An error occurred when decoding media
 
 An receiving media data chunk couldn't be decoded.
 
-### 3100 The media source extension changed the state to 'ended'.
+### 3005 An error occurred while hls playback when decoding video
+
+The receiving media data of the hls stream couldn't be decoded.
+
+### 3100 The media source extension changed the state to 'ended'
 
 The MSE stopped working.
+
+### 3101 An error occurred while buffering on hls playback
+
+The hls playback was interupted during media data buffering.
 
 ## Network Errors
 
@@ -102,11 +113,11 @@ The MSE stopped working.
 Connect failures can be caused by bad network conditions, firewall issues
 and in rare cases by overreacting ad blockers.
 
-### 4001 Could not open connection. Timeout reached.
+### 4001 Could not open connection. Timeout reached
 
 The websocket server is not available or not present, a timeout for establishing the connection is reached.
 
-### 4006 The source request was aborted by timeout.
+### 4006 The source request was aborted by timeout
 
 An [`updateSource`](nanoplayer_api/#nanoplayerupdatesourcesource) or a [`switchStream`](nanoplayer_api/#nanoplayerswitchstreamindex) request was run into a timeout.
 
@@ -121,10 +132,11 @@ In most cases it makes sense to check the configuration that has been used.
 
 A javascript error occured during setup promise execution. Most often the is reason an 'undefined' error within the setup promise resolve or triggered events (e.g. [`onReady`](nanoplayer_api/#onready), [`onMute`](nanoplayer_api/#onmute) or [`onVolumeChange`](nanoplayer_api/#onvolumechange)) during setup.<br />
 
-Example: 
+Example:
+
 * "undefined is not an object"
 
-### 5002 This browser does not fully support HTML5 and H5Live.
+### 5002 This browser does not fully support HTML5 and H5Live
 
 The used browser does not fully support HTML5 and H5Live.<br />
 

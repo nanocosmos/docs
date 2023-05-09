@@ -6,7 +6,7 @@ sidebar_label: Supported Browsers
 
 The low-latency nanoStream h5Live Player **runs on all full-featured HTML5 browsers** including
 
-- Safari 10,11,12,13 on iOS, iPadOS and macOS
+- Safari 10 and higher on iOS, iPadOS and macOS
 - Chrome 54 and higher on desktop and mobile
 - Firefox 48 and higher
 - Edge
