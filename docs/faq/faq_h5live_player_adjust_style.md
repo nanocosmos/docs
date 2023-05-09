@@ -8,6 +8,7 @@ sidebar_label: Adjust/Style
 <br>The following example is for a **16:9 ratio**, which can be changed to work for all other aspect ratios.
 
 ### 1. Player configuration
+
 Set the `style.width` and `style.height` properties inside the player config to `auto` to  keep the size of the parent container.
 
 ```
@@ -22,10 +23,11 @@ Set the `style.width` and `style.height` properties inside the player config to 
 ```
 
 ### 2. Player DIV CSS
+
 Set a percentage value for `padding-bottom` to maintain the aspect ratio of the players `<div>` element.
 <br>For a 16:9 aspect ratio: **(9 / 16 = 0.5625) = 56.25%**
 
-``` 
+```
     <body>
         <div id="playerDiv" style="padding-bottom: 56.25%"></div>
     </body>
@@ -38,7 +40,6 @@ Set a percentage value for `padding-bottom` to maintain the aspect ratio of the 
 | 1:1          | 100%           |
 | 16:9         | 56.25%         |
 | 4:3          | 75%            |
-
 
 </details>
 
@@ -64,14 +65,14 @@ Please find information and examples on how to add the player to a webpage [here
 
 <details><summary><strong>Can I use a raw player without built-in controls, animations and styles?</strong></summary>
 
-Yes, by passing the config property `config.style.view = false`. 
+Yes, by passing the config property `config.style.view = false`.
 
-The view is the top level UI layer containing all built-in controls, animations and styles including automatic video scaling. 
-Disabling the view will disable these features as well which is why this is recommended for experienced users only. 
+The view is the top level UI layer containing all built-in controls, animations and styles including automatic video scaling.
+Disabling the view will disable these features as well which is why this is recommended for experienced users only.
 
 If you want to disable certain parts of the view (eg. controls) keep the `config.style.view` enabled and disable the specific property
 
-Example to disable inline controls: 
+Example to disable inline controls:
 
 ```
     "style": {
@@ -81,7 +82,6 @@ Example to disable inline controls:
 ```
 
 You can find more information regarding config properties in our API docs [here](../nanoplayer/nanoplayer_api/#nanoplayerconfig--codeobjectcode).
-
 
 > **Important:**
 > If you create custom controls or other overlay elements make sure to set the `z-index` value > 1 to ensure they are positioned on top of the video layer.
@@ -105,7 +105,7 @@ config.style.controls = false;
 
 <details><summary><strong>How to adjust the playout orientation when the broadcast on an iOS device get's rotated?</strong></summary>
 
-> **Note:** 
+> **Note:**
 > The iPhone and iPad send the stream with the initial orientation of the device. Meaning, if you rotate the device the stream is rotated which is a technical restriction that we can not change.
 
 In order to have live rotation on the player side, we send rotation **metadata** to the player to adjust the playback to the rotation.
@@ -133,18 +133,18 @@ config.style.audioPlayer = true;
 
 Yes.
 
-
 </details>
 
 <details><summary><strong>Can I use an own external video element?</strong></summary>
 
-Yes, by passing the `id` attribute of an existing html5 video element through the config property `playback.videoId`. The video will be inserted into the players container and existing styles will be overwritten and restored after a destroy. 
+Yes, by passing the `id` attribute of an existing html5 video element through the config property `playback.videoId`. The video will be inserted into the players container and existing styles will be overwritten and restored after a destroy.
 
 > **Important:**
 > Since introducing player version **4.4** with seamless stream switching on iOS & iPadOS, **2** video elements are needed internally. So for special use cases where existing video tags need to be used for playback an `array` of maximal two element Ids can be provided via the `playback.videoId` config property (**NOT mandatory**)
+>
 > - if 0 Ids are provided 2 video elements will be created internally
 > - if 1 Id is provided the other video element will be created internally
-> 
+>
 > You can find more information regarding the `playback.videoId` and other config properties in our [API docs](../nanoplayer/nanoplayer_api#nanoplayerconfig--codeobjectcode).
 
 </details>
@@ -233,6 +233,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 ```
+
 #### Code example with changed global CSS rule
 
 ```
@@ -247,25 +248,43 @@ document.addEventListener('DOMContentLoaded', function () {
 
 <details><summary><strong>Is there a simple code snippet available?</strong></summary>
 
-Yes. Please check out the 'Getting started' topic in the documentation. 
-https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_getting_started/
+Yes. Please check out the 'Getting started' topic in the documentation.
+<https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_getting_started/>
 
 </details>
 
 <details><summary><strong>Can I use the player within a mobile webview?</strong></summary>
 
-Yes. Some mobile webviews require configuration flags to be set on the app level 
-to allow, e.g. inline playback or playback without user interaction (autoplay). 
+Yes. Some mobile webviews require configuration flags to be set on the app level
+to allow, e.g. inline playback or playback without user interaction (autoplay).
 Examples
-iOS: allowsInlineMediaPlayback, mediaTypesRequiringUserActionForPlayback 
+iOS: allowsInlineMediaPlayback, mediaTypesRequiringUserActionForPlayback
 Android: setMediaPlaybackRequiresUserGesture
 
-Please check the documentation of the webview component. 
+Please check the documentation of the webview component.
 
 </details>
 
 <details><summary><strong>Can I have multiple player instances in one page?</strong></summary>
 
-Yes. Please check out the nanoplayer-multi sample in the player package. 
+Yes. Please check out the nanoplayer-multi sample in the player package.
 
 </details>
+
+<details><summary><strong>How to adjust volume?</strong></summary>
+<br>Adjusting volume differs depending on the operational system.
+
+### 1. iOS
+
+Due to Apple policy, setting the volume internally is not possible at the moment.
+
+### 2. Others
+
+Set the volume with player method `'setVolume'` and passed value in range of 0 to 1.
+
+#### Code example with set volume to 50%
+
+```javascript
+player.setVolume(0.5)
+</details>
+```
