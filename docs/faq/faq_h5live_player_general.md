@@ -19,7 +19,7 @@ and our blog posts
 </details>
 
 <details><summary><strong>
-Which browsers/plattforms do we support??
+Which browsers/platforms do we support?
 </strong></summary>
 
 ## Browser support
