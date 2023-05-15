@@ -8,10 +8,10 @@ sidebar_label: NanoPlayer
 
 ## NanoPlayer
 
-NanoPlayer (H5Live) Public API Class 4.20.3
+NanoPlayer (H5Live) Public API Class 4.20.4
 
 **Kind**: global class  
-**Version**: 4.20.3  
+**Version**: 4.20.4  
 <a name="new_NanoPlayer_new"></a>
 
 ### new NanoPlayer(playerDivId)
@@ -296,7 +296,7 @@ player.unmute();
 
 ### nanoPlayer.setVolume(volume)
 
-Sets the volume of the player. NOT AVAILABLE FOR IOS, see <a href="https://developer.apple.com/library/archive/documentation/AudioVideo/Conceptual/Using_HTML5_Audio_Video/Device-SpecificConsiderations/Device-SpecificConsiderations.html#volume-control-in-javascript"><b>here</b></a> for more informations.</p>
+Sets the volume of the player. NOT AVAILABLE FOR IOS, see [<b>here</b>](https://developer.apple.com/library/archive/documentation/AudioVideo/Conceptual/Using_HTML5_Audio_Video/Device-SpecificConsiderations/Device-SpecificConsiderations.html#volume-control-in-javascript/) for more informations.
 
 **Kind**: instance method of [<code>NanoPlayer</code>](#NanoPlayer)  
 <table>
