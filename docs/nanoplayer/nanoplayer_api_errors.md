@@ -50,6 +50,10 @@ This includes:
 * Browser application being minimized or closed
 * Browser application being interrupted by the system, e.g. in case of an incoming call or device being locked
 
+### 1008 Playback error. Only on iOS.
+
+This is a recoverable error that can occur only on iOS. Read more [about Media Error Recoveries](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_feature_media_error_recovery/).
+
 ### 1009 Playback failed because the player was in visibility state 'hidden' at load start
 
 This is related to a policy in some browsers, e.g. Chrome, Chromium based and Safari preventing media playback start in a background tab, a tab that did not have focus/visibility yet.
@@ -107,7 +111,7 @@ The hls playback was interupted during media data buffering.
 
 ## Network Errors
 
->These errors have codes in a **range from 4000 to 4999**.<br />
+>These errors have codes in a **range from 4000 to 4899**.<br />
 
 4xxx codes are related to network errors of the media stream connections.
 Connect failures can be caused by bad network conditions, firewall issues
@@ -120,6 +124,22 @@ The websocket server is not available or not present, a timeout for establishing
 ### 4006 The source request was aborted by timeout
 
 An [`updateSource`](nanoplayer_api/#nanoplayerupdatesourcesource) or a [`switchStream`](nanoplayer_api/#nanoplayerswitchstreamindex) request was run into a timeout.
+
+### 4106 Maybe no network, wrong url or server down. Reconnect possible.
+
+The websocket server is not available or not present, establishing new connection is possible.
+
+## Security Errors
+
+>These errors have codes in a **range from 4900 to 4999**.<br />
+
+### 4901 The security service denied access. The authentication token is invalid.
+
+Unsuccesful authentication due to invalid token. Read more [about secure playback with H5Live](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_token_security).
+
+### 4903 The security service denied access. The url is expired or a token parameter is missing (expires, token, or options).
+
+Unsuccesful authentication due to expired token or a missing token parameter. Read more [about secure playback with H5Live](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_token_security).
 
 ## Setup Errors
 
@@ -147,3 +167,8 @@ Supported browsers are:
 * Microsoft Edge (Windows)
 * Microsoft Internet Explorer 11 (at least Windows 8)
 * Safari (MacOSX & at least iOS 10)
+
+### 5004 The players source configuration is malformed or missing.
+
+This setup error occurres when one of the key parameters (ie `source` object, `group.id` or `rtmp.streamname`) in the config object is malformed, therefore not readable for config parsing, or missing.
+Proper configuration examples can be found in [Getting started section](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_getting_started).
