@@ -172,3 +172,188 @@ Supported browsers are:
 
 This setup error occurres when one of the key parameters (ie `source` object, `group.id` or `rtmp.streamname`) in the config object is malformed, therefore not readable for config parsing, or missing.
 Proper configuration examples can be found in [Getting started section](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_getting_started).
+
+## Error handling
+
+In case of an error, the following choice is to either try to replay/reconnect, or do nothing. 
+
+There are 3 available scenarios depending on the error type:
+1. Errors with automatic recovery
+- `1008`, `3003`, `3100`
+
+Those are media errors which have an automatic recovery workflow. In case of an error, the recovery will be triggered. The amount of recoveries is set within a time frame of 60 seconds. Read more about [media error recovery](nanoplayer_feature_media_error_recovery)
+
+2. Errros with no automatic recovery
+
+Errors which don't fall under the media error recovery group nor are mentioned in the point 3., are suitable for a replay/reconnection.
+
+3. Errors that shouldn't be recovered
+
+There are errors which should not be tried to recover as it would be mutually exclusive with the fundation of particular errors. Most errors in this category are directly linked with the mobile usage (autoplay policies, low power mode, tab switching), as well as the media errors group (error codes: `3000`-`3999`), network errors group (error codes: `4001`-`4999`) and setup errors (error codes: `5001`-`5010`).
+
+Example: user is switching tabs on the phone and the application with running player is going to the background for a moment. In this situation, no one wants to have a running playback in the backgraound tab. As a result the `1007` error (`Playback suspended by external reason`) is thrown and the playback should not be recovered while in the background tab, therefore, for this error, the error recovery is not recommended. 
+
+
+### Reconnect/replay event flow
+
+For errors that meet the conditions of replay/reconnection, there is a recommended workflow. 
+Based on the last error code (stored in `onError` handler), the replay decision and following execution will take place (in `onPause` handler). The number of consecutive replay attempts should be limited. 
+
+## Example code snippet 
+
+```html
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<body>
+    <div id="playerDiv"></div>
+    <p>
+        <input type="checkbox" id="allowReplay">
+        <label for="replay">allow replay</label>
+    </p>
+    <script src="http://demo.nanocosmos.de/nanoplayer/api/release/nanoplayer.4.min.js"></script>
+    <script>
+        var player;
+        var config = {
+            "source": {
+                "entries": [
+                    {
+                        "index": 0,
+                        "label": "stream 1",
+                        "tag": "",
+                        "info": {
+                            "bitrate": 1500,
+                            "width": 1280,
+                            "height": 720,
+                            "framerate": 30
+                        },
+                            "rtmp": {
+                                "streamname": "XXXXX-YYYYY" // Enter your stream name
+                            }
+                        },
+                        "bintu": {}
+                    },
+                ],
+                "options": {
+                    "adaption": {
+                        "rule": "none"
+                    },
+                    "switch": {}
+                },
+                "startIndex": 0
+            },
+            "playback": {
+                "autoplay": true,
+                "automute": true,
+                "muted": false
+            },
+            "style": {
+                "controls": true,
+                "displayMutedAutoplay": false
+            },
+            // event callback functions
+            "events": {
+                "onPlay": onPlay,
+                "onPause": onPause,
+                "onError": onError,
+                "onSwitchStreamSuccess": onSwitchStreamSuccess,
+                "onUpdateSourceSuccess": onUpdateSourceSuccess
+            }
+        };
+
+        var allowReplayCheckBox = document.getElementById("allowReplay");
+        // last error
+        var error = null;
+        // current and maximum consecutive replay attempts 
+        var playAttempts = 0, maxPlayAttempts = 10;
+        var errorCodesNotReplay = [
+            1005, // Playback must be initialized by user gesture.
+            1007, // Playback suspended by external reason.
+            1008, // Playback error, only on iOS.
+            1009, // Playback failed because the player was in visibility state 'hidden' at load start.
+            3001, // A fetching process of the media aborted by user.
+            3002, // An error occurred when downloading media.
+            3003, // An error occurred when decoding media.
+            3004, // The received audio/video is not supported.
+            3100, // The media source extension changed the state to 'ended'. NOT AVAILABLE FOR IOS.
+            3200, // An unspecific media error occurred.
+            4003  // Maximum number of reconnection tries reached.
+        ];
+
+        function resetPlayAttemps () {
+            playAttempts = 0;
+        }
+
+        // playback started successfully
+        function onPlay (e) {
+            resetPlayAttemps();
+        }
+
+        // store error, pause will be fired immediately
+        // error will be checked in pause handler
+        function onError (e) {
+            error = e.data;
+            console.log("error code: " + error.code.toString());
+            console.log("error message: " + error.message);
+        }
+
+        // check for error
+        function onPause (e) {
+            if (error !== null && e.reason !== 'normal') {
+                console.log("paused after error " + error.code.toString());
+
+                if (allowReplayCheckBox.checked) {
+                    // shouldn't replay when error from errorCodesNotReplay occur or error from range: 4001-4999, 5001-5010
+                    if (errorCodesNotReplay.indexOf(error.code) !== -1 || ((error.code >= 4001 && error.code <= 4999) || (error.code >= 5001 && error.code <= 5010))) {
+                        doNotReplay();
+                    } else {
+                        doReplay();
+                    }
+                }
+            }
+            // reset error
+            error = null;
+        }
+
+        function onSwitchStreamSuccess () {
+            console.log("SwitchStreamSuccess");
+            resetPlayAttemps();
+        }
+
+        function onUpdateSourceSuccess () {
+            console.log("UpdateSourceSuccess");
+            resetPlayAttemps();
+        }
+
+        function doNotReplay () {
+            console.log("no replay scheduled");
+        }
+
+        function doReplay () {
+            try {
+                if (player && player.play) {
+                    if (playAttempts < maxPlayAttempts) {
+                        playAttempts++;
+                        console.log("replay attempt " + playAttempts.toString());
+                        player.play();
+                    } else {
+                        console.log('max replays reached');
+                    }
+                }
+            } catch (err) { }
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            player = new NanoPlayer("playerDiv");
+            player.setup(config).then(function (config) {
+                console.log("setup success");
+                console.log("config: " + JSON.stringify(config, undefined, 4));
+            }, function (error) {
+                console.log("setup reject error code: " + error.code.toString());
+                console.log("setup reject error message: " + error.message);
+            });
+        });
+    </script>
+</body>
+
+</html>
+```
