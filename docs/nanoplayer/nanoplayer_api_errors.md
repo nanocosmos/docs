@@ -52,7 +52,7 @@ This includes:
 
 ### 1008 Playback error. Only on iOS.
 
-This is a recoverable error that can occur only on iOS. Read more [about Media Error Recoveries](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_feature_media_error_recovery/).
+An unexpected error occurred during playback on iOS. This error is recoverable. Read more [about Media Error Recoveries](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_feature_media_error_recovery/).
 
 ### 1009 Playback failed because the player was in visibility state 'hidden' at load start
 
@@ -178,21 +178,48 @@ Proper configuration examples can be found in [Getting started section](https://
 In case of an error, the following choice is to either try to replay/reconnect, or do nothing. 
 
 There are 3 available scenarios depending on the error type:
-1. Errors with automatic recovery
-- `1008`, `3003`, `3100`
+1. Errors covered by internal recovery or reconnect workflow:
 
-Those are media errors which have an automatic recovery workflow. In case of an error, the recovery will be triggered. The amount of recoveries is set within a time frame of 60 seconds. Read more about [media error recovery](nanoplayer_feature_media_error_recovery)
+a) Media element errors with available configuration for automatic recovery
+- error codes: `1008`, `3003`, `3005`, `3100`. `3101`;
 
-2. Errros with no automatic recovery
+Those are media errors which have an automatic recovery workflow. In case of an error, the recovery will be triggered. The amount of recoveries is set within a time frame of 60 seconds and can be adjusted via player configuration. Read more about [media error recovery](nanoplayer_feature_media_error_recovery).
 
-Errors which don't fall under the media error recovery group nor are mentioned in the point 3., are suitable for a replay/reconnection.
+b) Network connection errors with available configuration for reconnection
+- error codes: `4102`, `4103`, `4105`, `4106`, `4107`, `4108`, `4109`, `4111`, `4115`, `4500`, `4503`;
 
-3. Errors that shouldn't be recovered
+In case of initial connection failure or connection break up during streaming, there is an internal network reconnection workflow supported on all platforms except iOS. Read more about [Reconnect and Timeouts](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_feature_reconnect_timeouts).
 
-There are errors which should not be tried to recover as it would be mutually exclusive with the fundation of particular errors. Most errors in this category are directly linked with the mobile usage (autoplay policies, low power mode, tab switching), as well as the media errors group (error codes: `3000`-`3999`), network errors group (error codes: `4001`-`4999`) and setup errors (error codes: `5001`-`5010`).
+2. Shouldn't be attempted to recover by retry
+- error codes related to autoplay policies: `1005`, `1007`, `1009`;
+- error codes related to network security: `49xx`-`4999`;
+- error codes related to setup: `5001`-`5010`;
 
-Example: user is switching tabs on the phone and the application with running player is going to the background for a moment. In this situation, no one wants to have a running playback in the backgraound tab. As a result the `1007` error (`Playback suspended by external reason`) is thrown and the playback should not be recovered while in the background tab, therefore, for this error, the error recovery is not recommended. 
+There are errors which should not be attempted to recover as it would be mutually exclusive with the fundation of particular errors. Most errors in this category are directly linked with the mobile usage (autoplay policies, low power mode, tab switching), as well as security errors group (error codes: `49xx`-`4999`) and setup errors (error codes: `5001`-`5010`).
 
+Example 1: user is switching tabs on the phone and the application with running player is going to the background for a moment. In this situation, no one wants to have a running playback in the backgraound tab. As a result the `1007` error (`Playback suspended by external reason`) is thrown and the playback should not be recovered while in the background tab, therefore, for this error, the error recovery is not recommended. 
+
+3. Errors for which replay can be attempted
+Errors which are not a part of the internal automatic recovery or reconnect worfklow mentioned above (#1), nor are not suitable for the retry (#2) fall under the replay/reconnect attempt category. 
+However, it is strongly recommended that in this scenario:
+* the number of consecutive replay attempts is limited and/or
+* the time/interval between consecutive replay attempts is increasing with the number of attempts
+
+### Most common errors that shouldn't be recovered by user due to internal automatic recovery or reconnection workflow:
+
+            1005, // Playback must be initialized by user gesture.
+            1007, // Playback suspended by external reason.
+            1008, // Playback error, only on iOS.
+            1009, // Playback failed because the player was in visibility state 'hidden' at load start.
+            3001, // A fetching process of the media aborted by user.
+            3002, // An error occurred when downloading media.
+            3003, // An error occurred when decoding media.
+            3004, // The received audio/video is not supported.
+            3005, // The receiving media data of the hls stream couldn't be decoded.
+            3100, // The media source extension changed the state to 'ended'. NOT AVAILABLE FOR IOS.
+            3101, // An error occurred while buffering on hls playback
+            3200, // An unspecific media error occurred.
+            4003  // Maximum number of reconnection tries reached.
 
 ### Reconnect/replay event flow
 
@@ -274,7 +301,9 @@ Based on the last error code (stored in `onError` handler), the replay decision 
             3002, // An error occurred when downloading media.
             3003, // An error occurred when decoding media.
             3004, // The received audio/video is not supported.
+            3005, // The receiving media data of the hls stream couldn't be decoded.
             3100, // The media source extension changed the state to 'ended'. NOT AVAILABLE FOR IOS.
+            3101, // An error occurred while buffering on hls playback
             3200, // An unspecific media error occurred.
             4003  // Maximum number of reconnection tries reached.
         ];
