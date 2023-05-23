@@ -34,9 +34,7 @@ This is related to autoplay. There are two possible scenarios for this error occ
 
 It is recommended to review the autoplay settings.<br />
 
-Read more about how to configure [autoplay](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_autoplay).
-
-Please have a look at our blog entry about [Autoplay](https://www.nanocosmos.de/blog/2018/03/autoplay-on-web-pages-with-h5live-player-for-ultra-low-latency-live-streams/).
+Read more about how to configure [Autoplay](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_autoplay).
 
 ### 1007 Playback suspended by external reason
 
