@@ -176,10 +176,10 @@ Proper configuration examples can be found in [Getting started](https://docs.nan
 In case of an error, the following choice is to either try to replay/reconnect, or do nothing. 
 
 There are 3 available scenarios depending on the error type:
-1. Errors covered by internal recovery or reconnect workflow:
+1. Errors covered by internal recovery or reconnect workflow
 
 a) Media element errors with available configuration for automatic recovery
-- error codes: `1008`, `3003`, `3005`, `3100`. `3101`;
+- error codes: `1008`, `3003`, `3005`, `3100`, `3101`;
 
 Those are media errors which have an automatic recovery workflow. In case of an error, the recovery will be triggered. The amount of recoveries is set within a time frame of 60 seconds and can be adjusted via player configuration. Read more about [Media Error Recovery](nanoplayer_feature_media_error_recovery).
 
