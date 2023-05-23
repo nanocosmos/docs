@@ -1,7 +1,7 @@
 ---
 id: nanoplayer_api_errors
-title: NanoPlayer Status & Error Codes
-sidebar_label: NanoPlayer Status & Error Codes
+title: NanoPlayer Error Codes & Handling
+sidebar_label: NanoPlayer Error Codes & Handling
 ---
 
 ## General
@@ -13,7 +13,7 @@ There are five error groups:
 * [**general player errors**](#player-errors) `1000-1999`
 * [**stream errors**](#stream-errors) `2000-2999`
 * [**media element errors**](#media-errors) `3000-3999`
-* [**network connection errors**](#network-errors) `4000-4999`
+* [**network connection and security errors**](#network-errors) `4000-4999`
 * [**setup errors**](#setup-errors) `5000-5999`
 
 Following some of the most frequent errors will be described.<br /> To see all errors please have a look at the possible [`errorcodes`](nanoplayer_api/#nanoplayererrorcode--codenumbercode).
@@ -23,7 +23,7 @@ Following some of the most frequent errors will be described.<br /> To see all e
 >These errors have codes in a **range from 1000 to 1999**.<br />
 
 1xxx codes represent general errors of the player on startup or playback.<br />
-The most frequent errors here are `1005`, `1007` and `1009`.
+The most frequent errors here are `1005`, `1007`. `1008` and `1009`.
 
 ### 1005 Playback must be initialized by user gesture
 
@@ -34,9 +34,9 @@ This is related to autoplay. There are two possible scenarios for this error occ
 
 It is recommended to review the autoplay settings.<br />
 
-Read more about how to configure: [autoplay](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_autoplay)
+Read more about how to configure [autoplay](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_autoplay).
 
-Please have a look at our blog entry [about autoplay policies](https://www.nanocosmos.de/blog/2018/03/autoplay-on-web-pages-with-h5live-player-for-ultra-low-latency-live-streams/).
+Please have a look at our blog entry about [Autoplay](https://www.nanocosmos.de/blog/2018/03/autoplay-on-web-pages-with-h5live-player-for-ultra-low-latency-live-streams/).
 
 ### 1007 Playback suspended by external reason
 
@@ -52,7 +52,7 @@ This includes:
 
 ### 1008 Playback error. Only on iOS.
 
-An unexpected error occurred during playback on iOS. This error is recoverable. Read more [about Media Error Recoveries](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_feature_media_error_recovery/).
+An unexpected error occurred during playback on iOS. This error is recoverable. Read more about [Media Error Recovery](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_feature_media_error_recovery/).
 
 ### 1009 Playback failed because the player was in visibility state 'hidden' at load start
 
@@ -91,7 +91,7 @@ The stream was already playing, but the stream was unpublished.
 3xxx codes are related to media playback errors in the system/browser playback components,
 MediaElement and/or Media Source Extensions.<br />
 The most present errors here are `3003`, `3100` for MSE playback and `3005`, `3101` for HLS playback. This errors can be recovered.
-See [here](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_feature_media_error_recovery) for more informations about the "media error recovery" feature.
+Read more about [Media Error Recovery](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_feature_media_error_recovery/).
 
 ### 3003 An error occurred when decoding media
 
@@ -135,11 +135,11 @@ The websocket server is not available or not present, establishing new connectio
 
 ### 4901 The security service denied access. The authentication token is invalid.
 
-Unsuccesful authentication due to invalid token. Read more [about secure playback with H5Live](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_token_security).
+Unsuccesful authentication due to invalid token. Read more about [Secure playback with H5Live](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_token_security).
 
 ### 4903 The security service denied access. The url is expired or a token parameter is missing (expires, token, or options).
 
-Unsuccesful authentication due to expired token or a missing token parameter. Read more [about secure playback with H5Live](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_token_security).
+Unsuccesful authentication due to expired token or a missing token parameter. Read more about [Secure playback with H5Live](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_token_security).
 
 ## Setup Errors
 
@@ -171,7 +171,7 @@ Supported browsers are:
 ### 5004 The players source configuration is malformed or missing.
 
 This setup error occurres when one of the key parameters (ie `source` object, `group.id` or `rtmp.streamname`) in the config object is malformed, therefore not readable for config parsing, or missing.
-Proper configuration examples can be found in [Getting started section](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_getting_started).
+Proper configuration examples can be found in [Getting started](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_getting_started).
 
 ## Error handling
 
@@ -183,7 +183,7 @@ There are 3 available scenarios depending on the error type:
 a) Media element errors with available configuration for automatic recovery
 - error codes: `1008`, `3003`, `3005`, `3100`. `3101`;
 
-Those are media errors which have an automatic recovery workflow. In case of an error, the recovery will be triggered. The amount of recoveries is set within a time frame of 60 seconds and can be adjusted via player configuration. Read more about [media error recovery](nanoplayer_feature_media_error_recovery).
+Those are media errors which have an automatic recovery workflow. In case of an error, the recovery will be triggered. The amount of recoveries is set within a time frame of 60 seconds and can be adjusted via player configuration. Read more about [Media Error Recovery](nanoplayer_feature_media_error_recovery).
 
 b) Network connection errors with available configuration for reconnection
 - error codes: `4102`, `4103`, `4105`, `4106`, `4107`, `4108`, `4109`, `4111`, `4115`, `4500`, `4503`;
@@ -197,15 +197,16 @@ In case of initial connection failure or connection break up during streaming, t
 
 There are errors which should not be attempted to recover as it would be mutually exclusive with the fundation of particular errors. Most errors in this category are directly linked with the mobile usage (autoplay policies, low power mode, tab switching), as well as security errors group (error codes: `49xx`-`4999`) and setup errors (error codes: `5001`-`5010`).
 
-Example 1: user is switching tabs on the phone and the application with running player is going to the background for a moment. In this situation, no one wants to have a running playback in the backgraound tab. As a result the `1007` error (`Playback suspended by external reason`) is thrown and the playback should not be recovered while in the background tab, therefore, for this error, the error recovery is not recommended. 
+Example 1: user is switching tabs on the phone and the application with running player is going to the background for a moment. In this situation, no one wants to have a running playback in the background tab. As a result the `1007` error (`Playback suspended by external reason`) is thrown and the playback should not be recovered while in the background tab. Therefore, the error recovery is not recommended for this error. 
 
 3. Errors for which replay can be attempted
+
 Errors which are not a part of the internal automatic recovery or reconnect worfklow mentioned above (#1), nor are not suitable for the retry (#2) fall under the replay/reconnect attempt category. 
 However, it is strongly recommended that in this scenario:
 * the number of consecutive replay attempts is limited and/or
 * the time/interval between consecutive replay attempts is increasing with the number of attempts
 
-### Most common errors that shouldn't be recovered by user due to internal automatic recovery or reconnection workflow:
+### Most common errors that shouldn't be recovered by user due to internal automatic recovery or reconnection workflow
 
             1005, // Playback must be initialized by user gesture.
             1007, // Playback suspended by external reason.
