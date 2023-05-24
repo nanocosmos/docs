@@ -79,7 +79,14 @@
       "cloud/cloud_getting_started",
       "cloud/live_encoding",
       "cloud/live-recording-vod",
-      "cloud/security",
+      {
+        "type": "subcategory",
+        "label": "Security Features",
+        "ids": [
+          "cloud/security",
+          "cloud/guardian"
+        ]
+      },
       {
         "type": "subcategory",
         "label": "Analytics",
