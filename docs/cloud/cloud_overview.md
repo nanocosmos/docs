@@ -59,12 +59,17 @@ or managed by our Javascript API.
 Stream Management is done with our bintu dashboard and API. 
 You will obtain and manage geo-loadbalanced URLs to enable global scale.
 
-## New: Adaptive Bitrate Playback (ABR) and Live Transcoding
+## Adaptive Bitrate Playback (ABR) and Live Transcoding
 Adaptive Bitrate enables live distribution and playback with different quality levels,
 based on the viewer's network conditions. The player decides automatically which quality level to use.
 
-## New: Metrics and Analytics
+## Metrics and Analytics
 To get full insight about your quality of service, we created a metrics and analytics system. See separate documentation.
+
+## New: nanoStream Guardian
+nanoStream Guardian is a new service integrated into nanoStream Cloud, which allows you to **block specific IP addresses, referrers, and even entire CIDR masks from accessing your streams**.
+
+By including nanoStream Guardian in your workflow, you can effectively **prevent unauthorized access and illegal replication of your streams, ensuring that only legitimate viewers can watch your content**.
 
 # Getting Started
 

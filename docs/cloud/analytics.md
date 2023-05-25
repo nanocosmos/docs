@@ -146,6 +146,21 @@ Playback (sent) traffic for each client (referrer).
 
 Ingest (received) and playback (sent) traffic for each IP.
 
+#### IP/Referer Blocking
+
+![Screenshot](/img/cloud/analytics/analytics-ip-blocking.png)
+
+Ⓐ Lists the IP's/referer of playout/ingest.\
+Ⓑ Lists the Playout or Ingest in GB for the corresponding IP/referer.\
+Ⓒ Search bar.\
+Ⓓ Toggle between playout metrics and ingest metrics.\
+Ⓔ Lists the playout/ingest of all IP's/referer in GB and the total number of IP's/referer found.\
+Ⓕ Shows if IP/referer is blocked.
+
+By clicking on the wrench symbol in the Ⓕ column, a prompt will show up asking to block the IP/referer. 
+
+> **Note**: The block only affects new connections or the next reconnect and takes max. 6 minutes to be effected. Blocking for a running playout requires a reconnect to take effect.
+
 ### H5Live
 
 ![Screenshot](/img/cloud/analytics/analytics-h5live.png)
@@ -229,9 +244,3 @@ The average and median duration a stream was live, over all ingested streams.
 #### Used webcaster versions
 
 Percentage distribution of ingests based on the used version of the Webcaster.
-
-### Reports
-
-Makes it possible to export metrics.
-Generates a PDF with usage values (data sent and received) for the selected time range.
-The PDF contains the total numbers and two histograms.

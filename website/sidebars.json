@@ -82,7 +82,14 @@
       "cloud/live_encoding",
       "cloud/srt_ingest",
       "cloud/live-recording-vod",
-      "cloud/security",
+      {
+        "type": "subcategory",
+        "label": "Security Features",
+        "ids": [
+          "cloud/security",
+          "cloud/guardian"
+        ]
+      },
       {
         "type": "subcategory",
         "label": "Analytics",
@@ -91,6 +98,7 @@
           "cloud/worldmap",
           "cloud/analytics-zoom",
           "cloud/troubleshooting",
+          "cloud/analytics-guardian",
           "cloud/analytics-api"
         ]
       }

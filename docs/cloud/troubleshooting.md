@@ -134,15 +134,17 @@ All events that occurred in the selected playout.
 
 The ***Ingest*** tab selects the ingest data group with all items described in detail next. Whether you have synchronized a corresponding playout or entered a valid, in the time period available stream name yourself, you will have access to ingest specific data, depending on the used protocol WebRTC or RTMP. You can see which protocol was used after entering a stream name right below the selection. We also implemented support for current running ingests.
 
-![Ingest](assets/tp-ingest1.png)
+![Ingest](assets/tp-ingest.png)
 
 &#9398;
 `Stream name` indicates the stream name of interest.
 
 &#9399;
+`Status` shows if the ingest was successful or failed due to an error.
 `Start` indicates the ingest start time.\
 `End` indicates the ingest end time.\
 `Duration` indicates ingest duration.
+`Drops` indicates if the ingest was interrupted.
 
 &#9400;
 Groups of meta-data information are shown related to the stream. The meta-data includes :\
@@ -153,7 +155,8 @@ Groups of meta-data information are shown related to the stream. The meta-data i
 `Country` - location of client IP.\
 `City` - location of client IP.\
 `Resolution width` - width of video stream in pixels.\
-`Resolution height` - height of video stream in pixels.
+`Resolution height` - height of video stream in pixels.\
+`webcaster ID` - ID of corresponding webcaster instance.\
 
 &#9401;
 This tab shows which group of meta-data information is being shown at the moment and how many groups are available.
@@ -164,6 +167,12 @@ Click to switch between meta-data information.
 &#9404;
 This time slider can be used to define the time interval, allowing to zoom into streams with a longer duration or to focus on specific parts of the stream.
 
+### Stream Ingest Information
+The list of ingests for the selected stream name contains both successful ingest tries and ingest failures within the chosen time range. You can click on a specific ingest to get more details, regarding error message, error codes or additional meta information.
+
+![Screenshot](assets/tp-ingest-status.png)
+
+
 ### Visualizations 
 
 Define the time interval with the slider to zoom into streams with a longer duration or to focus on specific parts of the stream. The results you get for the ingest stream name are also sorted by newest first as for the playouts. Selecting a time period auto-refreshes the statistics below.
@@ -172,7 +181,7 @@ Define the time interval with the slider to zoom into streams with a longer dura
 
 Ingests using RTMP only provide metrics about video and audio bitrates.
 
-![Screenshot](assets/tp-ingest2.png)
+![Screenshot](assets/tp-ingest-rtmp.png)
 
 `Video bitrate` [kBits/s]:
 Video bitrate of the ingested stream.
@@ -186,7 +195,7 @@ Ingests using Web Real Time Communication are providing additional insights to f
 
 > **Note**, to have [WebRTC metric](https://docs.nanocosmos.de/docs/cloud/analytics#webcaster) data available for the Troubleshooting page, they need to be enabled.
 
-![Screenshot](assets/tp-webrtc.png)
+![Screenshot](assets/tp-ingest-webrtc.png)
 
 `Video bitrate` [kBits/s]:
 Video bitrate of the ingested stream.
@@ -206,6 +215,8 @@ The average time needed to encode one frame of the stream.
 Amount of WebRTC notifications about lost data packages.
 
 > **Note**, a high count of lost packages at a time can lead to issues with the video representation on the side of the end user.
+
+
 
 ## Workflow Examples 
 
@@ -230,7 +241,7 @@ Similarly, the detected audio bitrate is averaging above 25Kbps and this can be 
 The figure below shows the graphical representation.\
 As can be observed, the average video bitrate is about 1.2Mbps while audio bitrate is about 90Kbps. The video and audio bitrates do not deviate too much from the average over time and will not cause overflow or underflow of buffers.
 
-![AV Good](assets/tp-ingest2.png)
+![AV Good](assets/tp-ingest-rtmp.png)
 
 #### Audio/Video ingest workflow with network issues
 

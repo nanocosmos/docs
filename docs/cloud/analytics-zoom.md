@@ -163,5 +163,8 @@ This widget provides insights for different status and error codes of the webcas
 ### Broadcasting Times
 These broadcasting times represent the median and average time ranges when the webcaster send a broadcasting signal. 
 
+### Reasons for stopping
+This widget lists all the stopping counts of the streams and specific stopping reasons.
+
 ### Versions
 More details about the different webcaster versions, ranked by their counts of use. 
