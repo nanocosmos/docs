@@ -62,9 +62,9 @@ based on the viewer's network conditions. The player decides automatically which
 To get full insight about your quality of service, we created a metrics and analytics system. See separate documentation.
 
 ## New: nanoStream Guardian
-nanoStream Guardian is a new service integrated into the nanoStream Cloud which allow you to **block specific IP addresses, referrers, and even entire CIDR masks from accessing your streams**.
+nanoStream Guardian is a new service integrated into nanoStream Cloud, which allows you to **block specific IP addresses, referrers, and even entire CIDR masks from accessing your streams**.
 
-By including the nanoStream Guardian in your workflow, you can effectively **prevent unauthorized access and illegal replication of your streams, ensuring that only legitimate viewers can watch your content**.
+By including nanoStream Guardian in your workflow, you can effectively **prevent unauthorized access and illegal replication of your streams, ensuring that only legitimate viewers can watch your content**.
 
 # Getting Started
 
