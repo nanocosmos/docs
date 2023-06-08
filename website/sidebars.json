@@ -135,7 +135,8 @@
       "cloud/how_to_setup_streamgroups",
       "nanoplayer/nanoplayer_tutorial_how_to_setup_latency_modes",
       "cloud/how_to_setup_ingest_security",
-      "nanoplayer/nanoplayer_tutorial_how_to_setup_player_security"
+      "nanoplayer/nanoplayer_tutorial_how_to_setup_player_security",
+      "cloud/easy_to_use_stream_protection_with_nanostream_guardian"
     ]    
   },
   "nanostream": {
