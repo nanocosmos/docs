@@ -1,7 +1,7 @@
 ---
-id: easy_to_use_stream_protection_with_nanostream_guardian
-title: Easy To Use Stream Protection With nanoStream Guardian
-sidebar_label: Easy To Use Stream Protection With nanoStream Guardian
+id: defend_against_misuse_with_nanostream_guardian
+title: Defend Against Misuse With nanoStream Guardian
+sidebar_label: Defend Against Misuse With nanoStream Guardian
 ---
 
 <div class="video-wrap">
