@@ -6,7 +6,7 @@ sidebar_label: Defend Against Misuse With nanoStream Guardian
 
 <div class="video-wrap">
     <div class="video-container">
-        <iframe src="https://www.youtube.com/embed/X8j7jxFAyIw" frameborder="0" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/hVbkifac1uo" frameborder="0" allowfullscreen></iframe>
     </div>
 </div>
 
