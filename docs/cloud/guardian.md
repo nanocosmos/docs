@@ -4,6 +4,14 @@ title: nanoStream Guardian
 sidebar_label: nanoStream Guardian
 ---
 
+<div class="video-wrap">
+    <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/hVbkifac1uo" frameborder="0" allowfullscreen></iframe>
+    </div>
+</div>
+
+##### *Click `PLAY` button to start*
+
 # What is nanoStream Guardian?
 
 nanoStream Guardian is a new service integrated into nanoStream Cloud, which allows you to **block specific IP addresses, referrers, and even entire CIDR masks from accessing your streams**.
