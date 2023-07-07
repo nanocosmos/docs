@@ -144,7 +144,7 @@ const siteConfig = {
     typesenseCollectionName: 'nanocosmos', // Should match the collection name you mention in the docsearch scraper config.js
     typesenseServerConfig: {
       nodes: [{
-        host: '49.12.21.206', // For Typesense Cloud use xxx.a1.typesense.net
+        host: 'typesense.nanostream.cloud', // For Typesense Cloud use xxx.a1.typesense.net
         port: '443',      // For Typesense Cloud use 443
         protocol: 'https'   // For Typesense Cloud use https
       }],
