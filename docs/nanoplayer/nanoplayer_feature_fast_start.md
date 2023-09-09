@@ -24,7 +24,7 @@ By default, the fast start mode is disabled in v4.22.0.
 ```
 
 #### Fast playback start support in v4.22 
-If enabled, fast start mode will be applied in all cases where the player is transitioning from `paused` state to `playing` state including: 
+If enabled, fast start mode will be applied in all cases when the player is transitioning from `paused` state to `playing` state including: 
 - Playback start via player UI controls 
 - API calls to player.setup() with autoplay enabled 
 - API calls to player.play() if the player is in `paused` state 
