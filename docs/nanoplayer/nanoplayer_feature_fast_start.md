@@ -1,5 +1,5 @@
 ---
-id: nanoplayer_feature_fast start
+id: nanoplayer_feature_fast_start
 title: Fast playback start
 sidebar_label: Fast playback start
 ---
