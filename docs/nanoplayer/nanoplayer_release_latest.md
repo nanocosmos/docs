@@ -4,37 +4,43 @@ title: Latest Release
 sidebar_label: Latest
 ---
 
-## Please find more about the **media error recovery** feature in our [documentation](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_feature_media_error_recovery/)
+## Please find more about the **fast playback start** feature in our [documentation](https://docs.nanocosmos.de/docs/nanoplayer/nanoplayer_feature_fast_start/)
 
-## **[4.21.0]**
+## **[4.22.0]**
 
 ### **Release Notes**
 
-This release brings a range of enhancements and fixes to improve your experience. We have made adjustments to iOS buffer control to ensure best performance with iOS 17.
-All metrics events now include an event counter and an indication of `Document.visibilityState` to provide deeper insights into user interactions.
-Furthermore we've worked on enhancing iOS playback recovery. In case of network interruptions or degradations, the iOS playback will be recovered more smoothly.
-An issue has been resolved that previously led to a false positive `PLAYING` state on iOS during network interruptions. This will result in more accurate playback status representation.
-In addition we've addressed an issue that could occasionally lead to an incomplete or empty `stats` object in the `onPlay` event.
+This version is introducing the new Fast Start Mode feature that enhances playback start-up times with nanoStream Cloud.
+This cutting-edge addition allows you to significantly reduce startup times when initiating playback.
+Fast Start Mode can be enabled using the configuration setting `config.playback.faststart`.
+Please note that it is disabled by default, so you have full control over its activation.
+The unused option `config.source.options.switch.fastStart` has been deprecated.
+
+Furthermore we have improved the Adaptive Bitrate (ABR) initial switch-up behavior in case of degraded network conditions.
+In addition, a layout issue that occured after exiting fullscreen mode in Safari 16.5 macOS has been fixed.
 
 ### **Changelog**
 
 ### Added
 
-- iOS 17 related adjustment in iOS buffer control
-- indication of `Document.visibilityState` in all metrics events
-- event counter in all metrics events
+- fast start mode feature for improved playback start-up times with nanoStream Cloud
+  - can be enabled via boolean `config.playback.faststart`, disabled by default
+  - fast start related values in `onStreamInfo` and `onPlay` event
 
 ### Improved
 
-- iOS playback recovery in case of network interruptions or degradations
+- initial ABR switch up behaviour in case of degraded network conditions
 
 ### Fixed
 
-- prevent false positive `playing` state in case of iOS network interruptions
-- issue that could cause an incomplete or empty `stats` object in the `onPlay` event
+- layout issue after exiting fullscreen mode in Safari 16.5 macOS
+
+## Removed
+
+- deprecated unused option `config.source.options.switch.fastStart`
 
 ### **Release Package**
 
-- [4.21.0](https://files.nanocosmos.de/index.php/s/Wkfr4Egf5F3JCcE)
+- [4.22.0](https://files.nanocosmos.de/index.php/s/yMLjK43fsnHotwe)
 - [latest 4.x](https://files.nanocosmos.de/index.php/s/4nndC45mcB6oSa6)
 - [latest](https://files.nanocosmos.de/index.php/s/2tpCzgRjNEZDzeP)
